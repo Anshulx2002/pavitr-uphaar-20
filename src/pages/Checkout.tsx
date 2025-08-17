@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -10,6 +10,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet, Landmark, Shield, Tag } from 'lucide-react';
+
+// Razorpay constants
+const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
+const RZP_PUBLIC_KEY = "rzp_test_XXXXXXXXXXXXXXXX"; // Replace with actual key
 
 const checkoutSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -36,6 +40,7 @@ const Checkout = () => {
   const { cartItems, getCartTotal, getCartItemsCount } = useCart();
   const [couponCode, setCouponCode] = useState('');
   const [discount, setDiscount] = useState(0);
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
   const {
     register,
@@ -47,8 +52,24 @@ const Checkout = () => {
     mode: 'onChange', // Enable real-time validation
   });
 
+  // Load Razorpay script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://checkout.razorpay.com/v1/checkout.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   // Redirect if cart is empty
-  React.useEffect(() => {
+  useEffect(() => {
     if (cartItems.length === 0) {
       navigate('/');
     }
@@ -75,11 +96,64 @@ const Checkout = () => {
     }
   };
 
+  const startPayment = async (data: CheckoutFormData) => {
+    setIsProcessingPayment(true);
+    
+    try {
+      // Convert INR to paise
+      const amount = Math.round(total * 100);
+      const receipt = `PU-${Date.now()}`;
+      
+      // Create order via Supabase Edge Function
+      const response = await fetch(CREATE_ORDER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount, currency: "INR", receipt })
+      });
+      
+      const order = await response.json();
+      if (!order.id) {
+        throw new Error("Could not create order");
+      }
+
+      // Initialize Razorpay
+      const options = {
+        key: RZP_PUBLIC_KEY,
+        amount: order.amount,
+        currency: order.currency || "INR",
+        name: "Pavitra Uphaar",
+        description: "Order " + receipt,
+        order_id: order.id,
+        prefill: {
+          name: data.name,
+          email: data.email,
+          contact: data.phone
+        },
+        handler: function (response: any) {
+          // Success - redirect to thank you page
+          window.location.href = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
+        },
+        modal: {
+          ondismiss: function () {
+            // User closed the modal - redirect to payment failed
+            window.location.href = `/payment-failed?order_ref=${encodeURIComponent(receipt)}`;
+          }
+        }
+      };
+
+      // @ts-ignore - Razorpay is loaded dynamically
+      new window.Razorpay(options).open();
+      
+    } catch (error) {
+      console.error('Payment error:', error);
+      window.location.href = `/payment-failed`;
+    } finally {
+      setIsProcessingPayment(false);
+    }
+  };
+
   const onSubmit = async (data: CheckoutFormData) => {
-    // Here we'll later add the Razorpay integration
-    console.log('Checkout data:', data);
-    console.log('Order total:', total);
-    // TODO: Implement Razorpay integration
+    await startPayment(data);
   };
 
   if (cartItems.length === 0) {
@@ -367,21 +441,21 @@ const Checkout = () => {
                      </div>
                    </div>
 
-                   {/* Pay Now Button */}
-                   <Button
-                     onClick={handleSubmit(onSubmit)}
-                     disabled={isSubmitting}
-                     className="w-full h-14 text-lg font-semibold bg-gradient-saffron hover:opacity-90 transition-all duration-300 hover:shadow-gold text-primary-foreground"
-                   >
-                     {isSubmitting ? (
-                       <div className="flex items-center gap-2">
-                         <div className="animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent"></div>
-                         Processing...
-                       </div>
-                     ) : (
-                       `Pay Now ₹${total.toFixed(2)}`
-                     )}
-                   </Button>
+                    {/* Pay Now Button */}
+                    <Button
+                      onClick={handleSubmit(onSubmit)}
+                      disabled={isSubmitting || isProcessingPayment}
+                      className="w-full h-14 text-lg font-semibold bg-gradient-saffron hover:opacity-90 transition-all duration-300 hover:shadow-gold text-primary-foreground"
+                    >
+                      {(isSubmitting || isProcessingPayment) ? (
+                        <div className="flex items-center gap-2">
+                          <div className="animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent"></div>
+                          Processing...
+                        </div>
+                      ) : (
+                        `Pay Now ₹${total.toFixed(2)}`
+                      )}
+                    </Button>
 
                    {/* Security Badge */}
                    <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
