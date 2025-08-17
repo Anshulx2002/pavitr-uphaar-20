@@ -14,6 +14,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ShippingInfo from "./pages/ShippingInfo";
 import FestivalKits from "./pages/FestivalKits";
 import CategoryPage from "./pages/CategoryPage";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/festival-kits" element={<FestivalKits />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/products/:category" element={<CategoryPage />} />
           {/* Legacy routes redirect to dynamic routes */}
           <Route path="/incense-agarbatti" element={<CategoryPage />} />

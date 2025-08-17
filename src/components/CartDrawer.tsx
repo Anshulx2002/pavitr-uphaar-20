@@ -1,4 +1,5 @@
 import { X, Plus, Minus, ShoppingBag, CreditCard } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +12,7 @@ interface CartDrawerProps {
 }
 
 const CartDrawer = ({ isOpen, onOpenChange, children }: CartDrawerProps) => {
+  const navigate = useNavigate();
   const { cartItems, updateQuantity, getCartTotal, getCartItemsCount } = useCart();
 
   const subtotal = getCartTotal();
@@ -133,7 +135,14 @@ const CartDrawer = ({ isOpen, onOpenChange, children }: CartDrawerProps) => {
               </div>
 
               <div className="space-y-2">
-                <Button className="w-full bg-gradient-saffron hover:opacity-90" size="lg">
+                <Button 
+                  className="w-full bg-gradient-saffron hover:opacity-90" 
+                  size="lg"
+                  onClick={() => {
+                    onOpenChange(false);
+                    navigate('/checkout');
+                  }}
+                >
                   Proceed to Checkout
                 </Button>
                 <Button 
