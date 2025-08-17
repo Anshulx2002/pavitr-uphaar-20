@@ -54,7 +54,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[80vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
+    <section className="relative min-h-[90vh] md:min-h-[95vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
       {/* Traditional Indian Border - Top */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
@@ -115,7 +115,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 lg:mb-8 leading-tight px-2">
+        <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 lg:mb-8 leading-tight px-2 pb-2">
           <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
           <br />
           <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
@@ -130,13 +130,13 @@ const Hero = () => {
         <div className="flex flex-col gap-3 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
             {/* Glitz animation overlay */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
-              className="bg-gradient-gold hover:opacity-90 text-foreground font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-gold transition-all duration-300 hover:scale-105 hover:shadow-hover border border-primary/20 relative overflow-hidden"
+              className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-600 hover:from-amber-500 hover:via-yellow-500 hover:to-amber-700 text-amber-900 font-bold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-[0_8px_32px_rgba(245,158,11,0.4)] hover:shadow-[0_12px_40px_rgba(245,158,11,0.6)] transition-all duration-300 hover:scale-105 border border-amber-500/30 relative overflow-hidden"
               onClick={() => window.location.href = '/products'}
             >
-              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-primary" />
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-amber-800" />
               Shop Kits
             </Button>
           </div>
