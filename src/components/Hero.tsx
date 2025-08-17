@@ -105,17 +105,17 @@ const Hero = () => {
       </div>
 
       {/* Content with Perfect Readability */}
-      <div className={`relative z-10 text-center max-w-5xl mx-auto px-3 py-6 md:px-6 md:py-12 lg:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 py-8 md:px-6 md:py-12 lg:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Traditional Gold Ornament Above Title */}
-        <div className="flex justify-center mb-3 md:mb-6">
-          <div className="flex items-center gap-2 md:gap-3">
+        <div className="flex justify-center mb-6 md:mb-6">
+          <div className="flex items-center gap-3 md:gap-3">
             <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
             <Sparkles className="w-5 md:w-6 h-5 md:h-6 text-primary animate-pulse" />
             <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
           </div>
         </div>
         
-        <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-3 md:mb-6 lg:mb-8 leading-tight px-1 pb-2">
+        <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-6 lg:mb-8 leading-relaxed px-2 pb-2">
           <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
           <br />
           <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
@@ -123,11 +123,11 @@ const Hero = () => {
           </span>
         </h1>
         
-        <p className="text-lg md:text-lg lg:text-xl text-muted-foreground mb-4 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-2">
+        <p className="text-lg md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
           Everything you need. Beautifully packed. Ready to worship.
         </p>
         
-        <div className="flex flex-col gap-3 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-2">
+        <div className="flex flex-col gap-4 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
             {/* Glitz animation overlay */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/15 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
@@ -150,7 +150,7 @@ const Hero = () => {
           </Button>
         </div>
         
-        <div className="mt-8 md:mt-16 px-2">
+        <div className="mt-12 md:mt-16 px-4">
           <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-sm md:max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
             <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
               <AnimatedCounter target="500+" label="Products" />
