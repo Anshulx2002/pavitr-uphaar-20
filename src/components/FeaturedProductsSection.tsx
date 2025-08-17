@@ -133,7 +133,7 @@ const FeaturedProductsSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-accent/5 to-background relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-gradient-to-br from-background via-accent/5 to-background relative overflow-hidden">
       {/* Elegant background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-radial from-primary/30 to-transparent rounded-full blur-2xl"></div>
@@ -141,16 +141,16 @@ const FeaturedProductsSection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-radial from-secondary/30 to-transparent rounded-full blur-lg"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Elegant Header */}
-        <div className="text-center mb-16 scroll-animate">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 text-primary px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-primary/20">
-            <Sparkles className="w-4 h-4" />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* Mobile-Optimized Header */}
+        <div className="text-center mb-10 md:mb-16 scroll-animate">
+          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 text-primary px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 border border-primary/20">
+            <Sparkles className="w-3 md:w-4 h-3 md:h-4" />
             <span>Handpicked Excellence</span>
-            <Star className="w-4 h-4 fill-current" />
+            <Star className="w-3 md:w-4 h-3 md:h-4 fill-current" />
           </div>
           
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Featured
             </span>
@@ -158,16 +158,22 @@ const FeaturedProductsSection = () => {
             <span className="text-foreground">Collection</span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 md:mb-8 px-2">
             Discover our most cherished pooja essentials, meticulously selected for their 
             authenticity, quality, and spiritual significance.
           </p>
           
         </div>
 
-        {/* Products Grid - Mobile optimized to show 6 products */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 lg:gap-8 mb-16">
-          {featuredProducts.slice(0, isMobile ? 6 : 10).map((product, index) => (
+        {/* Mobile-Optimized Products Grid */}
+        <div className={`
+          ${isMobile 
+            ? "grid grid-cols-1 gap-6 max-w-sm mx-auto" 
+            : "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 lg:gap-8"
+          } 
+          mb-12 md:mb-16
+        `}>
+          {featuredProducts.slice(0, isMobile ? 4 : 10).map((product, index) => (
             <div 
               key={product.id} 
               className="scroll-animate hover-lift group"
@@ -190,37 +196,53 @@ const FeaturedProductsSection = () => {
             </div>
           ))}
         </div>
+        
+        {/* Mobile: Show More Button */}
+        {isMobile && (
+          <div className="text-center mb-8">
+            <Link to="/products">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold px-8 py-4 rounded-full shadow-gold hover:shadow-hover transform transition-all duration-300 hover:scale-105 w-full max-w-xs"
+              >
+                View All Products
+              </Button>
+            </Link>
+          </div>
+        )}
 
-        {/* Call to Action */}
-        <div className="text-center scroll-animate">
-          <div className="inline-flex flex-col items-center gap-6 p-8 rounded-2xl bg-gradient-to-br from-background/80 via-accent/5 to-background/80 backdrop-blur-sm border border-border/50 shadow-card">
-            <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
-              Explore Our Complete Collection
-            </h3>
-            <p className="text-muted-foreground max-w-lg mx-auto mb-6">
-              Browse through our entire catalog of sacred items, festival kits, and spiritual accessories
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/products">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold px-8 py-4 rounded-full shadow-gold hover:shadow-hover transform transition-all duration-300 hover:scale-105"
-                >
-                  View All Products
-                </Button>
-              </Link>
-              <Link to="/products">
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-2 border-primary/20 hover:border-primary/40 px-8 py-4 rounded-full transition-all duration-300"
-                >
-                  Shop by Category
-                </Button>
-              </Link>
+        {/* Desktop Call to Action */}
+        {!isMobile && (
+          <div className="text-center scroll-animate">
+            <div className="inline-flex flex-col items-center gap-6 p-8 rounded-2xl bg-gradient-to-br from-background/80 via-accent/5 to-background/80 backdrop-blur-sm border border-border/50 shadow-card">
+              <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+                Explore Our Complete Collection
+              </h3>
+              <p className="text-muted-foreground max-w-lg mx-auto mb-6">
+                Browse through our entire catalog of sacred items, festival kits, and spiritual accessories
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/products">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold px-8 py-4 rounded-full shadow-gold hover:shadow-hover transform transition-all duration-300 hover:scale-105"
+                  >
+                    View All Products
+                  </Button>
+                </Link>
+                <Link to="/products">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-2 border-primary/20 hover:border-primary/40 px-8 py-4 rounded-full transition-all duration-300"
+                  >
+                    Shop by Category
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
