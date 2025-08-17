@@ -14,7 +14,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ShippingInfo from "./pages/ShippingInfo";
 import FestivalKits from "./pages/FestivalKits";
 import CategoryPage from "./pages/CategoryPage";
-import Checkout from "./pages/Checkout";
+import Checkout from "./pages/checkout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
