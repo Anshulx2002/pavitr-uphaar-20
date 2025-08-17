@@ -13,16 +13,24 @@ import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
-const RZP_PUBLIC_KEY = "rzp_live_R6RSxqVRmxuZdA"; // your live key_id
+const RZP_PUBLIC_KEY = "rzp_test_9jQQoWjkGl4cQu"; // Test key for development
 
 const checkoutSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Phone number must be at least 10 digits'),
+  email: z.string().email('Please enter a valid email address').refine((email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }, 'Please enter a valid email address'),
+  phone: z.string().min(10, 'Phone number must be at least 10 digits').refine((phone) => {
+    const phoneRegex = /^[6-9]\d{9}$/;
+    return phoneRegex.test(phone.replace(/\D/g, ''));
+  }, 'Please enter a valid 10-digit Indian mobile number'),
   address: z.string().min(10, 'Please enter your complete address'),
   city: z.string().min(2, 'City is required'),
   state: z.string().min(2, 'State is required'),
-  pincode: z.string().length(6, 'Pincode must be 6 digits'),
+  pincode: z.string().min(6, 'Pincode must be 6 digits').max(6, 'Pincode must be 6 digits').refine((pin) => {
+    return /^\d{6}$/.test(pin);
+  }, 'Pincode must be exactly 6 digits'),
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -41,7 +49,7 @@ const Checkout = () => {
     watch,
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
-    mode: 'onChange',
+    mode: 'onChange', // Enable real-time validation
   });
 
   // Load Razorpay script
@@ -50,87 +58,95 @@ const Checkout = () => {
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
     script.async = true;
     document.body.appendChild(script);
+
     return () => {
-      const existing = document.querySelector('script[src="https://checkout.razorpay.com/v1/checkout.js"]');
-      if (existing) existing.remove();
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://checkout.razorpay.com/v1/checkout.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
     };
   }, []);
 
-  // Redirect if cart empty
+  // Redirect if cart is empty
   useEffect(() => {
-    if (cartItems.length === 0) navigate('/');
+    if (cartItems.length === 0) {
+      navigate('/');
+    }
   }, [cartItems, navigate]);
 
   const subtotal = getCartTotal();
-  const shipping = subtotal >= 500 ? 0 : 50;
+  const shipping = subtotal >= 500 ? 0 : 50; // Free shipping on orders above ₹500
   const discountAmount = (subtotal * discount) / 100;
   const total = subtotal + shipping - discountAmount;
 
   const applyCoupon = () => {
-    const valid: Record<string, number> = {
+    // Simple coupon logic - in real app, this would be an API call
+    const validCoupons: Record<string, number> = {
       'WELCOME10': 10,
       'FESTIVAL15': 15,
       'SAVE20': 20,
     };
-    if (valid[couponCode.toUpperCase()]) {
-      setDiscount(valid[couponCode.toUpperCase()]);
+    
+    if (validCoupons[couponCode.toUpperCase()]) {
+      setDiscount(validCoupons[couponCode.toUpperCase()]);
     } else {
       setDiscount(0);
       alert('Invalid coupon code');
     }
   };
 
-  const startPayment = async (form: CheckoutFormData) => {
+  const startPayment = async (data: CheckoutFormData) => {
+    setIsProcessingPayment(true);
+    
     try {
-      setIsProcessingPayment(true);
-
-      // Call backend to create Razorpay order (amount in rupees)
-      const res = await fetch(CREATE_ORDER_URL, {
+      // Convert INR to paise
+      const amount = Math.round(total * 100);
+      const receipt = `PU-${Date.now()}`;
+      
+      // Create order via Supabase Edge Function
+      const response = await fetch(CREATE_ORDER_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount_rupees: Number(total) })
+        body: JSON.stringify({ amount, currency: "INR", receipt })
       });
-      const order = await res.json();
-      if (!res.ok || !order.order_id) {
-        throw new Error(order?.error?.description || "Could not create order");
+      
+      const order = await response.json();
+      if (!order.id) {
+        throw new Error("Could not create order");
       }
 
-      // Setup checkout options
+      // Initialize Razorpay
       const options = {
-        key: order.key_id ?? RZP_PUBLIC_KEY, // backend should send key_id too
-        order_id: order.order_id,
-        amount: order.amount, // in paise
+        key: RZP_PUBLIC_KEY,
+        amount: order.amount,
         currency: order.currency || "INR",
         name: "Pavitra Uphaar",
-        description: "Order",
+        description: "Order " + receipt,
+        order_id: order.id,
         prefill: {
-          name: form.name,
-          email: form.email,
-          contact: form.phone
+          name: data.name,
+          email: data.email,
+          contact: data.phone
         },
         handler: function (response: any) {
-          alert(`Payment Success: ${response.razorpay_payment_id}`);
-          window.location.href = "/thank-you";
+          // Success - redirect to thank you page
+          window.location.href = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
         },
         modal: {
           ondismiss: function () {
-            window.location.href = "/payment-failed";
+            // User closed the modal - redirect to payment failed
+            window.location.href = `/payment-failed?order_ref=${encodeURIComponent(receipt)}`;
           }
         }
       };
 
-      // @ts-ignore
-      const rzp = new window.Razorpay(options);
-      rzp.on("payment.failed", (err: any) => {
-        console.error(err.error);
-        alert("Payment failed: " + (err?.error?.description || "Unknown error"));
-        window.location.href = "/payment-failed";
-      });
-      rzp.open();
-
-    } catch (err) {
-      console.error("Payment error:", err);
-      window.location.href = "/payment-failed";
+      // @ts-ignore - Razorpay is loaded dynamically
+      new window.Razorpay(options).open();
+      
+    } catch (error) {
+      console.error('Payment error:', error);
+      window.location.href = `/payment-failed`;
     } finally {
       setIsProcessingPayment(false);
     }
@@ -140,14 +156,21 @@ const Checkout = () => {
     await startPayment(data);
   };
 
-  if (cartItems.length === 0) return null;
+  if (cartItems.length === 0) {
+    return null; // Will redirect via useEffect
+  }
 
   return (
     <div className="min-h-screen bg-gradient-warm">
       <div className="container mx-auto px-4 py-4 sm:py-8 max-w-7xl">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6 sm:mb-8">
-          <Button variant="outline" size="sm" onClick={() => navigate('/')} className="gap-2 order-2 sm:order-1">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => navigate('/')}
+            className="gap-2 order-2 sm:order-1"
+          >
             <ArrowLeft className="h-4 w-4" />
             <span className="hidden sm:inline">Back to Shop</span>
             <span className="sm:hidden">Back</span>
@@ -156,10 +179,293 @@ const Checkout = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Left - Form */}
-          {/* ... keep your form code exactly as you had ... */}
-          {/* Right - Order Review */}
-          {/* ... keep your order review code exactly as you had ... */}
+          {/* Left Column - Form */}
+          <div className="space-y-4 sm:space-y-6">
+            {/* Customer Details */}
+            <Card className="shadow-card">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                  <Package className="h-5 w-5 text-primary" />
+                  Customer Details
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="name">Full Name</Label>
+                  <Input
+                    id="name"
+                    {...register('name')}
+                    placeholder="Enter your full name"
+                    className={errors.name ? 'border-destructive' : ''}
+                  />
+                  {errors.name && (
+                    <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
+                  )}
+                </div>
+
+                 <div>
+                   <Label htmlFor="email">Email Address</Label>
+                   <Input
+                     id="email"
+                     type="email"
+                     {...register('email')}
+                     placeholder="Enter your email"
+                     className={`transition-all duration-200 ${errors.email ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                   />
+                   {errors.email && (
+                     <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.email.message}</p>
+                   )}
+                   {watch('email') && !errors.email && (
+                     <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid email</p>
+                   )}
+                 </div>
+
+                 <div>
+                   <Label htmlFor="phone">Phone Number</Label>
+                   <Input
+                     id="phone"
+                     {...register('phone')}
+                     placeholder="Enter your 10-digit mobile number"
+                     className={`transition-all duration-200 ${errors.phone ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     maxLength={10}
+                   />
+                   {errors.phone && (
+                     <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.phone.message}</p>
+                   )}
+                   {watch('phone') && !errors.phone && watch('phone').length === 10 && (
+                     <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid phone number</p>
+                   )}
+                 </div>
+              </CardContent>
+            </Card>
+
+            {/* Shipping Address */}
+            <Card className="shadow-card">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                  <Truck className="h-5 w-5 text-primary" />
+                  Shipping Address
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="address">Street Address</Label>
+                  <Input
+                    id="address"
+                    {...register('address')}
+                    placeholder="Enter your complete address"
+                    className={errors.address ? 'border-destructive' : ''}
+                  />
+                  {errors.address && (
+                    <p className="text-sm text-destructive mt-1">{errors.address.message}</p>
+                  )}
+                </div>
+
+                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                   <div>
+                     <Label htmlFor="city">City</Label>
+                     <Input
+                       id="city"
+                       {...register('city')}
+                       placeholder="City"
+                       className={`transition-all duration-200 ${errors.city ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     />
+                     {errors.city && (
+                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.city.message}</p>
+                     )}
+                   </div>
+
+                   <div>
+                     <Label htmlFor="state">State</Label>
+                     <Input
+                       id="state"
+                       {...register('state')}
+                       placeholder="State"
+                       className={`transition-all duration-200 ${errors.state ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     />
+                     {errors.state && (
+                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.state.message}</p>
+                     )}
+                   </div>
+                 </div>
+
+                <div>
+                   <Label htmlFor="pincode">Pincode</Label>
+                   <Input
+                     id="pincode"
+                     {...register('pincode')}
+                     placeholder="6-digit pincode"
+                     className={`transition-all duration-200 ${errors.pincode ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     maxLength={6}
+                   />
+                   {errors.pincode && (
+                     <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
+                   )}
+                   {watch('pincode') && !errors.pincode && watch('pincode').length === 6 && (
+                     <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
+                   )}
+                 </div>
+                 
+                 {/* Delivery Estimate */}
+                 <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
+                   <p className="text-sm text-muted-foreground flex items-center gap-2">
+                     <Truck className="h-4 w-4 text-primary" />
+                     Estimated delivery in 2–3 business days
+                   </p>
+                 </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Column - Order Review */}
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="shadow-card lg:sticky lg:top-4">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                  <ShoppingCart className="h-5 w-5 text-primary" />
+                  Order Review ({getCartItemsCount()} items)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                 {/* Cart Items */}
+                 <div className="space-y-3 max-h-80 sm:max-h-96 overflow-y-auto">
+                   {cartItems.map((item) => (
+                     <div key={item.id} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                       <img
+                         src={item.image}
+                         alt={item.name}
+                         className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-md flex-shrink-0"
+                       />
+                       <div className="flex-1 min-w-0">
+                         <h4 className="font-medium text-sm text-card-foreground truncate">
+                           {item.name}
+                         </h4>
+                         <p className="text-xs text-muted-foreground">
+                           Qty: {item.quantity} × ₹{item.price}
+                         </p>
+                       </div>
+                       <div className="text-right flex-shrink-0">
+                         <p className="font-semibold text-sm text-card-foreground">
+                           ₹{(item.price * item.quantity).toFixed(2)}
+                         </p>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+
+                 <Separator />
+
+                 {/* Coupon Code Section */}
+                 <div className="space-y-3">
+                   <div className="flex items-center gap-2">
+                     <Tag className="h-4 w-4 text-primary" />
+                     <Label htmlFor="coupon" className="text-sm font-medium">Apply Coupon</Label>
+                   </div>
+                   <div className="flex gap-2">
+                     <Input
+                       id="coupon"
+                       value={couponCode}
+                       onChange={(e) => setCouponCode(e.target.value)}
+                       placeholder="Enter coupon code"
+                       className="flex-1 text-sm"
+                     />
+                     <Button 
+                       onClick={applyCoupon}
+                       variant="outline" 
+                       size="sm"
+                       className="px-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                     >
+                       Apply
+                     </Button>
+                   </div>
+                   {discount > 0 && (
+                     <p className="text-xs text-primary animate-fade-in">
+                       ✓ Coupon applied! {discount}% discount
+                     </p>
+                   )}
+                 </div>
+
+                 <Separator />
+
+                 {/* Order Summary */}
+                 <div className="space-y-3">
+                   <div className="flex justify-between text-sm">
+                     <span className="text-muted-foreground">Subtotal</span>
+                     <span className="font-medium">₹{subtotal.toFixed(2)}</span>
+                   </div>
+                   {discount > 0 && (
+                     <div className="flex justify-between text-sm">
+                       <span className="text-muted-foreground">Discount ({discount}%)</span>
+                       <span className="font-medium text-primary">-₹{discountAmount.toFixed(2)}</span>
+                     </div>
+                   )}
+                   <div className="flex justify-between text-sm">
+                     <span className="text-muted-foreground">Shipping</span>
+                     <span className="font-medium">
+                       {shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`}
+                     </span>
+                   </div>
+                   {shipping === 0 && (
+                     <p className="text-xs text-primary">
+                       🎉 Free shipping on orders above ₹500
+                     </p>
+                   )}
+                   <Separator />
+                   <div className="flex justify-between text-xl font-bold">
+                     <span>Total</span>
+                     <span className="text-primary text-2xl">₹{total.toFixed(2)}</span>
+                   </div>
+                 </div>
+
+                 {/* Payment Methods Trust */}
+                 <div className="space-y-3">
+                   <div className="text-center">
+                     <p className="text-xs text-muted-foreground mb-2">We accept:</p>
+                     <div className="flex justify-center items-center gap-3 mb-4">
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <Smartphone className="h-3 w-3 text-primary" />
+                         <span>UPI</span>
+                       </div>
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <CreditCard className="h-3 w-3 text-primary" />
+                         <span>Cards</span>
+                       </div>
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <Landmark className="h-3 w-3 text-primary" />
+                         <span>Net Banking</span>
+                       </div>
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <Wallet className="h-3 w-3 text-primary" />
+                         <span>Wallets</span>
+                       </div>
+                     </div>
+                   </div>
+
+                    {/* Pay Now Button */}
+                    <Button
+                      onClick={handleSubmit(onSubmit)}
+                      disabled={isSubmitting || isProcessingPayment}
+                      className="w-full h-14 text-lg font-semibold bg-gradient-saffron hover:opacity-90 transition-all duration-300 hover:shadow-gold text-primary-foreground"
+                    >
+                      {(isSubmitting || isProcessingPayment) ? (
+                        <div className="flex items-center gap-2">
+                          <div className="animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent"></div>
+                          Processing...
+                        </div>
+                      ) : (
+                        `Pay Now ₹${total.toFixed(2)}`
+                      )}
+                    </Button>
+
+                   {/* Security Badge */}
+                   <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                     <Shield className="h-4 w-4 text-primary" />
+                     <span>100% Secure Payments powered by Razorpay</span>
+                   </div>
+                 </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
