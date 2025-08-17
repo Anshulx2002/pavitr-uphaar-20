@@ -26,8 +26,8 @@ const Hero = () => {
     useEffect(() => {
       if (!isVisible) return;
       
-      const duration = 2000;
-      const increment = numericTarget / (duration / 16);
+      const duration = 1500;
+      const increment = numericTarget / (duration / 32);
       let current = 0;
 
       const timer = setInterval(() => {
@@ -38,14 +38,14 @@ const Hero = () => {
         } else {
           setCount(Math.floor(current));
         }
-      }, 16);
+      }, 32);
 
       return () => clearInterval(timer);
     }, [isVisible, numericTarget]);
 
     return (
-      <div className="hover-scale text-center">
-        <div className="text-sm md:text-xl lg:text-3xl font-bold text-foreground animate-fade-in">
+      <div className="text-center">
+        <div className="text-sm md:text-xl lg:text-3xl font-bold text-foreground">
           {count}{suffix}
         </div>
         <div className="text-xs md:text-sm lg:text-base text-muted-foreground font-medium">{label}</div>
@@ -127,15 +127,19 @@ const Hero = () => {
           Everything you need. Beautifully packed. Ready to worship.
         </p>
         
-        <div className="flex flex-col gap-3 md:gap-4 justify-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
-          <Button 
-            size="lg" 
-            className="bg-gradient-gold hover:opacity-90 text-foreground font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-gold transition-all duration-300 hover:scale-105 hover:shadow-hover border border-primary/20 w-full max-w-xs mx-auto"
-            onClick={() => window.location.href = '/products'}
-          >
-            <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-primary" />
-            Shop Kits
-          </Button>
+        <div className="flex flex-col gap-3 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
+          <div className="relative">
+            {/* Glitz animation overlay */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
+            <Button 
+              size="lg" 
+              className="bg-gradient-gold hover:opacity-90 text-foreground font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-gold transition-all duration-300 hover:scale-105 hover:shadow-hover border border-primary/20 relative overflow-hidden"
+              onClick={() => window.location.href = '/products'}
+            >
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-primary" />
+              Shop Kits
+            </Button>
+          </div>
           <Button 
             variant="outline" 
             size="lg"
@@ -148,13 +152,13 @@ const Hero = () => {
         
         <div className="mt-12 md:mt-16 px-4">
           <div className="grid grid-cols-3 gap-3 md:gap-8 max-w-xs md:max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
-            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
+            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
               <AnimatedCounter target="500+" label="Products" />
             </div>
-            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
+            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
               <AnimatedCounter target="10K+" label="Families" />
             </div>
-            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
+            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
               <AnimatedCounter target="15+" label="Years" />
             </div>
           </div>
