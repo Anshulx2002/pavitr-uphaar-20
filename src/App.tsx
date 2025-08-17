@@ -15,6 +15,8 @@ import ShippingInfo from "./pages/ShippingInfo";
 import FestivalKits from "./pages/FestivalKits";
 import CategoryPage from "./pages/CategoryPage";
 import Checkout from "./pages/checkout";
+import ThankYou from "./pages/ThankYou";
+import PaymentFailed from "./pages/PaymentFailed";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/festival-kits" element={<FestivalKits />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/payment-failed" element={<PaymentFailed />} />
           <Route path="/products/:category" element={<CategoryPage />} />
           {/* Legacy routes redirect to dynamic routes */}
           <Route path="/incense-agarbatti" element={<CategoryPage />} />
