@@ -442,7 +442,7 @@ const Checkout = () => {
                    </div>
 
                     {/* Pay Now Button */}
-                   <Button
+                    <Button
   onClick={() => startPayment(total)}    // ⬅ use our Razorpay function
   disabled={isSubmitting || isProcessingPayment}
   className="..."
