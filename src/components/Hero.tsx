@@ -130,17 +130,13 @@ const Hero = () => {
         <div className="flex flex-col gap-3 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-2">
           <div className="relative">
             {/* Glitz animation overlay */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/15 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
-              className="bg-gradient-to-b from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-amber-900 font-bold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 h-14 md:h-14 rounded-full shadow-[0_2px_0_#d97706,0_4px_12px_rgba(0,0,0,0.15),0_8px_32px_rgba(245,158,11,0.3)] hover:shadow-[0_2px_0_#d97706,0_6px_16px_rgba(0,0,0,0.2),0_12px_40px_rgba(245,158,11,0.4)] transition-all duration-300 hover:scale-105 border-2 border-amber-300 relative overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 25%, #d97706 50%, #f59e0b 75%, #fbbf24 100%)',
-                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.1), 0 2px 0 #d97706, 0 4px 12px rgba(0,0,0,0.15), 0 8px 32px rgba(245,158,11,0.3)'
-              }}
+              className="bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 h-14 md:h-14 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1),0_1px_0_rgba(255,255,255,0.3)_inset] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15),0_1px_0_rgba(255,255,255,0.4)_inset] transition-all duration-300 hover:scale-[1.02] border border-yellow-400/20 relative overflow-hidden"
               onClick={() => window.location.href = '/products'}
             >
-              <Sparkles className="w-5 md:w-5 h-5 md:h-5 mr-3 md:mr-3 text-amber-800" />
+              <Sparkles className="w-5 md:w-5 h-5 md:h-5 mr-3 md:mr-3 text-yellow-800" />
               Shop Kits
             </Button>
           </div>
