@@ -29,41 +29,6 @@ const AllProductsSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Premium Header Section */}
-        <div className="text-center mb-16 scroll-animate">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/15 via-accent/15 to-primary/15 text-primary px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-primary/30 backdrop-blur-sm">
-            <span className="w-3 h-3 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></span>
-            Complete Sacred Collection
-            <Badge variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
-              22+ Products
-            </Badge>
-          </div>
-          
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight">
-              Our Sacred
-            </span>
-            <br />
-            <span className="text-foreground">Products</span>
-          </h2>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-10">
-            Discover our extensive collection of authentic pooja essentials, carefully curated to bring 
-            divine blessings and spiritual harmony to your sacred practices.
-          </p>
-          
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Badge variant="outline" className="text-sm px-4 py-2 bg-background/60 backdrop-blur-sm border-primary/20">
-              ✨ 22+ Premium Products
-            </Badge>
-            <Badge variant="outline" className="text-sm px-4 py-2 bg-background/60 backdrop-blur-sm border-accent/20">
-              🏆 Certified Authentic
-            </Badge>
-            <Badge variant="outline" className="text-sm px-4 py-2 bg-background/60 backdrop-blur-sm border-secondary/30">
-              🚚 Free Shipping Above ₹999
-            </Badge>
-          </div>
-        </div>
 
         {/* Premium Category Tabs & View Controls */}
         <div className="mb-16">
