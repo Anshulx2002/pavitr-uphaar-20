@@ -20,9 +20,6 @@ const Index = () => {
       <FeaturedProductsSection />
       <InstagramFeed />
       <Footer />
-      
-      {/* Right Side Popup */}
-      <RightSidePopup />
     </div>
   );
 };
