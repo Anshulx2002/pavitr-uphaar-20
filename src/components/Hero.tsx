@@ -133,10 +133,10 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-600 hover:from-amber-500 hover:via-yellow-500 hover:to-amber-700 text-amber-900 font-bold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-[0_8px_32px_rgba(245,158,11,0.4)] hover:shadow-[0_12px_40px_rgba(245,158,11,0.6)] transition-all duration-300 hover:scale-105 border border-amber-500/30 relative overflow-hidden"
+              className="bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-200 hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-300 text-yellow-800 font-bold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-[0_8px_32px_rgba(254,240,138,0.5)] hover:shadow-[0_12px_40px_rgba(254,240,138,0.7)] transition-all duration-300 hover:scale-105 border border-yellow-300/50 relative overflow-hidden"
               onClick={() => window.location.href = '/products'}
             >
-              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-amber-800" />
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-yellow-700" />
               Shop Kits
             </Button>
           </div>
