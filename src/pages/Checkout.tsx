@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,16 +9,24 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
-import { ArrowLeft, ShoppingCart, Package, Truck } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet, Landmark, Shield, Tag } from 'lucide-react';
 
 const checkoutSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Phone number must be at least 10 digits'),
+  email: z.string().email('Please enter a valid email address').refine((email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }, 'Please enter a valid email address'),
+  phone: z.string().min(10, 'Phone number must be at least 10 digits').refine((phone) => {
+    const phoneRegex = /^[6-9]\d{9}$/;
+    return phoneRegex.test(phone.replace(/\D/g, ''));
+  }, 'Please enter a valid 10-digit Indian mobile number'),
   address: z.string().min(10, 'Please enter your complete address'),
   city: z.string().min(2, 'City is required'),
   state: z.string().min(2, 'State is required'),
-  pincode: z.string().min(6, 'Pincode must be 6 digits').max(6, 'Pincode must be 6 digits'),
+  pincode: z.string().min(6, 'Pincode must be 6 digits').max(6, 'Pincode must be 6 digits').refine((pin) => {
+    return /^\d{6}$/.test(pin);
+  }, 'Pincode must be exactly 6 digits'),
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -26,13 +34,17 @@ type CheckoutFormData = z.infer<typeof checkoutSchema>;
 const Checkout = () => {
   const navigate = useNavigate();
   const { cartItems, getCartTotal, getCartItemsCount } = useCart();
+  const [couponCode, setCouponCode] = useState('');
+  const [discount, setDiscount] = useState(0);
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    watch,
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
+    mode: 'onChange', // Enable real-time validation
   });
 
   // Redirect if cart is empty
@@ -44,7 +56,24 @@ const Checkout = () => {
 
   const subtotal = getCartTotal();
   const shipping = subtotal >= 500 ? 0 : 50; // Free shipping on orders above ₹500
-  const total = subtotal + shipping;
+  const discountAmount = (subtotal * discount) / 100;
+  const total = subtotal + shipping - discountAmount;
+
+  const applyCoupon = () => {
+    // Simple coupon logic - in real app, this would be an API call
+    const validCoupons: Record<string, number> = {
+      'WELCOME10': 10,
+      'FESTIVAL15': 15,
+      'SAVE20': 20,
+    };
+    
+    if (validCoupons[couponCode.toUpperCase()]) {
+      setDiscount(validCoupons[couponCode.toUpperCase()]);
+    } else {
+      setDiscount(0);
+      alert('Invalid coupon code');
+    }
+  };
 
   const onSubmit = async (data: CheckoutFormData) => {
     // Here we'll later add the Razorpay integration
@@ -59,28 +88,29 @@ const Checkout = () => {
 
   return (
     <div className="min-h-screen bg-gradient-warm">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4 sm:py-8 max-w-7xl">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6 sm:mb-8">
           <Button
             variant="outline"
             size="sm"
             onClick={() => navigate('/')}
-            className="gap-2"
+            className="gap-2 order-2 sm:order-1"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Shop
+            <span className="hidden sm:inline">Back to Shop</span>
+            <span className="sm:hidden">Back</span>
           </Button>
-          <h1 className="text-3xl font-bold text-foreground">Checkout</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground order-1 sm:order-2">Checkout</h1>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Column - Form */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Customer Details */}
             <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
                   <Package className="h-5 w-5 text-primary" />
                   Customer Details
                 </CardTitle>
@@ -99,39 +129,46 @@ const Checkout = () => {
                   )}
                 </div>
 
-                <div>
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    {...register('email')}
-                    placeholder="Enter your email"
-                    className={errors.email ? 'border-destructive' : ''}
-                  />
-                  {errors.email && (
-                    <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
-                  )}
-                </div>
+                 <div>
+                   <Label htmlFor="email">Email Address</Label>
+                   <Input
+                     id="email"
+                     type="email"
+                     {...register('email')}
+                     placeholder="Enter your email"
+                     className={`transition-all duration-200 ${errors.email ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                   />
+                   {errors.email && (
+                     <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.email.message}</p>
+                   )}
+                   {watch('email') && !errors.email && (
+                     <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid email</p>
+                   )}
+                 </div>
 
-                <div>
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    {...register('phone')}
-                    placeholder="Enter your phone number"
-                    className={errors.phone ? 'border-destructive' : ''}
-                  />
-                  {errors.phone && (
-                    <p className="text-sm text-destructive mt-1">{errors.phone.message}</p>
-                  )}
-                </div>
+                 <div>
+                   <Label htmlFor="phone">Phone Number</Label>
+                   <Input
+                     id="phone"
+                     {...register('phone')}
+                     placeholder="Enter your 10-digit mobile number"
+                     className={`transition-all duration-200 ${errors.phone ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     maxLength={10}
+                   />
+                   {errors.phone && (
+                     <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.phone.message}</p>
+                   )}
+                   {watch('phone') && !errors.phone && watch('phone').length === 10 && (
+                     <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid phone number</p>
+                   )}
+                 </div>
               </CardContent>
             </Card>
 
             {/* Shipping Address */}
             <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
                   <Truck className="h-5 w-5 text-primary" />
                   Shipping Address
                 </CardTitle>
@@ -150,125 +187,208 @@ const Checkout = () => {
                   )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="city">City</Label>
-                    <Input
-                      id="city"
-                      {...register('city')}
-                      placeholder="City"
-                      className={errors.city ? 'border-destructive' : ''}
-                    />
-                    {errors.city && (
-                      <p className="text-sm text-destructive mt-1">{errors.city.message}</p>
-                    )}
-                  </div>
+                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                   <div>
+                     <Label htmlFor="city">City</Label>
+                     <Input
+                       id="city"
+                       {...register('city')}
+                       placeholder="City"
+                       className={`transition-all duration-200 ${errors.city ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     />
+                     {errors.city && (
+                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.city.message}</p>
+                     )}
+                   </div>
 
-                  <div>
-                    <Label htmlFor="state">State</Label>
-                    <Input
-                      id="state"
-                      {...register('state')}
-                      placeholder="State"
-                      className={errors.state ? 'border-destructive' : ''}
-                    />
-                    {errors.state && (
-                      <p className="text-sm text-destructive mt-1">{errors.state.message}</p>
-                    )}
-                  </div>
-                </div>
+                   <div>
+                     <Label htmlFor="state">State</Label>
+                     <Input
+                       id="state"
+                       {...register('state')}
+                       placeholder="State"
+                       className={`transition-all duration-200 ${errors.state ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     />
+                     {errors.state && (
+                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.state.message}</p>
+                     )}
+                   </div>
+                 </div>
 
                 <div>
-                  <Label htmlFor="pincode">Pincode</Label>
-                  <Input
-                    id="pincode"
-                    {...register('pincode')}
-                    placeholder="6-digit pincode"
-                    className={errors.pincode ? 'border-destructive' : ''}
-                  />
-                  {errors.pincode && (
-                    <p className="text-sm text-destructive mt-1">{errors.pincode.message}</p>
-                  )}
-                </div>
+                   <Label htmlFor="pincode">Pincode</Label>
+                   <Input
+                     id="pincode"
+                     {...register('pincode')}
+                     placeholder="6-digit pincode"
+                     className={`transition-all duration-200 ${errors.pincode ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                     maxLength={6}
+                   />
+                   {errors.pincode && (
+                     <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
+                   )}
+                   {watch('pincode') && !errors.pincode && watch('pincode').length === 6 && (
+                     <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
+                   )}
+                 </div>
+                 
+                 {/* Delivery Estimate */}
+                 <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
+                   <p className="text-sm text-muted-foreground flex items-center gap-2">
+                     <Truck className="h-4 w-4 text-primary" />
+                     Estimated delivery in 2–3 business days
+                   </p>
+                 </div>
               </CardContent>
             </Card>
           </div>
 
           {/* Right Column - Order Review */}
-          <div className="space-y-6">
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="shadow-card lg:sticky lg:top-4">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
                   <ShoppingCart className="h-5 w-5 text-primary" />
                   Order Review ({getCartItemsCount()} items)
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {/* Cart Items */}
-                <div className="space-y-3 max-h-96 overflow-y-auto">
-                  {cartItems.map((item) => (
-                    <div key={item.id} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-16 h-16 object-cover rounded-md"
-                      />
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-medium text-sm text-card-foreground truncate">
-                          {item.name}
-                        </h4>
-                        <p className="text-xs text-muted-foreground">
-                          Qty: {item.quantity} × ₹{item.price}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-semibold text-card-foreground">
-                          ₹{(item.price * item.quantity).toFixed(2)}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                 {/* Cart Items */}
+                 <div className="space-y-3 max-h-80 sm:max-h-96 overflow-y-auto">
+                   {cartItems.map((item) => (
+                     <div key={item.id} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                       <img
+                         src={item.image}
+                         alt={item.name}
+                         className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-md flex-shrink-0"
+                       />
+                       <div className="flex-1 min-w-0">
+                         <h4 className="font-medium text-sm text-card-foreground truncate">
+                           {item.name}
+                         </h4>
+                         <p className="text-xs text-muted-foreground">
+                           Qty: {item.quantity} × ₹{item.price}
+                         </p>
+                       </div>
+                       <div className="text-right flex-shrink-0">
+                         <p className="font-semibold text-sm text-card-foreground">
+                           ₹{(item.price * item.quantity).toFixed(2)}
+                         </p>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
 
-                <Separator />
+                 <Separator />
 
-                {/* Order Summary */}
-                <div className="space-y-3">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Subtotal</span>
-                    <span className="font-medium">₹{subtotal.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Shipping</span>
-                    <span className="font-medium">
-                      {shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`}
-                    </span>
-                  </div>
-                  {shipping === 0 && (
-                    <p className="text-xs text-primary">
-                      🎉 Free shipping on orders above ₹500
-                    </p>
-                  )}
-                  <Separator />
-                  <div className="flex justify-between text-lg font-bold">
-                    <span>Total</span>
-                    <span className="text-primary">₹{total.toFixed(2)}</span>
-                  </div>
-                </div>
+                 {/* Coupon Code Section */}
+                 <div className="space-y-3">
+                   <div className="flex items-center gap-2">
+                     <Tag className="h-4 w-4 text-primary" />
+                     <Label htmlFor="coupon" className="text-sm font-medium">Apply Coupon</Label>
+                   </div>
+                   <div className="flex gap-2">
+                     <Input
+                       id="coupon"
+                       value={couponCode}
+                       onChange={(e) => setCouponCode(e.target.value)}
+                       placeholder="Enter coupon code"
+                       className="flex-1 text-sm"
+                     />
+                     <Button 
+                       onClick={applyCoupon}
+                       variant="outline" 
+                       size="sm"
+                       className="px-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                     >
+                       Apply
+                     </Button>
+                   </div>
+                   {discount > 0 && (
+                     <p className="text-xs text-primary animate-fade-in">
+                       ✓ Coupon applied! {discount}% discount
+                     </p>
+                   )}
+                 </div>
 
-                {/* Pay Now Button */}
-                <Button
-                  onClick={handleSubmit(onSubmit)}
-                  disabled={isSubmitting}
-                  className="w-full h-12 text-lg bg-gradient-saffron hover:opacity-90 transition-opacity"
-                >
-                  {isSubmitting ? 'Processing...' : `Pay Now ₹${total.toFixed(2)}`}
-                </Button>
+                 <Separator />
 
-                <div className="text-xs text-center text-muted-foreground space-y-1">
-                  <p>🔒 Your payment information is secure</p>
-                  <p>Powered by Razorpay</p>
-                </div>
+                 {/* Order Summary */}
+                 <div className="space-y-3">
+                   <div className="flex justify-between text-sm">
+                     <span className="text-muted-foreground">Subtotal</span>
+                     <span className="font-medium">₹{subtotal.toFixed(2)}</span>
+                   </div>
+                   {discount > 0 && (
+                     <div className="flex justify-between text-sm">
+                       <span className="text-muted-foreground">Discount ({discount}%)</span>
+                       <span className="font-medium text-primary">-₹{discountAmount.toFixed(2)}</span>
+                     </div>
+                   )}
+                   <div className="flex justify-between text-sm">
+                     <span className="text-muted-foreground">Shipping</span>
+                     <span className="font-medium">
+                       {shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`}
+                     </span>
+                   </div>
+                   {shipping === 0 && (
+                     <p className="text-xs text-primary">
+                       🎉 Free shipping on orders above ₹500
+                     </p>
+                   )}
+                   <Separator />
+                   <div className="flex justify-between text-xl font-bold">
+                     <span>Total</span>
+                     <span className="text-primary text-2xl">₹{total.toFixed(2)}</span>
+                   </div>
+                 </div>
+
+                 {/* Payment Methods Trust */}
+                 <div className="space-y-3">
+                   <div className="text-center">
+                     <p className="text-xs text-muted-foreground mb-2">We accept:</p>
+                     <div className="flex justify-center items-center gap-3 mb-4">
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <Smartphone className="h-3 w-3 text-primary" />
+                         <span>UPI</span>
+                       </div>
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <CreditCard className="h-3 w-3 text-primary" />
+                         <span>Cards</span>
+                       </div>
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <Landmark className="h-3 w-3 text-primary" />
+                         <span>Net Banking</span>
+                       </div>
+                       <div className="flex items-center gap-1 px-2 py-1 bg-muted/50 rounded text-xs">
+                         <Wallet className="h-3 w-3 text-primary" />
+                         <span>Wallets</span>
+                       </div>
+                     </div>
+                   </div>
+
+                   {/* Pay Now Button */}
+                   <Button
+                     onClick={handleSubmit(onSubmit)}
+                     disabled={isSubmitting}
+                     className="w-full h-14 text-lg font-semibold bg-gradient-saffron hover:opacity-90 transition-all duration-300 hover:shadow-gold text-primary-foreground"
+                   >
+                     {isSubmitting ? (
+                       <div className="flex items-center gap-2">
+                         <div className="animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent"></div>
+                         Processing...
+                       </div>
+                     ) : (
+                       `Pay Now ₹${total.toFixed(2)}`
+                     )}
+                   </Button>
+
+                   {/* Security Badge */}
+                   <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                     <Shield className="h-4 w-4 text-primary" />
+                     <span>100% Secure Payments powered by Razorpay</span>
+                   </div>
+                 </div>
               </CardContent>
             </Card>
           </div>
