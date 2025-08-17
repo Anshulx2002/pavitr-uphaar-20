@@ -76,32 +76,105 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20"></div>
         
-        {/* Traditional Indian Mandala Pattern */}
-        <div className="absolute inset-0 opacity-10" style={{
+        {/* Complex Traditional Indian Mandala Patterns */}
+        <div className="absolute inset-0 opacity-15" style={{
           backgroundImage: `
-            radial-gradient(circle at 25% 25%, hsl(var(--gold)) 2px, transparent 2px),
-            radial-gradient(circle at 75% 75%, hsl(var(--primary)) 1px, transparent 1px),
-            radial-gradient(circle at 50% 50%, hsl(var(--gold)) 1.5px, transparent 1.5px)
+            radial-gradient(circle at 25% 25%, hsl(var(--gold)) 3px, transparent 3px),
+            radial-gradient(circle at 75% 75%, hsl(var(--primary)) 2px, transparent 2px),
+            radial-gradient(circle at 50% 50%, hsl(var(--gold)) 2.5px, transparent 2.5px),
+            radial-gradient(circle at 12.5% 87.5%, hsl(var(--accent)) 1.5px, transparent 1.5px),
+            radial-gradient(circle at 87.5% 12.5%, hsl(var(--primary)) 1.5px, transparent 1.5px)
           `,
-          backgroundSize: '80px 80px, 60px 60px, 120px 120px'
+          backgroundSize: '60px 60px, 40px 40px, 80px 80px, 100px 100px, 120px 120px'
         }}></div>
         
-        {/* Traditional Golden Floating Elements */}
-        <div className="absolute top-32 right-20 opacity-30 animate-pulse">
-          <Sparkles className="w-6 h-6 text-primary drop-shadow-glow" />
+        {/* Intricate Paisley Pattern Overlay */}
+        <div className="absolute inset-0 opacity-8" style={{
+          backgroundImage: `
+            conic-gradient(from 45deg at 20% 20%, hsl(var(--gold)) 0deg, transparent 60deg, hsl(var(--primary)) 120deg, transparent 180deg),
+            conic-gradient(from 135deg at 80% 80%, hsl(var(--accent)) 0deg, transparent 90deg, hsl(var(--gold)) 180deg, transparent 270deg)
+          `,
+          backgroundSize: '150px 150px, 200px 200px'
+        }}></div>
+        
+        {/* Traditional Lotus Petal Patterns */}
+        <div className="absolute inset-0 opacity-12" style={{
+          backgroundImage: `
+            repeating-conic-gradient(from 0deg at 33% 33%, 
+              hsl(var(--primary)) 0deg 30deg, 
+              transparent 30deg 60deg,
+              hsl(var(--gold)) 60deg 90deg,
+              transparent 90deg 120deg
+            ),
+            repeating-conic-gradient(from 45deg at 67% 67%, 
+              hsl(var(--accent)) 0deg 45deg, 
+              transparent 45deg 90deg,
+              hsl(var(--primary)) 90deg 135deg,
+              transparent 135deg 180deg
+            )
+          `,
+          backgroundSize: '300px 300px, 250px 250px'
+        }}></div>
+        
+        {/* Sacred Geometry - Om Symbol Inspired */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 opacity-5" style={{
+          background: `radial-gradient(ellipse 60% 40% at 50% 50%, hsl(var(--gold)) 20%, transparent 70%)`,
+          borderRadius: '60% 40% 60% 40%',
+          transform: 'rotate(45deg)'
+        }}></div>
+        <div className="absolute top-3/4 right-1/4 w-40 h-40 opacity-5" style={{
+          background: `radial-gradient(ellipse 50% 70% at 40% 60%, hsl(var(--primary)) 15%, transparent 60%)`,
+          borderRadius: '50% 70% 50% 70%',
+          transform: 'rotate(-30deg)'
+        }}></div>
+        
+        {/* Traditional Golden Floating Elements with More Variety */}
+        <div className="absolute top-20 right-16 opacity-25 animate-pulse">
+          <Sparkles className="w-8 h-8 text-primary drop-shadow-glow" />
         </div>
-        <div className="absolute bottom-40 left-24 opacity-25 animate-pulse delay-1000">
-          <Star className="w-5 h-5 text-primary drop-shadow-glow" />
+        <div className="absolute bottom-32 left-20 opacity-20 animate-pulse delay-1000">
+          <Star className="w-6 h-6 text-gold drop-shadow-glow" />
         </div>
-        <div className="absolute top-48 left-1/4 opacity-20 animate-pulse delay-500">
-          <Heart className="w-4 h-4 text-primary drop-shadow-glow" />
+        <div className="absolute top-40 left-1/5 opacity-15 animate-pulse delay-500">
+          <Heart className="w-5 h-5 text-accent drop-shadow-glow" />
+        </div>
+        <div className="absolute top-2/3 right-1/3 opacity-20 animate-pulse delay-700">
+          <Sparkles className="w-4 h-4 text-gold" />
+        </div>
+        <div className="absolute bottom-1/4 right-20 opacity-18 animate-pulse delay-1200">
+          <Star className="w-7 h-7 text-primary drop-shadow-glow" />
+        </div>
+        <div className="absolute top-1/3 left-1/3 opacity-12 animate-pulse delay-300">
+          <Heart className="w-6 h-6 text-gold" />
         </div>
         
-        {/* Traditional Decorative Corners */}
-        <div className="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-primary/30 rounded-tl-lg"></div>
-        <div className="absolute top-8 right-8 w-16 h-16 border-t-2 border-r-2 border-primary/30 rounded-tr-lg"></div>
-        <div className="absolute bottom-8 left-8 w-16 h-16 border-b-2 border-l-2 border-primary/30 rounded-bl-lg"></div>
-        <div className="absolute bottom-8 right-8 w-16 h-16 border-b-2 border-r-2 border-primary/30 rounded-br-lg"></div>
+        {/* Enhanced Traditional Decorative Corners with Inner Details */}
+        <div className="absolute top-6 left-6 w-20 h-20">
+          <div className="w-full h-full border-t-3 border-l-3 border-primary/40 rounded-tl-2xl"></div>
+          <div className="absolute top-2 left-2 w-12 h-12 border-t-2 border-l-2 border-gold/30 rounded-tl-xl"></div>
+          <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/60 rounded-tl-lg"></div>
+        </div>
+        <div className="absolute top-6 right-6 w-20 h-20">
+          <div className="w-full h-full border-t-3 border-r-3 border-primary/40 rounded-tr-2xl"></div>
+          <div className="absolute top-2 right-2 w-12 h-12 border-t-2 border-r-2 border-gold/30 rounded-tr-xl"></div>
+          <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/60 rounded-tr-lg"></div>
+        </div>
+        <div className="absolute bottom-6 left-6 w-20 h-20">
+          <div className="w-full h-full border-b-3 border-l-3 border-primary/40 rounded-bl-2xl"></div>
+          <div className="absolute bottom-2 left-2 w-12 h-12 border-b-2 border-l-2 border-gold/30 rounded-bl-xl"></div>
+          <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/60 rounded-bl-lg"></div>
+        </div>
+        <div className="absolute bottom-6 right-6 w-20 h-20">
+          <div className="w-full h-full border-b-3 border-r-3 border-primary/40 rounded-br-2xl"></div>
+          <div className="absolute bottom-2 right-2 w-12 h-12 border-b-2 border-r-2 border-gold/30 rounded-br-xl"></div>
+          <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/60 rounded-br-lg"></div>
+        </div>
+        
+        {/* Traditional Indian Side Borders */}
+        <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-primary/30 to-transparent"></div>
+        <div className="absolute left-1 top-1/3 bottom-1/3 w-0.5 bg-gradient-to-b from-transparent via-gold/40 to-transparent"></div>
+        <div className="absolute right-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-primary/30 to-transparent"></div>
+        <div className="absolute right-1 top-1/3 bottom-1/3 w-0.5 bg-gradient-to-b from-transparent via-gold/40 to-transparent"></div>
       </div>
 
       {/* Content with Perfect Readability */}
