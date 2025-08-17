@@ -13,8 +13,70 @@ import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
-const RZP_PUBLIC_KEY = "rzp_test_9jQQoWjkGl4cQu"; // Test key for development
+const RZP_PUBLIC_KEY = "rzp_live_R6RSxqVRmxuZdA"; // Replace with actual key
+// --- ADD THIS BLOCK IN checkout.tsx ---
 
+// Typescript helper so window.Razorpay is known
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
+// Ensure Razorpay script is loaded (in case your template didn’t include it)
+async function loadRazorpay(): Promise<void> {
+  if (window.Razorpay) return;
+  await new Promise<void>((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = "https://checkout.razorpay.com/v1/checkout.js";
+    s.onload = () => resolve();
+    s.onerror = () => reject(new Error("Failed to load Razorpay"));
+    document.body.appendChild(s);
+  });
+}
+
+async function startPayment(amountRupees: number) {
+  try {
+    await loadRazorpay();
+
+    // 1) Create order on backend (send RUPEES; backend converts to paise)
+    const res = await fetch(CREATE_ORDER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount_rupees: amountRupees })
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert("Create order failed: " + (data?.error?.description || JSON.stringify(data)));
+      return;
+    }
+
+    // 2) Open Razorpay checkout
+    const options = {
+      key: data.key_id || RZP_PUBLIC_KEY, // either from backend or constant
+      amount: data.amount,                // paise (echoed from backend)
+      currency: data.currency || "INR",
+      name: "Pavitra Uphaar",
+      description: "Order payment",
+      order_id: data.order_id,
+      handler: function (response: any) {
+        alert(`Payment Success: ${response.razorpay_payment_id}`);
+        // Optional: call a /verify endpoint here to verify signature
+      },
+      theme: { color: "#F37254" }
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.on("payment.failed", (err: any) => {
+      console.error("Payment failed:", err?.error);
+      alert("Payment failed: " + (err?.error?.description || "Unknown error"));
+    });
+    rzp.open();
+  } catch (e: any) {
+    console.error(e);
+    alert("Something went wrong starting payment: " + e.message);
+  }
 const checkoutSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address').refine((email) => {
