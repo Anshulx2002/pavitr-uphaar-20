@@ -45,16 +45,16 @@ const Hero = () => {
 
     return (
       <div className="text-center">
-        <div className="text-sm md:text-xl lg:text-3xl font-bold text-foreground">
+        <div className="text-lg md:text-xl lg:text-3xl font-bold text-foreground">
           {count}{suffix}
         </div>
-        <div className="text-xs md:text-sm lg:text-base text-muted-foreground font-medium">{label}</div>
+        <div className="text-sm md:text-sm lg:text-base text-muted-foreground font-medium">{label}</div>
       </div>
     );
   };
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-[95vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
       {/* Traditional Indian Border - Top */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
@@ -105,17 +105,17 @@ const Hero = () => {
       </div>
 
       {/* Content with Perfect Readability */}
-      <div className={`relative z-10 text-center max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-12 lg:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`relative z-10 text-center max-w-5xl mx-auto px-3 py-6 md:px-6 md:py-12 lg:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Traditional Gold Ornament Above Title */}
-        <div className="flex justify-center mb-4 md:mb-6">
+        <div className="flex justify-center mb-3 md:mb-6">
           <div className="flex items-center gap-2 md:gap-3">
-            <div className="w-6 md:w-8 h-0.5 bg-gradient-gold"></div>
-            <Sparkles className="w-4 md:w-6 h-4 md:h-6 text-primary animate-pulse" />
-            <div className="w-6 md:w-8 h-0.5 bg-gradient-gold"></div>
+            <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
+            <Sparkles className="w-5 md:w-6 h-5 md:h-6 text-primary animate-pulse" />
+            <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
           </div>
         </div>
         
-        <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 lg:mb-8 leading-tight px-2 pb-2">
+        <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-3 md:mb-6 lg:mb-8 leading-tight px-1 pb-2">
           <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
           <br />
           <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
@@ -123,42 +123,42 @@ const Hero = () => {
           </span>
         </h1>
         
-        <p className="text-sm md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
+        <p className="text-lg md:text-lg lg:text-xl text-muted-foreground mb-4 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-2">
           Everything you need. Beautifully packed. Ready to worship.
         </p>
         
-        <div className="flex flex-col gap-3 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
+        <div className="flex flex-col gap-3 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-2">
           <div className="relative">
             {/* Glitz animation overlay */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
-              className="bg-yellow-300 hover:bg-yellow-400 text-yellow-900 font-bold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.15),0_8px_40px_rgba(253,224,71,0.4),inset_0_1px_0_rgba(255,255,255,0.5)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.2),0_12px_50px_rgba(253,224,71,0.6),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-300 hover:scale-105 border-t border-yellow-200 border-b border-yellow-500 relative overflow-hidden"
+              className="bg-yellow-300 hover:bg-yellow-400 text-yellow-900 font-bold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 h-14 md:h-14 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.15),0_8px_40px_rgba(253,224,71,0.4),inset_0_1px_0_rgba(255,255,255,0.5)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.2),0_12px_50px_rgba(253,224,71,0.6),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-300 hover:scale-105 border-t border-yellow-200 border-b border-yellow-500 relative overflow-hidden"
               onClick={() => window.location.href = '/products'}
             >
-              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-yellow-800" />
+              <Sparkles className="w-5 md:w-5 h-5 md:h-5 mr-3 md:mr-3 text-yellow-800" />
               Shop Kits
             </Button>
           </div>
           <Button 
             variant="outline" 
             size="lg"
-            className="border-2 border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 font-medium text-sm md:text-lg px-6 md:px-8 py-3 md:py-6 h-10 md:h-14 rounded-full transition-all duration-300 hover:scale-105 shadow-card w-full max-w-xs mx-auto"
+            className="border-2 border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 font-medium text-base md:text-lg px-8 md:px-8 py-4 md:py-6 h-12 md:h-14 rounded-full transition-all duration-300 hover:scale-105 shadow-card w-full max-w-xs mx-auto"
             onClick={() => window.location.href = '/about'}
           >
             Explore Our Heritage
           </Button>
         </div>
         
-        <div className="mt-12 md:mt-16 px-4">
-          <div className="grid grid-cols-3 gap-3 md:gap-8 max-w-xs md:max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
-            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
+        <div className="mt-8 md:mt-16 px-2">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-sm md:max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
+            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
               <AnimatedCounter target="500+" label="Products" />
             </div>
-            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
+            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
               <AnimatedCounter target="10K+" label="Families" />
             </div>
-            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
+            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
               <AnimatedCounter target="15+" label="Years" />
             </div>
           </div>
