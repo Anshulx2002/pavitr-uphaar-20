@@ -441,12 +441,12 @@ const Checkout = () => {
                      </div>
                    </div>
 
-                    {/* Pay Now Button */}
-                    <Button
-  onClick={() => startPayment(total)}    // ⬅ use our Razorpay function
-  disabled={isSubmitting || isProcessingPayment}
-  className="..."
->
+                     {/* Pay Now Button */}
+                     <Button
+                       onClick={handleSubmit(onSubmit)}
+                       disabled={isSubmitting || isProcessingPayment}
+                       className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-primary/30"
+                     >
                       {(isSubmitting || isProcessingPayment) ? (
                         <div className="flex items-center gap-2">
                           <div className="animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent"></div>
