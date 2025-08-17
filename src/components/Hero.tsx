@@ -175,12 +175,13 @@ const Hero = () => {
         
         {/* Stats tiles */}
         <div className="mt-12 md:mt-16 px-4">
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base text-muted-foreground font-medium animate-[fade-in_1s_ease-out_0.8s_both]">
-            <span>20+ Products</span>
-            <span className="text-primary/40">•</span>
-            <span>200+ Families Served</span>
-            <span className="text-primary/40">•</span>
-            <span>15+ Years Experience</span>
+          <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
+            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
+              <AnimatedCounter target="20+" label="Products" />
+            </div>
+            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
+              <AnimatedCounter target="200+" label="Families Served" />
+            </div>
           </div>
         </div>
       </div>
