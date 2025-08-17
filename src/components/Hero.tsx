@@ -71,10 +71,10 @@ const Hero = () => {
           }}
         />
         
-        {/* Balanced Overlays for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/85"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20"></div>
+        {/* Balanced Overlays for Text Readability - 50-55% opacity */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/55 to-background/75"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-background/15"></div>
         
         {/* Traditional Indian Mandala Pattern */}
         <div className="absolute inset-0 opacity-10" style={{
@@ -115,7 +115,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-6 lg:mb-8 leading-relaxed px-2 pb-2">
+        <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-6 lg:mb-8 leading-relaxed px-2 pb-2" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
           <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
           <br />
           <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
@@ -133,8 +133,9 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/15 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
-              className="bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 h-14 md:h-14 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1),0_1px_0_rgba(255,255,255,0.3)_inset] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15),0_1px_0_rgba(255,255,255,0.4)_inset] transition-all duration-300 hover:scale-[1.02] border border-yellow-400/20 relative overflow-hidden"
-              onClick={() => window.location.href = '/products'}
+              className="bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1),0_1px_0_rgba(255,255,255,0.3)_inset] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15),0_1px_0_rgba(255,255,255,0.4)_inset] transition-all duration-300 hover:scale-[1.02] border border-yellow-400/20 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background"
+              style={{ height: 'clamp(52px, 7vw, 56px)' }}
+              onClick={() => window.location.href = '/festival-kits'}
             >
               <Sparkles className="w-5 md:w-5 h-5 md:h-5 mr-3 md:mr-3 text-yellow-800" />
               Shop Kits
@@ -144,13 +145,13 @@ const Hero = () => {
           {/* Browse all products link */}
           <a 
             href="/products/all" 
-            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
+            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1"
           >
             Browse all products
           </a>
           
-          {/* Trust bar */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium mt-6">
+          {/* Trust bar - 16-20px below link */}
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium mt-5">
             <div className="flex items-center gap-1.5">
               <Shield className="w-3 h-3 md:w-4 md:h-4" />
               <span>Secure Checkout</span>
