@@ -55,6 +55,10 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[80vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
+      {/* Traditional Indian Border - Top */}
+      <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+      <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
+      
       {/* Sophisticated Background with Visible Diyas */}
       <div className="absolute inset-0 z-0">
         {/* Background Image with Visible Diyas */}
@@ -72,27 +76,45 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20"></div>
         
-        {/* Subtle Luxury Pattern */}
-        <div className="absolute inset-0 opacity-8" style={{
-          backgroundImage: `radial-gradient(circle at 20% 50%, hsl(var(--primary)) 1px, transparent 1px),
-                           radial-gradient(circle at 80% 50%, hsl(var(--accent)) 1px, transparent 1px)`,
-          backgroundSize: '100px 100px, 60px 60px'
+        {/* Traditional Indian Mandala Pattern */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 25%, hsl(var(--gold)) 2px, transparent 2px),
+            radial-gradient(circle at 75% 75%, hsl(var(--primary)) 1px, transparent 1px),
+            radial-gradient(circle at 50% 50%, hsl(var(--gold)) 1.5px, transparent 1.5px)
+          `,
+          backgroundSize: '80px 80px, 60px 60px, 120px 120px'
         }}></div>
         
-        {/* Minimal Floating Elements - Very Subtle */}
-        <div className="absolute top-32 right-20 opacity-20">
-          <Sparkles className="w-4 h-4 text-primary animate-pulse" />
+        {/* Traditional Golden Floating Elements */}
+        <div className="absolute top-32 right-20 opacity-30 animate-pulse">
+          <Sparkles className="w-6 h-6 text-primary drop-shadow-glow" />
         </div>
-        <div className="absolute bottom-40 left-24 opacity-15">
-          <Star className="w-3 h-3 text-accent animate-pulse delay-1000" />
+        <div className="absolute bottom-40 left-24 opacity-25 animate-pulse delay-1000">
+          <Star className="w-5 h-5 text-primary drop-shadow-glow" />
         </div>
-        <div className="absolute top-48 left-1/4 opacity-10">
-          <Heart className="w-3 h-3 text-primary animate-pulse delay-500" />
+        <div className="absolute top-48 left-1/4 opacity-20 animate-pulse delay-500">
+          <Heart className="w-4 h-4 text-primary drop-shadow-glow" />
         </div>
+        
+        {/* Traditional Decorative Corners */}
+        <div className="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-primary/30 rounded-tl-lg"></div>
+        <div className="absolute top-8 right-8 w-16 h-16 border-t-2 border-r-2 border-primary/30 rounded-tr-lg"></div>
+        <div className="absolute bottom-8 left-8 w-16 h-16 border-b-2 border-l-2 border-primary/30 rounded-bl-lg"></div>
+        <div className="absolute bottom-8 right-8 w-16 h-16 border-b-2 border-r-2 border-primary/30 rounded-br-lg"></div>
       </div>
 
       {/* Content with Perfect Readability */}
       <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 py-12 md:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* Traditional Gold Ornament Above Title */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-0.5 bg-gradient-gold"></div>
+            <Sparkles className="w-6 h-6 text-primary animate-pulse" />
+            <div className="w-8 h-0.5 bg-gradient-gold"></div>
+          </div>
+        </div>
+        
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight">
           <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
           <br />
@@ -108,16 +130,16 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-[fade-in_1s_ease-out_0.6s_both]">
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold text-lg px-10 py-6 h-14 rounded-full shadow-gold transition-all duration-300 hover:scale-105 hover:shadow-hover"
+            className="bg-gradient-gold hover:opacity-90 text-foreground font-semibold text-lg px-10 py-6 h-14 rounded-full shadow-gold transition-all duration-300 hover:scale-105 hover:shadow-hover border border-primary/20"
             onClick={() => window.location.href = '/products'}
           >
-            <Sparkles className="w-5 h-5 mr-3" />
+            <Sparkles className="w-5 h-5 mr-3 text-primary" />
             Shop Kits
           </Button>
           <Button 
             variant="outline" 
             size="lg"
-            className="border-2 border-primary/30 text-foreground hover:bg-primary/5 hover:border-primary/50 font-medium text-lg px-8 py-6 h-14 rounded-full transition-all duration-300 hover:scale-105"
+            className="border-2 border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 font-medium text-lg px-8 py-6 h-14 rounded-full transition-all duration-300 hover:scale-105 shadow-card"
             onClick={() => window.location.href = '/about'}
           >
             Explore Our Heritage
@@ -125,20 +147,30 @@ const Hero = () => {
         </div>
         
         <div className="mt-12 md:mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
-          <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/30 shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105">
+          <div className="p-6 rounded-2xl bg-card/90 backdrop-blur-sm border-2 border-primary/20 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
             <AnimatedCounter target="500+" label="Products" />
           </div>
-          <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/30 shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105">
+          <div className="p-6 rounded-2xl bg-card/90 backdrop-blur-sm border-2 border-primary/20 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
             <AnimatedCounter target="10K+" label="Families" />
           </div>
-          <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/30 shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105">
+          <div className="p-6 rounded-2xl bg-card/90 backdrop-blur-sm border-2 border-primary/20 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
             <AnimatedCounter target="15+" label="Years" />
           </div>
         </div>
       </div>
       
-      {/* Clean Decorative Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+      {/* Traditional Indian Border - Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-gold"></div>
+      <div className="absolute bottom-1 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+      
+      {/* Traditional Corner Flourishes */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+          <div className="w-2 h-2 bg-accent rounded-full animate-pulse delay-300"></div>
+          <div className="w-3 h-3 bg-primary rounded-full animate-pulse delay-600"></div>
+        </div>
+      </div>
     </section>
   );
 };
