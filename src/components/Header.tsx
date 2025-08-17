@@ -2,6 +2,7 @@ import { ShoppingCart, Phone, Menu, ChevronDown, Sparkles, Star } from "lucide-r
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import CartDrawer from "./CartDrawer";
 import { useCart } from "@/contexts/CartContext";
@@ -102,6 +103,11 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-2">
+              <Link to="/checkout">
+                <Button variant="default" size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  Go to Checkout
+                </Button>
+              </Link>
               <Button variant="ghost" size="icon">
                 <Phone className="h-5 w-5" />
               </Button>
