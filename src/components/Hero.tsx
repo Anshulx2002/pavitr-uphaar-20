@@ -55,24 +55,25 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[80vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
-      {/* Sophisticated Background with Subtle Elements */}
+      {/* Sophisticated Background with Visible Diyas */}
       <div className="absolute inset-0 z-0">
-        {/* Refined Background Image */}
+        {/* Background Image with Visible Diyas */}
         <img 
           src={heroImage} 
           alt="Traditional pooja setup with diyas and incense" 
-          className="w-full h-full object-cover opacity-15 transform transition-transform duration-[15000ms]" 
+          className="w-full h-full object-cover opacity-40 transform transition-transform duration-[15000ms]" 
           style={{
             transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
           }}
         />
         
-        {/* Clean Gradient Overlays for Luxury Feel */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-accent/10"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+        {/* Balanced Overlays for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20"></div>
         
         {/* Subtle Luxury Pattern */}
-        <div className="absolute inset-0 opacity-5" style={{
+        <div className="absolute inset-0 opacity-8" style={{
           backgroundImage: `radial-gradient(circle at 20% 50%, hsl(var(--primary)) 1px, transparent 1px),
                            radial-gradient(circle at 80% 50%, hsl(var(--accent)) 1px, transparent 1px)`,
           backgroundSize: '100px 100px, 60px 60px'
