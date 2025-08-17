@@ -105,17 +105,17 @@ const Hero = () => {
       </div>
 
       {/* Content with Perfect Readability */}
-      <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 py-12 md:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`relative z-10 text-center max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-12 lg:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Traditional Gold Ornament Above Title */}
-        <div className="flex justify-center mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-0.5 bg-gradient-gold"></div>
-            <Sparkles className="w-6 h-6 text-primary animate-pulse" />
-            <div className="w-8 h-0.5 bg-gradient-gold"></div>
+        <div className="flex justify-center mb-4 md:mb-6">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="w-6 md:w-8 h-0.5 bg-gradient-gold"></div>
+            <Sparkles className="w-4 md:w-6 h-4 md:h-6 text-primary animate-pulse" />
+            <div className="w-6 md:w-8 h-0.5 bg-gradient-gold"></div>
           </div>
         </div>
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 lg:mb-8 leading-tight px-2">
           <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
           <br />
           <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
@@ -123,23 +123,23 @@ const Hero = () => {
           </span>
         </h1>
         
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium">
+        <p className="text-sm md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
           Everything you need. Beautifully packed. Ready to worship.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-[fade-in_1s_ease-out_0.6s_both]">
+        <div className="flex flex-col gap-3 md:gap-4 justify-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <Button 
             size="lg" 
-            className="bg-gradient-gold hover:opacity-90 text-foreground font-semibold text-lg px-10 py-6 h-14 rounded-full shadow-gold transition-all duration-300 hover:scale-105 hover:shadow-hover border border-primary/20"
+            className="bg-gradient-gold hover:opacity-90 text-foreground font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-6 h-12 md:h-14 rounded-full shadow-gold transition-all duration-300 hover:scale-105 hover:shadow-hover border border-primary/20 w-full max-w-xs mx-auto"
             onClick={() => window.location.href = '/products'}
           >
-            <Sparkles className="w-5 h-5 mr-3 text-primary" />
+            <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-primary" />
             Shop Kits
           </Button>
           <Button 
             variant="outline" 
             size="lg"
-            className="border-2 border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 font-medium text-lg px-8 py-6 h-14 rounded-full transition-all duration-300 hover:scale-105 shadow-card"
+            className="border-2 border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 font-medium text-sm md:text-lg px-6 md:px-8 py-3 md:py-6 h-10 md:h-14 rounded-full transition-all duration-300 hover:scale-105 shadow-card w-full max-w-xs mx-auto"
             onClick={() => window.location.href = '/about'}
           >
             Explore Our Heritage
