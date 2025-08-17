@@ -107,13 +107,24 @@ const Checkout = () => {
       // Create order via Supabase Edge Function
       const response = await fetch(CREATE_ORDER_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount, currency: "INR", receipt })
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpbGdveG12bnZoaXF6aWRsbHZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU0NDI3NTAsImV4cCI6MjA3MTAxODc1MH0.Rok12aRNl9lmYq9jDcpZvCKQgGmRxRDzbMeps7nXuAU'}`
+        },
+        body: JSON.stringify({ amount: total, currency: "INR", receipt })
       });
       
+      if (!response.ok) {
+        const errorData = await response.text();
+        console.error('Order creation failed:', response.status, errorData);
+        throw new Error(`Failed to create order: ${response.status}`);
+      }
+      
       const order = await response.json();
+      console.log('Order created:', order);
+      
       if (!order.id) {
-        throw new Error("Could not create order");
+        throw new Error("Invalid order response - missing order ID");
       }
 
       // Initialize Razorpay
