@@ -45,10 +45,10 @@ const Hero = () => {
 
     return (
       <div className="hover-scale text-center">
-        <div className="text-xl md:text-3xl font-bold text-foreground animate-fade-in">
+        <div className="text-sm md:text-xl lg:text-3xl font-bold text-foreground animate-fade-in">
           {count}{suffix}
         </div>
-        <div className="text-sm md:text-base text-muted-foreground font-medium">{label}</div>
+        <div className="text-xs md:text-sm lg:text-base text-muted-foreground font-medium">{label}</div>
       </div>
     );
   };
@@ -146,15 +146,17 @@ const Hero = () => {
           </Button>
         </div>
         
-        <div className="mt-12 md:mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
-          <div className="p-6 rounded-2xl bg-card/90 backdrop-blur-sm border-2 border-primary/20 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
-            <AnimatedCounter target="500+" label="Products" />
-          </div>
-          <div className="p-6 rounded-2xl bg-card/90 backdrop-blur-sm border-2 border-primary/20 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
-            <AnimatedCounter target="10K+" label="Families" />
-          </div>
-          <div className="p-6 rounded-2xl bg-card/90 backdrop-blur-sm border-2 border-primary/20 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
-            <AnimatedCounter target="15+" label="Years" />
+        <div className="mt-12 md:mt-16 px-4">
+          <div className="grid grid-cols-3 gap-3 md:gap-8 max-w-xs md:max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
+            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
+              <AnimatedCounter target="500+" label="Products" />
+            </div>
+            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
+              <AnimatedCounter target="10K+" label="Families" />
+            </div>
+            <div className="p-3 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold hover:shadow-hover transition-all duration-300 hover:scale-105 hover:border-primary/40">
+              <AnimatedCounter target="15+" label="Years" />
+            </div>
           </div>
         </div>
       </div>
