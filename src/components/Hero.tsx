@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-pooja.jpg";
 import { useState, useEffect } from "react";
-import { Sparkles, Heart, Star } from "lucide-react";
+import { Sparkles, Heart, Star, Shield, Truck, Package, MapPin } from "lucide-react";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -140,27 +140,47 @@ const Hero = () => {
               Shop Kits
             </Button>
           </div>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-2 border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 font-medium text-base md:text-lg px-8 md:px-8 py-4 md:py-6 h-12 md:h-14 rounded-full transition-all duration-300 hover:scale-105 shadow-card w-full max-w-xs mx-auto"
-            onClick={() => window.location.href = '/about'}
+          
+          {/* Browse all products link */}
+          <a 
+            href="/products/all" 
+            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
           >
-            Explore Our Heritage
-          </Button>
+            Browse all products
+          </a>
+          
+          {/* Trust bar */}
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium mt-6">
+            <div className="flex items-center gap-1.5">
+              <Shield className="w-3 h-3 md:w-4 md:h-4" />
+              <span>Secure Checkout</span>
+            </div>
+            <span className="text-primary/40">•</span>
+            <div className="flex items-center gap-1.5">
+              <Truck className="w-3 h-3 md:w-4 md:h-4" />
+              <span>Fast Shipping</span>
+            </div>
+            <span className="text-primary/40">•</span>
+            <div className="flex items-center gap-1.5">
+              <Package className="w-3 h-3 md:w-4 md:h-4" />
+              <span>Hand-packed</span>
+            </div>
+            <span className="text-primary/40">•</span>
+            <div className="flex items-center gap-1.5">
+              <MapPin className="w-3 h-3 md:w-4 md:h-4" />
+              <span>Made in India</span>
+            </div>
+          </div>
         </div>
         
+        {/* Stats tiles */}
         <div className="mt-12 md:mt-16 px-4">
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-sm md:max-w-lg mx-auto text-center animate-[fade-in_1s_ease-out_0.8s_both]">
-            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
-              <AnimatedCounter target="500+" label="Products" />
-            </div>
-            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
-              <AnimatedCounter target="10K+" label="Families" />
-            </div>
-            <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/90 backdrop-blur-sm border border-primary/20 md:border-2 shadow-gold transition-all duration-500">
-              <AnimatedCounter target="15+" label="Years" />
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base text-muted-foreground font-medium animate-[fade-in_1s_ease-out_0.8s_both]">
+            <span>20+ Products</span>
+            <span className="text-primary/40">•</span>
+            <span>200+ Families Served</span>
+            <span className="text-primary/40">•</span>
+            <span>15+ Years Experience</span>
           </div>
         </div>
       </div>
