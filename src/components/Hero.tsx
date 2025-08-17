@@ -65,16 +65,16 @@ const Hero = () => {
         <img 
           src={heroImage} 
           alt="Traditional pooja setup with diyas and incense" 
-          className="w-full h-full object-cover opacity-55 transform transition-transform duration-[15000ms]" 
+          className="w-full h-full object-cover opacity-40 transform transition-transform duration-[15000ms]" 
           style={{
             transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
           }}
         />
         
         {/* Balanced Overlays for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-background/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-background/45 to-background/65"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-background/15"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20"></div>
         
         {/* Traditional Indian Mandala Pattern */}
         <div className="absolute inset-0 opacity-10" style={{
