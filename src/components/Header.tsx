@@ -50,28 +50,28 @@ const Header = () => {
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-foreground hover:text-primary transition-all duration-300 font-medium p-0 h-auto bg-transparent hover:bg-transparent">
+                <button className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group flex items-center">
                   Products
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                </Button>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-80 p-4 bg-background/95 backdrop-blur-md border border-border/50 shadow-2xl">
-                <div className="grid gap-3">
-                  <div className="flex items-center gap-2 mb-3 pb-3 border-b border-border/50">
-                    <Sparkles className="h-5 w-5 text-primary" />
-                    <span className="font-semibold text-foreground">Our Sacred Collection</span>
+              <DropdownMenuContent align="start" className="min-w-[240px] p-2 bg-background border border-border/50 shadow-lg z-50">
+                <div className="grid gap-1">
+                  <div className="flex items-center gap-2 mb-2 pb-2 border-b border-border/50 px-2">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                    <span className="font-semibold text-foreground text-sm">Our Sacred Collection</span>
                   </div>
                   {productCategories.map((category) => (
                     <DropdownMenuItem key={category.name} asChild>
                       <a 
                         href={category.href}
-                        className="flex flex-col items-start p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 cursor-pointer group"
+                        className="flex flex-col items-start px-2 py-2 h-10 rounded hover:bg-muted/50 transition-all duration-200 cursor-pointer group"
                       >
                         <div className="flex items-center gap-2">
                           <Star className="h-3 w-3 text-primary opacity-70 group-hover:opacity-100 transition-opacity" />
-                          <span className="font-medium text-foreground group-hover:text-primary transition-colors">{category.name}</span>
+                          <span className="font-medium text-foreground group-hover:text-primary transition-colors text-sm">{category.name}</span>
                         </div>
-                        <span className="text-sm text-muted-foreground mt-1 ml-5">{category.description}</span>
                       </a>
                     </DropdownMenuItem>
                   ))}

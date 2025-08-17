@@ -163,18 +163,6 @@ const FeaturedProductsSection = () => {
             authenticity, quality, and spiritual significance.
           </p>
           
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Badge variant="outline" className="text-sm px-4 py-2 bg-background/50 backdrop-blur-sm">
-              <Award className="w-4 h-4 mr-2" />
-              Premium Quality
-            </Badge>
-            <Badge variant="outline" className="text-sm px-4 py-2 bg-background/50 backdrop-blur-sm">
-              ✨ Authentic Products
-            </Badge>
-            <Badge variant="outline" className="text-sm px-4 py-2 bg-background/50 backdrop-blur-sm">
-              🎯 Curated Selection
-            </Badge>
-          </div>
         </div>
 
         {/* Products Grid - Mobile optimized to show 6 products */}
