@@ -117,6 +117,43 @@ const Checkout = () => {
       }
 
       // Initialize Razorpay
+      // 1) Create order on backend (send RUPEES)
+const res = await fetch(CREATE_ORDER_URL, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ amount_rupees: Number(total) })
+});
+const data = await res.json();
+if (!res.ok) {
+  throw new Error(data?.error?.description || "Could not create order");
+}
+
+// data contains: { order_id, amount (paise), currency, key_id }
+const options = {
+  key: data.key_id,          // ✅ use the live key from backend
+  order_id: data.order_id,   // ✅ REQUIRED
+  amount: data.amount,       // paise (echoed from backend)
+  currency: data.currency || "INR",
+  name: "Pavitra Uphaar",
+  description: "Order",
+  prefill: {
+    name: formData.name,
+    email: formData.email,
+    contact: formData.phone
+  },
+  handler: function (response: any) {
+    alert(`Payment Success: ${response.razorpay_payment_id}`);
+    // TODO: optionally call a /verify endpoint here
+  }
+};
+
+const rzp = new (window as any).Razorpay(options);
+rzp.on("payment.failed", (err: any) => {
+  console.error(err.error);
+  alert("Payment failed: " + (err?.error?.description || "Unknown error"));
+});
+rzp.open();
+
       const options = {
         key: RZP_PUBLIC_KEY,
         amount: order.amount,
