@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Filter, Grid, List } from "lucide-react";
 import { allProducts, categories } from "@/data/products";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const AllProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  
+  // Initialize scroll animations
+  useScrollAnimation();
 
   const filteredProducts = activeCategory === "all" 
     ? allProducts 
