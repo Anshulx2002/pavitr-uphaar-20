@@ -65,16 +65,19 @@ const Hero = () => {
         <img 
           src={heroImage} 
           alt="Traditional pooja setup with diyas and incense" 
-          className="w-full h-full object-cover opacity-40 transform transition-transform duration-[15000ms]" 
+          className="w-full h-full object-cover opacity-50 transform transition-transform duration-[15000ms]" 
           style={{
             transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
           }}
         />
         
-        {/* Balanced Overlays for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/85"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20"></div>
+        {/* Strategic Overlays - Clean center, visible corners */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/60 to-background/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-background/75 to-background/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-background/40"></div>
+        
+        {/* Clean text reading area in center */}
+        <div className="absolute inset-x-0 top-1/4 bottom-1/4 bg-gradient-to-r from-background/30 via-background/60 to-background/30"></div>
         
         {/* Traditional Indian Mandala Pattern */}
         <div className="absolute inset-0 opacity-10" style={{
