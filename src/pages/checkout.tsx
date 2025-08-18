@@ -13,7 +13,7 @@ import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
-const RZP_PUBLIC_KEY = "rzp_live_R6RSxqVRmxuZdA"; // Live key for production
+const RZP_PUBLIC_KEY = "rzp_test_9jQQoWjkGl4cQu"; // Temporarily using test key for debugging
 
 const checkoutSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
