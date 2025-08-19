@@ -125,24 +125,50 @@ const CartDrawer = ({ isOpen, onOpenChange, children }: CartDrawerProps) => {
                 </div>
               </div>
 
+              {/* Payment Badges */}
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span>Accepted:</span>
+                <div className="flex items-center gap-1">
+                  <CreditCard className="h-4 w-4" />
+                  <span>UPI • GPay • Cards</span>
+                </div>
+              </div>
 
               <div className="space-y-2">
-                <Button 
-                  className="w-full bg-gradient-saffron hover:opacity-90" 
+                <Button
+                  className="w-full relative overflow-hidden group" 
                   size="lg"
                   onClick={() => {
                     onOpenChange(false);
                     navigate('/checkout');
                   }}
+                  style={{ 
+                    background: 'linear-gradient(135deg, #B8860B, #DAA520, #CD853F)',
+                    borderRadius: '12px',
+                    boxShadow: 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.3)',
+                    height: '56px',
+                    border: '1px solid rgba(218,165,32,0.3)',
+                    backdropFilter: 'blur(8px)',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    letterSpacing: '1px',
+                    color: 'white'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #A0750A, #B8860B, #B8860B)';
+                    e.currentTarget.style.boxShadow = 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 6px 20px rgba(184,134,11,0.4)';
+                    e.currentTarget.style.transform = 'translateY(-1px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #B8860B, #DAA520, #CD853F)';
+                    e.currentTarget.style.boxShadow = 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.3)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
                 >
-                  Proceed to Checkout
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="w-full" 
-                  onClick={() => onOpenChange(false)}
-                >
-                  Continue Shopping
+                  {/* Subtle shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[slide-in-right_3s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CreditCard className="w-5 h-5 mr-2 stroke-[1.5]" />
+                  <span className="relative z-10">Proceed to Checkout</span>
                 </Button>
               </div>
             </div>
