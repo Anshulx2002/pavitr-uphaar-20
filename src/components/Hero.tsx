@@ -128,7 +128,7 @@ const Hero = () => {
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
             </div>
             
-            <p className="text-center font-playfair text-[#3A2A22] text-[15px] leading-[1.5] font-light mb-6 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+            <p className="text-center font-playfair text-[#5A2E1F] text-[15px] leading-[1.5] font-light mb-6 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               Premium Pooja Kits, beautifully packed & delivered to your door.
             </p>
           </>
@@ -186,24 +186,24 @@ const Hero = () => {
             Browse all products
           </a>
           
-          {/* Trust bar - premium golden styling */}
+          {/* Trust bar - saffron styling for mobile */}
           <div className={`flex flex-wrap items-center justify-center gap-3 text-muted-foreground font-medium ${isMobile ? 'text-xs mt-3 opacity-75' : 'text-xs md:text-sm mt-5'}`}>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
               <Shield className="w-3 h-3 md:w-4 md:h-4" />
               <span>Secure Checkout</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
               <Truck className="w-3 h-3 md:w-4 md:h-4" />
               <span>Fast Shipping</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
               <Package className="w-3 h-3 md:w-4 md:h-4" />
               <span>Hand-packed</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
               <MapPin className="w-3 h-3 md:w-4 md:h-4" />
               <span>Made in India</span>
             </div>
