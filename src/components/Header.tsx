@@ -28,16 +28,50 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-[hsl(45_75%_92%)] via-[hsl(42_70%_90%)] to-[hsl(45_75%_92%)] backdrop-blur-sm border-b border-[hsl(45_60%_75%)] shadow-[0_4px_20px_rgba(218,165,32,0.15),0_1px_3px_rgba(0,0,0,0.1)] sticky top-0 z-50 relative overflow-hidden">
+    <header className="bg-gradient-to-br from-orange-50 via-yellow-50/90 to-orange-100/70 backdrop-blur-sm border-b border-[hsl(45_60%_75%)] shadow-[0_4px_20px_rgba(218,165,32,0.15),0_1px_3px_rgba(0,0,0,0.1)] sticky top-0 z-50 relative overflow-hidden">
       {/* Luxury golden accent line */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[hsl(45_85%_65%)] to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42_80%_70%)] to-transparent opacity-60"></div>
       
-      {/* Subtle luxury pattern overlay */}
-      <div className="absolute inset-0 opacity-8" style={{
-        backgroundImage: `radial-gradient(circle at 25% 25%, rgba(218,165,32,0.1) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(255,193,7,0.08) 1px, transparent 1px)`,
-        backgroundSize: '40px 40px, 60px 60px'
+      {/* Premium festive background with cultural motifs */}
+      <div className="absolute inset-0 bg-gradient-radial from-orange-100/50 via-[#F39C12]/20 to-transparent opacity-70 pointer-events-none"></div>
+      
+      {/* Subtle festive motifs - diyas, lotus, rangoli sparkles */}
+      <div className="absolute inset-0 opacity-12 pointer-events-none" style={{
+        backgroundImage: `
+          radial-gradient(circle at 15% 25%, rgba(243,156,18,0.4) 1px, transparent 1px),
+          radial-gradient(circle at 85% 30%, rgba(249,200,70,0.3) 1px, transparent 1px),
+          radial-gradient(circle at 25% 75%, rgba(243,156,18,0.3) 1px, transparent 1px),
+          radial-gradient(circle at 75% 80%, rgba(249,200,70,0.4) 1px, transparent 1px),
+          radial-gradient(circle at 50% 20%, rgba(243,156,18,0.2) 2px, transparent 2px),
+          radial-gradient(circle at 30% 60%, rgba(249,200,70,0.2) 1.5px, transparent 1.5px)
+        `,
+        backgroundSize: '100px 100px, 120px 120px, 110px 110px, 130px 130px, 150px 150px, 140px 140px'
       }}></div>
+      
+      {/* Traditional Indian motifs - very subtle diya and lotus outlines */}
+      <div className="absolute inset-0 opacity-8 pointer-events-none" style={{
+        backgroundImage: `
+          radial-gradient(ellipse 8px 4px at 20% 30%, transparent 40%, rgba(243,156,18,0.15) 45%, transparent 50%),
+          radial-gradient(ellipse 6px 3px at 80% 25%, transparent 40%, rgba(249,200,70,0.12) 45%, transparent 50%),
+          radial-gradient(ellipse 8px 4px at 30% 70%, transparent 40%, rgba(243,156,18,0.10) 45%, transparent 50%),
+          radial-gradient(ellipse 6px 3px at 70% 75%, transparent 40%, rgba(249,200,70,0.15) 45%, transparent 50%),
+          radial-gradient(circle 12px at 50% 50%, transparent 60%, rgba(243,156,18,0.08) 65%, transparent 70%)
+        `,
+        backgroundSize: '180px 180px, 200px 200px, 160px 160px, 220px 220px, 300px 300px'
+      }}></div>
+      
+      {/* Elegant mandala pattern for cultural richness */}
+      <div className="absolute inset-0 opacity-6 pointer-events-none" style={{
+        backgroundImage: `radial-gradient(circle at center, transparent 20%, rgba(243,156,18,0.08) 25%, transparent 30%, rgba(243,156,18,0.04) 35%, transparent 40%)`,
+        backgroundSize: '200px 200px',
+        backgroundPosition: 'center center'
+      }}></div>
+      
+      {/* Divine golden halo - enhanced */}
+      <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/25 via-[#F39C12]/15 to-transparent opacity-80 pointer-events-none scale-110"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/20 via-[#DAA520]/10 to-transparent opacity-70 pointer-events-none scale-125 animate-pulse"></div>
+      
       <div className="container mx-auto px-4 py-3 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo - Mobile Optimized with redirect */}

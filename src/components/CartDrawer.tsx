@@ -37,7 +37,7 @@ const CartDrawer = ({ isOpen, onOpenChange, children }: CartDrawerProps) => {
 
         <div className="flex flex-col h-full">
           {/* Cart Items */}
-          <div className="flex-1 overflow-y-auto py-4">
+          <div className="flex-1 overflow-y-auto py-4 max-h-[calc(100vh-280px)]">
             {cartItems.length === 0 ? (
               <div className="text-center py-8">
                 <ShoppingBag className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
@@ -102,7 +102,7 @@ const CartDrawer = ({ isOpen, onOpenChange, children }: CartDrawerProps) => {
 
           {/* Cart Summary & Actions */}
           {cartItems.length > 0 && (
-            <div className="border-t border-border pt-4 space-y-4">
+            <div className="border-t border-border pt-4 space-y-3 flex-shrink-0">
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span>Subtotal</span>
