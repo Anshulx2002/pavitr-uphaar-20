@@ -90,12 +90,12 @@ const ProductCard = ({
             
             <div className="flex items-center justify-between">
               <div className="flex items-center flex-wrap gap-2">
-                <span className="text-2xl font-bold text-primary">₹{price}</span>
+                <span className="text-2xl font-bold" style={{ color: 'hsl(var(--premium-gold-saffron))' }}>₹{price}</span>
                 {originalPrice && (
                   <span className="text-sm text-muted-foreground line-through">₹{originalPrice}</span>
                 )}
                 {originalPrice && (
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-semibold">
+                  <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
                     {Math.round(((originalPrice - price) / originalPrice) * 100)}% OFF
                   </span>
                 )}
@@ -103,7 +103,7 @@ const ProductCard = ({
               
               <Button 
                 onClick={handleAddToCart}
-                className="bg-gradient-saffron hover:opacity-90 text-white font-semibold shadow-lg transform transition-all duration-300 hover:scale-105"
+                className="bg-gradient-premium-gold hover:opacity-90 text-white font-semibold shadow-lg transform transition-all duration-300 hover:scale-105"
               >
                 <ShoppingCart className="w-4 h-4 mr-2" />
                 Add to Cart
@@ -154,12 +154,12 @@ const ProductCard = ({
         </p>
         
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="text-2xl font-bold text-primary">₹{price}</span>
+          <span className="text-2xl font-bold" style={{ color: 'hsl(var(--premium-gold-saffron))' }}>₹{price}</span>
           {originalPrice && (
             <span className="text-sm text-muted-foreground line-through">₹{originalPrice}</span>
           )}
           {originalPrice && (
-            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-semibold">
+            <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
               {Math.round(((originalPrice - price) / originalPrice) * 100)}% OFF
             </span>
           )}
@@ -170,7 +170,7 @@ const ProductCard = ({
         <div className="flex gap-2 w-full">
           <Button 
             onClick={handleAddToCart}
-            className="flex-1 bg-gradient-saffron hover:opacity-90 text-white font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 group-hover:shadow-xl"
+            className="flex-1 bg-gradient-premium-gold hover:opacity-90 text-white font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 group-hover:shadow-xl"
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             Add to Cart
