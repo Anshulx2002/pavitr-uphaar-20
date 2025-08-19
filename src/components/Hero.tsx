@@ -92,6 +92,81 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/55 to-background/75"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-background/15"></div>
         
+        {/* Mini Marigold Flowers in Background */}
+        <div className="absolute top-20 left-1/4 opacity-20 animate-pulse">
+          <svg width="24" height="24" viewBox="0 0 24 24" className="text-primary">
+            <g>
+              {/* Mini marigold petals */}
+              {Array.from({ length: 6 }, (_, i) => {
+                const angle = (i * 60) * (Math.PI / 180);
+                const x = 12 + Math.cos(angle) * 6;
+                const y = 12 + Math.sin(angle) * 6;
+                return (
+                  <ellipse
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    rx="3"
+                    ry="1.5"
+                    fill="#F39C12"
+                    transform={`rotate(${i * 60} ${x} ${y})`}
+                    opacity="0.8"
+                  />
+                );
+              })}
+              <circle cx="12" cy="12" r="2" fill="#DAA520" opacity="0.9" />
+            </g>
+          </svg>
+        </div>
+        <div className="absolute bottom-32 right-1/3 opacity-15 animate-pulse delay-1000">
+          <svg width="20" height="20" viewBox="0 0 20 20" className="text-primary">
+            <g>
+              {Array.from({ length: 5 }, (_, i) => {
+                const angle = (i * 72) * (Math.PI / 180);
+                const x = 10 + Math.cos(angle) * 5;
+                const y = 10 + Math.sin(angle) * 5;
+                return (
+                  <ellipse
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    rx="2.5"
+                    ry="1.2"
+                    fill="#E67E22"
+                    transform={`rotate(${i * 72} ${x} ${y})`}
+                    opacity="0.7"
+                  />
+                );
+              })}
+              <circle cx="10" cy="10" r="1.5" fill="#D35400" opacity="0.8" />
+            </g>
+          </svg>
+        </div>
+        <div className="absolute top-1/3 right-1/5 opacity-18 animate-pulse delay-2000">
+          <svg width="18" height="18" viewBox="0 0 18 18" className="text-primary">
+            <g>
+              {Array.from({ length: 4 }, (_, i) => {
+                const angle = (i * 90) * (Math.PI / 180);
+                const x = 9 + Math.cos(angle) * 4;
+                const y = 9 + Math.sin(angle) * 4;
+                return (
+                  <ellipse
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    rx="2"
+                    ry="1"
+                    fill="#F39C12"
+                    transform={`rotate(${i * 90} ${x} ${y})`}
+                    opacity="0.6"
+                  />
+                );
+              })}
+              <circle cx="9" cy="9" r="1.2" fill="#DAA520" opacity="0.7" />
+            </g>
+          </svg>
+        </div>
+        
         {/* Traditional Indian Mandala Pattern */}
         <div className="absolute inset-0 opacity-8" style={{
           backgroundImage: `
