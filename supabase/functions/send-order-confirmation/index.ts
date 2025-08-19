@@ -96,10 +96,7 @@ const handler = async (req: Request): Promise<Response> => {
                   <tr>
                     <td style="background: linear-gradient(135deg, #ff6b35, #f7931e); padding: 40px 30px; text-align: center;">
                       <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                        <div style="width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                          <span style="font-size: 20px;">🕉️</span>
-                        </div>
-                        <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">Pavitra Uphaar</h1>
+                        <img src="https://bilgoxmvnvhiqzidllvj.supabase.co/storage/v1/object/public/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png" alt="Pavitra Uphaar Logo" style="height: 80px; margin-right: 12px; filter: brightness(0) invert(1);" />
                       </div>
                       <p style="margin: 8px 0 0 0; color: #ffffff; font-size: 16px; opacity: 0.9;">Order Confirmation</p>
                     </td>
