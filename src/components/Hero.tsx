@@ -56,7 +56,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
+    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${isMobile ? 'bg-gradient-to-br from-orange-50/30 via-yellow-50/20 to-orange-50/30' : 'bg-gradient-to-br from-background via-accent/5 to-background'}`}>
       {/* Traditional Indian Border - Top */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
@@ -111,26 +111,25 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            {/* Minimal top padding for above-the-fold optimization */}
-            <div className="pt-4"></div>
+            {/* Premium top padding */}
+            <div className="pt-6"></div>
             
-            <div className="flex justify-center mb-2">
+            <div className="flex justify-center mb-4">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-44 h-auto animate-[fade-in_1s_ease-out]"
+                className="w-40 h-auto animate-[fade-in_1s_ease-out]"
                 style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
             
-            {/* Compact minimalist golden divider */}
-            <div className="flex justify-center mb-2">
-              <Star className="w-3.5 h-3.5 text-gold animate-pulse opacity-70" />
+            {/* Elegant thin golden divider */}
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
             </div>
             
-            <p className="text-center font-playfair text-[#3A2A22] text-sm leading-[1.5] font-medium mb-3 px-4 max-w-[80%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
-              Premium Pooja Kits, beautifully packed.<br />
-              Delivered to your door.
+            <p className="text-center font-playfair text-[#3A2A22] text-[15px] leading-[1.5] font-light mb-6 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+              Premium Pooja Kits, beautifully packed & delivered to your door.
             </p>
           </>
         ) : (
@@ -164,57 +163,60 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/15 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
-              className="bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300"
+              className={`${isMobile 
+                ? 'bg-gradient-to-b from-yellow-200 to-yellow-400 hover:from-yellow-300 hover:to-yellow-500 text-yellow-900 font-semibold text-base px-8 py-4 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_20px_rgba(255,193,7,0.3)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15),0_0_25px_rgba(255,193,7,0.5)] hover:scale-[1.025] transition-all duration-300 border border-yellow-400/20' 
+                : 'bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20'
+              } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300`}
               style={{ 
-                height: 'clamp(52px, 7vw, 56px)',
+                height: isMobile ? '48px' : 'clamp(52px, 7vw, 56px)',
                 animation: 'elegantPulse 3.5s ease-in-out infinite'
               }}
               onClick={() => window.location.href = '/festival-kits'}
             >
-              <Sparkles className="w-5 md:w-5 h-5 md:h-5 mr-3 md:mr-3 text-yellow-800" />
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-yellow-800" />
               Shop Kits
             </Button>
           </div>
           
-          {/* Browse all products link - tighter spacing on mobile */}
+          {/* Browse all products link - refined styling */}
           <a 
             href="/products/all" 
-            className={`text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'mb-1' : ''}`}
+            className={`text-muted-foreground hover:text-foreground font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'text-xs mb-1' : 'text-sm'}`}
           >
             Browse all products
           </a>
           
-          {/* Trust bar - minimal spacing on mobile */}
-          <div className={`flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium ${isMobile ? 'mt-2' : 'mt-5'}`}>
-            <div className="flex items-center gap-1.5">
+          {/* Trust bar - premium golden styling */}
+          <div className={`flex flex-wrap items-center justify-center gap-3 text-muted-foreground font-medium ${isMobile ? 'text-xs mt-3 opacity-75' : 'text-xs md:text-sm mt-5'}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
               <Shield className="w-3 h-3 md:w-4 md:h-4" />
               <span>Secure Checkout</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className="flex items-center gap-1.5">
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
               <Truck className="w-3 h-3 md:w-4 md:h-4" />
               <span>Fast Shipping</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className="flex items-center gap-1.5">
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
               <Package className="w-3 h-3 md:w-4 md:h-4" />
               <span>Hand-packed</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className="flex items-center gap-1.5">
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-gold/80' : ''}`}>
               <MapPin className="w-3 h-3 md:w-4 md:h-4" />
               <span>Made in India</span>
             </div>
           </div>
         </div>
         
-        {/* Stats tiles - Tight spacing for above-the-fold on mobile */}
-        <div className={`px-4 ${isMobile ? 'mt-4' : 'mt-12 md:mt-16'}`}>
+        {/* Stats tiles - Premium styling */}
+        <div className={`px-4 ${isMobile ? 'mt-6' : 'mt-12 md:mt-16'}`}>
           <div className={`grid grid-cols-2 gap-3 text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
-            <div className={`rounded-xl bg-card/90 backdrop-blur-sm border border-primary/20 shadow-gold transition-all duration-500 ${isMobile ? 'p-3' : 'p-4 md:p-6 md:rounded-2xl md:border-2'}`}>
+            <div className={`bg-card/90 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'p-3 rounded-2xl border border-gold/30 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(255,193,7,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'}`}>
               <AnimatedCounter target="20+" label="Products" />
             </div>
-            <div className={`rounded-xl bg-card/90 backdrop-blur-sm border border-primary/20 shadow-gold transition-all duration-500 ${isMobile ? 'p-3' : 'p-4 md:p-6 md:rounded-2xl md:border-2'}`}>
+            <div className={`bg-card/90 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'p-3 rounded-2xl border border-gold/30 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(255,193,7,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'}`}>
               <AnimatedCounter target="200+" label="Families Served" />
             </div>
           </div>
