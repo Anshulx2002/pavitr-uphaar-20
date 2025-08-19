@@ -55,6 +55,7 @@ export default {
 				// Traditional Indian colors
 				gold: 'hsl(var(--gold))',
 				saffron: 'hsl(var(--saffron))',
+				'premium-gold-saffron': 'hsl(var(--premium-gold-saffron))',
 				maroon: 'hsl(var(--maroon))',
 				'temple-stone': 'hsl(var(--temple-stone))',
 				sidebar: {

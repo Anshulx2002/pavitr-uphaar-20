@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Filter, Grid, List, ChevronDown, Sparkles } from "lucide-react";
+import { Filter, ChevronDown, Sparkles } from "lucide-react";
 import { allProducts, categories } from "@/data/products";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
@@ -16,14 +15,24 @@ import {
 
 const AllProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [searchQuery, setSearchQuery] = useState("");
   
   // Initialize scroll animations
   useScrollAnimation();
 
+  // Filter products based on category and search query
   const filteredProducts = activeCategory === "all" 
-    ? allProducts 
-    : allProducts.filter(product => product.category === activeCategory);
+    ? allProducts.filter(product => 
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : allProducts.filter(product => 
+        product.category === activeCategory && (
+          product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          product.description.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
 
   return (
     <section className="py-16 bg-gradient-to-br from-background via-accent/3 to-background relative overflow-hidden">
@@ -37,12 +46,36 @@ const AllProductsSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
 
-        {/* Premium Category Dropdown & View Controls */}
+        {/* Premium Category Dropdown */}
         <div className="mb-16">
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-12">
+          <div className="flex flex-col items-center justify-center gap-6 mb-12">
+            
+            {/* Search Bar */}
+            <div className="w-full max-w-2xl">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search for products, categories, or keywords..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full h-14 px-6 py-4 pl-12 pr-6 bg-gradient-to-r from-background/90 via-premium-gold-saffron/5 to-background/90 backdrop-blur-sm border-2 border-premium-gold-saffron/20 hover:border-premium-gold-saffron/40 focus:border-premium-gold-saffron/60 rounded-xl shadow-lg focus:shadow-xl transition-all duration-300 text-foreground placeholder:text-muted-foreground focus:outline-none"
+                />
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                  <Filter className="h-5 w-5 text-premium-gold-saffron" />
+                </div>
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-premium-gold-saffron transition-colors"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+            </div>
             
             {/* Luxury Category Dropdown */}
-            <div className="flex-1 max-w-md">
+            <div className="w-full max-w-md">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button 
@@ -60,14 +93,14 @@ const AllProductsSection = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <Badge variant="secondary" className="bg-premium-gold-saffron/10 text-premium-gold-saffron border-premium-gold-saffron/20 font-semibold">
-                        {categories.find(cat => cat.id === activeCategory)?.count || allProducts.length}
+                        {filteredProducts.length}
                       </Badge>
                       <ChevronDown className="h-4 w-4 text-premium-gold-saffron transition-transform duration-200 group-data-[state=open]:rotate-180" />
                     </div>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
-                  align="start" 
+                  align="center" 
                   className="w-[var(--radix-dropdown-menu-trigger-width)] min-w-[300px] p-3 bg-background/95 backdrop-blur-md border-2 border-premium-gold-saffron/20 shadow-2xl z-50"
                 >
                   <div className="grid gap-1">
@@ -78,7 +111,10 @@ const AllProductsSection = () => {
                     {categories.map((category) => (
                       <DropdownMenuItem 
                         key={category.id}
-                        onClick={() => setActiveCategory(category.id)}
+                        onClick={() => {
+                          setActiveCategory(category.id);
+                          setSearchQuery(""); // Clear search when changing category
+                        }}
                         className={`flex items-center justify-between px-3 py-3 h-12 rounded-lg cursor-pointer transition-all duration-200 group ${
                           activeCategory === category.id 
                             ? "bg-gradient-to-r from-premium-gold-saffron/20 to-premium-gold-saffron/10 border border-premium-gold-saffron/30" 
@@ -115,89 +151,68 @@ const AllProductsSection = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-
-            {/* View Mode Controls */}
-            <div className="flex items-center gap-3 bg-gradient-to-r from-background/90 via-premium-gold-saffron/5 to-background/90 backdrop-blur-sm rounded-xl p-2 border-2 border-premium-gold-saffron/20 shadow-lg">
-              <Button
-                variant={viewMode === "grid" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setViewMode("grid")}
-                className={`transition-all duration-300 ${
-                  viewMode === "grid" 
-                    ? "bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 text-white shadow-lg border-premium-gold-saffron/30" 
-                    : "border-premium-gold-saffron/20 hover:bg-premium-gold-saffron/5 hover:border-premium-gold-saffron/40"
-                }`}
-              >
-                <Grid className="w-4 h-4 mr-2" />
-                Grid
-              </Button>
-              <Button
-                variant={viewMode === "list" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setViewMode("list")}
-                className={`transition-all duration-300 ${
-                  viewMode === "list" 
-                    ? "bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 text-white shadow-lg border-premium-gold-saffron/30" 
-                    : "border-premium-gold-saffron/20 hover:bg-premium-gold-saffron/5 hover:border-premium-gold-saffron/40"
-                }`}
-              >
-                <List className="w-4 h-4 mr-2" />
-                List
-              </Button>
-            </div>
           </div>
 
           {/* Active Category Info */}
-          <div className="text-center mb-12 p-6 rounded-2xl bg-gradient-to-r from-background/80 via-accent/5 to-background/80 backdrop-blur-sm border border-border/30 shadow-card">
+          <div className="text-center mb-12 p-6 rounded-2xl bg-gradient-to-r from-background/80 via-premium-gold-saffron/5 to-background/80 backdrop-blur-sm border border-premium-gold-saffron/20 shadow-card">
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-              {categories.find(cat => cat.id === activeCategory)?.name || "All Products"}
+              {activeCategory === "all" ? "Complete Sacred Collection" : categories.find(cat => cat.id === activeCategory)?.name || "All Products"}
             </h3>
+            {searchQuery && (
+              <p className="text-lg text-premium-gold-saffron font-medium mb-2">
+                Search results for: "{searchQuery}"
+              </p>
+            )}
             <p className="text-lg text-muted-foreground">
-              Showing <span className="font-semibold text-primary">{filteredProducts.length}</span> product{filteredProducts.length !== 1 ? 's' : ''} in this collection
+              {searchQuery 
+                ? `Showing ${filteredProducts.length} products matching your search`
+                : `Discover our complete range of traditional pooja products, carefully selected and blessed to bring divine energy to your spiritual practices.`
+              }
             </p>
           </div>
         </div>
 
-        {/* Premium Products Grid/List */}
-        <div className={`
-          ${viewMode === "grid" 
-            ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8" 
-            : "space-y-8"
-          }
-          mb-20
-        `}>
-          {filteredProducts.map((product, index) => (
-            <div 
-              key={product.id} 
-              className={`scroll-animate hover-lift group ${viewMode === "list" ? "max-w-none" : ""}`}
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              <div className="relative">
-                <ProductCard
-                  id={product.id}
-                  name={product.name}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  image={product.image}
-                  rating={product.rating}
-                  description={product.description}
-                  badge={product.badge}
-                  viewMode={viewMode}
-                />
-                {/* Premium hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg pointer-events-none"></div>
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mb-16">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product, index) => (
+              <div key={product.id} className="scroll-animate hover-lift">
+                <ProductCard {...product} />
+              </div>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-16">
+              <div className="max-w-md mx-auto">
+                <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-r from-premium-gold-saffron/20 to-premium-gold-saffron/10 rounded-full flex items-center justify-center">
+                  <Filter className="w-12 h-12 text-premium-gold-saffron" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">No Products Found</h3>
+                <p className="text-muted-foreground mb-6">
+                  {searchQuery 
+                    ? `No products match your search "${searchQuery}". Try different keywords or browse categories.`
+                    : "No products available in this category at the moment."
+                  }
+                </p>
+                {searchQuery && (
+                  <Button 
+                    onClick={() => setSearchQuery("")}
+                    className="bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 text-white hover:from-premium-gold-saffron/90 hover:to-premium-gold-saffron/70"
+                  >
+                    Clear Search
+                  </Button>
+                )}
               </div>
             </div>
-          ))}
+          )}
         </div>
 
         {/* Premium Call to Action */}
         <div className="text-center scroll-animate">
-          <div className="inline-flex flex-col items-center gap-6 p-10 rounded-3xl bg-gradient-to-br from-background/90 via-accent/8 to-background/90 backdrop-blur-sm border border-border/40 shadow-hover">
-            <div className="flex items-center gap-3 text-primary">
-              <div className="w-3 h-3 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
+          <div className="inline-flex flex-col items-center gap-6 p-10 rounded-3xl bg-gradient-to-br from-background/90 via-premium-gold-saffron/8 to-background/90 backdrop-blur-sm border border-premium-gold-saffron/20 shadow-hover">
+            <div className="flex items-center gap-3 text-premium-gold-saffron">
+              <div className="w-3 h-3 bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 rounded-full animate-pulse"></div>
               <span className="text-sm font-semibold uppercase tracking-wider">Need Help Choosing?</span>
-              <div className="w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full animate-pulse"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-premium-gold-saffron/80 to-premium-gold-saffron rounded-full animate-pulse"></div>
             </div>
             
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
@@ -212,7 +227,7 @@ const AllProductsSection = () => {
               <Button 
                 asChild
                 size="lg" 
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold px-10 py-4 rounded-full shadow-gold hover:shadow-hover transform transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 hover:from-premium-gold-saffron/90 hover:to-premium-gold-saffron/70 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
               >
                 <Link to="/contact">
                   <Filter className="w-5 h-5 mr-3" />
@@ -223,7 +238,7 @@ const AllProductsSection = () => {
                 asChild
                 variant="outline" 
                 size="lg"
-                className="border-2 border-primary/30 hover:border-primary/50 px-10 py-4 rounded-full transition-all duration-300 hover:bg-primary/5"
+                className="border-2 border-premium-gold-saffron/30 hover:border-premium-gold-saffron/50 px-10 py-4 rounded-full transition-all duration-300 hover:bg-premium-gold-saffron/5"
               >
                 <Link to="/contact">
                   Contact Support
