@@ -111,8 +111,8 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            {/* Reduced top padding to move logo higher */}
-            <div className="pt-1"></div>
+            {/* Move entire content block higher - remove padding and add negative margin */}
+            <div className="-mt-12"></div>
             
             <div className="flex justify-center mb-4">
               <img 
