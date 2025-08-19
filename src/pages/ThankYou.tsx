@@ -34,6 +34,9 @@ const ThankYou = () => {
               <p className="text-muted-foreground">
                 Thank you for your order. Your payment has been processed successfully.
               </p>
+              <p className="text-sm text-muted-foreground">
+                Please check your inbox (including junk/spam) for the order confirmation email.
+              </p>
               {paymentId && (
                 <div className="bg-muted p-3 rounded">
                   <p className="text-sm">
