@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Mail, AlertCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -34,9 +34,23 @@ const ThankYou = () => {
               <p className="text-muted-foreground">
                 Thank you for your order. Your payment has been processed successfully.
               </p>
-              <p className="text-sm text-muted-foreground">
-                Please check your inbox (including junk/spam) for the order confirmation email.
-              </p>
+              
+              {/* Email notification card */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Mail className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold text-blue-800">Order Confirmation Email</h3>
+                </div>
+                <p className="text-sm text-blue-700 text-center">
+                  Check your inbox (including junk/spam folder) for the order confirmation email.
+                </p>
+                <div className="flex items-center justify-center space-x-1 text-xs text-blue-600">
+                  <AlertCircle className="w-3 h-3" />
+                  <span>Don't forget to check your spam folder!</span>
+                </div>
+              </div>
               {paymentId && (
                 <div className="bg-muted p-3 rounded">
                   <p className="text-sm">
