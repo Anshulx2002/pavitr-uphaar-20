@@ -47,7 +47,7 @@ serve(async (req) => {
       );
     }
 
-    const razorpayKeyId = "rzp_live_R6kRjBKRDQalxT";
+    const razorpayKeyId = Deno.env.get('RAZORPAY_KEY_ID');
     const razorpaySecret = Deno.env.get('RAZORPAY_SECRET');
 
     console.log('Razorpay Key ID exists:', !!razorpayKeyId);
