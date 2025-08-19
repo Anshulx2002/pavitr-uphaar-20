@@ -38,7 +38,7 @@ type CheckoutFormData = z.infer<typeof checkoutSchema>;
 
 const Checkout = () => {
   const navigate = useNavigate();
-  const { cartItems, getCartTotal, getCartItemsCount } = useCart();
+  const { cartItems, getCartTotal, getCartItemsCount, clearCart } = useCart();
   const [couponCode, setCouponCode] = useState('');
   const [discount, setDiscount] = useState(0);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
@@ -168,7 +168,9 @@ const Checkout = () => {
           contact: data.phone
         },
         handler: function (response: any) {
-          // Success - redirect immediately and send email in background
+          // Success - clear cart, redirect immediately and send email in background
+          clearCart(); // Clear the cart immediately
+          
           const thankYouUrl = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
           
           // Send email in background without blocking redirect
