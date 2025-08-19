@@ -2,10 +2,12 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-pooja.jpg";
 import { useState, useEffect } from "react";
 import { Sparkles, Heart, Star, Shield, Truck, Package, MapPin } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsVisible(true);
@@ -106,26 +108,46 @@ const Hero = () => {
 
       {/* Content with Perfect Readability */}
       <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 py-8 md:px-6 md:py-12 lg:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        {/* Traditional Gold Ornament Above Title */}
-        <div className="flex justify-center mb-6 md:mb-6">
-          <div className="flex items-center gap-3 md:gap-3">
-            <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
-            <Sparkles className="w-5 md:w-6 h-5 md:h-6 text-primary animate-pulse" />
-            <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
-          </div>
-        </div>
-        
-        <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-6 lg:mb-8 leading-relaxed px-2 pb-2" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
-          <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
-          <br />
-          <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
-            delivered to your door
-          </span>
-        </h1>
-        
-        <p className="text-lg md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
-          Everything you need. Beautifully packed. Ready to worship.
-        </p>
+        {/* Mobile: Logo and Caption */}
+        {isMobile ? (
+          <>
+            <div className="flex justify-center mb-4">
+              <img 
+                src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
+                alt="Pavitra Uphaar - Premium Pooja Kits" 
+                className="w-56 h-auto animate-[fade-in_1s_ease-out]"
+              />
+            </div>
+            
+            <p className="text-center text-[#3A2A22] text-base font-medium mb-5 px-4 leading-relaxed animate-[fade-in_1s_ease-out_0.2s_both]">
+              Premium Pooja Kits, beautifully packed.<br />
+              Delivered to your door.
+            </p>
+          </>
+        ) : (
+          <>
+            {/* Desktop: Traditional Gold Ornament Above Title */}
+            <div className="flex justify-center mb-6 md:mb-6">
+              <div className="flex items-center gap-3 md:gap-3">
+                <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
+                <Sparkles className="w-5 md:w-6 h-5 md:h-6 text-primary animate-pulse" />
+                <div className="w-8 md:w-8 h-0.5 bg-gradient-gold"></div>
+              </div>
+            </div>
+            
+            <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-6 lg:mb-8 leading-relaxed px-2 pb-2" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
+              <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
+              <br />
+              <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
+                delivered to your door
+              </span>
+            </h1>
+            
+            <p className="text-lg md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
+              Everything you need. Beautifully packed. Ready to worship.
+            </p>
+          </>
+        )}
         
         <div className="flex flex-col gap-4 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
