@@ -8,7 +8,7 @@ const DiyaLamp = () => {
   }, []);
 
   return (
-    <div className={`absolute right-4 md:right-8 lg:right-12 top-1/2 transform -translate-y-1/2 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+    <div className={`absolute right-4 md:right-8 lg:right-12 top-1/2 transform -translate-y-1/2 transition-all duration-1000 z-[9999] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
       <div className="relative w-16 h-20 md:w-20 md:h-24 lg:w-24 lg:h-28">
         {/* Enhanced Background for Visibility */}
         <div className="absolute inset-0 bg-gradient-radial from-black/20 via-black/10 to-transparent rounded-full scale-125 blur-sm"></div>
@@ -21,7 +21,7 @@ const DiyaLamp = () => {
         {/* Diya SVG */}
         <svg
           viewBox="0 0 120 140"
-          className="w-full h-full relative z-10"
+          className="w-full h-full relative z-[10000]"
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* Diya Base */}
