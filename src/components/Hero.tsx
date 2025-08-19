@@ -167,16 +167,16 @@ const Hero = () => {
             <Button 
               size="lg" 
               className={`${isMobile 
-                ? 'bg-gradient-to-r from-[#E67E22] to-[#F9C846] hover:from-[#D1731F] hover:to-[#F7C13E] text-amber-900 font-semibold text-base px-8 py-5 rounded-full shadow-[0_6px_20px_rgba(230,126,34,0.25),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(230,126,34,0.35),0_4px_12px_rgba(0,0,0,0.12)] hover:scale-[1.025] transition-all duration-300 border border-[#E67E22]/20' 
+                ? 'bg-gradient-to-r from-[#F39C12] to-[#F9C846] hover:from-[#E0890B] hover:to-[#F7C13E] text-[#4A2C23] font-semibold text-base px-8 py-6 rounded-full shadow-[0_8px_24px_rgba(243,156,18,0.3),0_4px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_32px_rgba(243,156,18,0.4),0_6px_16px_rgba(0,0,0,0.12)] hover:scale-[1.025] transition-all duration-300 border border-[#F39C12]/15' 
                 : 'bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20'
               } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300`}
               style={{ 
-                height: isMobile ? '52px' : 'clamp(52px, 7vw, 56px)',
+                height: isMobile ? '56px' : 'clamp(52px, 7vw, 56px)',
                 animation: 'elegantPulse 3.5s ease-in-out infinite'
               }}
               onClick={() => window.location.href = '/festival-kits'}
             >
-              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-amber-800" />
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-[#4A2C23]" />
               Shop Kits
             </Button>
           </div>
