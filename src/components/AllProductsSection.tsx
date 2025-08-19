@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Filter, ChevronDown, Sparkles } from "lucide-react";
 import { allProducts, categories } from "@/data/products";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,24 +15,41 @@ import {
 
 const AllProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchParams] = useSearchParams();
   
   // Initialize scroll animations
   useScrollAnimation();
 
+  // Handle URL search parameters
+  useEffect(() => {
+    const searchQuery = searchParams.get('search');
+    const categoryParam = searchParams.get('category');
+    
+    if (categoryParam) {
+      const matchingCategory = categories.find(cat => cat.name === categoryParam);
+      if (matchingCategory) {
+        setActiveCategory(matchingCategory.id);
+      }
+    }
+  }, [searchParams]);
+
   // Filter products based on category and search query
-  const filteredProducts = activeCategory === "all" 
-    ? allProducts.filter(product => 
+  const filteredProducts = (() => {
+    const searchQuery = searchParams.get('search');
+    let filtered = activeCategory === "all" ? allProducts : allProducts.filter(product => product.category === activeCategory);
+    
+    if (searchQuery) {
+      filtered = filtered.filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.category.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : allProducts.filter(product => 
-        product.category === activeCategory && (
-          product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          product.description.toLowerCase().includes(searchQuery.toLowerCase())
-        )
       );
+    }
+    
+    return filtered;
+  })();
+
+  const searchQuery = searchParams.get('search');
 
   return (
     <section className="py-16 bg-gradient-to-br from-background via-accent/3 to-background relative overflow-hidden">
@@ -49,30 +66,6 @@ const AllProductsSection = () => {
         {/* Premium Category Dropdown */}
         <div className="mb-16">
           <div className="flex flex-col items-center justify-center gap-6 mb-12">
-            
-            {/* Search Bar */}
-            <div className="w-full max-w-2xl">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search for products, categories, or keywords..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-14 px-6 py-4 pl-12 pr-6 bg-gradient-to-r from-background/90 via-premium-gold-saffron/5 to-background/90 backdrop-blur-sm border-2 border-premium-gold-saffron/20 hover:border-premium-gold-saffron/40 focus:border-premium-gold-saffron/60 rounded-xl shadow-lg focus:shadow-xl transition-all duration-300 text-foreground placeholder:text-muted-foreground focus:outline-none"
-                />
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                  <Filter className="h-5 w-5 text-premium-gold-saffron" />
-                </div>
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-premium-gold-saffron transition-colors"
-                  >
-                    ✕
-                  </button>
-                )}
-              </div>
-            </div>
             
             {/* Luxury Category Dropdown */}
             <div className="w-full max-w-md">
@@ -111,10 +104,7 @@ const AllProductsSection = () => {
                     {categories.map((category) => (
                       <DropdownMenuItem 
                         key={category.id}
-                        onClick={() => {
-                          setActiveCategory(category.id);
-                          setSearchQuery(""); // Clear search when changing category
-                        }}
+                        onClick={() => setActiveCategory(category.id)}
                         className={`flex items-center justify-between px-3 py-3 h-12 rounded-lg cursor-pointer transition-all duration-200 group ${
                           activeCategory === category.id 
                             ? "bg-gradient-to-r from-premium-gold-saffron/20 to-premium-gold-saffron/10 border border-premium-gold-saffron/30" 
@@ -195,7 +185,7 @@ const AllProductsSection = () => {
                 </p>
                 {searchQuery && (
                   <Button 
-                    onClick={() => setSearchQuery("")}
+                    onClick={() => window.location.href = '/products'}
                     className="bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 text-white hover:from-premium-gold-saffron/90 hover:to-premium-gold-saffron/70"
                   >
                     Clear Search

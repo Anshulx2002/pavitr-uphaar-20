@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
+import { allProducts } from "@/data/products";
 
 interface SearchSuggestion {
   id: string;
@@ -10,18 +12,25 @@ interface SearchSuggestion {
   type: "product" | "category";
 }
 
-const searchSuggestions: SearchSuggestion[] = [
-  { id: "1", title: "Diyas", category: "Lamps", type: "product" },
-  { id: "2", title: "Incense Sticks", category: "Agarbatti", type: "product" },
-  { id: "3", title: "Pooja Thali", category: "Accessories", type: "product" },
-  { id: "4", title: "Rudraksha", category: "Sacred Threads", type: "product" },
-  { id: "5", title: "Kumkum", category: "Accessories", type: "product" },
-  { id: "6", title: "Camphor", category: "Accessories", type: "product" },
-  { id: "7", title: "Sandalwood", category: "Accessories", type: "product" },
-  { id: "8", title: "Marigold Garland", category: "Flowers", type: "product" },
-  { id: "9", title: "Festival Kits", category: "Kits", type: "category" },
-  { id: "10", title: "Brass Items", category: "Accessories", type: "category" },
-];
+// Generate search suggestions from actual products
+const getSearchSuggestions = (): SearchSuggestion[] => {
+  const productSuggestions = allProducts.map(product => ({
+    id: product.id.toString(),
+    title: product.name,
+    category: product.category,
+    type: "product" as const
+  }));
+  
+  const categories = Array.from(new Set(allProducts.map(p => p.category)));
+  const categorySuggestions = categories.map((category, index) => ({
+    id: `cat-${index}`,
+    title: category,
+    category: "Category",
+    type: "category" as const
+  }));
+  
+  return [...productSuggestions, ...categorySuggestions];
+};
 
 interface SearchBarProps {
   className?: string;
@@ -34,6 +43,8 @@ const SearchBar = ({ className = "", placeholder = "Search products...", onSearc
   const [isOpen, setIsOpen] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchSuggestion[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+  const searchSuggestions = getSearchSuggestions();
 
   useEffect(() => {
     if (query.length > 0) {
@@ -67,10 +78,19 @@ const SearchBar = ({ className = "", placeholder = "Search products...", onSearc
     setQuery(searchQuery);
     setIsOpen(false);
     onSearch?.(searchQuery);
+    
+    // Navigate to products page with search query
+    navigate(`/products?search=${encodeURIComponent(searchQuery)}`);
   };
 
   const handleSuggestionClick = (suggestion: SearchSuggestion) => {
-    handleSearch(suggestion.title);
+    if (suggestion.type === "category") {
+      // Navigate to products page filtered by category
+      navigate(`/products?category=${encodeURIComponent(suggestion.title)}`);
+    } else {
+      // Navigate to products page with search query for specific product
+      handleSearch(suggestion.title);
+    }
   };
 
   const clearSearch = () => {
