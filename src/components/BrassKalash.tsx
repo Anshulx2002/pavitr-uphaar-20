@@ -10,9 +10,13 @@ const BrassKalash = () => {
   return (
     <div className={`absolute left-4 md:left-8 lg:left-12 top-1/2 transform -translate-y-1/2 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
       <div className="relative w-16 h-20 md:w-20 md:h-24 lg:w-24 lg:h-28">
-        {/* Divine Pulsing Glow */}
-        <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/25 via-[#F39C12]/15 to-transparent rounded-full scale-125 animate-[divine-pulse_4s_ease-in-out_infinite]"></div>
-        <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/20 via-[#DAA520]/10 to-transparent rounded-full scale-150 animate-[divine-pulse_4s_ease-in-out_infinite_1s]"></div>
+        {/* Enhanced Background for Visibility */}
+        <div className="absolute inset-0 bg-gradient-radial from-black/25 via-black/15 to-transparent rounded-full scale-125 blur-sm"></div>
+        
+        {/* Stronger Divine Pulsing Glow */}
+        <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/40 via-[#F39C12]/25 to-transparent rounded-full scale-125 animate-[divine-pulse_4s_ease-in-out_infinite]"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/35 via-[#DAA520]/20 to-transparent rounded-full scale-150 animate-[divine-pulse_4s_ease-in-out_infinite_1s]"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-[#FF8C00]/25 via-transparent to-transparent rounded-full scale-175 animate-[divine-pulse_6s_ease-in-out_infinite_2s]"></div>
         
         {/* Kalash SVG */}
         <svg
@@ -146,13 +150,15 @@ const BrassKalash = () => {
           {/* Gradients */}
           <defs>
             <radialGradient id="kalashGradient" cx="0.3" cy="0.3">
-              <stop offset="0%" stopColor="#DAA520" />
-              <stop offset="50%" stopColor="#B8860B" />
+              <stop offset="0%" stopColor="#FFD700" />
+              <stop offset="30%" stopColor="#DAA520" />
+              <stop offset="70%" stopColor="#B8860B" />
               <stop offset="100%" stopColor="#8B6914" />
             </radialGradient>
             
             <linearGradient id="brassStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#DAA520" />
+              <stop offset="0%" stopColor="#FFD700" />
+              <stop offset="50%" stopColor="#DAA520" />
               <stop offset="100%" stopColor="#B8860B" />
             </linearGradient>
             
