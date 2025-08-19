@@ -167,15 +167,18 @@ const Checkout = () => {
           email: data.email,
           contact: data.phone
         },
-        handler: async function (response: any) {
-          // Success - send order confirmation email and redirect
-          try {
-            await sendOrderConfirmationEmail(data, receipt, order.id);
-          } catch (emailError) {
+        handler: function (response: any) {
+          // Success - redirect immediately and send email in background
+          const thankYouUrl = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
+          
+          // Send email in background without blocking redirect
+          sendOrderConfirmationEmail(data, receipt, order.id).catch(emailError => {
             console.warn('Failed to send confirmation email:', emailError);
-            // Don't block the success flow if email fails
-          }
-          window.location.href = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
+            // Email failure doesn't affect the payment success
+          });
+          
+          // Immediate redirect for better UX
+          window.location.href = thankYouUrl;
         },
         modal: {
           ondismiss: function () {
