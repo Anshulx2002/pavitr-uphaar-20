@@ -55,14 +55,16 @@ const handler = async (req: Request): Promise<Response> => {
       shippingAddress,
     } = requestData;
 
-    // Generate order items HTML
+    // Generate order items HTML with fallback for missing images
     const orderItemsHtml = items
       .map(
         (item) => `
           <tr style="border-bottom: 1px solid #f0f0f0;">
             <td style="padding: 12px; text-align: left;">
               <div style="display: flex; align-items: center;">
-                <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 12px;" />
+                <div style="width: 60px; height: 60px; background-color: #f8f9fa; border-radius: 8px; margin-right: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0;">
+                  <span style="font-size: 24px;">🎁</span>
+                </div>
                 <div>
                   <h4 style="margin: 0; font-size: 14px; font-weight: 600; color: #333;">${item.name}</h4>
                   <p style="margin: 4px 0 0 0; font-size: 12px; color: #666;">Qty: ${item.quantity}</p>
@@ -93,7 +95,12 @@ const handler = async (req: Request): Promise<Response> => {
                   <!-- Header -->
                   <tr>
                     <td style="background: linear-gradient(135deg, #ff6b35, #f7931e); padding: 40px 30px; text-align: center;">
-                      <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">Pavitra Uphaar</h1>
+                      <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                        <div style="width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                          <span style="font-size: 20px;">🕉️</span>
+                        </div>
+                        <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">Pavitra Uphaar</h1>
+                      </div>
                       <p style="margin: 8px 0 0 0; color: #ffffff; font-size: 16px; opacity: 0.9;">Order Confirmation</p>
                     </td>
                   </tr>
