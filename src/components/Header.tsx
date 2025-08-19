@@ -75,7 +75,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo - Mobile Optimized with redirect */}
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white rounded-full p-2 shadow-sm">
               <img src="/lovable-uploads/9a70ebdf-b809-4775-b7cb-d4a5f83de787.png" alt="Pavitra Uphaar Logo" className="w-full h-full object-contain" />
             </div>
@@ -83,14 +83,14 @@ const Header = () => {
               <h1 className="text-lg md:text-xl font-bold text-foreground">Pavitra Uphaar</h1>
               <p className="text-xs text-muted-foreground hidden md:block">Traditional Sacred Products</p>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <a href="/" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
+            <Link to="/" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -108,33 +108,33 @@ const Header = () => {
                   </div>
                   {productCategories.map((category) => (
                     <DropdownMenuItem key={category.name} asChild>
-                      <a 
-                        href={category.href}
+                      <Link 
+                        to={category.href}
                         className="flex flex-col items-start px-2 py-2 h-10 rounded hover:bg-muted/50 transition-all duration-200 cursor-pointer group"
                       >
                         <div className="flex items-center gap-2">
                           <Star className="h-3 w-3 text-primary opacity-70 group-hover:opacity-100 transition-opacity" />
                           <span className="font-medium text-foreground group-hover:text-primary transition-colors text-sm">{category.name}</span>
                         </div>
-                      </a>
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="/festival-kits" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
+            <Link to="/festival-kits" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
               Festival Kits
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="/about" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
+            </Link>
+            <Link to="/about" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
               About
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="/contact" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
+            </Link>
+            <Link to="/contact" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           </nav>
 
           {/* Search Bar - Desktop & Tablet */}
@@ -190,11 +190,11 @@ const Header = () => {
             
             {/* Mobile Navigation */}
             <nav className="flex flex-col space-y-3">
-              <a href="/" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Home</a>
-              <a href="/products" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Products</a>
-              <a href="/festival-kits" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Festival Kits</a>
-              <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">About</a>
-              <a href="/contact" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Contact</a>
+              <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Home</Link>
+              <Link to="/products" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Products</Link>
+              <Link to="/festival-kits" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Festival Kits</Link>
+              <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">About</Link>
+              <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Contact</Link>
               
             </nav>
           </div>
