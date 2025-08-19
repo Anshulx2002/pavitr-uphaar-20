@@ -18,172 +18,250 @@ const BrassKalash = () => {
         <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/35 via-[#DAA520]/20 to-transparent rounded-full scale-150 animate-[divine-pulse_4s_ease-in-out_infinite_1s]"></div>
         <div className="absolute inset-0 bg-gradient-radial from-[#FF8C00]/25 via-transparent to-transparent rounded-full scale-175 animate-[divine-pulse_6s_ease-in-out_infinite_2s]"></div>
         
-        {/* Kalash SVG */}
+        {/* Kalash SVG - Premium Luxury Design */}
         <svg
           viewBox="0 0 120 140"
           className="w-full h-full relative z-[10000]"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Kalash Base */}
+          {/* Premium Kalash Base with Depth */}
           <ellipse
             cx="60"
-            cy="130"
-            rx="25"
-            ry="8"
-            fill="url(#kalashGradient)"
-            stroke="url(#brassStroke)"
-            strokeWidth="1"
+            cy="135"
+            rx="28"
+            ry="6"
+            fill="url(#premiumBaseGradient)"
+            filter="url(#baseShadow)"
           />
           
-          {/* Kalash Body */}
+          {/* Sophisticated Kalash Body */}
           <path
-            d="M 35 130 Q 35 120 40 110 Q 45 95 55 85 Q 60 80 65 85 Q 75 95 80 110 Q 85 120 85 130"
-            fill="url(#kalashGradient)"
-            stroke="url(#brassStroke)"
-            strokeWidth="1"
+            d="M 32 135 Q 32 125 35 115 Q 40 100 48 90 Q 55 82 60 82 Q 65 82 72 90 Q 80 100 85 115 Q 88 125 88 135"
+            fill="url(#premiumKalashGradient)"
+            stroke="url(#kalashHighlight)"
+            strokeWidth="0.8"
+            filter="url(#bodyDepth)"
           />
           
-          {/* Kalash Neck */}
+          {/* Elegant Neck */}
           <rect
-            x="55"
+            x="54"
             y="75"
-            width="10"
-            height="15"
-            fill="url(#kalashGradient)"
-            stroke="url(#brassStroke)"
-            strokeWidth="1"
-            rx="2"
+            width="12"
+            height="12"
+            fill="url(#premiumKalashGradient)"
+            stroke="url(#kalashHighlight)"
+            strokeWidth="0.6"
+            rx="1"
           />
           
-          {/* Kalash Mouth */}
+          {/* Refined Mouth with Rim */}
           <ellipse
             cx="60"
             cy="75"
-            rx="8"
-            ry="3"
-            fill="url(#kalashGradient)"
-            stroke="url(#brassStroke)"
-            strokeWidth="1"
+            rx="9"
+            ry="2.5"
+            fill="url(#rimGradient)"
+            stroke="url(#kalashHighlight)"
+            strokeWidth="0.4"
           />
           
-          {/* Coconut */}
+          {/* Premium Coconut */}
           <circle
             cx="60"
             cy="65"
-            r="8"
-            fill="url(#coconutGradient)"
+            r="9"
+            fill="url(#premiumCoconutGradient)"
             stroke="#8B4513"
-            strokeWidth="0.5"
+            strokeWidth="0.4"
+            filter="url(#coconutTexture)"
           />
           
-          {/* Coconut Fibers */}
-          <g stroke="#654321" strokeWidth="0.5" opacity="0.7">
-            <line x1="58" y1="60" x2="58" y2="70" />
-            <line x1="60" y1="59" x2="60" y2="71" />
-            <line x1="62" y1="60" x2="62" y2="70" />
+          {/* Realistic Coconut Fibers */}
+          <g stroke="#654321" strokeWidth="0.3" opacity="0.8">
+            <path d="M 57 58 Q 57 65 57 72" />
+            <path d="M 60 57 Q 60 65 60 73" />
+            <path d="M 63 58 Q 63 65 63 72" />
+            <path d="M 55 60 Q 58 63 61 60" />
+            <path d="M 59 70 Q 62 67 65 70" />
           </g>
           
-          {/* Mango Leaves */}
-          <g className="animate-[gentle-sway_5s_ease-in-out_infinite]">
-            {/* Left Leaves */}
+          {/* Sophisticated Mango Leaves */}
+          <g className="animate-[luxury-sway_6s_ease-in-out_infinite]">
+            {/* Left Leaf Cluster */}
             <path
-              d="M 50 70 Q 45 65 40 68 Q 35 70 38 75 Q 42 78 47 75 Q 50 72 50 70"
-              fill="url(#leafGradient)"
+              d="M 48 72 Q 42 67 35 70 Q 30 72 33 78 Q 38 82 45 78 Q 48 75 48 72"
+              fill="url(#premiumLeafGradient)"
               stroke="#2D5016"
-              strokeWidth="0.5"
+              strokeWidth="0.3"
+              filter="url(#leafShadow)"
             />
             <path
-              d="M 48 68 Q 42 63 37 66 Q 32 68 35 73 Q 39 76 45 73 Q 48 70 48 68"
-              fill="url(#leafGradient)"
+              d="M 46 70 Q 39 65 32 68 Q 27 70 30 76 Q 35 80 43 76 Q 46 73 46 70"
+              fill="url(#premiumLeafGradient)"
               stroke="#2D5016"
-              strokeWidth="0.5"
-            />
-            
-            {/* Right Leaves */}
-            <path
-              d="M 70 70 Q 75 65 80 68 Q 85 70 82 75 Q 78 78 73 75 Q 70 72 70 70"
-              fill="url(#leafGradient)"
-              stroke="#2D5016"
-              strokeWidth="0.5"
+              strokeWidth="0.3"
             />
             <path
-              d="M 72 68 Q 78 63 83 66 Q 88 68 85 73 Q 81 76 75 73 Q 72 70 72 68"
-              fill="url(#leafGradient)"
+              d="M 44 68 Q 36 63 29 66 Q 24 68 27 74 Q 32 78 41 74 Q 44 71 44 68"
+              fill="url(#premiumLeafGradient)"
               stroke="#2D5016"
-              strokeWidth="0.5"
+              strokeWidth="0.3"
             />
             
-            {/* Top Leaves */}
+            {/* Right Leaf Cluster */}
             <path
-              d="M 60 60 Q 58 55 62 52 Q 66 50 68 55 Q 68 60 64 62 Q 60 63 60 60"
-              fill="url(#leafGradient)"
+              d="M 72 72 Q 78 67 85 70 Q 90 72 87 78 Q 82 82 75 78 Q 72 75 72 72"
+              fill="url(#premiumLeafGradient)"
               stroke="#2D5016"
-              strokeWidth="0.5"
+              strokeWidth="0.3"
+              filter="url(#leafShadow)"
+            />
+            <path
+              d="M 74 70 Q 81 65 88 68 Q 93 70 90 76 Q 85 80 77 76 Q 74 73 74 70"
+              fill="url(#premiumLeafGradient)"
+              stroke="#2D5016"
+              strokeWidth="0.3"
+            />
+            <path
+              d="M 76 68 Q 84 63 91 66 Q 96 68 93 74 Q 88 78 79 74 Q 76 71 76 68"
+              fill="url(#premiumLeafGradient)"
+              stroke="#2D5016"
+              strokeWidth="0.3"
+            />
+            
+            {/* Top Central Leaves */}
+            <path
+              d="M 60 58 Q 58 52 62 49 Q 67 47 70 52 Q 70 58 66 61 Q 60 62 60 58"
+              fill="url(#premiumLeafGradient)"
+              stroke="#2D5016"
+              strokeWidth="0.3"
+            />
+            <path
+              d="M 58 56 Q 56 50 60 47 Q 65 45 68 50 Q 68 56 64 59 Q 58 60 58 56"
+              fill="url(#premiumLeafGradient)"
+              stroke="#2D5016"
+              strokeWidth="0.3"
             />
           </g>
           
-          {/* Decorative Patterns on Kalash */}
-          <g opacity="0.8">
-            <circle cx="50" cy="100" r="1.5" fill="url(#decorativeGold)" />
-            <circle cx="70" cy="100" r="1.5" fill="url(#decorativeGold)" />
-            <circle cx="60" cy="105" r="1" fill="url(#decorativeGold)" />
+          {/* Luxury Decorative Patterns */}
+          <g opacity="0.9" stroke="url(#engravingGold)" strokeWidth="0.3" fill="url(#patternFill)">
+            <circle cx="48" cy="105" r="2" opacity="0.8" />
+            <circle cx="72" cy="105" r="2" opacity="0.8" />
+            <circle cx="60" cy="110" r="1.5" opacity="0.7" />
             
-            {/* Traditional Pattern */}
+            {/* Traditional Ornate Pattern */}
             <path
-              d="M 45 110 Q 50 108 55 110 Q 60 112 65 110 Q 70 108 75 110"
-              stroke="url(#decorativeGold)"
-              strokeWidth="1"
+              d="M 42 115 Q 48 113 54 115 Q 60 117 66 115 Q 72 113 78 115"
+              stroke="url(#engravingGold)"
+              strokeWidth="0.8"
               fill="none"
+              opacity="0.8"
             />
+            
+            {/* Sacred Symbols */}
+            <circle cx="45" cy="95" r="1.5" opacity="0.6" />
+            <circle cx="75" cy="95" r="1.5" opacity="0.6" />
+            <path d="M 50 100 Q 55 98 60 100 Q 65 98 70 100" stroke="url(#engravingGold)" strokeWidth="0.5" fill="none" />
           </g>
           
-          {/* Reflective Shine */}
+          {/* Premium Reflective Shine */}
           <ellipse
-            cx="55"
-            cy="95"
-            rx="3"
-            ry="8"
-            fill="url(#shineGradient)"
-            opacity="0.6"
+            cx="52"
+            cy="100"
+            rx="4"
+            ry="15"
+            fill="url(#luxuryShineGradient)"
+            opacity="0.7"
           />
           
-          {/* Gradients */}
+          {/* Secondary Shine */}
+          <ellipse
+            cx="68"
+            cy="95"
+            rx="2"
+            ry="8"
+            fill="url(#luxuryShineGradient)"
+            opacity="0.5"
+          />
+          
+          {/* Premium Gradients and Effects */}
           <defs>
-            <radialGradient id="kalashGradient" cx="0.3" cy="0.3">
-              <stop offset="0%" stopColor="#FFD700" />
-              <stop offset="30%" stopColor="#DAA520" />
-              <stop offset="70%" stopColor="#B8860B" />
+            {/* Sophisticated Kalash Gradients */}
+            <radialGradient id="premiumKalashGradient" cx="0.25" cy="0.25">
+              <stop offset="0%" stopColor="#FFE55C" />
+              <stop offset="20%" stopColor="#DAA520" />
+              <stop offset="60%" stopColor="#B8860B" />
               <stop offset="100%" stopColor="#8B6914" />
             </radialGradient>
             
-            <linearGradient id="brassStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFD700" />
-              <stop offset="50%" stopColor="#DAA520" />
-              <stop offset="100%" stopColor="#B8860B" />
+            <linearGradient id="premiumBaseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#CD853F" />
+              <stop offset="50%" stopColor="#B8860B" />
+              <stop offset="100%" stopColor="#8B6914" />
             </linearGradient>
             
-            <radialGradient id="coconutGradient" cx="0.3" cy="0.3">
-              <stop offset="0%" stopColor="#D2B48C" />
-              <stop offset="50%" stopColor="#CD853F" />
+            <radialGradient id="rimGradient" cx="0.3" cy="0.2">
+              <stop offset="0%" stopColor="#FFE55C" />
+              <stop offset="70%" stopColor="#DAA520" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </radialGradient>
+            
+            <linearGradient id="kalashHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FFFACD" />
+              <stop offset="30%" stopColor="#FFE55C" />
+              <stop offset="100%" stopColor="#DAA520" />
+            </linearGradient>
+            
+            <radialGradient id="premiumCoconutGradient" cx="0.3" cy="0.3">
+              <stop offset="0%" stopColor="#F5DEB3" />
+              <stop offset="40%" stopColor="#D2B48C" />
+              <stop offset="80%" stopColor="#CD853F" />
               <stop offset="100%" stopColor="#8B4513" />
             </radialGradient>
             
-            <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#9ACD32" />
-              <stop offset="50%" stopColor="#6B8E23" />
+            <linearGradient id="premiumLeafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ADFF2F" />
+              <stop offset="30%" stopColor="#9ACD32" />
+              <stop offset="70%" stopColor="#6B8E23" />
               <stop offset="100%" stopColor="#556B2F" />
             </linearGradient>
             
-            <radialGradient id="decorativeGold" cx="0.3" cy="0.3">
+            <radialGradient id="engravingGold" cx="0.3" cy="0.3">
               <stop offset="0%" stopColor="#FFD700" />
+              <stop offset="50%" stopColor="#DAA520" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </radialGradient>
+            
+            <radialGradient id="patternFill" cx="0.4" cy="0.4">
+              <stop offset="0%" stopColor="#FFE55C" />
               <stop offset="100%" stopColor="#DAA520" />
             </radialGradient>
             
-            <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-              <stop offset="50%" stopColor="#FFD700" stopOpacity="0.4" />
+            <linearGradient id="luxuryShineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+              <stop offset="30%" stopColor="#FFFACD" stopOpacity="0.6" />
+              <stop offset="70%" stopColor="#FFE55C" stopOpacity="0.3" />
               <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.1" />
             </linearGradient>
+            
+            {/* Premium Filters */}
+            <filter id="baseShadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="2" dy="3" stdDeviation="2" floodColor="#000000" floodOpacity="0.4"/>
+            </filter>
+            
+            <filter id="bodyDepth" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="1" dy="2" stdDeviation="1" floodColor="#654321" floodOpacity="0.3"/>
+            </filter>
+            
+            <filter id="coconutTexture" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0.5" dy="1" stdDeviation="0.8" floodColor="#8B4513" floodOpacity="0.6"/>
+            </filter>
+            
+            <filter id="leafShadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0.3" dy="0.8" stdDeviation="0.5" floodColor="#2D5016" floodOpacity="0.5"/>
+            </filter>
           </defs>
         </svg>
       </div>

@@ -306,25 +306,26 @@ All colors MUST be HSL.
   }
 }
 
-/* Diya flame animations */
-@keyframes sway {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  75% { transform: rotate(-2deg); }
+/* Premium Diya animations */
+@keyframes elegant-flame {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  33% { transform: rotate(1deg) scale(1.02); }
+  66% { transform: rotate(-1deg) scale(0.98); }
 }
 
-@keyframes flicker {
+@keyframes subtle-flicker {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.05); }
+  25% { opacity: 0.95; transform: scale(1.01); }
+  75% { opacity: 0.98; transform: scale(0.99); }
 }
 
-/* Kalash divine glow */
-@keyframes divine-pulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.1); }
+@keyframes ambient-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
 }
 
-@keyframes gentle-sway {
+/* Premium Kalash animations */
+@keyframes luxury-sway {
   0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(1deg); }
+  50% { transform: rotate(0.8deg); }
 }
