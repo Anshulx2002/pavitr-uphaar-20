@@ -133,8 +133,11 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/15 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
-              className="bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1),0_1px_0_rgba(255,255,255,0.3)_inset,0_0_20px_rgba(255,193,7,0.4)] md:shadow-[0_4px_16px_rgba(0,0,0,0.1),0_1px_0_rgba(255,255,255,0.3)_inset] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15),0_1px_0_rgba(255,255,255,0.4)_inset,0_0_25px_rgba(255,193,7,0.6)] transition-all duration-300 hover:scale-[1.02] border border-yellow-400/20 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background"
-              style={{ height: 'clamp(52px, 7vw, 56px)' }}
+              className="bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300"
+              style={{ 
+                height: 'clamp(52px, 7vw, 56px)',
+                animation: 'elegantPulse 3.5s ease-in-out infinite'
+              }}
               onClick={() => window.location.href = '/festival-kits'}
             >
               <Sparkles className="w-5 md:w-5 h-5 md:h-5 mr-3 md:mr-3 text-yellow-800" />
