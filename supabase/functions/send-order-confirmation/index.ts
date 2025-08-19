@@ -181,7 +181,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Pavitra Uphaar <orders@pavitrauphaar.com>",
+      from: "Pavitra Uphaar <support@pavitrauphaar.com>",
       to: [customerEmail],
       subject: `Order Confirmation - ${orderRef} | Pavitra Uphaar`,
       html: emailHtml,
