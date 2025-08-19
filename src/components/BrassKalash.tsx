@@ -9,7 +9,7 @@ const BrassKalash = () => {
 
   return (
     <div className={`absolute left-4 md:left-8 lg:left-12 top-1/2 transform -translate-y-1/2 transition-all duration-1000 z-[9999] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-      <div className="relative w-16 h-20 md:w-20 md:h-24 lg:w-24 lg:h-28">
+      <div className="relative w-8 h-10 md:w-20 md:h-24 lg:w-24 lg:h-28 opacity-40 md:opacity-100">
         {/* Enhanced Background for Visibility */}
         <div className="absolute inset-0 bg-gradient-radial from-black/25 via-black/15 to-transparent rounded-full scale-125 blur-sm"></div>
         

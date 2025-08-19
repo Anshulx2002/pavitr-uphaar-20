@@ -9,7 +9,7 @@ const MarigoldGarland = () => {
         width="100%"
         height={isMobile ? "60" : "80"}
         viewBox="0 0 1200 80"
-        className="w-full h-auto drop-shadow-[0_2px_8px_rgba(243,156,18,0.3)] animate-[gentle-sway_35s_ease-in-out_infinite]"
+        className="w-full h-auto drop-shadow-[0_2px_8px_rgba(243,156,18,0.3)] animate-[garland-sway_18s_ease-in-out_infinite]"
         preserveAspectRatio="xMidYMin slice"
       >
         {/* Garland String */}
