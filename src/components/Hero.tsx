@@ -118,7 +118,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-radial from-orange-100/50 via-[#F39C12]/20 to-transparent opacity-70 pointer-events-none"></div>
             
             {/* Subtle festive motifs - diyas, lotus, rangoli sparkles */}
-            <div className="absolute inset-0 opacity-15 pointer-events-none" style={{
+            <div className="absolute inset-0 opacity-12 pointer-events-none" style={{
               backgroundImage: `
                 radial-gradient(circle at 15% 25%, rgba(243,156,18,0.4) 1px, transparent 1px),
                 radial-gradient(circle at 85% 30%, rgba(249,200,70,0.3) 1px, transparent 1px),
@@ -130,9 +130,21 @@ const Hero = () => {
               backgroundSize: '100px 100px, 120px 120px, 110px 110px, 130px 130px, 150px 150px, 140px 140px'
             }}></div>
             
+            {/* Traditional Indian motifs - very subtle diya and lotus outlines */}
+            <div className="absolute inset-0 opacity-6 pointer-events-none" style={{
+              backgroundImage: `
+                radial-gradient(ellipse 8px 4px at 20% 30%, transparent 40%, rgba(243,156,18,0.15) 45%, transparent 50%),
+                radial-gradient(ellipse 6px 3px at 80% 25%, transparent 40%, rgba(249,200,70,0.12) 45%, transparent 50%),
+                radial-gradient(ellipse 8px 4px at 30% 70%, transparent 40%, rgba(243,156,18,0.10) 45%, transparent 50%),
+                radial-gradient(ellipse 6px 3px at 70% 75%, transparent 40%, rgba(249,200,70,0.15) 45%, transparent 50%),
+                radial-gradient(circle 12px at 50% 50%, transparent 60%, rgba(243,156,18,0.08) 65%, transparent 70%)
+              `,
+              backgroundSize: '180px 180px, 200px 200px, 160px 160px, 220px 220px, 300px 300px'
+            }}></div>
+            
             {/* Elegant mandala pattern for cultural richness */}
-            <div className="absolute inset-0 opacity-8 pointer-events-none" style={{
-              backgroundImage: `radial-gradient(circle at center, transparent 20%, rgba(243,156,18,0.1) 25%, transparent 30%, rgba(243,156,18,0.05) 35%, transparent 40%)`,
+            <div className="absolute inset-0 opacity-6 pointer-events-none" style={{
+              backgroundImage: `radial-gradient(circle at center, transparent 20%, rgba(243,156,18,0.08) 25%, transparent 30%, rgba(243,156,18,0.04) 35%, transparent 40%)`,
               backgroundSize: '200px 200px',
               backgroundPosition: 'center center'
             }}></div>
@@ -186,10 +198,12 @@ const Hero = () => {
         <div className="flex flex-col gap-4 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
             {/* Enhanced divine aura/halo with warm glow */}
-            <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/25 via-[#DAA520]/15 to-transparent rounded-full scale-150 animate-pulse opacity-70 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/20 via-[#F39C12]/10 to-transparent rounded-full scale-125 opacity-60 pointer-events-none"></div>
-            {/* Glitz animation overlay */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/30 via-[#DAA520]/20 to-transparent rounded-full scale-150 animate-pulse opacity-80 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/25 via-[#F39C12]/15 to-transparent rounded-full scale-125 opacity-70 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/15 via-transparent to-transparent rounded-full scale-200 animate-pulse delay-1000 opacity-50 pointer-events-none"></div>
+            {/* Shimmer animation overlay */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/25 to-transparent animate-[slide-in-right_3s_linear_infinite] overflow-hidden pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-l from-transparent via-[#FFD700]/20 to-transparent animate-[slide-in-right_4s_linear_infinite] overflow-hidden pointer-events-none delay-500"></div>
             <Button 
               size="lg" 
               className={`${isMobile 
@@ -243,8 +257,9 @@ const Hero = () => {
         <div className={`px-4 ${isMobile ? 'mt-7' : 'mt-12 md:mt-16'}`}>
           <div className={`text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
             <div className={`${isMobile ? 'flex gap-3 relative' : 'grid grid-cols-2 gap-3'}`}>
-              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/90 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_8px_25px_rgba(0,0,0,0.12),0_3px_10px_rgba(218,165,32,0.3),inset_0_1px_0_rgba(255,255,255,0.4)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/10 to-transparent opacity-50 pointer-events-none"></div>
+              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/90 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border-2 border-[#DAA520]/60 shadow-[0_8px_25px_rgba(0,0,0,0.12),0_3px_10px_rgba(218,165,32,0.4),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_10px_30px_rgba(218,165,32,0.3),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_0_rgba(218,165,32,0.15)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.4)] hover:border-[#DAA520]/70 hover:scale-[1.02]`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/15 to-transparent opacity-60 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/8 to-transparent opacity-50 pointer-events-none"></div>
                 {isMobile && <Box className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="20+" label="Products" />
@@ -258,8 +273,9 @@ const Hero = () => {
                 </div>
               )}
               
-              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/90 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_8px_25px_rgba(0,0,0,0.12),0_3px_10px_rgba(218,165,32,0.3),inset_0_1px_0_rgba(255,255,255,0.4)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/10 to-transparent opacity-50 pointer-events-none"></div>
+              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/90 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border-2 border-[#DAA520]/60 shadow-[0_8px_25px_rgba(0,0,0,0.12),0_3px_10px_rgba(218,165,32,0.4),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_10px_30px_rgba(218,165,32,0.3),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_0_rgba(218,165,32,0.15)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.4)] hover:border-[#DAA520]/70 hover:scale-[1.02]`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/15 to-transparent opacity-60 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/8 to-transparent opacity-50 pointer-events-none"></div>
                 {isMobile && <Users className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="200+" label="Families Served" />
