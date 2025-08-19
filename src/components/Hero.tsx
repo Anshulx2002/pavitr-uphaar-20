@@ -25,11 +25,12 @@ const Hero = () => {
 
   const AnimatedCounter = ({ target, label }: { target: string; label: string }) => {
     const [count, setCount] = useState(0);
+    const [hasReachedTarget, setHasReachedTarget] = useState(false);
     const numericTarget = parseInt(target.replace(/\D/g, ''));
     const suffix = target.replace(/\d/g, '');
 
     useEffect(() => {
-      if (!isVisible) return;
+      if (!isVisible || hasReachedTarget) return;
       
       const duration = 1500;
       const increment = numericTarget / (duration / 32);
@@ -39,6 +40,7 @@ const Hero = () => {
         current += increment;
         if (current >= numericTarget) {
           setCount(numericTarget);
+          setHasReachedTarget(true);
           clearInterval(timer);
         } else {
           setCount(Math.floor(current));
@@ -46,7 +48,7 @@ const Hero = () => {
       }, 32);
 
       return () => clearInterval(timer);
-    }, [isVisible, numericTarget]);
+    }, [isVisible, numericTarget, hasReachedTarget]);
 
     return (
       <div className="text-center">
@@ -71,26 +73,26 @@ const Hero = () => {
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
       
-      {/* Enhanced Background with Bokeh Lights & Depth */}
-      <div className="absolute inset-0 z-0">
-        {/* Background Image with Visible Diyas */}
-        <img 
-          src={heroImage} 
-          alt="Traditional pooja setup with diyas and incense" 
-          className="w-full h-full object-cover opacity-40 transform transition-transform duration-[15000ms]" 
-          style={{
-            transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
-          }}
-        />
-        
-        {/* Rich Radial Gradient Behind Content */}
-        <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/20 via-background/60 to-background/90"></div>
-        <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/15 via-transparent to-background/70 scale-150"></div>
-        
-        {/* Balanced Overlays for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/55 to-background/75"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-background/15"></div>
+        {/* Enhanced Background with Clear Central Area */}
+        <div className="absolute inset-0 z-0">
+          {/* Background Image with Visible Diyas */}
+          <img 
+            src={heroImage} 
+            alt="Traditional pooja setup with diyas and incense" 
+            className="w-full h-full object-cover opacity-40 transform transition-transform duration-[15000ms]" 
+            style={{
+              transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
+            }}
+          />
+          
+          {/* Rich Radial Gradient Behind Content */}
+          <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/20 via-background/60 to-background/90"></div>
+          <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/15 via-transparent to-background/70 scale-150"></div>
+          
+          {/* Balanced Overlays for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/55 to-background/75"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-background/15"></div>
         
         {/* Mini Marigold Flowers in Background */}
         <div className="absolute top-20 left-1/4 opacity-20 animate-pulse">
