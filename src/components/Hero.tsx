@@ -98,15 +98,94 @@ const Hero = () => {
           backgroundSize: '80px 80px, 60px 60px, 120px 120px'
         }}></div>
         
-        {/* Traditional Golden Floating Elements */}
-        <div className="absolute top-32 right-20 opacity-30 animate-pulse">
-          <Sparkles className="w-6 h-6 text-primary drop-shadow-glow" />
+        {/* Mini Marigold Flowers - Strategically Positioned */}
+        {/* Top Left Area */}
+        <div className="absolute top-20 left-16 opacity-25 animate-pulse delay-300 pointer-events-none">
+          <svg width="24" height="24" viewBox="0 0 24 24" className="text-amber-500 drop-shadow-sm">
+            <path fill="currentColor" d="M12 3L13.09 8.26L18 9L13.09 9.74L12 15L10.91 9.74L6 9L10.91 8.26L12 3Z"/>
+            <circle cx="12" cy="9" r="2" fill="#F39C12" opacity="0.8"/>
+          </svg>
         </div>
-        <div className="absolute bottom-40 left-24 opacity-25 animate-pulse delay-1000">
-          <Star className="w-5 h-5 text-primary drop-shadow-glow" />
+        
+        <div className="absolute top-32 left-32 opacity-20 animate-pulse delay-700 pointer-events-none">
+          <svg width="18" height="18" viewBox="0 0 24 24" className="text-orange-400 drop-shadow-sm">
+            <path fill="currentColor" d="M12 2L13.5 7.5L19 9L13.5 10.5L12 16L10.5 10.5L5 9L10.5 7.5L12 2Z"/>
+            <circle cx="12" cy="9" r="1.5" fill="#E67E22" opacity="0.9"/>
+          </svg>
         </div>
-        <div className="absolute top-48 left-1/4 opacity-20 animate-pulse delay-500">
-          <Heart className="w-4 h-4 text-primary drop-shadow-glow" />
+
+        {/* Top Right Area */}
+        <div className="absolute top-24 right-20 opacity-30 animate-pulse delay-500 pointer-events-none">
+          <svg width="20" height="20" viewBox="0 0 24 24" className="text-yellow-500 drop-shadow-sm">
+            <path fill="currentColor" d="M12 3L13.09 8.26L18 9L13.09 9.74L12 15L10.91 9.74L6 9L10.91 8.26L12 3Z"/>
+            <circle cx="12" cy="9" r="1.8" fill="#DAA520" opacity="0.8"/>
+          </svg>
+        </div>
+
+        <div className="absolute top-40 right-32 opacity-18 animate-pulse delay-1200 pointer-events-none">
+          <svg width="16" height="16" viewBox="0 0 24 24" className="text-amber-400 drop-shadow-sm">
+            <path fill="currentColor" d="M12 2L13.5 7.5L19 9L13.5 10.5L12 16L10.5 10.5L5 9L10.5 7.5L12 2Z"/>
+            <circle cx="12" cy="9" r="1.2" fill="#F4A460" opacity="0.7"/>
+          </svg>
+        </div>
+
+        {/* Bottom Left Area */}
+        <div className="absolute bottom-32 left-20 opacity-22 animate-pulse delay-900 pointer-events-none">
+          <svg width="22" height="22" viewBox="0 0 24 24" className="text-orange-500 drop-shadow-sm">
+            <path fill="currentColor" d="M12 3L13.09 8.26L18 9L13.09 9.74L12 15L10.91 9.74L6 9L10.91 8.26L12 3Z"/>
+            <circle cx="12" cy="9" r="2.2" fill="#E67E22" opacity="0.8"/>
+          </svg>
+        </div>
+
+        <div className="absolute bottom-20 left-40 opacity-16 animate-pulse delay-1500 pointer-events-none">
+          <svg width="14" height="14" viewBox="0 0 24 24" className="text-yellow-400 drop-shadow-sm">
+            <path fill="currentColor" d="M12 2L13.5 7.5L19 9L13.5 10.5L12 16L10.5 10.5L5 9L10.5 7.5L12 2Z"/>
+            <circle cx="12" cy="9" r="1" fill="#FFD700" opacity="0.6"/>
+          </svg>
+        </div>
+
+        {/* Bottom Right Area */}
+        <div className="absolute bottom-28 right-24 opacity-28 animate-pulse delay-600 pointer-events-none">
+          <svg width="26" height="26" viewBox="0 0 24 24" className="text-amber-600 drop-shadow-sm">
+            <path fill="currentColor" d="M12 3L13.09 8.26L18 9L13.09 9.74L12 15L10.91 9.74L6 9L10.91 8.26L12 3Z"/>
+            <circle cx="12" cy="9" r="2.5" fill="#B8860B" opacity="0.9"/>
+          </svg>
+        </div>
+
+        <div className="absolute bottom-44 right-16 opacity-20 animate-pulse delay-1800 pointer-events-none">
+          <svg width="17" height="17" viewBox="0 0 24 24" className="text-orange-300 drop-shadow-sm">
+            <path fill="currentColor" d="M12 2L13.5 7.5L19 9L13.5 10.5L12 16L10.5 10.5L5 9L10.5 7.5L12 2Z"/>
+            <circle cx="12" cy="9" r="1.3" fill="#F4A460" opacity="0.7"/>
+          </svg>
+        </div>
+
+        {/* Mid-Level Scattered Flowers */}
+        <div className="absolute top-1/3 left-12 opacity-15 animate-pulse delay-1100 pointer-events-none">
+          <svg width="19" height="19" viewBox="0 0 24 24" className="text-yellow-600 drop-shadow-sm">
+            <path fill="currentColor" d="M12 3L13.09 8.26L18 9L13.09 9.74L12 15L10.91 9.74L6 9L10.91 8.26L12 3Z"/>
+            <circle cx="12" cy="9" r="1.6" fill="#DAA520" opacity="0.8"/>
+          </svg>
+        </div>
+
+        <div className="absolute top-2/3 right-12 opacity-24 animate-pulse delay-400 pointer-events-none">
+          <svg width="21" height="21" viewBox="0 0 24 24" className="text-amber-500 drop-shadow-sm">
+            <path fill="currentColor" d="M12 3L13.09 8.26L18 9L13.09 9.74L12 15L10.91 9.74L6 9L10.91 8.26L12 3Z"/>
+            <circle cx="12" cy="9" r="1.9" fill="#F39C12" opacity="0.8"/>
+          </svg>
+        </div>
+
+        <div className="absolute top-1/2 left-8 opacity-18 animate-pulse delay-1600 pointer-events-none">
+          <svg width="15" height="15" viewBox="0 0 24 24" className="text-orange-400 drop-shadow-sm">
+            <path fill="currentColor" d="M12 2L13.5 7.5L19 9L13.5 10.5L12 16L10.5 10.5L5 9L10.5 7.5L12 2Z"/>
+            <circle cx="12" cy="9" r="1.1" fill="#E67E22" opacity="0.6"/>
+          </svg>
+        </div>
+
+        <div className="absolute top-1/2 right-8 opacity-22 animate-pulse delay-800 pointer-events-none">
+          <svg width="23" height="23" viewBox="0 0 24 24" className="text-yellow-500 drop-shadow-sm">
+            <path fill="currentColor" d="M12 3L13.09 8.26L18 9L13.09 9.74L12 15L10.91 9.74L6 9L10.91 8.26L12 3Z"/>
+            <circle cx="12" cy="9" r="2.1" fill="#FFD700" opacity="0.8"/>
+          </svg>
         </div>
         
         {/* Traditional Decorative Corners */}
