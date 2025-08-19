@@ -28,8 +28,17 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-[hsl(45_75%_92%)] via-[hsl(42_70%_90%)] to-[hsl(45_75%_92%)] backdrop-blur-sm border-b border-[hsl(45_50%_80%)] shadow-gold sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-3">
+    <header className="bg-gradient-to-r from-[hsl(45_75%_92%)] via-[hsl(42_70%_90%)] to-[hsl(45_75%_92%)] backdrop-blur-sm border-b border-[hsl(45_60%_75%)] shadow-[0_4px_20px_rgba(218,165,32,0.15),0_1px_3px_rgba(0,0,0,0.1)] sticky top-0 z-50 relative overflow-hidden">
+      {/* Luxury golden accent line */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[hsl(45_85%_65%)] to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42_80%_70%)] to-transparent opacity-60"></div>
+      
+      {/* Subtle luxury pattern overlay */}
+      <div className="absolute inset-0 opacity-8" style={{
+        backgroundImage: `radial-gradient(circle at 25% 25%, rgba(218,165,32,0.1) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(255,193,7,0.08) 1px, transparent 1px)`,
+        backgroundSize: '40px 40px, 60px 60px'
+      }}></div>
+      <div className="container mx-auto px-4 py-3 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo - Mobile Optimized with redirect */}
           <a href="/" className="flex items-center">

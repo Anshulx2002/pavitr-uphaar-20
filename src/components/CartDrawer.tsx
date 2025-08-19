@@ -125,14 +125,6 @@ const CartDrawer = ({ isOpen, onOpenChange, children }: CartDrawerProps) => {
                 </div>
               </div>
 
-              {/* Payment Badges */}
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <span>Accepted:</span>
-                <div className="flex items-center gap-1">
-                  <CreditCard className="h-4 w-4" />
-                  <span>UPI • GPay • Cards</span>
-                </div>
-              </div>
 
               <div className="space-y-2">
                 <Button 
