@@ -149,8 +149,10 @@ const Hero = () => {
               backgroundPosition: 'center center'
             }}></div>
             
-            {/* Divine golden halo behind logo */}
-            <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/25 via-[#F39C12]/15 to-transparent opacity-80 pointer-events-none scale-75"></div>
+            {/* Divine golden halo behind logo - enhanced */}
+            <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/35 via-[#F39C12]/20 to-transparent opacity-90 pointer-events-none scale-90"></div>
+            <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/25 via-[#DAA520]/15 to-transparent opacity-80 pointer-events-none scale-110 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/15 via-transparent to-transparent opacity-60 pointer-events-none scale-125"></div>
             
             <div className="flex justify-center mb-4 relative z-10">
               <img 
@@ -207,17 +209,19 @@ const Hero = () => {
             <Button 
               size="lg" 
               className={`${isMobile 
-                ? 'bg-gradient-to-r from-[#F39C12] to-[#F9C846] hover:from-[#E0890B] hover:to-[#F7C13E] text-[#4A2C23] font-semibold text-base px-8 py-6 rounded-full shadow-[0_10px_30px_rgba(243,156,18,0.4),0_5px_15px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(249,200,70,0.7)] hover:shadow-[0_16px_40px_rgba(243,156,18,0.5),0_8px_20px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(249,200,70,0.9)] hover:scale-[1.025] hover:-translate-y-1 transition-all duration-300 border border-[#F39C12]/25' 
-                : 'bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20'
-              } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300`}
+                ? 'bg-gradient-to-r from-[#DAA520] via-[#F39C12] to-[#F9C846] hover:from-[#B8860B] hover:via-[#E0890B] hover:to-[#F7C13E] text-[#4A2C23] font-semibold text-base px-8 py-6 rounded-full shadow-[0_12px_35px_rgba(218,165,32,0.5),0_6px_20px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_18px_45px_rgba(218,165,32,0.6),0_10px_25px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.9)] hover:scale-[1.03] hover:-translate-y-1.5 transition-all duration-400 border border-[#DAA520]/30' 
+                : 'bg-gradient-to-r from-[#DAA520] via-[#F39C12] to-[#F9C846] hover:from-[#B8860B] hover:via-[#E0890B] hover:to-[#F7C13E] text-[#4A2C23] font-semibold text-lg px-10 py-6 rounded-full shadow-[0_12px_35px_rgba(218,165,32,0.4),0_6px_20px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.7)] hover:shadow-[0_18px_45px_rgba(218,165,32,0.5),0_10px_25px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.8)] hover:scale-[1.025] hover:-translate-y-1 transition-all duration-400 border border-[#DAA520]/25'
+              } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background group`}
               style={{ 
                 height: isMobile ? '58px' : 'clamp(52px, 7vw, 56px)',
                 animation: 'elegantPulse 3.5s ease-in-out infinite'
               }}
               onClick={() => window.location.href = '/festival-kits'}
             >
-              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-[#4A2C23]" />
-              Shop Kits
+              {/* Premium shine animation */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-[#4A2C23] relative z-10" />
+              <span className="relative z-10">Shop Kits</span>
             </Button>
           </div>
           
@@ -257,10 +261,11 @@ const Hero = () => {
         <div className={`px-4 ${isMobile ? 'mt-7' : 'mt-12 md:mt-16'}`}>
           <div className={`text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
             <div className={`${isMobile ? 'flex gap-3 relative' : 'grid grid-cols-2 gap-3'}`}>
-              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/90 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border-2 border-[#DAA520]/60 shadow-[0_8px_25px_rgba(0,0,0,0.12),0_3px_10px_rgba(218,165,32,0.4),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_10px_30px_rgba(218,165,32,0.3),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_0_rgba(218,165,32,0.15)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.4)] hover:border-[#DAA520]/70 hover:scale-[1.02]`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/15 to-transparent opacity-60 pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/8 to-transparent opacity-50 pointer-events-none"></div>
-                {isMobile && <Box className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10" />}
+              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/12 via-[#FFD700]/8 to-transparent opacity-60 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/6 to-transparent opacity-40 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/30 to-transparent"></div>
+                {isMobile && <Box className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="20+" label="Products" />
                 </div>
@@ -273,10 +278,11 @@ const Hero = () => {
                 </div>
               )}
               
-              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/90 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border-2 border-[#DAA520]/60 shadow-[0_8px_25px_rgba(0,0,0,0.12),0_3px_10px_rgba(218,165,32,0.4),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_10px_30px_rgba(218,165,32,0.3),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_0_rgba(218,165,32,0.15)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.4)] hover:border-[#DAA520]/70 hover:scale-[1.02]`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/15 to-transparent opacity-60 pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/8 to-transparent opacity-50 pointer-events-none"></div>
-                {isMobile && <Users className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10" />}
+              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/12 via-[#FFD700]/8 to-transparent opacity-60 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/6 to-transparent opacity-40 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/30 to-transparent"></div>
+                {isMobile && <Users className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="200+" label="Families Served" />
                 </div>
