@@ -111,24 +111,24 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            {/* Compact top padding for above-the-fold optimization */}
-            <div className="pt-6"></div>
+            {/* Minimal top padding for above-the-fold optimization */}
+            <div className="pt-4"></div>
             
-            <div className="flex justify-center mb-3">
+            <div className="flex justify-center mb-2">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-48 h-auto animate-[fade-in_1s_ease-out]"
+                className="w-44 h-auto animate-[fade-in_1s_ease-out]"
                 style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
             
             {/* Compact minimalist golden divider */}
-            <div className="flex justify-center mb-3">
-              <Star className="w-4 h-4 text-gold animate-pulse opacity-70" />
+            <div className="flex justify-center mb-2">
+              <Star className="w-3.5 h-3.5 text-gold animate-pulse opacity-70" />
             </div>
             
-            <p className="text-center font-playfair text-[#3A2A22] text-[15px] leading-[1.6] font-medium mb-4 px-4 max-w-[80%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+            <p className="text-center font-playfair text-[#3A2A22] text-sm leading-[1.5] font-medium mb-3 px-4 max-w-[80%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               Premium Pooja Kits, beautifully packed.<br />
               Delivered to your door.
             </p>
@@ -176,16 +176,16 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Browse all products link - closer spacing on mobile */}
+          {/* Browse all products link - tighter spacing on mobile */}
           <a 
             href="/products/all" 
-            className={`text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'mb-2' : ''}`}
+            className={`text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'mb-1' : ''}`}
           >
             Browse all products
           </a>
           
-          {/* Trust bar - compact spacing on mobile */}
-          <div className={`flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium ${isMobile ? 'mt-3' : 'mt-5'}`}>
+          {/* Trust bar - minimal spacing on mobile */}
+          <div className={`flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium ${isMobile ? 'mt-2' : 'mt-5'}`}>
             <div className="flex items-center gap-1.5">
               <Shield className="w-3 h-3 md:w-4 md:h-4" />
               <span>Secure Checkout</span>
@@ -208,8 +208,8 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Stats tiles - Proper spacing on mobile */}
-        <div className={`px-4 ${isMobile ? 'mt-8' : 'mt-12 md:mt-16'}`}>
+        {/* Stats tiles - Tight spacing for above-the-fold on mobile */}
+        <div className={`px-4 ${isMobile ? 'mt-4' : 'mt-12 md:mt-16'}`}>
           <div className={`grid grid-cols-2 gap-3 text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
             <div className={`rounded-xl bg-card/90 backdrop-blur-sm border border-primary/20 shadow-gold transition-all duration-500 ${isMobile ? 'p-3' : 'p-4 md:p-6 md:rounded-2xl md:border-2'}`}>
               <AnimatedCounter target="20+" label="Products" />
