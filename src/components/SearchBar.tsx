@@ -123,7 +123,8 @@ const SearchBar = ({ className = "", placeholder = "Search products...", onSearc
       </div>
 
       {isOpen && filteredSuggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 border-2 border-premium-gold-saffron/30 rounded-xl shadow-2xl backdrop-blur-md z-[9999] max-h-80 overflow-y-auto">
+        <div className="fixed left-0 right-0 mt-2 bg-white dark:bg-gray-800 border-2 border-premium-gold-saffron/30 rounded-xl shadow-2xl backdrop-blur-md z-[99999] max-h-80 overflow-y-auto mx-4 md:mx-auto md:max-w-md md:left-1/2 md:transform md:-translate-x-1/2" 
+             style={{ top: `${searchRef.current?.getBoundingClientRect().bottom || 0}px` }}>
           <div className="p-2">
             {filteredSuggestions.slice(0, 8).map((suggestion, index) => (
               <button

@@ -28,7 +28,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-br from-orange-50 via-yellow-50/90 to-orange-100/70 backdrop-blur-sm border-b border-[hsl(45_60%_75%)] shadow-[0_4px_20px_rgba(218,165,32,0.15),0_1px_3px_rgba(0,0,0,0.1)] sticky top-0 z-50 relative overflow-hidden">
+    <header className="bg-gradient-to-br from-orange-50 via-yellow-50/90 to-orange-100/70 backdrop-blur-sm border-b border-[hsl(45_60%_75%)] shadow-[0_4px_20px_rgba(218,165,32,0.15),0_1px_3px_rgba(0,0,0,0.1)] sticky top-0 z-50 relative">
       {/* Luxury golden accent line */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[hsl(45_85%_65%)] to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(42_80%_70%)] to-transparent opacity-60"></div>
