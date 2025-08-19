@@ -10,7 +10,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet, Landmark, Shield, Tag } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
@@ -130,31 +129,7 @@ const Checkout = () => {
           email: data.email,
           contact: data.phone
         },
-        handler: async function (response: any) {
-          // Send order confirmation email
-          try {
-            const fullAddress = `${data.address}\n${data.city}, ${data.state} - ${data.pincode}`;
-            
-            await supabase.functions.invoke('send-order-confirmation', {
-              body: {
-                customerName: data.name,
-                customerEmail: data.email,
-                orderRef: receipt,
-                amount: Math.round(total * 100), // Amount in paise
-                currency: 'INR',
-                items: cartItems.map(item => ({
-                  name: item.name,
-                  quantity: item.quantity,
-                  price: Math.round(item.price * 100) // Price in paise
-                })),
-                shippingAddress: fullAddress
-              }
-            });
-          } catch (emailError) {
-            console.error('Failed to send email confirmation:', emailError);
-            // Continue with redirect even if email fails
-          }
-          
+        handler: function (response: any) {
           // Success - redirect to thank you page
           window.location.href = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
         },
