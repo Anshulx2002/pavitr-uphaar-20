@@ -3,10 +3,16 @@ import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Filter, Grid, List } from "lucide-react";
+import { Filter, Grid, List, ChevronDown, Sparkles } from "lucide-react";
 import { allProducts, categories } from "@/data/products";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const AllProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -31,34 +37,96 @@ const AllProductsSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
 
-        {/* Premium Category Tabs & View Controls */}
+        {/* Premium Category Dropdown & View Controls */}
         <div className="mb-16">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
-            <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full lg:w-auto">
-              <TabsList className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 w-full lg:w-auto h-auto p-2 bg-gradient-to-r from-background/80 via-accent/10 to-background/80 backdrop-blur-sm border border-border/50 shadow-card">
-                {categories.map((category) => (
-                  <TabsTrigger 
-                    key={category.id} 
-                    value={category.id}
-                    className="text-xs lg:text-sm px-3 lg:px-4 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-accent data-[state=active]:text-white data-[state=active]:shadow-gold transition-all duration-300 hover:bg-accent/20"
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-12">
+            
+            {/* Luxury Category Dropdown */}
+            <div className="flex-1 max-w-md">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-between h-14 px-6 py-4 bg-gradient-to-r from-background/90 via-premium-gold-saffron/5 to-background/90 backdrop-blur-sm border-2 border-premium-gold-saffron/20 hover:border-premium-gold-saffron/40 shadow-lg hover:shadow-xl transition-all duration-300 group"
                   >
-                    <div className="flex flex-col items-center gap-1.5">
-                      <span className="font-medium">{category.name}</span>
-                      <Badge variant="secondary" className="text-xs h-5 px-2 bg-primary/10 text-primary border-primary/20">
-                        {category.count}
-                      </Badge>
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 rounded-full animate-pulse"></div>
+                      <div className="flex flex-col items-start">
+                        <span className="text-xs text-muted-foreground uppercase tracking-wider">Category</span>
+                        <span className="font-semibold text-foreground">
+                          {categories.find(cat => cat.id === activeCategory)?.name || "All Products"}
+                        </span>
+                      </div>
                     </div>
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="bg-premium-gold-saffron/10 text-premium-gold-saffron border-premium-gold-saffron/20 font-semibold">
+                        {categories.find(cat => cat.id === activeCategory)?.count || allProducts.length}
+                      </Badge>
+                      <ChevronDown className="h-4 w-4 text-premium-gold-saffron transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                    </div>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                  align="start" 
+                  className="w-[var(--radix-dropdown-menu-trigger-width)] min-w-[300px] p-3 bg-background/95 backdrop-blur-md border-2 border-premium-gold-saffron/20 shadow-2xl z-50"
+                >
+                  <div className="grid gap-1">
+                    <div className="flex items-center gap-2 mb-3 pb-3 border-b border-premium-gold-saffron/20 px-2">
+                      <Sparkles className="h-4 w-4 text-premium-gold-saffron" />
+                      <span className="font-semibold text-foreground text-sm">Sacred Collection</span>
+                    </div>
+                    {categories.map((category) => (
+                      <DropdownMenuItem 
+                        key={category.id}
+                        onClick={() => setActiveCategory(category.id)}
+                        className={`flex items-center justify-between px-3 py-3 h-12 rounded-lg cursor-pointer transition-all duration-200 group ${
+                          activeCategory === category.id 
+                            ? "bg-gradient-to-r from-premium-gold-saffron/20 to-premium-gold-saffron/10 border border-premium-gold-saffron/30" 
+                            : "hover:bg-premium-gold-saffron/5 hover:border-premium-gold-saffron/20 border border-transparent"
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                            activeCategory === category.id 
+                              ? "bg-premium-gold-saffron animate-pulse" 
+                              : "bg-muted-foreground/30 group-hover:bg-premium-gold-saffron/60"
+                          }`}></div>
+                          <span className={`font-medium transition-colors ${
+                            activeCategory === category.id 
+                              ? "text-premium-gold-saffron" 
+                              : "text-foreground group-hover:text-premium-gold-saffron"
+                          }`}>
+                            {category.name}
+                          </span>
+                        </div>
+                        <Badge 
+                          variant="secondary" 
+                          className={`text-xs h-6 px-2 font-semibold transition-all duration-200 ${
+                            activeCategory === category.id
+                              ? "bg-premium-gold-saffron/20 text-premium-gold-saffron border-premium-gold-saffron/30"
+                              : "bg-muted/50 text-muted-foreground group-hover:bg-premium-gold-saffron/10 group-hover:text-premium-gold-saffron group-hover:border-premium-gold-saffron/20"
+                          }`}
+                        >
+                          {category.count}
+                        </Badge>
+                      </DropdownMenuItem>
+                    ))}
+                  </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
 
-            <div className="flex items-center gap-3 bg-background/80 backdrop-blur-sm rounded-lg p-2 border border-border/50 shadow-card">
+            {/* View Mode Controls */}
+            <div className="flex items-center gap-3 bg-gradient-to-r from-background/90 via-premium-gold-saffron/5 to-background/90 backdrop-blur-sm rounded-xl p-2 border-2 border-premium-gold-saffron/20 shadow-lg">
               <Button
                 variant={viewMode === "grid" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setViewMode("grid")}
-                className={`flex-1 lg:flex-none transition-all duration-300 ${viewMode === "grid" ? "bg-gradient-to-r from-primary to-accent text-white shadow-gold" : ""}`}
+                className={`transition-all duration-300 ${
+                  viewMode === "grid" 
+                    ? "bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 text-white shadow-lg border-premium-gold-saffron/30" 
+                    : "border-premium-gold-saffron/20 hover:bg-premium-gold-saffron/5 hover:border-premium-gold-saffron/40"
+                }`}
               >
                 <Grid className="w-4 h-4 mr-2" />
                 Grid
@@ -67,7 +135,11 @@ const AllProductsSection = () => {
                 variant={viewMode === "list" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setViewMode("list")}
-                className={`flex-1 lg:flex-none transition-all duration-300 ${viewMode === "list" ? "bg-gradient-to-r from-primary to-accent text-white shadow-gold" : ""}`}
+                className={`transition-all duration-300 ${
+                  viewMode === "list" 
+                    ? "bg-gradient-to-r from-premium-gold-saffron to-premium-gold-saffron/80 text-white shadow-lg border-premium-gold-saffron/30" 
+                    : "border-premium-gold-saffron/20 hover:bg-premium-gold-saffron/5 hover:border-premium-gold-saffron/40"
+                }`}
               >
                 <List className="w-4 h-4 mr-2" />
                 List
