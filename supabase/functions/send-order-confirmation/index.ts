@@ -89,11 +89,23 @@ const handler = async (req: Request): Promise<Response> => {
                 <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
                   <!-- Header -->
                   <tr>
-                    <td style="background: linear-gradient(135deg, #ff6b35, #f7931e); padding: 40px 30px; text-align: center;">
-                      <div style="display: flex; align-items: center; justify-content: center;">
-                        <img src="https://res.cloudinary.com/dv6yivx37/image/upload/v1755598895/LOGO_PAVITRA_UPHAAR_DARK_BROWN_c8ybts.png" alt="Pavitra Uphaar Logo" style="height: 60px; margin-right: 16px; background: white; padding: 8px; border-radius: 8px;" />
-                        <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: 1px;">Pavitra Uphaar</h1>
-                      </div>
+                    <td style="background-color: #ff6b35; padding: 40px 30px; text-align: center;">
+                      <table width="100%" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                        <tr>
+                          <td style="text-align: center;">
+                            <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                              <tr>
+                                <td style="vertical-align: middle; padding-right: 16px;">
+                                  <img src="https://res.cloudinary.com/dv6yivx37/image/upload/v1755598895/LOGO_PAVITRA_UPHAAR_DARK_BROWN_c8ybts.png" alt="Pavitra Uphaar Logo" style="height: 60px; background: white; padding: 8px; border-radius: 8px; display: block;" />
+                                </td>
+                                <td style="vertical-align: middle;">
+                                  <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: 1px; font-family: Arial, sans-serif;">Pavitra Uphaar</h1>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
                   
