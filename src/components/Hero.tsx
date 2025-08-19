@@ -111,15 +111,27 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            <div className="flex justify-center mb-4">
+            {/* Generous spacing above logo */}
+            <div className="mb-8"></div>
+            
+            <div className="flex justify-center mb-6">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-56 h-auto animate-[fade-in_1s_ease-out]"
+                className="w-50 h-auto animate-[fade-in_1s_ease-out]"
               />
             </div>
             
-            <p className="text-center text-[#3A2A22] text-base font-medium mb-5 px-4 leading-relaxed animate-[fade-in_1s_ease-out_0.2s_both]">
+            {/* Elegant golden divider */}
+            <div className="flex justify-center mb-6">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-px bg-gradient-gold opacity-60"></div>
+                <Star className="w-3 h-3 text-gold animate-pulse" />
+                <div className="w-6 h-px bg-gradient-gold opacity-60"></div>
+              </div>
+            </div>
+            
+            <p className="text-center font-playfair text-[#3A2A22] text-[15px] leading-[1.6] font-light mb-6 px-4 max-w-[80%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               Premium Pooja Kits, beautifully packed.<br />
               Delivered to your door.
             </p>

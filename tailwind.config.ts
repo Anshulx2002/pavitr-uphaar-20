@@ -85,6 +85,7 @@ export default {
 			},
 			fontFamily: {
 				'sanskrit': ['Noto Sans Devanagari', 'serif'],
+				'playfair': ['Playfair Display', 'serif'],
 			},
 			keyframes: {
 				'accordion-down': {
