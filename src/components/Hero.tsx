@@ -47,10 +47,10 @@ const Hero = () => {
 
     return (
       <div className="text-center">
-        <div className="text-lg md:text-xl lg:text-3xl font-bold text-foreground">
+        <div className={`${isMobile ? 'text-2xl font-bold text-foreground' : 'text-lg md:text-xl lg:text-3xl font-bold text-foreground'}`}>
           {count}{suffix}
         </div>
-        <div className="text-sm md:text-sm lg:text-base text-muted-foreground font-medium">{label}</div>
+        <div className={`${isMobile ? 'text-sm text-muted-foreground font-medium' : 'text-sm md:text-sm lg:text-base text-muted-foreground font-medium'}`}>{label}</div>
       </div>
     );
   };
@@ -112,7 +112,7 @@ const Hero = () => {
         {isMobile ? (
           <>
             {/* Move logo higher for main focal point */}
-            <div className="-mt-20 pt-4"></div>
+            <div className="-mt-16 pt-6"></div>
             
             {/* Premium festive background with cultural motifs */}
             <div className="absolute inset-0 bg-gradient-radial from-orange-100/50 via-[#F39C12]/20 to-transparent opacity-70 pointer-events-none"></div>
@@ -154,21 +154,21 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/25 via-[#DAA520]/15 to-transparent opacity-80 pointer-events-none scale-110 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/15 via-transparent to-transparent opacity-60 pointer-events-none scale-125"></div>
             
-            <div className="flex justify-center mb-4 relative z-10">
+            <div className="flex justify-center mb-6 relative z-10 px-4">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-48 h-auto animate-[fade-in_1s_ease-out] drop-shadow-[0_0_20px_rgba(218,165,32,0.3)]"
+                className="w-56 h-auto animate-[fade-in_1s_ease-out] drop-shadow-[0_0_25px_rgba(218,165,32,0.35)]"
                 style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
             
             {/* Elegant thin golden divider */}
-            <div className="flex justify-center mb-3">
+            <div className="flex justify-center mb-4">
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
             </div>
             
-            <p className="text-center font-playfair text-base leading-[1.4] mb-5 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+            <p className="text-center font-playfair text-[17px] leading-[1.5] mb-7 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               <span className="text-[#4A2A1F] font-semibold">Premium Pooja Kits</span> <span className="text-[#8B5A3C] font-light">— beautifully packed & delivered.</span>
             </p>
           </>
@@ -197,7 +197,7 @@ const Hero = () => {
           </>
         )}
         
-        <div className="flex flex-col gap-4 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
+        <div className="flex flex-col gap-6 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
             {/* Enhanced divine aura/halo with warm glow */}
             <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/30 via-[#DAA520]/20 to-transparent rounded-full scale-150 animate-pulse opacity-80 pointer-events-none"></div>
@@ -208,14 +208,18 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-l from-transparent via-[#FFD700]/20 to-transparent animate-[slide-in-right_4s_linear_infinite] overflow-hidden pointer-events-none delay-500"></div>
             <Button 
               size="lg" 
-              className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-background transition-all duration-300 px-8 py-4 font-medium text-white hover:scale-[1.015] hover:-translate-y-0.5"
+              className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-background transition-all duration-300 font-medium text-white hover:scale-[1.015] hover:-translate-y-0.5"
               style={{ 
                 background: 'linear-gradient(135deg, #B8860B, #DAA520, #CD853F)',
                 borderRadius: '10px',
                 boxShadow: 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 3px 12px rgba(184,134,11,0.25)',
-                height: isMobile ? '52px' : 'clamp(48px, 6vw, 52px)',
+                height: isMobile ? '60px' : 'clamp(48px, 6vw, 52px)',
+                width: isMobile ? 'auto' : 'auto',
+                padding: isMobile ? '0 38px' : '16px 32px',
                 border: '1px solid rgba(218,165,32,0.3)',
-                backdropFilter: 'blur(8px)'
+                backdropFilter: 'blur(8px)',
+                fontSize: isMobile ? '17px' : '16px',
+                letterSpacing: isMobile ? '2.5px' : '1px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #A0750A, #B8860B, #B8860B)';
@@ -227,52 +231,52 @@ const Hero = () => {
               }}
               onClick={() => window.location.href = '/festival-kits'}
             >
-              <Star className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 stroke-[1.5] text-white" />
-              <span className="font-medium tracking-wide">Shop Kits</span>
+              <Star className={`${isMobile ? 'w-5 h-5 mr-3' : 'w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3'} stroke-[1.5] text-white`} />
+              <span className="font-medium">Shop Kits</span>
             </Button>
           </div>
           
           {/* Browse all products - clean minimal with gold underline */}
           <a 
             href="/products/all" 
-            className={`text-muted-foreground hover:text-foreground font-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'text-[13px] mb-1 underline decoration-1 decoration-[#DAA520] underline-offset-4 hover:underline-offset-2' : 'text-sm underline underline-offset-4 hover:underline-offset-2'}`}
+            className={`text-muted-foreground hover:text-foreground font-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'text-[14px] mb-2 underline decoration-1 decoration-[#DAA520] underline-offset-4 hover:underline-offset-2' : 'text-sm underline underline-offset-4 hover:underline-offset-2'}`}
           >
             Browse all products
           </a>
           
           {/* Trust badges - premium saffron styling with enhanced visibility */}
-          <div className={`flex flex-wrap items-center justify-center gap-5 text-muted-foreground ${isMobile ? 'text-xs mt-4' : 'text-xs md:text-sm mt-5'}`}>
+          <div className={`flex flex-wrap items-center justify-center gap-6 text-muted-foreground ${isMobile ? 'text-[13px] mt-6' : 'text-xs md:text-sm mt-5'}`}>
             <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
-              <Shield className={`${isMobile ? 'w-4 h-4 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <Shield className={`${isMobile ? 'w-5 h-5 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
               <span className={`${isMobile ? 'font-semibold tracking-wide' : ''}`}>Secure Checkout</span>
             </div>
             <span className="text-primary/50">•</span>
             <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
-              <Truck className={`${isMobile ? 'w-4 h-4 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <Truck className={`${isMobile ? 'w-5 h-5 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
               <span className={`${isMobile ? 'font-semibold tracking-wide' : ''}`}>Fast Shipping</span>
             </div>
             <span className="text-primary/50">•</span>
             <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
-              <Package className={`${isMobile ? 'w-4 h-4 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <Package className={`${isMobile ? 'w-5 h-5 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
               <span className={`${isMobile ? 'font-semibold tracking-wide' : ''}`}>Hand-packed</span>
             </div>
             <span className="text-primary/50">•</span>
             <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
-              <MapPin className={`${isMobile ? 'w-4 h-4 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <MapPin className={`${isMobile ? 'w-5 h-5 stroke-[2.5]' : 'w-3 h-3 md:w-4 md:h-4'}`} />
               <span className={`${isMobile ? 'font-semibold tracking-wide' : ''}`}>Made in India</span>
             </div>
           </div>
         </div>
         
         {/* Stats tiles - Premium embossed golden gradient borders */}
-        <div className={`px-4 ${isMobile ? 'mt-7' : 'mt-12 md:mt-16'}`}>
-          <div className={`text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
-            <div className={`${isMobile ? 'flex gap-3 relative' : 'grid grid-cols-2 gap-3'}`}>
-              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
+        <div className={`px-4 ${isMobile ? 'mt-9' : 'mt-12 md:mt-16'}`}>
+          <div className={`text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-sm mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
+            <div className={`${isMobile ? 'flex gap-4 relative' : 'grid grid-cols-2 gap-3'}`}>
+              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-6 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15),inset_0_0_20px_rgba(218,165,32,0.05)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/12 via-[#FFD700]/8 to-transparent opacity-60 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/6 to-transparent opacity-40 pointer-events-none"></div>
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/30 to-transparent"></div>
-                {isMobile && <Box className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
+                {isMobile && <Box className="w-5 h-5 text-[#E67E22] mx-auto mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="20+" label="Products" />
                 </div>
@@ -281,15 +285,15 @@ const Hero = () => {
               {/* Enhanced golden divider with glow */}
               {isMobile && (
                 <div className="flex items-center">
-                  <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#DAA520]/60 to-transparent shadow-[0_0_10px_rgba(218,165,32,0.5)]"></div>
+                  <div className="w-px h-14 bg-gradient-to-b from-transparent via-[#DAA520]/60 to-transparent shadow-[0_0_10px_rgba(218,165,32,0.5)]"></div>
                 </div>
               )}
               
-              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
+              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-6 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15),inset_0_0_20px_rgba(218,165,32,0.05)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/12 via-[#FFD700]/8 to-transparent opacity-60 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/6 to-transparent opacity-40 pointer-events-none"></div>
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/30 to-transparent"></div>
-                {isMobile && <Users className="w-4 h-4 text-[#E67E22] mx-auto mb-1 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
+                {isMobile && <Users className="w-5 h-5 text-[#E67E22] mx-auto mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="200+" label="Families Served" />
                 </div>
