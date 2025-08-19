@@ -208,18 +208,24 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-l from-transparent via-[#FFD700]/20 to-transparent animate-[slide-in-right_4s_linear_infinite] overflow-hidden pointer-events-none delay-500"></div>
             <Button 
               size="lg" 
-              variant="saffron"
-              className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background group hover:scale-[1.025] hover:-translate-y-1 transition-all duration-400"
+              className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-background transition-all duration-300 px-8 py-4 font-semibold text-[#4B2E1E] hover:scale-[1.02] hover:-translate-y-0.5"
               style={{ 
-                height: isMobile ? '58px' : 'clamp(52px, 7vw, 56px)',
-                animation: 'elegantPulse 3.5s ease-in-out infinite'
+                background: 'linear-gradient(to bottom, #FFE8C7, #F7B85C)',
+                borderRadius: '10px',
+                boxShadow: 'inset 0px 2px 4px rgba(0,0,0,0.12), inset 0px -2px 4px rgba(255,255,255,0.3), 0 4px 12px rgba(247,184,92,0.3)',
+                height: isMobile ? '54px' : 'clamp(50px, 6vw, 54px)',
+                border: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to bottom, #FFD48A, #F7B85C)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to bottom, #FFE8C7, #F7B85C)';
               }}
               onClick={() => window.location.href = '/festival-kits'}
             >
-              {/* Premium shine animation */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
-              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 relative z-10" />
-              <span className="relative z-10">Shop Kits</span>
+              <Star className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 stroke-[1.5] text-[#4B2E1E]" />
+              <span>Shop Kits</span>
             </Button>
           </div>
           
