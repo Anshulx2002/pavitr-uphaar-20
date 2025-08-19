@@ -56,7 +56,7 @@ const Hero = () => {
   };
 
   return (
-    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${isMobile ? 'bg-gradient-to-br from-orange-50/30 via-yellow-50/20 to-orange-50/30' : 'bg-gradient-to-br from-background via-accent/5 to-background'}`}>
+    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${isMobile ? 'bg-gradient-to-br from-orange-50 via-yellow-50/80 to-orange-100/60' : 'bg-gradient-to-br from-background via-accent/5 to-background'}`}>
       {/* Traditional Indian Border - Top */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
@@ -111,22 +111,33 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            {/* Move logo higher with breathing room */}
-            <div className="-mt-16 pt-4"></div>
+            {/* Move logo higher for main focal point */}
+            <div className="-mt-20 pt-4"></div>
             
-            {/* Enhanced luxury radial glow behind logo */}
-            <div className="absolute inset-0 bg-gradient-radial from-orange-50/30 via-[#F39C12]/10 to-transparent opacity-90 pointer-events-none"></div>
+            {/* Divine radial glow behind center area */}
+            <div className="absolute inset-0 bg-gradient-radial from-orange-100/40 via-[#F39C12]/15 to-transparent opacity-80 pointer-events-none"></div>
             
-            {/* Optional faint mandala motif at bottom */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-gradient-radial from-[#F39C12]/5 to-transparent opacity-60 rounded-full pointer-events-none" style={{
-              backgroundImage: `radial-gradient(circle at center, transparent 30%, rgba(243,156,18,0.03) 35%, transparent 40%)`
+            {/* Subtle golden sparkles for divine effect */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
+              backgroundImage: `
+                radial-gradient(circle at 20% 30%, rgba(243,156,18,0.3) 1px, transparent 1px),
+                radial-gradient(circle at 70% 20%, rgba(249,200,70,0.4) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(243,156,18,0.2) 1px, transparent 1px),
+                radial-gradient(circle at 30% 80%, rgba(249,200,70,0.3) 1px, transparent 1px)
+              `,
+              backgroundSize: '120px 120px, 100px 100px, 140px 140px, 110px 110px'
             }}></div>
             
-            <div className="flex justify-center mb-3 relative z-10">
+            {/* Faint auspicious mandala pattern */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-40 h-40 opacity-30 pointer-events-none" style={{
+              backgroundImage: `radial-gradient(circle at center, transparent 25%, rgba(243,156,18,0.08) 30%, transparent 35%, rgba(243,156,18,0.05) 40%, transparent 45%)`
+            }}></div>
+            
+            <div className="flex justify-center mb-4 relative z-10">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-40 h-auto animate-[fade-in_1s_ease-out]"
+                className="w-44 h-auto animate-[fade-in_1s_ease-out]"
                 style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
@@ -136,7 +147,7 @@ const Hero = () => {
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
             </div>
             
-            <p className="text-center font-playfair text-sm leading-[1.4] mb-4 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+            <p className="text-center font-playfair text-base leading-[1.4] mb-5 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               <span className="text-[#4A2A1F] font-semibold">Premium Pooja Kits</span> <span className="text-[#5A3428] font-light">— beautifully packed & delivered.</span>
             </p>
           </>
@@ -167,16 +178,18 @@ const Hero = () => {
         
         <div className="flex flex-col gap-4 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
+            {/* Divine aura/halo around button */}
+            <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/20 via-[#F39C12]/10 to-transparent rounded-full scale-150 animate-pulse opacity-60 pointer-events-none"></div>
             {/* Glitz animation overlay */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/15 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
             <Button 
               size="lg" 
               className={`${isMobile 
-                ? 'bg-gradient-to-r from-[#F39C12] to-[#F9C846] hover:from-[#E0890B] hover:to-[#F7C13E] text-[#4A2C23] font-semibold text-base px-8 py-6 rounded-full shadow-[0_8px_24px_rgba(243,156,18,0.3),0_4px_12px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(249,200,70,0.6)] hover:shadow-[0_12px_32px_rgba(243,156,18,0.4),0_6px_16px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(249,200,70,0.8)] hover:scale-[1.025] hover:-translate-y-0.5 transition-all duration-300 border border-[#F39C12]/15' 
+                ? 'bg-gradient-to-r from-[#F39C12] to-[#F9C846] hover:from-[#E0890B] hover:to-[#F7C13E] text-[#4A2C23] font-semibold text-base px-8 py-6 rounded-full shadow-[0_8px_24px_rgba(243,156,18,0.4),0_4px_12px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(249,200,70,0.6)] hover:shadow-[0_16px_40px_rgba(243,156,18,0.5),0_8px_20px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(249,200,70,0.8)] hover:scale-[1.025] hover:-translate-y-1 transition-all duration-300 border border-[#F39C12]/20' 
                 : 'bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20'
               } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300`}
               style={{ 
-                height: isMobile ? '56px' : 'clamp(52px, 7vw, 56px)',
+                height: isMobile ? '58px' : 'clamp(52px, 7vw, 56px)',
                 animation: 'elegantPulse 3.5s ease-in-out infinite'
               }}
               onClick={() => window.location.href = '/festival-kits'}
@@ -186,56 +199,56 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Browse all products link - saffron underline */}
+          {/* Browse all products - clean minimal with gold underline */}
           <a 
             href="/products/all" 
-            className={`text-muted-foreground hover:text-foreground font-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'text-[13px] mb-1 underline decoration-[#F39C12] underline-offset-4 hover:underline-offset-2' : 'text-sm underline underline-offset-4 hover:underline-offset-2'}`}
+            className={`text-muted-foreground hover:text-foreground font-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'text-[13px] mb-1 underline decoration-1 decoration-[#DAA520] underline-offset-4 hover:underline-offset-2' : 'text-sm underline underline-offset-4 hover:underline-offset-2'}`}
           >
             Browse all products
           </a>
           
-          {/* Trust bar - enhanced styling for luxury */}
-          <div className={`flex flex-wrap items-center justify-center gap-4 text-muted-foreground font-medium ${isMobile ? 'text-xs mt-3' : 'text-xs md:text-sm mt-5'}`}>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
-              <Shield className={`${isMobile ? 'w-3.5 h-3.5 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
-              <span className={`${isMobile ? 'font-medium' : ''}`}>Secure Checkout</span>
+          {/* Trust badges - evenly aligned with saffron icons and bold text */}
+          <div className={`flex flex-wrap items-center justify-center gap-5 text-muted-foreground ${isMobile ? 'text-xs mt-4' : 'text-xs md:text-sm mt-5'}`}>
+            <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
+              <Shield className={`${isMobile ? 'w-4 h-4 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <span className={`${isMobile ? 'font-semibold' : ''}`}>Secure Checkout</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
-              <Truck className={`${isMobile ? 'w-3.5 h-3.5 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
-              <span className={`${isMobile ? 'font-medium' : ''}`}>Fast Shipping</span>
+            <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
+              <Truck className={`${isMobile ? 'w-4 h-4 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <span className={`${isMobile ? 'font-semibold' : ''}`}>Fast Shipping</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
-              <Package className={`${isMobile ? 'w-3.5 h-3.5 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
-              <span className={`${isMobile ? 'font-medium' : ''}`}>Hand-packed</span>
+            <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
+              <Package className={`${isMobile ? 'w-4 h-4 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <span className={`${isMobile ? 'font-semibold' : ''}`}>Hand-packed</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
-              <MapPin className={`${isMobile ? 'w-3.5 h-3.5 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
-              <span className={`${isMobile ? 'font-medium' : ''}`}>Made in India</span>
+            <div className={`flex items-center gap-2 ${isMobile ? 'text-[#E67E22]' : ''}`}>
+              <MapPin className={`${isMobile ? 'w-4 h-4 stroke-2' : 'w-3 h-3 md:w-4 md:h-4'}`} />
+              <span className={`${isMobile ? 'font-semibold' : ''}`}>Made in India</span>
             </div>
           </div>
         </div>
         
-        {/* Stats tiles - Luxury cream to saffron gradient with divider */}
-        <div className={`px-4 ${isMobile ? 'mt-6' : 'mt-12 md:mt-16'}`}>
+        {/* Stats tiles - Enhanced with cream to light gold gradient */}
+        <div className={`px-4 ${isMobile ? 'mt-7' : 'mt-12 md:mt-16'}`}>
           <div className={`text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
             <div className={`${isMobile ? 'flex gap-3 relative' : 'grid grid-cols-2 gap-3'}`}>
-              <div className={`bg-gradient-to-br from-orange-50/60 via-orange-100/40 to-[#F39C12]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#F39C12]/30 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(243,156,18,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'} relative`}>
-                {isMobile && <Box className="w-4 h-4 text-[#F39C12] mx-auto mb-1" />}
+              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/80 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#DAA520]/40 shadow-[0_6px_20px_rgba(0,0,0,0.12),0_2px_8px_rgba(218,165,32,0.25)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'} relative`}>
+                {isMobile && <Box className="w-4 h-4 text-[#E67E22] mx-auto mb-1" />}
                 <AnimatedCounter target="20+" label="Products" />
               </div>
               
-              {/* Thin saffron divider line */}
+              {/* Thin golden divider line */}
               {isMobile && (
                 <div className="flex items-center">
-                  <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#F39C12]/40 to-transparent"></div>
+                  <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#DAA520]/50 to-transparent"></div>
                 </div>
               )}
               
-              <div className={`bg-gradient-to-br from-orange-50/60 via-orange-100/40 to-[#F39C12]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#F39C12]/30 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(243,156,18,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'} relative`}>
-                {isMobile && <Users className="w-4 h-4 text-[#F39C12] mx-auto mb-1" />}
+              <div className={`bg-gradient-to-br from-orange-50 via-yellow-50/80 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-5 rounded-2xl border border-[#DAA520]/40 shadow-[0_6px_20px_rgba(0,0,0,0.12),0_2px_8px_rgba(218,165,32,0.25)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'} relative`}>
+                {isMobile && <Users className="w-4 h-4 text-[#E67E22] mx-auto mb-1" />}
                 <AnimatedCounter target="200+" label="Families Served" />
               </div>
             </div>
