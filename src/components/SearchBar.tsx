@@ -123,22 +123,27 @@ const SearchBar = ({ className = "", placeholder = "Search products...", onSearc
       </div>
 
       {isOpen && filteredSuggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-background border border-border rounded-lg shadow-warm z-50 max-h-60 overflow-y-auto">
-          {filteredSuggestions.map((suggestion) => (
-            <button
-              key={suggestion.id}
-              onClick={() => handleSuggestionClick(suggestion)}
-              className="w-full px-4 py-3 text-left hover:bg-muted flex items-center justify-between group transition-colors"
-            >
-              <div className="flex flex-col">
-                <span className="text-foreground font-medium">{suggestion.title}</span>
-                <span className="text-xs text-muted-foreground">{suggestion.category}</span>
-              </div>
-              <span className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded-full">
-                {suggestion.type}
-              </span>
-            </button>
-          ))}
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 border-2 border-premium-gold-saffron/30 rounded-xl shadow-2xl backdrop-blur-md z-[9999] max-h-80 overflow-y-auto">
+          <div className="p-2">
+            {filteredSuggestions.slice(0, 8).map((suggestion, index) => (
+              <button
+                key={suggestion.id}
+                onClick={() => handleSuggestionClick(suggestion)}
+                className="w-full px-4 py-3 text-left hover:bg-premium-gold-saffron/10 rounded-lg flex items-center justify-between group transition-all duration-200 border border-transparent hover:border-premium-gold-saffron/20"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-premium-gold-saffron rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="flex flex-col">
+                    <span className="text-foreground font-medium group-hover:text-premium-gold-saffron transition-colors">{suggestion.title}</span>
+                    <span className="text-xs text-muted-foreground">{suggestion.category}</span>
+                  </div>
+                </div>
+                <span className="text-xs px-2 py-1 bg-premium-gold-saffron/10 text-premium-gold-saffron rounded-full border border-premium-gold-saffron/20 font-medium">
+                  {suggestion.type}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
