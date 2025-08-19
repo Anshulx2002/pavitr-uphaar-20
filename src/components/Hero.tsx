@@ -208,25 +208,25 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-l from-transparent via-[#FFD700]/20 to-transparent animate-[slide-in-right_4s_linear_infinite] overflow-hidden pointer-events-none delay-500"></div>
             <Button 
               size="lg" 
-              className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-200 focus:ring-offset-2 focus:ring-offset-background transition-all duration-300 px-8 py-4 font-semibold text-[#8B4513] hover:scale-[1.02] hover:-translate-y-0.5"
+              className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-background transition-all duration-300 px-8 py-4 font-semibold text-white hover:scale-[1.02] hover:-translate-y-0.5"
               style={{ 
-                background: 'linear-gradient(to bottom, #FFF4E6, #FFE4B5, #DEB887)',
+                background: 'linear-gradient(to bottom, #CD853F, #A0522D, #8B4513)',
                 borderRadius: '8px',
-                boxShadow: 'inset 0px 1px 3px rgba(0,0,0,0.08), inset 0px -1px 2px rgba(255,255,255,0.4), 0 3px 8px rgba(222,184,135,0.3)',
+                boxShadow: 'inset 0px 1px 3px rgba(255,255,255,0.2), inset 0px -1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(139,69,19,0.4)',
                 height: isMobile ? '52px' : 'clamp(48px, 6vw, 52px)',
-                border: '1px solid rgba(205,133,63,0.2)'
+                border: '1px solid rgba(160,82,45,0.3)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(to bottom, #FFF8DC, #F5DEB3, #D2B48C)';
-                e.currentTarget.style.boxShadow = 'inset 0px 1px 3px rgba(0,0,0,0.08), inset 0px -1px 2px rgba(255,255,255,0.4), 0 4px 12px rgba(210,180,140,0.4)';
+                e.currentTarget.style.background = 'linear-gradient(to bottom, #D2691E, #A0522D, #654321)';
+                e.currentTarget.style.boxShadow = 'inset 0px 1px 3px rgba(255,255,255,0.2), inset 0px -1px 3px rgba(0,0,0,0.2), 0 6px 16px rgba(210,105,30,0.5)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(to bottom, #FFF4E6, #FFE4B5, #DEB887)';
-                e.currentTarget.style.boxShadow = 'inset 0px 1px 3px rgba(0,0,0,0.08), inset 0px -1px 2px rgba(255,255,255,0.4), 0 3px 8px rgba(222,184,135,0.3)';
+                e.currentTarget.style.background = 'linear-gradient(to bottom, #CD853F, #A0522D, #8B4513)';
+                e.currentTarget.style.boxShadow = 'inset 0px 1px 3px rgba(255,255,255,0.2), inset 0px -1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(139,69,19,0.4)';
               }}
               onClick={() => window.location.href = '/festival-kits'}
             >
-              <Star className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 stroke-[1.5] text-[#8B4513]" />
+              <Star className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 stroke-[1.5] text-white" />
               <span>Shop Kits</span>
             </Button>
           </div>
