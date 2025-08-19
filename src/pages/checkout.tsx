@@ -13,6 +13,7 @@ import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
+const SEND_EMAIL_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/send-order-confirmation";
 const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
 
 const checkoutSchema = z.object({
@@ -96,6 +97,43 @@ const Checkout = () => {
     }
   };
 
+  const sendOrderConfirmationEmail = async (data: CheckoutFormData, orderRef: string, orderId: string) => {
+    const emailData = {
+      customerName: data.name,
+      customerEmail: data.email,
+      orderId: orderId,
+      orderRef: orderRef,
+      items: cartItems.map(item => ({
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+        image: item.image
+      })),
+      subtotal: subtotal,
+      discount: discountAmount,
+      shipping: shipping,
+      total: total,
+      shippingAddress: {
+        address: data.address,
+        city: data.city,
+        state: data.state,
+        pincode: data.pincode
+      }
+    };
+
+    const response = await fetch(SEND_EMAIL_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(emailData)
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to send email: ${response.statusText}`);
+    }
+
+    return response.json();
+  };
+
   const startPayment = async (data: CheckoutFormData) => {
     setIsProcessingPayment(true);
     
@@ -129,8 +167,14 @@ const Checkout = () => {
           email: data.email,
           contact: data.phone
         },
-        handler: function (response: any) {
-          // Success - redirect to thank you page
+        handler: async function (response: any) {
+          // Success - send order confirmation email and redirect
+          try {
+            await sendOrderConfirmationEmail(data, receipt, order.id);
+          } catch (emailError) {
+            console.warn('Failed to send confirmation email:', emailError);
+            // Don't block the success flow if email fails
+          }
           window.location.href = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
         },
         modal: {
