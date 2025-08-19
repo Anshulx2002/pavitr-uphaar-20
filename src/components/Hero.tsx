@@ -111,24 +111,24 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            {/* Balanced top padding for premium feel */}
-            <div className="pt-10"></div>
+            {/* Compact top padding for above-the-fold optimization */}
+            <div className="pt-6"></div>
             
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-3">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-52 h-auto animate-[fade-in_1s_ease-out]"
+                className="w-48 h-auto animate-[fade-in_1s_ease-out]"
                 style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
             
-            {/* Minimalist golden divider */}
-            <div className="flex justify-center mb-4">
+            {/* Compact minimalist golden divider */}
+            <div className="flex justify-center mb-3">
               <Star className="w-4 h-4 text-gold animate-pulse opacity-70" />
             </div>
             
-            <p className="text-center font-playfair text-[#3A2A22] text-[15px] leading-[1.6] font-medium mb-8 px-4 max-w-[80%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+            <p className="text-center font-playfair text-[#3A2A22] text-[15px] leading-[1.6] font-medium mb-4 px-4 max-w-[80%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               Premium Pooja Kits, beautifully packed.<br />
               Delivered to your door.
             </p>
@@ -176,16 +176,16 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Browse all products link */}
+          {/* Browse all products link - closer spacing on mobile */}
           <a 
             href="/products/all" 
-            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1"
+            className={`text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'mb-2' : ''}`}
           >
             Browse all products
           </a>
           
-          {/* Trust bar - 16-20px below link */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium mt-5">
+          {/* Trust bar - compact spacing on mobile */}
+          <div className={`flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground font-medium ${isMobile ? 'mt-3' : 'mt-5'}`}>
             <div className="flex items-center gap-1.5">
               <Shield className="w-3 h-3 md:w-4 md:h-4" />
               <span>Secure Checkout</span>
