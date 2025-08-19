@@ -111,27 +111,24 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            {/* Compact spacing above logo */}
-            <div className="mb-4"></div>
+            {/* Balanced top padding for premium feel */}
+            <div className="pt-10"></div>
             
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-6">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-40 h-auto animate-[fade-in_1s_ease-out]"
+                className="w-52 h-auto animate-[fade-in_1s_ease-out]"
+                style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
             
-            {/* Compact elegant golden divider */}
-            <div className="flex justify-center mb-3">
-              <div className="flex items-center gap-1.5">
-                <div className="w-4 h-px bg-gradient-gold opacity-60"></div>
-                <Star className="w-2.5 h-2.5 text-gold animate-pulse" />
-                <div className="w-4 h-px bg-gradient-gold opacity-60"></div>
-              </div>
+            {/* Minimalist golden divider */}
+            <div className="flex justify-center mb-4">
+              <Star className="w-4 h-4 text-gold animate-pulse opacity-70" />
             </div>
             
-            <p className="text-center font-playfair text-[#3A2A22] text-sm leading-[1.5] font-light mb-4 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+            <p className="text-center font-playfair text-[#3A2A22] text-[15px] leading-[1.6] font-medium mb-8 px-4 max-w-[80%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               Premium Pooja Kits, beautifully packed.<br />
               Delivered to your door.
             </p>
@@ -161,7 +158,7 @@ const Hero = () => {
           </>
         )}
         
-        <div className={`flex flex-col gap-4 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4 ${isMobile ? 'mb-6' : ''}`}>
+        <div className="flex flex-col gap-4 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
             {/* Glitz animation overlay */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/15 to-transparent animate-[slide-in-right_2s_linear_infinite] overflow-hidden pointer-events-none"></div>
@@ -211,8 +208,8 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Stats tiles - More compact on mobile */}
-        <div className={`px-4 ${isMobile ? 'mt-6' : 'mt-12 md:mt-16'}`}>
+        {/* Stats tiles - Proper spacing on mobile */}
+        <div className={`px-4 ${isMobile ? 'mt-8' : 'mt-12 md:mt-16'}`}>
           <div className={`grid grid-cols-2 gap-3 text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
             <div className={`rounded-xl bg-card/90 backdrop-blur-sm border border-primary/20 shadow-gold transition-all duration-500 ${isMobile ? 'p-3' : 'p-4 md:p-6 md:rounded-2xl md:border-2'}`}>
               <AnimatedCounter target="20+" label="Products" />
