@@ -25,6 +25,17 @@ export interface Product {
 }
 
 export const allProducts: Product[] = [
+  // Test Product
+  {
+    id: 999,
+    name: "TEST PRODUCT - Free Sample",
+    price: 0,
+    image: diyaImage,
+    rating: 5,
+    description: "Free test product for checkout testing. No payment required.",
+    badge: "TEST",
+    category: "accessories"
+  },
   // Incense & Agarbatti
   {
     id: 1,
