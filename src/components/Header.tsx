@@ -28,7 +28,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-background/95 backdrop-blur-sm border-b border-border shadow-warm sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-[hsl(45_75%_92%)] via-[hsl(42_70%_90%)] to-[hsl(45_75%_92%)] backdrop-blur-sm border-b border-[hsl(45_50%_80%)] shadow-gold sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo - Mobile Optimized with redirect */}
