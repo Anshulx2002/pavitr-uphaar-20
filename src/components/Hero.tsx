@@ -96,7 +96,6 @@ const Hero = () => {
         <div className="absolute top-20 left-1/4 opacity-20 animate-pulse">
           <svg width="24" height="24" viewBox="0 0 24 24" className="text-primary">
             <g>
-              {/* Mini marigold petals */}
               {Array.from({ length: 6 }, (_, i) => {
                 const angle = (i * 60) * (Math.PI / 180);
                 const x = 12 + Math.cos(angle) * 6;
@@ -163,6 +162,102 @@ const Hero = () => {
                 );
               })}
               <circle cx="9" cy="9" r="1.2" fill="#DAA520" opacity="0.7" />
+            </g>
+          </svg>
+        </div>
+        <div className="absolute top-16 right-1/6 opacity-12 animate-pulse delay-3000">
+          <svg width="16" height="16" viewBox="0 0 16 16" className="text-primary">
+            <g>
+              {Array.from({ length: 5 }, (_, i) => {
+                const angle = (i * 72) * (Math.PI / 180);
+                const x = 8 + Math.cos(angle) * 3.5;
+                const y = 8 + Math.sin(angle) * 3.5;
+                return (
+                  <ellipse
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    rx="1.8"
+                    ry="0.9"
+                    fill="#F39C12"
+                    transform={`rotate(${i * 72} ${x} ${y})`}
+                    opacity="0.5"
+                  />
+                );
+              })}
+              <circle cx="8" cy="8" r="1" fill="#DAA520" opacity="0.6" />
+            </g>
+          </svg>
+        </div>
+        <div className="absolute bottom-40 left-1/5 opacity-14 animate-pulse delay-4000">
+          <svg width="22" height="22" viewBox="0 0 22 22" className="text-primary">
+            <g>
+              {Array.from({ length: 6 }, (_, i) => {
+                const angle = (i * 60) * (Math.PI / 180);
+                const x = 11 + Math.cos(angle) * 5.5;
+                const y = 11 + Math.sin(angle) * 5.5;
+                return (
+                  <ellipse
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    rx="2.8"
+                    ry="1.4"
+                    fill="#E67E22"
+                    transform={`rotate(${i * 60} ${x} ${y})`}
+                    opacity="0.6"
+                  />
+                );
+              })}
+              <circle cx="11" cy="11" r="1.8" fill="#D35400" opacity="0.7" />
+            </g>
+          </svg>
+        </div>
+        <div className="absolute top-48 left-1/6 opacity-10 animate-pulse delay-5000">
+          <svg width="14" height="14" viewBox="0 0 14 14" className="text-primary">
+            <g>
+              {Array.from({ length: 4 }, (_, i) => {
+                const angle = (i * 90) * (Math.PI / 180);
+                const x = 7 + Math.cos(angle) * 3;
+                const y = 7 + Math.sin(angle) * 3;
+                return (
+                  <ellipse
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    rx="1.5"
+                    ry="0.8"
+                    fill="#F39C12"
+                    transform={`rotate(${i * 90} ${x} ${y})`}
+                    opacity="0.4"
+                  />
+                );
+              })}
+              <circle cx="7" cy="7" r="0.8" fill="#DAA520" opacity="0.5" />
+            </g>
+          </svg>
+        </div>
+        <div className="absolute bottom-20 right-1/4 opacity-16 animate-pulse delay-6000">
+          <svg width="20" height="20" viewBox="0 0 20 20" className="text-primary">
+            <g>
+              {Array.from({ length: 5 }, (_, i) => {
+                const angle = (i * 72) * (Math.PI / 180);
+                const x = 10 + Math.cos(angle) * 4.5;
+                const y = 10 + Math.sin(angle) * 4.5;
+                return (
+                  <ellipse
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    rx="2.2"
+                    ry="1.1"
+                    fill="#E67E22"
+                    transform={`rotate(${i * 72} ${x} ${y})`}
+                    opacity="0.5"
+                  />
+                );
+              })}
+              <circle cx="10" cy="10" r="1.3" fill="#D35400" opacity="0.6" />
             </g>
           </svg>
         </div>
