@@ -127,7 +127,7 @@ const Hero = () => {
             </div>
             
             {/* Elegant thin golden divider */}
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-3">
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
             </div>
             
@@ -167,7 +167,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className={`${isMobile 
-                ? 'bg-gradient-to-r from-[#F4A460] to-[#FFD700] hover:from-[#E8944A] hover:to-[#FFC107] text-amber-900 font-semibold text-base px-8 py-5 rounded-full shadow-[0_6px_20px_rgba(244,164,96,0.25),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(244,164,96,0.35),0_4px_12px_rgba(0,0,0,0.12)] hover:scale-[1.025] transition-all duration-300 border border-[#F4A460]/20' 
+                ? 'bg-gradient-to-r from-[#E67E22] to-[#F9C846] hover:from-[#D1731F] hover:to-[#F7C13E] text-amber-900 font-semibold text-base px-8 py-5 rounded-full shadow-[0_6px_20px_rgba(230,126,34,0.25),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(230,126,34,0.35),0_4px_12px_rgba(0,0,0,0.12)] hover:scale-[1.025] transition-all duration-300 border border-[#E67E22]/20' 
                 : 'bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20'
               } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300`}
               style={{ 
