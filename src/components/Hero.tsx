@@ -71,7 +71,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
       
-      {/* Enhanced Background with Bokeh Lights & Depth */}
+      {/* Sophisticated Background with Visible Diyas */}
       <div className="absolute inset-0 z-0">
         {/* Background Image with Visible Diyas */}
         <img 
@@ -83,187 +83,13 @@ const Hero = () => {
           }}
         />
         
-        {/* Rich Radial Gradient Behind Content */}
-        <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/20 via-background/60 to-background/90"></div>
-        <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/15 via-transparent to-background/70 scale-150"></div>
-        
-        {/* Balanced Overlays for Text Readability */}
+        {/* Balanced Overlays for Text Readability - 50-55% opacity */}
         <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/55 to-background/75"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-background/15"></div>
         
-        {/* Mini Marigold Flowers in Background */}
-        <div className="absolute top-20 left-1/4 opacity-20 animate-pulse">
-          <svg width="24" height="24" viewBox="0 0 24 24" className="text-primary">
-            <g>
-              {Array.from({ length: 6 }, (_, i) => {
-                const angle = (i * 60) * (Math.PI / 180);
-                const x = 12 + Math.cos(angle) * 6;
-                const y = 12 + Math.sin(angle) * 6;
-                return (
-                  <ellipse
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    rx="3"
-                    ry="1.5"
-                    fill="#F39C12"
-                    transform={`rotate(${i * 60} ${x} ${y})`}
-                    opacity="0.8"
-                  />
-                );
-              })}
-              <circle cx="12" cy="12" r="2" fill="#DAA520" opacity="0.9" />
-            </g>
-          </svg>
-        </div>
-        <div className="absolute bottom-32 right-1/3 opacity-15 animate-pulse delay-1000">
-          <svg width="20" height="20" viewBox="0 0 20 20" className="text-primary">
-            <g>
-              {Array.from({ length: 5 }, (_, i) => {
-                const angle = (i * 72) * (Math.PI / 180);
-                const x = 10 + Math.cos(angle) * 5;
-                const y = 10 + Math.sin(angle) * 5;
-                return (
-                  <ellipse
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    rx="2.5"
-                    ry="1.2"
-                    fill="#E67E22"
-                    transform={`rotate(${i * 72} ${x} ${y})`}
-                    opacity="0.7"
-                  />
-                );
-              })}
-              <circle cx="10" cy="10" r="1.5" fill="#D35400" opacity="0.8" />
-            </g>
-          </svg>
-        </div>
-        <div className="absolute top-1/3 right-1/5 opacity-18 animate-pulse delay-2000">
-          <svg width="18" height="18" viewBox="0 0 18 18" className="text-primary">
-            <g>
-              {Array.from({ length: 4 }, (_, i) => {
-                const angle = (i * 90) * (Math.PI / 180);
-                const x = 9 + Math.cos(angle) * 4;
-                const y = 9 + Math.sin(angle) * 4;
-                return (
-                  <ellipse
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    rx="2"
-                    ry="1"
-                    fill="#F39C12"
-                    transform={`rotate(${i * 90} ${x} ${y})`}
-                    opacity="0.6"
-                  />
-                );
-              })}
-              <circle cx="9" cy="9" r="1.2" fill="#DAA520" opacity="0.7" />
-            </g>
-          </svg>
-        </div>
-        <div className="absolute top-16 right-1/6 opacity-12 animate-pulse delay-3000">
-          <svg width="16" height="16" viewBox="0 0 16 16" className="text-primary">
-            <g>
-              {Array.from({ length: 5 }, (_, i) => {
-                const angle = (i * 72) * (Math.PI / 180);
-                const x = 8 + Math.cos(angle) * 3.5;
-                const y = 8 + Math.sin(angle) * 3.5;
-                return (
-                  <ellipse
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    rx="1.8"
-                    ry="0.9"
-                    fill="#F39C12"
-                    transform={`rotate(${i * 72} ${x} ${y})`}
-                    opacity="0.5"
-                  />
-                );
-              })}
-              <circle cx="8" cy="8" r="1" fill="#DAA520" opacity="0.6" />
-            </g>
-          </svg>
-        </div>
-        <div className="absolute bottom-40 left-1/5 opacity-14 animate-pulse delay-4000">
-          <svg width="22" height="22" viewBox="0 0 22 22" className="text-primary">
-            <g>
-              {Array.from({ length: 6 }, (_, i) => {
-                const angle = (i * 60) * (Math.PI / 180);
-                const x = 11 + Math.cos(angle) * 5.5;
-                const y = 11 + Math.sin(angle) * 5.5;
-                return (
-                  <ellipse
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    rx="2.8"
-                    ry="1.4"
-                    fill="#E67E22"
-                    transform={`rotate(${i * 60} ${x} ${y})`}
-                    opacity="0.6"
-                  />
-                );
-              })}
-              <circle cx="11" cy="11" r="1.8" fill="#D35400" opacity="0.7" />
-            </g>
-          </svg>
-        </div>
-        <div className="absolute top-48 left-1/6 opacity-10 animate-pulse delay-5000">
-          <svg width="14" height="14" viewBox="0 0 14 14" className="text-primary">
-            <g>
-              {Array.from({ length: 4 }, (_, i) => {
-                const angle = (i * 90) * (Math.PI / 180);
-                const x = 7 + Math.cos(angle) * 3;
-                const y = 7 + Math.sin(angle) * 3;
-                return (
-                  <ellipse
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    rx="1.5"
-                    ry="0.8"
-                    fill="#F39C12"
-                    transform={`rotate(${i * 90} ${x} ${y})`}
-                    opacity="0.4"
-                  />
-                );
-              })}
-              <circle cx="7" cy="7" r="0.8" fill="#DAA520" opacity="0.5" />
-            </g>
-          </svg>
-        </div>
-        <div className="absolute bottom-20 right-1/4 opacity-16 animate-pulse delay-6000">
-          <svg width="20" height="20" viewBox="0 0 20 20" className="text-primary">
-            <g>
-              {Array.from({ length: 5 }, (_, i) => {
-                const angle = (i * 72) * (Math.PI / 180);
-                const x = 10 + Math.cos(angle) * 4.5;
-                const y = 10 + Math.sin(angle) * 4.5;
-                return (
-                  <ellipse
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    rx="2.2"
-                    ry="1.1"
-                    fill="#E67E22"
-                    transform={`rotate(${i * 72} ${x} ${y})`}
-                    opacity="0.5"
-                  />
-                );
-              })}
-              <circle cx="10" cy="10" r="1.3" fill="#D35400" opacity="0.6" />
-            </g>
-          </svg>
-        </div>
-        
         {/* Traditional Indian Mandala Pattern */}
-        <div className="absolute inset-0 opacity-8" style={{
+        <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `
             radial-gradient(circle at 25% 25%, hsl(var(--gold)) 2px, transparent 2px),
             radial-gradient(circle at 75% 75%, hsl(var(--primary)) 1px, transparent 1px),
@@ -271,6 +97,17 @@ const Hero = () => {
           `,
           backgroundSize: '80px 80px, 60px 60px, 120px 120px'
         }}></div>
+        
+        {/* Traditional Golden Floating Elements */}
+        <div className="absolute top-32 right-20 opacity-30 animate-pulse">
+          <Sparkles className="w-6 h-6 text-primary drop-shadow-glow" />
+        </div>
+        <div className="absolute bottom-40 left-24 opacity-25 animate-pulse delay-1000">
+          <Star className="w-5 h-5 text-primary drop-shadow-glow" />
+        </div>
+        <div className="absolute top-48 left-1/4 opacity-20 animate-pulse delay-500">
+          <Heart className="w-4 h-4 text-primary drop-shadow-glow" />
+        </div>
         
         {/* Traditional Decorative Corners */}
         <div className="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-primary/30 rounded-tl-lg"></div>
@@ -384,10 +221,8 @@ const Hero = () => {
               className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-background transition-all duration-300 font-medium text-white hover:scale-[1.015] hover:-translate-y-0.5"
               style={{ 
                 background: 'linear-gradient(135deg, #B8860B, #DAA520, #CD853F)',
-                borderRadius: isMobile ? '12px' : '10px',
-                boxShadow: isMobile 
-                  ? 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.35), 0 0 20px rgba(218,165,32,0.25)'
-                  : 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 3px 12px rgba(184,134,11,0.25), 0 0 15px rgba(218,165,32,0.15)',
+                borderRadius: '10px',
+                boxShadow: 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 3px 12px rgba(184,134,11,0.25)',
                 height: isMobile ? '60px' : 'clamp(48px, 6vw, 52px)',
                 width: isMobile ? 'auto' : 'auto',
                 padding: isMobile ? '0 38px' : '16px 32px',
@@ -398,15 +233,11 @@ const Hero = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #A0750A, #B8860B, #B8860B)';
-                e.currentTarget.style.boxShadow = isMobile 
-                  ? 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 6px 20px rgba(184,134,11,0.4), 0 0 25px rgba(218,165,32,0.3)'
-                  : 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.3), 0 0 20px rgba(218,165,32,0.2)';
+                e.currentTarget.style.boxShadow = 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.3)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #B8860B, #DAA520, #CD853F)';
-                e.currentTarget.style.boxShadow = isMobile 
-                  ? 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.35), 0 0 20px rgba(218,165,32,0.25)'
-                  : 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 3px 12px rgba(184,134,11,0.25), 0 0 15px rgba(218,165,32,0.15)';
+                e.currentTarget.style.boxShadow = 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 3px 12px rgba(184,134,11,0.25)';
               }}
               onClick={() => window.location.href = '/festival-kits'}
             >
@@ -451,10 +282,10 @@ const Hero = () => {
         <div className={`px-4 ${isMobile ? 'mt-9' : 'mt-12 md:mt-16'}`}>
           <div className={`text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-sm mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
             <div className={`${isMobile ? 'flex gap-4 relative' : 'grid grid-cols-2 gap-3'}`}>
-              <div className={`bg-gradient-to-br from-orange-50/90 via-yellow-50/80 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-6 rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_8px_30px_rgba(218,165,32,0.3),0_4px_15px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.7),inset_0_-1px_0_rgba(218,165,32,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-[#DAA520]/40 shadow-[0_12px_35px_rgba(218,165,32,0.25),0_6px_20px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15)]'} relative overflow-hidden hover:shadow-[0_15px_40px_rgba(218,165,32,0.35),0_8px_25px_rgba(0,0,0,0.12)] hover:border-[#DAA520]/60 hover:scale-[1.02] group`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/15 via-[#FFD700]/10 to-transparent opacity-70 pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/8 to-transparent opacity-50 pointer-events-none"></div>
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/40 to-transparent"></div>
+              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-6 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15),inset_0_0_20px_rgba(218,165,32,0.05)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/12 via-[#FFD700]/8 to-transparent opacity-60 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/6 to-transparent opacity-40 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/30 to-transparent"></div>
                 {isMobile && <Box className="w-5 h-5 text-[#E67E22] mx-auto mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="20+" label="Products" />
@@ -464,14 +295,14 @@ const Hero = () => {
               {/* Enhanced golden divider with glow */}
               {isMobile && (
                 <div className="flex items-center">
-                  <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#DAA520]/70 to-transparent shadow-[0_0_15px_rgba(218,165,32,0.6)]"></div>
+                  <div className="w-px h-14 bg-gradient-to-b from-transparent via-[#DAA520]/60 to-transparent shadow-[0_0_10px_rgba(218,165,32,0.5)]"></div>
                 </div>
               )}
               
-              <div className={`bg-gradient-to-br from-orange-50/90 via-yellow-50/80 to-[#DAA520]/25 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-6 rounded-2xl border-2 border-[#DAA520]/50 shadow-[0_8px_30px_rgba(218,165,32,0.3),0_4px_15px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.7),inset_0_-1px_0_rgba(218,165,32,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-[#DAA520]/40 shadow-[0_12px_35px_rgba(218,165,32,0.25),0_6px_20px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15)]'} relative overflow-hidden hover:shadow-[0_15px_40px_rgba(218,165,32,0.35),0_8px_25px_rgba(0,0,0,0.12)] hover:border-[#DAA520]/60 hover:scale-[1.02] group`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/15 via-[#FFD700]/10 to-transparent opacity-70 pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/8 to-transparent opacity-50 pointer-events-none"></div>
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/40 to-transparent"></div>
+              <div className={`bg-gradient-to-br from-orange-50/80 via-yellow-50/70 to-[#DAA520]/20 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'flex-1 p-6 rounded-2xl border border-[#DAA520]/40 shadow-[0_8px_25px_rgba(218,165,32,0.25),0_3px_10px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(218,165,32,0.15),inset_0_0_20px_rgba(218,165,32,0.05)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-[#DAA520]/35 shadow-[0_10px_30px_rgba(218,165,32,0.2),0_4px_15px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(218,165,32,0.12)]'} relative overflow-hidden hover:shadow-[0_12px_35px_rgba(218,165,32,0.3),0_6px_20px_rgba(0,0,0,0.1)] hover:border-[#DAA520]/50 hover:scale-[1.01] group`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DAA520]/12 via-[#FFD700]/8 to-transparent opacity-60 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#FFD700]/6 to-transparent opacity-40 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/30 to-transparent"></div>
                 {isMobile && <Users className="w-5 h-5 text-[#E67E22] mx-auto mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
                   <AnimatedCounter target="200+" label="Families Served" />
