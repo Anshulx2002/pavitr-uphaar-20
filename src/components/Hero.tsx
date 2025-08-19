@@ -208,10 +208,8 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-l from-transparent via-[#FFD700]/20 to-transparent animate-[slide-in-right_4s_linear_infinite] overflow-hidden pointer-events-none delay-500"></div>
             <Button 
               size="lg" 
-              className={`${isMobile 
-                ? 'bg-gradient-to-r from-[#F9C846] via-[#FFD700] to-[#FFF68F] hover:from-[#F39C12] hover:via-[#F9C846] hover:to-[#FFFFE0] text-[#8B4513] font-semibold text-base px-8 py-6 rounded-full shadow-[0_12px_35px_rgba(249,200,70,0.5),0_6px_20px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_18px_45px_rgba(249,200,70,0.6),0_10px_25px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.9)] hover:scale-[1.03] hover:-translate-y-1.5 transition-all duration-400 border border-[#F9C846]/30' 
-                : 'bg-gradient-to-r from-[#F9C846] via-[#FFD700] to-[#FFF68F] hover:from-[#F39C12] hover:via-[#F9C846] hover:to-[#FFFFE0] text-[#8B4513] font-semibold text-lg px-10 py-6 rounded-full shadow-[0_12px_35px_rgba(249,200,70,0.4),0_6px_20px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.7)] hover:shadow-[0_18px_45px_rgba(249,200,70,0.5),0_10px_25px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.8)] hover:scale-[1.025] hover:-translate-y-1 transition-all duration-400 border border-[#F9C846]/25'
-              } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background group`}
+              variant="saffron"
+              className="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background group hover:scale-[1.025] hover:-translate-y-1 transition-all duration-400"
               style={{ 
                 height: isMobile ? '58px' : 'clamp(52px, 7vw, 56px)',
                 animation: 'elegantPulse 3.5s ease-in-out infinite'
@@ -220,7 +218,7 @@ const Hero = () => {
             >
               {/* Premium shine animation */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
-              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-[#8B4513] relative z-10" />
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 relative z-10" />
               <span className="relative z-10">Shop Kits</span>
             </Button>
           </div>
