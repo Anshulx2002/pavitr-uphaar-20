@@ -77,7 +77,8 @@ const Checkout = () => {
   }, [cartItems, navigate]);
 
   const subtotal = getCartTotal();
-  const shipping = subtotal >= 500 ? 0 : 50; // Free shipping on orders above ₹500
+  const hasTestProduct = cartItems.some(item => item.id === 999);
+  const shipping = hasTestProduct || subtotal >= 500 ? 0 : 50; // Free shipping for test product or orders above ₹500
   const discountAmount = (subtotal * discount) / 100;
   const total = subtotal + shipping - discountAmount;
 
