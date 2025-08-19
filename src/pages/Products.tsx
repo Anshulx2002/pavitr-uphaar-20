@@ -8,18 +8,17 @@ const Products = () => {
       <Header />
       <main>
         {/* SEO optimized header */}
-        <section className="py-16 bg-gradient-to-br from-background via-accent/5 to-background">
+        <section className="py-8 bg-gradient-to-br from-background via-accent/5 to-background">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <div className="text-center max-w-3xl mx-auto">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
                 <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                   Complete Sacred Collection
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Discover our complete range of traditional pooja products, carefully selected and 
-                blessed to bring divine energy to your spiritual practices. Each item carries the 
-                essence of our spiritual heritage.
+                blessed to bring divine energy to your spiritual practices.
               </p>
             </div>
           </div>
