@@ -55,15 +55,22 @@ const handler = async (req: Request): Promise<Response> => {
       shippingAddress,
     } = requestData;
 
-    // Generate order items HTML with fallback for missing images
+    // Generate order items HTML with proper product images
     const orderItemsHtml = items
       .map(
-        (item) => `
+        (item) => {
+          // Convert relative image path to full URL for email
+          const imageUrl = item.image.startsWith('http') 
+            ? item.image 
+            : `https://ee8f0b2a-4a91-4075-b688-d1f3f606d73e.lovableproject.com${item.image}`;
+          
+          return `
           <tr style="border-bottom: 1px solid #f0f0f0;">
             <td style="padding: 12px; text-align: left;">
               <div style="display: flex; align-items: center;">
-                <div style="width: 60px; height: 60px; background-color: #f8f9fa; border-radius: 8px; margin-right: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0;">
-                  <span style="font-size: 24px;">🎁</span>
+                <div style="width: 60px; height: 60px; background-color: #f8f9fa; border-radius: 8px; margin-right: 12px; overflow: hidden; border: 1px solid #e0e0e0;">
+                  <img src="${imageUrl}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 20px;">🎁</div>
                 </div>
                 <div>
                   <h4 style="margin: 0; font-size: 14px; font-weight: 600; color: #333;">${item.name}</h4>
@@ -75,7 +82,8 @@ const handler = async (req: Request): Promise<Response> => {
               <span style="font-weight: 600; color: #333;">₹${(item.price * item.quantity).toFixed(2)}</span>
             </td>
           </tr>
-        `
+        `;
+        }
       )
       .join("");
 
@@ -95,10 +103,11 @@ const handler = async (req: Request): Promise<Response> => {
                   <!-- Header -->
                   <tr>
                     <td style="background: linear-gradient(135deg, #ff6b35, #f7931e); padding: 40px 30px; text-align: center;">
-                      <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                        <img src="https://res.cloudinary.com/dv6yivx37/image/upload/v1755598895/LOGO_PAVITRA_UPHAAR_DARK_BROWN_c8ybts.png" alt="Pavitra Uphaar Logo" style="height: 80px; margin-right: 12px;" />
+                      <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <img src="https://res.cloudinary.com/dv6yivx37/image/upload/v1755598895/LOGO_PAVITRA_UPHAAR_DARK_BROWN_c8ybts.png" alt="Pavitra Uphaar Logo" style="height: 60px; margin-right: 16px; background: white; padding: 8px; border-radius: 8px;" />
+                        <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: 1px;">Pavitra Uphaar</h1>
                       </div>
-                      <p style="margin: 8px 0 0 0; color: #ffffff; font-size: 16px; opacity: 0.9;">Order Confirmation</p>
+                      <p style="margin: 0; color: #ffffff; font-size: 16px; opacity: 0.9;">Order Confirmation</p>
                     </td>
                   </tr>
                   
