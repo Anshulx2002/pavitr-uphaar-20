@@ -73,7 +73,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm">
-            <p className="opacity-75 mb-2 md:mb-0">© 2024 Pavitra Uphaar. All rights reserved. | Bringing traditions to modern homes.</p>
+            <p className="opacity-75 mb-2 md:mb-0">© 2025 Pavitra Uphaar. All rights reserved. | Bringing traditions to modern homes.</p>
             <div className="flex space-x-6">
               <a href="/privacy-policy" className="opacity-75 hover:opacity-100 transition-opacity">Privacy Policy</a>
               <a href="/terms-of-service" className="opacity-75 hover:opacity-100 transition-opacity">Terms of Service</a>
