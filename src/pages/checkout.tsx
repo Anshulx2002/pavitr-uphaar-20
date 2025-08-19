@@ -87,6 +87,7 @@ const Checkout = () => {
       'WELCOME10': 10,
       'FESTIVAL15': 15,
       'SAVE20': 20,
+      'BLESS10': 10,
     };
     
     if (validCoupons[couponCode.toUpperCase()]) {
