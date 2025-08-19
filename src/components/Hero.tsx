@@ -102,26 +102,6 @@ const Hero = () => {
           backgroundSize: '80px 80px, 60px 60px, 120px 120px'
         }}></div>
         
-        {/* Traditional Golden Floating Elements - Positioned in outer margins only */}
-        <div className="absolute top-16 right-4 opacity-25 animate-pulse">
-          <Sparkles className="w-4 h-4 text-primary drop-shadow-glow" />
-        </div>
-        <div className="absolute bottom-20 left-4 opacity-20 animate-pulse delay-1000">
-          <Star className="w-3 h-3 text-primary drop-shadow-glow" />
-        </div>
-        <div className="absolute top-32 left-6 opacity-15 animate-pulse delay-500">
-          <Heart className="w-3 h-3 text-primary drop-shadow-glow" />
-        </div>
-        <div className="absolute bottom-32 right-6 opacity-18 animate-pulse delay-1500">
-          <Sparkles className="w-3 h-3 text-primary drop-shadow-glow" />
-        </div>
-        <div className="absolute top-1/2 left-2 opacity-12 animate-pulse delay-2000">
-          <Star className="w-2 h-2 text-primary drop-shadow-glow" />
-        </div>
-        <div className="absolute top-1/2 right-2 opacity-12 animate-pulse delay-2500">
-          <Heart className="w-2 h-2 text-primary drop-shadow-glow" />
-        </div>
-        
         {/* Traditional Decorative Corners */}
         <div className="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-primary/30 rounded-tl-lg"></div>
         <div className="absolute top-8 right-8 w-16 h-16 border-t-2 border-r-2 border-primary/30 rounded-tr-lg"></div>
