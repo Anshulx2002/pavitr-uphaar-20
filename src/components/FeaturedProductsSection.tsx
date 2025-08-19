@@ -133,7 +133,7 @@ const FeaturedProductsSection = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-br from-background via-accent/5 to-background relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-gradient-to-br from-background via-accent/5 to-background relative overflow-hidden">
       {/* Elegant background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-radial from-primary/30 to-transparent rounded-full blur-2xl"></div>
@@ -143,14 +143,14 @@ const FeaturedProductsSection = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Mobile-Optimized Header */}
-        <div className="text-center mb-10 md:mb-16 scroll-animate">
-          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 text-primary px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 border border-primary/20">
+        <div className="text-center mb-6 md:mb-10 scroll-animate">
+          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 text-primary px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs font-semibold mb-3 md:mb-4 border border-primary/20">
             <Sparkles className="w-3 md:w-4 h-3 md:h-4" />
             <span>Handpicked Excellence</span>
             <Star className="w-3 md:w-4 h-3 md:h-4 fill-current" />
           </div>
           
-          <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 leading-tight">
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Featured
             </span>
@@ -158,7 +158,7 @@ const FeaturedProductsSection = () => {
             <span className="text-foreground">Collection</span>
           </h2>
           
-          <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 md:mb-8 px-2">
+          <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4 md:mb-6 px-2">
             Discover our most cherished pooja essentials, meticulously selected for their 
             authenticity, quality, and spiritual significance.
           </p>
@@ -171,7 +171,7 @@ const FeaturedProductsSection = () => {
             ? "grid grid-cols-1 gap-6 max-w-sm mx-auto" 
             : "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 lg:gap-8"
           } 
-          mb-12 md:mb-16
+          mb-8 md:mb-12
         `}>
           {featuredProducts.slice(0, isMobile ? 4 : 10).map((product, index) => (
             <div 
