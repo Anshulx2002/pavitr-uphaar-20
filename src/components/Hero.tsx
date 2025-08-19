@@ -92,11 +92,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/55 to-background/75"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-background/15"></div>
         
-        {/* Bokeh Light Effects */}
-        <div className="absolute top-20 left-1/4 w-32 h-32 bg-gradient-radial from-[#FFD700]/15 to-transparent rounded-full blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-gradient-radial from-[#F39C12]/12 to-transparent rounded-full blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/3 right-1/5 w-20 h-20 bg-gradient-radial from-[#DAA520]/10 to-transparent rounded-full blur-lg animate-pulse delay-2000"></div>
-        
         {/* Traditional Indian Mandala Pattern */}
         <div className="absolute inset-0 opacity-8" style={{
           backgroundImage: `
