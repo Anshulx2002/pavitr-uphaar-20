@@ -3,6 +3,7 @@ import heroImage from "@/assets/hero-pooja.jpg";
 import { useState, useEffect } from "react";
 import { Sparkles, Heart, Star, Shield, Truck, Package, MapPin, Box, Users } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import MarigoldGarland from "./MarigoldGarland";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -57,6 +58,9 @@ const Hero = () => {
 
   return (
     <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${isMobile ? 'bg-gradient-to-br from-orange-50 via-yellow-50/90 to-orange-100/70' : 'bg-gradient-to-br from-background via-accent/5 to-background'}`}>
+      {/* Marigold Garland */}
+      <MarigoldGarland />
+      
       {/* Traditional Indian Border - Top */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
