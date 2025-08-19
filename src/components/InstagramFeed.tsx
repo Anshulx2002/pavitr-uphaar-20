@@ -33,10 +33,10 @@ const InstagramFeed = () => {
         {/* LightWidget Instagram Widget */}
         <div className="mb-12 max-w-4xl mx-auto">
           <iframe 
-            src="//lightwidget.com/widgets/c01099f3e7c85bf98d7384b844cc924a.html"
+            src="https://lightwidget.com/widgets/c01099f3e7c85bf98d7384b844cc924a.html"
             scrolling="no" 
             allowTransparency={true}
-            className="lightwidget-widget w-full border-0 overflow-hidden"
+            className="lightwidget-widget"
             style={{ width: '100%', border: 0, overflow: 'hidden' }}
           />
         </div>
