@@ -13,8 +13,7 @@ import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
-const SEND_EMAIL_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/send-order-confirmation";
-const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
+const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
 
 const checkoutSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -87,7 +86,6 @@ const Checkout = () => {
       'WELCOME10': 10,
       'FESTIVAL15': 15,
       'SAVE20': 20,
-      'BLESS10': 10,
     };
     
     if (validCoupons[couponCode.toUpperCase()]) {
@@ -96,43 +94,6 @@ const Checkout = () => {
       setDiscount(0);
       alert('Invalid coupon code');
     }
-  };
-
-  const sendOrderConfirmationEmail = async (data: CheckoutFormData, orderRef: string, orderId: string) => {
-    const emailData = {
-      customerName: data.name,
-      customerEmail: data.email,
-      orderId: orderId,
-      orderRef: orderRef,
-      items: cartItems.map(item => ({
-        name: item.name,
-        quantity: item.quantity,
-        price: item.price,
-        image: item.image
-      })),
-      subtotal: subtotal,
-      discount: discountAmount,
-      shipping: shipping,
-      total: total,
-      shippingAddress: {
-        address: data.address,
-        city: data.city,
-        state: data.state,
-        pincode: data.pincode
-      }
-    };
-
-    const response = await fetch(SEND_EMAIL_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(emailData)
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to send email: ${response.statusText}`);
-    }
-
-    return response.json();
   };
 
   const startPayment = async (data: CheckoutFormData) => {
@@ -169,17 +130,8 @@ const Checkout = () => {
           contact: data.phone
         },
         handler: function (response: any) {
-          // Success - redirect immediately and send email in background
-          const thankYouUrl = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
-          
-          // Send email in background without blocking redirect
-          sendOrderConfirmationEmail(data, receipt, order.id).catch(emailError => {
-            console.warn('Failed to send confirmation email:', emailError);
-            // Email failure doesn't affect the payment success
-          });
-          
-          // Immediate redirect for better UX
-          window.location.href = thankYouUrl;
+          // Success - redirect to thank you page
+          window.location.href = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
         },
         modal: {
           ondismiss: function () {
