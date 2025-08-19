@@ -77,6 +77,7 @@ export default {
 				'gradient-saffron': 'var(--gradient-saffron)',
 				'gradient-gold': 'var(--gradient-gold)',
 				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
 				'pattern-mandala': 'var(--pattern-mandala)',
 			},
 			boxShadow: {

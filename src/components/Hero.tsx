@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-pooja.jpg";
 import { useState, useEffect } from "react";
-import { Sparkles, Heart, Star, Shield, Truck, Package, MapPin } from "lucide-react";
+import { Sparkles, Heart, Star, Shield, Truck, Package, MapPin, Box, Users } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
@@ -111,10 +111,13 @@ const Hero = () => {
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
-            {/* Move entire content block higher - remove padding and add negative margin */}
-            <div className="-mt-12"></div>
+            {/* Move logo higher with breathing room */}
+            <div className="-mt-16 pt-4"></div>
             
-            <div className="flex justify-center mb-4">
+            {/* Radial gradient glow behind logo */}
+            <div className="absolute inset-0 bg-gradient-radial from-[#E28743]/10 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+            
+            <div className="flex justify-center mb-4 relative z-10">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
@@ -128,8 +131,8 @@ const Hero = () => {
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
             </div>
             
-            <p className="text-center font-playfair text-[#5A2E1F] text-[15px] leading-[1.5] font-light mb-6 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
-              Premium Pooja Kits, beautifully packed & delivered to your door.
+            <p className="text-center font-playfair text-[#5A2E1F] text-sm leading-[1.4] font-medium mb-4 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+              Premium Pooja Kits — beautifully packed & delivered.
             </p>
           </>
         ) : (
@@ -164,7 +167,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className={`${isMobile 
-                ? 'bg-gradient-to-b from-yellow-200 to-yellow-400 hover:from-yellow-300 hover:to-yellow-500 text-yellow-900 font-semibold text-base px-8 py-4 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_20px_rgba(255,193,7,0.3)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15),0_0_25px_rgba(255,193,7,0.5)] hover:scale-[1.025] transition-all duration-300 border border-yellow-400/20' 
+                ? 'bg-gradient-to-r from-[#E28743] to-yellow-400 hover:from-[#D67D3E] hover:to-yellow-500 text-yellow-900 font-semibold text-base px-8 py-4 rounded-full shadow-[0_6px_20px_rgba(0,0,0,0.15),0_0_25px_rgba(226,135,67,0.4)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.2),0_0_30px_rgba(226,135,67,0.6)] hover:scale-[1.025] transition-all duration-300 border border-[#E28743]/30' 
                 : 'bg-gradient-to-b from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-yellow-900 font-semibold text-lg md:text-lg px-10 md:px-10 py-5 md:py-6 rounded-full border border-yellow-400/20'
               } relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300`}
               style={{ 
@@ -181,42 +184,44 @@ const Hero = () => {
           {/* Browse all products link - refined styling */}
           <a 
             href="/products/all" 
-            className={`text-muted-foreground hover:text-foreground font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'text-xs mb-1' : 'text-sm'}`}
+            className={`text-muted-foreground hover:text-foreground font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm px-1 ${isMobile ? 'text-[13px] mb-1' : 'text-sm'}`}
           >
             Browse all products
           </a>
           
-          {/* Trust bar - saffron styling for mobile */}
-          <div className={`flex flex-wrap items-center justify-center gap-3 text-muted-foreground font-medium ${isMobile ? 'text-xs mt-3 opacity-75' : 'text-xs md:text-sm mt-5'}`}>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
+          {/* Trust bar - refined saffron styling */}
+          <div className={`flex flex-wrap items-center justify-center gap-3 text-muted-foreground font-medium ${isMobile ? 'text-xs mt-3' : 'text-xs md:text-sm mt-5'}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
               <Shield className="w-3 h-3 md:w-4 md:h-4" />
               <span>Secure Checkout</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
               <Truck className="w-3 h-3 md:w-4 md:h-4" />
               <span>Fast Shipping</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
               <Package className="w-3 h-3 md:w-4 md:h-4" />
               <span>Hand-packed</span>
             </div>
             <span className="text-primary/40">•</span>
-            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#E28743]' : ''}`}>
+            <div className={`flex items-center gap-1.5 ${isMobile ? 'text-[#C8713F]' : ''}`}>
               <MapPin className="w-3 h-3 md:w-4 md:h-4" />
               <span>Made in India</span>
             </div>
           </div>
         </div>
         
-        {/* Stats tiles - Premium styling */}
+        {/* Stats tiles - Modern cards with icons */}
         <div className={`px-4 ${isMobile ? 'mt-6' : 'mt-12 md:mt-16'}`}>
           <div className={`grid grid-cols-2 gap-3 text-center animate-[fade-in_1s_ease-out_0.8s_both] ${isMobile ? 'max-w-xs mx-auto' : 'gap-4 md:gap-8 max-w-sm md:max-w-md mx-auto'}`}>
-            <div className={`bg-card/90 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'p-3 rounded-2xl border border-gold/30 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(255,193,7,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'}`}>
+            <div className={`bg-card/90 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'p-4 rounded-2xl border border-[#E28743]/40 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(226,135,67,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'}`}>
+              {isMobile && <Box className="w-4 h-4 text-[#E28743] mx-auto mb-1" />}
               <AnimatedCounter target="20+" label="Products" />
             </div>
-            <div className={`bg-card/90 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'p-3 rounded-2xl border border-gold/30 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(255,193,7,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'}`}>
+            <div className={`bg-card/90 backdrop-blur-sm transition-all duration-500 ${isMobile ? 'p-4 rounded-2xl border border-[#E28743]/40 shadow-[0_4px_16px_rgba(0,0,0,0.1),0_0_15px_rgba(226,135,67,0.2)]' : 'p-4 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 md:border-2 shadow-gold'}`}>
+              {isMobile && <Users className="w-4 h-4 text-[#E28743] mx-auto mb-1" />}
               <AnimatedCounter target="200+" label="Families Served" />
             </div>
           </div>
