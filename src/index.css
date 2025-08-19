@@ -305,3 +305,26 @@ All colors MUST be HSL.
     transform: translateX(1px) rotate(3deg);
   }
 }
+
+/* Diya flame animations */
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+/* Kalash divine glow */
+@keyframes divine-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
