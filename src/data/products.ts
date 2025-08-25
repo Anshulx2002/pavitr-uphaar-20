@@ -5,6 +5,8 @@ import kumkumImage from "@/assets/kumkum.jpg";
 import rudrakshaImage from "@/assets/rudraksha.jpg";
 import camphorImage from "@/assets/camphor.jpg";
 import poojaThaliImage from "@/assets/pooja-thali.jpg";
+import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
+import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import garlandImage from "@/assets/garland.jpg";
 import sandalwoodImage from "@/assets/sandalwood.jpg";
 import diwaliKitImage from "@/assets/diwali-kit.jpg";
@@ -317,7 +319,7 @@ export const allProducts: Product[] = [
     name: "Gold Pooja Thali",
     price: 2499,
     originalPrice: 3499,
-    image: poojaThaliImage,
+    image: goldPoojaThaliImage,
     rating: 5,
     description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
     badge: "Premium",
@@ -328,7 +330,7 @@ export const allProducts: Product[] = [
     name: "Silver Pooja Thali",
     price: 2499,
     originalPrice: 3499,
-    image: poojaThaliImage,
+    image: silverPoojaThaliImage,
     rating: 5,
     description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
     badge: "Premium",

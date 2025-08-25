@@ -8,6 +8,8 @@ import agarbattiImage from "@/assets/agarbatti.jpg";
 import diyaImage from "@/assets/diya.jpg";
 import rudrakshaImage from "@/assets/rudraksha.jpg";
 import poojaThaliImage from "@/assets/pooja-thali.jpg";
+import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
+import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
 import diwaliKitImage from "@/assets/diwali-kit.jpg";
 
@@ -17,7 +19,7 @@ const trendingProducts = [
     name: "Gold Pooja Thali",
     price: 2499,
     originalPrice: 3499,
-    image: poojaThaliImage,
+    image: goldPoojaThaliImage,
     rating: 5,
     description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments.",
     badge: "Premium"
@@ -27,7 +29,7 @@ const trendingProducts = [
     name: "Silver Pooja Thali",
     price: 2499,
     originalPrice: 3499,
-    image: poojaThaliImage,
+    image: silverPoojaThaliImage,
     rating: 5,
     description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship.",
     badge: "Premium"
