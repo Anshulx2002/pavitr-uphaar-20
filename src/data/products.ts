@@ -312,6 +312,28 @@ export const allProducts: Product[] = [
     badge: "Protection",
     category: "threads"
   },
+  {
+    id: 34,
+    name: "Gold Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: poojaThaliImage,
+    rating: 5,
+    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
+    badge: "Premium",
+    category: "accessories"
+  },
+  {
+    id: 35,
+    name: "Silver Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: poojaThaliImage,
+    rating: 5,
+    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
+    badge: "Premium",
+    category: "accessories"
+  },
 
   // Festival Kits
   {
