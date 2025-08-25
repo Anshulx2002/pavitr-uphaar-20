@@ -14,6 +14,26 @@ import diwaliKitImage from "@/assets/diwali-kit.jpg";
 const trendingProducts = [
   {
     id: 1,
+    name: "Gold Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: poojaThaliImage,
+    rating: 5,
+    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments.",
+    badge: "Premium"
+  },
+  {
+    id: 2,
+    name: "Silver Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: poojaThaliImage,
+    rating: 5,
+    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship.",
+    badge: "Premium"
+  },
+  {
+    id: 3,
     name: "Navratri Special Kit",
     price: 899,
     originalPrice: 1199,
@@ -23,7 +43,7 @@ const trendingProducts = [
     badge: "Trending"
   },
   {
-    id: 2,
+    id: 4,
     name: "Diwali Celebration Kit",
     price: 1299,
     originalPrice: 1599,
@@ -33,7 +53,7 @@ const trendingProducts = [
     badge: "Hot"
   },
   {
-    id: 3,
+    id: 5,
     name: "Premium Sandalwood Agarbatti",
     price: 299,
     originalPrice: 399,
@@ -43,7 +63,7 @@ const trendingProducts = [
     badge: "Best Seller"
   },
   {
-    id: 4,
+    id: 6,
     name: "Brass Diya Set",
     price: 549,
     originalPrice: 699,
@@ -53,7 +73,7 @@ const trendingProducts = [
     badge: "Popular"
   },
   {
-    id: 5,
+    id: 7,
     name: "Rudraksha Mala",
     price: 899,
     originalPrice: 1199,
@@ -63,7 +83,7 @@ const trendingProducts = [
     badge: "Sacred"
   },
   {
-    id: 6,
+    id: 8,
     name: "Brass Pooja Thali",
     price: 1299,
     originalPrice: 1599,
