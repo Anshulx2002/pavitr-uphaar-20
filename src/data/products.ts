@@ -14,6 +14,7 @@ import ganeshKitImage from "@/assets/ganesh-kit.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
 import karvaKitImage from "@/assets/karva-kit.jpg";
 import aartiBookImage from "@/assets/aarti-book.png";
+import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 
 export interface Product {
   id: number;
@@ -393,6 +394,17 @@ export const allProducts: Product[] = [
     description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
     badge: "Premium",
     category: "accessories"
+  },
+  {
+    id: 37,
+    name: "Akhand Brass Diya",
+    price: 1499,
+    originalPrice: 2499,
+    image: akhandBrassDiyaImage,
+    rating: 5,
+    description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
+    badge: "Premium",
+    category: "lamps"
   }
 ];
 
