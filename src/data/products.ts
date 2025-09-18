@@ -16,6 +16,7 @@ import karvaKitImage from "@/assets/karva-kit.jpg";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import goldKalashImage from "@/assets/gold-kalash.png";
+import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
 
 export interface Product {
   id: number;
@@ -362,6 +363,17 @@ export const allProducts: Product[] = [
     image: goldKalashImage,
     rating: 5,
     description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    badge: "Premium",
+    category: "accessories"
+  },
+  {
+    id: 39,
+    name: "Aarti Sangrah",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiSanghrahImage,
+    rating: 5,
+    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
     badge: "Premium",
     category: "accessories"
   }
