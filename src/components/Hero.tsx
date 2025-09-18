@@ -344,7 +344,9 @@ const Hero = () => {
             </div>
             
             <p className="text-center font-playfair text-[17px] leading-[1.5] mb-7 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
-              <span className="text-[#4A2A1F] font-semibold">Premium Pooja Kits</span> <span className="text-[#8B5A3C] font-light">— beautifully packed & delivered.</span>
+              <span className="text-[#4A2A1F] font-semibold">Everything for your pooja, in one sacred place</span>
+              <br />
+              <span className="text-[#8B5A3C] font-light">Handpicked. Blessed. Delivered to your door.</span>
             </p>
           </>
         ) : (
@@ -359,10 +361,12 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-6 lg:mb-8 leading-relaxed px-2 pb-2" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
-              <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Premium pooja kits,</span>
+              <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Everything for your pooja,</span>
               <br />
-              <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
-                delivered to your door
+              <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] text-foreground">in one sacred place</span>
+              <br />
+              <span className="inline-block animate-[scale-in_0.8s_ease-out_0.4s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold text-2xl md:text-3xl lg:text-4xl">
+                Handpicked. Blessed. Delivered to your door.
               </span>
             </h1>
             
@@ -410,10 +414,10 @@ const Hero = () => {
                   ? 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.35), 0 0 20px rgba(218,165,32,0.25)'
                   : 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 3px 12px rgba(184,134,11,0.25), 0 0 15px rgba(218,165,32,0.15)';
               }}
-              onClick={() => window.location.href = '/festival-kits'}
+              onClick={() => window.location.href = '/featured-products'}
             >
               <Star className={`${isMobile ? 'w-5 h-5 mr-3' : 'w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3'} stroke-[1.5] text-white`} />
-              <span className="font-medium">Shop Kits</span>
+              <span className="font-medium">Shop Now</span>
             </Button>
           </div>
           

@@ -13,6 +13,7 @@ import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ShippingInfo from "./pages/ShippingInfo";
 import FestivalKits from "./pages/FestivalKits";
+import FeaturedProducts from "./pages/FeaturedProducts";
 import CategoryPage from "./pages/CategoryPage";
 import Checkout from "./pages/checkout";
 import ThankYou from "./pages/ThankYou";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/festival-kits" element={<FestivalKits />} />
+          <Route path="/featured-products" element={<FeaturedProducts />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/payment-failed" element={<PaymentFailed />} />
