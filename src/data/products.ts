@@ -22,6 +22,7 @@ import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
 import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
+import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 
 export interface Product {
   id: number;
@@ -427,15 +428,15 @@ export const allProducts: Product[] = [
     category: "accessories"
   },
   {
-    id: 44,
-    name: "Kamdhenu Idol Silver",
-    price: 2499,
-    originalPrice: 3500,
-    image: kamdhenusIdolSilverImage,
-    rating: 4.9,
-    description: "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
-    badge: "Sacred",
-    category: "accessories"
+    id: 45,
+    name: "Lotus LED Diya - Pack of 6",
+    price: 999,
+    originalPrice: 1200,
+    image: lotusLedDiyaImage,
+    rating: 4.8,
+    description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
+    badge: "Festival Special",
+    category: "lamps"
   }
 ];
 
