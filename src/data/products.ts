@@ -20,6 +20,7 @@ import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
 import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
 import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
 import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
+import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 
 export interface Product {
   id: number;
@@ -411,6 +412,17 @@ export const allProducts: Product[] = [
     rating: 4.7,
     description: "Elegant triangular wooden incense holder with carved patterns. Features storage compartment for incense sticks.",
     badge: "Elegant",
+    category: "accessories"
+  },
+  {
+    id: 43,
+    name: "Lord Krishna Statue",
+    price: 2499,
+    originalPrice: 4000,
+    image: lordKrishnaStatueImage,
+    rating: 4.9,
+    description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    badge: "Sacred",
     category: "accessories"
   }
 ];
