@@ -282,12 +282,12 @@ const Hero = () => {
       </div>
 
       {/* Content with Perfect Readability */}
-      <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 py-8 md:px-6 md:py-12 lg:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 py-7 md:px-6 md:py-11 lg:py-18 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Mobile: Logo and Caption */}
         {isMobile ? (
           <>
             {/* Move logo higher for main focal point */}
-            <div className="-mt-16 pt-6"></div>
+            <div className="-mt-14 pt-5"></div>
             
             {/* Premium festive background with cultural motifs */}
             <div className="absolute inset-0 bg-gradient-radial from-orange-100/50 via-[#F39C12]/20 to-transparent opacity-70 pointer-events-none"></div>
@@ -329,21 +329,21 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-radial from-[#FFD700]/25 via-[#DAA520]/15 to-transparent opacity-80 pointer-events-none scale-110 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/15 via-transparent to-transparent opacity-60 pointer-events-none scale-125"></div>
             
-            <div className="flex justify-center mb-6 relative z-10 px-4">
+            <div className="flex justify-center mb-5 relative z-10 px-4">
               <img 
                 src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png" 
                 alt="Pavitra Uphaar - Premium Pooja Kits" 
-                className="w-56 h-auto animate-[fade-in_1s_ease-out] drop-shadow-[0_0_25px_rgba(218,165,32,0.35)]"
+                className="w-52 h-auto animate-[fade-in_1s_ease-out] drop-shadow-[0_0_23px_rgba(218,165,32,0.35)]"
                 style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
             
             {/* Elegant thin golden divider */}
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
             </div>
             
-            <p className="text-center font-playfair text-[20px] leading-[1.5] mb-8 px-4 max-w-[88%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
+            <p className="text-center font-playfair text-[19px] leading-[1.5] mb-7 px-4 max-w-[87%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
               <span className="text-[#4A2A1F] font-semibold">Everything for your pooja, </span>
               <span className="bg-gradient-to-r from-[#F39C12] via-[#E67E22] to-[#D35400] bg-clip-text text-transparent font-semibold">in one sacred place</span>
               <br />
@@ -361,18 +361,18 @@ const Hero = () => {
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-5xl lg:text-7xl xl:text-8xl font-bold mb-7 md:mb-7 lg:mb-9 leading-relaxed px-2 pb-2" style={{ fontSize: 'clamp(41px, 5.75vw, 74px)' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-7 lg:mb-8 leading-relaxed px-2 pb-2" style={{ fontSize: 'clamp(41px, 5.75vw, 74px)' }}>
               <span className="inline-block animate-[scale-in_0.8s_ease-out] text-[#8B4513]">Everything for your pooja, </span>
               <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-[#F39C12] via-[#E67E22] to-[#D35400] bg-clip-text text-transparent font-extrabold">in one sacred place</span>
             </h1>
             
-            <p className="text-xl md:text-xl lg:text-2xl text-muted-foreground mb-9 md:mb-9 lg:mb-12 max-w-2xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
+            <p className="text-lg md:text-xl lg:text-xl text-muted-foreground mb-8 md:mb-9 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
               Handpicked. Blessed. Delivered to your door.
             </p>
           </>
         )}
         
-        <div className="flex flex-col gap-7 md:gap-5 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
+        <div className="flex flex-col gap-6 md:gap-4 items-center animate-[fade-in_1s_ease-out_0.6s_both] px-4">
           <div className="relative">
             {/* Enhanced divine aura/halo with warm glow */}
             <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/30 via-[#DAA520]/20 to-transparent rounded-full scale-150 animate-pulse opacity-80 pointer-events-none"></div>
