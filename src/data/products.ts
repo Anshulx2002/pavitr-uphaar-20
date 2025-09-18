@@ -15,6 +15,7 @@ import navratriKitImage from "@/assets/navratri-kit.jpg";
 import karvaKitImage from "@/assets/karva-kit.jpg";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
+import goldKalashImage from "@/assets/gold-kalash.png";
 
 export interface Product {
   id: number;
@@ -352,6 +353,17 @@ export const allProducts: Product[] = [
     description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
     badge: "Premium",
     category: "lamps"
+  },
+  {
+    id: 38,
+    name: "Gold Kalash",
+    price: 1499,
+    originalPrice: 2499,
+    image: goldKalashImage,
+    rating: 5,
+    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    badge: "Premium",
+    category: "accessories"
   }
 ];
 
