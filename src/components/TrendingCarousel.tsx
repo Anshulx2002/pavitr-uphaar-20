@@ -11,6 +11,8 @@ import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
 import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
 import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
 import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
+import aartiBookImage from "@/assets/aarti-book.png";
+import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 
 const trendingProducts = [
   {
@@ -82,6 +84,26 @@ const trendingProducts = [
     rating: 4.7,
     description: "Elegant triangular wooden incense holder with carved patterns. Features storage compartment for incense sticks.",
     badge: "Elegant"
+  },
+  {
+    id: 36,
+    name: "Hanuman Chalisa Aarti Book",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiBookImage,
+    rating: 5,
+    description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
+    badge: "Premium"
+  },
+  {
+    id: 37,
+    name: "Akhand Brass Diya",
+    price: 1499,
+    originalPrice: 2499,
+    image: akhandBrassDiyaImage,
+    rating: 5,
+    description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
+    badge: "Premium"
   }
 ];
 
