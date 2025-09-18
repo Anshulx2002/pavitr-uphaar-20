@@ -13,7 +13,7 @@ import diwaliKitImage from "@/assets/diwali-kit.jpg";
 import ganeshKitImage from "@/assets/ganesh-kit.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
 import karvaKitImage from "@/assets/karva-kit.jpg";
-import aartiBookImage from "@/assets/aarti-book.jpg";
+import aartiBookImage from "@/assets/aarti-book.png";
 
 export interface Product {
   id: number;
