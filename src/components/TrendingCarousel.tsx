@@ -127,6 +127,16 @@ const trendingProducts = [
     rating: 4.8,
     description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
     badge: "Festival Special"
+  },
+  {
+    id: 44,
+    name: "Kamdhenu Idol Silver",
+    price: 3999,
+    originalPrice: 5999,
+    image: kamdhenusIdolSilverImage,
+    rating: 4.9,
+    description: "Exquisite silver-finished Kamdhenu cow idol with calf. Symbol of prosperity and abundance. Perfect for home temple and gifting during auspicious occasions.",
+    badge: "Sacred"
   }
 ];
 

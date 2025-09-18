@@ -425,7 +425,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
     badge: "Sacred",
-    category: "accessories"
+    category: "idols"
+  },
+  {
+    id: 44,
+    name: "Kamdhenu Idol Silver",
+    price: 3999,
+    originalPrice: 5999,
+    image: kamdhenusIdolSilverImage,
+    rating: 4.9,
+    description: "Exquisite silver-finished Kamdhenu cow idol with calf. Symbol of prosperity and abundance. Perfect for home temple and gifting during auspicious occasions.",
+    badge: "Sacred",
+    category: "idols"
   },
   {
     id: 45,
@@ -445,6 +456,7 @@ export const categories = [
   { id: "incense", name: "Incense & Agarbatti", count: allProducts.filter(p => p.category === "incense").length },
   { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter(p => p.category === "lamps").length },
   { id: "accessories", name: "Pooja Accessories", count: allProducts.filter(p => p.category === "accessories").length },
+  { id: "idols", name: "Idols", count: allProducts.filter(p => p.category === "idols").length },
   { id: "flowers", name: "Flowers & Garlands", count: allProducts.filter(p => p.category === "flowers").length },
   { id: "threads", name: "Sacred Threads", count: allProducts.filter(p => p.category === "threads").length },
   { id: "kits", name: "Festival Kits", count: allProducts.filter(p => p.category === "kits").length },
