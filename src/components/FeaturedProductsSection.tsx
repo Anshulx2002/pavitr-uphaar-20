@@ -169,18 +169,10 @@ const FeaturedProductsSection = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Mobile-Optimized Header */}
         <div className="text-center mb-6 md:mb-10 scroll-animate">
-          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 text-primary px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs font-semibold mb-3 md:mb-4 border border-primary/20">
-            <Sparkles className="w-3 md:w-4 h-3 md:h-4" />
-            <span>Handpicked Excellence</span>
-            <Star className="w-3 md:w-4 h-3 md:h-4 fill-current" />
-          </div>
-          
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 leading-tight">
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Featured
+              Featured Collection
             </span>
-            <br />
-            <span className="text-foreground">Collection</span>
           </h2>
           
           <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4 md:mb-6 px-2">
