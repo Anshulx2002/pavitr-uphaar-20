@@ -16,6 +16,7 @@ import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
+import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 
 // Featured products - carefully selected new premium products
 const featuredProducts = [
@@ -117,6 +118,16 @@ const featuredProducts = [
     image: lordKrishnaStatueImage,
     rating: 4.9,
     description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    badge: "Sacred"
+  },
+  {
+    id: 44,
+    name: "Kamdhenu Idol Silver",
+    price: 2499,
+    originalPrice: 3500,
+    image: kamdhenusIdolSilverImage,
+    rating: 4.9,
+    description: "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
     badge: "Sacred"
   }
 ];
