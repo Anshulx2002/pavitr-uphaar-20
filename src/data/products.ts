@@ -13,6 +13,7 @@ import diwaliKitImage from "@/assets/diwali-kit.jpg";
 import ganeshKitImage from "@/assets/ganesh-kit.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
 import karvaKitImage from "@/assets/karva-kit.jpg";
+import aartiBookImage from "@/assets/aarti-book.jpg";
 
 export interface Product {
   id: number;
@@ -381,6 +382,17 @@ export const allProducts: Product[] = [
     description: "Traditional Karva Chauth kit with decorated thali and accessories.",
     badge: "Traditional",
     category: "kits"
+  },
+  {
+    id: 36,
+    name: "Hanuman Chalisa Aarti Book",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiBookImage,
+    rating: 5,
+    description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
+    badge: "Premium",
+    category: "accessories"
   }
 ];
 
