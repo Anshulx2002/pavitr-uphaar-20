@@ -344,7 +344,8 @@ const Hero = () => {
             </div>
             
             <p className="text-center font-playfair text-[17px] leading-[1.5] mb-7 px-4 max-w-[85%] mx-auto animate-[fade-in_1s_ease-out_0.2s_both]">
-              <span className="text-[#4A2A1F] font-semibold">Everything for your pooja, in one sacred place</span>
+              <span className="text-[#4A2A1F] font-semibold">Everything for your pooja, </span>
+              <span className="bg-gradient-to-r from-[#F39C12] via-[#E67E22] to-[#D35400] bg-clip-text text-transparent font-semibold">in one sacred place</span>
               <br />
               <span className="text-[#8B5A3C] font-light">Handpicked. Blessed. Delivered to your door.</span>
             </p>
@@ -361,17 +362,12 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-6 lg:mb-8 leading-relaxed px-2 pb-2" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
-              <span className="inline-block animate-[scale-in_0.8s_ease-out] text-foreground">Everything for your pooja,</span>
-              <br />
-              <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] text-foreground">in one sacred place</span>
-              <br />
-              <span className="inline-block animate-[scale-in_0.8s_ease-out_0.4s_both] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold text-2xl md:text-3xl lg:text-4xl">
-                Handpicked. Blessed. Delivered to your door.
-              </span>
+              <span className="inline-block animate-[scale-in_0.8s_ease-out] text-[#8B4513]">Everything for your pooja, </span>
+              <span className="inline-block animate-[scale-in_0.8s_ease-out_0.2s_both] bg-gradient-to-r from-[#F39C12] via-[#E67E22] to-[#D35400] bg-clip-text text-transparent font-extrabold">in one sacred place</span>
             </h1>
             
             <p className="text-lg md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-8 lg:mb-10 max-w-xl md:max-w-2xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_0.4s_both] font-medium px-4">
-              Everything you need. Beautifully packed. Ready to worship.
+              Handpicked. Blessed. Delivered to your door.
             </p>
           </>
         )}
