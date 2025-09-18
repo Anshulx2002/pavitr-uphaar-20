@@ -149,7 +149,7 @@ const ProductCard = ({
           {name}
         </h3>
         
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
           {description}
         </p>
         

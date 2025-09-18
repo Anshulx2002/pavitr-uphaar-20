@@ -393,7 +393,7 @@ export const allProducts: Product[] = [
   },
   {
     id: 41,
-    name: "Wooden Carved Dhoop Stick Holder for Pooja",
+    name: "Dhoop Stick Holder",
     price: 499,
     originalPrice: 750,
     image: woodenDhoopHolderImage,
@@ -404,8 +404,8 @@ export const allProducts: Product[] = [
   },
   {
     id: 42,
-    name: "Wooden Carved Incense Sticks Holder",
-    price: 450,
+    name: "Incense Stick Holder",
+    price: 499,
     originalPrice: 750,
     image: woodenIncenseHolderImage,
     rating: 4.7,
