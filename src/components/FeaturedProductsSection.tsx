@@ -194,11 +194,11 @@ const FeaturedProductsSection = () => {
         <div className={`
           ${isMobile 
             ? "grid grid-cols-1 gap-6 max-w-sm mx-auto" 
-            : "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 lg:gap-8"
+            : "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8"
           } 
           mb-8 md:mb-12
         `}>
-          {featuredProducts.slice(0, isMobile ? 4 : 4).map((product, index) => (
+          {featuredProducts.slice(0, isMobile ? 4 : 12).map((product, index) => (
             <div 
               key={product.id} 
               className="scroll-animate hover-lift group"
