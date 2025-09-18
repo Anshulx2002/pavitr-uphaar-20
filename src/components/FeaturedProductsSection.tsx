@@ -6,115 +6,85 @@ import { Star, Award, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // Import product images
-import agarbattiImage from "@/assets/agarbatti.jpg";
-import diyaImage from "@/assets/diya.jpg";
-import kumkumImage from "@/assets/kumkum.jpg";
-import rudrakshaImage from "@/assets/rudraksha.jpg";
-import camphorImage from "@/assets/camphor.jpg";
-import poojaThaliImage from "@/assets/pooja-thali.jpg";
-import garlandImage from "@/assets/garland.jpg";
-import sandalwoodImage from "@/assets/sandalwood.jpg";
-import diwaliKitImage from "@/assets/diwali-kit.jpg";
-import ganeshKitImage from "@/assets/ganesh-kit.jpg";
+import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
+import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
+import goldKalashImage from "@/assets/gold-kalash.png";
+import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
+import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
+import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
+import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 
-// Featured products - carefully selected top 10 products with premium badges
+// Featured products - carefully selected new premium products
 const featuredProducts = [
   {
-    id: 1,
-    name: "Premium Sandalwood Agarbatti",
-    price: 299,
-    originalPrice: 399,
-    image: agarbattiImage,
+    id: 34,
+    name: "Gold Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: goldPoojaThaliImage,
     rating: 5,
-    description: "Hand-rolled incense sticks made from pure sandalwood powder. Burns for 45 minutes with divine fragrance.",
-    badge: "Best Seller"
-  },
-  {
-    id: 2,
-    name: "Brass Diya Set",
-    price: 549,
-    originalPrice: 699,
-    image: diyaImage,
-    rating: 5,
-    description: "Traditional brass oil lamps with intricate designs. Set of 4 diyas perfect for festivals and daily prayers.",
+    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
     badge: "Premium"
   },
   {
-    id: 4,
-    name: "Rudraksha Mala",
-    price: 899,
-    originalPrice: 1199,
-    image: rudrakshaImage,
+    id: 35,
+    name: "Silver Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: silverPoojaThaliImage,
     rating: 5,
-    description: "5-Mukhi Rudraksha beads mala with 108 beads. Blessed and energized for meditation and prayers.",
-    badge: "Sacred"
-  },
-  {
-    id: 6,
-    name: "Brass Pooja Thali",
-    price: 1299,
-    originalPrice: 1599,
-    image: poojaThaliImage,
-    rating: 5,
-    description: "Complete pooja thali set with 7 compartments. Handcrafted brass with traditional motifs.",
+    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
     badge: "Premium"
   },
   {
-    id: 8,
-    name: "Sandalwood Powder",
-    price: 399,
-    originalPrice: 499,
-    image: sandalwoodImage,
-    rating: 5,
-    description: "Pure Mysore sandalwood powder for tilaka and skin care. 50g premium quality.",
-    badge: "Organic"
-  },
-  {
-    id: 19,
-    name: "Diwali Celebration Kit",
+    id: 38,
+    name: "Gold Kalash",
     price: 1499,
-    originalPrice: 1999,
-    image: diwaliKitImage,
+    originalPrice: 2499,
+    image: goldKalashImage,
     rating: 5,
-    description: "Complete Diwali celebration kit with diyas, rangoli colors, and sweets.",
-    badge: "Festival Special"
+    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    badge: "Premium"
   },
   {
-    id: 20,
-    name: "Ganesh Chaturthi Kit",
+    id: 39,
+    name: "Aarti Sangrah",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiSanghrahImage,
+    rating: 5,
+    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    badge: "Premium"
+  },
+  {
+    id: 40,
+    name: "Laxmi Ganesh Pooja Box",
     price: 999,
-    originalPrice: 1299,
-    image: ganeshKitImage,
+    originalPrice: 1499,
+    image: laxmiGaneshPoojaBoxImage,
     rating: 5,
-    description: "Everything needed for Ganesh Chaturthi celebrations. Includes modak molds.",
-    badge: "Complete Kit"
+    description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "Premium"
   },
   {
-    id: 14,
-    name: "Tulsi Mala",
-    price: 399,
-    originalPrice: 499,
-    image: rudrakshaImage,
-    rating: 5,
-    description: "Sacred tulsi beads mala for chanting and meditation. 108 beads.",
-    badge: "Holy"
+    id: 41,
+    name: "Wooden Carved Dhoop Stick Holder for Pooja",
+    price: 499,
+    originalPrice: 750,
+    image: woodenDhoopHolderImage,
+    rating: 4.8,
+    description: "Handcrafted wooden dhoop stick holder with intricate carved designs. Perfect for holding dhoop sticks during pooja ceremonies.",
+    badge: "Handcrafted"
   },
   {
-    id: 3,
-    name: "Pure Kumkum Powder",
-    price: 149,
-    image: kumkumImage,
-    rating: 5,
-    description: "Authentic vermillion powder made from turmeric and lime. 100g pack for tilaka and rituals."
-  },
-  {
-    id: 18,
-    name: "Lotus Garland",
-    price: 399,
-    image: garlandImage,
-    rating: 5,
-    description: "Artificial lotus garland for permanent temple decoration. Weather resistant.",
-    badge: "Durable"
+    id: 42,
+    name: "Wooden Carved Incense Sticks Holder",
+    price: 450,
+    originalPrice: 750,
+    image: woodenIncenseHolderImage,
+    rating: 4.7,
+    description: "Elegant triangular wooden incense holder with carved patterns. Features storage compartment for incense sticks.",
+    badge: "Elegant"
   }
 ];
 

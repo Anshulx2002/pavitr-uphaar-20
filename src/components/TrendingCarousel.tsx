@@ -4,95 +4,84 @@ import { Badge } from "@/components/ui/badge";
 import { TrendingUp } from "lucide-react";
 
 // Import product images
-import agarbattiImage from "@/assets/agarbatti.jpg";
-import diyaImage from "@/assets/diya.jpg";
-import rudrakshaImage from "@/assets/rudraksha.jpg";
-import poojaThaliImage from "@/assets/pooja-thali.jpg";
 import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
-import navratriKitImage from "@/assets/navratri-kit.jpg";
-import diwaliKitImage from "@/assets/diwali-kit.jpg";
+import goldKalashImage from "@/assets/gold-kalash.png";
+import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
+import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
+import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
+import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 
 const trendingProducts = [
   {
-    id: 1,
+    id: 34,
     name: "Gold Pooja Thali",
     price: 2499,
     originalPrice: 3499,
     image: goldPoojaThaliImage,
     rating: 5,
-    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments.",
+    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
     badge: "Premium"
   },
   {
-    id: 2,
+    id: 35,
     name: "Silver Pooja Thali",
     price: 2499,
     originalPrice: 3499,
     image: silverPoojaThaliImage,
     rating: 5,
-    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship.",
+    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
     badge: "Premium"
   },
   {
-    id: 3,
-    name: "Navratri Special Kit",
-    price: 899,
-    originalPrice: 1199,
-    image: navratriKitImage,
+    id: 38,
+    name: "Gold Kalash",
+    price: 1499,
+    originalPrice: 2499,
+    image: goldKalashImage,
     rating: 5,
-    description: "Complete Navratri celebration kit with kalash, chunri, and prayer essentials.",
-    badge: "Trending"
-  },
-  {
-    id: 4,
-    name: "Diwali Celebration Kit",
-    price: 1299,
-    originalPrice: 1599,
-    image: diwaliKitImage,
-    rating: 5,
-    description: "Premium Diwali kit with diyas, rangoli colors, and festive decorations.",
-    badge: "Hot"
-  },
-  {
-    id: 5,
-    name: "Premium Sandalwood Agarbatti",
-    price: 299,
-    originalPrice: 399,
-    image: agarbattiImage,
-    rating: 5,
-    description: "Hand-rolled incense sticks made from pure sandalwood powder.",
-    badge: "Best Seller"
-  },
-  {
-    id: 6,
-    name: "Brass Diya Set",
-    price: 549,
-    originalPrice: 699,
-    image: diyaImage,
-    rating: 5,
-    description: "Traditional brass oil lamps with intricate designs. Set of 4 diyas.",
-    badge: "Popular"
-  },
-  {
-    id: 7,
-    name: "Rudraksha Mala",
-    price: 899,
-    originalPrice: 1199,
-    image: rudrakshaImage,
-    rating: 5,
-    description: "5-Mukhi Rudraksha beads mala with 108 beads. Blessed and energized.",
-    badge: "Sacred"
-  },
-  {
-    id: 8,
-    name: "Brass Pooja Thali",
-    price: 1299,
-    originalPrice: 1599,
-    image: poojaThaliImage,
-    rating: 5,
-    description: "Complete pooja thali set with 7 compartments. Handcrafted brass.",
+    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
     badge: "Premium"
+  },
+  {
+    id: 39,
+    name: "Aarti Sangrah",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiSanghrahImage,
+    rating: 5,
+    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    badge: "Premium"
+  },
+  {
+    id: 40,
+    name: "Laxmi Ganesh Pooja Box",
+    price: 999,
+    originalPrice: 1499,
+    image: laxmiGaneshPoojaBoxImage,
+    rating: 5,
+    description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "Premium"
+  },
+  {
+    id: 41,
+    name: "Wooden Carved Dhoop Stick Holder for Pooja",
+    price: 499,
+    originalPrice: 750,
+    image: woodenDhoopHolderImage,
+    rating: 4.8,
+    description: "Handcrafted wooden dhoop stick holder with intricate carved designs. Perfect for holding dhoop sticks during pooja ceremonies.",
+    badge: "Handcrafted"
+  },
+  {
+    id: 42,
+    name: "Wooden Carved Incense Sticks Holder",
+    price: 450,
+    originalPrice: 750,
+    image: woodenIncenseHolderImage,
+    rating: 4.7,
+    description: "Elegant triangular wooden incense holder with carved patterns. Features storage compartment for incense sticks.",
+    badge: "Elegant"
   }
 ];
 
