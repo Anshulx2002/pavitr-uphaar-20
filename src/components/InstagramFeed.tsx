@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import pavitraUphaarBrandImage from "@/assets/pavitra-uphaar-brand.png";
 
 const InstagramFeed = () => {
   return (
@@ -16,6 +17,21 @@ const InstagramFeed = () => {
           </p>
         </div>
 
+        {/* Brand Image */}
+        <div className="text-center mb-12">
+          <a 
+            href="https://instagram.com/pavitra.uphaar" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:scale-105 transition-transform duration-300"
+          >
+            <img 
+              src={pavitraUphaarBrandImage} 
+              alt="Pavitra Uphaar - Rooted in Tradition, Crafted with Devotion" 
+              className="max-w-md w-full h-auto rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 mx-auto"
+            />
+          </a>
+        </div>
 
         {/* Single Centered CTA */}
         <div className="text-center">
