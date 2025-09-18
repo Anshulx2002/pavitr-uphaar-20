@@ -405,7 +405,7 @@ export const allProducts: Product[] = [
   },
   {
     id: 42,
-    name: "Incense Stick Holder",
+    name: "Wooden Incense Holder",
     price: 499,
     originalPrice: 750,
     image: woodenIncenseHolderImage,

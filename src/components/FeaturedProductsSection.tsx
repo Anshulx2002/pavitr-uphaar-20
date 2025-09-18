@@ -81,7 +81,7 @@ const featuredProducts = [
   },
   {
     id: 42,
-    name: "Wooden Carved Incense Sticks Holder",
+    name: "Wooden Incense Holder",
     price: 450,
     originalPrice: 750,
     image: woodenIncenseHolderImage,
