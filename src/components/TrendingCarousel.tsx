@@ -68,7 +68,7 @@ const trendingProducts = [
   },
   {
     id: 41,
-    name: "Wooden Carved Dhoop Stick Holder for Pooja",
+    name: "Wooden Dhoop Stick Holder",
     price: 499,
     originalPrice: 750,
     image: woodenDhoopHolderImage,
