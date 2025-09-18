@@ -15,6 +15,7 @@ import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
 import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
+import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 
 // Featured products - carefully selected new premium products
 const featuredProducts = [
@@ -107,6 +108,16 @@ const featuredProducts = [
     rating: 5,
     description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
     badge: "Premium"
+  },
+  {
+    id: 43,
+    name: "Lord Krishna Statue",
+    price: 2499,
+    originalPrice: 4000,
+    image: lordKrishnaStatueImage,
+    rating: 4.9,
+    description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    badge: "Sacred"
   }
 ];
 
