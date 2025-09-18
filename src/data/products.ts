@@ -18,6 +18,8 @@ import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import goldKalashImage from "@/assets/gold-kalash.png";
 import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
 import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
+import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
+import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 
 export interface Product {
   id: number;
@@ -388,6 +390,28 @@ export const allProducts: Product[] = [
     description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
     badge: "Premium",
     category: "accessories"
+  },
+  {
+    id: 41,
+    name: "Wooden Carved Dhoop Stick Holder for Pooja",
+    price: 499,
+    originalPrice: 750,
+    image: woodenDhoopHolderImage,
+    rating: 4.8,
+    description: "Handcrafted wooden dhoop stick holder with intricate carved designs. Perfect for holding dhoop sticks during pooja ceremonies.",
+    badge: "Handcrafted",
+    category: "accessories"
+  },
+  {
+    id: 42,
+    name: "Wooden Carved Incense Sticks Holder",
+    price: 450,
+    originalPrice: 750,
+    image: woodenIncenseHolderImage,
+    rating: 4.7,
+    description: "Elegant triangular wooden incense holder with carved patterns. Features storage compartment for incense sticks.",
+    badge: "Elegant",
+    category: "accessories"
   }
 ];
 
@@ -406,5 +430,5 @@ export const getProductsByCategory = (category: string) => {
 };
 
 export const getFeaturedProducts = () => {
-  return allProducts.filter(product => product.badge && ["Best Seller", "Premium", "Sacred"].includes(product.badge));
+  return allProducts.filter(product => product.badge && ["Best Seller", "Premium", "Sacred", "Handcrafted", "Elegant"].includes(product.badge));
 };
