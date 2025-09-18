@@ -122,6 +122,16 @@ const featuredProducts = [
     badge: "Sacred"
   },
   {
+    id: 44,
+    name: "Kamdhenu Idol Silver",
+    price: 2499,
+    originalPrice: 3500,
+    image: kamdhenusIdolSilverImage,
+    rating: 4.9,
+    description: "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
+    badge: "Sacred"
+  },
+  {
     id: 45,
     name: "Lotus LED Diya - Pack of 6",
     price: 999,
@@ -188,7 +198,7 @@ const FeaturedProductsSection = () => {
           } 
           mb-8 md:mb-12
         `}>
-          {featuredProducts.slice(0, isMobile ? 4 : 10).map((product, index) => (
+          {featuredProducts.slice(0, isMobile ? 4 : 12).map((product, index) => (
             <div 
               key={product.id} 
               className="scroll-animate hover-lift group"
