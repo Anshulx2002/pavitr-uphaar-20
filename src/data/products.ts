@@ -83,59 +83,6 @@ export const allProducts: Product[] = [
   },
 
   // Lamps & Diyas
-  {
-    id: 2,
-    name: "Brass Diya Set",
-    price: 549,
-    originalPrice: 699,
-    image: diyaImage,
-    rating: 5,
-    description: "Traditional brass oil lamps with intricate designs. Set of 4 diyas perfect for festivals and daily prayers.",
-    badge: "Premium",
-    category: "lamps"
-  },
-  {
-    id: 11,
-    name: "Clay Diya Collection",
-    price: 99,
-    originalPrice: 149,
-    image: diyaImage,
-    rating: 4.7,
-    description: "Handcrafted clay diyas in traditional designs. Pack of 12 pieces.",
-    badge: "Eco-Friendly",
-    category: "lamps"
-  },
-  {
-    id: 12,
-    name: "Decorative Floating Diyas",
-    price: 299,
-    image: diyaImage,
-    rating: 4.9,
-    description: "Beautiful floating diyas for water ceremonies and decoration.",
-    badge: "Decorative",
-    category: "lamps"
-  },
-  {
-    id: 26,
-    name: "Electric LED Diya",
-    price: 399,
-    originalPrice: 499,
-    image: diyaImage,
-    rating: 4.4,
-    description: "Modern LED diya with warm light. Battery operated for safe use.",
-    badge: "Modern",
-    category: "lamps"
-  },
-  {
-    id: 27,
-    name: "Silver Plated Diya",
-    price: 799,
-    image: diyaImage,
-    rating: 4.8,
-    description: "Elegant silver-plated diya for special occasions and ceremonies.",
-    badge: "Elegant",
-    category: "lamps"
-  },
 
   // Pooja Accessories
   {
