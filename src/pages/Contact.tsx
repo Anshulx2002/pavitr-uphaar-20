@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
+import { Mail, MapPin, Clock, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,14 +29,6 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-gold" />
-                    <div>
-                      <p className="font-medium">Phone</p>
-                      <p className="text-muted-foreground">+91 98765 43210</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-gold" />
                     <div>
                       <p className="font-medium">Email</p>
@@ -49,8 +41,8 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Address</p>
                       <p className="text-muted-foreground">
-                        123 Temple Street, Sacred Plaza<br />
-                        Mumbai, Maharashtra 400001
+                        LBS Marg, Opp R-City Mall<br />
+                        Ghatkopar, Mumbai, 400086
                       </p>
                     </div>
                   </div>
@@ -68,17 +60,20 @@ const Contact = () => {
                   
                   <div className="flex items-center space-x-3">
                     <Instagram className="w-6 h-6 text-gold" />
-                    <div>
-                      <p className="font-medium">Follow Us</p>
-                      <a 
-                        href="https://instagram.com/pavitra.uphaar" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-gold transition-colors"
-                      >
-                        @pavitra.uphaar
-                      </a>
-                    </div>
+                     <div>
+                       <p className="font-medium">Follow Us</p>
+                       <a 
+                         href="https://instagram.com/pavitra.uphaar" 
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         className="text-muted-foreground hover:text-gold transition-colors"
+                       >
+                         @pavitra.uphaar
+                       </a>
+                       <p className="text-sm text-muted-foreground mt-1">
+                         You can also message us on Instagram for any inquiry
+                       </p>
+                     </div>
                   </div>
                 </CardContent>
               </Card>
