@@ -130,6 +130,10 @@ const Header = () => {
               About
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
+            <Link to="/reviews" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
+              Reviews
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </Link>
             <Link to="/contact" className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group">
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -193,6 +197,7 @@ const Header = () => {
               <Link to="/products" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Products</Link>
               <Link to="/festival-kits" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Festival Kits</Link>
               <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">About</Link>
+              <Link to="/reviews" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Reviews</Link>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Contact</Link>
               
             </nav>
