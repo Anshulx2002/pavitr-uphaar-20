@@ -78,8 +78,8 @@ export const allProducts: Product[] = [
   {
     id: 19,
     name: "Diwali Celebration Kit",
-    price: 1499,
-    originalPrice: 1999,
+    price: 2499,
+    originalPrice: 5000,
     image: diwaliKitImage,
     rating: 5,
     description: "Complete Diwali celebration kit with diyas, rangoli colors, and sweets.",
@@ -89,8 +89,8 @@ export const allProducts: Product[] = [
   {
     id: 20,
     name: "Ganesh Chaturthi Kit",
-    price: 999,
-    originalPrice: 1299,
+    price: 2499,
+    originalPrice: 5000,
     image: ganeshKitImage,
     rating: 4.9,
     description: "Everything needed for Ganesh Chaturthi celebrations. Includes modak molds.",
@@ -100,8 +100,8 @@ export const allProducts: Product[] = [
   {
     id: 21,
     name: "Navratri Pooja Kit",
-    price: 799,
-    originalPrice: 999,
+    price: 2499,
+    originalPrice: 5000,
     image: navratriKitImage,
     rating: 4.8,
     description: "Nine-day Navratri celebration kit with all essential items.",
@@ -111,8 +111,8 @@ export const allProducts: Product[] = [
   {
     id: 22,
     name: "Karva Chauth Kit",
-    price: 599,
-    originalPrice: 799,
+    price: 2499,
+    originalPrice: 5000,
     image: karvaKitImage,
     rating: 4.7,
     description: "Traditional Karva Chauth kit with decorated thali and accessories.",
