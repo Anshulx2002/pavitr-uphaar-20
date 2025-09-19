@@ -58,13 +58,13 @@ const Reviews = () => {
     },
     {
       icon: <CheckCircle className="w-6 h-6 text-primary" />,
-      title: "Quality Guaranteed", 
-      description: "Every product undergoes strict quality checks before shipping"
+      title: "Secure UPI Payments", 
+      description: "Pay safely using UPI - secured by Razorpay's trusted payment gateway"
     },
     {
       icon: <Award className="w-6 h-6 text-primary" />,
-      title: "Satisfaction Promise",
-      description: "Not satisfied? We'll make it right or provide a full refund"
+      title: "Quality Guaranteed",
+      description: "Every product undergoes strict quality checks before shipping"
     }
   ];
 
@@ -109,7 +109,7 @@ const Reviews = () => {
               ))}
             </div>
             <span className="text-2xl font-bold text-foreground">5.0</span>
-            <span className="text-muted-foreground">from 1000+ reviews</span>
+            <span className="text-muted-foreground">from verified customers</span>
           </div>
         </div>
       </section>
@@ -207,15 +207,15 @@ const Reviews = () => {
           <div className="text-center mt-12">
             <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8 max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Our Promise to You
+                Secure & Trusted Payments
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                If any product doesn't meet your expectations, we'll replace it or provide a full refund within 30 days. 
-                No questions asked. Your satisfaction is our sacred commitment.
+                Experience hassle-free shopping with instant UPI payments, all transactions secured by Razorpay's 
+                industry-leading payment gateway for your peace of mind.
               </p>
               <div className="flex items-center justify-center gap-2 text-primary">
                 <CheckCircle className="w-5 h-5" />
-                <span className="font-semibold">Backed by 1000+ Happy Customers</span>
+                <span className="font-semibold">Trusted by Happy Customers</span>
               </div>
             </div>
           </div>
