@@ -22,45 +22,45 @@ const FestivalKits = () => {
       id: 1,
       name: "Diwali Celebration Kit",
       description: "Complete set for the festival of lights with premium items",
-      price: 999,
-      originalPrice: 1299,
+      price: 2499,
+      originalPrice: 5000,
       image: diwaliKit,
       items: ["20 Clay Diyas", "Rangoli Colors", "LED String Lights", "Decorative Torans", "Sweets Box"],
       rating: 4.8,
-      discount: "23% OFF"
+      discount: "50% OFF"
     },
     {
       id: 2,
       name: "Ganesh Chaturthi Kit",
       description: "Sacred items for Ganpati celebrations with eco-friendly idol",
-      price: 799,
-      originalPrice: 999,
+      price: 2499,
+      originalPrice: 5000,
       image: ganeshKit,
       items: ["Eco Ganesha Idol", "Pooja Thali", "Modak Mould", "Incense Sticks", "Flowers"],
       rating: 4.9,
-      discount: "20% OFF"
+      discount: "50% OFF"
     },
     {
       id: 3,
       name: "Karva Chauth Kit",
       description: "Traditional items for the auspicious Karva Chauth ceremony",
-      price: 599,
-      originalPrice: 749,
+      price: 2499,
+      originalPrice: 5000,
       image: karvaKit,
       items: ["Decorated Karva", "Sieve", "Mehendi", "Sindoor", "Pooja Items"],
       rating: 4.7,
-      discount: "15% OFF"
+      discount: "50% OFF"
     },
     {
       id: 4,
       name: "Navratri Pooja Kit",
       description: "Nine-day celebration kit with all essentials",
-      price: 1199,
-      originalPrice: 1499,
+      price: 2499,
+      originalPrice: 5000,
       image: navratriKit,
       items: ["Kalash Set", "9 Day Pooja Items", "Garlands", "Chunri", "Coconuts"],
       rating: 4.8,
-      discount: "25% OFF"
+      discount: "50% OFF"
     }
   ];
 
