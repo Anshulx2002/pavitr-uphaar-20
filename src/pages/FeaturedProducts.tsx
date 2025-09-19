@@ -15,76 +15,81 @@ import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 
-// Featured products - all products from homepage
+// Import additional product images to match home page
+import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
+import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
+import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
+
+// Featured products - exactly matching the home page collection
 const featuredProducts = [
   {
-    id: 29,
+    id: 34,
     name: "Gold Pooja Thali",
     price: 2499,
-    originalPrice: 3999,
+    originalPrice: 3499,
     image: goldPoojaThaliImage,
     rating: 5,
-    description: "Exquisite handcrafted gold-plated pooja thali with intricate designs. Perfect for all religious ceremonies and festivals.",
+    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
     badge: "Premium"
   },
   {
-    id: 30,
+    id: 35,
     name: "Silver Pooja Thali",
-    price: 1999,
-    originalPrice: 2999,
+    price: 2499,
+    originalPrice: 3499,
     image: silverPoojaThaliImage,
-    rating: 4.9,
-    description: "Elegant silver-plated pooja thali with traditional engravings. Ideal for daily prayers and special occasions.",
-    badge: "Bestseller"
+    rating: 5,
+    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
+    badge: "Premium"
   },
   {
-    id: 31,
+    id: 38,
     name: "Gold Kalash",
-    price: 3499,
-    originalPrice: 4999,
+    price: 1499,
+    originalPrice: 2499,
     image: goldKalashImage,
     rating: 5,
-    description: "Sacred brass kalash with gold finish and traditional motifs. Essential for all Hindu rituals and ceremonies.",
-    badge: "Sacred"
+    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    badge: "Premium"
   },
   {
-    id: 32,
+    id: 39,
     name: "Aarti Sangrah",
-    price: 899,
-    originalPrice: 1499,
+    price: 1499,
+    originalPrice: 2499,
     image: aartiSangrahImage,
-    rating: 4.8,
-    description: "Complete collection of traditional aartis with beautiful illustrations. Perfect for daily worship and learning.",
-    badge: "Complete"
+    rating: 5,
+    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    badge: "Premium"
   },
   {
-    id: 33,
+    id: 40,
     name: "Laxmi Ganesh Pooja Box",
-    price: 2999,
-    originalPrice: 4499,
+    price: 999,
+    originalPrice: 1499,
     image: laxmiGaneshPoojaBoxImage,
-    rating: 4.9,
-    description: "Premium wooden pooja box with Laxmi Ganesh motifs. Contains all essentials for prosperity prayers.",
-    badge: "Prosperity"
+    rating: 5,
+    description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "Premium"
   },
   {
-    id: 34,
-    name: "Wooden Carved Dhoop Stick Holder",
+    id: 41,
+    name: "Wooden Incense Holder",
     price: 499,
     originalPrice: 750,
     image: woodenDhoopHolderImage,
-    rating: 4.6,
-    description: "Handcrafted wooden dhoop holder with intricate carvings. Features ash catching tray for clean burning.",
-    badge: "Handmade"
+    rating: 4.8,
+    description: "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
+    badge: "Handcrafted"
   },
   {
-    id: 35,
-    name: "Wooden Carved Incense Sticks Holder",
-    price: 450,
+    id: 42,
+    name: "Wooden Dhoop Stick Holder",
+    price: 499,
     originalPrice: 750,
     image: woodenIncenseHolderImage,
     rating: 4.7,
-    description: "Elegant triangular wooden incense holder with carved patterns. Features storage compartment for incense sticks.",
+    description: "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
     badge: "Elegant"
   },
   {
@@ -106,6 +111,36 @@ const featuredProducts = [
     rating: 5,
     description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
     badge: "Premium"
+  },
+  {
+    id: 43,
+    name: "Lord Krishna Statue",
+    price: 2499,
+    originalPrice: 4000,
+    image: lordKrishnaStatueImage,
+    rating: 4.9,
+    description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    badge: "Sacred"
+  },
+  {
+    id: 44,
+    name: "Kamdhenu Idol Silver",
+    price: 2499,
+    originalPrice: 3500,
+    image: kamdhenusIdolSilverImage,
+    rating: 4.9,
+    description: "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
+    badge: "Sacred"
+  },
+  {
+    id: 45,
+    name: "Lotus LED Diya - Pack of 6",
+    price: 999,
+    originalPrice: 1200,
+    image: lotusLedDiyaImage,
+    rating: 4.8,
+    description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
+    badge: "Festival Special"
   }
 ];
 
