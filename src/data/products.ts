@@ -50,28 +50,7 @@ export const allProducts: Product[] = [
     category: "incense"
   },
 
-  // Sacred Threads
-  {
-    id: 32,
-    name: "Sandalwood Mala",
-    price: 699,
-    originalPrice: 899,
-    image: rudrakshaImage,
-    rating: 4.7,
-    description: "Fragrant sandalwood beads mala for peaceful meditation. 108 beads.",
-    badge: "Fragrant",
-    category: "threads"
-  },
-  {
-    id: 33,
-    name: "Red Thread Kalava",
-    price: 49,
-    image: rudrakshaImage,
-    rating: 4.5,
-    description: "Sacred red thread kalava for protection and blessings. Pack of 10 meters.",
-    badge: "Protection",
-    category: "threads"
-  },
+  // Sacred Threads (removed sandalwood mala and red thread kalava)
   {
     id: 34,
     name: "Gold Pooja Thali",
