@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram } from "lucide-react";
+import { Mail, MapPin, Instagram } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-12">
@@ -55,16 +55,12 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-gold" />
-                <span>+91 98765 43210</span>
-              </div>
-              <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-gold" />
                 <span>support@pavitrauphaar.com</span>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-gold mt-0.5" />
-                <span>123 Temple Street, Sacred Plaza, Mumbai, Maharashtra 400001</span>
+                <span>LBS Marg, Opp R-City Mall, Ghatkopar, Mumbai, 400086</span>
               </div>
             </div>
           </div>
