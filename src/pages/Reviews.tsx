@@ -16,14 +16,14 @@ const Reviews = () => {
     {
       id: 2,
       name: "Manish Mehra", 
-      rating: 5,
+      rating: 4.75,
       review: "Every detail carried the warmth of tradition - truly unforgettable.",
       location: "Mumbai"
     },
     {
       id: 3,
       name: "Ratna Garg",
-      rating: 5,
+      rating: 4.5,
       review: "It didn't feel like a gift. It felt like love wrapped in light.",
       location: "Bangalore"
     },
@@ -108,7 +108,7 @@ const Reviews = () => {
                 <Star key={star} className="w-6 h-6 fill-primary text-primary" />
               ))}
             </div>
-            <span className="text-2xl font-bold text-foreground">5.0</span>
+            <span className="text-2xl font-bold text-foreground">4.8</span>
             <span className="text-muted-foreground">from verified customers</span>
           </div>
         </div>
@@ -126,12 +126,21 @@ const Reviews = () => {
               >
                 <CardContent className="p-6">
                   <div className="flex items-center gap-1 mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star 
-                        key={star} 
-                        className="w-4 h-4 fill-primary text-primary" 
-                      />
-                    ))}
+                    {[1, 2, 3, 4, 5].map((star) => {
+                      const rating = review.rating;
+                      if (star <= rating) {
+                        return <Star key={star} className="w-4 h-4 fill-primary text-primary" />;
+                      } else if (star - 0.5 <= rating) {
+                        return (
+                          <div key={star} className="relative w-4 h-4">
+                            <Star className="absolute w-4 h-4 text-primary/20" />
+                            <Star className="absolute w-4 h-4 fill-primary text-primary" style={{ clipPath: 'inset(0 50% 0 0)' }} />
+                          </div>
+                        );
+                      } else {
+                        return <Star key={star} className="w-4 h-4 text-primary/20" />;
+                      }
+                    })}
                   </div>
                   
                   <Quote className="w-8 h-8 text-primary/20 mb-3" />
