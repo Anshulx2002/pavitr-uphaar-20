@@ -44,8 +44,6 @@ const Footer = () => {
               <li><a href="/incense-agarbatti" className="opacity-75 hover:opacity-100 transition-opacity">Incense & Agarbatti</a></li>
               <li><a href="/lamps-diyas" className="opacity-75 hover:opacity-100 transition-opacity">Lamps & Diyas</a></li>
               <li><a href="/pooja-accessories" className="opacity-75 hover:opacity-100 transition-opacity">Pooja Accessories</a></li>
-              <li><a href="/sacred-threads" className="opacity-75 hover:opacity-100 transition-opacity">Sacred Threads</a></li>
-              <li><a href="/flowers-garlands" className="opacity-75 hover:opacity-100 transition-opacity">Flowers & Garlands</a></li>
               <li><a href="/festival-kits" className="opacity-75 hover:opacity-100 transition-opacity">Festival Kits</a></li>
             </ul>
           </div>

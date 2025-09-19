@@ -23,9 +23,7 @@ const Header = () => {
     { name: "Incense & Agarbatti", href: "/incense-agarbatti", description: "Premium quality incense sticks" },
     { name: "Lamps & Diyas", href: "/lamps-diyas", description: "Traditional brass and clay lamps" },
     { name: "Pooja Accessories", href: "/pooja-accessories", description: "Essential items for daily worship" },
-    { name: "Idols", href: "/products?category=idols", description: "Sacred idols and statues" },
-    { name: "Flowers & Garlands", href: "/flowers-garlands", description: "Fresh flowers and decorative garlands" },
-    { name: "Sacred Threads", href: "/sacred-threads", description: "Blessed threads and malas" }
+    { name: "Idols", href: "/products?category=idols", description: "Sacred idols and statues" }
   ];
 
   return (

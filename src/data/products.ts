@@ -237,8 +237,6 @@ export const categories = [
   { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter(p => p.category === "lamps").length },
   { id: "accessories", name: "Pooja Accessories", count: allProducts.filter(p => p.category === "accessories").length },
   { id: "idols", name: "Idols", count: allProducts.filter(p => p.category === "idols").length },
-  { id: "flowers", name: "Flowers & Garlands", count: allProducts.filter(p => p.category === "flowers").length },
-  { id: "threads", name: "Sacred Threads", count: allProducts.filter(p => p.category === "threads").length },
   { id: "kits", name: "Festival Kits", count: allProducts.filter(p => p.category === "kits").length },
 ];
 

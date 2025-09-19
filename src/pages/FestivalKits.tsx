@@ -161,7 +161,12 @@ const FestivalKits = () => {
             <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-xl md:max-w-2xl mx-auto leading-relaxed">
               Need something special? We create custom kits tailored to your celebration.
             </p>
-            <Button variant="outline" size="lg" className="h-10 md:h-12">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="h-10 md:h-12"
+              onClick={() => window.location.href = '/contact'}
+            >
               Contact for Custom Kits
             </Button>
           </div>
