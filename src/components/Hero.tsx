@@ -70,8 +70,8 @@ const Hero = () => {
       <BrassKalash />
       
       {/* Traditional Indian Border - Top */}
-      <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-      <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-gold"></div>
+      <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-vermillion to-transparent"></div>
+      <div className="absolute top-2 left-0 right-0 h-1 bg-gradient-marigold"></div>
       
         {/* Enhanced Background with Clear Central Area */}
         <div className="absolute inset-0 z-0">
@@ -86,8 +86,8 @@ const Hero = () => {
           />
           
           {/* Rich Radial Gradient Behind Content */}
-          <div className="absolute inset-0 bg-gradient-radial from-[#F39C12]/20 via-background/60 to-background/90"></div>
-          <div className="absolute inset-0 bg-gradient-radial from-[#DAA520]/15 via-transparent to-background/70 scale-150"></div>
+          <div className="absolute inset-0 bg-gradient-radial from-vermillion/20 via-background/60 to-background/90"></div>
+          <div className="absolute inset-0 bg-gradient-radial from-festive-orange/15 via-transparent to-background/70 scale-150"></div>
           
           {/* Balanced Overlays for Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80"></div>

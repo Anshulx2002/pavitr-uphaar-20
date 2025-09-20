@@ -21,6 +21,9 @@ const buttonVariants = cva(
         saffron: "bg-gradient-saffron text-white hover:opacity-90 shadow-warm font-medium",
         gold: "bg-gradient-gold text-foreground hover:opacity-90 shadow-gold font-medium",
         sacred: "bg-maroon text-white hover:bg-maroon/90 shadow-warm border border-gold/20",
+        festive: "bg-gradient-festive text-white hover:opacity-90 shadow-warm font-medium",
+        vermillion: "bg-gradient-vermillion text-white hover:opacity-90 shadow-warm font-medium",
+        marigold: "bg-gradient-marigold text-white hover:opacity-90 shadow-warm font-medium",
       },
       size: {
         default: "h-10 px-4 py-2",

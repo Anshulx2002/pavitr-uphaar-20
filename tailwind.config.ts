@@ -58,6 +58,14 @@ export default {
 				'premium-gold-saffron': 'hsl(var(--premium-gold-saffron))',
 				maroon: 'hsl(var(--maroon))',
 				'temple-stone': 'hsl(var(--temple-stone))',
+				
+				// Festive Indian colors
+				vermillion: 'hsl(var(--vermillion))',
+				'festive-orange': 'hsl(var(--festive-orange))',
+				'deep-saffron': 'hsl(var(--deep-saffron))',
+				'crimson-red': 'hsl(var(--crimson-red))',
+				marigold: 'hsl(var(--marigold))',
+				sindoor: 'hsl(var(--sindoor))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -78,6 +86,9 @@ export default {
 				'gradient-saffron': 'var(--gradient-saffron)',
 				'gradient-gold': 'var(--gradient-gold)',
 				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-festive': 'var(--gradient-festive)',
+				'gradient-vermillion': 'var(--gradient-vermillion)',
+				'gradient-marigold': 'var(--gradient-marigold)',
 				'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
 				'pattern-mandala': 'var(--pattern-mandala)',
 			},
