@@ -28,7 +28,7 @@ const CompactReviews = () => {
   ];
 
   return (
-    <section className="py-12 bg-gradient-to-br from-background via-accent/5 to-background">
+    <section className="py-12 bg-gradient-to-br from-background via-accent/5 to-background scroll-animate">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
@@ -61,8 +61,7 @@ const CompactReviews = () => {
           {featuredReviews.map((review, index) => (
             <Card 
               key={review.id} 
-              className="group hover:shadow-lg transition-all duration-300 border-0 shadow-sm"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group hover:shadow-lg transition-all duration-300 border-0 shadow-sm animate-stagger"
             >
               <CardContent className="p-4">
                 <div className="flex items-center gap-1 mb-3">
