@@ -94,11 +94,11 @@ const FestivalKits = () => {
             {festivalKits.map((kit) => (
               <Card key={kit.id} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
                 <CardHeader className="p-0">
-                  <div className="relative overflow-hidden rounded-t-lg">
+                  <div className="relative overflow-hidden rounded-t-lg bg-gradient-festive">
                     <img 
                       src={kit.image} 
                       alt={kit.name}
-                      className="w-full h-64 md:h-60 object-contain group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-64 md:h-60 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <Badge className="absolute top-3 right-3 bg-saffron text-white font-medium">
                       {kit.discount}
