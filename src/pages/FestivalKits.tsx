@@ -9,7 +9,7 @@ import { useCart } from "@/contexts/CartContext";
 import CartDrawer from "@/components/CartDrawer"; // Fixed import
 import diwaliKit from "@/assets/diwali-gift-box.png";
 import ganeshKit from "@/assets/ganesh-kit.jpg";
-import karvaKit from "@/assets/karva-kit.jpg";
+import karvaKit from "@/assets/karva-chauth-gift-box.png";
 import navratriKit from "@/assets/navratri-kit.jpg";
 
 const FestivalKits = () => {
@@ -42,12 +42,12 @@ const FestivalKits = () => {
     },
     {
       id: 3,
-      name: "Karva Chauth Kit",
-      description: "Traditional items for the auspicious Karva Chauth ceremony",
+      name: "Karva Chauth Gift Box",
+      description: "Complete essentials for the auspicious Karva Chauth ceremony",
       price: 2499,
       originalPrice: 5000,
       image: karvaKit,
-      items: ["Decorated Karva", "Sieve", "Mehendi", "Sindoor", "Pooja Items"],
+      items: ["Mathi", "Decorative Diya", "Bindi Packet", "Mehendi Cone", "Kalash for Water", "Pooja Thali", "Mithai Box"],
       rating: 4.7,
       discount: "50% OFF"
     },
@@ -98,7 +98,7 @@ const FestivalKits = () => {
                     <img 
                       src={kit.image} 
                       alt={kit.name}
-                      className="w-full h-64 md:h-60 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-72 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <Badge className="absolute top-3 right-3 bg-saffron text-white font-medium">
                       {kit.discount}
