@@ -98,7 +98,7 @@ const FestivalKits = () => {
                     <img 
                       src={kit.image} 
                       alt={kit.name}
-                      className="w-full h-52 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-64 md:h-60 object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                     <Badge className="absolute top-3 right-3 bg-saffron text-white font-medium">
                       {kit.discount}
@@ -119,19 +119,16 @@ const FestivalKits = () => {
                     {kit.name}
                   </CardTitle>
                   
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                  <p className="text-muted-foreground text-sm mb-4">
                     {kit.description}
                   </p>
                   
                   <div className="mb-4">
                     <h4 className="font-semibold text-sm mb-2">Kit Includes:</h4>
                     <ul className="text-xs text-muted-foreground space-y-1">
-                      {kit.items.slice(0, 3).map((item, index) => (
+                      {kit.items.map((item, index) => (
                         <li key={index}>• {item}</li>
                       ))}
-                      {kit.items.length > 3 && (
-                        <li className="text-saffron font-medium">+ {kit.items.length - 3} more items</li>
-                      )}
                     </ul>
                   </div>
                   
