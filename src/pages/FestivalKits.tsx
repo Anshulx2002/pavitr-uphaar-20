@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Gift } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import CartDrawer from "@/components/CartDrawer"; // Fixed import
-import diwaliKit from "@/assets/diwali-kit.jpg";
+import diwaliKit from "@/assets/diwali-gift-box.png";
 import ganeshKit from "@/assets/ganesh-kit.jpg";
 import karvaKit from "@/assets/karva-kit.jpg";
 import navratriKit from "@/assets/navratri-kit.jpg";
@@ -20,12 +20,12 @@ const FestivalKits = () => {
   const festivalKits = [
     {
       id: 1,
-      name: "Diwali Celebration Kit",
-      description: "Complete set for the festival of lights with premium items",
+      name: "Diwali Gift Box",
+      description: "Premium Diwali gift box with traditional sweets and pooja essentials",
       price: 2499,
       originalPrice: 5000,
       image: diwaliKit,
-      items: ["20 Clay Diyas", "Rangoli Colors", "LED String Lights", "Decorative Torans", "Sweets Box"],
+      items: ["Kaju Katli Box (500gm)", "3 Lotus Shaped Diyas", "Silver Puja Thali with Laxmi Ji", "Door Toran", "Dhoop Sticks", "Thick Incense Sticks", "Aarti Book"],
       rating: 4.8,
       discount: "50% OFF"
     },
