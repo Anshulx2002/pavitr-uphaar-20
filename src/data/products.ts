@@ -49,6 +49,83 @@ export const allProducts: Product[] = [
     badge: "Best Seller",
     category: "incense"
   },
+  {
+    id: 2,
+    name: "Pure Camphor Tablets",
+    price: 149,
+    originalPrice: 199,
+    image: camphorImage,
+    rating: 4.8,
+    description: "Pure camphor tablets for traditional aarti and purification rituals. Long-lasting fragrance and clean burning.",
+    badge: "Pure Quality",
+    category: "incense"
+  },
+  {
+    id: 3,
+    name: "Sandalwood Powder",
+    price: 399,
+    originalPrice: 499,
+    image: sandalwoodImage,
+    rating: 4.9,
+    description: "Premium sandalwood powder for tilaka, spiritual practices, and aromatic preparations. Finest quality from Mysore.",
+    badge: "Premium",
+    category: "incense"
+  },
+  {
+    id: 4,
+    name: "Traditional Diya Oil Lamp",
+    price: 89,
+    originalPrice: 120,
+    image: diyaImage,
+    rating: 4.7,
+    description: "Handcrafted clay diya perfect for festivals and daily prayers. Creates a warm, divine atmosphere.",
+    badge: "Traditional",
+    category: "lamps"
+  },
+  {
+    id: 5,
+    name: "Kumkum Sindoor",
+    price: 99,
+    originalPrice: 149,
+    image: kumkumImage,
+    rating: 4.6,
+    description: "Pure vermillion kumkum for tilaka and religious ceremonies. Natural ingredients, vibrant color.",
+    badge: "Natural",
+    category: "accessories"
+  },
+  {
+    id: 6,
+    name: "Rudraksha Beads Mala",
+    price: 799,
+    originalPrice: 999,
+    image: rudrakshaImage,
+    rating: 4.9,
+    description: "Authentic rudraksha mala for meditation and prayers. 108 beads, naturally grown, blessed for spiritual practice.",
+    badge: "Sacred",
+    category: "accessories"
+  },
+  {
+    id: 7,
+    name: "Traditional Pooja Thali",
+    price: 399,
+    originalPrice: 599,
+    image: poojaThaliImage,
+    rating: 4.5,
+    description: "Complete brass pooja thali set with all essential items. Perfect for daily worship and special occasions.",
+    badge: "Complete Set",
+    category: "accessories"
+  },
+  {
+    id: 8,
+    name: "Marigold Garland",
+    price: 199,
+    originalPrice: 249,
+    image: garlandImage,
+    rating: 4.4,
+    description: "Fresh marigold garlands for temple decoration and festivals. Vibrant colors, long-lasting freshness.",
+    badge: "Fresh",
+    category: "flowers"
+  },
 
   // Sacred Threads (removed sandalwood mala and red thread kalava)
   {
@@ -183,7 +260,7 @@ export const allProducts: Product[] = [
     rating: 4.8,
     description: "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
     badge: "Handcrafted",
-    category: "accessories"
+    category: "incense"
   },
   {
     id: 42,
@@ -194,7 +271,7 @@ export const allProducts: Product[] = [
     rating: 4.7,
     description: "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
     badge: "Elegant",
-    category: "accessories"
+    category: "incense"
   },
   {
     id: 43,
@@ -236,6 +313,7 @@ export const categories = [
   { id: "incense", name: "Incense & Agarbatti", count: allProducts.filter(p => p.category === "incense").length },
   { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter(p => p.category === "lamps").length },
   { id: "accessories", name: "Pooja Accessories", count: allProducts.filter(p => p.category === "accessories").length },
+  { id: "flowers", name: "Flowers & Garlands", count: allProducts.filter(p => p.category === "flowers").length },
   { id: "idols", name: "Idols", count: allProducts.filter(p => p.category === "idols").length },
   { id: "kits", name: "Festival Kits", count: allProducts.filter(p => p.category === "kits").length },
 ];
