@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X, Volume2, VolumeX, Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -6,6 +6,7 @@ const VideoPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isZoomed, setIsZoomed] = useState(false);
+  const smallVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Show popup after 2 seconds
@@ -15,6 +16,17 @@ const VideoPopup = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Handle video play/pause when zooming
+  useEffect(() => {
+    if (smallVideoRef.current) {
+      if (isZoomed) {
+        smallVideoRef.current.pause();
+      } else {
+        smallVideoRef.current.play();
+      }
+    }
+  }, [isZoomed]);
 
   if (!isVisible) return null;
 
@@ -57,6 +69,7 @@ const VideoPopup = () => {
             {/* Video */}
             <div className="rounded-lg overflow-hidden cursor-pointer" onClick={() => setIsZoomed(true)}>
               <video
+                ref={smallVideoRef}
                 className="w-full max-w-[200px] h-auto"
                 autoPlay
                 loop
