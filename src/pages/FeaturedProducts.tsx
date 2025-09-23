@@ -3,11 +3,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Sparkles } from "lucide-react";
-import { getFeaturedProducts } from "@/data/products";
+import { getFeaturedProducts, allProducts } from "@/data/products";
 
 const featuredProducts = getFeaturedProducts();
 
 const FeaturedProducts = () => {
+  const products = featuredProducts.length ? featuredProducts : allProducts;
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -50,13 +51,9 @@ const FeaturedProducts = () => {
       {/* Products Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {featuredProducts.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground text-lg">No featured products available at the moment.</p>
-            </div>
-          ) : (
+          {products && products.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {featuredProducts.map((product) => (
+              {products.map((product) => (
                 <ProductCard
                   key={product.id}
                   id={product.id}
@@ -69,6 +66,10 @@ const FeaturedProducts = () => {
                   badge={product.badge}
                 />
               ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground text-lg">No products available at the moment.</p>
             </div>
           )}
         </div>
