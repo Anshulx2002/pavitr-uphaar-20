@@ -98,7 +98,7 @@ const FestivalKits = () => {
                     <img 
                       src={kit.image} 
                       alt={kit.name}
-                      className="w-full h-80 md:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-[28rem] md:h-[28rem] object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <Badge className="absolute top-3 right-3 bg-saffron text-white font-medium">
                       {kit.discount}
