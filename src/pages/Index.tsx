@@ -6,6 +6,7 @@ import TrendingCarousel from "@/components/TrendingCarousel";
 import CompactReviews from "@/components/CompactReviews";
 import InstagramFeed from "@/components/InstagramFeed";
 import RightSidePopup from "@/components/RightSidePopup";
+import VideoPopup from "@/components/VideoPopup";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
       <FeaturedProductsSection />
       <InstagramFeed />
       <Footer />
+      <VideoPopup />
     </div>
   );
 };
