@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Sparkles, X, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 interface FestiveSpotlightProps {
   festival: string;
@@ -23,6 +24,7 @@ const FestiveSpotlight = ({
   isActive = true 
 }: FestiveSpotlightProps) => {
   const [isVisible, setIsVisible] = useState(isActive);
+  const navigate = useNavigate();
 
   if (!isVisible) return null;
 
@@ -86,8 +88,8 @@ const FestiveSpotlight = ({
               </div>
               
               <Button 
-                className="bg-gradient-saffron hover:opacity-90 text-white px-8 py-3 text-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105"
-                onClick={() => window.location.href = ctaLink}
+                className="bg-gradient-saffron hover:opacity-90 text-white px-8 py-3 text-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 touch-manipulation"
+                onClick={() => navigate(ctaLink)}
               >
                 <Sparkles className="h-5 w-5 mr-2" />
                 {ctaText}
