@@ -19,7 +19,7 @@ const VideoPopup = () => {
 
   return (
     <div className="fixed bottom-4 right-4 z-50 animate-slide-in-right">
-      <div className="bg-gradient-to-br from-saffron via-gold to-primary p-1 rounded-2xl shadow-2xl max-w-sm overflow-hidden">
+      <div className="bg-gradient-to-br from-saffron via-gold to-primary p-1 rounded-2xl shadow-2xl max-w-xs overflow-hidden">
         <div className="bg-background rounded-xl p-2 relative">
           {/* Close button */}
           <Button
@@ -44,7 +44,7 @@ const VideoPopup = () => {
           {/* Video */}
           <div className="rounded-lg overflow-hidden">
             <video
-              className="w-full max-w-xs h-auto"
+              className="w-full max-w-[200px] h-auto"
               autoPlay
               loop
               muted={isMuted}
