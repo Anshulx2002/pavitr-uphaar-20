@@ -15,18 +15,16 @@ import {
 
 const AllProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   
   // Initialize scroll animations
   useScrollAnimation();
 
   // Handle URL search parameters
   useEffect(() => {
-    const searchQuery = searchParams.get('search');
     const categoryParam = searchParams.get('category');
-    
     if (categoryParam) {
-      const matchingCategory = categories.find(cat => cat.name === categoryParam);
+      const matchingCategory = categories.find(cat => cat.id === categoryParam);
       if (matchingCategory) {
         setActiveCategory(matchingCategory.id);
       }
@@ -104,7 +102,13 @@ const AllProductsSection = () => {
                     {categories.map((category) => (
                       <DropdownMenuItem 
                         key={category.id}
-                        onClick={() => setActiveCategory(category.id)}
+                        onClick={() => {
+                          setActiveCategory(category.id);
+                          const params = new URLSearchParams(searchParams);
+                          params.set('category', category.id);
+                          params.delete('search');
+                          setSearchParams(params, { replace: true });
+                        }}
                         className={`flex items-center justify-between px-3 py-3 h-12 rounded-lg cursor-pointer transition-all duration-200 group ${
                           activeCategory === category.id 
                             ? "bg-gradient-to-r from-premium-gold-saffron/20 to-premium-gold-saffron/10 border border-premium-gold-saffron/30" 
