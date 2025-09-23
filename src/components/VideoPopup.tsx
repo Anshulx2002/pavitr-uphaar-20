@@ -33,8 +33,8 @@ const VideoPopup = () => {
   return (
     <>
       {/* Small popup */}
-      <div className={`fixed bottom-4 right-4 z-50 animate-slide-in-right ${isZoomed ? 'hidden' : 'block'}`}>
-        <div className="bg-gradient-to-br from-saffron via-gold to-primary p-1 rounded-2xl shadow-2xl max-w-xs overflow-hidden">
+      <div className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 animate-slide-in-right ${isZoomed ? 'hidden' : 'block'}`}>
+        <div className="bg-gradient-to-br from-saffron via-gold to-primary p-1 rounded-2xl shadow-2xl max-w-[160px] md:max-w-xs overflow-hidden">
           <div className="bg-background rounded-xl p-2 relative">
             {/* Close button */}
             <Button
@@ -70,7 +70,7 @@ const VideoPopup = () => {
             <div className="rounded-lg overflow-hidden cursor-pointer" onClick={() => setIsZoomed(true)}>
               <video
                 ref={smallVideoRef}
-                className="w-full max-w-[200px] h-auto"
+                className="w-full max-w-[140px] md:max-w-[200px] h-auto"
                 autoPlay
                 loop
                 muted={isMuted}
