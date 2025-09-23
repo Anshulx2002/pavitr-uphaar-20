@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { Sparkles, X, Calendar, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
+import navratriKitImage from "@/assets/navratri-kit.jpg";
 
 const RightSidePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Show popup after 3 seconds
@@ -18,8 +21,8 @@ const RightSidePopup = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 animate-slide-in-right">
-      <div className="bg-gradient-to-br from-saffron via-gold to-primary p-1 rounded-2xl shadow-2xl max-w-sm overflow-hidden">
+    <div className="fixed right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-50 animate-slide-in-right w-72 sm:w-80">
+      <div className="bg-gradient-to-br from-saffron via-gold to-primary p-1 rounded-2xl shadow-2xl overflow-hidden">
         {/* Animated background sparkles */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-2 left-2 animate-pulse">
@@ -47,7 +50,7 @@ const RightSidePopup = () => {
           {/* Festival Image */}
           <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4 border-2 border-white shadow-lg">
             <img
-              src="/src/assets/navratri-kit.jpg"
+              src={navratriKitImage}
               alt="Navratri Collection"
               className="w-full h-full object-cover"
             />
@@ -77,8 +80,8 @@ const RightSidePopup = () => {
               </div>
               
               <Button 
-                className="bg-gradient-saffron hover:opacity-90 text-white px-6 py-2 text-sm font-semibold shadow-lg transform transition-all duration-300 hover:scale-105"
-                onClick={() => window.location.href = '/festival-kits'}
+                className="bg-gradient-saffron hover:opacity-90 text-white px-6 py-2 text-sm font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 touch-manipulation"
+                onClick={() => navigate('/festival-kits')}
               >
                 <ShoppingBag className="h-4 w-4 mr-2" />
                 Shop Now

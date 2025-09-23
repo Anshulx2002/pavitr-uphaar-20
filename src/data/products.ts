@@ -9,10 +9,10 @@ import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import garlandImage from "@/assets/garland.jpg";
 import sandalwoodImage from "@/assets/sandalwood.jpg";
-import diwaliKitImage from "@/assets/diwali-kit.jpg";
+import diwaliKitImage from "@/assets/diwali-gift-box.png";
 import ganeshKitImage from "@/assets/ganesh-kit.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
-import karvaKitImage from "@/assets/karva-kit.jpg";
+import karvaKitImage from "@/assets/karva-chauth-gift-box.png";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import goldKalashImage from "@/assets/gold-kalash.png";
@@ -77,13 +77,13 @@ export const allProducts: Product[] = [
   // Festival Kits
   {
     id: 19,
-    name: "Diwali Celebration Kit",
+    name: "Diwali Gift Box",
     price: 2499,
     originalPrice: 5000,
     image: diwaliKitImage,
-    rating: 5,
-    description: "Complete Diwali celebration kit with diyas, rangoli colors, and sweets.",
-    badge: "Festival Special",
+    rating: 4.8,
+    description: "Premium Diwali gift box with traditional sweets and pooja essentials. Includes Kaju Katli Box (500gm), 3 Lotus Shaped Diyas, Silver Puja Thali with Laxmi Ji, Door Toran, Dhoop Sticks, Thick Incense Sticks, and Aarti Book.",
+    badge: "50% OFF",
     category: "kits"
   },
   {
@@ -110,13 +110,13 @@ export const allProducts: Product[] = [
   },
   {
     id: 22,
-    name: "Karva Chauth Kit",
+    name: "Karva Chauth Gift Box",
     price: 2499,
     originalPrice: 5000,
     image: karvaKitImage,
     rating: 4.7,
-    description: "Traditional Karva Chauth kit with decorated thali and accessories.",
-    badge: "Traditional",
+    description: "Complete essentials for the auspicious Karva Chauth ceremony. Includes Mathi, Decorative Diya, Bindi Packet, Mehendi Cone, Kalash for Water, Pooja Thali, and Mithai Box.",
+    badge: "50% OFF",
     category: "kits"
   },
   {
