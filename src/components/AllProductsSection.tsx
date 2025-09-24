@@ -18,7 +18,7 @@ const AllProductsSection = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   
   // Initialize scroll animations
-  useScrollAnimation();
+  useScrollAnimation([activeCategory, searchParams.toString()]);
 
   // Handle URL search parameters
   useEffect(() => {
