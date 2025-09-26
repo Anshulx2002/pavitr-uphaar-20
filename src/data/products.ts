@@ -9,7 +9,7 @@ import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import garlandImage from "@/assets/garland.jpg";
 import sandalwoodImage from "@/assets/sandalwood.jpg";
-import diwaliKitImage from "@/assets/diwali-gift-box.png";
+import diwaliKitImage from "@/assets/diwali-kit-premium.png";
 import ganeshKitImage from "@/assets/ganesh-kit.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
 import karvaKitImage from "@/assets/karva-chauth-gift-box.png";
@@ -82,7 +82,7 @@ export const allProducts: Product[] = [
     originalPrice: 5000,
     image: diwaliKitImage,
     rating: 4.8,
-    description: "Premium Diwali gift box with traditional sweets and pooja essentials. Includes Kaju Katli Box (500gm), 3 Lotus Shaped Diyas, Silver Puja Thali with Laxmi Ji, Door Toran, Dhoop Sticks, Thick Incense Sticks, and Aarti Book.",
+    description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
     badge: "50% OFF",
     category: "kits"
   },
