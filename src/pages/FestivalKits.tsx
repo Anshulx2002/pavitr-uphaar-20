@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Gift } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import CartDrawer from "@/components/CartDrawer"; // Fixed import
-import diwaliKit from "@/assets/diwali-kit-premium.jpg";
+import diwaliKit from "@/assets/diwali-gift-box.png";
 import ganeshKit from "@/assets/ganesh-kit.jpg";
 import karvaKit from "@/assets/karva-chauth-gift-box.png";
 import navratriKit from "@/assets/navratri-kit.jpg";
@@ -21,21 +21,13 @@ const FestivalKits = () => {
     {
       id: 1,
       name: "Diwali Gift Box",
-      description: "A beautiful Diwali hamper with satin ribbons containing divine essentials to illuminate your celebrations",
+      description: "Premium Diwali gift box with traditional sweets and pooja essentials",
       price: 2499,
-      originalPrice: 3999,
+      originalPrice: 5000,
       image: diwaliKit,
-      items: [
-        "Exquisite Lotus Diyas (Set of 4)", 
-        "Handcrafted Welcome Toran", 
-        "Fragrant Incense Sticks", 
-        "Premium Dhoop Sticks", 
-        "Premium Cashews Potli (250gm)", 
-        "Golden Raisins Potli (200gm)",
-        "Satin Ribbon Packaging"
-      ],
-      rating: 4.9,
-      discount: "38% OFF"
+      items: ["Kaju Katli Box (500gm)", "3 Lotus Shaped Diyas", "Silver Puja Thali with Laxmi Ji", "Door Toran", "Dhoop Sticks", "Thick Incense Sticks", "Aarti Book"],
+      rating: 4.8,
+      discount: "50% OFF"
     },
     {
       id: 2,
