@@ -4,10 +4,11 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Gift } from "lucide-react";
+import { Star, Gift, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import CartDrawer from "@/components/CartDrawer"; // Fixed import
 import diwaliKit from "@/assets/diwali-kit-premium.png";
+import diwaliKit2 from "@/assets/diwali-kit-2.png";
 import ganeshKit from "@/assets/ganesh-kit.jpg";
 import karvaKit from "@/assets/karva-chauth-gift-box.png";
 import navratriKit from "@/assets/navratri-kit.jpg";
@@ -16,6 +17,7 @@ const FestivalKits = () => {
   console.log("FestivalKits component loaded, CartDrawer:", CartDrawer);
   const { addToCart } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [diwaliImageIndex, setDiwaliImageIndex] = useState(0);
 
   const festivalKits = [
     {
@@ -24,7 +26,7 @@ const FestivalKits = () => {
       description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins.",
       price: 2499,
       originalPrice: 5000,
-      image: diwaliKit,
+      images: [diwaliKit, diwaliKit2],
       items: ["Exquisite Lotus Diyas", "Handcrafted Pearl Toran", "Fragrant Incense Sticks", "Premium Dhoop Sticks", "Quality Potlis with Large Cashews", "Premium Raisins Potli", "Satin Ribbon Presentation"],
       rating: 4.8,
       discount: "50% OFF"
@@ -35,7 +37,7 @@ const FestivalKits = () => {
       description: "Sacred items for Ganpati celebrations with eco-friendly idol",
       price: 2499,
       originalPrice: 5000,
-      image: ganeshKit,
+      images: [ganeshKit],
       items: ["Eco Ganesha Idol", "Pooja Thali", "Modak Mould", "Incense Sticks", "Flowers"],
       rating: 4.9,
       discount: "50% OFF"
@@ -46,7 +48,7 @@ const FestivalKits = () => {
       description: "Complete essentials for the auspicious Karva Chauth ceremony",
       price: 2499,
       originalPrice: 5000,
-      image: karvaKit,
+      images: [karvaKit],
       items: ["Mathi", "Decorative Diya", "Bindi Packet", "Mehendi Cone", "Kalash for Water", "Pooja Thali", "Mithai Box"],
       rating: 4.7,
       discount: "50% OFF"
@@ -57,7 +59,7 @@ const FestivalKits = () => {
       description: "Nine-day celebration kit with all essentials",
       price: 2499,
       originalPrice: 5000,
-      image: navratriKit,
+      images: [navratriKit],
       items: ["Kalash Set", "9 Day Pooja Items", "Garlands", "Chunri", "Coconuts"],
       rating: 4.8,
       discount: "50% OFF"
@@ -70,10 +72,18 @@ const FestivalKits = () => {
       name: kit.name,
       price: kit.price,
       originalPrice: kit.originalPrice,
-      image: kit.image,
+      image: kit.images[0],
       description: kit.description
     });
     setIsCartOpen(true);
+  };
+
+  const nextImage = () => {
+    setDiwaliImageIndex(prev => prev === 1 ? 0 : 1);
+  };
+
+  const prevImage = () => {
+    setDiwaliImageIndex(prev => prev === 0 ? 1 : 0);
   };
 
   return (
@@ -91,15 +101,54 @@ const FestivalKits = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-            {festivalKits.map((kit) => (
+            {festivalKits.map((kit, index) => (
               <Card key={kit.id} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
                 <CardHeader className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg bg-gradient-festive">
-                    <img 
-                      src={kit.image} 
-                      alt={kit.name}
-                      className="w-full h-[28rem] md:h-[28rem] object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                    {kit.id === 1 ? (
+                      // Diwali kit with carousel
+                      <div className="relative">
+                        <img 
+                          src={kit.images[diwaliImageIndex]} 
+                          alt={`${kit.name} - View ${diwaliImageIndex + 1}`}
+                          className="w-full h-[36rem] md:h-[40rem] object-contain bg-white group-hover:scale-105 transition-transform duration-300"
+                        />
+                        {kit.images.length > 1 && (
+                          <>
+                            <button
+                              onClick={prevImage}
+                              className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 transition-colors shadow-md"
+                            >
+                              <ChevronLeft className="w-5 h-5" />
+                            </button>
+                            <button
+                              onClick={nextImage}
+                              className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 transition-colors shadow-md"
+                            >
+                              <ChevronRight className="w-5 h-5" />
+                            </button>
+                            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                              {kit.images.map((_, imgIndex) => (
+                                <button
+                                  key={imgIndex}
+                                  onClick={() => setDiwaliImageIndex(imgIndex)}
+                                  className={`w-2 h-2 rounded-full transition-colors ${
+                                    imgIndex === diwaliImageIndex ? 'bg-primary' : 'bg-white/50'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    ) : (
+                      // Other kits with single image
+                      <img 
+                        src={kit.images[0]} 
+                        alt={kit.name}
+                        className="w-full h-[28rem] md:h-[28rem] object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    )}
                     <Badge className="absolute top-3 right-3 bg-saffron text-white font-medium">
                       {kit.discount}
                     </Badge>
