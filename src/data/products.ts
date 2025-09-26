@@ -79,23 +79,23 @@ export const allProducts: Product[] = [
   {
     id: 19,
     name: "Diwali Gift Box",
-    price: 2499,
-    originalPrice: 5000,
+    price: 1999,
+    originalPrice: 3000,
     image: diwaliKitImage,
     rating: 4.8,
     description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
-    badge: "50% OFF",
+    badge: "34% OFF",
     category: "kits"
   },
   {
     id: 46,
     name: "Dussehra Gift Box",
-    price: 2499,
-    originalPrice: 5000,
+    price: 1999,
+    originalPrice: 3000,
     image: dussehraKitImage,
     rating: 4.9,
     description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
-    badge: "50% OFF",
+    badge: "34% OFF",
     category: "kits"
   },
   {

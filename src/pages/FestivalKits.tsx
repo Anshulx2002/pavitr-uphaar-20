@@ -27,23 +27,23 @@ const FestivalKits = () => {
       id: 1,
       name: "Diwali Gift Box",
       description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins.",
-      price: 2499,
-      originalPrice: 5000,
+      price: 1999,
+      originalPrice: 3000,
       images: [diwaliKit, diwaliKit2],
       items: ["Exquisite Lotus Diyas", "Handcrafted Pearl Toran", "Fragrant Incense Sticks", "Premium Dhoop Sticks", "Quality Potlis with Large Cashews", "Premium Raisins Potli", "Satin Ribbon Presentation"],
       rating: 4.8,
-      discount: "50% OFF"
+      discount: "34% OFF"
     },
     {
       id: 2,
       name: "Dussehra Gift Box",
       description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
-      price: 2499,
-      originalPrice: 5000,
+      price: 1999,
+      originalPrice: 3000,
       images: [dussehraKit1, dussehraKit2],
       items: ["Long Organic Dhoop Sticks", "Premium Incense Sticks", "Exquisite Cashew Potli", "Carved Wooden Dhoop Holder", "Golden Lotus Diyas", "Sacred Pearl Toran"],
       rating: 4.9,
-      discount: "50% OFF"
+      discount: "34% OFF"
     },
     {
       id: 3,
