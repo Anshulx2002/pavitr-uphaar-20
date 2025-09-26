@@ -10,6 +10,7 @@ import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import garlandImage from "@/assets/garland.jpg";
 import sandalwoodImage from "@/assets/sandalwood.jpg";
 import diwaliKitImage from "@/assets/diwali-kit-premium.png";
+import dussehraKitImage from "@/assets/dussehra-kit-1.png";
 import ganeshKitImage from "@/assets/ganesh-kit.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
 import karvaKitImage from "@/assets/karva-chauth-gift-box.png";
@@ -83,6 +84,17 @@ export const allProducts: Product[] = [
     image: diwaliKitImage,
     rating: 4.8,
     description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
+    badge: "50% OFF",
+    category: "kits"
+  },
+  {
+    id: 46,
+    name: "Dussehra Gift Box",
+    price: 2499,
+    originalPrice: 5000,
+    image: dussehraKitImage,
+    rating: 4.9,
+    description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
     badge: "50% OFF",
     category: "kits"
   },

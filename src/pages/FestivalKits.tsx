@@ -9,6 +9,8 @@ import { useCart } from "@/contexts/CartContext";
 import CartDrawer from "@/components/CartDrawer"; // Fixed import
 import diwaliKit from "@/assets/diwali-kit-premium.png";
 import diwaliKit2 from "@/assets/diwali-kit-2.png";
+import dussehraKit1 from "@/assets/dussehra-kit-1.png";
+import dussehraKit2 from "@/assets/dussehra-kit-2.png";
 import ganeshKit from "@/assets/ganesh-kit.jpg";
 import karvaKit from "@/assets/karva-chauth-gift-box.png";
 import navratriKit from "@/assets/navratri-kit.jpg";
@@ -18,6 +20,7 @@ const FestivalKits = () => {
   const { addToCart } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [diwaliImageIndex, setDiwaliImageIndex] = useState(0);
+  const [dussehraImageIndex, setDussehraImageIndex] = useState(0);
 
   const festivalKits = [
     {
@@ -33,6 +36,17 @@ const FestivalKits = () => {
     },
     {
       id: 2,
+      name: "Dussehra Gift Box",
+      description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
+      price: 2499,
+      originalPrice: 5000,
+      images: [dussehraKit1, dussehraKit2],
+      items: ["Long Organic Dhoop Sticks", "Premium Incense Sticks", "Exquisite Cashew Potli", "Carved Wooden Dhoop Holder", "Golden Lotus Diyas", "Sacred Pearl Toran"],
+      rating: 4.9,
+      discount: "50% OFF"
+    },
+    {
+      id: 3,
       name: "Ganesh Chaturthi Kit",
       description: "Sacred items for Ganpati celebrations with eco-friendly idol",
       price: 2499,
@@ -43,7 +57,7 @@ const FestivalKits = () => {
       discount: "50% OFF"
     },
     {
-      id: 3,
+      id: 4,
       name: "Karva Chauth Gift Box",
       description: "Complete essentials for the auspicious Karva Chauth ceremony",
       price: 2499,
@@ -54,7 +68,7 @@ const FestivalKits = () => {
       discount: "50% OFF"
     },
     {
-      id: 4,
+      id: 5,
       name: "Navratri Pooja Kit",
       description: "Nine-day celebration kit with all essentials",
       price: 2499,
@@ -78,12 +92,20 @@ const FestivalKits = () => {
     setIsCartOpen(true);
   };
 
-  const nextImage = () => {
-    setDiwaliImageIndex(prev => prev === 1 ? 0 : 1);
+  const nextImage = (kitId: number) => {
+    if (kitId === 1) {
+      setDiwaliImageIndex(prev => prev === 1 ? 0 : 1);
+    } else if (kitId === 2) {
+      setDussehraImageIndex(prev => prev === 1 ? 0 : 1);
+    }
   };
 
-  const prevImage = () => {
-    setDiwaliImageIndex(prev => prev === 0 ? 1 : 0);
+  const prevImage = (kitId: number) => {
+    if (kitId === 1) {
+      setDiwaliImageIndex(prev => prev === 0 ? 1 : 0);
+    } else if (kitId === 2) {
+      setDussehraImageIndex(prev => prev === 0 ? 1 : 0);
+    }
   };
 
   return (
@@ -105,24 +127,24 @@ const FestivalKits = () => {
               <Card key={kit.id} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
                 <CardHeader className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg bg-gradient-festive">
-                    {kit.id === 1 ? (
-                      // Diwali kit with carousel
+                    {(kit.id === 1 || kit.id === 2) ? (
+                      // Diwali and Dussehra kits with carousel
                       <div className="relative">
                         <img 
-                          src={kit.images[diwaliImageIndex]} 
-                          alt={`${kit.name} - View ${diwaliImageIndex + 1}`}
+                          src={kit.images[kit.id === 1 ? diwaliImageIndex : dussehraImageIndex]} 
+                          alt={`${kit.name} - View ${(kit.id === 1 ? diwaliImageIndex : dussehraImageIndex) + 1}`}
                           className="w-full h-[36rem] md:h-[40rem] object-contain bg-white group-hover:scale-105 transition-transform duration-300"
                         />
                         {kit.images.length > 1 && (
                           <>
                             <button
-                              onClick={prevImage}
+                              onClick={() => prevImage(kit.id)}
                               className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 transition-colors shadow-md"
                             >
                               <ChevronLeft className="w-5 h-5" />
                             </button>
                             <button
-                              onClick={nextImage}
+                              onClick={() => nextImage(kit.id)}
                               className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 transition-colors shadow-md"
                             >
                               <ChevronRight className="w-5 h-5" />
@@ -131,9 +153,9 @@ const FestivalKits = () => {
                               {kit.images.map((_, imgIndex) => (
                                 <button
                                   key={imgIndex}
-                                  onClick={() => setDiwaliImageIndex(imgIndex)}
+                                  onClick={() => kit.id === 1 ? setDiwaliImageIndex(imgIndex) : setDussehraImageIndex(imgIndex)}
                                   className={`w-2 h-2 rounded-full transition-colors ${
-                                    imgIndex === diwaliImageIndex ? 'bg-primary' : 'bg-white/50'
+                                    imgIndex === (kit.id === 1 ? diwaliImageIndex : dussehraImageIndex) ? 'bg-primary' : 'bg-white/50'
                                   }`}
                                 />
                               ))}
