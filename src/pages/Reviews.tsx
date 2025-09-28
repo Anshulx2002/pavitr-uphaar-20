@@ -193,6 +193,9 @@ const Reviews = () => {
               <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-sm w-full">
                 <video 
                   controls 
+                  autoPlay
+                  muted
+                  loop
                   className="w-full h-auto"
                   poster=""
                   preload="metadata"
