@@ -139,8 +139,8 @@ const Reviews = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+          <div className="flex justify-center">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-sm w-full">
               <video 
                 controls 
                 className="w-full h-auto"
