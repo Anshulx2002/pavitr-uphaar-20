@@ -73,7 +73,7 @@ const Reviews = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-16 md:py-20 bg-gradient-to-br from-background via-accent/5 to-background overflow-hidden">
+      <section className="relative py-16 md:py-16 pb-8 bg-gradient-to-br from-background via-accent/5 to-background overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-radial from-primary/30 to-transparent rounded-full blur-2xl"></div>
@@ -115,7 +115,7 @@ const Reviews = () => {
       </section>
 
       {/* Customer Stories Video & Reviews */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="pt-8 pb-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">
