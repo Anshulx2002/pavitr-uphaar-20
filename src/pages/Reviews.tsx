@@ -114,6 +114,47 @@ const Reviews = () => {
         </div>
       </section>
 
+      {/* Customer Stories Video */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="flex justify-center mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-primary"></div>
+                <Award className="w-6 h-6 text-primary animate-pulse" />
+                <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-transparent"></div>
+              </div>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-foreground">Real Stories from</span>
+              <br />
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
+                Happy Customers
+              </span>
+            </h2>
+            
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              Watch authentic testimonials from customers who experienced the sacred tradition
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <video 
+                controls 
+                className="w-full h-auto"
+                poster=""
+                preload="metadata"
+              >
+                <source src="/customer-review-reel.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Reviews Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
