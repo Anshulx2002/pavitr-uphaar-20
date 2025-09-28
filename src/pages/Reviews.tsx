@@ -73,7 +73,7 @@ const Reviews = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-16 md:py-16 pb-8 bg-gradient-to-br from-background via-accent/5 to-background overflow-hidden">
+      <section className="relative py-12 md:py-14 pb-4 bg-gradient-to-br from-background via-accent/5 to-background overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-radial from-primary/30 to-transparent rounded-full blur-2xl"></div>
@@ -115,29 +115,8 @@ const Reviews = () => {
       </section>
 
       {/* Customer Stories Video & Reviews */}
-      <section className="pt-8 pb-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="pt-4 pb-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="flex justify-center mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-primary"></div>
-                <Award className="w-6 h-6 text-primary animate-pulse" />
-                <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-transparent"></div>
-              </div>
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-foreground">Real Stories from</span>
-              <br />
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
-                Happy Customers
-              </span>
-            </h2>
-            
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Watch authentic testimonials from customers who experienced the sacred tradition
-            </p>
-          </div>
 
           {/* Video and Reviews Grid Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto">
