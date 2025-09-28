@@ -114,7 +114,7 @@ const Reviews = () => {
         </div>
       </section>
 
-      {/* Customer Stories Video */}
+      {/* Customer Stories Video & Reviews */}
       <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -139,69 +139,116 @@ const Reviews = () => {
             </p>
           </div>
 
-          <div className="flex justify-center">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-sm w-full">
-              <video 
-                controls 
-                className="w-full h-auto"
-                poster=""
-                preload="metadata"
-              >
-                <source src="/customer-review-reel.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reviews.map((review, index) => (
-              <Card 
-                key={review.id} 
-                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:-translate-y-2"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => {
-                      const rating = review.rating;
-                      if (star <= rating) {
-                        return <Star key={star} className="w-4 h-4 fill-primary text-primary" />;
-                      } else if (star - 0.5 <= rating) {
-                        return (
-                          <div key={star} className="relative w-4 h-4">
-                            <Star className="absolute w-4 h-4 text-primary/20" />
-                            <Star className="absolute w-4 h-4 fill-primary text-primary" style={{ clipPath: 'inset(0 50% 0 0)' }} />
-                          </div>
-                        );
-                      } else {
-                        return <Star key={star} className="w-4 h-4 text-primary/20" />;
-                      }
-                    })}
-                  </div>
-                  
-                  <Quote className="w-8 h-8 text-primary/20 mb-3" />
-                  
-                  <p className="text-foreground text-lg italic mb-6 leading-relaxed">
-                    "{review.review}"
-                  </p>
-                  
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-semibold text-foreground">{review.name}</p>
-                      <p className="text-sm text-muted-foreground">{review.location}</p>
+          {/* Video and Reviews Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto">
+            {/* Left Reviews */}
+            <div className="lg:col-span-4 space-y-6">
+              {reviews.slice(0, 3).map((review, index) => (
+                <Card 
+                  key={review.id} 
+                  className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:-translate-y-2"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-1 mb-4">
+                      {[1, 2, 3, 4, 5].map((star) => {
+                        const rating = review.rating;
+                        if (star <= rating) {
+                          return <Star key={star} className="w-4 h-4 fill-primary text-primary" />;
+                        } else if (star - 0.5 <= rating) {
+                          return (
+                            <div key={star} className="relative w-4 h-4">
+                              <Star className="absolute w-4 h-4 text-primary/20" />
+                              <Star className="absolute w-4 h-4 fill-primary text-primary" style={{ clipPath: 'inset(0 50% 0 0)' }} />
+                            </div>
+                          );
+                        } else {
+                          return <Star key={star} className="w-4 h-4 text-primary/20" />;
+                        }
+                      })}
                     </div>
-                    <Badge variant="outline" className="text-primary border-primary/20">
-                      Verified
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    
+                    <Quote className="w-8 h-8 text-primary/20 mb-3" />
+                    
+                    <p className="text-foreground text-lg italic mb-6 leading-relaxed">
+                      "{review.review}"
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-foreground">{review.name}</p>
+                        <p className="text-sm text-muted-foreground">{review.location}</p>
+                      </div>
+                      <Badge variant="outline" className="text-primary border-primary/20">
+                        Verified
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Center Video */}
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-sm w-full">
+                <video 
+                  controls 
+                  className="w-full h-auto"
+                  poster=""
+                  preload="metadata"
+                >
+                  <source src="/customer-review-reel.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            {/* Right Reviews */}
+            <div className="lg:col-span-4 space-y-6">
+              {reviews.slice(3, 6).map((review, index) => (
+                <Card 
+                  key={review.id} 
+                  className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:-translate-y-2"
+                  style={{ animationDelay: `${(index + 3) * 100}ms` }}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-1 mb-4">
+                      {[1, 2, 3, 4, 5].map((star) => {
+                        const rating = review.rating;
+                        if (star <= rating) {
+                          return <Star key={star} className="w-4 h-4 fill-primary text-primary" />;
+                        } else if (star - 0.5 <= rating) {
+                          return (
+                            <div key={star} className="relative w-4 h-4">
+                              <Star className="absolute w-4 h-4 text-primary/20" />
+                              <Star className="absolute w-4 h-4 fill-primary text-primary" style={{ clipPath: 'inset(0 50% 0 0)' }} />
+                            </div>
+                          );
+                        } else {
+                          return <Star key={star} className="w-4 h-4 text-primary/20" />;
+                        }
+                      })}
+                    </div>
+                    
+                    <Quote className="w-8 h-8 text-primary/20 mb-3" />
+                    
+                    <p className="text-foreground text-lg italic mb-6 leading-relaxed">
+                      "{review.review}"
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-foreground">{review.name}</p>
+                        <p className="text-sm text-muted-foreground">{review.location}</p>
+                      </div>
+                      <Badge variant="outline" className="text-primary border-primary/20">
+                        Verified
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
