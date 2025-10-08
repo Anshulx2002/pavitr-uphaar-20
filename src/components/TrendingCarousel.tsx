@@ -30,6 +30,16 @@ const trendingProducts = [
     badge: "34% OFF"
   },
   {
+    id: 39,
+    name: "Aarti Sangrah",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiSanghrahImage,
+    rating: 5,
+    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    badge: "Premium"
+  },
+  {
     id: 34,
     name: "Gold Pooja Thali",
     price: 2499,
@@ -57,16 +67,6 @@ const trendingProducts = [
     image: goldKalashImage,
     rating: 5,
     description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
-    badge: "Premium"
-  },
-  {
-    id: 39,
-    name: "Aarti Sangrah",
-    price: 1499,
-    originalPrice: 2499,
-    image: aartiSanghrahImage,
-    rating: 5,
-    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
     badge: "Premium"
   },
   {
