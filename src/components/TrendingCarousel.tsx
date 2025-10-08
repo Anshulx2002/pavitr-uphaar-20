@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { TrendingUp } from "lucide-react";
 
 // Import product images
+import diwaliKitImage from "@/assets/diwali-kit-premium.png";
 import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import goldKalashImage from "@/assets/gold-kalash.png";
@@ -18,6 +19,16 @@ import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 
 const trendingProducts = [
+  {
+    id: 19,
+    name: "Diwali Gift Box",
+    price: 1999,
+    originalPrice: 3000,
+    image: diwaliKitImage,
+    rating: 4.8,
+    description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
+    badge: "34% OFF"
+  },
   {
     id: 34,
     name: "Gold Pooja Thali",
