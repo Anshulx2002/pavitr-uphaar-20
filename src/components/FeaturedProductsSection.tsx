@@ -34,6 +34,26 @@ const featuredProducts = [
     badge: "Premium"
   },
   {
+    id: 47,
+    name: "Elephant Motif Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: elephantCopperBottleImage,
+    rating: 5,
+    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special"
+  },
+  {
+    id: 48,
+    name: "Rani Meher Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: raniMeherCopperBottleImage,
+    rating: 5,
+    description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
+    badge: "Dhanteras Special"
+  },
+  {
     id: 35,
     name: "Silver Pooja Thali",
     price: 2499,
@@ -142,26 +162,6 @@ const featuredProducts = [
     rating: 4.8,
     description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
     badge: "Festival Special"
-  },
-  {
-    id: 47,
-    name: "Elephant Motif Copper Bottle",
-    price: 1750,
-    originalPrice: 2500,
-    image: elephantCopperBottleImage,
-    rating: 5,
-    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
-    badge: "Dhanteras Special"
-  },
-  {
-    id: 48,
-    name: "Rani Meher Copper Bottle",
-    price: 1750,
-    originalPrice: 2500,
-    image: raniMeherCopperBottleImage,
-    rating: 5,
-    description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
-    badge: "Dhanteras Special"
   }
 ];
 
