@@ -149,7 +149,6 @@ const DiwaliKit = () => {
                   ))}
                 </div>
                 <span className="text-lg font-medium">{product.rating}</span>
-                <span className="text-muted-foreground">(245 reviews)</span>
               </div>
 
               {/* Price */}
