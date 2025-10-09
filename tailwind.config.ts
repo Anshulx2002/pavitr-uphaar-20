@@ -99,6 +99,7 @@ export default {
 			fontFamily: {
 				'sanskrit': ['Noto Sans Devanagari', 'serif'],
 				'playfair': ['Playfair Display', 'serif'],
+				'inter': ['system-ui', '-apple-system', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {

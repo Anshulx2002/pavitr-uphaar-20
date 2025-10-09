@@ -52,13 +52,13 @@ const DussehraKit = () => {
       <main className="container mx-auto px-4 pt-2 pb-8 mt-16">
         {/* Scarcity Banner */}
         <Card className="mb-6 relative overflow-hidden border-none shadow-lg">
-          {/* Diwali-inspired gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600"></div>
+          {/* Diwali-inspired gradient background - lighter oranges */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400"></div>
           
           {/* Decorative diya pattern overlay */}
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 2px, transparent 2px),
-                             radial-gradient(circle at 80% 50%, rgba(255,255,255,0.3) 2px, transparent 2px)`,
+          <div className="absolute inset-0 opacity-15" style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.4) 2px, transparent 2px),
+                             radial-gradient(circle at 80% 50%, rgba(255,255,255,0.4) 2px, transparent 2px)`,
             backgroundSize: '100px 50px'
           }}></div>
           
@@ -67,33 +67,33 @@ const DussehraKit = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-3">
               {/* Left side - Promotion text */}
               <div className="flex items-center gap-2 md:gap-3">
-                <div className="bg-white/20 backdrop-blur-sm p-2 rounded-full">
-                  <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-yellow-100" />
+                <div className="bg-white/25 backdrop-blur-sm p-2 rounded-full">
+                  <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm md:text-base font-bold text-white mb-1">
+                  <h2 className="text-sm md:text-base font-semibold text-white mb-1 tracking-wide font-playfair">
                     Limited Time Special Promotion
                   </h2>
-                  <div className="bg-white text-orange-600 px-3 py-1 rounded-md inline-block">
-                    <p className="text-xs md:text-sm font-bold">
-                      First 100 Kits Only • <span className="text-base md:text-lg">₹1999</span>
+                  <div className="bg-white text-orange-600 px-3 py-1 rounded-md inline-block shadow-md">
+                    <p className="text-xs md:text-sm font-bold font-inter">
+                      First 100 Kits Only • <span className="text-base md:text-lg font-extrabold">₹1999</span>
                     </p>
                   </div>
                 </div>
               </div>
               
               {/* Right side - Remaining count */}
-              <div className="text-center bg-white/15 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
-                <div className="text-xl md:text-2xl font-bold text-yellow-100">{kitsRemaining}</div>
-                <div className="text-xs text-white/90">Kits Left</div>
+              <div className="text-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/30 shadow-sm">
+                <div className="text-xl md:text-2xl font-bold text-white font-inter">{kitsRemaining}</div>
+                <div className="text-xs text-white/95 font-medium">Kits Left</div>
               </div>
             </div>
             
             {/* Progress bar */}
             <div className="mt-3">
-              <div className="w-full bg-white/20 rounded-full h-1.5 md:h-2 overflow-hidden">
+              <div className="w-full bg-white/25 rounded-full h-1.5 md:h-2 overflow-hidden shadow-inner">
                 <div 
-                  className="bg-gradient-to-r from-yellow-300 to-yellow-100 h-full rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-white via-yellow-100 to-white h-full rounded-full transition-all duration-500"
                   style={{ width: `${percentageLeft}%` }}
                 />
               </div>
