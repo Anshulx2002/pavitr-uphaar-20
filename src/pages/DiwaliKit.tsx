@@ -175,17 +175,11 @@ const DiwaliKit = () => {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>1 Exquisite lotus diya</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="font-semibold text-primary">BONUS: 1 Free Additional Diya 🎁</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span>Handcrafted toran to welcome prosperity</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span>1 Exquisite lotus diya</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -198,6 +192,12 @@ const DiwaliKit = () => {
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span>Premium quality potlis with large cashews and raisins</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold text-primary">BONUS: 1 Free Additional Diya 🎁</span>
+                  </div>
                 </li>
               </ul>
             </Card>
