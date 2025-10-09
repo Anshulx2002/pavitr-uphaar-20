@@ -34,7 +34,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">4. Shipping and Delivery</h2>
               <p>
-                We strive to deliver products in perfect condition. Delivery times are estimates and may vary. Risk of loss and title for items purchased pass to you upon delivery.
+                We strive to deliver products in perfect condition. Delivery to major metropolitan cities (Mumbai, Delhi, Bengaluru, Ahmedabad, Baroda, Pune, Kolkata, NCR, Chandigarh, Nagpur, Chennai, Hyderabad) takes 7 working days. Rest of India receives delivery within 3 weeks. These are estimated timeframes and may vary during festival seasons. Risk of loss and title for items purchased pass to you upon delivery.
               </p>
             </section>
 

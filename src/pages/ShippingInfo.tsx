@@ -22,12 +22,11 @@ const ShippingInfo = () => {
                 <h2 className="text-xl font-semibold">Delivery Timeframe</h2>
               </div>
               <p className="text-muted-foreground mb-4">
-                We ensure your sacred products reach you within 0-3 days across India.
+                We ensure your sacred products reach you across India with care and devotion.
               </p>
               <ul className="space-y-2 text-sm">
-                <li>• Same day delivery available in select cities</li>
-                <li>• Express delivery: 1-2 days</li>
-                <li>• Standard delivery: 2-3 days</li>
+                <li>• <strong>Major Metropolitan Cities</strong> (Mumbai, Delhi, Bengaluru, Ahmedabad, Baroda, Pune, Kolkata, NCR, Chandigarh, Nagpur, Chennai, Hyderabad): <strong>7 working days</strong></li>
+                <li>• <strong>Rest of India</strong>: <strong>Within 3 weeks</strong></li>
               </ul>
             </div>
 
@@ -52,11 +51,11 @@ const ShippingInfo = () => {
                 <h2 className="text-xl font-semibold">Delivery Areas</h2>
               </div>
               <p className="text-muted-foreground mb-4">
-                We deliver across India with special coverage in major cities.
+                We deliver across India with priority coverage in major metropolitan areas.
               </p>
               <ul className="space-y-2 text-sm">
-                <li>• All major cities and towns</li>
-                <li>• Remote areas (may take 1-2 extra days)</li>
+                <li>• Major cities: 7 working days</li>
+                <li>• Other areas: Within 3 weeks</li>
                 <li>• Pincode verification available</li>
               </ul>
             </div>

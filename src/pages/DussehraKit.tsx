@@ -237,7 +237,7 @@ const DussehraKit = () => {
               </Button>
               <p className="text-center text-sm text-muted-foreground flex items-center justify-center gap-2">
                 <Truck className="w-4 h-4" />
-                Delivery Pan India within 3-5 days
+                Major cities: 7 days | Rest of India: 3 weeks
               </p>
             </div>
 
@@ -253,7 +253,7 @@ const DussehraKit = () => {
             <div className="hidden lg:grid grid-cols-3 gap-4">
               <Card className="p-4 text-center">
                 <Clock className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm font-medium">Delivery within 3-5 days Pan India</p>
+                <p className="text-sm font-medium">Major Cities: 7 days<br/>Rest of India: 3 weeks</p>
               </Card>
               <Card className="p-4 text-center">
                 <Shield className="w-8 h-8 mx-auto mb-2 text-primary" />
@@ -340,7 +340,7 @@ const DussehraKit = () => {
               </Button>
               <p className="text-center text-sm text-muted-foreground flex items-center justify-center gap-2">
                 <Truck className="w-4 h-4" />
-                Delivery Pan India within 3-5 days
+                Major cities: 7 days | Rest of India: 3 weeks
               </p>
             </div>
 
@@ -348,7 +348,7 @@ const DussehraKit = () => {
             <div className="grid grid-cols-3 gap-4 lg:hidden">
               <Card className="p-4 text-center">
                 <Clock className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm font-medium">Delivery within 3-5 days Pan India</p>
+                <p className="text-sm font-medium">Major Cities: 7 days<br/>Rest of India: 3 weeks</p>
               </Card>
               <Card className="p-4 text-center">
                 <Shield className="w-8 h-8 mx-auto mb-2 text-primary" />

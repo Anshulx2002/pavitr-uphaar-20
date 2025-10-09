@@ -14,8 +14,8 @@ const FAQ = () => {
       answer: "All our products are sourced directly from traditional artisans and blessed by experienced priests. We ensure that every item follows ancient Vedic traditions and is made using time-honored methods passed down through generations."
     },
     {
-      question: "Do you offer express delivery for urgent pooja requirements?",
-      answer: "Yes, we understand the importance of timely delivery for religious ceremonies. We offer same-day delivery in major cities and express delivery within 24-48 hours across India for urgent orders."
+      question: "What are your delivery timelines?",
+      answer: "We deliver to major metropolitan cities (Mumbai, Delhi, Bengaluru, Ahmedabad, Baroda, Pune, Kolkata, NCR, Chandigarh, Nagpur, Chennai, Hyderabad) within 7 working days. For the rest of the country, delivery takes up to 3 weeks. We understand the importance of timely delivery for religious ceremonies and process orders promptly."
     },
     {
       question: "Are your incense sticks made from natural ingredients?",
