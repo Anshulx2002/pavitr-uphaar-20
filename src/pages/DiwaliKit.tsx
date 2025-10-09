@@ -49,7 +49,7 @@ const DiwaliKit = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-8 mt-16">
+      <main className="container mx-auto px-4 pb-8">
         {/* Scarcity Banner */}
         <Card className="mb-8 bg-gradient-saffron text-white p-6 border-none">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -221,6 +221,7 @@ const DiwaliKit = () => {
                       ))}
                     </div>
                     <span className="font-semibold">Priya Sharma</span>
+                    <span className="text-muted-foreground text-sm">• Mumbai</span>
                   </div>
                   <p className="text-muted-foreground text-sm">
                     "Absolutely beautiful Diwali kit! The quality of the diyas and the toran is exceptional. The cashew and raisin potlis were a delightful addition. Everything arrived well-packaged and on time. Highly recommend for gifting!"
@@ -237,6 +238,7 @@ const DiwaliKit = () => {
                       ))}
                     </div>
                     <span className="font-semibold">Rajesh Kumar</span>
+                    <span className="text-muted-foreground text-sm">• Delhi</span>
                   </div>
                   <p className="text-muted-foreground text-sm">
                     "Ordered this for my parents and they loved it! The presentation is stunning and everything is of premium quality. The toran looks handcrafted and authentic. Great value for money at this price. Will order again next year."
@@ -253,6 +255,7 @@ const DiwaliKit = () => {
                       ))}
                     </div>
                     <span className="font-semibold">Anjali Patel</span>
+                    <span className="text-muted-foreground text-sm">• Ahmedabad</span>
                   </div>
                   <p className="text-muted-foreground text-sm">
                     "Very nice Diwali hamper with good quality items. The diyas are lovely and the incense sticks smell amazing. Only giving 4 stars because I wish there were more diyas included, but overall very satisfied with the purchase and delivery was quick."
