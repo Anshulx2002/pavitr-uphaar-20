@@ -412,10 +412,10 @@ const Hero = () => {
                   ? 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 4px 16px rgba(184,134,11,0.35), 0 0 20px rgba(218,165,32,0.25)'
                   : 'inset 0px 1px 2px rgba(255,255,255,0.15), 0 3px 12px rgba(184,134,11,0.25), 0 0 15px rgba(218,165,32,0.15)';
               }}
-              onClick={() => navigate('/products')}
+              onClick={() => navigate('/diwali-kit')}
             >
               <Star className={`${isMobile ? 'w-6 h-6 mr-3' : 'w-5 md:w-6 h-5 md:h-6 mr-3 md:mr-3'} stroke-[1.5] text-white`} />
-              <span className="font-medium">Shop Now</span>
+              <span className="font-medium">Shop Kits</span>
             </Button>
           </div>
           
