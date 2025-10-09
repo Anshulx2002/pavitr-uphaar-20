@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingCart, Star, Package, Clock, Shield, Sparkles } from "lucide-react";
+import { ShoppingCart, Star, Package, Clock, Shield, Sparkles, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -203,6 +203,10 @@ const DussehraKit = () => {
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Add to Cart
               </Button>
+              <p className="text-center text-sm text-muted-foreground flex items-center justify-center gap-2">
+                <Truck className="w-4 h-4" />
+                Delivery Pan India within 3-5 days
+              </p>
             </div>
 
             {/* Urgency Message - First instance */}
@@ -302,6 +306,10 @@ const DussehraKit = () => {
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Add to Cart
               </Button>
+              <p className="text-center text-sm text-muted-foreground flex items-center justify-center gap-2">
+                <Truck className="w-4 h-4" />
+                Delivery Pan India within 3-5 days
+              </p>
             </div>
 
             {/* Trust Badges - Mobile only (at bottom) */}
