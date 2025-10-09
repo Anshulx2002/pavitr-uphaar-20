@@ -309,9 +309,15 @@ const Checkout = () => {
                  
                  {/* Delivery Estimate */}
                  <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
-                   <p className="text-sm text-muted-foreground flex items-center gap-2">
-                     <Truck className="h-4 w-4 text-primary" />
-                     Estimated delivery within 7 working days
+                   <p className="text-sm text-muted-foreground">
+                     <span className="flex items-center gap-2 font-medium mb-2">
+                       <Truck className="h-4 w-4 text-primary" />
+                       Estimated Delivery:
+                     </span>
+                     <span className="text-xs block">
+                       • Major cities: <strong>Within 7 working days</strong><br/>
+                       • Rest of India: <strong>Within 3 weeks</strong>
+                     </span>
                    </p>
                  </div>
               </CardContent>
