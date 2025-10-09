@@ -11,7 +11,6 @@ import { toast } from "sonner";
 
 // Import product images
 import diwaliKitPremium from "@/assets/diwali-kit-premium.png";
-import diwaliKit from "@/assets/diwali-kit.jpg";
 import diwaliKit2 from "@/assets/diwali-kit-2.png";
 
 const DiwaliKit = () => {
@@ -26,11 +25,11 @@ const DiwaliKit = () => {
     originalPrice: 3000,
     image: diwaliKitPremium,
     rating: 4.8,
-    description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
+    description: "A beautiful Diwali hamper containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
     badge: "34% OFF"
   };
 
-  const images = [diwaliKitPremium, diwaliKit, diwaliKit2];
+  const images = [diwaliKitPremium, diwaliKit2];
   
   const kitsRemaining = 86;
   const totalKits = 100;
@@ -98,7 +97,7 @@ const DiwaliKit = () => {
             </div>
 
             {/* Thumbnail Images */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {images.map((img, index) => (
                 <button
                   key={index}
@@ -189,10 +188,6 @@ const DiwaliKit = () => {
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span>Premium quality potlis with large cashews and raisins</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Beautiful presentation with satin ribbons</span>
                 </li>
               </ul>
             </Card>
