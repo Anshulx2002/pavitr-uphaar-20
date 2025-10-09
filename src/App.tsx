@@ -22,6 +22,7 @@ import PaymentFailed from "./pages/PaymentFailed";
 import NotFound from "./pages/NotFound";
 import DiwaliKit from "./pages/DiwaliKit";
 import DussehraKit from "./pages/DussehraKit";
+import Auth from "./pages/Auth";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/festival-kits" element={<FestivalKits />} />
           <Route path="/featured-products" element={<FeaturedProducts />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/payment-failed" element={<PaymentFailed />} />

@@ -5,3 +5,9 @@ verify_jwt = false
 
 [functions.send-order-confirmation]
 verify_jwt = false
+
+[functions.save-order]
+verify_jwt = false
+
+[functions.send-contact-inquiry]
+verify_jwt = false

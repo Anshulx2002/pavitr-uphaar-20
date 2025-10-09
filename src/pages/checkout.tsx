@@ -4,15 +4,18 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useCart } from '@/contexts/CartContext';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, ShoppingCart, Package, Truck, CreditCard, Smartphone, Wallet, Landmark, Shield, Tag } from 'lucide-react';
+import { toast } from '@/components/ui/use-toast';
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
+const SAVE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/save-order";
 const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
 
 const checkoutSchema = z.object({
@@ -38,10 +41,11 @@ type CheckoutFormData = z.infer<typeof checkoutSchema>;
 
 const Checkout = () => {
   const navigate = useNavigate();
-  const { cartItems, getCartTotal, getCartItemsCount } = useCart();
+  const { cartItems, getCartTotal, getCartItemsCount, user, clearCart } = useCart();
   const [couponCode, setCouponCode] = useState('');
   const [discount, setDiscount] = useState(0);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  const [isLoadingProfile, setIsLoadingProfile] = useState(true);
 
   const {
     register,
@@ -51,11 +55,48 @@ const Checkout = () => {
     setValue,
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
-    mode: 'onChange', // Enable real-time validation
+    mode: 'onChange',
     defaultValues: {
       country: 'India',
     },
   });
+
+  // Check authentication and load profile
+  useEffect(() => {
+    const loadProfile = async () => {
+      if (!user) {
+        toast({
+          title: "Login Required",
+          description: "Please login to proceed with checkout",
+          variant: "destructive",
+        });
+        navigate('/auth');
+        return;
+      }
+
+      try {
+        const { data: profile, error } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single();
+
+        if (error) throw error;
+
+        if (profile) {
+          setValue('name', profile.name);
+          setValue('phone', profile.phone);
+          setValue('email', user.email || '');
+        }
+      } catch (error) {
+        console.error('Error loading profile:', error);
+      } finally {
+        setIsLoadingProfile(false);
+      }
+    };
+
+    loadProfile();
+  }, [user, navigate, setValue]);
 
   // Load Razorpay script
   useEffect(() => {
@@ -103,6 +144,16 @@ const Checkout = () => {
   };
 
   const startPayment = async (data: CheckoutFormData) => {
+    if (!user) {
+      toast({
+        title: "Error",
+        description: "You must be logged in to complete checkout",
+        variant: "destructive",
+      });
+      navigate('/auth');
+      return;
+    }
+
     setIsProcessingPayment(true);
     
     try {
@@ -135,9 +186,39 @@ const Checkout = () => {
           email: data.email,
           contact: data.phone
         },
-        handler: function (response: any) {
-          // Success - redirect to thank you page
-          window.location.href = `/thank-you?order_ref=${encodeURIComponent(receipt)}&order_id=${encodeURIComponent(order.id)}`;
+        handler: async function (razorpayResponse: any) {
+          try {
+            // Save order to Supabase
+            const shippingAddress = `${data.address}, ${data.city}, ${data.state} - ${data.pincode}, ${data.country}`;
+            
+            const saveResponse = await fetch(SAVE_ORDER_URL, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                user_id: user.id,
+                razorpay_payment_id: razorpayResponse.razorpay_payment_id,
+                razorpay_order_id: order.id,
+                order_ref: receipt,
+                amount_paise: amount,
+                customer_name: data.name,
+                customer_email: data.email,
+                customer_phone: data.phone,
+                shipping_address: shippingAddress,
+                cart_items: cartItems,
+              })
+            });
+
+            if (!saveResponse.ok) {
+              throw new Error('Failed to save order');
+            }
+
+            // Success - redirect to thank you page
+            window.location.href = `/thank-you?payment_id=${encodeURIComponent(razorpayResponse.razorpay_payment_id)}&order_id=${encodeURIComponent(order.id)}`;
+          } catch (error) {
+            console.error('Error saving order:', error);
+            // Still redirect to thank you even if save fails
+            window.location.href = `/thank-you?payment_id=${encodeURIComponent(razorpayResponse.razorpay_payment_id)}&order_id=${encodeURIComponent(order.id)}`;
+          }
         },
         modal: {
           ondismiss: function () {
@@ -152,8 +233,11 @@ const Checkout = () => {
       
     } catch (error) {
       console.error('Payment error:', error);
-      window.location.href = `/payment-failed`;
-    } finally {
+      toast({
+        title: "Payment Error",
+        description: "Failed to initialize payment. Please try again.",
+        variant: "destructive",
+      });
       setIsProcessingPayment(false);
     }
   };
@@ -162,7 +246,7 @@ const Checkout = () => {
     await startPayment(data);
   };
 
-  if (cartItems.length === 0) {
+  if (cartItems.length === 0 || isLoadingProfile) {
     return null; // Will redirect via useEffect
   }
 

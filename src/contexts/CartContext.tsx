@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { toast } from '@/components/ui/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+import { User } from '@supabase/supabase-js';
 
 export interface CartItem {
   id: number;
@@ -20,6 +22,8 @@ interface CartContextType {
   clearCart: () => void;
   getCartTotal: () => number;
   getCartItemsCount: () => number;
+  user: User | null;
+  isLoading: boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -37,68 +41,192 @@ interface CartProviderProps {
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  // Load cart from localStorage on initialization
-  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    try {
-      const savedCart = localStorage.getItem('pavitra-cart');
-      return savedCart ? JSON.parse(savedCart) : [];
-    } catch (error) {
-      console.error('Error loading cart from localStorage:', error);
-      return [];
-    }
-  });
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Save cart to localStorage whenever cartItems changes
+  // Initialize auth and cart
   useEffect(() => {
-    try {
-      localStorage.setItem('pavitra-cart', JSON.stringify(cartItems));
-    } catch (error) {
-      console.error('Error saving cart to localStorage:', error);
-    }
-  }, [cartItems]);
+    // Set up auth state listener
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null);
+        if (session?.user) {
+          loadCartFromSupabase(session.user.id);
+        } else {
+          setCartItems([]);
+        }
+      }
+    );
 
-  const addToCart = (product: Omit<CartItem, 'quantity'>) => {
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(item => item.id === product.id);
+    // Check for existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      if (session?.user) {
+        loadCartFromSupabase(session.user.id);
+      } else {
+        setIsLoading(false);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const loadCartFromSupabase = async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from('cart_items')
+        .select('*')
+        .eq('user_id', userId);
+
+      if (error) throw error;
+
+      const items: CartItem[] = data.map(item => ({
+        id: item.product_id,
+        name: item.product_name,
+        price: Number(item.product_price),
+        originalPrice: item.product_original_price ? Number(item.product_original_price) : undefined,
+        image: item.product_image,
+        quantity: item.quantity,
+        description: item.product_description,
+        badge: item.product_badge || undefined,
+      }));
+
+      setCartItems(items);
+    } catch (error) {
+      console.error('Error loading cart:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const addToCart = async (product: Omit<CartItem, 'quantity'>) => {
+    if (!user) {
+      toast({
+        title: "Login Required",
+        description: "Please login to add items to cart",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const existingItem = cartItems.find(item => item.id === product.id);
       
       if (existingItem) {
+        const { error } = await supabase
+          .from('cart_items')
+          .update({ quantity: existingItem.quantity + 1 })
+          .eq('user_id', user.id)
+          .eq('product_id', product.id);
+
+        if (error) throw error;
+
+        setCartItems(prevItems =>
+          prevItems.map(item =>
+            item.id === product.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          )
+        );
+
         toast({
           title: "Updated Cart",
           description: `${product.name} quantity increased`,
         });
-        return prevItems.map(item =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
       } else {
+        const { error } = await supabase
+          .from('cart_items')
+          .insert({
+            user_id: user.id,
+            product_id: product.id,
+            product_name: product.name,
+            product_price: product.price,
+            product_original_price: product.originalPrice,
+            product_image: product.image,
+            product_description: product.description,
+            product_badge: product.badge,
+            quantity: 1,
+          });
+
+        if (error) throw error;
+
+        setCartItems(prevItems => [...prevItems, { ...product, quantity: 1 }]);
+
         toast({
           title: "Added to Cart",
           description: `${product.name} has been added to your cart`,
         });
-        return [...prevItems, { ...product, quantity: 1 }];
       }
-    });
-  };
-
-  const removeFromCart = (id: number) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
-  };
-
-  const updateQuantity = (id: number, quantity: number) => {
-    if (quantity === 0) {
-      removeFromCart(id);
-    } else {
-      setCartItems(prevItems =>
-        prevItems.map(item =>
-          item.id === id ? { ...item, quantity } : item
-        )
-      );
+    } catch (error: any) {
+      console.error('Error adding to cart:', error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to add item to cart",
+        variant: "destructive",
+      });
     }
   };
 
-  const clearCart = () => {
-    setCartItems([]);
+  const removeFromCart = async (id: number) => {
+    if (!user) return;
+
+    try {
+      const { error } = await supabase
+        .from('cart_items')
+        .delete()
+        .eq('user_id', user.id)
+        .eq('product_id', id);
+
+      if (error) throw error;
+
+      setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+    } catch (error) {
+      console.error('Error removing from cart:', error);
+    }
+  };
+
+  const updateQuantity = async (id: number, quantity: number) => {
+    if (!user) return;
+
+    if (quantity === 0) {
+      removeFromCart(id);
+    } else {
+      try {
+        const { error } = await supabase
+          .from('cart_items')
+          .update({ quantity })
+          .eq('user_id', user.id)
+          .eq('product_id', id);
+
+        if (error) throw error;
+
+        setCartItems(prevItems =>
+          prevItems.map(item =>
+            item.id === id ? { ...item, quantity } : item
+          )
+        );
+      } catch (error) {
+        console.error('Error updating quantity:', error);
+      }
+    }
+  };
+
+  const clearCart = async () => {
+    if (!user) return;
+
+    try {
+      const { error } = await supabase
+        .from('cart_items')
+        .delete()
+        .eq('user_id', user.id);
+
+      if (error) throw error;
+
+      setCartItems([]);
+    } catch (error) {
+      console.error('Error clearing cart:', error);
+    }
   };
 
   const getCartTotal = () => {
@@ -117,6 +245,8 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     clearCart,
     getCartTotal,
     getCartItemsCount,
+    user,
+    isLoading,
   };
 
   return (

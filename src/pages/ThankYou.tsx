@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,11 +9,6 @@ const ThankYou = () => {
   const [searchParams] = useSearchParams();
   const paymentId = searchParams.get("payment_id");
   const orderId = searchParams.get("order_id");
-
-  useEffect(() => {
-    // Clear cart after successful payment
-    localStorage.removeItem("cart");
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">

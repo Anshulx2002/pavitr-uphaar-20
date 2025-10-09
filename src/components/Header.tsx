@@ -1,11 +1,13 @@
-import { ShoppingCart, Phone, Menu, ChevronDown, Sparkles, Star } from "lucide-react";
+import { ShoppingCart, Phone, Menu, ChevronDown, Sparkles, Star, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import CartDrawer from "./CartDrawer";
 import { useCart } from "@/contexts/CartContext";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/components/ui/use-toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +18,25 @@ import {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { getCartItemsCount } = useCart();
+  const { getCartItemsCount, user } = useCart();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast({
+        title: "Error",
+        description: "Failed to logout",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Success",
+        description: "Logged out successfully",
+      });
+      navigate('/');
+    }
+  };
 
   const productCategories = [
     { name: "Festival Kits", href: "/festival-kits", description: "Complete pooja sets for festivals" },
@@ -149,11 +169,34 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-2">
-              <Link to="/checkout">
-                <Button variant="festive" size="sm" className="text-white font-medium">
-                  Go to Checkout
-                </Button>
-              </Link>
+              {user ? (
+                <>
+                  <Link to="/checkout">
+                    <Button variant="festive" size="sm" className="text-white font-medium">
+                      Go to Checkout
+                    </Button>
+                  </Link>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="icon">
+                        <User className="h-5 w-5" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuItem onClick={handleLogout}>
+                        <LogOut className="mr-2 h-4 w-4" />
+                        Logout
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </>
+              ) : (
+                <Link to="/auth">
+                  <Button variant="festive" size="sm" className="text-white font-medium">
+                    Login / Sign Up
+                  </Button>
+                </Link>
+              )}
               <Button variant="ghost" size="icon">
                 <Phone className="h-5 w-5" />
               </Button>
@@ -200,6 +243,16 @@ const Header = () => {
               <Link to="/reviews" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Reviews</Link>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Contact</Link>
               
+              {user ? (
+                <>
+                  <Link to="/checkout" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Checkout</Link>
+                  <button onClick={handleLogout} className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left">
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <Link to="/auth" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Login / Sign Up</Link>
+              )}
             </nav>
           </div>
         </div>
