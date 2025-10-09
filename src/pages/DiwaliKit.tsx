@@ -52,8 +52,8 @@ const DiwaliKit = () => {
       <main className="container mx-auto px-4 pt-2 pb-8 mt-16">
         {/* Scarcity Banner */}
         <Card className="mb-6 relative overflow-hidden border-none shadow-lg">
-          {/* Diwali-inspired gradient background - lighter oranges */}
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400"></div>
+          {/* Diwali-inspired gradient background - balanced orange */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500"></div>
           
           {/* Decorative diya pattern overlay */}
           <div className="absolute inset-0 opacity-15" style={{
@@ -67,14 +67,14 @@ const DiwaliKit = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-3">
               {/* Left side - Promotion text */}
               <div className="flex items-center gap-2 md:gap-3">
-                <div className="bg-white/25 backdrop-blur-sm p-2 rounded-full">
-                  <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                <div className="bg-white/30 backdrop-blur-sm p-2 rounded-full shadow-sm">
+                  <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-orange-900" />
                 </div>
                 <div>
-                  <h2 className="text-sm md:text-base font-semibold text-white mb-1 tracking-wide font-playfair">
+                  <h2 className="text-sm md:text-base font-semibold text-orange-900 mb-1 tracking-wide font-playfair drop-shadow-sm">
                     Limited Time Special Promotion
                   </h2>
-                  <div className="bg-white text-orange-600 px-3 py-1 rounded-md inline-block shadow-md">
+                  <div className="bg-white text-orange-600 px-3 py-1.5 rounded-md inline-block shadow-md">
                     <p className="text-xs md:text-sm font-bold font-inter">
                       First 100 Kits Only • <span className="text-base md:text-lg font-extrabold">₹1999</span>
                     </p>
@@ -83,17 +83,17 @@ const DiwaliKit = () => {
               </div>
               
               {/* Right side - Remaining count */}
-              <div className="text-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/30 shadow-sm">
-                <div className="text-xl md:text-2xl font-bold text-white font-inter">{kitsRemaining}</div>
-                <div className="text-xs text-white/95 font-medium">Kits Left</div>
+              <div className="text-center bg-white/25 backdrop-blur-sm px-4 py-2.5 rounded-lg border-2 border-white/40 shadow-md">
+                <div className="text-xl md:text-2xl font-bold text-orange-900 font-inter">{kitsRemaining}</div>
+                <div className="text-xs text-orange-800 font-semibold">Kits Left</div>
               </div>
             </div>
             
             {/* Progress bar */}
             <div className="mt-3">
-              <div className="w-full bg-white/25 rounded-full h-1.5 md:h-2 overflow-hidden shadow-inner">
+              <div className="w-full bg-orange-700/30 rounded-full h-1.5 md:h-2 overflow-hidden shadow-inner">
                 <div 
-                  className="bg-gradient-to-r from-white via-yellow-100 to-white h-full rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-orange-900 via-orange-800 to-orange-900 h-full rounded-full transition-all duration-500 shadow-sm"
                   style={{ width: `${percentageLeft}%` }}
                 />
               </div>
