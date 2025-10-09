@@ -2,6 +2,7 @@ import { Star, ShoppingCart, Heart, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { useCart } from "@/contexts/CartContext";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
   id: number;
@@ -27,6 +28,7 @@ const ProductCard = ({
   viewMode = "grid"
 }: ProductCardProps) => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     addToCart({
@@ -40,10 +42,17 @@ const ProductCard = ({
     });
   };
 
+  const handleCardClick = () => {
+    // Navigate to dedicated page for Diwali Kit (id 19)
+    if (id === 19) {
+      navigate('/diwali-kit');
+    }
+  };
+
   if (viewMode === "list") {
     return (
       <Card className="group hover-lift border-border/50 hover:border-primary/30 bg-card overflow-hidden scroll-animate">
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row" onClick={handleCardClick} role={id === 19 ? "button" : undefined} style={id === 19 ? { cursor: 'pointer' } : undefined}>
           <div className="relative overflow-hidden w-full md:w-80 h-64 md:h-auto">
             {badge && (
               <div className="absolute top-3 left-3 z-10 bg-gradient-saffron text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
@@ -117,7 +126,7 @@ const ProductCard = ({
     );
   }
   return (
-    <Card className="group hover-lift border-border/50 hover:border-primary/30 bg-card overflow-hidden scroll-animate">
+    <Card className="group hover-lift border-border/50 hover:border-primary/30 bg-card overflow-hidden scroll-animate" onClick={handleCardClick} role={id === 19 ? "button" : undefined} style={id === 19 ? { cursor: 'pointer' } : undefined}>
       <div className="relative overflow-hidden">
         {badge && (
           <div className="absolute top-3 left-3 z-10 bg-gradient-saffron text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
