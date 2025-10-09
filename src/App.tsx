@@ -21,6 +21,7 @@ import ThankYou from "./pages/ThankYou";
 import PaymentFailed from "./pages/PaymentFailed";
 import NotFound from "./pages/NotFound";
 import DiwaliKit from "./pages/DiwaliKit";
+import DussehraKit from "./pages/DussehraKit";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/payment-failed" element={<PaymentFailed />} />
           <Route path="/diwali-kit" element={<DiwaliKit />} />
+          <Route path="/dussehra-kit" element={<DussehraKit />} />
           <Route path="/products/:category" element={<CategoryPage />} />
           {/* Legacy routes redirect to dynamic routes */}
           <Route path="/incense-agarbatti" element={<CategoryPage />} />
