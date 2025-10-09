@@ -24,6 +24,7 @@ import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
+import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 
 export interface Product {
   id: number;
@@ -240,6 +241,17 @@ export const allProducts: Product[] = [
     description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
     badge: "Festival Special",
     category: "lamps"
+  },
+  {
+    id: 47,
+    name: "Elephant Motif Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: elephantCopperBottleImage,
+    rating: 5,
+    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special",
+    category: "accessories"
   }
 ];
 
