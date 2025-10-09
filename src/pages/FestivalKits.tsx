@@ -83,15 +83,6 @@ const FestivalKits = () => {
   ];
 
   const handleAddToCart = (kit: typeof festivalKits[0]) => {
-    // Navigate to dedicated pages for Diwali and Dussehra kits
-    if (kit.id === 19) {
-      navigate('/diwali-kit');
-      return;
-    } else if (kit.id === 46) {
-      navigate('/dussehra-kit');
-      return;
-    }
-    
     addToCart({
       id: kit.id,
       name: kit.name,
@@ -101,6 +92,14 @@ const FestivalKits = () => {
       description: kit.description
     });
     setIsCartOpen(true);
+  };
+
+  const handleKitClick = (kitId: number) => {
+    if (kitId === 19) {
+      navigate('/diwali-kit');
+    } else if (kitId === 46) {
+      navigate('/dussehra-kit');
+    }
   };
 
   const nextImage = (kitId: number) => {
@@ -197,7 +196,10 @@ const FestivalKits = () => {
                     <Gift className="w-4 h-4 text-gold" />
                   </div>
                   
-                  <CardTitle className="text-lg md:text-xl mb-2 group-hover:text-saffron transition-colors line-clamp-2">
+                  <CardTitle 
+                    className="text-lg md:text-xl mb-2 group-hover:text-saffron transition-colors line-clamp-2 cursor-pointer"
+                    onClick={() => handleKitClick(kit.id)}
+                  >
                     {kit.name}
                   </CardTitle>
                   
@@ -226,7 +228,7 @@ const FestivalKits = () => {
                     variant="saffron"
                     onClick={() => handleAddToCart(kit)}
                   >
-                    {kit.id === 19 || kit.id === 46 ? 'View Details' : 'Add to Cart'}
+                    Add to Cart
                   </Button>
                 </CardFooter>
               </Card>
