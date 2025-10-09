@@ -50,56 +50,60 @@ const DiwaliKit = () => {
       <Header />
       
       <main className="container mx-auto px-4 pt-2 pb-8 mt-16">
-        {/* Scarcity Banner - Elegant Design */}
-        <Card className="mb-6 relative overflow-hidden border border-orange-200 shadow-sm">
-          {/* Subtle gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50"></div>
+        {/* Scarcity Banner - Vibrant & Elegant Design */}
+        <Card className="mb-6 relative overflow-hidden border-2 border-orange-300 shadow-lg">
+          {/* Rich gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-amber-100 to-orange-50"></div>
           
-          {/* Elegant border accent */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
+          {/* Decorative pattern overlay */}
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,140,0,0.4) 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
+          
+          {/* Vibrant border accent */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500"></div>
           
           {/* Content */}
-          <div className="relative z-10 px-4 py-3 md:px-6 md:py-4">
+          <div className="relative z-10 px-4 py-4 md:px-6 md:py-5">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Left side - Elegant promotion text */}
+              {/* Left side - Promotion text */}
               <div className="flex-1 text-center md:text-left">
                 <div className="inline-flex items-center gap-2 mb-2">
-                  <div className="w-1 h-4 bg-orange-500 rounded-full"></div>
-                  <h2 className="text-xs md:text-sm font-medium text-orange-900 tracking-widest uppercase font-inter">
+                  <div className="w-1.5 h-5 bg-gradient-to-b from-orange-600 to-amber-600 rounded-full shadow-sm"></div>
+                  <h2 className="text-xs md:text-sm font-bold text-orange-800 tracking-widest uppercase font-inter">
                     Limited Time Offer
                   </h2>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm md:text-base text-slate-700 font-light">
-                    Exclusive offer for the first <span className="font-semibold text-orange-700">100 kits</span>
+                  <p className="text-sm md:text-base text-orange-900 font-medium">
+                    Exclusive offer for the first <span className="font-bold text-orange-700">100 kits</span>
                   </p>
                   <div className="flex items-baseline justify-center md:justify-start gap-2">
-                    <span className="text-2xl md:text-3xl font-bold text-orange-600 font-playfair">₹1,999</span>
-                    <span className="text-sm text-slate-500 line-through">₹3,000</span>
+                    <span className="text-3xl md:text-4xl font-bold text-orange-700 font-playfair drop-shadow">₹1,999</span>
+                    <span className="text-base text-slate-600 line-through">₹3,000</span>
+                    <Badge className="bg-gradient-to-r from-orange-600 to-amber-600 text-white border-0 shadow-md">Save 34%</Badge>
                   </div>
                 </div>
               </div>
               
               {/* Right side - Remaining count badge */}
               <div className="flex items-center gap-3">
-                <div className="text-right">
-                  <div className="text-xs text-slate-600 font-medium mb-0.5">Only</div>
-                  <div className="text-3xl md:text-4xl font-bold text-orange-600 font-playfair leading-none">{kitsRemaining}</div>
-                  <div className="text-xs text-slate-600 font-medium mt-0.5">remaining</div>
+                <div className="text-right bg-white/60 backdrop-blur-sm px-4 py-2 rounded-xl border border-orange-200 shadow-sm">
+                  <div className="text-xs text-orange-800 font-semibold mb-0.5 uppercase tracking-wide">Only</div>
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-orange-600 to-amber-600 bg-clip-text text-transparent font-playfair leading-none">{kitsRemaining}</div>
+                  <div className="text-xs text-orange-800 font-semibold mt-0.5 uppercase tracking-wide">remaining</div>
                 </div>
-                <Sparkles className="w-6 h-6 text-orange-400 opacity-60" />
+                <Sparkles className="w-7 h-7 text-amber-500 drop-shadow" />
               </div>
             </div>
             
-            {/* Elegant progress bar */}
+            {/* Vibrant progress bar */}
             <div className="mt-4">
-              <div className="flex justify-between items-center mb-1.5">
-                <span className="text-xs text-slate-600 font-medium">{kitsRemaining} of {totalKits} available</span>
-                <span className="text-xs text-slate-600 font-medium">{percentageLeft.toFixed(0)}% left</span>
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-xs text-orange-900 font-semibold">{kitsRemaining} of {totalKits} available</span>
+                <span className="text-xs text-orange-900 font-semibold">{percentageLeft.toFixed(0)}% left</span>
               </div>
-              <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+              <div className="w-full bg-orange-200/50 rounded-full h-2.5 overflow-hidden shadow-inner">
                 <div 
-                  className="bg-gradient-to-r from-orange-500 to-amber-500 h-full rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 h-full rounded-full transition-all duration-500 shadow-sm"
                   style={{ width: `${percentageLeft}%` }}
                 />
               </div>
