@@ -18,6 +18,8 @@ import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
+import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
+import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
 
 // Featured products - carefully selected new premium products
 const featuredProducts = [
@@ -140,6 +142,26 @@ const featuredProducts = [
     rating: 4.8,
     description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
     badge: "Festival Special"
+  },
+  {
+    id: 47,
+    name: "Elephant Motif Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: elephantCopperBottleImage,
+    rating: 5,
+    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special"
+  },
+  {
+    id: 48,
+    name: "Rani Meher Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: raniMeherCopperBottleImage,
+    rating: 5,
+    description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
+    badge: "Dhanteras Special"
   }
 ];
 
