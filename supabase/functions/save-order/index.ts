@@ -73,7 +73,7 @@ serve(async (req) => {
       // Don't throw error here - order is already saved
     }
 
-    // Send order confirmation email
+    // Send order confirmation email to customer
     try {
       console.log('Sending order confirmation email to:', customer_email);
       
@@ -101,6 +101,38 @@ serve(async (req) => {
       }
     } catch (emailError) {
       console.error('Exception sending confirmation email:', emailError);
+      // Don't fail the order if email fails
+    }
+
+    // Send admin notification email
+    try {
+      console.log('Sending admin notification email');
+      
+      const adminEmailData = {
+        customerName: customer_name,
+        customerEmail: customer_email,
+        orderRef: order_ref,
+        paymentId: razorpay_payment_id,
+        items: cart_items,
+        subtotal: amount_paise / 100,
+        shipping: amount_paise >= 50000 ? 0 : 50,
+        total: amount_paise / 100,
+        shippingAddress: shipping_address,
+        customerPhone: customer_phone,
+      };
+
+      const { error: adminEmailError } = await supabase.functions.invoke('send-admin-notification', {
+        body: adminEmailData,
+      });
+
+      if (adminEmailError) {
+        console.error('Error sending admin notification:', adminEmailError);
+        // Don't fail the order if email fails
+      } else {
+        console.log('Admin notification email sent successfully');
+      }
+    } catch (adminEmailError) {
+      console.error('Exception sending admin notification:', adminEmailError);
       // Don't fail the order if email fails
     }
 
