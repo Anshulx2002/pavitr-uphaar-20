@@ -73,6 +73,37 @@ serve(async (req) => {
       // Don't throw error here - order is already saved
     }
 
+    // Send order confirmation email
+    try {
+      console.log('Sending order confirmation email to:', customer_email);
+      
+      const emailData = {
+        customerName: customer_name,
+        customerEmail: customer_email,
+        orderRef: order_ref,
+        paymentId: razorpay_payment_id,
+        items: cart_items,
+        subtotal: amount_paise / 100, // Convert paise to rupees
+        shipping: amount_paise >= 50000 ? 0 : 50, // Free shipping above ₹500
+        total: amount_paise / 100,
+        shippingAddress: shipping_address,
+      };
+
+      const { error: emailError } = await supabase.functions.invoke('send-order-confirmation', {
+        body: emailData,
+      });
+
+      if (emailError) {
+        console.error('Error sending confirmation email:', emailError);
+        // Don't fail the order if email fails
+      } else {
+        console.log('Order confirmation email sent successfully');
+      }
+    } catch (emailError) {
+      console.error('Exception sending confirmation email:', emailError);
+      // Don't fail the order if email fails
+    }
+
     return new Response(
       JSON.stringify({ success: true, order_id: order.id }),
       {
