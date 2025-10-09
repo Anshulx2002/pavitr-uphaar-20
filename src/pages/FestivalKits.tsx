@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,7 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Star, Gift, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
-import CartDrawer from "@/components/CartDrawer"; // Fixed import
+import CartDrawer from "@/components/CartDrawer";
 import diwaliKit from "@/assets/diwali-kit-premium.png";
 import diwaliKit2 from "@/assets/diwali-kit-2.png";
 import dussehraKit1 from "@/assets/dussehra-kit-1.png";
@@ -18,13 +19,14 @@ import navratriKit from "@/assets/navratri-kit.jpg";
 const FestivalKits = () => {
   console.log("FestivalKits component loaded, CartDrawer:", CartDrawer);
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [diwaliImageIndex, setDiwaliImageIndex] = useState(0);
   const [dussehraImageIndex, setDussehraImageIndex] = useState(0);
 
   const festivalKits = [
     {
-      id: 1,
+      id: 19,
       name: "Diwali Gift Box",
       description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins.",
       price: 1999,
@@ -35,7 +37,7 @@ const FestivalKits = () => {
       discount: "34% OFF"
     },
     {
-      id: 2,
+      id: 46,
       name: "Dussehra Gift Box",
       description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
       price: 1999,
@@ -81,6 +83,15 @@ const FestivalKits = () => {
   ];
 
   const handleAddToCart = (kit: typeof festivalKits[0]) => {
+    // Navigate to dedicated pages for Diwali and Dussehra kits
+    if (kit.id === 19) {
+      navigate('/diwali-kit');
+      return;
+    } else if (kit.id === 46) {
+      navigate('/dussehra-kit');
+      return;
+    }
+    
     addToCart({
       id: kit.id,
       name: kit.name,
@@ -93,17 +104,17 @@ const FestivalKits = () => {
   };
 
   const nextImage = (kitId: number) => {
-    if (kitId === 1) {
+    if (kitId === 19) {
       setDiwaliImageIndex(prev => prev === 1 ? 0 : 1);
-    } else if (kitId === 2) {
+    } else if (kitId === 46) {
       setDussehraImageIndex(prev => prev === 1 ? 0 : 1);
     }
   };
 
   const prevImage = (kitId: number) => {
-    if (kitId === 1) {
+    if (kitId === 19) {
       setDiwaliImageIndex(prev => prev === 0 ? 1 : 0);
-    } else if (kitId === 2) {
+    } else if (kitId === 46) {
       setDussehraImageIndex(prev => prev === 0 ? 1 : 0);
     }
   };
@@ -125,14 +136,14 @@ const FestivalKits = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {festivalKits.map((kit, index) => (
               <Card key={kit.id} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-                <CardHeader className="p-0">
+                 <CardHeader className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg bg-gradient-festive">
-                    {(kit.id === 1 || kit.id === 2) ? (
+                    {(kit.id === 19 || kit.id === 46) ? (
                       // Diwali and Dussehra kits with carousel
                       <div className="relative">
                         <img 
-                          src={kit.images[kit.id === 1 ? diwaliImageIndex : dussehraImageIndex]} 
-                          alt={`${kit.name} - View ${(kit.id === 1 ? diwaliImageIndex : dussehraImageIndex) + 1}`}
+                          src={kit.images[kit.id === 19 ? diwaliImageIndex : dussehraImageIndex]} 
+                          alt={`${kit.name} - View ${(kit.id === 19 ? diwaliImageIndex : dussehraImageIndex) + 1}`}
                           className="w-full h-[36rem] md:h-[40rem] object-contain bg-white group-hover:scale-105 transition-transform duration-300"
                         />
                         {kit.images.length > 1 && (
@@ -153,9 +164,9 @@ const FestivalKits = () => {
                               {kit.images.map((_, imgIndex) => (
                                 <button
                                   key={imgIndex}
-                                  onClick={() => kit.id === 1 ? setDiwaliImageIndex(imgIndex) : setDussehraImageIndex(imgIndex)}
+                                  onClick={() => kit.id === 19 ? setDiwaliImageIndex(imgIndex) : setDussehraImageIndex(imgIndex)}
                                   className={`w-2 h-2 rounded-full transition-colors ${
-                                    imgIndex === (kit.id === 1 ? diwaliImageIndex : dussehraImageIndex) ? 'bg-primary' : 'bg-white/50'
+                                    imgIndex === (kit.id === 19 ? diwaliImageIndex : dussehraImageIndex) ? 'bg-primary' : 'bg-white/50'
                                   }`}
                                 />
                               ))}
@@ -215,7 +226,7 @@ const FestivalKits = () => {
                     variant="saffron"
                     onClick={() => handleAddToCart(kit)}
                   >
-                    Add to Cart
+                    {kit.id === 19 || kit.id === 46 ? 'View Details' : 'Add to Cart'}
                   </Button>
                 </CardFooter>
               </Card>
