@@ -51,26 +51,26 @@ const DiwaliKit = () => {
       
       <main className="container mx-auto px-4 pt-2 pb-8 mt-16">
         {/* Scarcity Banner */}
-        <Card className="mb-8 bg-gradient-saffron text-white p-6 border-none">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Sparkles className="w-6 h-6" />
+        <Card className="mb-8 bg-gradient-saffron text-white p-4 md:p-6 border-none">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
+            <div className="flex items-center gap-2 md:gap-3">
+              <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
               <div>
-                <h2 className="text-xl font-bold">Limited Time Special Promotion</h2>
-                <p className="text-white/90 text-sm">For the first 100 kits only - ₹1999 INR</p>
+                <h2 className="text-lg md:text-xl font-bold">Limited Time Special Promotion</h2>
+                <p className="text-white/90 text-xs md:text-sm">For the first 100 kits only - ₹1999 INR</p>
               </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">{kitsRemaining}</div>
-              <div className="text-sm text-white/90">Kits Remaining</div>
+              <div className="text-2xl md:text-3xl font-bold">{kitsRemaining}</div>
+              <div className="text-xs md:text-sm text-white/90">Kits Remaining</div>
             </div>
           </div>
-          <div className="mt-4">
-            <div className="flex justify-between text-sm mb-2">
+          <div className="mt-3 md:mt-4">
+            <div className="flex justify-between text-xs md:text-sm mb-2">
               <span>Only {totalKits} kits made</span>
               <span>{kitsRemaining} left</span>
             </div>
-            <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden">
+            <div className="w-full bg-white/20 rounded-full h-2 md:h-3 overflow-hidden">
               <div 
                 className="bg-white h-full rounded-full transition-all duration-500"
                 style={{ width: `${percentageLeft}%` }}
