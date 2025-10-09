@@ -31,6 +31,7 @@ const checkoutSchema = z.object({
   pincode: z.string().min(6, 'Pincode must be 6 digits').max(6, 'Pincode must be 6 digits').refine((pin) => {
     return /^\d{6}$/.test(pin);
   }, 'Pincode must be exactly 6 digits'),
+  country: z.literal('India', { errorMap: () => ({ message: 'We currently only ship within India' }) }),
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -47,9 +48,13 @@ const Checkout = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     watch,
+    setValue,
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
     mode: 'onChange', // Enable real-time validation
+    defaultValues: {
+      country: 'India',
+    },
   });
 
   // Load Razorpay script
@@ -247,6 +252,9 @@ const Checkout = () => {
                   <Truck className="h-5 w-5 text-primary" />
                   Shipping Address
                 </CardTitle>
+                <p className="text-xs text-muted-foreground mt-1">
+                  🇮🇳 We currently ship within India only
+                </p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
@@ -290,21 +298,34 @@ const Checkout = () => {
                    </div>
                  </div>
 
-                <div>
-                   <Label htmlFor="pincode">Pincode</Label>
-                   <Input
-                     id="pincode"
-                     {...register('pincode')}
-                     placeholder="6-digit pincode"
-                     className={`transition-all duration-200 ${errors.pincode ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
-                     maxLength={6}
-                   />
-                   {errors.pincode && (
-                     <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
-                   )}
-                   {watch('pincode') && !errors.pincode && watch('pincode').length === 6 && (
-                     <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
-                   )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                   <div>
+                     <Label htmlFor="pincode">Pincode</Label>
+                     <Input
+                       id="pincode"
+                       {...register('pincode')}
+                       placeholder="6-digit pincode"
+                       className={`transition-all duration-200 ${errors.pincode ? 'border-destructive focus:border-destructive' : 'focus:border-primary focus:ring-2 focus:ring-primary/20'}`}
+                       maxLength={6}
+                     />
+                     {errors.pincode && (
+                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
+                     )}
+                     {watch('pincode') && !errors.pincode && watch('pincode').length === 6 && (
+                       <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
+                     )}
+                   </div>
+
+                   <div>
+                     <Label htmlFor="country">Country</Label>
+                     <Input
+                       id="country"
+                       {...register('country')}
+                       value="India"
+                       disabled
+                       className="bg-muted"
+                     />
+                   </div>
                  </div>
                  
                  {/* Delivery Estimate */}
