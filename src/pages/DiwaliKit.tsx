@@ -84,14 +84,13 @@ const DiwaliKit = () => {
                 </div>
               </div>
               
-              {/* Right side - Remaining count badge */}
-              <div className="flex items-center gap-3">
-                <div className="text-right bg-white/60 backdrop-blur-sm px-4 py-2 rounded-xl border border-orange-200 shadow-sm">
-                  <div className="text-xs text-orange-800 font-semibold mb-0.5 uppercase tracking-wide">Only</div>
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-orange-600 to-amber-600 bg-clip-text text-transparent font-playfair leading-none">{kitsRemaining}</div>
-                  <div className="text-xs text-orange-800 font-semibold mt-0.5 uppercase tracking-wide">remaining</div>
+              {/* Center - Remaining count badge */}
+              <div className="flex justify-center">
+                <div className="text-center bg-gradient-to-br from-white/80 to-orange-50/80 backdrop-blur-sm px-8 py-4 rounded-2xl border-2 border-orange-300/60 shadow-lg">
+                  <div className="text-xs text-orange-800 font-bold mb-1 uppercase tracking-widest">Only</div>
+                  <div className="text-5xl md:text-6xl font-bold bg-gradient-to-br from-orange-600 via-amber-600 to-orange-700 bg-clip-text text-transparent font-playfair leading-none drop-shadow-sm">{kitsRemaining}</div>
+                  <div className="text-xs text-orange-800 font-bold mt-1 uppercase tracking-widest">Remaining</div>
                 </div>
-                <Sparkles className="w-7 h-7 text-amber-500 drop-shadow" />
               </div>
             </div>
             
