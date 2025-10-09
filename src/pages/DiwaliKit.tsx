@@ -51,37 +51,49 @@ const DiwaliKit = () => {
       
       <main className="container mx-auto px-4 pt-2 pb-8 mt-16">
         {/* Scarcity Banner */}
-        <Card className="mb-6 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-white p-3 md:p-5 border-none shadow-xl relative overflow-hidden">
-          {/* Festive sparkles background */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-2 left-4 animate-pulse">✨</div>
-            <div className="absolute top-1 right-8 animate-pulse delay-300">🎊</div>
-            <div className="absolute bottom-2 left-1/4 animate-pulse delay-500">✨</div>
-            <div className="absolute bottom-1 right-1/4 animate-pulse delay-700">🎊</div>
-          </div>
+        <Card className="mb-6 relative overflow-hidden border-none shadow-lg">
+          {/* Diwali-inspired gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600"></div>
           
-          <div className="relative z-10">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4">
-              <div className="flex items-center gap-2 md:gap-3 text-center md:text-left">
-                <Sparkles className="w-5 h-5 md:w-6 md:h-6 animate-pulse" />
+          {/* Decorative diya pattern overlay */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 2px, transparent 2px),
+                             radial-gradient(circle at 80% 50%, rgba(255,255,255,0.3) 2px, transparent 2px)`,
+            backgroundSize: '100px 50px'
+          }}></div>
+          
+          {/* Content */}
+          <div className="relative z-10 p-3 md:p-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+              {/* Left side - Promotion text */}
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="bg-white/20 backdrop-blur-sm p-2 rounded-full">
+                  <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-yellow-100" />
+                </div>
                 <div>
-                  <h2 className="text-base md:text-lg font-bold mb-1">🎉 Limited Time Special 🎉</h2>
-                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border-2 border-white/40">
-                    <p className="text-sm md:text-base font-extrabold tracking-wide">
-                      First 100 Kits Only • <span className="text-yellow-200 text-lg md:text-xl">₹1999</span>
+                  <h2 className="text-sm md:text-base font-bold text-white mb-1">
+                    Limited Time Special Promotion
+                  </h2>
+                  <div className="bg-white text-orange-600 px-3 py-1 rounded-md inline-block">
+                    <p className="text-xs md:text-sm font-bold">
+                      First 100 Kits Only • <span className="text-base md:text-lg">₹1999</span>
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/30">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-200">{kitsRemaining}</div>
-                <div className="text-xs md:text-sm text-white/90 font-medium">Left!</div>
+              
+              {/* Right side - Remaining count */}
+              <div className="text-center bg-white/15 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
+                <div className="text-xl md:text-2xl font-bold text-yellow-100">{kitsRemaining}</div>
+                <div className="text-xs text-white/90">Kits Left</div>
               </div>
             </div>
-            <div className="mt-2 md:mt-3">
-              <div className="w-full bg-white/20 rounded-full h-2 md:h-2.5 overflow-hidden border border-white/30">
+            
+            {/* Progress bar */}
+            <div className="mt-3">
+              <div className="w-full bg-white/20 rounded-full h-1.5 md:h-2 overflow-hidden">
                 <div 
-                  className="bg-gradient-to-r from-yellow-200 to-white h-full rounded-full transition-all duration-500 animate-pulse"
+                  className="bg-gradient-to-r from-yellow-300 to-yellow-100 h-full rounded-full transition-all duration-500"
                   style={{ width: `${percentageLeft}%` }}
                 />
               </div>
