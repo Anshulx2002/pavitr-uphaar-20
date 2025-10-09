@@ -25,7 +25,7 @@ const DiwaliKit = () => {
     originalPrice: 3000,
     image: diwaliKitPremium,
     rating: 4.8,
-    description: "A beautiful Diwali hamper containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
+    description: "A beautiful Diwali hamper containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy. BONUS: Get an additional diya absolutely FREE!",
     badge: "34% OFF"
   };
 
@@ -49,7 +49,7 @@ const DiwaliKit = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 pb-8">
+      <main className="container mx-auto px-4 py-4 mt-16">
         {/* Scarcity Banner */}
         <Card className="mb-8 bg-gradient-saffron text-white p-6 border-none">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -175,7 +175,13 @@ const DiwaliKit = () => {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Exquisite lotus diyas for divine illumination</span>
+                  <span>1 Exquisite lotus diya</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold text-primary">BONUS: 1 Free Additional Diya 🎁</span>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -183,7 +189,11 @@ const DiwaliKit = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Fragrant incense and dhoop sticks</span>
+                  <span>Fragrant incense sticks</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span>Premium dhoop sticks</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
