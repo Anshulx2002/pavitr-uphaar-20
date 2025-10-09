@@ -80,8 +80,8 @@ const DiwaliKit = () => {
         </Card>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Left Column - Images & Video */}
-          <div className="space-y-4">
+          {/* Left Column - Images */}
+          <div className="space-y-4 lg:order-1">
             {/* Main Image */}
             <div className="relative overflow-hidden rounded-lg border border-border bg-card">
               <img 
@@ -115,8 +115,8 @@ const DiwaliKit = () => {
               ))}
             </div>
 
-            {/* Video Section */}
-            <Card className="p-4">
+            {/* Video Section - hidden on mobile, shown on desktop */}
+            <Card className="p-4 hidden lg:block">
               <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-primary" />
                 Watch Our Diwali Kit Showcase
@@ -133,8 +133,9 @@ const DiwaliKit = () => {
           </div>
 
           {/* Right Column - Product Details */}
-          <div className="space-y-6">
-            <div>
+          <div className="space-y-6 lg:order-2">
+            {/* Title, Rating, Price, Description - Desktop only */}
+            <div className="hidden lg:block">
               <h1 className="text-4xl font-bold text-foreground mb-3">{product.name}</h1>
               
               {/* Rating */}
@@ -169,7 +170,7 @@ const DiwaliKit = () => {
               </p>
             </div>
 
-            {/* Features */}
+            {/* Features - What's Included */}
             <Card className="p-6 bg-gradient-warm border-primary/20">
               <h3 className="font-bold text-xl mb-4">What's Included:</h3>
               <ul className="space-y-3 text-muted-foreground">
@@ -202,8 +203,50 @@ const DiwaliKit = () => {
               </ul>
             </Card>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-3 gap-4">
+            {/* Action Buttons - First instance */}
+            <div className="space-y-3">
+              <Button 
+                onClick={handleBuyNow}
+                className="w-full bg-gradient-premium-gold hover:opacity-90 text-white font-bold text-lg py-6 shadow-xl transform transition-all duration-300 hover:scale-105"
+              >
+                Buy Now - Limited Stock!
+              </Button>
+              <Button 
+                onClick={handleAddToCart}
+                variant="outline"
+                className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg py-6"
+              >
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                Add to Cart
+              </Button>
+            </div>
+
+            {/* Urgency Message - First instance */}
+            <Card className="p-4 bg-destructive/10 border-destructive/30">
+              <p className="text-center text-destructive font-semibold flex items-center justify-center gap-2">
+                <Clock className="w-5 h-5" />
+                Hurry! Only {kitsRemaining} kits left at this special price!
+              </p>
+            </Card>
+
+            {/* Video Section - Mobile only */}
+            <Card className="p-4 lg:hidden">
+              <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-primary" />
+                Watch Our Diwali Kit Showcase
+              </h3>
+              <video 
+                controls 
+                className="w-full rounded-lg"
+                poster={diwaliKitPremium}
+              >
+                <source src="/diwali-kit-reel.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Card>
+
+            {/* Trust Badges - Desktop only */}
+            <div className="hidden lg:grid grid-cols-3 gap-4">
               <Card className="p-4 text-center">
                 <Clock className="w-8 h-8 mx-auto mb-2 text-primary" />
                 <p className="text-sm font-medium">Delivery within 3-5 days Pan India</p>
@@ -275,8 +318,8 @@ const DiwaliKit = () => {
               </div>
             </Card>
 
-            {/* Action Buttons */}
-            <div className="space-y-3">
+            {/* Action Buttons - Second instance (Mobile only) */}
+            <div className="space-y-3 lg:hidden">
               <Button 
                 onClick={handleBuyNow}
                 className="w-full bg-gradient-premium-gold hover:opacity-90 text-white font-bold text-lg py-6 shadow-xl transform transition-all duration-300 hover:scale-105"
@@ -293,13 +336,21 @@ const DiwaliKit = () => {
               </Button>
             </div>
 
-            {/* Urgency Message */}
-            <Card className="p-4 bg-destructive/10 border-destructive/30">
-              <p className="text-center text-destructive font-semibold flex items-center justify-center gap-2">
-                <Clock className="w-5 h-5" />
-                Hurry! Only {kitsRemaining} kits left at this special price!
-              </p>
-            </Card>
+            {/* Trust Badges - Mobile only (at bottom) */}
+            <div className="grid grid-cols-3 gap-4 lg:hidden">
+              <Card className="p-4 text-center">
+                <Clock className="w-8 h-8 mx-auto mb-2 text-primary" />
+                <p className="text-sm font-medium">Delivery within 3-5 days Pan India</p>
+              </Card>
+              <Card className="p-4 text-center">
+                <Shield className="w-8 h-8 mx-auto mb-2 text-primary" />
+                <p className="text-sm font-medium">Safe Razorpay UPI Checkout</p>
+              </Card>
+              <Card className="p-4 text-center">
+                <Package className="w-8 h-8 mx-auto mb-2 text-primary" />
+                <p className="text-sm font-medium">Premium Packaging</p>
+              </Card>
+            </div>
           </div>
         </div>
       </main>
