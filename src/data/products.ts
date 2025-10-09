@@ -25,6 +25,7 @@ import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
+import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
 
 export interface Product {
   id: number;
@@ -250,6 +251,17 @@ export const allProducts: Product[] = [
     image: elephantCopperBottleImage,
     rating: 5,
     description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special",
+    category: "accessories"
+  },
+  {
+    id: 48,
+    name: "Rani Meher Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: raniMeherCopperBottleImage,
+    rating: 5,
+    description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
     badge: "Dhanteras Special",
     category: "accessories"
   }
