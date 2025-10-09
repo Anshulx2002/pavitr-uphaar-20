@@ -49,7 +49,7 @@ const DiwaliKit = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-8 mt-20">
+      <main className="container mx-auto px-4 py-8 mt-16">
         {/* Scarcity Banner */}
         <Card className="mb-8 bg-gradient-saffron text-white p-6 border-none">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -195,18 +195,72 @@ const DiwaliKit = () => {
             {/* Trust Badges */}
             <div className="grid grid-cols-3 gap-4">
               <Card className="p-4 text-center">
-                <Package className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm font-medium">Premium Packaging</p>
-              </Card>
-              <Card className="p-4 text-center">
                 <Clock className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm font-medium">Fast Delivery</p>
+                <p className="text-sm font-medium">Delivery within 3-5 days Pan India</p>
               </Card>
               <Card className="p-4 text-center">
                 <Shield className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <p className="text-sm font-medium">Quality Assured</p>
+                <p className="text-sm font-medium">Safe Razorpay UPI Checkout</p>
+              </Card>
+              <Card className="p-4 text-center">
+                <Package className="w-8 h-8 mx-auto mb-2 text-primary" />
+                <p className="text-sm font-medium">Premium Packaging</p>
               </Card>
             </div>
+
+            {/* Customer Reviews */}
+            <Card className="p-6 bg-card">
+              <h3 className="font-bold text-xl mb-4">Customer Reviews</h3>
+              <div className="space-y-4">
+                {/* Review 1 */}
+                <div className="border-b border-border pb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-primary fill-primary" />
+                      ))}
+                    </div>
+                    <span className="font-semibold">Priya Sharma</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    "Absolutely beautiful Diwali kit! The quality of the diyas and the toran is exceptional. The cashew and raisin potlis were a delightful addition. Everything arrived well-packaged and on time. Highly recommend for gifting!"
+                  </p>
+                  <span className="text-xs text-muted-foreground mt-2 block">Verified Purchase • 2 days ago</span>
+                </div>
+
+                {/* Review 2 */}
+                <div className="border-b border-border pb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-primary fill-primary" />
+                      ))}
+                    </div>
+                    <span className="font-semibold">Rajesh Kumar</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    "Ordered this for my parents and they loved it! The presentation is stunning and everything is of premium quality. The toran looks handcrafted and authentic. Great value for money at this price. Will order again next year."
+                  </p>
+                  <span className="text-xs text-muted-foreground mt-2 block">Verified Purchase • 5 days ago</span>
+                </div>
+
+                {/* Review 3 */}
+                <div className="pb-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className={`w-4 h-4 ${i < 4 ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`} />
+                      ))}
+                    </div>
+                    <span className="font-semibold">Anjali Patel</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    "Very nice Diwali hamper with good quality items. The diyas are lovely and the incense sticks smell amazing. Only giving 4 stars because I wish there were more diyas included, but overall very satisfied with the purchase and delivery was quick."
+                  </p>
+                  <span className="text-xs text-muted-foreground mt-2 block">Verified Purchase • 1 week ago</span>
+                </div>
+              </div>
+            </Card>
 
             {/* Action Buttons */}
             <div className="space-y-3">
