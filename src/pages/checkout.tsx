@@ -315,7 +315,7 @@ const Checkout = () => {
                        Estimated Delivery:
                      </span>
                      <span className="text-xs block">
-                       • Major cities: <strong>Within 7 working days</strong><br/>
+                       • Major cities (Mumbai, Delhi, Bangalore etc.): <strong>Within 7 working days</strong><br/>
                        • Rest of India: <strong>Within 3 weeks</strong>
                      </span>
                    </p>
