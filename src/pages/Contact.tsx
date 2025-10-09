@@ -5,8 +5,27 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { toast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      toast({
+        title: "Your inquiry has been sent!",
+        description: "We will be in touch with you shortly. You can also message us on Instagram @pavitra.uphaar for more requests",
+      });
+      setIsSubmitting(false);
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+    }, 1000);
+  };
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -85,7 +104,7 @@ const Contact = () => {
                 <CardTitle className="text-xl text-foreground">Send us an Inquiry</CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-2">
@@ -132,8 +151,8 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button variant="saffron" className="w-full">
-                    Send Inquiry
+                  <Button variant="saffron" className="w-full" type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send Inquiry"}
                   </Button>
                 </form>
               </CardContent>
