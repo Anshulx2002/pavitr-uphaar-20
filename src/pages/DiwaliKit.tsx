@@ -49,7 +49,7 @@ const DiwaliKit = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-4 mt-16">
+      <main className="container mx-auto px-4 pt-2 pb-8 mt-16">
         {/* Scarcity Banner */}
         <Card className="mb-8 bg-gradient-saffron text-white p-6 border-none">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
