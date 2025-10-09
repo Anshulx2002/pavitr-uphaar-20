@@ -50,50 +50,56 @@ const DiwaliKit = () => {
       <Header />
       
       <main className="container mx-auto px-4 pt-2 pb-8 mt-16">
-        {/* Scarcity Banner */}
-        <Card className="mb-6 relative overflow-hidden border-none shadow-lg">
-          {/* Diwali-inspired gradient background - balanced orange */}
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500"></div>
+        {/* Scarcity Banner - Elegant Design */}
+        <Card className="mb-6 relative overflow-hidden border border-orange-200 shadow-sm">
+          {/* Subtle gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50"></div>
           
-          {/* Decorative diya pattern overlay */}
-          <div className="absolute inset-0 opacity-15" style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.4) 2px, transparent 2px),
-                             radial-gradient(circle at 80% 50%, rgba(255,255,255,0.4) 2px, transparent 2px)`,
-            backgroundSize: '100px 50px'
-          }}></div>
+          {/* Elegant border accent */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
           
           {/* Content */}
-          <div className="relative z-10 p-3 md:p-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-              {/* Left side - Promotion text */}
-              <div className="flex items-center gap-2 md:gap-3">
-                <div className="bg-white/30 backdrop-blur-sm p-2 rounded-full shadow-sm">
-                  <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-orange-900" />
-                </div>
-                <div>
-                  <h2 className="text-sm md:text-base font-semibold text-orange-900 mb-1 tracking-wide font-playfair drop-shadow-sm">
-                    Limited Time Special Promotion
+          <div className="relative z-10 px-4 py-3 md:px-6 md:py-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              {/* Left side - Elegant promotion text */}
+              <div className="flex-1 text-center md:text-left">
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <div className="w-1 h-4 bg-orange-500 rounded-full"></div>
+                  <h2 className="text-xs md:text-sm font-medium text-orange-900 tracking-widest uppercase font-inter">
+                    Limited Time Offer
                   </h2>
-                  <div className="bg-white text-orange-600 px-3 py-1.5 rounded-md inline-block shadow-md">
-                    <p className="text-xs md:text-sm font-bold font-inter">
-                      First 100 Kits Only • <span className="text-base md:text-lg font-extrabold">₹1999</span>
-                    </p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm md:text-base text-slate-700 font-light">
+                    Exclusive offer for the first <span className="font-semibold text-orange-700">100 kits</span>
+                  </p>
+                  <div className="flex items-baseline justify-center md:justify-start gap-2">
+                    <span className="text-2xl md:text-3xl font-bold text-orange-600 font-playfair">₹1,999</span>
+                    <span className="text-sm text-slate-500 line-through">₹3,000</span>
                   </div>
                 </div>
               </div>
               
-              {/* Right side - Remaining count */}
-              <div className="text-center bg-white/25 backdrop-blur-sm px-4 py-2.5 rounded-lg border-2 border-white/40 shadow-md">
-                <div className="text-xl md:text-2xl font-bold text-orange-900 font-inter">{kitsRemaining}</div>
-                <div className="text-xs text-orange-800 font-semibold">Kits Left</div>
+              {/* Right side - Remaining count badge */}
+              <div className="flex items-center gap-3">
+                <div className="text-right">
+                  <div className="text-xs text-slate-600 font-medium mb-0.5">Only</div>
+                  <div className="text-3xl md:text-4xl font-bold text-orange-600 font-playfair leading-none">{kitsRemaining}</div>
+                  <div className="text-xs text-slate-600 font-medium mt-0.5">remaining</div>
+                </div>
+                <Sparkles className="w-6 h-6 text-orange-400 opacity-60" />
               </div>
             </div>
             
-            {/* Progress bar */}
-            <div className="mt-3">
-              <div className="w-full bg-orange-700/30 rounded-full h-1.5 md:h-2 overflow-hidden shadow-inner">
+            {/* Elegant progress bar */}
+            <div className="mt-4">
+              <div className="flex justify-between items-center mb-1.5">
+                <span className="text-xs text-slate-600 font-medium">{kitsRemaining} of {totalKits} available</span>
+                <span className="text-xs text-slate-600 font-medium">{percentageLeft.toFixed(0)}% left</span>
+              </div>
+              <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
                 <div 
-                  className="bg-gradient-to-r from-orange-900 via-orange-800 to-orange-900 h-full rounded-full transition-all duration-500 shadow-sm"
+                  className="bg-gradient-to-r from-orange-500 to-amber-500 h-full rounded-full transition-all duration-500"
                   style={{ width: `${percentageLeft}%` }}
                 />
               </div>
