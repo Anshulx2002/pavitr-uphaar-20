@@ -28,12 +28,18 @@ interface AdminNotificationRequest {
 }
 
 const handler = async (req: Request): Promise<Response> => {
+  console.log('Admin notification handler invoked');
+  
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
+    console.log('Parsing request body...');
+    const requestBody = await req.json();
+    console.log('Request body received:', JSON.stringify(requestBody, null, 2));
+    
     const {
       customerName,
       customerEmail,
@@ -45,14 +51,15 @@ const handler = async (req: Request): Promise<Response> => {
       shipping,
       total,
       shippingAddress,
-    }: AdminNotificationRequest = await req.json();
+    }: AdminNotificationRequest = requestBody;
 
-    console.log('Admin notification request:', {
+    console.log('Admin notification request parsed:', {
       customerName,
       customerEmail,
+      customerPhone,
       orderRef,
       paymentId,
-      items,
+      itemsCount: items?.length,
       subtotal,
       shipping,
       total,
@@ -151,6 +158,9 @@ const handler = async (req: Request): Promise<Response> => {
       </html>
     `;
 
+    console.log('Attempting to send email via Resend...');
+    console.log('RESEND_API_KEY exists:', !!Deno.env.get('RESEND_API_KEY'));
+    
     const { data, error } = await resend.emails.send({
       from: 'Pavitra Uphaar <onboarding@resend.dev>',
       to: ['monalikapatnaik9@gmail.com'],
@@ -159,11 +169,11 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     if (error) {
-      console.error('Error sending admin notification:', error);
+      console.error('Resend API error:', JSON.stringify(error, null, 2));
       throw error;
     }
 
-    console.log('Email sent successfully:', { data, error });
+    console.log('Admin notification email sent successfully:', data);
 
     return new Response(
       JSON.stringify({ success: true }),
@@ -174,8 +184,14 @@ const handler = async (req: Request): Promise<Response> => {
     );
   } catch (error: any) {
     console.error('Error in send-admin-notification function:', error);
+    console.error('Error stack:', error.stack);
+    console.error('Error details:', JSON.stringify(error, null, 2));
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message,
+        details: error.toString(),
+        stack: error.stack 
+      }),
       {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
