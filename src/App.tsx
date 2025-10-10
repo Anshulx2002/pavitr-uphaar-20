@@ -23,6 +23,8 @@ import NotFound from "./pages/NotFound";
 import DiwaliKit from "./pages/DiwaliKit";
 import DussehraKit from "./pages/DussehraKit";
 import Auth from "./pages/Auth";
+import Account from "./pages/Account";
+import OrderTracker from "./pages/OrderTracker";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -60,6 +62,8 @@ const App = () => (
           <Route path="/pooja-accessories" element={<CategoryPage />} />
           <Route path="/sacred-threads" element={<CategoryPage />} />
           <Route path="/flowers-garlands" element={<CategoryPage />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/order/:orderId" element={<OrderTracker />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
