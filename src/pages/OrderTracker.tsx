@@ -157,6 +157,10 @@ const OrderTracker = () => {
                     const Icon = step.icon;
                     return (
                       <div key={step.key} className="flex flex-col items-center relative flex-1">
+                        {/* Green tick above completed steps */}
+                        {step.completed && (
+                          <CheckCircle className="h-6 w-6 text-green-600 mb-2" fill="currentColor" />
+                        )}
                         <div
                           className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-colors ${
                             step.completed
