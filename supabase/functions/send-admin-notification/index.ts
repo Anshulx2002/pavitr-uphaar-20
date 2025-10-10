@@ -163,7 +163,7 @@ const handler = async (req: Request): Promise<Response> => {
     
     const { data, error } = await resend.emails.send({
       from: 'Pavitra Uphaar <onboarding@resend.dev>',
-      to: ['monalikapatnaik9@gmail.com'],
+      to: ['bloxycore101@gmail.com'], // Change this to monalikapatnaik9@gmail.com after verifying a domain at resend.com/domains
       subject: `🛍️ New Order: ${orderRef}`,
       html: htmlContent,
     });
