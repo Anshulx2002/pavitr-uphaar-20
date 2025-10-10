@@ -2,11 +2,11 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
+const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 interface AdminNotificationRequest {
   customerName: string;
@@ -28,18 +28,18 @@ interface AdminNotificationRequest {
 }
 
 const handler = async (req: Request): Promise<Response> => {
-  console.log('Admin notification handler invoked');
-  
+  console.log("Admin notification handler invoked");
+
   // Handle CORS preflight requests
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    console.log('Parsing request body...');
+    console.log("Parsing request body...");
     const requestBody = await req.json();
-    console.log('Request body received:', JSON.stringify(requestBody, null, 2));
-    
+    console.log("Request body received:", JSON.stringify(requestBody, null, 2));
+
     const {
       customerName,
       customerEmail,
@@ -53,7 +53,7 @@ const handler = async (req: Request): Promise<Response> => {
       shippingAddress,
     }: AdminNotificationRequest = requestBody;
 
-    console.log('Admin notification request parsed:', {
+    console.log("Admin notification request parsed:", {
       customerName,
       customerEmail,
       customerPhone,
@@ -66,7 +66,9 @@ const handler = async (req: Request): Promise<Response> => {
       shippingAddress,
     });
 
-    const itemsHtml = items.map(item => `
+    const itemsHtml = items
+      .map(
+        (item) => `
       <tr>
         <td style="padding: 10px; border-bottom: 1px solid #eee;">
           ${item.name}
@@ -81,7 +83,9 @@ const handler = async (req: Request): Promise<Response> => {
           ₹${(item.price * item.quantity).toFixed(2)}
         </td>
       </tr>
-    `).join('');
+    `,
+      )
+      .join("");
 
     const htmlContent = `
       <!DOCTYPE html>
@@ -138,7 +142,7 @@ const handler = async (req: Request): Promise<Response> => {
                 </tr>
                 <tr>
                   <td style="padding: 5px 0;">Shipping:</td>
-                  <td style="padding: 5px 0; text-align: right;">${shipping === 0 ? 'FREE' : '₹' + shipping.toFixed(2)}</td>
+                  <td style="padding: 5px 0; text-align: right;">${shipping === 0 ? "FREE" : "₹" + shipping.toFixed(2)}</td>
                 </tr>
                 <tr style="border-top: 2px solid #667eea; font-weight: bold; font-size: 18px;">
                   <td style="padding: 10px 0;">Total:</td>
@@ -158,44 +162,41 @@ const handler = async (req: Request): Promise<Response> => {
       </html>
     `;
 
-    console.log('Attempting to send email via Resend...');
-    console.log('RESEND_API_KEY exists:', !!Deno.env.get('RESEND_API_KEY'));
-    
+    console.log("Attempting to send email via Resend...");
+    console.log("RESEND_API_KEY exists:", !!Deno.env.get("RESEND_API_KEY"));
+
     const { data, error } = await resend.emails.send({
-      from: 'Pavitra Uphaar <onboarding@resend.dev>',
-      to: ['bloxycore101@gmail.com'], // Change this to monalikapatnaik9@gmail.com after verifying a domain at resend.com/domains
+      from: "Pavitra Uphaar <upport@pavitrauphaar.com>",
+      to: ["monalikapatnaik9@gmail.com"], // Change this to monalikapatnaik9@gmail.com after verifying a domain at resend.com/domains
       subject: `🛍️ New Order: ${orderRef}`,
       html: htmlContent,
     });
 
     if (error) {
-      console.error('Resend API error:', JSON.stringify(error, null, 2));
+      console.error("Resend API error:", JSON.stringify(error, null, 2));
       throw error;
     }
 
-    console.log('Admin notification email sent successfully:', data);
+    console.log("Admin notification email sent successfully:", data);
 
-    return new Response(
-      JSON.stringify({ success: true }),
-      {
-        status: 200,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      }
-    );
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   } catch (error: any) {
-    console.error('Error in send-admin-notification function:', error);
-    console.error('Error stack:', error.stack);
-    console.error('Error details:', JSON.stringify(error, null, 2));
+    console.error("Error in send-admin-notification function:", error);
+    console.error("Error stack:", error.stack);
+    console.error("Error details:", JSON.stringify(error, null, 2));
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         error: error.message,
         details: error.toString(),
-        stack: error.stack 
+        stack: error.stack,
       }),
       {
         status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      }
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
     );
   }
 };
