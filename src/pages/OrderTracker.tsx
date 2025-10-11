@@ -127,7 +127,7 @@ const OrderTracker = () => {
   }
 
   const steps = getStatusSteps();
-  const items = order.meta?.items || [];
+  const items = order.meta?.cart_items || [];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -214,7 +214,7 @@ const OrderTracker = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span>₹{(order.meta?.amount_paise / 100 || 0).toLocaleString("en-IN")}</span>
+                    <span>₹{(order.meta?.subtotal || 0).toLocaleString("en-IN")}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Shipping</span>
