@@ -211,10 +211,19 @@ const Checkout = () => {
               throw new Error("Failed to save order");
             }
 
+            // Clear cart for guest users (authenticated users' carts are cleared in the backend)
+            if (!user) {
+              clearCart();
+            }
+
             // Success - redirect to thank you page
             window.location.href = `/thank-you?payment_id=${encodeURIComponent(razorpayResponse.razorpay_payment_id)}&order_id=${encodeURIComponent(order.id)}`;
           } catch (error) {
             console.error("Error saving order:", error);
+            // Clear cart even if save fails for guest users
+            if (!user) {
+              clearCart();
+            }
             // Still redirect to thank you even if save fails
             window.location.href = `/thank-you?payment_id=${encodeURIComponent(razorpayResponse.razorpay_payment_id)}&order_id=${encodeURIComponent(order.id)}`;
           }
