@@ -35,8 +35,10 @@ const Account = () => {
   }, []);
 
   const checkAuth = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
     if (!user) {
       navigate("/auth");
       return;
@@ -48,11 +50,7 @@ const Account = () => {
   };
 
   const fetchProfile = async (userId: string) => {
-    const { data, error } = await supabase
-      .from("profiles")
-      .select("name, phone")
-      .eq("id", userId)
-      .single();
+    const { data, error } = await supabase.from("profiles").select("name, phone").eq("id", userId).single();
 
     if (error) {
       console.error("Error fetching profile:", error);
@@ -63,8 +61,10 @@ const Account = () => {
   };
 
   const fetchOrders = async (userId: string) => {
-    const { data: { user } } = await supabase.auth.getUser();
-    
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
     // Fetch orders that match either user_id OR customer_email
     const { data, error } = await supabase
       .from("orders")
@@ -92,7 +92,7 @@ const Account = () => {
         return "text-green-600 bg-green-50";
       case "shipped":
         return "text-blue-600 bg-blue-50";
-      case "pending":
+      case "paid":
         return "text-yellow-600 bg-yellow-50";
       default:
         return "text-gray-600 bg-gray-50";
@@ -185,18 +185,12 @@ const Account = () => {
                             })}
                           </p>
                         </div>
-                        <span
-                          className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(
-                            order.status
-                          )}`}
-                        >
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(order.status)}`}>
                           {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <p className="text-lg font-semibold">
-                          ₹{(order.amount_paise / 100).toLocaleString("en-IN")}
-                        </p>
+                        <p className="text-lg font-semibold">₹{(order.amount_paise / 100).toLocaleString("en-IN")}</p>
                         <Button variant="ghost" size="sm">
                           View Details →
                         </Button>

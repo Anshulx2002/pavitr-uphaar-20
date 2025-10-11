@@ -31,21 +31,21 @@ const OrderTracker = () => {
   useEffect(() => {
     if (orderId) {
       fetchOrder();
-      
+
       // Set up real-time subscription for status updates
       const channel = supabase
-        .channel('order-changes')
+        .channel("order-changes")
         .on(
-          'postgres_changes',
+          "postgres_changes",
           {
-            event: 'UPDATE',
-            schema: 'public',
-            table: 'orders',
-            filter: `id=eq.${orderId}`
+            event: "UPDATE",
+            schema: "public",
+            table: "orders",
+            filter: `id=eq.${orderId}`,
           },
           (payload) => {
             setOrder(payload.new as Order);
-          }
+          },
         )
         .subscribe();
 
@@ -56,13 +56,12 @@ const OrderTracker = () => {
   }, [orderId]);
 
   const fetchOrder = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
     // Build query to fetch order by ID and either user_id OR customer_email
-    let query = supabase
-      .from("orders")
-      .select("*")
-      .eq("id", orderId);
+    let query = supabase.from("orders").select("*").eq("id", orderId);
 
     // If user is logged in, also match by email for guest orders
     if (user) {
@@ -88,12 +87,12 @@ const OrderTracker = () => {
 
   const getStatusSteps = () => {
     const steps = [
-      { key: "pending", label: "Order Placed", icon: Clock },
+      { key: "paid", label: "Order Placed", icon: Clock },
       { key: "shipped", label: "Shipped", icon: Truck },
       { key: "delivered", label: "Delivered", icon: CheckCircle },
     ];
 
-    const currentStatus = order?.status?.toLowerCase() || "pending";
+    const currentStatus = order?.status?.toLowerCase() || "paid";
     const currentIndex = steps.findIndex((s) => s.key === currentStatus);
 
     return steps.map((step, index) => ({
@@ -135,11 +134,7 @@ const OrderTracker = () => {
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto space-y-6">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/account")}
-            className="mb-4"
-          >
+          <Button variant="ghost" onClick={() => navigate("/account")} className="mb-4">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Account
           </Button>
@@ -148,7 +143,8 @@ const OrderTracker = () => {
             <CardHeader>
               <CardTitle>Order #{order.order_ref}</CardTitle>
               <CardDescription>
-                Placed on {new Date(order.created_at).toLocaleDateString("en-IN", {
+                Placed on{" "}
+                {new Date(order.created_at).toLocaleDateString("en-IN", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
@@ -164,9 +160,7 @@ const OrderTracker = () => {
                     return (
                       <div key={step.key} className="flex flex-col items-center relative flex-1">
                         {/* Green tick above completed steps */}
-                        {step.completed && (
-                          <CheckCircle className="h-6 w-6 text-green-600 mb-2" fill="currentColor" />
-                        )}
+                        {step.completed && <CheckCircle className="h-6 w-6 text-green-600 mb-2" fill="currentColor" />}
                         <div
                           className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-colors ${
                             step.completed
@@ -203,19 +197,11 @@ const OrderTracker = () => {
                 <div className="space-y-4">
                   {items.map((item: any, index: number) => (
                     <div key={index} className="flex gap-4 border-b pb-4 last:border-0">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-20 h-20 object-cover rounded"
-                      />
+                      <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
                       <div className="flex-1">
                         <p className="font-medium">{item.name}</p>
-                        <p className="text-sm text-muted-foreground">
-                          Quantity: {item.quantity}
-                        </p>
-                        <p className="font-semibold mt-1">
-                          ₹{item.price.toLocaleString("en-IN")}
-                        </p>
+                        <p className="text-sm text-muted-foreground">Quantity: {item.quantity}</p>
+                        <p className="font-semibold mt-1">₹{item.price.toLocaleString("en-IN")}</p>
                       </div>
                     </div>
                   ))}
@@ -228,11 +214,11 @@ const OrderTracker = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span>₹{((order.meta?.subtotal || 0)).toLocaleString("en-IN")}</span>
+                    <span>₹{(order.meta?.subtotal || 0).toLocaleString("en-IN")}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Shipping</span>
-                    <span>₹{((order.meta?.shipping || 0)).toLocaleString("en-IN")}</span>
+                    <span>₹{(order.meta?.shipping || 0).toLocaleString("en-IN")}</span>
                   </div>
                   <div className="flex justify-between font-semibold text-lg pt-2 border-t">
                     <span>Total</span>
