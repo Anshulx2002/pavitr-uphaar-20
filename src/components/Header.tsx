@@ -268,25 +268,12 @@ const Header = () => {
               <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">
                 Home
               </Link>
-              
-              {/* Product Categories */}
-              <div className="flex flex-col space-y-2 px-2 py-2 bg-muted/30 rounded-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  <Sparkles className="h-4 w-4 text-primary" />
-                  <span className="font-semibold text-foreground text-sm">Our Sacred Collection</span>
-                </div>
-                {productCategories.map((category) => (
-                  <Link
-                    key={category.name}
-                    to={category.href}
-                    className="flex items-center gap-2 text-foreground hover:text-primary transition-colors py-1.5 px-2 rounded hover:bg-muted/50"
-                  >
-                    <Star className="h-3 w-3 text-primary opacity-70" />
-                    <span className="text-sm font-medium">{category.name}</span>
-                  </Link>
-                ))}
-              </div>
-
+              <Link
+                to="/products"
+                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
+              >
+                Products
+              </Link>
               <Link
                 to="/festival-kits"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
@@ -309,41 +296,31 @@ const Header = () => {
                 Contact
               </Link>
 
-              {/* Checkout Button */}
-              <div className="py-2 px-2">
-                <Link to="/checkout">
-                  <Button variant="festive" className="w-full text-white font-medium">
-                    Go to Checkout
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Auth Section */}
+              <Link
+                to="/checkout"
+                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
+              >
+                Checkout
+              </Link>
               {user ? (
-                <div className="flex flex-col space-y-2 pt-2 border-t border-border">
+                <>
                   <Link
                     to="/account"
-                    className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 flex items-center gap-2"
+                    className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
                   >
-                    <User className="h-4 w-4" />
                     Account
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left flex items-center gap-2"
+                    className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left"
                   >
-                    <LogOut className="h-4 w-4" />
                     Logout
                   </button>
-                </div>
+                </>
               ) : (
-                <div className="pt-2 border-t border-border px-2">
-                  <Link to="/auth">
-                    <Button variant="ghost" className="w-full justify-start">
-                      Login
-                    </Button>
-                  </Link>
-                </div>
+                <Link to="/auth" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">
+                  Login / Sign Up
+                </Link>
               )}
             </nav>
           </div>
