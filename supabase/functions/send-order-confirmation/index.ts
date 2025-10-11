@@ -24,12 +24,7 @@ interface OrderConfirmationRequest {
   discount: number;
   shipping: number;
   total: number;
-  shippingAddress: {
-    address: string;
-    city: string;
-    state: string;
-    pincode: string;
-  };
+  shippingAddress: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -70,7 +65,7 @@ const handler = async (req: Request): Promise<Response> => {
               <span style="font-weight: 600; color: #333;">₹${(item.price * item.quantity).toFixed(2)}</span>
             </td>
           </tr>
-        `
+        `,
       )
       .join("");
 
@@ -122,7 +117,7 @@ const handler = async (req: Request): Promise<Response> => {
                         <h3 style="margin: 0 0 12px 0; color: #333; font-size: 18px; font-weight: 600;">Order Details</h3>
                         <p style="margin: 0; color: #666; font-size: 14px;"><strong>Order ID:</strong> ${orderId}</p>
                         <p style="margin: 4px 0 0 0; color: #666; font-size: 14px;"><strong>Order Reference:</strong> ${orderRef}</p>
-                        <p style="margin: 4px 0 0 0; color: #666; font-size: 14px;"><strong>Order Date:</strong> ${new Date().toLocaleDateString('en-IN')}</p>
+                        <p style="margin: 4px 0 0 0; color: #666; font-size: 14px;"><strong>Order Date:</strong> ${new Date().toLocaleDateString("en-IN")}</p>
                       </div>
                       
                       <!-- Order Items -->
@@ -139,15 +134,19 @@ const handler = async (req: Request): Promise<Response> => {
                             <td style="padding: 4px 0; color: #666; font-size: 14px;">Subtotal</td>
                             <td style="padding: 4px 0; color: #333; font-size: 14px; text-align: right; font-weight: 600;">₹${subtotal.toFixed(2)}</td>
                           </tr>
-                          ${discount > 0 ? `
+                          ${
+                            discount > 0
+                              ? `
                           <tr>
                             <td style="padding: 4px 0; color: #666; font-size: 14px;">Discount</td>
                             <td style="padding: 4px 0; color: #ff6b35; font-size: 14px; text-align: right; font-weight: 600;">-₹${discount.toFixed(2)}</td>
                           </tr>
-                          ` : ''}
+                          `
+                              : ""
+                          }
                           <tr>
                             <td style="padding: 4px 0; color: #666; font-size: 14px;">Shipping</td>
-                            <td style="padding: 4px 0; color: #333; font-size: 14px; text-align: right; font-weight: 600;">${shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`}</td>
+                            <td style="padding: 4px 0; color: #333; font-size: 14px; text-align: right; font-weight: 600;">${shipping === 0 ? "FREE" : `₹${shipping.toFixed(2)}`}</td>
                           </tr>
                           <tr style="border-top: 2px solid #e0e0e0;">
                             <td style="padding: 12px 0 0 0; color: #333; font-size: 18px; font-weight: 700;">Total</td>
@@ -161,14 +160,13 @@ const handler = async (req: Request): Promise<Response> => {
                         <h3 style="margin: 0 0 12px 0; color: #333; font-size: 18px; font-weight: 600;">Shipping Address</h3>
                         <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">
                           ${customerName}<br>
-                          ${shippingAddress.address}<br>
-                          ${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.pincode}
+                          ${shippingAddress}
                         </p>
                       </div>
                       
                       <!-- Delivery Info -->
                       <div style="background-color: #fff3e0; border: 1px solid #ff6b35; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-                        <p style="margin: 0; color: #e65100; font-size: 14px; font-weight: 600;">📦 Estimated Delivery: 2-3 business days</p>
+                        <p style="margin: 0; color: #e65100; font-size: 14px; font-weight: 600;">✨ Create an account  with this mail to track your order, get exclusive Diwali offers, and faster checkout next time</p>
                       </div>
                       
                       <!-- Support -->
@@ -201,10 +199,10 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Email sent successfully:", emailResponse);
 
     return new Response(
-      JSON.stringify({ 
-        success: true, 
+      JSON.stringify({
+        success: true,
         message: "Order confirmation email sent successfully",
-        emailId: emailResponse.data?.id 
+        emailId: emailResponse.data?.id,
       }),
       {
         status: 200,
@@ -212,22 +210,22 @@ const handler = async (req: Request): Promise<Response> => {
           "Content-Type": "application/json",
           ...corsHeaders,
         },
-      }
+      },
     );
   } catch (error: any) {
     console.error("Error in send-order-confirmation function:", error);
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         success: false,
-        error: error.message 
+        error: error.message,
       }),
       {
         status: 500,
-        headers: { 
-          "Content-Type": "application/json", 
-          ...corsHeaders 
+        headers: {
+          "Content-Type": "application/json",
+          ...corsHeaders,
         },
-      }
+      },
     );
   }
 };
