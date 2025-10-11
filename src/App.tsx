@@ -22,6 +22,7 @@ import PaymentFailed from "./pages/PaymentFailed";
 import NotFound from "./pages/NotFound";
 import DiwaliKit from "./pages/DiwaliKit";
 import DussehraKit from "./pages/DussehraKit";
+import AartiSangrah from "./pages/AartiSangrah";
 import Auth from "./pages/Auth";
 import Account from "./pages/Account";
 import OrderTracker from "./pages/OrderTracker";
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/payment-failed" element={<PaymentFailed />} />
           <Route path="/diwali-kit" element={<DiwaliKit />} />
           <Route path="/dussehra-kit" element={<DussehraKit />} />
+          <Route path="/aarti-sangrah" element={<AartiSangrah />} />
           <Route path="/products/:category" element={<CategoryPage />} />
           {/* Legacy routes redirect to dynamic routes */}
           <Route path="/incense-agarbatti" element={<CategoryPage />} />
