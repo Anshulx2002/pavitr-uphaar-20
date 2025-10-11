@@ -45,18 +45,11 @@ const ThankYou = () => {
                   <span>Don't forget to check your spam folder!</span>
                 </div>
               </div>
-              {paymentId && (
-                <div className="bg-muted p-3 rounded">
-                  <p className="text-sm">
-                    <strong>Payment ID:</strong> {paymentId}
-                  </p>
-                  {orderId && (
-                    <p className="text-sm">
-                      <strong>Order ID:</strong> {orderId}
-                    </p>
-                  )}
-                </div>
-              )}
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm text-muted-foreground text-center">
+                  Create an account with the same email to track your order and enjoy faster checkout next time!
+                </p>
+              </div>
               <div className="space-y-2">
                 <Button asChild className="w-full">
                   <Link to="/products">Continue Shopping</Link>
