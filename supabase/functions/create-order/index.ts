@@ -47,10 +47,10 @@ serve(async (req) => {
       });
     }
 
-    // const razorpayKeyId = "rzp_live_R6kRjBKRDQalxT";
-    // const razorpaySecret = Deno.env.get('RAZORPAY_SECRET');
-    const razorpayKeyId = "rzp_test_N8MLCvpxuLueYZ";
-    const razorpaySecret = "DMDwMX4WAckt7BJ97XFmXAYC";
+    const razorpayKeyId = "rzp_live_R6kRjBKRDQalxT";
+    const razorpaySecret = Deno.env.get("RAZORPAY_SECRET");
+    // const razorpayKeyId = "rzp_test_N8MLCvpxuLueYZ";
+    // const razorpaySecret = "DMDwMX4WAckt7BJ97XFmXAYC";
 
     console.log("Razorpay Key ID exists:", !!razorpayKeyId);
     console.log("Razorpay Secret exists:", !!razorpaySecret);
