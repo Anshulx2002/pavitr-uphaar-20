@@ -127,7 +127,7 @@ const OrderTracker = () => {
   }
 
   const steps = getStatusSteps();
-  const items = order.meta?.items || [];
+  const items = order.meta?.cart_items || [];
 
   return (
     <div className="min-h-screen flex flex-col">
