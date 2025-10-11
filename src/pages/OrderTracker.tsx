@@ -214,7 +214,7 @@ const OrderTracker = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span>₹{(order.meta?.amount_paise / 100 || 0).toLocaleString("en-IN")}</span>
+                    <span>₹{(order.amount_paise / 100 || 0).toLocaleString("en-IN")}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Shipping</span>
