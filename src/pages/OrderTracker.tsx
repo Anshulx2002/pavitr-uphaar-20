@@ -195,7 +195,7 @@ const OrderTracker = () => {
               <div>
                 <h3 className="font-semibold mb-4">Order Items</h3>
                 <div className="space-y-4">
-                  {cart_items.map((item: any, index: number) => (
+                  {items.map((item: any, index: number) => (
                     <div key={index} className="flex gap-4 border-b pb-4 last:border-0">
                       <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
                       <div className="flex-1">
