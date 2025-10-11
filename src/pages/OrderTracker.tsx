@@ -58,21 +58,27 @@ const OrderTracker = () => {
   const fetchOrder = async () => {
     const { data: { user } } = await supabase.auth.getUser();
     
-    if (!user) {
-      navigate("/auth");
-      return;
-    }
-
-    const { data, error } = await supabase
+    // Build query to fetch order by ID and either user_id OR customer_email
+    let query = supabase
       .from("orders")
       .select("*")
-      .eq("id", orderId)
-      .eq("user_id", user.id)
-      .single();
+      .eq("id", orderId);
+
+    // If user is logged in, also match by email for guest orders
+    if (user) {
+      query = query.or(`user_id.eq.${user.id},customer_email.eq.${user.email}`);
+    }
+
+    const { data, error } = await query.maybeSingle();
 
     if (error) {
       console.error("Error fetching order:", error);
-      navigate("/account");
+      setLoading(false);
+      return;
+    }
+
+    if (!data) {
+      setLoading(false);
       return;
     }
 
