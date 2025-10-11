@@ -21,8 +21,8 @@ const AartiSangrah = () => {
   const product = {
     id: 101,
     name: "Aarti Sangrah - Complete Prayer Collection",
-    price: 299,
-    originalPrice: 499,
+    price: 1499,
+    originalPrice: 2499,
     image: aartiSangrah,
     rating: 4.9,
     description: "A comprehensive collection of traditional Hindu aartis and prayers. This beautifully crafted Aarti Sangrah contains all essential prayers for daily worship, festivals, and special occasions. Perfect for devotees seeking spiritual guidance and maintaining religious traditions.",
@@ -86,11 +86,16 @@ const AartiSangrah = () => {
             <Card className="p-4 hidden lg:block">
               <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-primary" />
-                Product Showcase
+                Watch Our Aarti Sangrah Showcase
               </h3>
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">Video coming soon</p>
-              </div>
+              <video 
+                controls 
+                className="w-full rounded-lg"
+                poster={aartiSangrah}
+              >
+                <source src="/aarti-sangrah-reel.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </Card>
           </div>
 
@@ -189,11 +194,16 @@ const AartiSangrah = () => {
             <Card className="p-4 lg:hidden">
               <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-primary" />
-                Product Showcase
+                Watch Our Aarti Sangrah Showcase
               </h3>
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">Video coming soon</p>
-              </div>
+              <video 
+                controls 
+                className="w-full rounded-lg"
+                poster={aartiSangrah}
+              >
+                <source src="/aarti-sangrah-reel.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </Card>
 
             {/* Trust Badges - Desktop only */}
