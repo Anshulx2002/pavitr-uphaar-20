@@ -29,7 +29,7 @@ const AartiSangrah = () => {
     badge: "40% OFF"
   };
 
-  const images = [aartiSangrah, aartiBook];
+  const images = [aartiSangrah];
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -63,24 +63,6 @@ const AartiSangrah = () => {
               )}
             </div>
 
-            {/* Thumbnail Images */}
-            <div className="grid grid-cols-2 gap-4">
-              {images.map((img, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedImage(img)}
-                  className={`relative overflow-hidden rounded-lg border-2 transition-all ${
-                    selectedImage === img ? 'border-primary' : 'border-border hover:border-primary/50'
-                  }`}
-                >
-                  <img 
-                    src={img} 
-                    alt={`Aarti Sangrah ${index + 1}`}
-                    className="w-full h-24 object-contain"
-                  />
-                </button>
-              ))}
-            </div>
 
             {/* Video Section - hidden on mobile, shown on desktop */}
             <Card className="p-4 hidden lg:block">
