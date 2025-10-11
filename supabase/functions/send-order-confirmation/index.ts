@@ -23,12 +23,7 @@ interface OrderConfirmationRequest {
   discount: number;
   shipping: number;
   total: number;
-  shippingAddress: {
-    address: string;
-    city: string;
-    state: string;
-    pincode: string;
-  };
+  shippingAddress: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -153,8 +148,7 @@ const handler = async (req: Request): Promise<Response> => {
                         <h3 style="margin: 0 0 12px 0; color: #333; font-size: 18px; font-weight: 600;">Shipping Address</h3>
                         <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">
                           ${customerName}<br>
-                          ${shippingAddress.address}<br>
-                          ${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.pincode}
+                          ${shippingAddress}<br>
                         </p>
                       </div>
                       
