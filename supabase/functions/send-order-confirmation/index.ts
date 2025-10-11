@@ -12,7 +12,6 @@ const corsHeaders = {
 interface OrderConfirmationRequest {
   customerName: string;
   customerEmail: string;
-  orderId: string;
   orderRef: string;
   items: Array<{
     name: string;
@@ -24,7 +23,12 @@ interface OrderConfirmationRequest {
   discount: number;
   shipping: number;
   total: number;
-  shippingAddress: string;
+  shippingAddress: {
+    address: string;
+    city: string;
+    state: string;
+    pincode: string;
+  };
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -37,18 +41,8 @@ const handler = async (req: Request): Promise<Response> => {
     const requestData: OrderConfirmationRequest = await req.json();
     console.log("Order confirmation request:", requestData);
 
-    const {
-      customerName,
-      customerEmail,
-      orderId,
-      orderRef,
-      items,
-      subtotal,
-      discount,
-      shipping,
-      total,
-      shippingAddress,
-    } = requestData;
+    const { customerName, customerEmail, orderRef, items, subtotal, discount, shipping, total, shippingAddress } =
+      requestData;
 
     // Generate order items HTML without images
     const orderItemsHtml = items
@@ -115,7 +109,6 @@ const handler = async (req: Request): Promise<Response> => {
                       <!-- Order Details -->
                       <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
                         <h3 style="margin: 0 0 12px 0; color: #333; font-size: 18px; font-weight: 600;">Order Details</h3>
-                        <p style="margin: 0; color: #666; font-size: 14px;"><strong>Order ID:</strong> ${orderId}</p>
                         <p style="margin: 4px 0 0 0; color: #666; font-size: 14px;"><strong>Order Reference:</strong> ${orderRef}</p>
                         <p style="margin: 4px 0 0 0; color: #666; font-size: 14px;"><strong>Order Date:</strong> ${new Date().toLocaleDateString("en-IN")}</p>
                       </div>
@@ -160,13 +153,14 @@ const handler = async (req: Request): Promise<Response> => {
                         <h3 style="margin: 0 0 12px 0; color: #333; font-size: 18px; font-weight: 600;">Shipping Address</h3>
                         <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">
                           ${customerName}<br>
-                          ${shippingAddress}
+                          ${shippingAddress.address}<br>
+                          ${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.pincode}
                         </p>
                       </div>
                       
                       <!-- Delivery Info -->
                       <div style="background-color: #fff3e0; border: 1px solid #ff6b35; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-                        <p style="margin: 0; color: #e65100; font-size: 14px; font-weight: 600;">✨ Create an account  with this mail to track your order, get exclusive Diwali offers, and faster checkout next time</p>
+                        <p style="margin: 0; color: #e65100; font-size: 14px; font-weight: 600;">📦 Estimated Delivery: 2-3 business days</p>
                       </div>
                       
                       <!-- Support -->
