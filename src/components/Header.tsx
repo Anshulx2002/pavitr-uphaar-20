@@ -182,6 +182,10 @@ const Header = () => {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
+                    <DropdownMenuItem onClick={() => navigate('/account')}>
+                      <User className="mr-2 h-4 w-4" />
+                      Account
+                    </DropdownMenuItem>
                     <DropdownMenuItem onClick={handleLogout}>
                       <LogOut className="mr-2 h-4 w-4" />
                       Logout
@@ -243,9 +247,12 @@ const Header = () => {
               
               <Link to="/checkout" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Checkout</Link>
               {user ? (
-                <button onClick={handleLogout} className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left">
-                  Logout
-                </button>
+                <>
+                  <Link to="/account" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Account</Link>
+                  <button onClick={handleLogout} className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left">
+                    Logout
+                  </button>
+                </>
               ) : (
                 <Link to="/auth" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Login / Sign Up</Link>
               )}

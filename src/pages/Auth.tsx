@@ -73,10 +73,19 @@ export default function Auth() {
 
       if (error) throw error;
 
-      toast({
-        title: 'Success!',
-        description: 'Account created successfully. Please check your email to verify your account.',
-      });
+      // Check if user is auto-confirmed (email confirmation disabled)
+      if (data.session) {
+        toast({
+          title: 'Success!',
+          description: 'Account created successfully!',
+        });
+        navigate('/');
+      } else {
+        toast({
+          title: 'Success!',
+          description: 'Account created successfully. Please check your email to verify your account.',
+        });
+      }
       
       // Clear form
       setSignupData({ name: '', phone: '', email: '', password: '' });
