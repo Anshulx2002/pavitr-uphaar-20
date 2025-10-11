@@ -96,7 +96,7 @@ const AdminView = () => {
       <Header />
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold mb-6">Admin - All Orders</h1>
+          <h1 className="text-3xl font-bold mb-6">All Orders</h1>
 
           <Card>
             <CardHeader>
@@ -126,7 +126,9 @@ const AdminView = () => {
                         <TableCell>{order.customer_email || "N/A"}</TableCell>
                         <TableCell>{order.customer_phone || "N/A"}</TableCell>
                         <TableCell>
-                          <div className="max-w-xs overflow-x-auto whitespace-nowrap">{order.shipping_address || "N/A"}</div>
+                          <div className="max-w-xs overflow-x-auto whitespace-nowrap">
+                            {order.shipping_address || "N/A"}
+                          </div>
                         </TableCell>
                         <TableCell>{getOrderItems(order.meta)}</TableCell>
                         <TableCell>{formatPrice(order.amount_paise, order.currency)}</TableCell>
