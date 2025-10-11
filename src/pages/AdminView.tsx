@@ -69,7 +69,7 @@ const AdminView = () => {
 
   const getOrderItems = (meta: any) => {
     try {
-      const items = meta?.items || [];
+      const items = meta?.cart_items || [];
       return items.map((item: any) => `${item.name} (x${item.quantity})`).join(", ");
     } catch {
       return "N/A";
@@ -125,7 +125,9 @@ const AdminView = () => {
                         <TableCell>{order.customer_name || "N/A"}</TableCell>
                         <TableCell>{order.customer_email || "N/A"}</TableCell>
                         <TableCell>{order.customer_phone || "N/A"}</TableCell>
-                        <TableCell>{order.shipping_address || "N/A"}</TableCell>
+                        <TableCell>
+                          <div className="max-w-xs overflow-x-auto whitespace-nowrap">{order.shipping_address || "N/A"}</div>
+                        </TableCell>
                         <TableCell>{getOrderItems(order.meta)}</TableCell>
                         <TableCell>{formatPrice(order.amount_paise, order.currency)}</TableCell>
                         <TableCell>
