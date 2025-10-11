@@ -239,30 +239,13 @@ const Header = () => {
             {/* Mobile Navigation */}
             <nav className="flex flex-col space-y-3">
               <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Home</Link>
-              
-              {/* Products Section with Categories */}
-              <div className="border-l-2 border-primary/30 pl-2">
-                <div className="flex items-center gap-2 mb-2 px-2">
-                  <Sparkles className="h-4 w-4 text-primary" />
-                  <span className="font-semibold text-foreground text-sm">Products</span>
-                </div>
-                {productCategories.map((category) => (
-                  <Link 
-                    key={category.name}
-                    to={category.href} 
-                    className="flex items-center gap-2 text-foreground hover:text-primary transition-colors py-2 px-2"
-                  >
-                    <Star className="h-3 w-3 text-primary opacity-70" />
-                    <span className="text-sm">{category.name}</span>
-                  </Link>
-                ))}
-              </div>
-              
+              <Link to="/products" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Products</Link>
               <Link to="/festival-kits" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Festival Kits</Link>
               <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">About</Link>
               <Link to="/reviews" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Reviews</Link>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Contact</Link>
               
+              <Link to="/checkout" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Checkout</Link>
               {user ? (
                 <>
                   <Link to="/account" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Account</Link>
