@@ -169,31 +169,29 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-2">
+              <Link to="/checkout">
+                <Button variant="festive" size="sm" className="text-white font-medium">
+                  Go to Checkout
+                </Button>
+              </Link>
               {user ? (
-                <>
-                  <Link to="/checkout">
-                    <Button variant="festive" size="sm" className="text-white font-medium">
-                      Go to Checkout
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                      <User className="h-5 w-5" />
                     </Button>
-                  </Link>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon">
-                        <User className="h-5 w-5" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem onClick={handleLogout}>
-                        <LogOut className="mr-2 h-4 w-4" />
-                        Logout
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem onClick={handleLogout}>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      Logout
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               ) : (
                 <Link to="/auth">
-                  <Button variant="festive" size="sm" className="text-white font-medium">
-                    Login / Sign Up
+                  <Button variant="ghost" size="sm">
+                    Login
                   </Button>
                 </Link>
               )}
@@ -243,13 +241,11 @@ const Header = () => {
               <Link to="/reviews" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Reviews</Link>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Contact</Link>
               
+              <Link to="/checkout" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Checkout</Link>
               {user ? (
-                <>
-                  <Link to="/checkout" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Checkout</Link>
-                  <button onClick={handleLogout} className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left">
-                    Logout
-                  </button>
-                </>
+                <button onClick={handleLogout} className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left">
+                  Logout
+                </button>
               ) : (
                 <Link to="/auth" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">Login / Sign Up</Link>
               )}

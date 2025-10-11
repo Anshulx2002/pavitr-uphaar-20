@@ -83,38 +83,29 @@ const Checkout = () => {
     },
   });
 
-  // Check authentication and load profile
+  // Load profile if user is logged in
   useEffect(() => {
     const loadProfile = async () => {
-      if (!user) {
-        toast({
-          title: "Login Required",
-          description: "Please login to proceed with checkout",
-          variant: "destructive",
-        });
-        navigate("/auth");
-        return;
-      }
+      if (user) {
+        try {
+          const { data: profile, error } = await supabase.from("profiles").select("*").eq("id", user.id).single();
 
-      try {
-        const { data: profile, error } = await supabase.from("profiles").select("*").eq("id", user.id).single();
+          if (error) throw error;
 
-        if (error) throw error;
-
-        if (profile) {
-          setValue("name", profile.name);
-          setValue("phone", profile.phone);
-          setValue("email", user.email || "");
+          if (profile) {
+            setValue("name", profile.name);
+            setValue("phone", profile.phone);
+            setValue("email", user.email || "");
+          }
+        } catch (error) {
+          console.error("Error loading profile:", error);
         }
-      } catch (error) {
-        console.error("Error loading profile:", error);
-      } finally {
-        setIsLoadingProfile(false);
       }
+      setIsLoadingProfile(false);
     };
 
     loadProfile();
-  }, [user, navigate, setValue]);
+  }, [user, setValue]);
 
   // Load Razorpay script
   useEffect(() => {
@@ -162,16 +153,6 @@ const Checkout = () => {
   };
 
   const startPayment = async (data: CheckoutFormData) => {
-    if (!user) {
-      toast({
-        title: "Error",
-        description: "You must be logged in to complete checkout",
-        variant: "destructive",
-      });
-      navigate("/auth");
-      return;
-    }
-
     setIsProcessingPayment(true);
 
     try {
@@ -213,7 +194,7 @@ const Checkout = () => {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
-                user_id: user.id,
+                user_id: user?.id || null,
                 razorpay_payment_id: razorpayResponse.razorpay_payment_id,
                 razorpay_order_id: order.id,
                 order_ref: receipt,
