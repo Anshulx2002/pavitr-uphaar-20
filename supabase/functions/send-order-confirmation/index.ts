@@ -152,6 +152,13 @@ const handler = async (req: Request): Promise<Response> => {
                         </p>
                       </div>
                       
+                      <!-- Account Creation Prompt -->
+                      <div style="background-color: #f0f9ff; border: 1px solid #0ea5e9; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                        <p style="margin: 0; color: #0369a1; font-size: 14px; line-height: 1.6;">
+                          💡 <strong>Create an account with this email</strong> to track your order, get exclusive Diwali offers, and enjoy faster checkout next time!
+                        </p>
+                      </div>
+                      
                       <!-- Delivery Info -->
                       <div style="background-color: #fff3e0; border: 1px solid #ff6b35; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
                         <p style="margin: 0; color: #e65100; font-size: 14px; font-weight: 600;">📦 Estimated Delivery: 2-3 business days</p>
