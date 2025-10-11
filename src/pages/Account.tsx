@@ -176,7 +176,9 @@ const Account = () => {
                     >
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="font-semibold">Order #{order.order_ref}</p>
+                          <p className="font-semibold">
+                            {order.meta?.cart_items?.map((item: any) => item.name).join(", ") || "Order items"}
+                          </p>
                           <p className="text-sm text-muted-foreground">
                             {new Date(order.created_at).toLocaleDateString("en-IN", {
                               day: "numeric",
