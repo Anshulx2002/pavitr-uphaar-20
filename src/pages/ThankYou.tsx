@@ -4,11 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Mail, AlertCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ThankYou = () => {
   const [searchParams] = useSearchParams();
   const paymentId = searchParams.get("payment_id");
   const orderId = searchParams.get("order_id");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setIsAuthenticated(!!user);
+    };
+    checkAuth();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -45,11 +56,13 @@ const ThankYou = () => {
                   <span>Don't forget to check your spam folder!</span>
                 </div>
               </div>
-              <div className="bg-muted p-4 rounded-lg">
-                <p className="text-sm text-muted-foreground text-center">
-                  Create an account with the same email to track your order and enjoy faster checkout next time!
-                </p>
-              </div>
+              {!isAuthenticated && (
+                <div className="bg-muted p-4 rounded-lg">
+                  <p className="text-sm text-muted-foreground text-center">
+                    Create an account with the same email to track your order and enjoy faster checkout next time!
+                  </p>
+                </div>
+              )}
               <div className="space-y-2">
                 <Button asChild className="w-full">
                   <Link to="/products">Continue Shopping</Link>
