@@ -63,10 +63,13 @@ const Account = () => {
   };
 
   const fetchOrders = async (userId: string) => {
+    const { data: { user } } = await supabase.auth.getUser();
+    
+    // Fetch orders that match either user_id OR customer_email
     const { data, error } = await supabase
       .from("orders")
       .select("id, order_ref, created_at, amount_paise, status, meta")
-      .eq("user_id", userId)
+      .or(`user_id.eq.${userId},customer_email.eq.${user?.email}`)
       .order("created_at", { ascending: false });
 
     if (error) {
