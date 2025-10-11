@@ -195,7 +195,7 @@ const OrderTracker = () => {
               <div>
                 <h3 className="font-semibold mb-4">Order Items</h3>
                 <div className="space-y-4">
-                  {items.map((item: any, index: number) => (
+                  {cart_items.map((item: any, index: number) => (
                     <div key={index} className="flex gap-4 border-b pb-4 last:border-0">
                       <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
                       <div className="flex-1">
@@ -214,7 +214,7 @@ const OrderTracker = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span>₹{(order.meta?.subtotal || 0).toLocaleString("en-IN")}</span>
+                    <span>₹{(order.meta?.amount_paise / 100 || 0).toLocaleString("en-IN")}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Shipping</span>
