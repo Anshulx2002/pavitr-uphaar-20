@@ -107,7 +107,7 @@ const AdminView = () => {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Order Ref</TableHead>
+                      <TableHead>S.No</TableHead>
                       <TableHead>Customer Name</TableHead>
                       <TableHead>Email</TableHead>
                       <TableHead>Phone</TableHead>
@@ -119,14 +119,14 @@ const AdminView = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {orders.map((order) => (
+                    {orders.map((order, index) => (
                       <TableRow key={order.id}>
-                        <TableCell className="font-medium">{order.order_ref}</TableCell>
+                        <TableCell className="font-medium">{index + 1}</TableCell>
                         <TableCell>{order.customer_name || "N/A"}</TableCell>
                         <TableCell>{order.customer_email || "N/A"}</TableCell>
                         <TableCell>{order.customer_phone || "N/A"}</TableCell>
-                        <TableCell className="max-w-xs truncate">{order.shipping_address || "N/A"}</TableCell>
-                        <TableCell className="max-w-xs truncate">{getOrderItems(order.meta)}</TableCell>
+                        <TableCell>{order.shipping_address || "N/A"}</TableCell>
+                        <TableCell>{getOrderItems(order.meta)}</TableCell>
                         <TableCell>{formatPrice(order.amount_paise, order.currency)}</TableCell>
                         <TableCell>
                           <Select value={order.status} onValueChange={(value) => updateOrderStatus(order.id, value)}>
