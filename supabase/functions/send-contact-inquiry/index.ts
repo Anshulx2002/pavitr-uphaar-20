@@ -29,8 +29,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to business owner
     const emailResponse = await resend.emails.send({
-      from: "Pavitra Uphaar <onboarding@resend.dev>",
-      to: ["anshulvchadha@hotmail.com"],
+      from: "Pavitra Uphaar <support@pavitrauphaar.com>",
+      to: ["monalikapatnaik114@gmail.com"],
       subject: `New Inquiry: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -42,7 +42,7 @@ const handler = async (req: Request): Promise<Response> => {
             <h3 style="color: #333; margin-bottom: 10px;">Customer Details:</h3>
             <p><strong>Name:</strong> ${firstName} ${lastName}</p>
             <p><strong>Email:</strong> ${email}</p>
-            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
           </div>
           
           <div style="margin: 20px 0;">
@@ -73,13 +73,10 @@ const handler = async (req: Request): Promise<Response> => {
     });
   } catch (error: any) {
     console.error("Error sending contact inquiry:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
   }
 };
 
