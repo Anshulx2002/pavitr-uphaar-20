@@ -51,22 +51,12 @@ const ProductDetails = () => {
   };
 
   const handleShare = async () => {
-    const shareData = {
-      title: product.name,
-      text: `Check out ${product.name} on Pavitra Uphaar`,
-      url: window.location.href
-    };
-
     try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-        toast.success("Shared successfully!");
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-        toast.success("Link copied to clipboard!");
-      }
+      await navigator.clipboard.writeText(window.location.href);
+      toast.success("Link copied to clipboard!");
     } catch (err) {
-      console.error('Error sharing:', err);
+      console.error('Error copying link:', err);
+      toast.error("Failed to copy link");
     }
   };
 
