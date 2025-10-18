@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowLeft, Package, Truck, CheckCircle, Clock } from "lucide-react";
+import { ArrowLeft, Package, Truck, CheckCircle, Clock, Download } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -102,6 +102,117 @@ const OrderTracker = () => {
     }));
   };
 
+  const downloadInvoice = () => {
+    const invoiceWindow = window.open("", "_blank");
+    if (!invoiceWindow) return;
+
+    const items = order?.meta?.cart_items || [];
+    
+    invoiceWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Invoice #${order?.order_ref}</title>
+          <style>
+            body { font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; }
+            .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
+            .company-name { font-size: 28px; font-weight: bold; color: #D97706; margin-bottom: 5px; }
+            .invoice-title { font-size: 20px; color: #666; }
+            .info-section { display: flex; justify-content: space-between; margin-bottom: 30px; }
+            .info-block { flex: 1; }
+            .info-label { font-weight: bold; margin-bottom: 5px; }
+            table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+            th { background: #f5f5f5; padding: 12px; text-align: left; border-bottom: 2px solid #333; }
+            td { padding: 12px; border-bottom: 1px solid #ddd; }
+            .text-right { text-align: right; }
+            .total-section { margin-top: 20px; text-align: right; }
+            .total-row { display: flex; justify-content: flex-end; margin: 10px 0; }
+            .total-label { min-width: 150px; text-align: right; margin-right: 20px; }
+            .total-value { min-width: 100px; text-align: right; font-weight: bold; }
+            .grand-total { font-size: 18px; border-top: 2px solid #333; padding-top: 10px; margin-top: 10px; }
+            .footer { margin-top: 40px; text-align: center; color: #666; font-size: 12px; border-top: 1px solid #ddd; padding-top: 20px; }
+            @media print {
+              body { padding: 20px; }
+              .no-print { display: none; }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <div class="company-name">Pavitra Uphaar</div>
+            <div class="invoice-title">TAX INVOICE</div>
+          </div>
+          
+          <div class="info-section">
+            <div class="info-block">
+              <div class="info-label">Invoice Number:</div>
+              <div>#${order?.order_ref}</div>
+              <div style="margin-top: 15px;">
+                <div class="info-label">Invoice Date:</div>
+                <div>${new Date(order?.created_at || "").toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</div>
+              </div>
+            </div>
+            
+            <div class="info-block" style="text-align: right;">
+              <div class="info-label">Bill To:</div>
+              <div>${order?.customer_name}</div>
+              <div>${order?.customer_email}</div>
+              <div>${order?.customer_phone}</div>
+              <div style="margin-top: 10px; max-width: 250px; margin-left: auto;">${order?.shipping_address}</div>
+            </div>
+          </div>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th class="text-right">Quantity</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${items.map((item: any) => `
+                <tr>
+                  <td>${item.name}</td>
+                  <td class="text-right">${item.quantity}</td>
+                  <td class="text-right">₹${item.price.toLocaleString("en-IN")}</td>
+                  <td class="text-right">₹${(item.price * item.quantity).toLocaleString("en-IN")}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+          
+          <div class="total-section">
+            <div class="total-row">
+              <div class="total-label">Subtotal:</div>
+              <div class="total-value">₹${((order?.amount_paise || 0) / 100).toLocaleString("en-IN")}</div>
+            </div>
+            <div class="total-row">
+              <div class="total-label">Shipping:</div>
+              <div class="total-value">₹${(order?.meta?.shipping || 0).toLocaleString("en-IN")}</div>
+            </div>
+            <div class="total-row grand-total">
+              <div class="total-label">Grand Total:</div>
+              <div class="total-value">₹${((order?.amount_paise || 0) / 100).toLocaleString("en-IN")}</div>
+            </div>
+          </div>
+          
+          <div class="footer">
+            <p>Thank you for your purchase!</p>
+            <p>For any queries, please contact us at support@pavitrauphaar.com</p>
+          </div>
+          
+          <div class="no-print" style="text-align: center; margin-top: 30px;">
+            <button onclick="window.print()" style="padding: 10px 20px; background: #D97706; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Print / Save as PDF</button>
+          </div>
+        </body>
+      </html>
+    `);
+    
+    invoiceWindow.document.close();
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col">
@@ -134,10 +245,16 @@ const OrderTracker = () => {
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto space-y-6">
-          <Button variant="ghost" onClick={() => navigate("/account")} className="mb-4">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Account
-          </Button>
+          <div className="flex justify-between items-center mb-4">
+            <Button variant="ghost" onClick={() => navigate("/account")}>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Account
+            </Button>
+            <Button onClick={downloadInvoice} variant="saffron">
+              <Download className="mr-2 h-4 w-4" />
+              Download Invoice
+            </Button>
+          </div>
 
           <Card>
             <CardHeader>
