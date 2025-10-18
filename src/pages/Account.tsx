@@ -4,15 +4,40 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { User, Package, LogOut } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { User, Package, LogOut, Edit, MapPin, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 interface Profile {
   name: string;
   phone: string;
+  addresses?: Address[];
 }
+
+interface Address {
+  street?: string;
+  city?: string;
+  state?: string;
+  pincode?: string;
+}
+
+const profileSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  phone: z.string().min(10, "Phone must be at least 10 digits"),
+});
+
+const addressSchema = z.object({
+  street: z.string().min(1, "Street address is required"),
+  city: z.string().min(1, "City is required"),
+  state: z.string().min(1, "State is required"),
+  pincode: z.string().min(6, "Pincode must be 6 digits"),
+});
 
 interface Order {
   id: string;
@@ -29,6 +54,26 @@ const Account = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [orders, setOrders] = useState<Order[]>([]);
   const [email, setEmail] = useState<string>("");
+  const [editingProfile, setEditingProfile] = useState(false);
+  const [addingAddress, setAddingAddress] = useState(false);
+
+  const profileForm = useForm<z.infer<typeof profileSchema>>({
+    resolver: zodResolver(profileSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+    },
+  });
+
+  const addressForm = useForm<z.infer<typeof addressSchema>>({
+    resolver: zodResolver(addressSchema),
+    defaultValues: {
+      street: "",
+      city: "",
+      state: "",
+      pincode: "",
+    },
+  });
 
   useEffect(() => {
     checkAuth();
@@ -50,14 +95,85 @@ const Account = () => {
   };
 
   const fetchProfile = async (userId: string) => {
-    const { data, error } = await supabase.from("profiles").select("name, phone").eq("id", userId).single();
+    const { data, error } = await supabase.from("profiles").select("name, phone, addresses").eq("id", userId).single();
 
     if (error) {
       console.error("Error fetching profile:", error);
       return;
     }
 
-    setProfile(data);
+    setProfile({
+      name: data.name,
+      phone: data.phone,
+      addresses: (data.addresses ? (data.addresses as any as Address[]) : []),
+    });
+    profileForm.reset({
+      name: data.name,
+      phone: data.phone,
+    });
+  };
+
+  const handleProfileUpdate = async (values: z.infer<typeof profileSchema>) => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) return;
+
+    const { error } = await supabase.from("profiles").update(values).eq("id", user.id);
+
+    if (error) {
+      toast.error("Failed to update profile");
+      return;
+    }
+
+    setProfile({ ...profile!, ...values });
+    setEditingProfile(false);
+    toast.success("Profile updated successfully");
+  };
+
+  const handleAddAddress = async (values: z.infer<typeof addressSchema>) => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) return;
+
+    const currentAddresses = profile?.addresses || [];
+    const updatedAddresses = [...currentAddresses, values];
+
+    const { error } = await supabase.from("profiles").update({ addresses: updatedAddresses as any }).eq("id", user.id);
+
+    if (error) {
+      toast.error("Failed to add address");
+      return;
+    }
+
+    setProfile({ ...profile!, addresses: updatedAddresses });
+    setAddingAddress(false);
+    addressForm.reset();
+    toast.success("Address added successfully");
+  };
+
+  const handleDeleteAddress = async (index: number) => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) return;
+
+    const currentAddresses = profile?.addresses || [];
+    const updatedAddresses = currentAddresses.filter((_, i) => i !== index);
+
+    const { error } = await supabase.from("profiles").update({ addresses: updatedAddresses as any }).eq("id", user.id);
+
+    if (error) {
+      toast.error("Failed to delete address");
+      return;
+    }
+
+    setProfile({ ...profile!, addresses: updatedAddresses });
+    toast.success("Address deleted successfully");
   };
 
   const fetchOrders = async (userId: string) => {
@@ -130,27 +246,152 @@ const Account = () => {
           {/* Profile Section */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <User className="h-5 w-5" />
-                Profile Details
-              </CardTitle>
-              <CardDescription>Your account information</CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="flex items-center gap-2">
+                    <User className="h-5 w-5" />
+                    Profile Details
+                  </CardTitle>
+                  <CardDescription>Your account information</CardDescription>
+                </div>
+                {!editingProfile && (
+                  <Button variant="outline" size="sm" onClick={() => setEditingProfile(true)}>
+                    <Edit className="h-4 w-4 mr-2" />
+                    Edit
+                  </Button>
+                )}
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm text-muted-foreground">Name</p>
-                  <p className="text-lg font-medium">{profile?.name || "Not set"}</p>
+              {editingProfile ? (
+                <form onSubmit={profileForm.handleSubmit(handleProfileUpdate)} className="space-y-4">
+                  <div>
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" {...profileForm.register("name")} />
+                    {profileForm.formState.errors.name && (
+                      <p className="text-sm text-destructive mt-1">{profileForm.formState.errors.name.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input id="phone" {...profileForm.register("phone")} />
+                    {profileForm.formState.errors.phone && (
+                      <p className="text-sm text-destructive mt-1">{profileForm.formState.errors.phone.message}</p>
+                    )}
+                  </div>
+                  <div className="flex gap-2">
+                    <Button type="submit">Save Changes</Button>
+                    <Button type="button" variant="outline" onClick={() => setEditingProfile(false)}>
+                      Cancel
+                    </Button>
+                  </div>
+                </form>
+              ) : (
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Name</p>
+                    <p className="text-lg font-medium">{profile?.name || "Not set"}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <p className="text-lg font-medium">{email}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <p className="text-lg font-medium">{profile?.phone || "Not set"}</p>
+                  </div>
                 </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Saved Addresses Section */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-lg font-medium">{email}</p>
+                  <CardTitle className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5" />
+                    Saved Addresses
+                  </CardTitle>
+                  <CardDescription>Manage your shipping addresses</CardDescription>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="text-lg font-medium">{profile?.phone || "Not set"}</p>
-                </div>
+                {!addingAddress && (
+                  <Button variant="outline" size="sm" onClick={() => setAddingAddress(true)}>
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add Address
+                  </Button>
+                )}
               </div>
+            </CardHeader>
+            <CardContent>
+              {addingAddress && (
+                <form onSubmit={addressForm.handleSubmit(handleAddAddress)} className="space-y-4 mb-6 p-4 border rounded-lg">
+                  <div>
+                    <Label htmlFor="street">Street Address</Label>
+                    <Input id="street" {...addressForm.register("street")} />
+                    {addressForm.formState.errors.street && (
+                      <p className="text-sm text-destructive mt-1">{addressForm.formState.errors.street.message}</p>
+                    )}
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="city">City</Label>
+                      <Input id="city" {...addressForm.register("city")} />
+                      {addressForm.formState.errors.city && (
+                        <p className="text-sm text-destructive mt-1">{addressForm.formState.errors.city.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <Label htmlFor="state">State</Label>
+                      <Input id="state" {...addressForm.register("state")} />
+                      {addressForm.formState.errors.state && (
+                        <p className="text-sm text-destructive mt-1">{addressForm.formState.errors.state.message}</p>
+                      )}
+                    </div>
+                  </div>
+                  <div>
+                    <Label htmlFor="pincode">Pincode</Label>
+                    <Input id="pincode" {...addressForm.register("pincode")} maxLength={6} />
+                    {addressForm.formState.errors.pincode && (
+                      <p className="text-sm text-destructive mt-1">{addressForm.formState.errors.pincode.message}</p>
+                    )}
+                  </div>
+                  <div className="flex gap-2">
+                    <Button type="submit">Add Address</Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => {
+                        setAddingAddress(false);
+                        addressForm.reset();
+                      }}
+                    >
+                      Cancel
+                    </Button>
+                  </div>
+                </form>
+              )}
+
+              {(!profile?.addresses || profile.addresses.length === 0) && !addingAddress ? (
+                <p className="text-muted-foreground text-center py-8">No saved addresses</p>
+              ) : (
+                <div className="space-y-4">
+                  {(profile?.addresses || []).map((address, index) => (
+                    <div key={index} className="border rounded-lg p-4 flex justify-between items-start">
+                      <div>
+                        <p className="font-medium">{address.street}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {address.city}, {address.state} - {address.pincode}
+                        </p>
+                      </div>
+                      <Button variant="ghost" size="sm" onClick={() => handleDeleteAddress(index)}>
+                        <Trash2 className="h-4 w-4 text-destructive" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </CardContent>
           </Card>
 
