@@ -28,8 +28,8 @@ import { SavedAddresses, type Address } from "@/components/SavedAddresses";
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
 const SAVE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/save-order";
-const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
-// const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
+// const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
+const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
 
 const checkoutSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -195,14 +195,16 @@ const Checkout = () => {
 
             // Save the address to user's profile if logged in
             if (user) {
-              await supabase.from("addresses").insert([{
-                user_id: user.id,
-                address_line1: data.address,
-                city: data.city,
-                state: data.state,
-                pincode: data.pincode,
-                is_default: false,
-              }]);
+              await supabase.from("addresses").insert([
+                {
+                  user_id: user.id,
+                  address_line1: data.address,
+                  city: data.city,
+                  state: data.state,
+                  pincode: data.pincode,
+                  is_default: false,
+                },
+              ]);
             }
 
             const saveResponse = await fetch(SAVE_ORDER_URL, {
@@ -390,68 +392,68 @@ const Checkout = () => {
                         Use Saved Address
                       </Button>
                     )}
-                <div>
-                  <Label htmlFor="address">Street Address</Label>
-                  <Input
-                    id="address"
-                    {...register("address")}
-                    placeholder="Enter your complete address"
-                    className={errors.address ? "border-destructive" : ""}
-                  />
-                  {errors.address && <p className="text-sm text-destructive mt-1">{errors.address.message}</p>}
-                </div>
+                    <div>
+                      <Label htmlFor="address">Street Address</Label>
+                      <Input
+                        id="address"
+                        {...register("address")}
+                        placeholder="Enter your complete address"
+                        className={errors.address ? "border-destructive" : ""}
+                      />
+                      {errors.address && <p className="text-sm text-destructive mt-1">{errors.address.message}</p>}
+                    </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="city">City</Label>
-                    <Input
-                      id="city"
-                      {...register("city")}
-                      placeholder="City"
-                      className={`transition-all duration-200 ${errors.city ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
-                    />
-                    {errors.city && (
-                      <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.city.message}</p>
-                    )}
-                  </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="city">City</Label>
+                        <Input
+                          id="city"
+                          {...register("city")}
+                          placeholder="City"
+                          className={`transition-all duration-200 ${errors.city ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
+                        />
+                        {errors.city && (
+                          <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.city.message}</p>
+                        )}
+                      </div>
 
-                  <div>
-                    <Label htmlFor="state">State</Label>
-                    <Input
-                      id="state"
-                      {...register("state")}
-                      placeholder="State"
-                      className={`transition-all duration-200 ${errors.state ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
-                    />
-                    {errors.state && (
-                      <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.state.message}</p>
-                    )}
-                  </div>
-                </div>
+                      <div>
+                        <Label htmlFor="state">State</Label>
+                        <Input
+                          id="state"
+                          {...register("state")}
+                          placeholder="State"
+                          className={`transition-all duration-200 ${errors.state ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
+                        />
+                        {errors.state && (
+                          <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.state.message}</p>
+                        )}
+                      </div>
+                    </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="pincode">Pincode</Label>
-                    <Input
-                      id="pincode"
-                      {...register("pincode")}
-                      placeholder="6-digit pincode"
-                      className={`transition-all duration-200 ${errors.pincode ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
-                      maxLength={6}
-                    />
-                    {errors.pincode && (
-                      <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
-                    )}
-                    {watch("pincode") && !errors.pincode && watch("pincode").length === 6 && (
-                      <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
-                    )}
-                  </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="pincode">Pincode</Label>
+                        <Input
+                          id="pincode"
+                          {...register("pincode")}
+                          placeholder="6-digit pincode"
+                          className={`transition-all duration-200 ${errors.pincode ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
+                          maxLength={6}
+                        />
+                        {errors.pincode && (
+                          <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
+                        )}
+                        {watch("pincode") && !errors.pincode && watch("pincode").length === 6 && (
+                          <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
+                        )}
+                      </div>
 
-                  <div>
-                    <Label htmlFor="country">Country</Label>
-                    <Input id="country" {...register("country")} value="India" disabled className="bg-muted" />
-                  </div>
-                </div>
+                      <div>
+                        <Label htmlFor="country">Country</Label>
+                        <Input id="country" {...register("country")} value="India" disabled className="bg-muted" />
+                      </div>
+                    </div>
 
                     {/* Delivery Estimate */}
                     <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
