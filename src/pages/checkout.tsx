@@ -23,6 +23,7 @@ import {
   Tag,
 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { SavedAddresses, type Address } from "@/components/SavedAddresses";
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
@@ -68,6 +69,8 @@ const Checkout = () => {
   const [discount, setDiscount] = useState(0);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [isLoadingProfile, setIsLoadingProfile] = useState(true);
+  const [useManualAddress, setUseManualAddress] = useState(false);
+  const [selectedAddress, setSelectedAddress] = useState<Address | null>(null);
 
   const {
     register,
@@ -189,6 +192,18 @@ const Checkout = () => {
           try {
             // Save order to Supabase
             const shippingAddress = `${data.address}, ${data.city}, ${data.state} - ${data.pincode}, ${data.country}`;
+
+            // Save the address to user's profile if logged in
+            if (user) {
+              await supabase.from("addresses").insert([{
+                user_id: user.id,
+                address_line1: data.address,
+                city: data.city,
+                state: data.state,
+                pincode: data.pincode,
+                is_default: false,
+              }]);
+            }
 
             const saveResponse = await fetch(SAVE_ORDER_URL, {
               method: "POST",
@@ -339,6 +354,42 @@ const Checkout = () => {
                 <p className="text-xs text-muted-foreground mt-1">🇮🇳 We currently ship within India only</p>
               </CardHeader>
               <CardContent className="space-y-4">
+                {user && !useManualAddress && (
+                  <div className="space-y-4">
+                    <SavedAddresses
+                      userId={user.id}
+                      mode="select"
+                      onSelectAddress={(address) => {
+                        setSelectedAddress(address);
+                        setValue("address", address.address_line1);
+                        setValue("city", address.city);
+                        setValue("state", address.state);
+                        setValue("pincode", address.pincode);
+                      }}
+                    />
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setUseManualAddress(true)}
+                      className="w-full"
+                    >
+                      Enter Address Manually
+                    </Button>
+                  </div>
+                )}
+
+                {(!user || useManualAddress) && (
+                  <>
+                    {user && (
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => setUseManualAddress(false)}
+                        className="w-full mb-4"
+                      >
+                        Use Saved Address
+                      </Button>
+                    )}
                 <div>
                   <Label htmlFor="address">Street Address</Label>
                   <Input
@@ -402,19 +453,21 @@ const Checkout = () => {
                   </div>
                 </div>
 
-                {/* Delivery Estimate */}
-                <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
-                  <p className="text-sm text-muted-foreground">
-                    <span className="flex items-center gap-2 font-medium mb-2">
-                      <Truck className="h-4 w-4 text-primary" />
-                      Estimated Delivery:
-                    </span>
-                    <span className="text-xs block">
-                      • Major cities (Mumbai, Delhi, Bangalore etc.): <strong>Within 7 working days</strong>
-                      <br />• Rest of India: <strong>Within 3 weeks</strong>
-                    </span>
-                  </p>
-                </div>
+                    {/* Delivery Estimate */}
+                    <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
+                      <p className="text-sm text-muted-foreground">
+                        <span className="flex items-center gap-2 font-medium mb-2">
+                          <Truck className="h-4 w-4 text-primary" />
+                          Estimated Delivery:
+                        </span>
+                        <span className="text-xs block">
+                          • Major cities (Mumbai, Delhi, Bangalore etc.): <strong>Within 7 working days</strong>
+                          <br />• Rest of India: <strong>Within 3 weeks</strong>
+                        </span>
+                      </p>
+                    </div>
+                  </>
+                )}
               </CardContent>
             </Card>
           </div>

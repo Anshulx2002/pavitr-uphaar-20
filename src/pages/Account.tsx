@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { User, Package, LogOut } from "lucide-react";
+import { User, Package, LogOut, MapPin, Edit } from "lucide-react";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { EditProfileForm } from "@/components/EditProfileForm";
+import { SavedAddresses } from "@/components/SavedAddresses";
 
 interface Profile {
   name: string;
@@ -29,6 +31,8 @@ const Account = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [orders, setOrders] = useState<Order[]>([]);
   const [email, setEmail] = useState<string>("");
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const [userId, setUserId] = useState<string>("");
 
   useEffect(() => {
     checkAuth();
@@ -44,6 +48,7 @@ const Account = () => {
       return;
     }
 
+    setUserId(user.id);
     setEmail(user.email || "");
     await Promise.all([fetchProfile(user.id), fetchOrders(user.id)]);
     setLoading(false);
@@ -130,27 +135,64 @@ const Account = () => {
           {/* Profile Section */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <User className="h-5 w-5" />
-                Profile Details
-              </CardTitle>
-              <CardDescription>Your account information</CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="flex items-center gap-2">
+                    <User className="h-5 w-5" />
+                    Profile Details
+                  </CardTitle>
+                  <CardDescription>Your account information</CardDescription>
+                </div>
+                {!isEditingProfile && (
+                  <Button variant="outline" size="sm" onClick={() => setIsEditingProfile(true)}>
+                    <Edit className="h-4 w-4 mr-2" />
+                    Edit
+                  </Button>
+                )}
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm text-muted-foreground">Name</p>
-                  <p className="text-lg font-medium">{profile?.name || "Not set"}</p>
+              {isEditingProfile ? (
+                <EditProfileForm
+                  userId={userId}
+                  initialName={profile?.name || ""}
+                  initialPhone={profile?.phone || ""}
+                  onSuccess={() => {
+                    setIsEditingProfile(false);
+                    fetchProfile(userId);
+                  }}
+                  onCancel={() => setIsEditingProfile(false)}
+                />
+              ) : (
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Name</p>
+                    <p className="text-lg font-medium">{profile?.name || "Not set"}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <p className="text-lg font-medium">{email}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <p className="text-lg font-medium">{profile?.phone || "Not set"}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-lg font-medium">{email}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="text-lg font-medium">{profile?.phone || "Not set"}</p>
-                </div>
-              </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Saved Addresses Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <MapPin className="h-5 w-5" />
+                Saved Addresses
+              </CardTitle>
+              <CardDescription>Manage your delivery addresses</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <SavedAddresses userId={userId} mode="manage" />
             </CardContent>
           </Card>
 
