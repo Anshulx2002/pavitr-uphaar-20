@@ -166,7 +166,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("RESEND_API_KEY exists:", !!Deno.env.get("RESEND_API_KEY"));
 
     const { data, error } = await resend.emails.send({
-      from: "Pavitra Uphaar <upport@pavitrauphaar.com>",
+      from: "Pavitra Uphaar <support@pavitrauphaar.com>",
       to: ["anshulvchadha@hotmail.com", "vikasrchadha@hotmail.com"],
       subject: `🛍️ New Order: ${orderRef}`,
       html: htmlContent,
