@@ -23,13 +23,12 @@ import {
   Tag,
 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
-import { SavedAddresses, type Address } from "@/components/SavedAddresses";
 
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
 const SAVE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/save-order";
-// const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
-const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
+const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
+// const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
 
 const checkoutSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -69,8 +68,6 @@ const Checkout = () => {
   const [discount, setDiscount] = useState(0);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [isLoadingProfile, setIsLoadingProfile] = useState(true);
-  const [useManualAddress, setUseManualAddress] = useState(false);
-  const [selectedAddress, setSelectedAddress] = useState<Address | null>(null);
 
   const {
     register,
@@ -192,20 +189,6 @@ const Checkout = () => {
           try {
             // Save order to Supabase
             const shippingAddress = `${data.address}, ${data.city}, ${data.state} - ${data.pincode}, ${data.country}`;
-
-            // Save the address to user's profile if it's a new manually entered address
-            if (user && useManualAddress) {
-              await supabase.from("addresses").insert([
-                {
-                  user_id: user.id,
-                  address_line1: data.address,
-                  city: data.city,
-                  state: data.state,
-                  pincode: data.pincode,
-                  is_default: false,
-                },
-              ]);
-            }
 
             const saveResponse = await fetch(SAVE_ORDER_URL, {
               method: "POST",
@@ -356,120 +339,82 @@ const Checkout = () => {
                 <p className="text-xs text-muted-foreground mt-1">🇮🇳 We currently ship within India only</p>
               </CardHeader>
               <CardContent className="space-y-4">
-                {user && !useManualAddress && (
-                  <div className="space-y-4">
-                    <SavedAddresses
-                      userId={user.id}
-                      mode="select"
-                      onSelectAddress={(address) => {
-                        setSelectedAddress(address);
-                        setValue("address", address.address_line1);
-                        setValue("city", address.city);
-                        setValue("state", address.state);
-                        setValue("pincode", address.pincode);
-                      }}
+                <div>
+                  <Label htmlFor="address">Street Address</Label>
+                  <Input
+                    id="address"
+                    {...register("address")}
+                    placeholder="Enter your complete address"
+                    className={errors.address ? "border-destructive" : ""}
+                  />
+                  {errors.address && <p className="text-sm text-destructive mt-1">{errors.address.message}</p>}
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="city">City</Label>
+                    <Input
+                      id="city"
+                      {...register("city")}
+                      placeholder="City"
+                      className={`transition-all duration-200 ${errors.city ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
                     />
-                    <Button
-                      type="button"
-                      variant="outline"
-                      onClick={() => setUseManualAddress(true)}
-                      className="w-full"
-                    >
-                      Enter Address Manually
-                    </Button>
-                  </div>
-                )}
-
-                {(!user || useManualAddress) && (
-                  <>
-                    {user && (
-                      <Button
-                        type="button"
-                        variant="outline"
-                        onClick={() => setUseManualAddress(false)}
-                        className="w-full mb-4"
-                      >
-                        Use Saved Address
-                      </Button>
+                    {errors.city && (
+                      <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.city.message}</p>
                     )}
-                    <div>
-                      <Label htmlFor="address">Street Address</Label>
-                      <Input
-                        id="address"
-                        {...register("address")}
-                        placeholder="Enter your complete address"
-                        className={errors.address ? "border-destructive" : ""}
-                      />
-                      {errors.address && <p className="text-sm text-destructive mt-1">{errors.address.message}</p>}
-                    </div>
+                  </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="city">City</Label>
-                        <Input
-                          id="city"
-                          {...register("city")}
-                          placeholder="City"
-                          className={`transition-all duration-200 ${errors.city ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
-                        />
-                        {errors.city && (
-                          <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.city.message}</p>
-                        )}
-                      </div>
+                  <div>
+                    <Label htmlFor="state">State</Label>
+                    <Input
+                      id="state"
+                      {...register("state")}
+                      placeholder="State"
+                      className={`transition-all duration-200 ${errors.state ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
+                    />
+                    {errors.state && (
+                      <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.state.message}</p>
+                    )}
+                  </div>
+                </div>
 
-                      <div>
-                        <Label htmlFor="state">State</Label>
-                        <Input
-                          id="state"
-                          {...register("state")}
-                          placeholder="State"
-                          className={`transition-all duration-200 ${errors.state ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
-                        />
-                        {errors.state && (
-                          <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.state.message}</p>
-                        )}
-                      </div>
-                    </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="pincode">Pincode</Label>
+                    <Input
+                      id="pincode"
+                      {...register("pincode")}
+                      placeholder="6-digit pincode"
+                      className={`transition-all duration-200 ${errors.pincode ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
+                      maxLength={6}
+                    />
+                    {errors.pincode && (
+                      <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
+                    )}
+                    {watch("pincode") && !errors.pincode && watch("pincode").length === 6 && (
+                      <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
+                    )}
+                  </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="pincode">Pincode</Label>
-                        <Input
-                          id="pincode"
-                          {...register("pincode")}
-                          placeholder="6-digit pincode"
-                          className={`transition-all duration-200 ${errors.pincode ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
-                          maxLength={6}
-                        />
-                        {errors.pincode && (
-                          <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
-                        )}
-                        {watch("pincode") && !errors.pincode && watch("pincode").length === 6 && (
-                          <p className="text-sm text-primary mt-1 animate-fade-in">✓ Valid pincode</p>
-                        )}
-                      </div>
+                  <div>
+                    <Label htmlFor="country">Country</Label>
+                    <Input id="country" {...register("country")} value="India" disabled className="bg-muted" />
+                  </div>
+                </div>
 
-                      <div>
-                        <Label htmlFor="country">Country</Label>
-                        <Input id="country" {...register("country")} value="India" disabled className="bg-muted" />
-                      </div>
-                    </div>
-
-                    {/* Delivery Estimate */}
-                    <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
-                      <p className="text-sm text-muted-foreground">
-                        <span className="flex items-center gap-2 font-medium mb-2">
-                          <Truck className="h-4 w-4 text-primary" />
-                          Estimated Delivery:
-                        </span>
-                        <span className="text-xs block">
-                          • Major cities (Mumbai, Delhi, Bangalore etc.): <strong>Within 7 working days</strong>
-                          <br />• Rest of India: <strong>Within 3 weeks</strong>
-                        </span>
-                      </p>
-                    </div>
-                  </>
-                )}
+                {/* Delivery Estimate */}
+                <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/50">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="flex items-center gap-2 font-medium mb-2">
+                      <Truck className="h-4 w-4 text-primary" />
+                      Estimated Delivery:
+                    </span>
+                    <span className="text-xs block">
+                      • Major cities (Mumbai, Delhi, Bangalore etc.): <strong>Within 7 working days</strong>
+                      <br />• Rest of India: <strong>Within 3 weeks</strong>
+                    </span>
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>

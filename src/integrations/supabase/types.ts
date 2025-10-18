@@ -14,53 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      addresses: {
-        Row: {
-          address_line1: string
-          address_line2: string | null
-          city: string
-          created_at: string | null
-          id: string
-          is_default: boolean | null
-          pincode: string
-          state: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          address_line1: string
-          address_line2?: string | null
-          city: string
-          created_at?: string | null
-          id?: string
-          is_default?: boolean | null
-          pincode: string
-          state: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          address_line1?: string
-          address_line2?: string | null
-          city?: string
-          created_at?: string | null
-          id?: string
-          is_default?: boolean | null
-          pincode?: string
-          state?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "addresses_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       cart_items: {
         Row: {
           created_at: string
