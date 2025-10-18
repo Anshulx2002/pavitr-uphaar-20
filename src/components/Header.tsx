@@ -103,7 +103,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo - Mobile Optimized with redirect */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white rounded-full p-2 shadow-sm">
               <img
                 src="/lovable-uploads/9a70ebdf-b809-4775-b7cb-d4a5f83de787.png"
