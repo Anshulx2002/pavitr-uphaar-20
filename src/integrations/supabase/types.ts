@@ -118,6 +118,7 @@ export type Database = {
       }
       profiles: {
         Row: {
+          addresses: Json | null
           created_at: string
           id: string
           name: string
@@ -125,6 +126,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          addresses?: Json | null
           created_at?: string
           id: string
           name: string
@@ -132,6 +134,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          addresses?: Json | null
           created_at?: string
           id?: string
           name?: string

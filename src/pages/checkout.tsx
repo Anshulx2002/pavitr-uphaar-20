@@ -68,6 +68,9 @@ const Checkout = () => {
   const [discount, setDiscount] = useState(0);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [isLoadingProfile, setIsLoadingProfile] = useState(true);
+  const [savedAddresses, setSavedAddresses] = useState<any[]>([]);
+  const [selectedAddressIndex, setSelectedAddressIndex] = useState<number | null>(null);
+  const [useNewAddress, setUseNewAddress] = useState(false);
 
   const {
     register,
@@ -96,10 +99,31 @@ const Checkout = () => {
             setValue("name", profile.name);
             setValue("phone", profile.phone);
             setValue("email", user.email || "");
+            
+            // Load saved addresses
+            if (profile.addresses && Array.isArray(profile.addresses)) {
+              setSavedAddresses(profile.addresses);
+              
+              // If user has saved addresses, pre-select the first one
+              if (profile.addresses.length > 0) {
+                setSelectedAddressIndex(0);
+                const firstAddress = profile.addresses[0] as any;
+                setValue("address", firstAddress.address);
+                setValue("city", firstAddress.city);
+                setValue("state", firstAddress.state);
+                setValue("pincode", firstAddress.pincode);
+              } else {
+                setUseNewAddress(true);
+              }
+            } else {
+              setUseNewAddress(true);
+            }
           }
         } catch (error) {
           console.error("Error loading profile:", error);
         }
+      } else {
+        setUseNewAddress(true);
       }
       setIsLoadingProfile(false);
     };
@@ -209,6 +233,29 @@ const Checkout = () => {
 
             if (!saveResponse.ok) {
               throw new Error("Failed to save order");
+            }
+
+            // Save new address to profile if user is logged in and using a new address
+            if (user && useNewAddress) {
+              try {
+                const newAddress = {
+                  address: data.address,
+                  city: data.city,
+                  state: data.state,
+                  pincode: data.pincode,
+                  country: data.country,
+                };
+                
+                const updatedAddresses = [...savedAddresses, newAddress];
+                
+                await supabase
+                  .from("profiles")
+                  .update({ addresses: updatedAddresses })
+                  .eq("id", user.id);
+              } catch (error) {
+                console.error("Error saving address:", error);
+                // Don't fail checkout if address save fails
+              }
             }
 
             // Clear cart for guest users (authenticated users' carts are cleared in the backend)
@@ -339,6 +386,55 @@ const Checkout = () => {
                 <p className="text-xs text-muted-foreground mt-1">🇮🇳 We currently ship within India only</p>
               </CardHeader>
               <CardContent className="space-y-4">
+                {/* Saved Addresses Selection - Only show if user is logged in */}
+                {user && savedAddresses.length > 0 && (
+                  <div className="space-y-3">
+                    <Label className="text-sm font-medium">Select Address</Label>
+                    <div className="space-y-2">
+                      {savedAddresses.map((addr: any, index) => (
+                        <div
+                          key={index}
+                          onClick={() => {
+                            setSelectedAddressIndex(index);
+                            setUseNewAddress(false);
+                            setValue("address", addr.address);
+                            setValue("city", addr.city);
+                            setValue("state", addr.state);
+                            setValue("pincode", addr.pincode);
+                          }}
+                          className={`p-3 border rounded-lg cursor-pointer transition-all ${
+                            selectedAddressIndex === index && !useNewAddress
+                              ? "border-primary bg-primary/5"
+                              : "border-border hover:border-primary/50"
+                          }`}
+                        >
+                          <p className="text-sm font-medium">{addr.address}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {addr.city}, {addr.state} - {addr.pincode}
+                          </p>
+                        </div>
+                      ))}
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => {
+                          setUseNewAddress(true);
+                          setSelectedAddressIndex(null);
+                          setValue("address", "");
+                          setValue("city", "");
+                          setValue("state", "");
+                          setValue("pincode", "");
+                        }}
+                        className={`w-full ${useNewAddress ? "border-primary bg-primary/5" : ""}`}
+                      >
+                        + Use New Address
+                      </Button>
+                    </div>
+                    <Separator className="my-4" />
+                  </div>
+                )}
+
+                {/* Address Form - Always visible but disabled when saved address is selected */}
                 <div>
                   <Label htmlFor="address">Street Address</Label>
                   <Input
@@ -346,6 +442,7 @@ const Checkout = () => {
                     {...register("address")}
                     placeholder="Enter your complete address"
                     className={errors.address ? "border-destructive" : ""}
+                    disabled={!useNewAddress && selectedAddressIndex !== null}
                   />
                   {errors.address && <p className="text-sm text-destructive mt-1">{errors.address.message}</p>}
                 </div>
@@ -358,6 +455,7 @@ const Checkout = () => {
                       {...register("city")}
                       placeholder="City"
                       className={`transition-all duration-200 ${errors.city ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
+                      disabled={!useNewAddress && selectedAddressIndex !== null}
                     />
                     {errors.city && (
                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.city.message}</p>
@@ -371,6 +469,7 @@ const Checkout = () => {
                       {...register("state")}
                       placeholder="State"
                       className={`transition-all duration-200 ${errors.state ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
+                      disabled={!useNewAddress && selectedAddressIndex !== null}
                     />
                     {errors.state && (
                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.state.message}</p>
@@ -387,6 +486,7 @@ const Checkout = () => {
                       placeholder="6-digit pincode"
                       className={`transition-all duration-200 ${errors.pincode ? "border-destructive focus:border-destructive" : "focus:border-primary focus:ring-2 focus:ring-primary/20"}`}
                       maxLength={6}
+                      disabled={!useNewAddress && selectedAddressIndex !== null}
                     />
                     {errors.pincode && (
                       <p className="text-sm text-destructive mt-1 animate-fade-in">{errors.pincode.message}</p>
