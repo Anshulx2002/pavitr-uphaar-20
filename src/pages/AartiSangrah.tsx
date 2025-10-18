@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingCart, Star, Package, Clock, Shield, Sparkles, Truck } from "lucide-react";
+import { ShoppingCart, Star, Package, Clock, Shield, Sparkles, Truck, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -39,6 +39,16 @@ const AartiSangrah = () => {
   const handleBuyNow = () => {
     addToCart(product);
     navigate("/checkout");
+  };
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      toast.success("Link copied to clipboard!");
+    } catch (err) {
+      console.error("Error copying link:", err);
+      toast.error("Failed to copy link");
+    }
   };
 
   return (
@@ -158,14 +168,23 @@ const AartiSangrah = () => {
               >
                 Buy Now
               </Button>
-              <Button 
-                onClick={handleAddToCart}
-                variant="outline"
-                className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg py-6"
-              >
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Add to Cart
-              </Button>
+              <div className="flex gap-3">
+                <Button 
+                  onClick={handleAddToCart}
+                  variant="outline"
+                  className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg py-6"
+                >
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  Add to Cart
+                </Button>
+                <Button 
+                  onClick={handleShare}
+                  variant="outline"
+                  className="px-6 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg py-6"
+                >
+                  <Share2 className="w-5 h-5" />
+                </Button>
+              </div>
               <p className="text-center text-sm text-muted-foreground flex items-center justify-center gap-2">
                 <Truck className="w-4 h-4" />
                 Major cities: 7 days | Rest of India: 3 weeks
@@ -269,14 +288,23 @@ const AartiSangrah = () => {
               >
                 Buy Now
               </Button>
-              <Button 
-                onClick={handleAddToCart}
-                variant="outline"
-                className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg py-6"
-              >
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Add to Cart
-              </Button>
+              <div className="flex gap-3">
+                <Button 
+                  onClick={handleAddToCart}
+                  variant="outline"
+                  className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg py-6"
+                >
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  Add to Cart
+                </Button>
+                <Button 
+                  onClick={handleShare}
+                  variant="outline"
+                  className="px-6 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg py-6"
+                >
+                  <Share2 className="w-5 h-5" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
