@@ -21,7 +21,7 @@ interface Profile {
 }
 
 interface Address {
-  street?: string;
+  address?: string;
   city?: string;
   state?: string;
   pincode?: string;
@@ -33,7 +33,7 @@ const profileSchema = z.object({
 });
 
 const addressSchema = z.object({
-  street: z.string().min(1, "Street address is required"),
+  address: z.string().min(1, "Street address is required"),
   city: z.string().min(1, "City is required"),
   state: z.string().min(1, "State is required"),
   pincode: z.string().min(6, "Pincode must be 6 digits"),
@@ -68,7 +68,7 @@ const Account = () => {
   const addressForm = useForm<z.infer<typeof addressSchema>>({
     resolver: zodResolver(addressSchema),
     defaultValues: {
-      street: "",
+      address: "",
       city: "",
       state: "",
       pincode: "",
@@ -105,7 +105,7 @@ const Account = () => {
     setProfile({
       name: data.name,
       phone: data.phone,
-      addresses: (data.addresses ? (data.addresses as any as Address[]) : []),
+      addresses: data.addresses ? (data.addresses as any as Address[]) : [],
     });
     profileForm.reset({
       name: data.name,
@@ -142,7 +142,10 @@ const Account = () => {
     const currentAddresses = profile?.addresses || [];
     const updatedAddresses = [...currentAddresses, values];
 
-    const { error } = await supabase.from("profiles").update({ addresses: updatedAddresses as any }).eq("id", user.id);
+    const { error } = await supabase
+      .from("profiles")
+      .update({ addresses: updatedAddresses as any })
+      .eq("id", user.id);
 
     if (error) {
       toast.error("Failed to add address");
@@ -165,7 +168,10 @@ const Account = () => {
     const currentAddresses = profile?.addresses || [];
     const updatedAddresses = currentAddresses.filter((_, i) => i !== index);
 
-    const { error } = await supabase.from("profiles").update({ addresses: updatedAddresses as any }).eq("id", user.id);
+    const { error } = await supabase
+      .from("profiles")
+      .update({ addresses: updatedAddresses as any })
+      .eq("id", user.id);
 
     if (error) {
       toast.error("Failed to delete address");
@@ -326,7 +332,10 @@ const Account = () => {
             </CardHeader>
             <CardContent>
               {addingAddress && (
-                <form onSubmit={addressForm.handleSubmit(handleAddAddress)} className="space-y-4 mb-6 p-4 border rounded-lg">
+                <form
+                  onSubmit={addressForm.handleSubmit(handleAddAddress)}
+                  className="space-y-4 mb-6 p-4 border rounded-lg"
+                >
                   <div>
                     <Label htmlFor="street">Street Address</Label>
                     <Input id="street" {...addressForm.register("street")} />
@@ -380,7 +389,7 @@ const Account = () => {
                   {(profile?.addresses || []).map((address, index) => (
                     <div key={index} className="border rounded-lg p-4 flex justify-between items-start">
                       <div>
-                        <p className="font-medium">{address.street}</p>
+                        <p className="font-medium">{address.address}</p>
                         <p className="text-sm text-muted-foreground">
                           {address.city}, {address.state} - {address.pincode}
                         </p>
