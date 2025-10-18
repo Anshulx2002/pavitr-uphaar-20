@@ -1,4 +1,5 @@
-import { Star, ShoppingCart, Heart, Eye } from "lucide-react";
+import { Star, ShoppingCart, Share2, Eye } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { useCart } from "@/contexts/CartContext";
@@ -40,6 +41,18 @@ const ProductCard = ({
       description,
       badge
     });
+  };
+
+  const handleShare = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      const productUrl = `${window.location.origin}/product/${id}`;
+      await navigator.clipboard.writeText(productUrl);
+      toast.success("Link copied to clipboard!");
+    } catch (err) {
+      console.error('Error copying link:', err);
+      toast.error("Failed to copy link");
+    }
   };
 
   const handleCardClick = () => {
@@ -93,11 +106,8 @@ const ProductCard = ({
                 </div>
               </div>
               <div className="flex gap-2">
-                <Button variant="outline" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Heart className="w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Eye className="w-4 h-4" />
+                <Button variant="outline" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity" onClick={handleShare}>
+                  <Share2 className="w-4 h-4" />
                 </Button>
               </div>
             </div>
@@ -195,8 +205,8 @@ const ProductCard = ({
             <ShoppingCart className="w-4 h-4 mr-2" />
             Add to Cart
           </Button>
-          <Button variant="outline" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity">
-            <Heart className="w-4 h-4" />
+          <Button variant="outline" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity" onClick={handleShare}>
+            <Share2 className="w-4 h-4" />
           </Button>
         </div>
       </CardFooter>

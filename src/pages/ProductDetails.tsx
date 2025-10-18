@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Star, ShoppingCart, Heart, Share2, CheckCircle, Truck, Shield, RotateCcw } from "lucide-react";
+import { Star, ShoppingCart, Share2, CheckCircle, Truck, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import { allProducts } from "@/data/products";
@@ -168,7 +168,7 @@ const ProductDetails = () => {
             </div>
 
             {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
               <div className="flex flex-col items-center text-center gap-2">
                 <CheckCircle className="w-8 h-8 text-primary" />
                 <span className="text-xs text-muted-foreground">Quality Assured</span>
@@ -180,10 +180,6 @@ const ProductDetails = () => {
               <div className="flex flex-col items-center text-center gap-2">
                 <Shield className="w-8 h-8 text-primary" />
                 <span className="text-xs text-muted-foreground">Secure Payment</span>
-              </div>
-              <div className="flex flex-col items-center text-center gap-2">
-                <RotateCcw className="w-8 h-8 text-primary" />
-                <span className="text-xs text-muted-foreground">Easy Returns</span>
               </div>
             </div>
 
