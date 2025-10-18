@@ -50,13 +50,16 @@ const ProductCard = ({
       navigate('/dussehra-kit');
     } else if (id === 39) {
       navigate('/aarti-sangrah');
+    } else {
+      // For all other products, navigate to generic product details page
+      navigate(`/product/${id}`);
     }
   };
 
   if (viewMode === "list") {
     return (
-      <Card className="group hover-lift border-border/50 hover:border-primary/30 bg-card overflow-hidden scroll-animate">
-        <div className="flex flex-col md:flex-row" onClick={handleCardClick} role={id === 19 || id === 46 || id === 39 ? "button" : undefined} style={id === 19 || id === 46 || id === 39 ? { cursor: 'pointer' } : undefined}>
+    <Card className="group hover-lift border-border/50 hover:border-primary/30 bg-card overflow-hidden scroll-animate">
+        <div className="flex flex-col md:flex-row" onClick={handleCardClick} role="button" style={{ cursor: 'pointer' }}>
           <div className="relative overflow-hidden w-full md:w-80 h-64 md:h-auto">
             {badge && (
               <div className="absolute top-3 left-3 z-10 bg-gradient-saffron text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
@@ -130,7 +133,7 @@ const ProductCard = ({
     );
   }
   return (
-    <Card className="group hover-lift border-border/50 hover:border-primary/30 bg-card overflow-hidden scroll-animate" onClick={handleCardClick} role={id === 19 || id === 46 || id === 39 ? "button" : undefined} style={id === 19 || id === 46 || id === 39 ? { cursor: 'pointer' } : undefined}>
+    <Card className="group hover-lift border-border/50 hover:border-primary/30 bg-card overflow-hidden scroll-animate" onClick={handleCardClick} role="button" style={{ cursor: 'pointer' }}>
       <div className="relative overflow-hidden">
         {badge && (
           <div className="absolute top-3 left-3 z-10 bg-gradient-saffron text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">

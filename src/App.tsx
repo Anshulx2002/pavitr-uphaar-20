@@ -27,6 +27,7 @@ import Auth from "./pages/Auth";
 import Account from "./pages/Account";
 import OrderTracker from "./pages/OrderTracker";
 import AdminView from "./pages/AdminView";
+import ProductDetails from "./pages/ProductDetails";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => (
           <Route path="/diwali-kit" element={<DiwaliKit />} />
           <Route path="/dussehra-kit" element={<DussehraKit />} />
           <Route path="/aarti-sangrah" element={<AartiSangrah />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/products/:category" element={<CategoryPage />} />
           {/* Legacy routes redirect to dynamic routes */}
           <Route path="/incense-agarbatti" element={<CategoryPage />} />
