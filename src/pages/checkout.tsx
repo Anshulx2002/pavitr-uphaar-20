@@ -193,8 +193,8 @@ const Checkout = () => {
             // Save order to Supabase
             const shippingAddress = `${data.address}, ${data.city}, ${data.state} - ${data.pincode}, ${data.country}`;
 
-            // Save the address to user's profile if logged in
-            if (user) {
+            // Save the address to user's profile if it's a new manually entered address
+            if (user && useManualAddress) {
               await supabase.from("addresses").insert([
                 {
                   user_id: user.id,
