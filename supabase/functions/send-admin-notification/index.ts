@@ -167,7 +167,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     const { data, error } = await resend.emails.send({
       from: "Pavitra Uphaar <upport@pavitrauphaar.com>",
-      to: ["anshulvchadha@hotmail.com", "vikasrchadha@hotmail.com"],
+      // to: ["anshulvchadha@hotmail.com", "vikasrchadha@hotmail.com"],
+      to: ["monalikapatnaik114@gmail.com"],
       subject: `🛍️ New Order: ${orderRef}`,
       html: htmlContent,
     });
