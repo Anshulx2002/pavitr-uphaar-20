@@ -337,10 +337,10 @@ const Account = () => {
                   className="space-y-4 mb-6 p-4 border rounded-lg"
                 >
                   <div>
-                    <Label htmlFor="street">Street Address</Label>
-                    <Input id="street" {...addressForm.register("street")} />
-                    {addressForm.formState.errors.street && (
-                      <p className="text-sm text-destructive mt-1">{addressForm.formState.errors.street.message}</p>
+                    <Label htmlFor="address">Street Address</Label>
+                    <Input id="address" {...addressForm.register("address")} />
+                    {addressForm.formState.errors.address && (
+                      <p className="text-sm text-destructive mt-1">{addressForm.formState.errors.address.message}</p>
                     )}
                   </div>
                   <div className="grid grid-cols-2 gap-4">
