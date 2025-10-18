@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -23,12 +24,38 @@ interface Order {
 }
 
 const AdminView = () => {
+  const navigate = useNavigate();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
+  const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
-    fetchOrders();
+    checkAuthorization();
   }, []);
+
+  const checkAuthorization = async () => {
+    try {
+      const { data: { user }, error } = await supabase.auth.getUser();
+      
+      if (error || !user) {
+        toast.error("Please login to access this page");
+        navigate("/auth");
+        return;
+      }
+
+      if (user.email !== "anshulvchadha@hotmail.com") {
+        toast.error("Unauthorized access");
+        navigate("/");
+        return;
+      }
+
+      setAuthorized(true);
+      fetchOrders();
+    } catch (error) {
+      console.error("Authorization error:", error);
+      navigate("/");
+    }
+  };
 
   const fetchOrders = async () => {
     try {
@@ -76,7 +103,7 @@ const AdminView = () => {
     }
   };
 
-  if (loading) {
+  if (loading || !authorized) {
     return (
       <>
         <Header />
