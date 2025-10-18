@@ -27,8 +27,8 @@ import { toast } from "@/components/ui/use-toast";
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
 const SAVE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/save-order";
-const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
-// const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
+// const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
+const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
 
 const checkoutSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -99,11 +99,11 @@ const Checkout = () => {
             setValue("name", profile.name);
             setValue("phone", profile.phone);
             setValue("email", user.email || "");
-            
+
             // Load saved addresses
             if (profile.addresses && Array.isArray(profile.addresses)) {
               setSavedAddresses(profile.addresses);
-              
+
               // If user has saved addresses, pre-select the first one
               if (profile.addresses.length > 0) {
                 setSelectedAddressIndex(0);
@@ -245,13 +245,10 @@ const Checkout = () => {
                   pincode: data.pincode,
                   country: data.country,
                 };
-                
+
                 const updatedAddresses = [...savedAddresses, newAddress];
-                
-                await supabase
-                  .from("profiles")
-                  .update({ addresses: updatedAddresses })
-                  .eq("id", user.id);
+
+                await supabase.from("profiles").update({ addresses: updatedAddresses }).eq("id", user.id);
               } catch (error) {
                 console.error("Error saving address:", error);
                 // Don't fail checkout if address save fails
