@@ -3,9 +3,11 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { getProductsByCategory } from "@/data/products";
 import { Flame } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Candles = () => {
   const candles = getProductsByCategory("candles");
+  useScrollAnimation();
 
   return (
     <div className="min-h-screen bg-background">
@@ -40,17 +42,21 @@ const Candles = () => {
             {candles.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {candles.map((product) => (
-                  <ProductCard
+                  <div
                     key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    price={product.price}
-                    originalPrice={product.originalPrice}
-                    image={product.image}
-                    rating={product.rating}
-                    description={product.description}
-                    badge={product.badge}
-                  />
+                    className="scroll-animate"
+                  >
+                    <ProductCard
+                      id={product.id}
+                      name={product.name}
+                      price={product.price}
+                      originalPrice={product.originalPrice}
+                      image={product.image}
+                      rating={product.rating}
+                      description={product.description}
+                      badge={product.badge}
+                    />
+                  </div>
                 ))}
               </div>
             ) : (

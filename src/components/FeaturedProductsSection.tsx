@@ -20,6 +20,8 @@ import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
+import glitterElectricCandlesImage from "@/assets/glitter-electric-candles.jpg";
+import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.jpg";
 
 // Featured products - carefully selected new premium products
 const featuredProducts = [
@@ -161,6 +163,26 @@ const featuredProducts = [
     image: lotusLedDiyaImage,
     rating: 4.8,
     description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
+    badge: "Festival Special"
+  },
+  {
+    id: 49,
+    name: "Dazzling Electric Candles with Glitter",
+    price: 1800,
+    originalPrice: 2500,
+    image: glitterElectricCandlesImage,
+    rating: 4.9,
+    description: "Stunning electric LED candles with luxurious glitter finish. Box of 12 flameless candles with realistic flickering effect.",
+    badge: "Festival Special"
+  },
+  {
+    id: 50,
+    name: "Multicoloured Electric Candles",
+    price: 2400,
+    originalPrice: 2999,
+    image: multicolourElectricCandlesImage,
+    rating: 4.9,
+    description: "Vibrant multicoloured electric LED candles set. Box of 12 flameless candles in assorted bright colors with warm LED flames.",
     badge: "Festival Special"
   }
 ];
