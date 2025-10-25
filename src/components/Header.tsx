@@ -145,19 +145,21 @@ const Header = () => {
                     <span className="font-semibold text-foreground text-sm">Our Sacred Collection</span>
                   </div>
                   {productCategories.map((category) => (
-                    <DropdownMenuItem key={category.name} asChild>
-                      <Link
-                        to={category.href}
-                        className="flex items-start px-2 py-2 rounded hover:bg-muted/50 transition-all duration-200 cursor-pointer group"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                      >
-                        <div className="flex items-center gap-2">
-                          <Star className="h-3 w-3 text-primary opacity-70 group-hover:opacity-100 transition-opacity" />
-                          <span className="font-medium text-foreground group-hover:text-primary transition-colors text-sm">
-                            {category.name}
-                          </span>
-                        </div>
-                      </Link>
+                    <DropdownMenuItem
+                      key={category.name}
+                      onSelect={(e) => {
+                        e.preventDefault();
+                        navigate(category.href);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="flex items-start px-2 py-2 rounded hover:bg-muted/50 transition-all duration-200 cursor-pointer group"
+                    >
+                      <div className="flex items-center gap-2">
+                        <Star className="h-3 w-3 text-primary opacity-70 group-hover:opacity-100 transition-opacity" />
+                        <span className="font-medium text-foreground group-hover:text-primary transition-colors text-sm">
+                          {category.name}
+                        </span>
+                      </div>
                     </DropdownMenuItem>
                   ))}
                 </div>
