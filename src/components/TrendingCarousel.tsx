@@ -21,12 +21,12 @@ import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 const trendingProducts = [
   {
     id: 19,
-    name: "Diwali Gift Box",
+    name: "Signature Pooja Gift Box",
     price: 1999,
     originalPrice: 3000,
     image: diwaliKitImage,
     rating: 4.8,
-    description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy.",
+    description: "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
     badge: "34% OFF"
   },
   {

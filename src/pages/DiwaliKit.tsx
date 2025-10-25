@@ -20,12 +20,12 @@ const DiwaliKit = () => {
 
   const product = {
     id: 19,
-    name: "Diwali Gift Box",
+    name: "Signature Pooja Gift Box",
     price: 1999,
     originalPrice: 3000,
     image: diwaliKitPremium,
     rating: 4.8,
-    description: "A beautiful Diwali hamper containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins to spread festive joy. BONUS: Get an additional diya absolutely FREE!",
+    description: "An exquisite pooja hamper containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations. BONUS: Get an additional diya absolutely FREE!",
     badge: "34% OFF"
   };
 
@@ -127,7 +127,7 @@ const DiwaliKit = () => {
             <div className="relative overflow-hidden rounded-lg border border-border bg-card">
               <img 
                 src={selectedImage} 
-                alt="Diwali Gift Box"
+                alt="Signature Pooja Gift Box"
                 className="w-full h-[500px] object-contain"
               />
               {product.badge && (
@@ -331,7 +331,7 @@ const DiwaliKit = () => {
                     <span className="text-muted-foreground text-sm">• Mumbai</span>
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    "Absolutely beautiful Diwali kit! The quality of the diyas and the toran is exceptional. The cashew and raisin potlis were a delightful addition. Everything arrived well-packaged and on time. Highly recommend for gifting!"
+                    "Absolutely beautiful pooja gift box! The quality of the diyas and the toran is exceptional. The cashew and raisin potlis were a delightful addition. Everything arrived well-packaged and on time. Perfect for gifting on any auspicious occasion!"
                   </p>
                   <span className="text-xs text-muted-foreground mt-2 block">Verified Purchase • 2 days ago</span>
                 </div>
@@ -348,7 +348,7 @@ const DiwaliKit = () => {
                     <span className="text-muted-foreground text-sm">• Delhi</span>
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    "Ordered this for my parents and they loved it! The presentation is stunning and everything is of premium quality. The toran looks handcrafted and authentic. Great value for money at this price. Will order again next year."
+                    "Ordered this signature pooja box for my parents and they loved it! The presentation is stunning and everything is of premium quality. The toran looks handcrafted and authentic. Great value for money at this price. Will definitely order again for other festivities."
                   </p>
                   <span className="text-xs text-muted-foreground mt-2 block">Verified Purchase • 5 days ago</span>
                 </div>
@@ -365,7 +365,7 @@ const DiwaliKit = () => {
                     <span className="text-muted-foreground text-sm">• Ahmedabad</span>
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    "Very nice Diwali hamper with good quality items. The diyas are lovely and the incense sticks smell amazing. Only giving 4 stars because I wish there were more diyas included, but overall very satisfied with the purchase and delivery was quick."
+                    "Very nice pooja gift set with good quality items. The diyas are lovely and the incense sticks smell amazing. Only giving 4 stars because I wish there were more diyas included, but overall very satisfied with the purchase and delivery was quick. Perfect for housewarming gifts!"
                   </p>
                   <span className="text-xs text-muted-foreground mt-2 block">Verified Purchase • 1 week ago</span>
                 </div>

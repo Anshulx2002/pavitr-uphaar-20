@@ -27,8 +27,8 @@ const FestivalKits = () => {
   const festivalKits = [
     {
       id: 19,
-      name: "Diwali Gift Box",
-      description: "A beautiful Diwali hamper with satin ribbons containing exquisite lotus diyas, handcrafted toran to welcome the goddess into your home, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins.",
+      name: "Signature Pooja Gift Box",
+      description: "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions.",
       price: 1999,
       originalPrice: 3000,
       images: [diwaliKit, diwaliKit2],
