@@ -27,7 +27,7 @@ import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
 import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
-import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.jpg";
+import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
 
 export interface Product {
   id: number;
