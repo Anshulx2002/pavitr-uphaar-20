@@ -17,6 +17,8 @@ import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
+import glitterElectricCandlesImage from "@/assets/glitter-electric-candles.jpg";
+import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.jpg";
 
 const trendingProducts = [
   {
@@ -148,6 +150,26 @@ const trendingProducts = [
     rating: 4.9,
     description: "Exquisite silver-finished Kamdhenu cow idol with calf. Symbol of prosperity and abundance. Perfect for home temple and gifting during auspicious occasions.",
     badge: "Sacred"
+  },
+  {
+    id: 49,
+    name: "Dazzling Electric Candles with Glitter",
+    price: 1800,
+    originalPrice: 2500,
+    image: glitterElectricCandlesImage,
+    rating: 4.9,
+    description: "Stunning electric LED candles with luxurious glitter finish. Box of 12 flameless candles with realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards.",
+    badge: "Festival Special"
+  },
+  {
+    id: 50,
+    name: "Multicoloured Electric Candles",
+    price: 2400,
+    originalPrice: 2999,
+    image: multicolourElectricCandlesImage,
+    rating: 4.9,
+    description: "Vibrant multicoloured electric LED candles set. Box of 12 flameless candles in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities.",
+    badge: "Festival Special"
   }
 ];
 
