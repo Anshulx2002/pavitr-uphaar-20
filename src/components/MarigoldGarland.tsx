@@ -7,7 +7,7 @@ const MarigoldGarland = () => {
     <div className={`absolute top-0 left-0 right-0 z-10 pointer-events-none ${isMobile ? 'scale-[0.7]' : ''}`}>
       <svg
         width="100%"
-        height={isMobile ? "60" : "80"}
+        height={isMobile ? "40" : "50"}
         viewBox="0 0 1200 80"
         className="w-full h-auto drop-shadow-[0_2px_8px_rgba(243,156,18,0.3)] animate-[garland-sway_18s_ease-in-out_infinite]"
         preserveAspectRatio="xMidYMin slice"
