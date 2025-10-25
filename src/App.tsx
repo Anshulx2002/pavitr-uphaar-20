@@ -63,7 +63,7 @@ const App = () => (
           <Route path="/aarti-sangrah" element={<AartiSangrah />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/products/:category" element={<CategoryPage />} />
-          {/* Legacy routes redirect to dynamic routes */}
+          {/* Category routes with proper parameters */}
           <Route path="/incense-agarbatti" element={<CategoryPage />} />
           <Route path="/lamps-diyas" element={<CategoryPage />} />
           <Route path="/pooja-accessories" element={<CategoryPage />} />

@@ -43,13 +43,13 @@ const CATEGORY_CONFIG = {
 };
 
 const CategoryPage = () => {
-  const { category: paramCategory } = useParams<{ category: string }>();
+  const { category: urlCategory } = useParams<{ category: string }>();
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
 
-  // Extract category from either URL param or pathname
-  const category = paramCategory || location.pathname.split('/')[1];
+  // Extract category from URL param or pathname (e.g., /incense-agarbatti -> incense-agarbatti)
+  const category = urlCategory || location.pathname.replace('/', '');
 
   // Validate category parameter
   if (!category || !CATEGORY_CONFIG[category as keyof typeof CATEGORY_CONFIG]) {
