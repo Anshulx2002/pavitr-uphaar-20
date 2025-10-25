@@ -101,15 +101,15 @@ const Header = () => {
       <div className="absolute inset-0 bg-gradient-radial from-vermillion/25 via-festive-orange/15 to-transparent opacity-80 pointer-events-none scale-110"></div>
       <div className="absolute inset-0 bg-gradient-radial from-marigold/20 via-sindoor/10 to-transparent opacity-70 pointer-events-none scale-125 animate-pulse"></div>
 
-      <div className="container mx-auto px-4 py-4 md:py-5 relative z-10">
+      <div className="container mx-auto px-4 py-2.5 md:py-3 relative z-10">
         <div className="flex items-center justify-between">
-          {/* Brand Name - Properly Formatted */}
-          <Link to="/" className="flex items-center group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          {/* Brand Name - Properly Sized */}
+          <Link to="/" className="flex items-center group pr-4 md:pr-8 lg:pr-10" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="flex flex-col">
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-none tracking-tight whitespace-nowrap">
+              <h1 className="text-base md:text-lg lg:text-xl font-bold text-foreground leading-none tracking-tight whitespace-nowrap">
                 Pavitra Uphaar
               </h1>
-              <p className="text-[10px] md:text-xs text-muted-foreground/70 mt-0.5 md:mt-1 font-medium tracking-wide">
+              <p className="hidden md:block text-[11px] text-muted-foreground/70 mt-0.5 font-medium tracking-wide">
                 Traditional Sacred Products
               </p>
             </div>
