@@ -30,8 +30,18 @@ const ProductDetails = () => {
     if (!isCandle) return 1;
     switch (packSize) {
       case 4: return 1;
-      case 8: return 1.9;
-      case 12: return 2.7;
+      case 8: return 1.8; // 10% volume discount
+      case 12: return 2.4; // 20% volume discount
+      default: return 1;
+    }
+  };
+
+  const getOriginalPackMultiplier = () => {
+    if (!isCandle) return 1;
+    switch (packSize) {
+      case 4: return 1;
+      case 8: return 2; // Show original 2x price
+      case 12: return 3; // Show original 3x price
       default: return 1;
     }
   };
@@ -148,10 +158,10 @@ const ProductDetails = () => {
                       <div className="text-center">
                         <div className="font-bold text-lg text-foreground">{size} Pack</div>
                         {size === 8 && (
-                          <div className="text-xs text-primary font-medium mt-1">Save 5%</div>
+                          <div className="text-xs text-primary font-medium mt-1">Save 10%</div>
                         )}
                         {size === 12 && (
-                          <div className="text-xs text-primary font-medium mt-1">Save 10%</div>
+                          <div className="text-xs text-primary font-medium mt-1">Save 20%</div>
                         )}
                       </div>
                     </button>
@@ -165,7 +175,16 @@ const ProductDetails = () => {
                 <span className="text-4xl font-bold" style={{ color: 'hsl(var(--premium-gold-saffron))' }}>
                   ₹{Math.round(product.price * getPackMultiplier())}
                 </span>
-                {product.originalPrice && (
+                {isCandle && packSize > 4 ? (
+                  <>
+                    <span className="text-xl text-muted-foreground line-through">
+                      ₹{Math.round(product.price * getOriginalPackMultiplier())}
+                    </span>
+                    <span className="text-sm px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
+                      {packSize === 8 ? '10% OFF' : '20% OFF'}
+                    </span>
+                  </>
+                ) : product.originalPrice && (
                   <>
                     <span className="text-xl text-muted-foreground line-through">
                       ₹{Math.round(product.originalPrice * getPackMultiplier())}
