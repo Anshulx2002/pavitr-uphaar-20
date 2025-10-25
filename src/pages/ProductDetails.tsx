@@ -196,6 +196,104 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+
+        {/* Care Instructions Section */}
+        <div className="mt-12 max-w-4xl mx-auto">
+          <div className="bg-card border border-border rounded-lg p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <Shield className="w-6 h-6 text-primary" />
+              Care Instructions
+            </h2>
+            <div className="space-y-3 text-muted-foreground">
+              {product.category?.toLowerCase().includes('idol') || product.category?.toLowerCase().includes('statue') ? (
+                <>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Wipe the idol with a soft, dry cloth to remove dust.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Avoid using chemical cleaning agents, as the material may get damaged by harsh chemicals or excessive moisture.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Keep the product away from direct sunlight to prevent discoloration.</span>
+                  </p>
+                </>
+              ) : product.category?.toLowerCase().includes('brass') || product.category?.toLowerCase().includes('copper') || product.category?.toLowerCase().includes('thali') || product.category?.toLowerCase().includes('kalash') ? (
+                <>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Clean with a soft cloth and mild soap solution. Rinse and dry thoroughly.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>For traditional brass/copper items, natural tarnishing adds character. Polish with lemon and salt or brass cleaner if preferred.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Store in a dry place to prevent oxidation.</span>
+                  </p>
+                </>
+              ) : product.category?.toLowerCase().includes('candle') ? (
+                <>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Wipe with a soft, dry cloth to remove dust.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Keep away from water and moisture to preserve electronic components.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Store batteries separately when not in use for extended periods.</span>
+                  </p>
+                </>
+              ) : product.category?.toLowerCase().includes('incense') || product.category?.toLowerCase().includes('agarbatti') ? (
+                <>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Store in a cool, dry place away from direct sunlight.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Keep the packaging sealed to preserve fragrance and prevent moisture absorption.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Always use on a heat-resistant surface and never leave burning incense unattended.</span>
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Wipe with a soft, dry cloth to remove dust and maintain freshness.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Store in a cool, dry place away from direct sunlight.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Handle with care to preserve the quality and craftsmanship.</span>
+                  </p>
+                </>
+              )}
+              <div className="pt-4 mt-4 border-t border-border space-y-3">
+                <p className="flex items-start gap-2 text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Each product may have slight variations in colour or craftsmanship, adding to its uniqueness and charm.</span>
+                </p>
+                <p className="flex items-start gap-2 text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Images may vary from the actual product in form and colour due to screen resolution and device settings.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
