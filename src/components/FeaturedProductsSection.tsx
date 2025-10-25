@@ -20,7 +20,7 @@ import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
-import glitterElectricCandlesImage from "@/assets/glitter-electric-candles.jpg";
+import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
 import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.jpg";
 
 // Featured products - carefully selected new premium products

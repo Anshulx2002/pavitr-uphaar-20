@@ -17,7 +17,7 @@ import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
-import glitterElectricCandlesImage from "@/assets/glitter-electric-candles.jpg";
+import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
 import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.jpg";
 
 const trendingProducts = [
