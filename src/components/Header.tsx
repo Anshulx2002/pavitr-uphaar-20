@@ -103,17 +103,10 @@ const Header = () => {
 
       <div className="container mx-auto px-4 py-4 md:py-5 relative z-10">
         <div className="flex items-center justify-between">
-          {/* Logo - Mobile Optimized with redirect */}
+          {/* Brand Name - Single Line */}
           <Link to="/" className="flex items-center group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white rounded-full p-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.08)] group-hover:shadow-[0_4px_12px_rgba(243,156,18,0.2)] transition-all duration-300">
-              <img
-                src="/lovable-uploads/9a70ebdf-b809-4775-b7cb-d4a5f83de787.png"
-                alt="Pavitra Uphaar Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="ml-4 md:ml-5">
-              <h1 className="text-xl md:text-2xl font-bold text-foreground leading-tight tracking-tight">Pavitra Uphaar</h1>
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold text-foreground leading-none tracking-tight whitespace-nowrap">Pavitra Uphaar</h1>
               <p className="text-xs md:text-sm text-muted-foreground/80 hidden md:block mt-1 font-medium tracking-wide">Traditional Sacred Products</p>
             </div>
           </Link>
