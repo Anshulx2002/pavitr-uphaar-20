@@ -148,7 +148,8 @@ const Header = () => {
                     <DropdownMenuItem key={category.name} asChild>
                       <Link
                         to={category.href}
-                        className="flex flex-col items-start px-2 py-2 h-10 rounded hover:bg-muted/50 transition-all duration-200 cursor-pointer group"
+                        className="flex items-start px-2 py-2 rounded hover:bg-muted/50 transition-all duration-200 cursor-pointer group"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       >
                         <div className="flex items-center gap-2">
                           <Star className="h-3 w-3 text-primary opacity-70 group-hover:opacity-100 transition-opacity" />
