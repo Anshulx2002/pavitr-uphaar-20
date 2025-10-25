@@ -31,7 +31,7 @@ const DiwaliKit = () => {
 
   const images = [diwaliKitPremium, diwaliKit2];
   
-  const kitsRemaining = 86;
+  const kitsRemaining = 62;
   const totalKits = 100;
   const percentageLeft = (kitsRemaining / totalKits) * 100;
 
