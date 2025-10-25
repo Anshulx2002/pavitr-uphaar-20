@@ -28,22 +28,54 @@ const ProductDetails = () => {
 
   const getPackPrice = () => {
     if (!isCandle) return product.price;
-    switch (packSize) {
-      case 4: return 599; // 4 pack price
-      case 8: return 1200; // 8 pack price
-      case 12: return 1800; // 12 pack discounted price
-      default: return 599;
+    
+    // Product 49: Dazzling Electric Candles with Glitter
+    if (product.id === 49) {
+      switch (packSize) {
+        case 4: return 599;
+        case 8: return 1200;
+        case 12: return 1800;
+        default: return 599;
+      }
     }
+    
+    // Product 50: Multicolour Electric Candles
+    if (product.id === 50) {
+      switch (packSize) {
+        case 4: return 799;
+        case 8: return 1599;
+        case 12: return 2400;
+        default: return 799;
+      }
+    }
+    
+    return product.price;
   };
 
   const getOriginalPackPrice = () => {
     if (!isCandle) return product.originalPrice;
-    switch (packSize) {
-      case 4: return 799; // Original 4 pack price
-      case 8: return 1600; // Original 8 pack price
-      case 12: return 2500; // Original 12 pack price
-      default: return 799;
+    
+    // Product 49: Dazzling Electric Candles with Glitter
+    if (product.id === 49) {
+      switch (packSize) {
+        case 4: return 799;
+        case 8: return 1600;
+        case 12: return 2500;
+        default: return 799;
+      }
     }
+    
+    // Product 50: Multicolour Electric Candles
+    if (product.id === 50) {
+      switch (packSize) {
+        case 4: return 999;
+        case 8: return 1999;
+        case 12: return 2999;
+        default: return 999;
+      }
+    }
+    
+    return product.originalPrice || product.price;
   };
 
   const handleAddToCart = (e: React.MouseEvent) => {
