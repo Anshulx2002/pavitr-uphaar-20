@@ -10,6 +10,10 @@ import {
 const FAQ = () => {
   const faqs = [
     {
+      question: "Do you do Corporate gifting?",
+      answer: "Yes we certainly do. You can fill out the contact us form or message us on instagram for any bulk personalised orders for your companies and we will be very happy to assist you with it."
+    },
+    {
       question: "What makes your pooja products authentic?",
       answer: "All our products are sourced directly from traditional artisans and blessed by experienced priests. We ensure that every item follows ancient Vedic traditions and is made using time-honored methods passed down through generations."
     },
