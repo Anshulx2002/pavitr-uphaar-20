@@ -101,7 +101,7 @@ const Header = () => {
       <div className="absolute inset-0 bg-gradient-radial from-vermillion/25 via-festive-orange/15 to-transparent opacity-80 pointer-events-none scale-110"></div>
       <div className="absolute inset-0 bg-gradient-radial from-marigold/20 via-sindoor/10 to-transparent opacity-70 pointer-events-none scale-125 animate-pulse"></div>
 
-      <div className="container mx-auto px-4 py-3 relative z-10">
+      <div className="container mx-auto px-4 py-4 md:py-5 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo - Mobile Optimized with redirect */}
           <Link to="/" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -112,14 +112,14 @@ const Header = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="ml-3">
+            <div className="ml-3 md:ml-4">
               <h1 className="text-lg md:text-xl font-bold text-foreground">Pavitra Uphaar</h1>
-              <p className="text-xs text-muted-foreground hidden md:block">Traditional Sacred Products</p>
+              <p className="text-xs text-muted-foreground hidden md:block mt-0.5">Traditional Sacred Products</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-8">
             <Link
               to="/"
               className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
@@ -210,9 +210,9 @@ const Header = () => {
           </div>
 
           {/* Mobile & Desktop Actions */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3 md:space-x-4">
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center space-x-3">
               <Link to="/checkout">
                 <Button variant="festive" size="sm" className="text-white font-medium">
                   Go to Checkout
