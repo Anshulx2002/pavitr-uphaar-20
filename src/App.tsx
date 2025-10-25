@@ -29,6 +29,7 @@ import OrderTracker from "./pages/OrderTracker";
 import AdminView from "./pages/AdminView";
 import ProductDetails from "./pages/ProductDetails";
 import CorporateGifting from "./pages/CorporateGifting";
+import Candles from "./pages/Candles";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -66,6 +67,7 @@ const App = () => (
           {/* Category routes with proper parameters */}
           <Route path="/incense-agarbatti" element={<CategoryPage />} />
           <Route path="/lamps-diyas" element={<CategoryPage />} />
+          <Route path="/candles" element={<Candles />} />
           <Route path="/pooja-accessories" element={<CategoryPage />} />
           <Route path="/sacred-threads" element={<CategoryPage />} />
           <Route path="/flowers-garlands" element={<CategoryPage />} />

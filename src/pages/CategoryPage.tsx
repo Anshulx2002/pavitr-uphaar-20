@@ -23,6 +23,12 @@ const CATEGORY_CONFIG = {
     icon: Flame,
     dataCategory: "lamps"
   },
+  "candles": {
+    title: "Electric Candles",
+    description: "Safe and beautiful LED candles perfect for festivals and celebrations",
+    icon: Flame,
+    dataCategory: "candles"
+  },
   "pooja-accessories": {
     title: "Pooja Accessories",
     description: "Essential items for your daily worship and spiritual ceremonies",
