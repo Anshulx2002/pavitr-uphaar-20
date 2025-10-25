@@ -191,6 +191,13 @@ const Header = () => {
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
+            <Link
+              to="/corporate-gifting"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
+            >
+              Corporate Gifting
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </Link>
           </nav>
 
           {/* Search Bar - Desktop & Tablet */}
@@ -294,6 +301,12 @@ const Header = () => {
                 className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
               >
                 Contact
+              </Link>
+              <Link
+                to="/corporate-gifting"
+                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
+              >
+                Corporate Gifting
               </Link>
 
               <Link

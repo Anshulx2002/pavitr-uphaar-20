@@ -28,6 +28,7 @@ import Account from "./pages/Account";
 import OrderTracker from "./pages/OrderTracker";
 import AdminView from "./pages/AdminView";
 import ProductDetails from "./pages/ProductDetails";
+import CorporateGifting from "./pages/CorporateGifting";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -71,6 +72,7 @@ const App = () => (
           <Route path="/account" element={<Account />} />
           <Route path="/order/:orderId" element={<OrderTracker />} />
           <Route path="/admin/view" element={<AdminView />} />
+          <Route path="/corporate-gifting" element={<CorporateGifting />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
