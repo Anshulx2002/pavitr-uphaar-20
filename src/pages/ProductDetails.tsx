@@ -16,6 +16,9 @@ const ProductDetails = () => {
   
   const product = allProducts.find(p => p.id === Number(id));
   const [selectedImage, setSelectedImage] = useState(0);
+  const [packSize, setPackSize] = useState(4);
+  
+  const isCandle = product?.category?.toLowerCase().includes('candle');
 
   if (!product) {
     return <NotFound />;
@@ -23,13 +26,24 @@ const ProductDetails = () => {
 
   const images = [product.image];
 
+  const getPackMultiplier = () => {
+    if (!isCandle) return 1;
+    switch (packSize) {
+      case 4: return 1;
+      case 8: return 1.9;
+      case 12: return 2.7;
+      default: return 1;
+    }
+  };
+
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
+    const multiplier = getPackMultiplier();
     addToCart({
       id: product.id,
-      name: product.name,
-      price: product.price,
-      originalPrice: product.originalPrice,
+      name: isCandle ? `${product.name} (${packSize} Pack)` : product.name,
+      price: Math.round(product.price * multiplier),
+      originalPrice: product.originalPrice ? Math.round(product.originalPrice * multiplier) : undefined,
       image: product.image,
       description: product.description,
       badge: product.badge
@@ -38,11 +52,12 @@ const ProductDetails = () => {
 
   const handleBuyNow = (e: React.MouseEvent) => {
     e.stopPropagation();
+    const multiplier = getPackMultiplier();
     addToCart({
       id: product.id,
-      name: product.name,
-      price: product.price,
-      originalPrice: product.originalPrice,
+      name: isCandle ? `${product.name} (${packSize} Pack)` : product.name,
+      price: Math.round(product.price * multiplier),
+      originalPrice: product.originalPrice ? Math.round(product.originalPrice * multiplier) : undefined,
       image: product.image,
       description: product.description,
       badge: product.badge
@@ -115,15 +130,45 @@ const ProductDetails = () => {
               </div>
             </div>
 
+            {/* Pack Size Selection for Candles */}
+            {isCandle && (
+              <div className="space-y-3 pb-4 border-b border-border">
+                <label className="text-sm font-medium text-foreground">Select Pack Size:</label>
+                <div className="grid grid-cols-3 gap-3">
+                  {[4, 8, 12].map((size) => (
+                    <button
+                      key={size}
+                      onClick={() => setPackSize(size)}
+                      className={`relative py-3 px-4 rounded-lg border-2 transition-all ${
+                        packSize === size
+                          ? 'border-primary bg-primary/5'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="font-bold text-lg text-foreground">{size} Pack</div>
+                        {size === 8 && (
+                          <div className="text-xs text-primary font-medium mt-1">Save 5%</div>
+                        )}
+                        {size === 12 && (
+                          <div className="text-xs text-primary font-medium mt-1">Save 10%</div>
+                        )}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="space-y-2">
               <div className="flex items-baseline gap-3">
                 <span className="text-4xl font-bold" style={{ color: 'hsl(var(--premium-gold-saffron))' }}>
-                  ₹{product.price}
+                  ₹{Math.round(product.price * getPackMultiplier())}
                 </span>
                 {product.originalPrice && (
                   <>
                     <span className="text-xl text-muted-foreground line-through">
-                      ₹{product.originalPrice}
+                      ₹{Math.round(product.originalPrice * getPackMultiplier())}
                     </span>
                     <span className="text-sm px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
                       {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
@@ -131,7 +176,12 @@ const ProductDetails = () => {
                   </>
                 )}
               </div>
-              <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
+              {isCandle && (
+                <p className="text-sm text-muted-foreground">Price for {packSize} pack • Inclusive of all taxes</p>
+              )}
+              {!isCandle && (
+                <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
+              )}
             </div>
 
             <p className="text-muted-foreground leading-relaxed">
