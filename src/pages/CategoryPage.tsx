@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
@@ -43,9 +43,13 @@ const CATEGORY_CONFIG = {
 };
 
 const CategoryPage = () => {
-  const { category } = useParams<{ category: string }>();
+  const { category: paramCategory } = useParams<{ category: string }>();
+  const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
+
+  // Extract category from either URL param or pathname
+  const category = paramCategory || location.pathname.split('/')[1];
 
   // Validate category parameter
   if (!category || !CATEGORY_CONFIG[category as keyof typeof CATEGORY_CONFIG]) {
