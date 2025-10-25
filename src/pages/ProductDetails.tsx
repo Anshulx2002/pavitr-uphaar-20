@@ -29,20 +29,20 @@ const ProductDetails = () => {
   const getPackPrice = () => {
     if (!isCandle) return product.price;
     switch (packSize) {
-      case 4: return product.price;
+      case 4: return 599; // 4 pack price
       case 8: return 1200; // 8 pack price
       case 12: return 1800; // 12 pack discounted price
-      default: return product.price;
+      default: return 599;
     }
   };
 
   const getOriginalPackPrice = () => {
     if (!isCandle) return product.originalPrice;
     switch (packSize) {
-      case 4: return product.originalPrice || product.price;
+      case 4: return 799; // Original 4 pack price
       case 8: return 1600; // Original 8 pack price
       case 12: return 2500; // Original 12 pack price
-      default: return product.originalPrice || product.price;
+      default: return 799;
     }
   };
 
@@ -173,7 +173,7 @@ const ProductDetails = () => {
                 <span className="text-4xl font-bold" style={{ color: 'hsl(var(--premium-gold-saffron))' }}>
                   ₹{getPackPrice()}
                 </span>
-                {isCandle && packSize > 4 ? (
+                {isCandle ? (
                   <>
                     <span className="text-xl text-muted-foreground line-through">
                       ₹{getOriginalPackPrice()}
