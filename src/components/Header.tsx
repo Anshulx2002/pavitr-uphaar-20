@@ -103,11 +103,15 @@ const Header = () => {
 
       <div className="container mx-auto px-4 py-4 md:py-5 relative z-10">
         <div className="flex items-center justify-between">
-          {/* Brand Name - Single Line */}
+          {/* Brand Name - Properly Formatted */}
           <Link to="/" className="flex items-center group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-foreground leading-none tracking-tight whitespace-nowrap">Pavitra Uphaar</h1>
-              <p className="text-xs md:text-sm text-muted-foreground/80 hidden md:block mt-1 font-medium tracking-wide">Traditional Sacred Products</p>
+            <div className="flex flex-col">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-none tracking-tight whitespace-nowrap">
+                Pavitra Uphaar
+              </h1>
+              <p className="text-[10px] md:text-xs text-muted-foreground/70 mt-0.5 md:mt-1 font-medium tracking-wide">
+                Traditional Sacred Products
+              </p>
             </div>
           </Link>
 
