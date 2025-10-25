@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Flame, Sparkles, Flower, Zap, Target } from "lucide-react";
 import { getProductsByCategory } from "@/data/products";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Category configuration mapping
 const CATEGORY_CONFIG = {
@@ -64,6 +65,9 @@ const CategoryPage = () => {
   const totalPages = Math.ceil(products.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const currentProducts = products.slice(startIndex, startIndex + productsPerPage);
+
+  // Initialize scroll-triggered animations for product cards
+  useScrollAnimation([category, currentPage, currentProducts.length]);
 
   return (
     <div className="min-h-screen bg-background">
