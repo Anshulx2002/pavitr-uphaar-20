@@ -17,16 +17,24 @@ const ProductDetails = () => {
   const product = allProducts.find(p => p.id === Number(id));
   const [selectedImage, setSelectedImage] = useState(0);
   const [packSize, setPackSize] = useState(4);
+  const [selectedBottleVariant, setSelectedBottleVariant] = useState<number>(Number(id));
   
   const isCandle = product?.category?.toLowerCase().includes('candle');
+  const isCopperBottle = product?.id === 47 || product?.id === 48;
 
   if (!product) {
     return <NotFound />;
   }
 
-  const images = [product.image];
+  // Get current bottle variant if applicable
+  const currentBottleProduct = isCopperBottle 
+    ? allProducts.find(p => p.id === selectedBottleVariant) || product
+    : product;
+
+  const images = [currentBottleProduct.image];
 
   const getPackPrice = () => {
+    if (isCopperBottle) return currentBottleProduct.price;
     if (!isCandle) return product.price;
     
     // Product 49: Dazzling Electric Candles with Glitter
@@ -53,6 +61,7 @@ const ProductDetails = () => {
   };
 
   const getOriginalPackPrice = () => {
+    if (isCopperBottle) return currentBottleProduct.originalPrice;
     if (!isCandle) return product.originalPrice;
     
     // Product 49: Dazzling Electric Candles with Glitter
@@ -80,27 +89,29 @@ const ProductDetails = () => {
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
+    const productToAdd = isCopperBottle ? currentBottleProduct : product;
     addToCart({
-      id: product.id,
-      name: isCandle ? `${product.name} (${packSize} Pack)` : product.name,
+      id: productToAdd.id,
+      name: isCandle ? `${productToAdd.name} (${packSize} Pack)` : productToAdd.name,
       price: getPackPrice(),
-      originalPrice: product.originalPrice,
-      image: product.image,
-      description: product.description,
-      badge: product.badge
+      originalPrice: productToAdd.originalPrice,
+      image: productToAdd.image,
+      description: productToAdd.description,
+      badge: productToAdd.badge
     });
   };
 
   const handleBuyNow = (e: React.MouseEvent) => {
     e.stopPropagation();
+    const productToAdd = isCopperBottle ? currentBottleProduct : product;
     addToCart({
-      id: product.id,
-      name: isCandle ? `${product.name} (${packSize} Pack)` : product.name,
+      id: productToAdd.id,
+      name: isCandle ? `${productToAdd.name} (${packSize} Pack)` : productToAdd.name,
       price: getPackPrice(),
-      originalPrice: product.originalPrice,
-      image: product.image,
-      description: product.description,
-      badge: product.badge
+      originalPrice: productToAdd.originalPrice,
+      image: productToAdd.image,
+      description: productToAdd.description,
+      badge: productToAdd.badge
     });
     navigate('/checkout');
   };
@@ -123,14 +134,14 @@ const ProductDetails = () => {
           {/* Product Images */}
           <div className="space-y-4">
             <div className="relative aspect-square rounded-lg overflow-hidden border border-border bg-card">
-              {product.badge && (
+              {currentBottleProduct.badge && (
                 <div className="absolute top-4 left-4 z-10 bg-gradient-saffron text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                  {product.badge}
+                  {currentBottleProduct.badge}
                 </div>
               )}
               <img 
                 src={images[selectedImage]} 
-                alt={product.name}
+                alt={currentBottleProduct.name}
                 className="w-full h-full object-contain p-8"
               />
             </div>
@@ -144,7 +155,7 @@ const ProductDetails = () => {
                       selectedImage === idx ? 'border-primary' : 'border-border hover:border-primary/50'
                     }`}
                   >
-                    <img src={img} alt={`${product.name} view ${idx + 1}`} className="w-full h-full object-contain p-2" />
+                    <img src={img} alt={`${currentBottleProduct.name} view ${idx + 1}`} className="w-full h-full object-contain p-2" />
                   </button>
                 ))}
               </div>
@@ -155,20 +166,53 @@ const ProductDetails = () => {
           <div className="space-y-6">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-                {product.name}
+                {currentBottleProduct.name}
               </h1>
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
                     <Star 
                       key={i} 
-                      className={`w-5 h-5 ${i < product.rating ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`} 
+                      className={`w-5 h-5 ${i < currentBottleProduct.rating ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`} 
                     />
                   ))}
-                  <span className="text-sm text-muted-foreground ml-2">({product.rating}.0 Rating)</span>
+                  <span className="text-sm text-muted-foreground ml-2">({currentBottleProduct.rating}.0 Rating)</span>
                 </div>
               </div>
             </div>
+
+            {/* Copper Bottle Variant Selection */}
+            {isCopperBottle && (
+              <div className="space-y-3 pb-4 border-b border-border">
+                <label className="text-sm font-medium text-foreground">Choose Variant:</label>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    onClick={() => setSelectedBottleVariant(47)}
+                    className={`relative py-3 px-4 rounded-lg border-2 transition-all ${
+                      selectedBottleVariant === 47
+                        ? 'border-primary bg-primary/5'
+                        : 'border-border hover:border-primary/50'
+                    }`}
+                  >
+                    <div className="text-center">
+                      <div className="font-bold text-sm text-foreground">Elephant Motif</div>
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => setSelectedBottleVariant(48)}
+                    className={`relative py-3 px-4 rounded-lg border-2 transition-all ${
+                      selectedBottleVariant === 48
+                        ? 'border-primary bg-primary/5'
+                        : 'border-border hover:border-primary/50'
+                    }`}
+                  >
+                    <div className="text-center">
+                      <div className="font-bold text-sm text-foreground">Rani Meher</div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            )}
 
             {/* Pack Size Selection for Candles */}
             {isCandle && (
@@ -217,10 +261,13 @@ const ProductDetails = () => {
                 ) : product.originalPrice && (
                   <>
                     <span className="text-xl text-muted-foreground line-through">
-                      ₹{product.originalPrice}
+                      ₹{isCopperBottle ? currentBottleProduct.originalPrice : product.originalPrice}
                     </span>
                     <span className="text-sm px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
-                      {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+                      {isCopperBottle 
+                        ? Math.round(((currentBottleProduct.originalPrice! - currentBottleProduct.price) / currentBottleProduct.originalPrice!) * 100)
+                        : Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+                      }% OFF
                     </span>
                   </>
                 )}
@@ -234,7 +281,7 @@ const ProductDetails = () => {
             </div>
 
             <p className="text-muted-foreground leading-relaxed">
-              {product.description}
+              {currentBottleProduct.description}
             </p>
 
             {/* Action Buttons */}
@@ -286,11 +333,11 @@ const ProductDetails = () => {
             <div className="space-y-3 pt-6 border-t border-border">
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Category</span>
-                <span className="font-medium text-foreground capitalize">{product.category}</span>
+                <span className="font-medium text-foreground capitalize">{currentBottleProduct.category}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">SKU</span>
-                <span className="font-medium text-foreground">PU-{product.id.toString().padStart(4, '0')}</span>
+                <span className="font-medium text-foreground">PU-{currentBottleProduct.id.toString().padStart(4, '0')}</span>
               </div>
             </div>
           </div>
