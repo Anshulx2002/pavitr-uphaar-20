@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import blogCopperBenefitsImage from "@/assets/blog-copper-benefits.jpg";
 
 const BlogCopperBottleBenefits = () => {
   return (
@@ -30,7 +31,7 @@ const BlogCopperBottleBenefits = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>October 10, 2024</span>
+                <span>January 2, 2025</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -42,7 +43,7 @@ const BlogCopperBottleBenefits = () => {
           {/* Featured Image */}
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src="/lovable-uploads/48bb1f46-28a4-4f5b-a779-2f3ca83fd4c7.png"
+              src={blogCopperBenefitsImage}
               alt="Copper water bottles"
               className="w-full h-auto"
             />

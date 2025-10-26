@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import blogCorporateGiftsImage from "@/assets/blog-corporate-gifts.jpg";
 
 const BlogCorporateGifts = () => {
   const gifts = [
@@ -93,7 +94,7 @@ const BlogCorporateGifts = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>November 18, 2024</span>
+                <span>January 18, 2025</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -105,7 +106,7 @@ const BlogCorporateGifts = () => {
           {/* Featured Image */}
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src="/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png"
+              src={blogCorporateGiftsImage}
               alt="Corporate gifts"
               className="w-full h-auto"
             />

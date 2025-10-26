@@ -2,6 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import blogFamilyGiftsImage from "@/assets/blog-family-gifts.jpg";
+import blogCorporateGiftsImage from "@/assets/blog-corporate-gifts.jpg";
+import blogPoojaItemsImage from "@/assets/blog-pooja-items.jpg";
+import blogCopperBenefitsImage from "@/assets/blog-copper-benefits.jpg";
 
 const Blogs = () => {
   const blogPosts = [
@@ -10,9 +14,9 @@ const Blogs = () => {
       title: "Top 10 Gifts to Give to Your Family",
       excerpt: "Discover the perfect traditional and sacred gifts for your loved ones. From copper bottles to pooja thalis, find meaningful presents that combine health, spirituality, and cultural significance.",
       author: "Anshul Chadha",
-      date: "November 15, 2024",
+      date: "January 15, 2025",
       readTime: "10 min read",
-      image: "/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png",
+      image: blogFamilyGiftsImage,
       link: "/blog/family-gifts"
     },
     {
@@ -20,9 +24,9 @@ const Blogs = () => {
       title: "Top 10 Perfect Corporate Gifts to Give Your Team Members",
       excerpt: "Elevate your corporate gifting with these premium traditional products. Learn how to choose meaningful gifts that strengthen workplace relationships and celebrate cultural traditions.",
       author: "Anshul Chadha",
-      date: "November 18, 2024",
+      date: "January 18, 2025",
       readTime: "10 min read",
-      image: "/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png",
+      image: blogCorporateGiftsImage,
       link: "/blog/corporate-gifts"
     },
     {
@@ -30,9 +34,9 @@ const Blogs = () => {
       title: "Essential Pooja Items Every Home Should Have",
       excerpt: "A comprehensive guide to building your sacred space at home. Discover the must-have items for daily worship and special occasions, from brass diyas to pure incense sticks.",
       author: "Pavitra Uphaar Team",
-      date: "October 15, 2024",
+      date: "January 5, 2025",
       readTime: "7 min read",
-      image: "/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png",
+      image: blogPoojaItemsImage,
       link: "/blog/essential-pooja-items"
     },
     {
@@ -40,9 +44,9 @@ const Blogs = () => {
       title: "Understanding Copper Water Bottle Benefits in Ayurveda",
       excerpt: "Discover the ancient wisdom of storing water in copper vessels. Learn about the health benefits backed by both Ayurvedic tradition and modern science.",
       author: "Pavitra Uphaar Team",
-      date: "October 10, 2024",
+      date: "January 2, 2025",
       readTime: "6 min read",
-      image: "/lovable-uploads/48bb1f46-28a4-4f5b-a779-2f3ca83fd4c7.png",
+      image: blogCopperBenefitsImage,
       link: "/blog/copper-bottle-benefits"
     }
   ];

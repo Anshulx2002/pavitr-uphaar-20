@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import blogPoojaItemsImage from "@/assets/blog-pooja-items.jpg";
 
 const BlogEssentialPoojaItems = () => {
   const items = [
@@ -93,7 +94,7 @@ const BlogEssentialPoojaItems = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>October 15, 2024</span>
+                <span>January 5, 2025</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -105,7 +106,7 @@ const BlogEssentialPoojaItems = () => {
           {/* Featured Image */}
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src="/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png"
+              src={blogPoojaItemsImage}
               alt="Essential pooja items"
               className="w-full h-auto"
             />
