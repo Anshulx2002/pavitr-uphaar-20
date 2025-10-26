@@ -14,7 +14,7 @@ const Blogs = () => {
       title: "Top 10 Gifts to Give to Your Family",
       excerpt: "Discover the perfect traditional and sacred gifts for your loved ones. From copper bottles to pooja thalis, find meaningful presents that combine health, spirituality, and cultural significance.",
       author: "Anshul Chadha",
-      date: "January 15, 2025",
+      date: "May 15, 2025",
       readTime: "10 min read",
       image: blogFamilyGiftsImage,
       link: "/blog/family-gifts"
@@ -24,7 +24,7 @@ const Blogs = () => {
       title: "Top 10 Perfect Corporate Gifts to Give Your Team Members",
       excerpt: "Elevate your corporate gifting with these premium traditional products. Learn how to choose meaningful gifts that strengthen workplace relationships and celebrate cultural traditions.",
       author: "Anshul Chadha",
-      date: "January 18, 2025",
+      date: "April 18, 2025",
       readTime: "10 min read",
       image: blogCorporateGiftsImage,
       link: "/blog/corporate-gifts"
@@ -44,7 +44,7 @@ const Blogs = () => {
       title: "Understanding Copper Water Bottle Benefits in Ayurveda",
       excerpt: "Discover the ancient wisdom of storing water in copper vessels. Learn about the health benefits backed by both Ayurvedic tradition and modern science.",
       author: "Pavitra Uphaar Team",
-      date: "January 2, 2025",
+      date: "October 10, 2025",
       readTime: "6 min read",
       image: blogCopperBenefitsImage,
       link: "/blog/copper-bottle-benefits"
