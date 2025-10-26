@@ -33,6 +33,8 @@ import Candles from "./pages/Candles";
 import Blogs from "./pages/Blogs";
 import BlogFamilyGifts from "./pages/BlogFamilyGifts";
 import BlogCorporateGifts from "./pages/BlogCorporateGifts";
+import BlogEssentialPoojaItems from "./pages/BlogEssentialPoojaItems";
+import BlogCopperBottleBenefits from "./pages/BlogCopperBottleBenefits";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -56,6 +58,8 @@ const App = () => (
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/family-gifts" element={<BlogFamilyGifts />} />
           <Route path="/blog/corporate-gifts" element={<BlogCorporateGifts />} />
+          <Route path="/blog/essential-pooja-items" element={<BlogEssentialPoojaItems />} />
+          <Route path="/blog/copper-bottle-benefits" element={<BlogCopperBottleBenefits />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />

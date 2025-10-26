@@ -27,23 +27,23 @@ const Blogs = () => {
     },
     {
       id: 3,
-      title: "The Sacred Significance of Diwali: Traditions and Rituals",
-      excerpt: "Explore the deep spiritual meaning behind Diwali celebrations, from lighting diyas to performing Lakshmi Puja. Learn about the ancient traditions that make this festival of lights truly special.",
+      title: "Essential Pooja Items Every Home Should Have",
+      excerpt: "A comprehensive guide to building your sacred space at home. Discover the must-have items for daily worship and special occasions, from brass diyas to pure incense sticks.",
       author: "Pavitra Uphaar Team",
-      date: "October 20, 2024",
-      readTime: "5 min read",
-      image: "/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png",
-      link: "#"
+      date: "October 15, 2024",
+      readTime: "7 min read",
+      image: "/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png",
+      link: "/blog/essential-pooja-items"
     },
     {
       id: 4,
-      title: "Understanding Copper Water Benefits in Ayurveda",
+      title: "Understanding Copper Water Bottle Benefits in Ayurveda",
       excerpt: "Discover the ancient wisdom of storing water in copper vessels. Learn about the health benefits backed by both Ayurvedic tradition and modern science.",
       author: "Pavitra Uphaar Team",
       date: "October 10, 2024",
       readTime: "6 min read",
       image: "/lovable-uploads/48bb1f46-28a4-4f5b-a779-2f3ca83fd4c7.png",
-      link: "#"
+      link: "/blog/copper-bottle-benefits"
     }
   ];
 
