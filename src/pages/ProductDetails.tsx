@@ -285,11 +285,11 @@ const ProductDetails = () => {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-3">
               <Button 
                 onClick={handleBuyNow}
                 size="lg"
-                className="flex-1 bg-gradient-premium-gold hover:opacity-90 text-white font-semibold text-lg h-12"
+                className="flex-1 bg-gradient-premium-gold hover:opacity-90 text-white font-bold text-base sm:text-lg h-14 sm:h-12 shadow-lg hover:shadow-xl transition-all rounded-xl"
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Buy Now
@@ -298,7 +298,7 @@ const ProductDetails = () => {
                 onClick={handleAddToCart}
                 size="lg"
                 variant="outline"
-                className="flex-1 h-12 text-lg"
+                className="flex-1 h-14 sm:h-12 text-base sm:text-lg font-semibold border-2 hover:bg-primary/5 transition-all rounded-xl"
               >
                 Add to Cart
               </Button>
@@ -306,10 +306,10 @@ const ProductDetails = () => {
                 onClick={handleShare}
                 size="lg"
                 variant="outline"
-                className="sm:w-12 h-12"
+                className="sm:w-12 h-14 sm:h-12 border-2 hover:bg-primary/5 transition-all rounded-xl"
               >
                 <Share2 className="w-5 h-5" />
-                <span className="sm:hidden ml-2">Share</span>
+                <span className="sm:hidden ml-2 font-semibold">Share Product</span>
               </Button>
             </div>
 
