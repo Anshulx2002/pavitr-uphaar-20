@@ -65,7 +65,7 @@ const Blogs = () => {
               Insights & Stories
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-sanskrit font-bold bg-gradient-to-r from-saffron via-primary to-marigold bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
             Our Blog
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-saffron via-primary to-marigold mx-auto mb-6 rounded-full"></div>

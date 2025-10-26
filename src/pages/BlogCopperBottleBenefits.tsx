@@ -29,7 +29,7 @@ const BlogCopperBottleBenefits = () => {
                 Ayurveda & Wellness
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-sanskrit font-bold bg-gradient-to-r from-saffron via-primary to-marigold bg-clip-text text-transparent mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
               Understanding Copper Water Bottle Benefits in Ayurveda
             </h1>
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-border/50">
