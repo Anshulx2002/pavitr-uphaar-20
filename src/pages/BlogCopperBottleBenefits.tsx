@@ -3,45 +3,55 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import blogCopperBenefitsImage from "@/assets/blog-copper-benefits.jpg";
 
 const BlogCopperBottleBenefits = () => {
+  useScrollAnimation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-12">
         {/* Back Button */}
         <Link to="/blogs">
-          <Button variant="ghost" className="mb-6">
-            <ArrowLeft className="w-4 h-4 mr-2" />
+          <Button variant="ghost" className="mb-8 group hover:translate-x-1 transition-transform">
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to Blogs
           </Button>
         </Link>
 
         {/* Article Header */}
-        <article className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <article className="max-w-4xl mx-auto scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+          <div className="mb-10">
+            <div className="inline-block mb-4">
+              <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
+                Ayurveda & Wellness
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-sanskrit font-bold bg-gradient-to-r from-saffron via-primary to-marigold bg-clip-text text-transparent mb-8 leading-tight">
               Understanding Copper Water Bottle Benefits in Ayurveda
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-border/50">
               <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>Pavitra Uphaar Team</span>
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <User className="w-4 h-4 text-primary" />
+                </div>
+                <span className="font-medium">Pavitra Uphaar Team</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4 text-primary/70" />
                 <span>October 10, 2025</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4 text-primary/70" />
                 <span>6 min read</span>
               </div>
             </div>
           </div>
 
           {/* Featured Image */}
-          <div className="mb-8 rounded-xl overflow-hidden">
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
             <img
               src={blogCopperBenefitsImage}
               alt="Copper water bottles"
@@ -51,28 +61,34 @@ const BlogCopperBottleBenefits = () => {
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-12 pl-6 border-l-4 border-primary/30">
               For thousands of years, Ayurveda has recognized the health benefits of storing water in copper vessels. This ancient practice, known as "Tamra Jal," involves storing water in copper containers overnight and drinking it first thing in the morning. Modern science is now validating what our ancestors knew all along – copper-enriched water offers numerous health benefits. Let's explore the science and tradition behind copper water bottles.
             </p>
 
             {/* The Science Behind Copper Water */}
-            <div className="mb-10 pb-8 border-b border-border">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                The Science Behind Copper Water
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+            <div className="mb-12 pb-10 border-b border-border/50 scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-2 h-8 bg-gradient-to-b from-saffron to-primary rounded-full"></div>
+                <h2 className="text-3xl font-bold text-foreground">
+                  The Science Behind Copper Water
+                </h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 When water is stored in a copper vessel for 6-8 hours, small amounts of copper dissolve into the water through a natural process called oligodynamic effect. This copper-enriched water has antimicrobial properties and provides essential trace minerals that our body needs for optimal functioning.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Our <Link to="/product/47" className="text-primary hover:underline">Elephant Motif Copper Bottle</Link> and <Link to="/product/48" className="text-primary hover:underline">Rani Meher Copper Bottle</Link> are crafted from pure copper, ensuring you get the maximum health benefits of this ancient practice.
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Our <Link to="/product/47" className="text-primary hover:underline font-medium">Elephant Motif Copper Bottle</Link> and <Link to="/product/48" className="text-primary hover:underline font-medium">Rani Meher Copper Bottle</Link> are crafted from pure copper, ensuring you get the maximum health benefits of this ancient practice.
               </p>
             </div>
 
             {/* Health Benefits */}
-            <div className="mb-10 pb-8 border-b border-border">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                10 Amazing Health Benefits of Copper Water
-              </h2>
+            <div className="mb-12 pb-10 border-b border-border/50 scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-2 h-8 bg-gradient-to-b from-saffron to-primary rounded-full"></div>
+                <h2 className="text-3xl font-bold text-foreground">
+                  10 Amazing Health Benefits of Copper Water
+                </h2>
+              </div>
               
               <div className="space-y-6">
                 <div>
@@ -215,16 +231,19 @@ const BlogCopperBottleBenefits = () => {
             </div>
 
             {/* Conclusion */}
-            <div className="mt-12 p-6 bg-card border border-border rounded-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Start Your Wellness Journey Today</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+            <div className="mt-16 p-8 bg-gradient-to-br from-primary/5 via-saffron/5 to-marigold/5 border-2 border-primary/20 rounded-2xl shadow-lg scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+              <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <div className="w-2 h-8 bg-gradient-to-b from-saffron to-primary rounded-full"></div>
+                Start Your Wellness Journey Today
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 Incorporating copper water into your daily routine is a simple yet powerful way to embrace ancient wisdom for modern wellness. The combination of Ayurvedic tradition and scientific validation makes copper bottles an essential addition to any health-conscious lifestyle.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Whether you choose the <Link to="/product/47" className="text-primary hover:underline">Elephant Motif Copper Bottle</Link> or the <Link to="/product/48" className="text-primary hover:underline">Rani Meher Copper Bottle</Link>, you're investing in your health and connecting with a practice that has sustained wellness for thousands of years.
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                Whether you choose the <Link to="/product/47" className="text-primary hover:underline font-medium">Elephant Motif Copper Bottle</Link> or the <Link to="/product/48" className="text-primary hover:underline font-medium">Rani Meher Copper Bottle</Link>, you're investing in your health and connecting with a practice that has sustained wellness for thousands of years.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Explore our complete collection of traditional wellness products at <Link to="/products" className="text-primary hover:underline">Pavitra Uphaar</Link>. For questions or guidance on choosing the right copper bottle for you, please <Link to="/contact" className="text-primary hover:underline">contact us</Link>.
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Explore our complete collection of traditional wellness products at <Link to="/products" className="text-primary hover:underline font-medium">Pavitra Uphaar</Link>. For questions or guidance on choosing the right copper bottle for you, please <Link to="/contact" className="text-primary hover:underline font-medium">contact us</Link>.
               </p>
             </div>
           </div>

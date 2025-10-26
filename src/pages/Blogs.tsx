@@ -2,12 +2,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import blogFamilyGiftsImage from "@/assets/blog-family-gifts.jpg";
 import blogCorporateGiftsImage from "@/assets/blog-corporate-gifts.jpg";
 import blogPoojaItemsImage from "@/assets/blog-pooja-items.jpg";
 import blogCopperBenefitsImage from "@/assets/blog-copper-benefits.jpg";
 
 const Blogs = () => {
+  useScrollAnimation();
+  
   const blogPosts = [
     {
       id: 1,
@@ -54,51 +57,59 @@ const Blogs = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+      <main className="container mx-auto px-4 py-16">
+        {/* Hero Section with Gradient */}
+        <div className="text-center mb-16 scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+          <div className="inline-block mb-4">
+            <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
+              Insights & Stories
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-sanskrit font-bold bg-gradient-to-r from-saffron via-primary to-marigold bg-clip-text text-transparent mb-6">
             Our Blog
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-saffron via-primary to-marigold mx-auto mb-6 rounded-full"></div>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Discover the wisdom of ancient traditions, spiritual practices, and sacred rituals
           </p>
         </div>
 
         {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {blogPosts.map((post) => (
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {blogPosts.map((post, index) => (
             <Link
               key={post.id}
               to={post.link}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 scroll-animate opacity-0 translate-y-4"
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <article>
-                <div className="aspect-video overflow-hidden">
+              <article className="h-full flex flex-col">
+                <div className="aspect-video overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-6 space-y-4">
-                  <h2 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                <div className="p-8 space-y-4 flex-1 flex flex-col">
+                  <h2 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2 leading-tight">
                     {post.title}
                   </h2>
-                  <p className="text-muted-foreground line-clamp-3">
+                  <p className="text-muted-foreground line-clamp-3 leading-relaxed flex-1">
                     {post.excerpt}
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground pt-4 border-t border-border">
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground pt-6 border-t border-border/50">
                     <div className="flex items-center gap-2">
-                      <User className="w-4 h-4" />
+                      <User className="w-4 h-4 text-primary/70" />
                       <span>{post.author}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4 text-primary/70" />
                       <span>{post.date}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-4 h-4 text-primary/70" />
                       <span>{post.readTime}</span>
                     </div>
                   </div>

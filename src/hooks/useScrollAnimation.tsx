@@ -10,6 +10,7 @@ export const useScrollAnimation = (deps: any[] = []) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
+            entry.target.classList.remove('opacity-0', 'translate-y-4');
           }
         });
       },
@@ -18,8 +19,6 @@ export const useScrollAnimation = (deps: any[] = []) => {
 
     const elements = document.querySelectorAll('.scroll-animate');
     elements.forEach((el) => {
-      // Ensure fresh observation on re-runs
-      (el as HTMLElement).classList.remove('in-view');
       observer.observe(el);
     });
 

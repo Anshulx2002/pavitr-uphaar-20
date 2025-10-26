@@ -3,9 +3,12 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import blogFamilyGiftsImage from "@/assets/blog-family-gifts.jpg";
 
 const BlogFamilyGifts = () => {
+  useScrollAnimation();
+  
   const gifts = [
     {
       id: 47,
@@ -75,36 +78,43 @@ const BlogFamilyGifts = () => {
       <main className="container mx-auto px-4 py-12">
         {/* Back Button */}
         <Link to="/blogs">
-          <Button variant="ghost" className="mb-6">
-            <ArrowLeft className="w-4 h-4 mr-2" />
+          <Button variant="ghost" className="mb-8 group hover:translate-x-1 transition-transform">
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to Blogs
           </Button>
         </Link>
 
         {/* Article Header */}
-        <article className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <article className="max-w-4xl mx-auto scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+          <div className="mb-10">
+            <div className="inline-block mb-4">
+              <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
+                Gift Guide
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-sanskrit font-bold bg-gradient-to-r from-saffron via-primary to-marigold bg-clip-text text-transparent mb-8 leading-tight">
               Top 10 Gifts to Give to Your Family
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-border/50">
               <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>Anshul Chadha</span>
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <User className="w-4 h-4 text-primary" />
+                </div>
+                <span className="font-medium">Anshul Chadha</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4 text-primary/70" />
                 <span>May 15, 2025</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4 text-primary/70" />
                 <span>10 min read</span>
               </div>
             </div>
           </div>
 
           {/* Featured Image */}
-          <div className="mb-8 rounded-xl overflow-hidden">
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
             <img
               src={blogFamilyGiftsImage}
               alt="Family gifts"
@@ -114,31 +124,40 @@ const BlogFamilyGifts = () => {
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-12 pl-6 border-l-4 border-primary/30">
               Finding the perfect gift for your family members can be challenging, especially when you want to give something meaningful and culturally significant. At Pavitra Uphaar, we believe that the best gifts are those that combine tradition, spirituality, and practical value. Here are our top 10 gift recommendations that will bring joy, blessings, and positive energy to your loved ones.
             </p>
 
             {gifts.map((gift, index) => (
-              <div key={gift.id} className="mb-10 pb-8 border-b border-border last:border-0">
-                <h2 className="text-2xl font-bold text-foreground mb-4">
-                  {index + 1}. {gift.name}
-                </h2>
+              <div key={gift.id} className="mb-12 pb-10 border-b border-border/50 last:border-0 scroll-animate opacity-0 translate-y-4 transition-all duration-700" style={{ transitionDelay: `${index * 50}ms` }}>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-saffron to-primary flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    {index + 1}
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground mt-1">
+                    {gift.name}
+                  </h2>
+                </div>
                 <div 
-                  className="text-muted-foreground leading-relaxed mb-4"
+                  className="text-muted-foreground leading-relaxed mb-6 text-lg ml-16"
                   dangerouslySetInnerHTML={{ __html: gift.description }}
                 />
-                <Link to={gift.link}>
-                  <Button variant="outline" className="mt-2">
+                <Link to={gift.link} className="ml-16 inline-block">
+                  <Button variant="default" className="group shadow-lg hover:shadow-xl transition-all">
                     View Product
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
                   </Button>
                 </Link>
               </div>
             ))}
 
             {/* Conclusion */}
-            <div className="mt-12 p-6 bg-card border border-border rounded-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Final Thoughts</h2>
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="mt-16 p-8 bg-gradient-to-br from-primary/5 via-saffron/5 to-marigold/5 border-2 border-primary/20 rounded-2xl shadow-lg scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+              <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <div className="w-2 h-8 bg-gradient-to-b from-saffron to-primary rounded-full"></div>
+                Final Thoughts
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg">
                 These thoughtfully curated gifts from Pavitra Uphaar represent more than just material items – they're expressions of love, tradition, and spiritual connection. Whether you're celebrating a festival, marking a special occasion, or simply want to show appreciation to your family members, these sacred products will bring joy and blessings to their lives. Each item has been carefully selected for its quality, authenticity, and cultural significance, ensuring that your gift will be cherished for years to come.
               </p>
             </div>

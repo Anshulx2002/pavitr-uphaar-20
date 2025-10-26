@@ -3,9 +3,12 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import blogCorporateGiftsImage from "@/assets/blog-corporate-gifts.jpg";
 
 const BlogCorporateGifts = () => {
+  useScrollAnimation();
+  
   const gifts = [
     {
       id: 47,
@@ -75,36 +78,43 @@ const BlogCorporateGifts = () => {
       <main className="container mx-auto px-4 py-12">
         {/* Back Button */}
         <Link to="/blogs">
-          <Button variant="ghost" className="mb-6">
-            <ArrowLeft className="w-4 h-4 mr-2" />
+          <Button variant="ghost" className="mb-8 group hover:translate-x-1 transition-transform">
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to Blogs
           </Button>
         </Link>
 
         {/* Article Header */}
-        <article className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <article className="max-w-4xl mx-auto scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+          <div className="mb-10">
+            <div className="inline-block mb-4">
+              <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
+                Corporate Gifting
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-sanskrit font-bold bg-gradient-to-r from-saffron via-primary to-marigold bg-clip-text text-transparent mb-8 leading-tight">
               Top 10 Perfect Corporate Gifts to Give Your Team Members
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-border/50">
               <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>Anshul Chadha</span>
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <User className="w-4 h-4 text-primary" />
+                </div>
+                <span className="font-medium">Anshul Chadha</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4 text-primary/70" />
                 <span>April 18, 2025</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4 text-primary/70" />
                 <span>10 min read</span>
               </div>
             </div>
           </div>
 
           {/* Featured Image */}
-          <div className="mb-8 rounded-xl overflow-hidden">
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
             <img
               src={blogCorporateGiftsImage}
               alt="Corporate gifts"
@@ -114,38 +124,47 @@ const BlogCorporateGifts = () => {
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-12 pl-6 border-l-4 border-primary/30">
               Corporate gifting is more than just a gesture – it's an opportunity to strengthen relationships, show appreciation, and build a positive workplace culture. When it comes to choosing gifts for your team members, selecting items that blend tradition, quality, and cultural significance can make a lasting impression. At Pavitra Uphaar, we offer premium sacred products that are perfect for corporate gifting. Here are our top 10 recommendations for corporate gifts that will resonate with your team members.
             </p>
 
             {gifts.map((gift, index) => (
-              <div key={gift.id} className="mb-10 pb-8 border-b border-border last:border-0">
-                <h2 className="text-2xl font-bold text-foreground mb-4">
-                  {index + 1}. {gift.name}
-                </h2>
+              <div key={gift.id} className="mb-12 pb-10 border-b border-border/50 last:border-0 scroll-animate opacity-0 translate-y-4 transition-all duration-700" style={{ transitionDelay: `${index * 50}ms` }}>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-saffron to-primary flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    {index + 1}
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground mt-1">
+                    {gift.name}
+                  </h2>
+                </div>
                 <div 
-                  className="text-muted-foreground leading-relaxed mb-4"
+                  className="text-muted-foreground leading-relaxed mb-6 text-lg ml-16"
                   dangerouslySetInnerHTML={{ __html: gift.description }}
                 />
-                <Link to={gift.link}>
-                  <Button variant="outline" className="mt-2">
+                <Link to={gift.link} className="ml-16 inline-block">
+                  <Button variant="default" className="group shadow-lg hover:shadow-xl transition-all">
                     View Product
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
                   </Button>
                 </Link>
               </div>
             ))}
 
             {/* Conclusion */}
-            <div className="mt-12 p-6 bg-card border border-border rounded-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Why Choose Pavitra Uphaar for Corporate Gifting?</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+            <div className="mt-16 p-8 bg-gradient-to-br from-primary/5 via-saffron/5 to-marigold/5 border-2 border-primary/20 rounded-2xl shadow-lg scroll-animate opacity-0 translate-y-4 transition-all duration-700">
+              <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <div className="w-2 h-8 bg-gradient-to-b from-saffron to-primary rounded-full"></div>
+                Why Choose Pavitra Uphaar for Corporate Gifting?
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 At Pavitra Uphaar, we understand that corporate gifting is about building meaningful connections with your team members. Our carefully curated collection of traditional and sacred products offers the perfect blend of cultural significance, premium quality, and thoughtful presentation. Each item is selected to convey respect, appreciation, and good wishes.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 Whether you're celebrating festivals like Diwali and Dhanteras, marking company milestones, or simply expressing appreciation for your team's hard work, these gifts will leave a lasting positive impression. They demonstrate your company's cultural sensitivity and commitment to honoring traditional values while maintaining a modern, professional approach.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                For bulk orders and custom corporate gifting solutions, please visit our <Link to="/corporate-gifting" className="text-primary hover:underline">Corporate Gifting page</Link> or <Link to="/contact" className="text-primary hover:underline">contact us</Link> directly. We offer special pricing for bulk orders and can help customize your corporate gifting experience to perfectly match your company's needs and values.
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                For bulk orders and custom corporate gifting solutions, please visit our <Link to="/corporate-gifting" className="text-primary hover:underline font-medium">Corporate Gifting page</Link> or <Link to="/contact" className="text-primary hover:underline font-medium">contact us</Link> directly. We offer special pricing for bulk orders and can help customize your corporate gifting experience to perfectly match your company's needs and values.
               </p>
             </div>
           </div>
