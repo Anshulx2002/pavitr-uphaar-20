@@ -8,58 +8,58 @@ import blogPoojaItemsImage from "@/assets/blog-pooja-items.jpg";
 const BlogEssentialPoojaItems = () => {
   const items = [
     {
+      id: 34,
+      name: "Gold Pooja Thali",
+      description: "A complete pooja thali is the foundation of any sacred space. Our <a href='/product/34' class='text-primary hover:underline'>Gold Pooja Thali</a> is an exquisite gold-plated thali with intricate designs and all essential compartments needed for elaborate worship ceremonies and daily rituals.",
+      link: "/product/34"
+    },
+    {
+      id: 37,
+      name: "Akhand Brass Diya",
+      description: "The <a href='/product/37' class='text-primary hover:underline'>Akhand Brass Diya</a> is essential for continuous lighting during festivals and special occasions. This premium brass lamp with glass protection cover represents the eternal light of divine presence and is perfect for daily aarti.",
+      link: "/product/37"
+    },
+    {
       id: 1,
-      name: "Premium Pooja Thali Set",
-      description: "A complete pooja thali is the foundation of any sacred space. Our <a href='/product/1' class='text-primary hover:underline'>Premium Pooja Thali Set</a> includes all essential items needed for daily worship and special ceremonies. This elegant brass thali comes with kumkum holder, rice holder, diya, bell, and incense holder, making it a one-stop solution for your worship needs.",
+      name: "Premium Sandalwood Agarbatti",
+      description: "No pooja is complete without the divine fragrance of incense. Our <a href='/product/1' class='text-primary hover:underline'>Premium Sandalwood Agarbatti</a> creates a peaceful atmosphere with pure sandalwood powder. These hand-rolled incense sticks purify the environment and enhance spiritual practice.",
       link: "/product/1"
     },
     {
-      id: 24,
-      name: "Akhand Brass Diya",
-      description: "The <a href='/product/24' class='text-primary hover:underline'>Akhand Brass Diya</a> is essential for continuous lighting during festivals and special occasions. This traditional brass lamp represents the eternal light of divine presence and is perfect for daily aarti and maintaining a sacred atmosphere in your pooja room.",
-      link: "/product/24"
+      id: 41,
+      name: "Wooden Incense Holder",
+      description: "The <a href='/product/41' class='text-primary hover:underline'>Wooden Incense Holder</a> is a handcrafted holder with intricate carved designs, perfect for holding incense sticks during pooja ceremonies. This beautiful accessory adds elegance to your sacred space.",
+      link: "/product/41"
     },
     {
-      id: 2,
-      name: "Premium Incense Sticks - Sandalwood",
-      description: "No pooja is complete without the divine fragrance of incense. Our <a href='/product/2' class='text-primary hover:underline'>Premium Sandalwood Incense Sticks</a> create a peaceful atmosphere and help in meditation. Made from natural ingredients, these agarbattis purify the environment and enhance spiritual practice.",
-      link: "/product/2"
+      id: 42,
+      name: "Wooden Dhoop Stick Holder",
+      description: "Keep your pooja space organized with the <a href='/product/42' class='text-primary hover:underline'>Wooden Dhoop Stick Holder</a>. This elegant triangular holder with carved patterns features a storage compartment, making it both functional and beautiful.",
+      link: "/product/42"
     },
     {
-      id: 10,
-      name: "Pure Camphor for Aarti",
-      description: "<a href='/product/10' class='text-primary hover:underline'>Pure Camphor</a> is essential for performing aarti ceremonies. Its pure white flame and pleasant aroma create a divine ambiance during worship. Use it in your diya or camphor holder for traditional aarti rituals that have been practiced for generations.",
-      link: "/product/10"
-    },
-    {
-      id: 6,
-      name: "Sacred Rudraksha Beads",
-      description: "<a href='/product/6' class='text-primary hover:underline'>Sacred Rudraksha Beads</a> are considered highly auspicious in Hindu tradition. These divine beads can be used for meditation, making malas, or keeping in your pooja room for spiritual protection and positive energy.",
-      link: "/product/6"
-    },
-    {
-      id: 7,
-      name: "Premium Kumkum for Tilak",
-      description: "<a href='/product/7' class='text-primary hover:underline'>Premium Kumkum</a> is essential for applying tilak and performing religious ceremonies. This pure, natural kumkum is perfect for daily worship, festivals, and special occasions. Every pooja room should have this sacred powder.",
-      link: "/product/7"
-    },
-    {
-      id: 25,
+      id: 38,
       name: "Gold Kalash - Auspicious Vessel",
-      description: "The <a href='/product/25' class='text-primary hover:underline'>Gold Kalash</a> is a sacred vessel used in various rituals and ceremonies. This auspicious item symbolizes abundance and prosperity, making it essential for housewarmings, pujas, and other religious ceremonies.",
-      link: "/product/25"
+      description: "The <a href='/product/38' class='text-primary hover:underline'>Gold Kalash</a> is an exquisite gold-finished sacred vessel with intricate engravings used in various rituals and ceremonies. This auspicious item symbolizes abundance and prosperity, essential for housewarmings and pujas.",
+      link: "/product/38"
     },
     {
-      id: 20,
+      id: 39,
       name: "Aarti Sangrah - Complete Prayer Book",
-      description: "Having the <a href='/product/20' class='text-primary hover:underline'>Aarti Sangrah</a> in your home ensures you can perform proper worship with correct lyrics and procedures. This comprehensive collection of traditional aartis and bhajans is invaluable for daily prayers and special occasions.",
-      link: "/product/20"
+      description: "Having the <a href='/product/39' class='text-primary hover:underline'>Aarti Sangrah</a> in your home ensures you can perform proper worship with correct lyrics and procedures. This comprehensive collection of traditional aartis in an elegant gift box is invaluable for daily prayers.",
+      link: "/product/39"
     },
     {
-      id: 8,
-      name: "Fresh Marigold Garland",
-      description: "<a href='/product/8' class='text-primary hover:underline'>Fresh Marigold Garlands</a> are essential for decorating deities and creating a festive atmosphere during pooja. These vibrant flowers are traditionally used in Hindu worship and add beauty and fragrance to your sacred space.",
-      link: "/product/8"
+      id: 40,
+      name: "Laxmi Ganesh Pooja Box",
+      description: "The <a href='/product/40' class='text-primary hover:underline'>Laxmi Ganesh Pooja Box</a> is an exquisite wooden box with golden Laxmi Ganesh images. This complete set with traditional compartments is perfect for sacred ceremonies and daily worship at home.",
+      link: "/product/40"
+    },
+    {
+      id: 43,
+      name: "Lord Krishna Statue",
+      description: "A beautiful <a href='/product/43' class='text-primary hover:underline'>Lord Krishna Statue</a> adds divine energy to your pooja room. This handcrafted idol with golden calf features intricate detailing and vibrant colors, perfect as the centerpiece for your home temple.",
+      link: "/product/43"
     },
     {
       id: 47,

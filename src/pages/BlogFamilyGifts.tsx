@@ -10,62 +10,62 @@ const BlogFamilyGifts = () => {
     {
       id: 47,
       name: "Elephant Motif Copper Bottle",
-      description: "Give the gift of health and tradition with our exquisite Elephant Motif Copper Bottle. Perfect for health-conscious family members, this premium copper bottle keeps water fresh while providing the health benefits of copper-enriched water. The beautiful elephant design adds a touch of elegance, making it a thoughtful gift for Dhanteras or any special occasion.",
+      description: "Give the gift of health and tradition with our <a href='/product/47' class='text-primary hover:underline'>Elephant Motif Copper Bottle</a>. Perfect for health-conscious family members, this premium copper bottle keeps water fresh while providing the health benefits of copper-enriched water. The beautiful elephant design adds a touch of elegance, making it a thoughtful gift for Dhanteras or any special occasion.",
       link: "/product/47"
     },
     {
-      id: 1,
-      name: "Premium Pooja Thali Set",
-      description: "A complete Premium Pooja Thali Set is the perfect gift for family members who value daily worship and spiritual practices. This elegant brass thali comes with all essential items needed for performing aarti and pooja ceremonies. It's an ideal gift for parents, grandparents, or newlyweds setting up their sacred space.",
-      link: "/product/1"
+      id: 48,
+      name: "Rani Meher Copper Bottle",
+      description: "The <a href='/product/48' class='text-primary hover:underline'>Rani Meher Copper Bottle</a> features stunning traditional Rajasthani artwork. This exquisite copper bottle combines health benefits with cultural beauty, making it a unique gift that shows you care about your family's wellness and appreciate fine craftsmanship.",
+      link: "/product/48"
     },
     {
-      id: 30,
-      name: "Diwali Gift Box - Premium Collection",
-      description: "Celebrate the festival of lights with our Premium Diwali Gift Box, a complete festive hamper that brings joy to the entire family. This beautifully curated collection includes traditional items perfect for Diwali celebrations, making it an ideal gift for relatives and loved ones during the festive season.",
-      link: "/product/30"
+      id: 34,
+      name: "Gold Pooja Thali",
+      description: "The <a href='/product/34' class='text-primary hover:underline'>Gold Pooja Thali</a> is an exquisite gold-plated thali with intricate designs. Perfect for family members who value daily worship and spiritual practices, this complete set has all essential compartments for elaborate worship ceremonies and special occasions.",
+      link: "/product/34"
     },
     {
-      id: 24,
+      id: 19,
+      name: "Signature Pooja Gift Box",
+      description: "Our <a href='/product/19' class='text-primary hover:underline'>Signature Pooja Gift Box</a> is an exquisite hamper with handcrafted lotus diyas, traditional toran, fragrant incense and dhoop sticks, and premium cashews and raisins. Perfect for all auspicious occasions and bringing joy to the entire family.",
+      link: "/product/19"
+    },
+    {
+      id: 37,
       name: "Akhand Brass Diya",
-      description: "The Akhand Brass Diya represents eternal light and prosperity. This traditional brass lamp is perfect for continuous lighting during festivals and special occasions. Gift it to family members who appreciate authentic Indian craftsmanship and want to illuminate their homes with divine energy.",
-      link: "/product/24"
+      description: "The <a href='/product/37' class='text-primary hover:underline'>Akhand Brass Diya</a> represents eternal light and prosperity. This traditional brass lamp with glass protection cover is perfect for continuous lighting during festivals and special occasions, ideal for family members who appreciate authentic Indian craftsmanship.",
+      link: "/product/37"
     },
     {
-      id: 20,
+      id: 39,
       name: "Aarti Sangrah - Complete Prayer Book",
-      description: "For spiritually inclined family members, the Aarti Sangrah is an invaluable gift. This comprehensive collection of traditional aartis and bhajans helps preserve cultural heritage and makes daily worship more meaningful. Perfect for grandparents, parents, or anyone who enjoys devotional singing.",
-      link: "/product/20"
+      description: "For spiritually inclined family members, the <a href='/product/39' class='text-primary hover:underline'>Aarti Sangrah</a> is an invaluable gift. This comprehensive collection of traditional aartis in an elegant gift box helps preserve cultural heritage and makes daily worship more meaningful.",
+      link: "/product/39"
     },
     {
-      id: 26,
+      id: 40,
       name: "Laxmi Ganesh Pooja Box",
-      description: "Bring blessings of wealth and wisdom to your family with the Laxmi Ganesh Pooja Box. This beautifully crafted set is perfect for performing Lakshmi-Ganesh puja at home. It's an especially thoughtful gift for new homeowners or during Diwali to invoke prosperity and success.",
-      link: "/product/26"
+      description: "Bring blessings of wealth and wisdom with the <a href='/product/40' class='text-primary hover:underline'>Laxmi Ganesh Pooja Box</a>. This exquisite wooden box with golden Laxmi Ganesh images is perfect for performing puja at home and makes a thoughtful gift for new homeowners.",
+      link: "/product/40"
     },
     {
-      id: 31,
-      name: "Karva Chauth Gift Box",
-      description: "Show your love and appreciation with the specially curated Karva Chauth Gift Box. Perfect for wives, mothers, and daughters-in-law, this elegant gift set contains all the essentials for observing the Karva Chauth fast and celebration, making the day even more special.",
-      link: "/product/31"
-    },
-    {
-      id: 25,
+      id: 38,
       name: "Gold Kalash - Auspicious Vessel",
-      description: "The Gold Kalash is a symbol of abundance and auspicious beginnings. This sacred vessel is perfect for religious ceremonies and makes an elegant gift for housewarmings, weddings, or any special milestone in your family's life. Its golden finish adds a touch of grandeur to any pooja room.",
-      link: "/product/25"
+      description: "The <a href='/product/38' class='text-primary hover:underline'>Gold Kalash</a> is an exquisite gold-finished sacred vessel with intricate engravings. Perfect for religious ceremonies and makes an elegant gift for housewarmings, weddings, or any special milestone in your family's life.",
+      link: "/product/38"
     },
     {
-      id: 28,
-      name: "Lord Krishna Statue - Exquisite Idol",
-      description: "Bring divine blessings into your family's home with this beautiful Lord Krishna Statue. Perfect for devotees and collectors, this exquisitely crafted idol adds spiritual energy to any space. An ideal gift for Janmashtami or as a blessing for a new home.",
-      link: "/product/28"
+      id: 43,
+      name: "Lord Krishna Statue",
+      description: "Bring divine blessings with this beautiful <a href='/product/43' class='text-primary hover:underline'>Lord Krishna Statue</a> with golden calf. This handcrafted idol features intricate detailing and vibrant colors, perfect for devotees and adding spiritual energy to any space.",
+      link: "/product/43"
     },
     {
-      id: 46,
-      name: "Lotus LED Diya - Set of 6",
-      description: "Combine tradition with modern convenience with our beautiful Lotus LED Diya set. These eco-friendly, reusable diyas are perfect for families who want the aesthetic beauty of traditional lamps with the safety and convenience of LED lights. Ideal for festivals, celebrations, and creating a serene ambiance at home.",
-      link: "/product/46"
+      id: 45,
+      name: "Lotus LED Diya - Pack of 6",
+      description: "Combine tradition with modern convenience with our <a href='/product/45' class='text-primary hover:underline'>Lotus LED Diya Pack of 6</a>. These beautiful crystal lotus LED diyas are perfect for families who want the aesthetic beauty of traditional lamps with the safety and convenience of LED lights.",
+      link: "/product/45"
     }
   ];
 
@@ -121,11 +121,12 @@ const BlogFamilyGifts = () => {
             {gifts.map((gift, index) => (
               <div key={gift.id} className="mb-10 pb-8 border-b border-border last:border-0">
                 <h2 className="text-2xl font-bold text-foreground mb-4">
-                  {index + 1}. <Link to={gift.link} className="text-primary hover:underline">{gift.name}</Link>
+                  {index + 1}. {gift.name}
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  {gift.description}
-                </p>
+                <div 
+                  className="text-muted-foreground leading-relaxed mb-4"
+                  dangerouslySetInnerHTML={{ __html: gift.description }}
+                />
                 <Link to={gift.link}>
                   <Button variant="outline" className="mt-2">
                     View Product
