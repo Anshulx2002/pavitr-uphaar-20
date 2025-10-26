@@ -163,51 +163,51 @@ const ProductDetails = () => {
           </div>
 
           {/* Product Details */}
-          <div className="space-y-6">
+          <div className="space-y-3 md:space-y-6">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">
                 {currentBottleProduct.name}
               </h1>
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-3 mb-2">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
                     <Star 
                       key={i} 
-                      className={`w-5 h-5 ${i < currentBottleProduct.rating ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`} 
+                      className={`w-4 h-4 md:w-5 md:h-5 ${i < currentBottleProduct.rating ? 'text-primary fill-primary' : 'text-muted-foreground/30'}`} 
                     />
                   ))}
-                  <span className="text-sm text-muted-foreground ml-2">({currentBottleProduct.rating}.0 Rating)</span>
+                  <span className="text-xs md:text-sm text-muted-foreground ml-2">({currentBottleProduct.rating}.0)</span>
                 </div>
               </div>
             </div>
 
             {/* Copper Bottle Variant Selection */}
             {isCopperBottle && (
-              <div className="space-y-3 pb-4 border-b border-border">
-                <label className="text-sm font-medium text-foreground">Choose Variant:</label>
-                <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-2 pb-3 border-b border-border">
+                <label className="text-xs md:text-sm font-medium text-foreground">Choose Variant:</label>
+                <div className="grid grid-cols-2 gap-2">
                   <button
                     onClick={() => setSelectedBottleVariant(47)}
-                    className={`relative py-3 px-4 rounded-lg border-2 transition-all ${
+                    className={`relative py-2 px-3 rounded-lg border-2 transition-all ${
                       selectedBottleVariant === 47
                         ? 'border-primary bg-primary/5'
                         : 'border-border hover:border-primary/50'
                     }`}
                   >
                     <div className="text-center">
-                      <div className="font-bold text-sm text-foreground">Elephant Motif</div>
+                      <div className="font-bold text-xs md:text-sm text-foreground">Elephant Motif</div>
                     </div>
                   </button>
                   <button
                     onClick={() => setSelectedBottleVariant(48)}
-                    className={`relative py-3 px-4 rounded-lg border-2 transition-all ${
+                    className={`relative py-2 px-3 rounded-lg border-2 transition-all ${
                       selectedBottleVariant === 48
                         ? 'border-primary bg-primary/5'
                         : 'border-border hover:border-primary/50'
                     }`}
                   >
                     <div className="text-center">
-                      <div className="font-bold text-sm text-foreground">Rani Meher</div>
+                      <div className="font-bold text-xs md:text-sm text-foreground">Rani Meher</div>
                     </div>
                   </button>
                 </div>
@@ -216,26 +216,26 @@ const ProductDetails = () => {
 
             {/* Pack Size Selection for Candles */}
             {isCandle && (
-              <div className="space-y-3 pb-4 border-b border-border">
-                <label className="text-sm font-medium text-foreground">Select Pack Size:</label>
-                <div className="grid grid-cols-3 gap-3">
+              <div className="space-y-2 pb-3 border-b border-border">
+                <label className="text-xs md:text-sm font-medium text-foreground">Select Pack Size:</label>
+                <div className="grid grid-cols-3 gap-2">
                   {[4, 8, 12].map((size) => (
                     <button
                       key={size}
                       onClick={() => setPackSize(size)}
-                      className={`relative py-3 px-4 rounded-lg border-2 transition-all ${
+                      className={`relative py-2 px-2 rounded-lg border-2 transition-all ${
                         packSize === size
                           ? 'border-primary bg-primary/5'
                           : 'border-border hover:border-primary/50'
                       }`}
                     >
                       <div className="text-center">
-                        <div className="font-bold text-lg text-foreground">{size} Pack</div>
+                        <div className="font-bold text-sm md:text-base text-foreground">{size} Pack</div>
                         {size === 8 && (
-                          <div className="text-xs text-primary font-medium mt-1">Save 25%</div>
+                          <div className="text-[10px] md:text-xs text-primary font-medium mt-0.5">Save 25%</div>
                         )}
                         {size === 12 && (
-                          <div className="text-xs text-primary font-medium mt-1">Save 28%</div>
+                          <div className="text-[10px] md:text-xs text-primary font-medium mt-0.5">Save 28%</div>
                         )}
                       </div>
                     </button>
@@ -244,26 +244,26 @@ const ProductDetails = () => {
               </div>
             )}
 
-            <div className="space-y-2">
-              <div className="flex items-baseline gap-3">
-                <span className="text-4xl font-bold" style={{ color: 'hsl(var(--premium-gold-saffron))' }}>
+            <div className="space-y-1">
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <span className="text-3xl md:text-4xl font-bold" style={{ color: 'hsl(var(--premium-gold-saffron))' }}>
                   ₹{getPackPrice()}
                 </span>
                 {isCandle ? (
                   <>
-                    <span className="text-xl text-muted-foreground line-through">
+                    <span className="text-lg md:text-xl text-muted-foreground line-through">
                       ₹{getOriginalPackPrice()}
                     </span>
-                    <span className="text-sm px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
+                    <span className="text-xs md:text-sm px-2 md:px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
                       {Math.round(((getOriginalPackPrice() - getPackPrice()) / getOriginalPackPrice()) * 100)}% OFF
                     </span>
                   </>
                 ) : product.originalPrice && (
                   <>
-                    <span className="text-xl text-muted-foreground line-through">
+                    <span className="text-lg md:text-xl text-muted-foreground line-through">
                       ₹{isCopperBottle ? currentBottleProduct.originalPrice : product.originalPrice}
                     </span>
-                    <span className="text-sm px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
+                    <span className="text-xs md:text-sm px-2 md:px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: 'hsl(var(--premium-gold-saffron) / 0.1)', color: 'hsl(var(--premium-gold-saffron))' }}>
                       {isCopperBottle 
                         ? Math.round(((currentBottleProduct.originalPrice! - currentBottleProduct.price) / currentBottleProduct.originalPrice!) * 100)
                         : Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -272,33 +272,30 @@ const ProductDetails = () => {
                   </>
                 )}
               </div>
-              {isCandle && (
-                <p className="text-sm text-muted-foreground">Price for {packSize} pack • Inclusive of all taxes</p>
-              )}
-              {!isCandle && (
-                <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
-              )}
+              <p className="text-xs md:text-sm text-muted-foreground">
+                {isCandle ? `Price for ${packSize} pack • ` : ''}Inclusive of all taxes
+              </p>
             </div>
 
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed line-clamp-3 md:line-clamp-none">
               {currentBottleProduct.description}
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-3">
+            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
               <Button 
                 onClick={handleBuyNow}
                 size="lg"
-                className="flex-1 bg-gradient-premium-gold hover:opacity-90 text-white font-bold text-base sm:text-lg h-14 sm:h-12 shadow-lg hover:shadow-xl transition-all rounded-xl"
+                className="flex-1 bg-gradient-premium-gold hover:opacity-90 text-white font-bold text-lg sm:text-xl h-16 sm:h-14 shadow-lg hover:shadow-xl transition-all rounded-xl"
               >
-                <ShoppingCart className="w-5 h-5 mr-2" />
+                <ShoppingCart className="w-6 h-6 mr-2" />
                 Buy Now
               </Button>
               <Button 
                 onClick={handleAddToCart}
                 size="lg"
                 variant="outline"
-                className="flex-1 h-14 sm:h-12 text-base sm:text-lg font-semibold border-2 hover:bg-primary/5 transition-all rounded-xl"
+                className="flex-1 h-16 sm:h-14 text-lg sm:text-xl font-semibold border-2 hover:bg-primary/5 transition-all rounded-xl"
               >
                 Add to Cart
               </Button>
@@ -306,9 +303,9 @@ const ProductDetails = () => {
                 onClick={handleShare}
                 size="lg"
                 variant="outline"
-                className="sm:w-12 h-14 sm:h-12 border-2 hover:bg-primary/5 transition-all rounded-xl"
+                className="sm:w-14 h-16 sm:h-14 border-2 hover:bg-primary/5 transition-all rounded-xl"
               >
-                <Share2 className="w-5 h-5" />
+                <Share2 className="w-6 h-6" />
                 <span className="sm:hidden ml-2 font-semibold">Share Product</span>
               </Button>
             </div>
