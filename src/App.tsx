@@ -30,6 +30,7 @@ import AdminView from "./pages/AdminView";
 import ProductDetails from "./pages/ProductDetails";
 import CorporateGifting from "./pages/CorporateGifting";
 import Candles from "./pages/Candles";
+import Blogs from "./pages/Blogs";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/reviews" element={<Reviews />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />

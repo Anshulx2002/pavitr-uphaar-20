@@ -165,10 +165,17 @@ const Header = () => {
             </DropdownMenu>
 
             <Link
-              to="/festival-kits"
+              to="/reviews"
               className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
             >
-              Festival Kits
+              Reviews
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              to="/blogs"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
+            >
+              Blogs
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
@@ -179,10 +186,10 @@ const Header = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
-              to="/reviews"
+              to="/corporate-gifting"
               className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
             >
-              Reviews
+              Corporate Gifting
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
@@ -190,13 +197,6 @@ const Header = () => {
               className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
             >
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              to="/corporate-gifting"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
-            >
-              Corporate Gifting
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </nav>
@@ -283,31 +283,31 @@ const Header = () => {
                 Products
               </Link>
               <Link
-                to="/festival-kits"
-                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
-              >
-                Festival Kits
-              </Link>
-              <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">
-                About
-              </Link>
-              <Link
                 to="/reviews"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
               >
                 Reviews
               </Link>
               <Link
-                to="/contact"
+                to="/blogs"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
               >
-                Contact
+                Blogs
+              </Link>
+              <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2">
+                About
               </Link>
               <Link
                 to="/corporate-gifting"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
               >
                 Corporate Gifting
+              </Link>
+              <Link
+                to="/contact"
+                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
+              >
+                Contact
               </Link>
 
               <Link
