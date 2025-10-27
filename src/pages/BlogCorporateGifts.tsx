@@ -4,7 +4,16 @@ import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import blogCorporateGiftsImage from "@/assets/blog-corporate-gifts.jpg";
+import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
+import raniMeherCopperBottle from "@/assets/rani-meher-copper-bottle.png";
+import signatureGiftBox from "@/assets/laxmi-ganesh-pooja-box.png";
+import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
+import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
+import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
+import goldKalash from "@/assets/gold-kalash.png";
+import lotusLedDiya from "@/assets/lotus-led-diya.png";
+import aartiSangrah from "@/assets/aarti-sangrah.png";
+import sandalwoodAgarbatti from "@/assets/sandalwood.jpg";
 
 const BlogCorporateGifts = () => {
   useScrollAnimation();
@@ -14,61 +23,71 @@ const BlogCorporateGifts = () => {
       id: 47,
       name: "Elephant Motif Copper Bottle",
       description: "Elevate your corporate gifting with our premium <a href='/product/47' class='text-primary hover:underline'>Elephant Motif Copper Bottle</a>. This sophisticated gift combines health benefits with elegant design, making it perfect for wellness-focused companies. Your team members will appreciate this thoughtful gift that promotes healthy living while showcasing exquisite Indian craftsmanship.",
-      link: "/product/47"
+      link: "/product/47",
+      image: elephantCopperBottle
     },
     {
       id: 48,
       name: "Rani Meher Copper Bottle",
       description: "The <a href='/product/48' class='text-primary hover:underline'>Rani Meher Copper Bottle</a> features stunning traditional Rajasthani artwork, making it a unique corporate gift that stands out. This luxurious copper bottle is perfect for executive gifting or as premium employee appreciation gifts, representing both wellness and cultural heritage.",
-      link: "/product/48"
+      link: "/product/48",
+      image: raniMeherCopperBottle
     },
     {
       id: 19,
       name: "Signature Pooja Gift Box",
       description: "Make your corporate celebrations memorable with our <a href='/product/19' class='text-primary hover:underline'>Signature Pooja Gift Box</a>. This exquisite hamper with handcrafted lotus diyas, traditional toran, fragrant incense and dhoop sticks reflects your company's appreciation and festive spirit, making it ideal for bulk corporate gifting.",
-      link: "/product/19"
+      link: "/product/19",
+      image: signatureGiftBox
     },
     {
       id: 34,
       name: "Gold Pooja Thali",
       description: "For corporate gifting during festivals or special occasions, the <a href='/product/34' class='text-primary hover:underline'>Gold Pooja Thali</a> is an exceptional choice. This exquisite gold-plated thali set represents blessings and prosperity, making it a prestigious gift perfect for senior management and executive gifting.",
-      link: "/product/34"
+      link: "/product/34",
+      image: goldPoojaThali
     },
     {
       id: 40,
       name: "Laxmi Ganesh Pooja Box",
       description: "Gift prosperity and success with the <a href='/product/40' class='text-primary hover:underline'>Laxmi Ganesh Pooja Box</a>. This beautifully crafted wooden box with golden Laxmi Ganesh images is perfect for corporate celebrations or business milestones, symbolizing wealth and wisdom.",
-      link: "/product/40"
+      link: "/product/40",
+      image: laxmiGaneshBox
     },
     {
       id: 37,
       name: "Akhand Brass Diya",
       description: "The <a href='/product/37' class='text-primary hover:underline'>Akhand Brass Diya</a> represents continuous success and eternal light – perfect symbolism for corporate gifting. This premium brass lamp with glass protection is elegant for festivals, business inaugurations, or employee recognition programs.",
-      link: "/product/37"
+      link: "/product/37",
+      image: akhandBrassDiya
     },
     {
       id: 38,
       name: "Gold Kalash - Auspicious Vessel",
       description: "The <a href='/product/38' class='text-primary hover:underline'>Gold Kalash</a> is a symbol of abundance and prosperity, making it an ideal corporate gift. Perfect for office inaugurations, milestone celebrations, or as executive gifts, this exquisite gold-finished sacred vessel adds grandeur to any corporate gifting program.",
-      link: "/product/38"
+      link: "/product/38",
+      image: goldKalash
     },
     {
       id: 45,
       name: "Lotus LED Diya - Pack of 6",
       description: "Combine tradition with modern convenience with our <a href='/product/45' class='text-primary hover:underline'>Lotus LED Diya Pack of 6</a>. These eco-friendly, elegant crystal lotus diyas are perfect for office décor or as festival gifts, ideal for bulk corporate orders.",
-      link: "/product/45"
+      link: "/product/45",
+      image: lotusLedDiya
     },
     {
       id: 39,
       name: "Aarti Sangrah - Complete Prayer Book",
       description: "For team members who value spirituality, the <a href='/product/39' class='text-primary hover:underline'>Aarti Sangrah</a> makes a thoughtful corporate gift. This comprehensive prayer book in an elegant gift box shows your company's respect for diverse beliefs and cultural traditions.",
-      link: "/product/39"
+      link: "/product/39",
+      image: aartiSangrah
     },
     {
       id: 1,
       name: "Premium Sandalwood Agarbatti",
       description: "Gift wellness and tranquility with our <a href='/product/1' class='text-primary hover:underline'>Premium Sandalwood Agarbatti</a>. These hand-rolled incense sticks made from pure sandalwood create a peaceful atmosphere, perfect for corporate gifts that promote mindfulness and well-being.",
-      link: "/product/1"
+      link: "/product/1",
+      image: sandalwoodAgarbatti
     }
   ];
 
@@ -114,11 +133,11 @@ const BlogCorporateGifts = () => {
           </div>
 
           {/* Featured Image */}
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 bg-gradient-to-br from-background via-primary/5 to-saffron/5">
             <img
-              src={blogCorporateGiftsImage}
+              src={elephantCopperBottle}
               alt="Corporate gifts"
-              className="w-full h-auto"
+              className="w-full h-auto object-contain p-8"
             />
           </div>
 
@@ -142,12 +161,21 @@ const BlogCorporateGifts = () => {
                   className="text-muted-foreground leading-relaxed mb-6 text-lg ml-16"
                   dangerouslySetInnerHTML={{ __html: gift.description }}
                 />
-                <Link to={gift.link} className="ml-16 inline-block">
-                  <Button variant="default" className="group shadow-lg hover:shadow-xl transition-all">
-                    View Product
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
-                  </Button>
-                </Link>
+                <div className="ml-16 flex flex-col gap-4">
+                  <div className="w-48 h-48 rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg bg-gradient-to-br from-background via-primary/5 to-saffron/5 p-4">
+                    <img 
+                      src={gift.image} 
+                      alt={gift.name}
+                      className="w-full h-full object-contain hover-scale"
+                    />
+                  </div>
+                  <Link to={gift.link} className="inline-block">
+                    <Button variant="default" className="group shadow-lg hover:shadow-xl transition-all">
+                      View Product
+                      <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
+                    </Button>
+                  </Link>
+                </div>
               </div>
             ))}
 

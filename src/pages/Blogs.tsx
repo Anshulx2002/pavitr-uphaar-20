@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import diwaliKitPremium from "@/assets/diwali-kit-premium.png";
+import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
 import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 import raniMeherCopperBottle from "@/assets/rani-meher-copper-bottle.png";
@@ -19,7 +19,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "May 15, 2025",
       readTime: "10 min read",
-      image: diwaliKitPremium,
+      image: laxmiGaneshBox,
       link: "/blog/family-gifts"
     },
     {
