@@ -3,10 +3,10 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import blogFamilyGiftsImage from "@/assets/blog-family-gifts.jpg";
-import blogCorporateGiftsImage from "@/assets/blog-corporate-gifts.jpg";
-import blogPoojaItemsImage from "@/assets/blog-pooja-items.jpg";
-import blogCopperBenefitsImage from "@/assets/blog-copper-benefits.jpg";
+import diwaliKitPremium from "@/assets/diwali-kit-premium.png";
+import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
+import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
+import raniMeherCopperBottle from "@/assets/rani-meher-copper-bottle.png";
 
 const Blogs = () => {
   useScrollAnimation();
@@ -19,7 +19,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "May 15, 2025",
       readTime: "10 min read",
-      image: blogFamilyGiftsImage,
+      image: diwaliKitPremium,
       link: "/blog/family-gifts"
     },
     {
@@ -29,7 +29,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "April 18, 2025",
       readTime: "10 min read",
-      image: blogCorporateGiftsImage,
+      image: elephantCopperBottle,
       link: "/blog/corporate-gifts"
     },
     {
@@ -39,7 +39,7 @@ const Blogs = () => {
       author: "Pavitra Uphaar Team",
       date: "January 5, 2025",
       readTime: "7 min read",
-      image: blogPoojaItemsImage,
+      image: goldPoojaThali,
       link: "/blog/essential-pooja-items"
     },
     {
@@ -49,7 +49,7 @@ const Blogs = () => {
       author: "Pavitra Uphaar Team",
       date: "October 10, 2025",
       readTime: "6 min read",
-      image: blogCopperBenefitsImage,
+      image: raniMeherCopperBottle,
       link: "/blog/copper-bottle-benefits"
     }
   ];
