@@ -174,6 +174,12 @@ const BlogEssentialPoojaItems = () => {
                     />
                   </div>
                   <Link to={item.link} className="inline-block">
+                    <Button variant="default" className="group shadow-lg hover:shadow-xl transition-all">
+                      View Product
+                      <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
+                    </Button>
+                  </Link>
+                </div>
               </div>
             ))}
 
