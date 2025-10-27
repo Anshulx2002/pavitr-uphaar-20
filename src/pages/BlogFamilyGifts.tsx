@@ -140,7 +140,7 @@ const BlogFamilyGifts = () => {
               alt="Family gifts"
               loading="lazy"
               onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
-              className="w-full h-auto object-contain p-8"
+              className="w-full h-auto max-h-80 object-contain p-6"
             />
           </div>
 

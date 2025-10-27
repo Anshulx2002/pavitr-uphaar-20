@@ -51,11 +51,13 @@ const BlogCopperBottleBenefits = () => {
           </div>
 
           {/* Featured Image */}
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 bg-gradient-to-br from-background via-primary/5 to-saffron/5">
             <img
               src={blogCopperBenefitsImage}
               alt="Copper water bottles"
-              className="w-full h-auto"
+              loading="lazy"
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
+              className="w-full h-auto max-h-80 object-contain p-6"
             />
           </div>
 
