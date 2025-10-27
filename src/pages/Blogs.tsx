@@ -89,6 +89,8 @@ const Blogs = () => {
                   <img
                     src={post.image}
                     alt={post.title}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
                     className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>

@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottle from "@/assets/rani-meher-copper-bottle.png";
-import signatureGiftBox from "@/assets/laxmi-ganesh-pooja-box.png";
 import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
@@ -38,7 +37,7 @@ const BlogCorporateGifts = () => {
       name: "Signature Pooja Gift Box",
       description: "Make your corporate celebrations memorable with our <a href='/product/19' class='text-primary hover:underline'>Signature Pooja Gift Box</a>. This exquisite hamper with handcrafted lotus diyas, traditional toran, fragrant incense and dhoop sticks reflects your company's appreciation and festive spirit, making it ideal for bulk corporate gifting.",
       link: "/product/19",
-      image: signatureGiftBox
+      image: laxmiGaneshBox
     },
     {
       id: 34,
@@ -137,6 +136,8 @@ const BlogCorporateGifts = () => {
             <img
               src={elephantCopperBottle}
               alt="Corporate gifts"
+              loading="lazy"
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
               className="w-full h-auto object-contain p-8"
             />
           </div>
@@ -166,6 +167,8 @@ const BlogCorporateGifts = () => {
                     <img 
                       src={gift.image} 
                       alt={gift.name}
+                      loading="lazy"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
                       className="w-full h-full object-contain hover-scale"
                     />
                   </div>

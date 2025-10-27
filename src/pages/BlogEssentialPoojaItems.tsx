@@ -4,7 +4,16 @@ import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import blogPoojaItemsImage from "@/assets/blog-pooja-items.jpg";
+import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
+import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
+import sandalwoodAgarbatti from "@/assets/sandalwood.jpg";
+import woodenIncenseHolder from "@/assets/wooden-incense-holder.png";
+import woodenDhoopHolder from "@/assets/wooden-dhoop-holder.png";
+import goldKalash from "@/assets/gold-kalash.png";
+import aartiSangrah from "@/assets/aarti-sangrah.png";
+import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
+import lordKrishnaStatue from "@/assets/lord-krishna-statue.png";
+import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 
 const BlogEssentialPoojaItems = () => {
   useScrollAnimation();
@@ -14,61 +23,71 @@ const BlogEssentialPoojaItems = () => {
       id: 34,
       name: "Gold Pooja Thali",
       description: "A complete pooja thali is the foundation of any sacred space. Our <a href='/product/34' class='text-primary hover:underline'>Gold Pooja Thali</a> is an exquisite gold-plated thali with intricate designs and all essential compartments needed for elaborate worship ceremonies and daily rituals.",
-      link: "/product/34"
+      link: "/product/34",
+      image: goldPoojaThali
     },
     {
       id: 37,
       name: "Akhand Brass Diya",
       description: "The <a href='/product/37' class='text-primary hover:underline'>Akhand Brass Diya</a> is essential for continuous lighting during festivals and special occasions. This premium brass lamp with glass protection cover represents the eternal light of divine presence and is perfect for daily aarti.",
-      link: "/product/37"
+      link: "/product/37",
+      image: akhandBrassDiya
     },
     {
       id: 1,
       name: "Premium Sandalwood Agarbatti",
       description: "No pooja is complete without the divine fragrance of incense. Our <a href='/product/1' class='text-primary hover:underline'>Premium Sandalwood Agarbatti</a> creates a peaceful atmosphere with pure sandalwood powder. These hand-rolled incense sticks purify the environment and enhance spiritual practice.",
-      link: "/product/1"
+      link: "/product/1",
+      image: sandalwoodAgarbatti
     },
     {
       id: 41,
       name: "Wooden Incense Holder",
       description: "The <a href='/product/41' class='text-primary hover:underline'>Wooden Incense Holder</a> is a handcrafted holder with intricate carved designs, perfect for holding incense sticks during pooja ceremonies. This beautiful accessory adds elegance to your sacred space.",
-      link: "/product/41"
+      link: "/product/41",
+      image: woodenIncenseHolder
     },
     {
       id: 42,
       name: "Wooden Dhoop Stick Holder",
       description: "Keep your pooja space organized with the <a href='/product/42' class='text-primary hover:underline'>Wooden Dhoop Stick Holder</a>. This elegant triangular holder with carved patterns features a storage compartment, making it both functional and beautiful.",
-      link: "/product/42"
+      link: "/product/42",
+      image: woodenDhoopHolder
     },
     {
       id: 38,
       name: "Gold Kalash - Auspicious Vessel",
       description: "The <a href='/product/38' class='text-primary hover:underline'>Gold Kalash</a> is an exquisite gold-finished sacred vessel with intricate engravings used in various rituals and ceremonies. This auspicious item symbolizes abundance and prosperity, essential for housewarmings and pujas.",
-      link: "/product/38"
+      link: "/product/38",
+      image: goldKalash
     },
     {
       id: 39,
       name: "Aarti Sangrah - Complete Prayer Book",
       description: "Having the <a href='/product/39' class='text-primary hover:underline'>Aarti Sangrah</a> in your home ensures you can perform proper worship with correct lyrics and procedures. This comprehensive collection of traditional aartis in an elegant gift box is invaluable for daily prayers.",
-      link: "/product/39"
+      link: "/product/39",
+      image: aartiSangrah
     },
     {
       id: 40,
       name: "Laxmi Ganesh Pooja Box",
       description: "The <a href='/product/40' class='text-primary hover:underline'>Laxmi Ganesh Pooja Box</a> is an exquisite wooden box with golden Laxmi Ganesh images. This complete set with traditional compartments is perfect for sacred ceremonies and daily worship at home.",
-      link: "/product/40"
+      link: "/product/40",
+      image: laxmiGaneshBox
     },
     {
       id: 43,
       name: "Lord Krishna Statue",
       description: "A beautiful <a href='/product/43' class='text-primary hover:underline'>Lord Krishna Statue</a> adds divine energy to your pooja room. This handcrafted idol with golden calf features intricate detailing and vibrant colors, perfect as the centerpiece for your home temple.",
-      link: "/product/43"
+      link: "/product/43",
+      image: lordKrishnaStatue
     },
     {
       id: 47,
       name: "Elephant Motif Copper Bottle",
       description: "Keep sacred water fresh with our <a href='/product/47' class='text-primary hover:underline'>Elephant Motif Copper Bottle</a>. Traditionally, copper vessels are used to store water for pooja and drinking. The copper-enriched water has numerous health benefits and maintains its purity for religious ceremonies.",
-      link: "/product/47"
+      link: "/product/47",
+      image: elephantCopperBottle
     }
   ];
 
@@ -114,11 +133,13 @@ const BlogEssentialPoojaItems = () => {
           </div>
 
           {/* Featured Image */}
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 bg-gradient-to-br from-background via-primary/5 to-saffron/5">
             <img
-              src={blogPoojaItemsImage}
+              src={goldPoojaThali}
               alt="Essential pooja items"
-              className="w-full h-auto"
+              loading="lazy"
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
+              className="w-full h-auto object-contain p-8"
             />
           </div>
 
@@ -142,12 +163,17 @@ const BlogEssentialPoojaItems = () => {
                   className="text-muted-foreground leading-relaxed mb-6 text-lg ml-16"
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 />
-                <Link to={item.link} className="ml-16 inline-block">
-                  <Button variant="default" className="group shadow-lg hover:shadow-xl transition-all">
-                    View Product
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
-                  </Button>
-                </Link>
+                <div className="ml-16 flex flex-col gap-4">
+                  <div className="w-48 h-48 rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg bg-gradient-to-br from-background via-primary/5 to-saffron/5 p-4">
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      loading="lazy"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
+                      className="w-full h-full object-contain hover-scale"
+                    />
+                  </div>
+                  <Link to={item.link} className="inline-block">
               </div>
             ))}
 

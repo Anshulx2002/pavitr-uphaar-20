@@ -138,6 +138,8 @@ const BlogFamilyGifts = () => {
             <img
               src={diwaliKitPremium}
               alt="Family gifts"
+              loading="lazy"
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
               className="w-full h-auto object-contain p-8"
             />
           </div>
@@ -167,6 +169,8 @@ const BlogFamilyGifts = () => {
                     <img 
                       src={gift.image} 
                       alt={gift.name}
+                      loading="lazy"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
                       className="w-full h-full object-contain hover-scale"
                     />
                   </div>
