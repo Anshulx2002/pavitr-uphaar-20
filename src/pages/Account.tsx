@@ -245,7 +245,7 @@ const Account = () => {
             <h1 className="text-3xl font-bold">My Account</h1>
             <div className="flex gap-2">
               {email === "anshulvchadha@hotmail.com" && (
-                <Button onClick={() => navigate("/admin")} variant="saffron">
+                <Button onClick={() => navigate("/admin/view")} variant="saffron">
                   <Settings className="mr-2 h-4 w-4" />
                   Manage Orders
                 </Button>
