@@ -28,14 +28,16 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { customerName, customerEmail, orderRef, status, items, totalAmount, shippingAddress }: StatusUpdateRequest = await req.json();
+    const { customerName, customerEmail, orderRef, status, items, totalAmount, shippingAddress }: StatusUpdateRequest =
+      await req.json();
 
     console.log("Sending status update email:", { customerEmail, orderRef, status });
 
     const statusTitle = status === "shipped" ? "Your Order Has Been Shipped! 📦" : "Your Order Has Been Delivered! 🎉";
-    const statusMessage = status === "shipped" 
-      ? "Great news! Your order is on its way to you." 
-      : "Your order has been successfully delivered. We hope you enjoy your purchase!";
+    const statusMessage =
+      status === "shipped"
+        ? "Great news! Your order is on its way to you."
+        : "Your order has been successfully delivered. We hope you enjoy your purchase!";
 
     const itemsHtml = items
       .map(
@@ -45,7 +47,7 @@ const handler = async (req: Request): Promise<Response> => {
           <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: center;">${item.quantity}</td>
           <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">₹${(item.price / 100).toFixed(2)}</td>
         </tr>
-      `
+      `,
       )
       .join("");
 
@@ -101,12 +103,16 @@ const handler = async (req: Request): Promise<Response> => {
               <p style="margin: 0; white-space: pre-line;">${shippingAddress}</p>
             </div>
 
-            ${status === "delivered" ? `
+            ${
+              status === "delivered"
+                ? `
               <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107;">
                 <p style="margin: 0;"><strong>Need Help?</strong></p>
                 <p style="margin: 5px 0 0 0;">If you have any questions about your order, please contact us at <a href="mailto:pavitrauphaar@gmail.com" style="color: #FF6B35;">pavitrauphaar@gmail.com</a></p>
               </div>
-            ` : ''}
+            `
+                : ""
+            }
             
             <p style="margin-top: 30px;">Thank you for choosing Pavitra Uphaar!</p>
             
@@ -120,7 +126,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Pavitra Uphaar <onboarding@resend.dev>",
+      from: "Pavitra Uphaar <support@pavitrauphaar.com>",
       to: [customerEmail],
       subject: `Order ${status.charAt(0).toUpperCase() + status.slice(1)} - ${orderRef}`,
       html: htmlContent,
