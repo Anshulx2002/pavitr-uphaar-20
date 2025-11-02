@@ -73,13 +73,42 @@ const AdminView = () => {
 
   const updateOrderStatus = async (orderId: string, newStatus: string) => {
     try {
+      const order = orders.find(o => o.id === orderId);
+      if (!order) throw new Error("Order not found");
+
       const { error } = await supabase.from("orders").update({ status: newStatus }).eq("id", orderId);
 
       if (error) throw error;
 
       setOrders(orders.map((order) => (order.id === orderId ? { ...order, status: newStatus } : order)));
 
-      toast.success("Order status updated successfully");
+      // Send email notification if status is shipped or delivered
+      if ((newStatus === "shipped" || newStatus === "delivered") && order.customer_email) {
+        try {
+          const items = order.meta?.cart_items || [];
+          await supabase.functions.invoke("send-status-update", {
+            body: {
+              customerName: order.customer_name || "Customer",
+              customerEmail: order.customer_email,
+              orderRef: order.order_ref,
+              status: newStatus,
+              items: items.map((item: any) => ({
+                name: item.name,
+                quantity: item.quantity,
+                price: item.price,
+              })),
+              totalAmount: order.amount_paise,
+              shippingAddress: order.shipping_address || "N/A",
+            },
+          });
+          toast.success("Order status updated and email sent successfully");
+        } catch (emailError) {
+          console.error("Error sending status update email:", emailError);
+          toast.success("Order status updated (email notification failed)");
+        }
+      } else {
+        toast.success("Order status updated successfully");
+      }
     } catch (error) {
       console.error("Error updating order status:", error);
       toast.error("Failed to update order status");
