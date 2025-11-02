@@ -61,8 +61,13 @@ const handler = async (req: Request): Promise<Response> => {
         </head>
         <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-            <h1 style="color: white; margin: 0; font-size: 28px;">Pavitra Uphaar</h1>
-            <p style="color: white; margin: 10px 0 0 0; font-size: 14px;">Sacred Gifts for Every Occasion</p>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+              <img src="https://bilgoxmvnvhiqzidllvj.supabase.co/storage/v1/object/public/assets/pavitra-uphaar-logo.png" alt="Pavitra Uphaar Logo" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'">
+              <div>
+                <h1 style="color: white; margin: 0; font-size: 28px;">Pavitra Uphaar</h1>
+                <p style="color: white; margin: 5px 0 0 0; font-size: 14px;">Sacred Gifts for Every Occasion</p>
+              </div>
+            </div>
           </div>
           
           <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
