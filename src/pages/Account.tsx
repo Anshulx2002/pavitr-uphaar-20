@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { User, Package, LogOut, Edit, MapPin, Plus, Trash2 } from "lucide-react";
+import { User, Package, LogOut, Edit, MapPin, Plus, Trash2, Settings } from "lucide-react";
 import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -243,10 +243,18 @@ const Account = () => {
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold">My Account</h1>
-            <Button onClick={handleLogout} variant="outline">
-              <LogOut className="mr-2 h-4 w-4" />
-              Logout
-            </Button>
+            <div className="flex gap-2">
+              {email === "anshulvchadha@hotmail.com" && (
+                <Button onClick={() => navigate("/admin")} variant="saffron">
+                  <Settings className="mr-2 h-4 w-4" />
+                  Manage Orders
+                </Button>
+              )}
+              <Button onClick={handleLogout} variant="outline">
+                <LogOut className="mr-2 h-4 w-4" />
+                Logout
+              </Button>
+            </div>
           </div>
 
           {/* Profile Section */}
