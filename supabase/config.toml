@@ -20,3 +20,6 @@ verify_jwt = false
 
 [functions.meta-product-feed]
 verify_jwt = false
+
+[functions.seed-products]
+verify_jwt = false

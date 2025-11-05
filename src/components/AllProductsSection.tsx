@@ -3,7 +3,8 @@ import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Filter, ChevronDown, Sparkles } from "lucide-react";
-import { allProducts, categories } from "@/data/products";
+import { categories } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link, useSearchParams } from "react-router-dom";
 import {
@@ -16,6 +17,9 @@ import {
 const AllProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchParams, setSearchParams] = useSearchParams();
+  
+  // Fetch products from database
+  const { data: allProducts = [], isLoading } = useProducts();
   
   // Initialize scroll animations
   useScrollAnimation([activeCategory, searchParams.toString()]);
@@ -168,7 +172,12 @@ const AllProductsSection = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mb-16">
-          {filteredProducts.length > 0 ? (
+          {isLoading ? (
+            <div className="col-span-full text-center py-16">
+              <div className="w-16 h-16 mx-auto mb-4 border-4 border-premium-gold-saffron/20 border-t-premium-gold-saffron rounded-full animate-spin"></div>
+              <p className="text-muted-foreground">Loading products...</p>
+            </div>
+          ) : filteredProducts.length > 0 ? (
             filteredProducts.map((product, index) => (
               <div key={product.id} className="scroll-animate hover-lift">
                 <ProductCard {...product} />

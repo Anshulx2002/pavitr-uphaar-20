@@ -1,4 +1,7 @@
 // Product images are served from public folder for stable URLs in Meta feeds
+// NOTE: Products are now stored in Supabase database
+// Use the useProducts hook to fetch products dynamically
+// This file is kept for backward compatibility and type definitions
 
 export interface Product {
   id: number;
@@ -14,6 +17,9 @@ export interface Product {
   condition?: "new" | "refurbished" | "used";
   brand?: string;
 }
+
+// Fallback static products (will be replaced by database data in production)
+// To populate the database, call the seed-products edge function once
 
 export const allProducts: Product[] = [
   // Incense & Agarbatti
