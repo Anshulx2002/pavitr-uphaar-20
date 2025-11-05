@@ -39,6 +39,9 @@ export interface Product {
   description: string;
   badge?: string;
   category: string;
+  availability?: "in stock" | "out of stock" | "preorder";
+  condition?: "new" | "refurbished" | "used";
+  brand?: string;
 }
 
 export const allProducts: Product[] = [
