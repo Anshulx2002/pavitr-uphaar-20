@@ -1,33 +1,4 @@
-// Import all images
-import agarbattiImage from "@/assets/agarbatti.jpg";
-import diyaImage from "@/assets/diya.jpg";
-import kumkumImage from "@/assets/kumkum.jpg";
-import rudrakshaImage from "@/assets/rudraksha.jpg";
-import camphorImage from "@/assets/camphor.jpg";
-import poojaThaliImage from "@/assets/pooja-thali.jpg";
-import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
-import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
-import garlandImage from "@/assets/garland.jpg";
-import sandalwoodImage from "@/assets/sandalwood.jpg";
-import diwaliKitImage from "@/assets/diwali-kit-premium.png";
-import dussehraKitImage from "@/assets/dussehra-kit-1.png";
-import ganeshKitImage from "@/assets/ganesh-kit.jpg";
-import navratriKitImage from "@/assets/navratri-kit.jpg";
-import karvaKitImage from "@/assets/karva-chauth-gift-box.png";
-import aartiBookImage from "@/assets/aarti-book.png";
-import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
-import goldKalashImage from "@/assets/gold-kalash.png";
-import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
-import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
-import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
-import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
-import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
-import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
-import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
-import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
-import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
-import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
-import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
+// Product images are served from public folder for stable URLs in Meta feeds
 
 export interface Product {
   id: number;
@@ -51,11 +22,14 @@ export const allProducts: Product[] = [
     name: "Premium Sandalwood Agarbatti",
     price: 299,
     originalPrice: 399,
-    image: agarbattiImage,
+    image: "/product-images/agarbatti.jpg",
     rating: 5,
     description: "Hand-rolled incense sticks made from pure sandalwood powder. Burns for 45 minutes with divine fragrance.",
     badge: "Best Seller",
-    category: "incense"
+    category: "incense",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
 
   // Sacred Threads (removed sandalwood mala and red thread kalava)
@@ -64,22 +38,28 @@ export const allProducts: Product[] = [
     name: "Gold Pooja Thali",
     price: 2499,
     originalPrice: 3499,
-    image: goldPoojaThaliImage,
+    image: "/product-images/gold-pooja-thali.jpg",
     rating: 5,
     description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 35,
     name: "Silver Pooja Thali",
     price: 2499,
     originalPrice: 3499,
-    image: silverPoojaThaliImage,
+    image: "/product-images/silver-pooja-thali.jpg",
     rating: 5,
     description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
 
   // Festival Kits
@@ -88,187 +68,238 @@ export const allProducts: Product[] = [
     name: "Signature Pooja Gift Box",
     price: 1999,
     originalPrice: 3000,
-    image: diwaliKitImage,
+    image: "/product-images/diwali-kit-premium.png",
     rating: 4.8,
     description: "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
     badge: "34% OFF",
-    category: "kits"
+    category: "kits",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 46,
     name: "Dussehra Gift Box",
     price: 1999,
     originalPrice: 3000,
-    image: dussehraKitImage,
+    image: "/product-images/dussehra-kit-1.png",
     rating: 4.9,
     description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
     badge: "34% OFF",
-    category: "kits"
+    category: "kits",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 20,
     name: "Ganesh Chaturthi Kit",
     price: 2499,
     originalPrice: 5000,
-    image: ganeshKitImage,
+    image: "/product-images/ganesh-kit.jpg",
     rating: 4.9,
     description: "Everything needed for Ganesh Chaturthi celebrations. Includes modak molds.",
     badge: "Complete Kit",
-    category: "kits"
+    category: "kits",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 21,
     name: "Navratri Pooja Kit",
     price: 2499,
     originalPrice: 5000,
-    image: navratriKitImage,
+    image: "/product-images/navratri-kit.jpg",
     rating: 4.8,
     description: "Nine-day Navratri celebration kit with all essential items.",
     badge: "9-Day Kit",
-    category: "kits"
+    category: "kits",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 22,
     name: "Karva Chauth Gift Box",
     price: 2499,
     originalPrice: 5000,
-    image: karvaKitImage,
+    image: "/product-images/karva-chauth-gift-box.png",
     rating: 4.7,
     description: "Complete essentials for the auspicious Karva Chauth ceremony. Includes Mathi, Decorative Diya, Bindi Packet, Mehendi Cone, Kalash for Water, Pooja Thali, and Mithai Box.",
     badge: "50% OFF",
-    category: "kits"
+    category: "kits",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 36,
     name: "Hanuman Chalisa Aarti Book",
     price: 1499,
     originalPrice: 2499,
-    image: aartiBookImage,
+    image: "/product-images/aarti-book.png",
     rating: 5,
     description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 37,
     name: "Akhand Brass Diya",
     price: 1499,
     originalPrice: 2499,
-    image: akhandBrassDiyaImage,
+    image: "/product-images/akhand-brass-diya.png",
     rating: 5,
     description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
     badge: "Premium",
-    category: "lamps"
+    category: "lamps",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 38,
     name: "Gold Kalash",
     price: 1499,
     originalPrice: 2499,
-    image: goldKalashImage,
+    image: "/product-images/gold-kalash.png",
     rating: 5,
     description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 39,
     name: "Aarti Sangrah",
     price: 1499,
     originalPrice: 2499,
-    image: aartiSanghrahImage,
+    image: "/product-images/aarti-sangrah.png",
     rating: 5,
     description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 40,
     name: "Laxmi Ganesh Pooja Box",
     price: 999,
     originalPrice: 1499,
-    image: laxmiGaneshPoojaBoxImage,
+    image: "/product-images/laxmi-ganesh-pooja-box.png",
     rating: 5,
     description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 41,
     name: "Wooden Incense Holder",
     price: 499,
     originalPrice: 750,
-    image: woodenDhoopHolderImage,
+    image: "/product-images/wooden-dhoop-holder.png",
     rating: 4.8,
     description: "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
     badge: "Handcrafted",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 42,
     name: "Wooden Dhoop Stick Holder",
     price: 499,
     originalPrice: 750,
-    image: woodenIncenseHolderImage,
+    image: "/product-images/wooden-incense-holder.png",
     rating: 4.7,
     description: "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
     badge: "Elegant",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 43,
     name: "Lord Krishna Statue",
     price: 2499,
     originalPrice: 4000,
-    image: lordKrishnaStatueImage,
+    image: "/product-images/lord-krishna-statue.png",
     rating: 4.9,
     description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
     badge: "Sacred",
-    category: "idols"
+    category: "idols",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 44,
     name: "Kamdhenu Idol Silver",
     price: 3999,
     originalPrice: 5999,
-    image: kamdhenusIdolSilverImage,
+    image: "/product-images/kamdhenu-idol-silver.jpg",
     rating: 4.9,
     description: "Exquisite silver-finished Kamdhenu cow idol with calf. Symbol of prosperity and abundance. Perfect for home temple and gifting during auspicious occasions.",
     badge: "Sacred",
-    category: "idols"
+    category: "idols",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 45,
     name: "Lotus LED Diya - Pack of 6",
     price: 999,
     originalPrice: 1200,
-    image: lotusLedDiyaImage,
+    image: "/product-images/lotus-led-diya.png",
     rating: 4.8,
     description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
     badge: "Festival Special",
-    category: "lamps"
+    category: "lamps",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 47,
     name: "Elephant Motif Copper Bottle",
     price: 1750,
     originalPrice: 2500,
-    image: elephantCopperBottleImage,
+    image: "/product-images/elephant-copper-bottle.png",
     rating: 5,
     description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
     badge: "Dhanteras Special",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 48,
     name: "Rani Meher Copper Bottle",
     price: 1750,
     originalPrice: 2500,
-    image: raniMeherCopperBottleImage,
+    image: "/product-images/rani-meher-copper-bottle.png",
     rating: 5,
     description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
     badge: "Dhanteras Special",
-    category: "accessories"
+    category: "accessories",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   
   // Candles
@@ -277,22 +308,28 @@ export const allProducts: Product[] = [
     name: "Dazzling Electric Candles with Glitter",
     price: 1800,
     originalPrice: 2500,
-    image: glitterElectricCandlesImage,
+    image: "/product-images/glitter-electric-candles-gold.png",
     rating: 4.9,
     description: "Stunning electric LED candles with luxurious glitter finish. Box of 12 flameless candles with realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards.",
     badge: "Festival Special",
-    category: "candles"
+    category: "candles",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   },
   {
     id: 50,
     name: "Multicoloured Electric Candles",
     price: 2400,
     originalPrice: 2999,
-    image: multicolourElectricCandlesImage,
+    image: "/product-images/multicolour-electric-candles.png",
     rating: 4.9,
     description: "Vibrant multicoloured electric LED candles set. Box of 12 flameless candles in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities.",
     badge: "Festival Special",
-    category: "candles"
+    category: "candles",
+    availability: "in stock",
+    condition: "new",
+    brand: "Pavitra Uphaar"
   }
 ];
 
