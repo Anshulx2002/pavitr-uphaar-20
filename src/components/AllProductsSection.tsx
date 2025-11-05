@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Filter, ChevronDown, Sparkles } from "lucide-react";
-import { categories } from "@/data/products";
 import { useProducts } from "@/hooks/useProducts";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link, useSearchParams } from "react-router-dom";
@@ -21,6 +20,31 @@ const AllProductsSection = () => {
   // Fetch products from database
   const { data: allProducts = [], isLoading } = useProducts();
   
+  // Build categories from database products dynamically
+  const categories = useMemo(() => {
+    const categoryMap = new Map<string, number>();
+    
+    allProducts.forEach(product => {
+      const count = categoryMap.get(product.category) || 0;
+      categoryMap.set(product.category, count + 1);
+    });
+
+    const categoryList = [
+      { id: "all", name: "All Products", count: allProducts.length }
+    ];
+
+    categoryMap.forEach((count, categoryId) => {
+      // Format category name from ID (e.g., "incense-agarbatti" -> "Incense Agarbatti")
+      const name = categoryId.split('-').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+      ).join(' ');
+      
+      categoryList.push({ id: categoryId, name, count });
+    });
+
+    return categoryList;
+  }, [allProducts]);
+  
   // Initialize scroll animations
   useScrollAnimation([activeCategory, searchParams.toString()]);
 
@@ -33,7 +57,7 @@ const AllProductsSection = () => {
         setActiveCategory(matchingCategory.id);
       }
     }
-  }, [searchParams]);
+  }, [searchParams, categories]);
 
   // Filter products based on category and search query
   const filteredProducts = (() => {

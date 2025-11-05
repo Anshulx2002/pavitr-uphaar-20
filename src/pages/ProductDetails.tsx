@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Star, ShoppingCart, Share2, CheckCircle, Truck, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
-import { allProducts } from "@/data/products";
+import { useProductById } from "@/hooks/useProducts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
@@ -14,22 +14,33 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
   
-  const product = allProducts.find(p => p.id === Number(id));
+  const { data: product, isLoading } = useProductById(Number(id));
   const [selectedImage, setSelectedImage] = useState(0);
   const [packSize, setPackSize] = useState(4);
   const [selectedBottleVariant, setSelectedBottleVariant] = useState<number>(Number(id));
   
   const isCandle = product?.category?.toLowerCase().includes('candle');
-  const isCopperBottle = product?.id === 47 || product?.id === 48;
+  const isCopperBottle = product?.id === 15 || product?.id === 16; // Updated IDs for copper bottles
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="container mx-auto px-4 py-16 text-center">
+          <div className="w-16 h-16 mx-auto mb-4 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+          <p className="text-muted-foreground">Loading product...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!product) {
     return <NotFound />;
   }
 
-  // Get current bottle variant if applicable
-  const currentBottleProduct = isCopperBottle 
-    ? allProducts.find(p => p.id === selectedBottleVariant) || product
-    : product;
+  // For copper bottles, we'll handle variants differently since we're fetching from DB
+  const currentBottleProduct = product;
 
   const images = [currentBottleProduct.image];
 
@@ -37,8 +48,8 @@ const ProductDetails = () => {
     if (isCopperBottle) return currentBottleProduct.price;
     if (!isCandle) return product.price;
     
-    // Product 49: Dazzling Electric Candles with Glitter
-    if (product.id === 49) {
+    // Product 13: Dazzling Electric Candles with Glitter (Gold)
+    if (product.id === 13) {
       switch (packSize) {
         case 4: return 599;
         case 8: return 1200;
@@ -47,8 +58,8 @@ const ProductDetails = () => {
       }
     }
     
-    // Product 50: Multicolour Electric Candles
-    if (product.id === 50) {
+    // Product 14: Multicolour Electric Candles
+    if (product.id === 14) {
       switch (packSize) {
         case 4: return 799;
         case 8: return 1599;
@@ -64,8 +75,8 @@ const ProductDetails = () => {
     if (isCopperBottle) return currentBottleProduct.originalPrice;
     if (!isCandle) return product.originalPrice;
     
-    // Product 49: Dazzling Electric Candles with Glitter
-    if (product.id === 49) {
+    // Product 13: Dazzling Electric Candles with Glitter (Gold)
+    if (product.id === 13) {
       switch (packSize) {
         case 4: return 799;
         case 8: return 1600;
@@ -74,8 +85,8 @@ const ProductDetails = () => {
       }
     }
     
-    // Product 50: Multicolour Electric Candles
-    if (product.id === 50) {
+    // Product 14: Multicolour Electric Candles
+    if (product.id === 14) {
       switch (packSize) {
         case 4: return 999;
         case 8: return 1999;
@@ -181,38 +192,7 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* Copper Bottle Variant Selection */}
-            {isCopperBottle && (
-              <div className="space-y-2 pb-3 border-b border-border">
-                <label className="text-xs md:text-sm font-medium text-foreground">Choose Variant:</label>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    onClick={() => setSelectedBottleVariant(47)}
-                    className={`relative py-2 px-3 rounded-lg border-2 transition-all ${
-                      selectedBottleVariant === 47
-                        ? 'border-primary bg-primary/5'
-                        : 'border-border hover:border-primary/50'
-                    }`}
-                  >
-                    <div className="text-center">
-                      <div className="font-bold text-xs md:text-sm text-foreground">Elephant Motif</div>
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => setSelectedBottleVariant(48)}
-                    className={`relative py-2 px-3 rounded-lg border-2 transition-all ${
-                      selectedBottleVariant === 48
-                        ? 'border-primary bg-primary/5'
-                        : 'border-border hover:border-primary/50'
-                    }`}
-                  >
-                    <div className="text-center">
-                      <div className="font-bold text-xs md:text-sm text-foreground">Rani Meher</div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            )}
+            {/* Note: Copper bottle variants removed - each variant is now a separate product */}
 
             {/* Pack Size Selection for Candles */}
             {isCandle && (

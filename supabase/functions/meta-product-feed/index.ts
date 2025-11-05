@@ -24,12 +24,14 @@ interface Product {
 
 // Map product categories to Google Product Categories for Meta
 const categoryMap: Record<string, string> = {
-  "incense": "Home & Garden > Home Fragrances > Incense",
-  "lamps": "Home & Garden > Lighting > Lamps",
+  "incense-agarbatti": "Home & Garden > Home Fragrances > Incense",
+  "lamps-diyas": "Home & Garden > Lighting > Lamps",
   "candles": "Home & Garden > Lighting > Candles",
-  "accessories": "Religious & Ceremonial > Religious Items",
+  "pooja-accessories": "Religious & Ceremonial > Religious Items",
   "idols": "Religious & Ceremonial > Religious Items > Statues",
-  "kits": "Religious & Ceremonial > Religious Items",
+  "festival-kits": "Religious & Ceremonial > Religious Items",
+  "sacred-threads": "Religious & Ceremonial > Religious Items",
+  "flowers-garlands": "Religious & Ceremonial > Religious Items",
 };
 
 // Products will be fetched from database
@@ -47,8 +49,13 @@ function generateMetaProductFeed(products: any[], baseUrl: string): string {
     const googleCategory = categoryMap[product.category] || "Religious & Ceremonial > Religious Items";
     
     // Construct full URLs
-    const productUrl = `${baseUrl}/product-details/${product.id}`;
+    const productUrl = `${baseUrl}/product/${product.id}`;
     const imageUrl = `${baseUrl}${product.image}`;
+    
+    // Determine price and sale price correctly
+    const hasDiscount = product.original_price && product.original_price > product.price;
+    const displayPrice = hasDiscount ? product.original_price : product.price;
+    const salePrice = hasDiscount ? product.price : null;
     
     // Escape XML special characters
     const escapeXml = (str: string) => {
@@ -68,11 +75,11 @@ function generateMetaProductFeed(products: any[], baseUrl: string): string {
       <g:link>${productUrl}</g:link>
       <g:image_link>${imageUrl}</g:image_link>
       <g:availability>${availability}</g:availability>
-      <g:price>${product.price}.00 INR</g:price>
+      <g:price>${displayPrice}.00 INR</g:price>
       <g:brand>${escapeXml(brand)}</g:brand>
       <g:condition>${condition}</g:condition>
-      <g:google_product_category>${escapeXml(googleCategory)}</g:google_product_category>${product.originalPrice ? `
-      <g:sale_price>${product.originalPrice}.00 INR</g:sale_price>` : ''}
+      <g:google_product_category>${escapeXml(googleCategory)}</g:google_product_category>${salePrice ? `
+      <g:sale_price>${salePrice}.00 INR</g:sale_price>` : ''}
     </item>`;
   }
   

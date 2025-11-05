@@ -98,3 +98,35 @@ export const useFeaturedProducts = () => {
     staleTime: 1000 * 60 * 5,
   });
 };
+
+export const useProductById = (id: number) => {
+  return useQuery({
+    queryKey: ['product', id],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+        .eq('id', id)
+        .maybeSingle();
+
+      if (error) throw error;
+      if (!data) return null;
+      
+      return {
+        id: data.id,
+        name: data.name,
+        price: data.price,
+        originalPrice: data.original_price,
+        image: data.image,
+        rating: data.rating,
+        description: data.description,
+        badge: data.badge,
+        category: data.category,
+        availability: data.availability as "in stock" | "out of stock" | "preorder",
+        condition: data.condition as "new" | "refurbished" | "used",
+        brand: data.brand
+      } as Product;
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+};

@@ -56,12 +56,15 @@ const ProductCard = ({
   };
 
   const handleCardClick = () => {
-    // Navigate to dedicated page for Diwali Kit (id 19), Dussehra Kit (id 46), or Aarti Sangrah (id 39)
-    if (id === 19) {
+    // Navigate to dedicated pages for specific products (updated DB IDs)
+    if (id === 22) {
+      // Diwali Kit Premium
       navigate('/diwali-kit');
-    } else if (id === 46) {
+    } else if (id === 24) {
+      // Dussehra Kit
       navigate('/dussehra-kit');
-    } else if (id === 39) {
+    } else if (id === 23) {
+      // Aarti Sangrah Book
       navigate('/aarti-sangrah');
     } else {
       // For all other products, navigate to generic product details page

@@ -8,28 +8,36 @@ import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
-
-// Import product images
-import aartiSangrah from "@/assets/aarti-sangrah.png";
-import aartiBook from "@/assets/aarti-book.png";
+import { useProductById } from "@/hooks/useProducts";
+import NotFound from "./NotFound";
 
 const AartiSangrah = () => {
-  const [selectedImage, setSelectedImage] = useState(aartiSangrah);
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
-  const product = {
-    id: 101,
-    name: "Aarti Sangrah - Complete Prayer Collection",
-    price: 1499,
-    originalPrice: 2499,
-    image: aartiSangrah,
-    rating: 4.9,
-    description: "A comprehensive collection of traditional Hindu aartis and prayers. This beautifully crafted Aarti Sangrah contains all essential prayers for daily worship, festivals, and special occasions. Perfect for devotees seeking spiritual guidance and maintaining religious traditions.",
-    badge: "40% OFF"
-  };
+  // Fetch product from database (id 23: Aarti Sangrah Book)
+  const { data: product, isLoading } = useProductById(23);
+  
+  const [selectedImage, setSelectedImage] = useState(product?.image || "");
 
-  const images = [aartiSangrah];
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="container mx-auto px-4 py-16 text-center">
+          <div className="w-16 h-16 mx-auto mb-4 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+          <p className="text-muted-foreground">Loading product...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!product) {
+    return <NotFound />;
+  }
+
+  const images = [product.image];
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -83,7 +91,7 @@ const AartiSangrah = () => {
               <video 
                 controls 
                 className="w-full rounded-lg"
-                poster={aartiSangrah}
+                poster={product.image}
               >
                 <source src="/aarti-sangrah-reel.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -200,7 +208,7 @@ const AartiSangrah = () => {
               <video 
                 controls 
                 className="w-full rounded-lg"
-                poster={aartiSangrah}
+                poster={product.image}
               >
                 <source src="/aarti-sangrah-reel.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
