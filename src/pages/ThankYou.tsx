@@ -19,7 +19,15 @@ const ThankYou = () => {
       setIsAuthenticated(!!user);
     };
     checkAuth();
-  }, []);
+    
+    // Track Purchase event for Meta Pixel
+    if (paymentId && typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', {
+        currency: 'INR',
+        value: 0 // You can pass the actual order value if available in URL params
+      });
+    }
+  }, [paymentId]);
 
   return (
     <div className="min-h-screen bg-background">

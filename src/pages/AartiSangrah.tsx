@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ShoppingCart, Star, Package, Clock, Shield, Sparkles, Truck, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -38,6 +38,19 @@ const AartiSangrah = () => {
   }
 
   const images = [product.image];
+
+  // Track ViewContent event for Meta Pixel
+  useEffect(() => {
+    if (product && typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'ViewContent', {
+        content_ids: [product.id],
+        content_name: product.name,
+        content_type: 'product',
+        value: product.price,
+        currency: 'INR'
+      });
+    }
+  }, [product]);
 
   const handleAddToCart = () => {
     addToCart(product);
