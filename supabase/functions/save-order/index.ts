@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.55.0';
+import { sendMetaPurchaseEvent } from '../_shared/meta-capi.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -61,6 +62,27 @@ serve(async (req) => {
     }
 
     console.log('Order saved successfully:', order.id);
+
+    // Send Meta Conversions API event
+    try {
+      console.log('Sending Meta CAPI Purchase event');
+      
+      await sendMetaPurchaseEvent({
+        event_id: `purchase_${order_ref}`,
+        order_ref,
+        amount_rupees: amount_paise / 100,
+        cart_items,
+        customer_name,
+        customer_email,
+        customer_phone,
+        shipping_address,
+      });
+
+      console.log('Meta CAPI Purchase event sent successfully');
+    } catch (capiError) {
+      console.error('Error sending Meta CAPI event (non-fatal):', capiError);
+      // Don't fail the order if CAPI fails
+    }
 
     // Clear user's cart after successful order
     const { error: cartError } = await supabase

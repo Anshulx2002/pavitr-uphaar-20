@@ -247,6 +247,23 @@ const Checkout = () => {
               throw new Error("Failed to save order");
             }
 
+            // Track Purchase event with Facebook Pixel (with event_id for CAPI deduplication)
+            if (typeof window !== 'undefined' && window.fbq) {
+              window.fbq('track', 'Purchase', {
+                content_ids: cartItems.map(item => item.id),
+                value: total,
+                currency: 'INR',
+                num_items: getCartItemsCount(),
+                contents: cartItems.map(item => ({
+                  id: item.id,
+                  quantity: item.quantity,
+                  item_price: item.price,
+                })),
+              }, {
+                eventID: `purchase_${receipt}`, // Must match server-side event_id for deduplication
+              });
+            }
+
             // Save new address to profile if user is logged in and using a new address
             if (user && useNewAddress) {
               try {
