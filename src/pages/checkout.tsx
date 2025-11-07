@@ -21,6 +21,7 @@ import {
   Landmark,
   Shield,
   Tag,
+  X,
 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 
@@ -63,7 +64,7 @@ type CheckoutFormData = z.infer<typeof checkoutSchema>;
 
 const Checkout = () => {
   const navigate = useNavigate();
-  const { cartItems, getCartTotal, getCartItemsCount, user, clearCart } = useCart();
+  const { cartItems, getCartTotal, getCartItemsCount, user, clearCart, removeFromCart } = useCart();
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
@@ -558,7 +559,7 @@ const Checkout = () => {
                 {/* Cart Items */}
                 <div className="space-y-3 max-h-80 sm:max-h-96 overflow-y-auto">
                   {cartItems.map((item) => (
-                    <div key={item.id} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                    <div key={item.id} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg group">
                       <img
                         src={item.image}
                         alt={item.name}
@@ -570,10 +571,22 @@ const Checkout = () => {
                           Qty: {item.quantity} × ₹{item.price}
                         </p>
                       </div>
-                      <div className="text-right flex-shrink-0">
-                        <p className="font-semibold text-sm text-card-foreground">
-                          ₹{(item.price * item.quantity).toFixed(2)}
-                        </p>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <div className="text-right">
+                          <p className="font-semibold text-sm text-card-foreground">
+                            ₹{(item.price * item.quantity).toFixed(2)}
+                          </p>
+                        </div>
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => removeFromCart(item.id)}
+                          className="h-8 w-8 text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+                          aria-label={`Remove ${item.name} from cart`}
+                        >
+                          <X className="h-4 w-4" />
+                        </Button>
                       </div>
                     </div>
                   ))}
