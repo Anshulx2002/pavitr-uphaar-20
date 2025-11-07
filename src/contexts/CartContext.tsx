@@ -173,17 +173,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
           title: "Added to Cart",
           description: `${product.name} has been added to your cart`,
         });
-        
-        // Track AddToCart event for Meta Pixel
-        if (typeof window !== 'undefined' && (window as any).fbq) {
-          (window as any).fbq('track', 'AddToCart', {
-            content_ids: [product.id],
-            content_name: product.name,
-            content_type: 'product',
-            value: product.price,
-            currency: 'INR'
-          });
-        }
       }
     } catch (error: any) {
       console.error('Error adding to cart:', error);

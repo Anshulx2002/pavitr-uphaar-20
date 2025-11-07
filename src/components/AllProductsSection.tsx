@@ -1,9 +1,9 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Filter, ChevronDown, Sparkles } from "lucide-react";
-import { useProducts } from "@/hooks/useProducts";
+import { allProducts, categories } from "@/data/products";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link, useSearchParams } from "react-router-dom";
 import {
@@ -17,34 +17,6 @@ const AllProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchParams, setSearchParams] = useSearchParams();
   
-  // Fetch products from database
-  const { data: allProducts = [], isLoading } = useProducts();
-  
-  // Build categories from database products dynamically
-  const categories = useMemo(() => {
-    const categoryMap = new Map<string, number>();
-    
-    allProducts.forEach(product => {
-      const count = categoryMap.get(product.category) || 0;
-      categoryMap.set(product.category, count + 1);
-    });
-
-    const categoryList = [
-      { id: "all", name: "All Products", count: allProducts.length }
-    ];
-
-    categoryMap.forEach((count, categoryId) => {
-      // Format category name from ID (e.g., "incense-agarbatti" -> "Incense Agarbatti")
-      const name = categoryId.split('-').map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1)
-      ).join(' ');
-      
-      categoryList.push({ id: categoryId, name, count });
-    });
-
-    return categoryList;
-  }, [allProducts]);
-  
   // Initialize scroll animations
   useScrollAnimation([activeCategory, searchParams.toString()]);
 
@@ -57,7 +29,7 @@ const AllProductsSection = () => {
         setActiveCategory(matchingCategory.id);
       }
     }
-  }, [searchParams, categories]);
+  }, [searchParams]);
 
   // Filter products based on category and search query
   const filteredProducts = (() => {
@@ -196,12 +168,7 @@ const AllProductsSection = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mb-16">
-          {isLoading ? (
-            <div className="col-span-full text-center py-16">
-              <div className="w-16 h-16 mx-auto mb-4 border-4 border-premium-gold-saffron/20 border-t-premium-gold-saffron rounded-full animate-spin"></div>
-              <p className="text-muted-foreground">Loading products...</p>
-            </div>
-          ) : filteredProducts.length > 0 ? (
+          {filteredProducts.length > 0 ? (
             filteredProducts.map((product, index) => (
               <div key={product.id} className="scroll-animate hover-lift">
                 <ProductCard {...product} />

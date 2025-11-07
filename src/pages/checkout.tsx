@@ -154,22 +154,6 @@ const Checkout = () => {
     }
   }, [cartItems, navigate]);
 
-  // Track InitiateCheckout event for Meta Pixel
-  useEffect(() => {
-    if (cartItems.length > 0 && typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'InitiateCheckout', {
-        content_ids: cartItems.map(item => item.id),
-        contents: cartItems.map(item => ({
-          id: item.id,
-          quantity: item.quantity
-        })),
-        value: getCartTotal(),
-        currency: 'INR',
-        num_items: getCartItemsCount()
-      });
-    }
-  }, []);
-
   const subtotal = getCartTotal();
   const shipping = subtotal >= 500 ? 0 : 50; // Free shipping on orders above ₹500
   const discountAmount = (subtotal * discount) / 100;

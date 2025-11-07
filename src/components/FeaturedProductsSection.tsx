@@ -4,11 +4,191 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Award, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useFeaturedProducts } from "@/hooks/useProducts";
+
+// Import product images
+import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
+import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
+import goldKalashImage from "@/assets/gold-kalash.png";
+import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
+import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
+import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
+import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
+import aartiBookImage from "@/assets/aarti-book.png";
+import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
+import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
+import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
+import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
+import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
+import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
+import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
+import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
+
+// Featured products - carefully selected new premium products
+const featuredProducts = [
+  {
+    id: 34,
+    name: "Gold Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: goldPoojaThaliImage,
+    rating: 5,
+    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
+    badge: "Premium"
+  },
+  {
+    id: 47,
+    name: "Elephant Motif Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: elephantCopperBottleImage,
+    rating: 5,
+    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special"
+  },
+  {
+    id: 48,
+    name: "Rani Meher Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: raniMeherCopperBottleImage,
+    rating: 5,
+    description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
+    badge: "Dhanteras Special"
+  },
+  {
+    id: 35,
+    name: "Silver Pooja Thali",
+    price: 2499,
+    originalPrice: 3499,
+    image: silverPoojaThaliImage,
+    rating: 5,
+    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
+    badge: "Premium"
+  },
+  {
+    id: 49,
+    name: "Dazzling Electric Candles with Glitter",
+    price: 1800,
+    originalPrice: 2500,
+    image: glitterElectricCandlesImage,
+    rating: 4.9,
+    description: "Stunning electric LED candles with luxurious glitter finish. Box of 12 flameless candles with realistic flickering effect.",
+    badge: "Festival Special"
+  },
+  {
+    id: 50,
+    name: "Multicoloured Electric Candles",
+    price: 2400,
+    originalPrice: 2999,
+    image: multicolourElectricCandlesImage,
+    rating: 4.9,
+    description: "Vibrant multicoloured electric LED candles set. Box of 12 flameless candles in assorted bright colors with warm LED flames.",
+    badge: "Festival Special"
+  },
+  {
+    id: 38,
+    name: "Gold Kalash",
+    price: 1499,
+    originalPrice: 2499,
+    image: goldKalashImage,
+    rating: 5,
+    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    badge: "Premium"
+  },
+  {
+    id: 39,
+    name: "Aarti Sangrah",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiSanghrahImage,
+    rating: 5,
+    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    badge: "Premium"
+  },
+  {
+    id: 40,
+    name: "Laxmi Ganesh Pooja Box",
+    price: 999,
+    originalPrice: 1499,
+    image: laxmiGaneshPoojaBoxImage,
+    rating: 5,
+    description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "Premium"
+  },
+  {
+    id: 41,
+    name: "Wooden Incense Holder",
+    price: 499,
+    originalPrice: 750,
+    image: woodenDhoopHolderImage,
+    rating: 4.8,
+    description: "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
+    badge: "Handcrafted"
+  },
+  {
+    id: 42,
+    name: "Wooden Dhoop Stick Holder",
+    price: 499,
+    originalPrice: 750,
+    image: woodenIncenseHolderImage,
+    rating: 4.7,
+    description: "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
+    badge: "Elegant"
+  },
+  {
+    id: 36,
+    name: "Hanuman Chalisa Aarti Book",
+    price: 1499,
+    originalPrice: 2499,
+    image: aartiBookImage,
+    rating: 5,
+    description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
+    badge: "Premium"
+  },
+  {
+    id: 37,
+    name: "Akhand Brass Diya",
+    price: 1499,
+    originalPrice: 2499,
+    image: akhandBrassDiyaImage,
+    rating: 5,
+    description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
+    badge: "Premium"
+  },
+  {
+    id: 43,
+    name: "Lord Krishna Statue",
+    price: 2499,
+    originalPrice: 4000,
+    image: lordKrishnaStatueImage,
+    rating: 4.9,
+    description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    badge: "Sacred"
+  },
+  {
+    id: 44,
+    name: "Kamdhenu Idol Silver",
+    price: 2499,
+    originalPrice: 3500,
+    image: kamdhenusIdolSilverImage,
+    rating: 4.9,
+    description: "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
+    badge: "Sacred"
+  },
+  {
+    id: 45,
+    name: "Lotus LED Diya - Pack of 6",
+    price: 999,
+    originalPrice: 1200,
+    image: lotusLedDiyaImage,
+    rating: 4.8,
+    description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
+    badge: "Festival Special"
+  }
+];
 
 const FeaturedProductsSection = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const { data: featuredProducts = [], isLoading } = useFeaturedProducts();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -54,12 +234,7 @@ const FeaturedProductsSection = () => {
           } 
           mb-8 md:mb-12
         `}>
-          {isLoading ? (
-            <div className="col-span-full text-center py-16">
-              <div className="w-16 h-16 mx-auto mb-4 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
-              <p className="text-muted-foreground">Loading featured products...</p>
-            </div>
-          ) : featuredProducts.slice(0, isMobile ? 4 : 12).map((product, index) => (
+          {featuredProducts.slice(0, isMobile ? 4 : 12).map((product, index) => (
             <div 
               key={product.id} 
               className="scroll-animate hover-lift group"

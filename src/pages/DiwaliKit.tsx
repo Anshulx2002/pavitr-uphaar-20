@@ -8,38 +8,26 @@ import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
-import { useProductById } from "@/hooks/useProducts";
-import NotFound from "./NotFound";
 
 // Import product images
 import diwaliKitPremium from "@/assets/diwali-kit-premium.png";
 import diwaliKit2 from "@/assets/diwali-kit-2.png";
 
 const DiwaliKit = () => {
+  const [selectedImage, setSelectedImage] = useState(diwaliKitPremium);
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
-  // Fetch product from database (id 22: Premium Diwali Pooja Kit)
-  const { data: product, isLoading } = useProductById(22);
-  
-  const [selectedImage, setSelectedImage] = useState(product?.image || diwaliKitPremium);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Header />
-        <div className="container mx-auto px-4 py-16 text-center">
-          <div className="w-16 h-16 mx-auto mb-4 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
-          <p className="text-muted-foreground">Loading product...</p>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (!product) {
-    return <NotFound />;
-  }
+  const product = {
+    id: 19,
+    name: "Signature Pooja Gift Box",
+    price: 1999,
+    originalPrice: 3000,
+    image: diwaliKitPremium,
+    rating: 4.8,
+    description: "An exquisite pooja hamper containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations. BONUS: Get an additional diya absolutely FREE!",
+    badge: "34% OFF"
+  };
 
   const images = [diwaliKitPremium, diwaliKit2];
   
@@ -139,7 +127,7 @@ const DiwaliKit = () => {
             <div className="relative overflow-hidden rounded-lg border border-border bg-card">
               <img 
                 src={selectedImage} 
-                alt={product.name}
+                alt="Signature Pooja Gift Box"
                 className="w-full h-[500px] object-contain"
               />
               {product.badge && (
