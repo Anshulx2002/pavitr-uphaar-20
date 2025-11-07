@@ -19,9 +19,6 @@
     fbq('init', '2653852868288120');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2653852868288120&ev=PageView&noscript=1"
-    /></noscript>
     <!-- End Meta Pixel Code -->
     <meta name="description" content="Discover authentic pooja products rooted in tradition. Premium agarbatti, diyas, kumkum and sacred items for your spiritual journey." />
     <meta name="author" content="Pavitra Uphaar" />
@@ -41,6 +38,11 @@
   </head>
 
   <body>
+    <!-- Meta Pixel noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2653852868288120&ev=PageView&noscript=1"
+    /></noscript>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
