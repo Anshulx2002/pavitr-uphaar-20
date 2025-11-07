@@ -12,7 +12,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "November 15, 2024",
       readTime: "10 min read",
-      image: "/src/assets/diwali-gift-box.png",
+      image: "/src/assets/gold-pooja-thali.jpg",
       link: "/blog/family-gifts"
     },
     {
@@ -32,7 +32,7 @@ const Blogs = () => {
       author: "Pavitra Uphaar Team",
       date: "October 20, 2024",
       readTime: "5 min read",
-      image: "/src/assets/diwali-kit-premium.png",
+      image: "/src/assets/akhand-brass-diya.png",
       link: "#"
     },
     {
