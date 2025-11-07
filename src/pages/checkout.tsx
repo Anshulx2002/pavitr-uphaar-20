@@ -147,6 +147,18 @@ const Checkout = () => {
     };
   }, []);
 
+  // Track InitiateCheckout event
+  useEffect(() => {
+    if (cartItems.length > 0 && typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
+        content_ids: cartItems.map(item => item.id),
+        value: getCartTotal(),
+        currency: 'INR',
+        num_items: getCartItemsCount()
+      });
+    }
+  }, []);
+
   // Redirect if cart is empty
   useEffect(() => {
     if (cartItems.length === 0) {

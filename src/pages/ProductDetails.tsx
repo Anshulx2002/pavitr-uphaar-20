@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Star, ShoppingCart, Share2, CheckCircle, Truck, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,19 @@ const ProductDetails = () => {
   
   const isCandle = product?.category?.toLowerCase().includes('candle');
   const isCopperBottle = product?.id === 47 || product?.id === 48;
+
+  // Track ViewContent event
+  useEffect(() => {
+    if (product && typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'ViewContent', {
+        content_ids: [product.id],
+        content_name: product.name,
+        content_type: 'product',
+        value: product.price,
+        currency: 'INR'
+      });
+    }
+  }, [product]);
 
   if (!product) {
     return <NotFound />;

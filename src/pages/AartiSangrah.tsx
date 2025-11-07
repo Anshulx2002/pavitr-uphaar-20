@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ShoppingCart, Star, Package, Clock, Shield, Sparkles, Truck, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,6 +8,12 @@ import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
 
 // Import product images
 import aartiSangrah from "@/assets/aarti-sangrah.png";
@@ -50,6 +56,19 @@ const AartiSangrah = () => {
       toast.error("Failed to copy link");
     }
   };
+
+  // Track ViewContent event
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'ViewContent', {
+        content_ids: [product.id],
+        content_name: product.name,
+        content_type: 'product',
+        value: product.price,
+        currency: 'INR'
+      });
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">

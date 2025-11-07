@@ -19,6 +19,14 @@ const ThankYou = () => {
       setIsAuthenticated(!!user);
     };
     checkAuth();
+    
+    // Track Purchase event
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'Purchase', {
+        value: 0, // Placeholder - will need actual order value in future
+        currency: 'INR'
+      });
+    }
   }, []);
 
   return (

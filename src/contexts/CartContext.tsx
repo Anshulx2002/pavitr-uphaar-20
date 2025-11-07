@@ -3,6 +3,12 @@ import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { User } from '@supabase/supabase-js';
 
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
 export interface CartItem {
   id: number;
   name: string;
@@ -173,6 +179,16 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
           title: "Added to Cart",
           description: `${product.name} has been added to your cart`,
         });
+        
+        // Track AddToCart event
+        if (typeof window !== 'undefined' && window.fbq) {
+          window.fbq('track', 'AddToCart', {
+            content_ids: [product.id],
+            content_name: product.name,
+            value: product.price,
+            currency: 'INR'
+          });
+        }
       }
     } catch (error: any) {
       console.error('Error adding to cart:', error);
