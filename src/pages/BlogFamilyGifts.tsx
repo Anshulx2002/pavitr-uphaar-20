@@ -105,8 +105,8 @@ const BlogFamilyGifts = () => {
           {/* Featured Image */}
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src="/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png"
-              alt="Family gifts"
+              src="/src/assets/diwali-gift-box.png"
+              alt="Family gifts - Premium Diwali Gift Box"
               className="w-full h-auto"
             />
           </div>

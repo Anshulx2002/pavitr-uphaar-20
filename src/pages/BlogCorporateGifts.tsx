@@ -105,8 +105,8 @@ const BlogCorporateGifts = () => {
           {/* Featured Image */}
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src="/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png"
-              alt="Corporate gifts"
+              src="/src/assets/elephant-copper-bottle.png"
+              alt="Corporate gifts - Premium Copper Bottle"
               className="w-full h-auto"
             />
           </div>

@@ -12,7 +12,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "November 15, 2024",
       readTime: "10 min read",
-      image: "/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png",
+      image: "/src/assets/diwali-gift-box.png",
       link: "/blog/family-gifts"
     },
     {
@@ -22,7 +22,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "November 18, 2024",
       readTime: "10 min read",
-      image: "/lovable-uploads/18f62fac-4131-4917-b863-cb0619cb947d.png",
+      image: "/src/assets/elephant-copper-bottle.png",
       link: "/blog/corporate-gifts"
     },
     {
@@ -32,7 +32,7 @@ const Blogs = () => {
       author: "Pavitra Uphaar Team",
       date: "October 20, 2024",
       readTime: "5 min read",
-      image: "/lovable-uploads/0ab4aa57-a2b8-462d-88ab-8fda71e755d9.png",
+      image: "/src/assets/diwali-kit-premium.png",
       link: "#"
     },
     {
@@ -42,7 +42,7 @@ const Blogs = () => {
       author: "Pavitra Uphaar Team",
       date: "October 10, 2024",
       readTime: "6 min read",
-      image: "/lovable-uploads/48bb1f46-28a4-4f5b-a779-2f3ca83fd4c7.png",
+      image: "/src/assets/rani-meher-copper-bottle.png",
       link: "#"
     }
   ];
