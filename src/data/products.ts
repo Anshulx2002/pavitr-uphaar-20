@@ -272,22 +272,22 @@ export const allProducts: Product[] = [
   {
     id: 49,
     name: "Dazzling Electric Candles with Glitter",
-    price: 1800,
-    originalPrice: 2500,
+    price: 599,
+    originalPrice: 799,
     image: glitterElectricCandlesImage,
     rating: 4.9,
-    description: "Stunning electric LED candles with luxurious glitter finish. Box of 12 flameless candles with realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards.",
+    description: "Stunning electric LED candles with luxurious glitter finish. Available in 4, 8, or 12 pack with flameless realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards.",
     badge: "Festival Special",
     category: "candles"
   },
   {
     id: 50,
     name: "Multicoloured Electric Candles",
-    price: 2400,
-    originalPrice: 2999,
+    price: 799,
+    originalPrice: 999,
     image: multicolourElectricCandlesImage,
     rating: 4.9,
-    description: "Vibrant multicoloured electric LED candles set. Box of 12 flameless candles in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities.",
+    description: "Vibrant multicoloured electric LED candles set. Available in 4, 8, or 12 pack in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities.",
     badge: "Festival Special",
     category: "candles"
   }
