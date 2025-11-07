@@ -8,26 +8,38 @@ import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { useProductById } from "@/hooks/useProducts";
+import NotFound from "./NotFound";
 
 // Import product images
 import dussehraKit1 from "@/assets/dussehra-kit-1.png";
 import dussehraKit2 from "@/assets/dussehra-kit-2.png";
 
 const DussehraKit = () => {
-  const [selectedImage, setSelectedImage] = useState(dussehraKit1);
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
-  const product = {
-    id: 46,
-    name: "Dussehra Gift Box",
-    price: 1999,
-    originalPrice: 3000,
-    image: dussehraKit1,
-    rating: 4.9,
-    description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings. BONUS: Get an additional diya absolutely FREE!",
-    badge: "34% OFF"
-  };
+  // Fetch product from database (id 24: Dussehra Pooja Kit)
+  const { data: product, isLoading } = useProductById(24);
+  
+  const [selectedImage, setSelectedImage] = useState(product?.image || dussehraKit1);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="container mx-auto px-4 py-16 text-center">
+          <div className="w-16 h-16 mx-auto mb-4 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+          <p className="text-muted-foreground">Loading product...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!product) {
+    return <NotFound />;
+  }
 
   const images = [dussehraKit1, dussehraKit2];
   
@@ -128,7 +140,7 @@ const DussehraKit = () => {
             <div className="relative overflow-hidden rounded-lg border border-border bg-card">
               <img 
                 src={selectedImage} 
-                alt="Dussehra Gift Box"
+                alt={product.name}
                 className="w-full h-[500px] object-contain"
               />
               {product.badge && (
