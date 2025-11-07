@@ -276,7 +276,7 @@ export const allProducts: Product[] = [
     originalPrice: 799,
     image: glitterElectricCandlesImage,
     rating: 4.9,
-    description: "Stunning electric LED candles with luxurious glitter finish. Available in 4, 8, or 12 pack with flameless realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards.",
+    description: "Stunning electric LED candles with luxurious glitter finish. Pack of 4, Pack of 8, and Pack of 12 available with flameless realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards. Price shown is for Pack of 4.",
     badge: "Festival Special",
     category: "candles"
   },
@@ -287,7 +287,7 @@ export const allProducts: Product[] = [
     originalPrice: 999,
     image: multicolourElectricCandlesImage,
     rating: 4.9,
-    description: "Vibrant multicoloured electric LED candles set. Available in 4, 8, or 12 pack in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities.",
+    description: "Vibrant multicoloured electric LED candles set. Pack of 4, Pack of 8, and Pack of 12 available in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities. Price shown is for Pack of 4.",
     badge: "Festival Special",
     category: "candles"
   }
