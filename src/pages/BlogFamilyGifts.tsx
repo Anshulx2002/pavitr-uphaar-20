@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
-import poojaThali from "@/assets/pooja-thali.jpg";
-import diwaliGiftBox from "@/assets/diwali-gift-box.png";
+import silverPoojaThali from "@/assets/silver-pooja-thali.jpg";
+import signaturePoojaBox from "@/assets/diwali-kit-premium.png";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
-import aartiBook from "@/assets/aarti-book.png";
+import aartiSangrah from "@/assets/aarti-sangrah.png";
 import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
-import karvaChauthBox from "@/assets/karva-chauth-gift-box.png";
 import goldKalash from "@/assets/gold-kalash.png";
 import lordKrishnaStatue from "@/assets/lord-krishna-statue.png";
 import lotusLedDiya from "@/assets/lotus-led-diya.png";
@@ -25,66 +24,66 @@ const BlogFamilyGifts = () => {
       image: elephantCopperBottle
     },
     {
-      id: 1,
-      name: "Premium Pooja Thali Set",
-      description: "A complete Premium Pooja Thali Set is the perfect gift for family members who value daily worship and spiritual practices. This elegant brass thali comes with all essential items needed for performing aarti and pooja ceremonies. It's an ideal gift for parents, grandparents, or newlyweds setting up their sacred space.",
-      link: "/product/1",
-      image: poojaThali
+      id: 34,
+      name: "Gold Pooja Thali",
+      description: "An exquisite gold-plated pooja thali with intricate designs is the perfect gift for family members who value daily worship and spiritual practices. This complete set with all essential compartments is ideal for elaborate worship ceremonies. Perfect for parents, grandparents, or newlyweds setting up their sacred space.",
+      link: "/product/34",
+      image: goldPoojaThali
     },
     {
-      id: 30,
-      name: "Diwali Gift Box - Premium Collection",
-      description: "Celebrate the festival of lights with our Premium Diwali Gift Box, a complete festive hamper that brings joy to the entire family. This beautifully curated collection includes traditional items perfect for Diwali celebrations, making it an ideal gift for relatives and loved ones during the festive season.",
-      link: "/product/30",
-      image: diwaliGiftBox
+      id: 19,
+      name: "Signature Pooja Gift Box",
+      description: "Celebrate traditions with our Signature Pooja Gift Box - an exquisite hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
+      link: "/product/19",
+      image: signaturePoojaBox
     },
     {
-      id: 24,
+      id: 37,
       name: "Akhand Brass Diya",
-      description: "The Akhand Brass Diya represents eternal light and prosperity. This traditional brass lamp is perfect for continuous lighting during festivals and special occasions. Gift it to family members who appreciate authentic Indian craftsmanship and want to illuminate their homes with divine energy.",
-      link: "/product/24",
+      description: "The Akhand Brass Diya with glass protection cover represents eternal light and prosperity. This premium traditional brass lamp is perfect for continuous lighting during festivals and special occasions. Gift it to family members who appreciate authentic Indian craftsmanship and want to illuminate their homes with divine energy.",
+      link: "/product/37",
       image: akhandBrassDiya
     },
     {
-      id: 20,
+      id: 39,
       name: "Aarti Sangrah - Complete Prayer Book",
-      description: "For spiritually inclined family members, the Aarti Sangrah is an invaluable gift. This comprehensive collection of traditional aartis and bhajans helps preserve cultural heritage and makes daily worship more meaningful. Perfect for grandparents, parents, or anyone who enjoys devotional singing.",
-      link: "/product/20",
-      image: aartiBook
+      description: "For spiritually inclined family members, the Aarti Sangrah is an invaluable gift. This premium prayer book in an elegant gift box contains a complete collection of traditional aartis and bhajans, helping preserve cultural heritage and making daily worship more meaningful. Perfect for grandparents, parents, or anyone who enjoys devotional singing.",
+      link: "/product/39",
+      image: aartiSangrah
     },
     {
-      id: 26,
+      id: 40,
       name: "Laxmi Ganesh Pooja Box",
-      description: "Bring blessings of wealth and wisdom to your family with the Laxmi Ganesh Pooja Box. This beautifully crafted set is perfect for performing Lakshmi-Ganesh puja at home. It's an especially thoughtful gift for new homeowners or during Diwali to invoke prosperity and success.",
-      link: "/product/26",
+      description: "Bring blessings of wealth and wisdom to your family with the exquisite wooden Laxmi Ganesh Pooja Box. This beautifully crafted set with golden Laxmi Ganesh images and traditional compartments is perfect for sacred ceremonies and worship at home. It's an especially thoughtful gift for new homeowners or during Diwali to invoke prosperity and success.",
+      link: "/product/40",
       image: laxmiGaneshBox
     },
     {
-      id: 31,
-      name: "Karva Chauth Gift Box",
-      description: "Show your love and appreciation with the specially curated Karva Chauth Gift Box. Perfect for wives, mothers, and daughters-in-law, this elegant gift set contains all the essentials for observing the Karva Chauth fast and celebration, making the day even more special.",
-      link: "/product/31",
-      image: karvaChauthBox
+      id: 35,
+      name: "Silver Pooja Thali",
+      description: "Show your love and appreciation with our elegant silver-plated pooja thali featuring traditional motifs. This premium quality craftsmanship piece is perfect for special occasions and daily worship, making it an ideal gift for all auspicious celebrations in your family.",
+      link: "/product/35",
+      image: silverPoojaThali
     },
     {
-      id: 25,
+      id: 38,
       name: "Gold Kalash - Auspicious Vessel",
-      description: "The Gold Kalash is a symbol of abundance and auspicious beginnings. This sacred vessel is perfect for religious ceremonies and makes an elegant gift for housewarmings, weddings, or any special milestone in your family's life. Its golden finish adds a touch of grandeur to any pooja room.",
-      link: "/product/25",
+      description: "The Gold Kalash is a symbol of abundance and auspicious beginnings. This exquisite gold-finished sacred vessel with intricate engravings is perfect for religious ceremonies, water rituals, and makes an elegant gift for housewarmings, weddings, or any special milestone in your family's life. Its golden finish adds a touch of grandeur to any pooja room.",
+      link: "/product/38",
       image: goldKalash
     },
     {
-      id: 28,
-      name: "Lord Krishna Statue - Exquisite Idol",
-      description: "Bring divine blessings into your family's home with this beautiful Lord Krishna Statue. Perfect for devotees and collectors, this exquisitely crafted idol adds spiritual energy to any space. An ideal gift for Janmashtami or as a blessing for a new home.",
-      link: "/product/28",
+      id: 43,
+      name: "Lord Krishna Statue",
+      description: "Bring divine blessings into your family's home with this beautiful handcrafted Lord Krishna Statue with golden calf. Featuring intricate detailing and vibrant colors, this exquisite idol adds spiritual energy to any space and makes a perfect centerpiece for your home temple. An ideal gift for Janmashtami or as a blessing for a new home.",
+      link: "/product/43",
       image: lordKrishnaStatue
     },
     {
-      id: 46,
-      name: "Lotus LED Diya - Set of 6",
-      description: "Combine tradition with modern convenience with our beautiful Lotus LED Diya set. These eco-friendly, reusable diyas are perfect for families who want the aesthetic beauty of traditional lamps with the safety and convenience of LED lights. Ideal for festivals, celebrations, and creating a serene ambiance at home.",
-      link: "/product/46",
+      id: 45,
+      name: "Lotus LED Diya - Pack of 6",
+      description: "Combine tradition with modern convenience with our beautiful crystal Lotus LED Diya pack of 6. These eco-friendly, reusable diyas are perfect for families who want the aesthetic beauty of traditional lamps with the safety and convenience of LED lights. Ideal for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
+      link: "/product/45",
       image: lotusLedDiya
     }
   ];
@@ -124,7 +123,7 @@ const BlogFamilyGifts = () => {
           </div>
 
           {/* Featured Image */}
-          <div className="mb-8 rounded-xl overflow-hidden max-w-2xl mx-auto">
+          <div className="mb-8 rounded-xl overflow-hidden max-w-xl mx-auto">
             <img
               src={goldPoojaThali}
               alt="Premium Gold Pooja Thali - Perfect Family Gift"

@@ -5,86 +5,86 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import raniMeherBottle from "@/assets/rani-meher-copper-bottle.png";
-import diwaliGiftBox from "@/assets/diwali-gift-box.png";
-import karvaChauthBox from "@/assets/karva-chauth-gift-box.png";
-import poojaThali from "@/assets/pooja-thali.jpg";
+import signaturePoojaBox from "@/assets/diwali-kit-premium.png";
+import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
+import silverPoojaThali from "@/assets/silver-pooja-thali.jpg";
 import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
 import goldKalash from "@/assets/gold-kalash.png";
 import lotusLedDiya from "@/assets/lotus-led-diya.png";
-import aartiBook from "@/assets/aarti-book.png";
+import aartiSangrah from "@/assets/aarti-sangrah.png";
 
 const BlogCorporateGifts = () => {
   const gifts = [
     {
       id: 47,
       name: "Elephant Motif Copper Bottle",
-      description: "Elevate your corporate gifting with our premium Elephant Motif Copper Bottle. This sophisticated gift combines health benefits with elegant design, making it perfect for wellness-focused companies. Your team members will appreciate this thoughtful gift that promotes healthy living while showcasing exquisite Indian craftsmanship. Ideal for Dhanteras corporate gifting or employee appreciation events.",
+      description: "Elevate your corporate gifting with our premium Elephant Motif Copper Bottle with exquisite elephant motif design. This sophisticated gift combines health benefits with elegant design, making it perfect for wellness-focused companies. Your team members will appreciate this thoughtful gift that promotes healthy living while showcasing authentic Indian craftsmanship. Ideal for Dhanteras corporate gifting or employee appreciation events.",
       link: "/product/47",
       image: elephantCopperBottle
     },
     {
       id: 48,
       name: "Rani Meher Copper Bottle",
-      description: "The Rani Meher Copper Bottle features stunning traditional Rajasthani artwork, making it a unique corporate gift that stands out. This luxurious copper bottle is perfect for executive gifting or as premium employee appreciation gifts. It represents both wellness and cultural heritage, making a lasting impression on your team members.",
+      description: "The Rani Meher Copper Bottle features stunning traditional Rajasthani Rani Meher artwork, making it a unique corporate gift that stands out. This luxurious copper bottle is perfect for executive gifting or as premium employee appreciation gifts. It represents both wellness and cultural heritage, making a lasting impression on your team members.",
       link: "/product/48",
       image: raniMeherBottle
     },
     {
-      id: 30,
-      name: "Diwali Gift Box - Premium Collection",
-      description: "Make your corporate Diwali celebrations memorable with our Premium Diwali Gift Box. This complete festive hamper is perfect for gifting to clients and team members during the festival of lights. The beautifully packaged collection reflects your company's appreciation and festive spirit, making it an ideal choice for bulk corporate gifting.",
-      link: "/product/30",
-      image: diwaliGiftBox
+      id: 19,
+      name: "Signature Pooja Gift Box",
+      description: "Make your corporate celebrations memorable with our Signature Pooja Gift Box - an exquisite hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions, demonstrating your company's appreciation with cultural elegance.",
+      link: "/product/19",
+      image: signaturePoojaBox
     },
     {
-      id: 31,
-      name: "Karva Chauth Gift Box",
-      description: "Show your company's thoughtfulness by gifting female team members the elegant Karva Chauth Gift Box. This specially curated collection demonstrates your organization's cultural sensitivity and care for employees' traditional celebrations. It's a meaningful way to acknowledge and respect diverse cultural practices in your workplace.",
-      link: "/product/31",
-      image: karvaChauthBox
+      id: 34,
+      name: "Gold Pooja Thali",
+      description: "For corporate gifting during festivals or special celebrations, this exquisite gold-plated pooja thali with intricate designs is an exceptional choice. The complete set with essential compartments represents blessings and prosperity, making it a prestigious gift that conveys respect and good wishes. Perfect for senior management and executive gifting.",
+      link: "/product/34",
+      image: goldPoojaThali
     },
     {
-      id: 1,
-      name: "Premium Pooja Thali Set",
-      description: "For corporate gifting during festivals or housewarming celebrations of team members, the Premium Pooja Thali Set is an exceptional choice. This elegant brass thali set represents blessings and prosperity, making it a prestigious gift that conveys respect and good wishes. Perfect for senior management and executive gifting.",
-      link: "/product/1",
-      image: poojaThali
+      id: 35,
+      name: "Silver Pooja Thali",
+      description: "Gift elegance and tradition with our premium silver-plated pooja thali featuring traditional motifs. This beautifully crafted piece demonstrates your company's respect for cultural values and makes an impressive corporate gift for special occasions, housewarmings, or festival celebrations.",
+      link: "/product/35",
+      image: silverPoojaThali
     },
     {
-      id: 26,
+      id: 40,
       name: "Laxmi Ganesh Pooja Box",
-      description: "Gift prosperity and success to your team with the Laxmi Ganesh Pooja Box. This beautifully crafted set is perfect for corporate Diwali gifting or for celebrating business milestones. It symbolizes wealth and wisdom, making it an auspicious gift that aligns with your company's success and growth aspirations.",
-      link: "/product/26",
+      description: "Gift prosperity and success to your team with the exquisite wooden Laxmi Ganesh Pooja Box featuring golden Laxmi Ganesh images. This beautifully crafted set with traditional compartments is perfect for corporate Diwali gifting or for celebrating business milestones. It symbolizes wealth and wisdom, making it an auspicious gift that aligns with your company's success and growth aspirations.",
+      link: "/product/40",
       image: laxmiGaneshBox
     },
     {
-      id: 24,
+      id: 37,
       name: "Akhand Brass Diya",
-      description: "The Akhand Brass Diya represents continuous success and eternal light – perfect symbolism for corporate gifting. This traditional brass lamp is an elegant gift for festivals, business inaugurations, or employee recognition programs. Its timeless design and spiritual significance make it a memorable corporate gift.",
-      link: "/product/24",
+      description: "The premium Akhand Brass Diya with glass protection cover represents continuous success and eternal light – perfect symbolism for corporate gifting. This traditional brass lamp is an elegant gift for festivals, business inaugurations, or employee recognition programs. Its timeless design and spiritual significance make it a memorable corporate gift.",
+      link: "/product/37",
       image: akhandBrassDiya
     },
     {
-      id: 25,
+      id: 38,
       name: "Gold Kalash - Auspicious Vessel",
-      description: "The Gold Kalash is a symbol of abundance and prosperity, making it an ideal corporate gift for special occasions. Perfect for gifting during office inaugurations, milestone celebrations, or as executive gifts, this sacred vessel adds a touch of grandeur and cultural elegance to any corporate gifting program.",
-      link: "/product/25",
+      description: "The Gold Kalash is an exquisite gold-finished sacred vessel with intricate engravings, symbolizing abundance and prosperity. This makes it an ideal corporate gift for special occasions. Perfect for gifting during office inaugurations, milestone celebrations, or as executive gifts, this sacred vessel adds a touch of grandeur and cultural elegance to any corporate gifting program.",
+      link: "/product/38",
       image: goldKalash
     },
     {
-      id: 46,
-      name: "Lotus LED Diya - Set of 6",
-      description: "Combine tradition with modern convenience in your corporate gifting with our Lotus LED Diya set. These eco-friendly, elegant diyas are perfect for office décor or as festival gifts for team members. The set of 6 makes it ideal for bulk corporate orders, offering both aesthetic appeal and practical functionality.",
-      link: "/product/46",
+      id: 45,
+      name: "Lotus LED Diya - Pack of 6",
+      description: "Combine tradition with modern convenience in your corporate gifting with our beautiful crystal Lotus LED Diya pack of 6. These eco-friendly, elegant diyas are perfect for office décor or as festival gifts for team members. The pack of 6 makes it ideal for bulk corporate orders, offering both aesthetic appeal and practical functionality.",
+      link: "/product/45",
       image: lotusLedDiya
     },
     {
-      id: 20,
+      id: 39,
       name: "Aarti Sangrah - Complete Prayer Book",
-      description: "For team members who value spirituality and tradition, the Aarti Sangrah makes a thoughtful corporate gift. This comprehensive prayer book helps preserve cultural heritage and supports employees' spiritual practices. It's a unique gift that shows your company's respect for diverse beliefs and cultural traditions.",
-      link: "/product/20",
-      image: aartiBook
+      description: "For team members who value spirituality and tradition, the premium Aarti Sangrah in an elegant gift box makes a thoughtful corporate gift. This comprehensive collection of traditional aartis helps preserve cultural heritage and supports employees' spiritual practices. It's a unique gift that shows your company's respect for diverse beliefs and cultural traditions.",
+      link: "/product/39",
+      image: aartiSangrah
     }
   ];
 
@@ -123,7 +123,7 @@ const BlogCorporateGifts = () => {
           </div>
 
           {/* Featured Image */}
-          <div className="mb-8 rounded-xl overflow-hidden max-w-2xl mx-auto">
+          <div className="mb-8 rounded-xl overflow-hidden max-w-xl mx-auto">
             <img
               src={elephantCopperBottle}
               alt="Corporate gifts - Premium Copper Bottle"
