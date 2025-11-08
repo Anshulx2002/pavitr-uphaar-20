@@ -70,11 +70,11 @@ const Blogs = () => {
               className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300"
             >
               <article>
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden bg-muted/30">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6 space-y-4">
