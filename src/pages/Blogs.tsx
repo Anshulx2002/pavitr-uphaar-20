@@ -2,6 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
+import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
+import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
+import raniMeherCopperBottle from "@/assets/rani-meher-copper-bottle.png";
 
 const Blogs = () => {
   const blogPosts = [
@@ -12,7 +16,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "November 15, 2024",
       readTime: "10 min read",
-      image: "/src/assets/gold-pooja-thali.jpg",
+      image: goldPoojaThali,
       link: "/blog/family-gifts"
     },
     {
@@ -22,7 +26,7 @@ const Blogs = () => {
       author: "Anshul Chadha",
       date: "November 18, 2024",
       readTime: "10 min read",
-      image: "/src/assets/elephant-copper-bottle.png",
+      image: elephantCopperBottle,
       link: "/blog/corporate-gifts"
     },
     {
@@ -32,7 +36,7 @@ const Blogs = () => {
       author: "Pavitra Uphaar Team",
       date: "October 20, 2024",
       readTime: "5 min read",
-      image: "/src/assets/akhand-brass-diya.png",
+      image: akhandBrassDiya,
       link: "#"
     },
     {
@@ -42,7 +46,7 @@ const Blogs = () => {
       author: "Pavitra Uphaar Team",
       date: "October 10, 2024",
       readTime: "6 min read",
-      image: "/src/assets/rani-meher-copper-bottle.png",
+      image: raniMeherCopperBottle,
       link: "#"
     }
   ];
