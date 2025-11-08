@@ -1,7 +1,7 @@
-import { ShoppingCart, Menu, ChevronDown, Sparkles, Star, User, LogOut } from "lucide-react";
+import { ShoppingCart, Menu, ChevronDown, Sparkles, Star, User, LogOut, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import CartDrawer from "./CartDrawer";
@@ -18,8 +18,29 @@ import {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const { getCartItemsCount, user } = useCart();
   const navigate = useNavigate();
+
+  // Check if user is admin
+  useEffect(() => {
+    if (user) {
+      checkAdminStatus();
+    } else {
+      setIsAdmin(false);
+    }
+  }, [user]);
+
+  const checkAdminStatus = async () => {
+    const { data } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user?.id)
+      .eq('role', 'admin')
+      .maybeSingle();
+    
+    setIsAdmin(!!data);
+  };
 
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
@@ -227,6 +248,12 @@ const Header = () => {
                       <User className="mr-2 h-4 w-4" />
                       Account
                     </DropdownMenuItem>
+                    {isAdmin && (
+                      <DropdownMenuItem onClick={() => navigate("/admin/view")}>
+                        <Shield className="mr-2 h-4 w-4" />
+                        Admin Panel
+                      </DropdownMenuItem>
+                    )}
                     <DropdownMenuItem onClick={handleLogout}>
                       <LogOut className="mr-2 h-4 w-4" />
                       Logout
@@ -324,6 +351,14 @@ const Header = () => {
                   >
                     Account
                   </Link>
+                  {isAdmin && (
+                    <Link
+                      to="/admin/view"
+                      className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2"
+                    >
+                      Admin Panel
+                    </Link>
+                  )}
                   <button
                     onClick={handleLogout}
                     className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 text-left"
