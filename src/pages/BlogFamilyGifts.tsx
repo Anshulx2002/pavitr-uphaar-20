@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 
 const BlogFamilyGifts = () => {
   const gifts = [
@@ -105,7 +106,7 @@ const BlogFamilyGifts = () => {
           {/* Featured Image */}
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src="/src/assets/gold-pooja-thali.jpg"
+              src={goldPoojaThali}
               alt="Premium Gold Pooja Thali - Perfect Family Gift"
               className="w-full h-auto"
             />

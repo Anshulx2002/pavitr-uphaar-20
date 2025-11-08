@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 
 const BlogCorporateGifts = () => {
   const gifts = [
@@ -105,7 +106,7 @@ const BlogCorporateGifts = () => {
           {/* Featured Image */}
           <div className="mb-8 rounded-xl overflow-hidden">
             <img
-              src="/src/assets/elephant-copper-bottle.png"
+              src={elephantCopperBottle}
               alt="Corporate gifts - Premium Copper Bottle"
               className="w-full h-auto"
             />
