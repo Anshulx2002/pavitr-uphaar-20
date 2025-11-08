@@ -37,7 +37,7 @@ const Blogs = () => {
       date: "October 20, 2024",
       readTime: "5 min read",
       image: akhandBrassDiya,
-      link: "#"
+      link: "/blog/diwali-significance"
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ const Blogs = () => {
       date: "October 10, 2024",
       readTime: "6 min read",
       image: raniMeherCopperBottle,
-      link: "#"
+      link: "/blog/copper-benefits"
     }
   ];
 
