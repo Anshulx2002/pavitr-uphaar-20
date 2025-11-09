@@ -28,8 +28,8 @@ import { toast } from "@/components/ui/use-toast";
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
 const SAVE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/save-order";
-const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
-// const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
+// const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
+const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
 
 const checkoutSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -150,12 +150,12 @@ const Checkout = () => {
 
   // Track InitiateCheckout event
   useEffect(() => {
-    if (cartItems.length > 0 && typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'InitiateCheckout', {
-        content_ids: cartItems.map(item => item.id),
+    if (cartItems.length > 0 && typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "InitiateCheckout", {
+        content_ids: cartItems.map((item) => item.id),
         value: getCartTotal(),
-        currency: 'INR',
-        num_items: getCartItemsCount()
+        currency: "INR",
+        num_items: getCartItemsCount(),
       });
     }
   }, []);
@@ -249,20 +249,25 @@ const Checkout = () => {
             }
 
             // Track Purchase event with Facebook Pixel (with event_id for CAPI deduplication)
-            if (typeof window !== 'undefined' && window.fbq) {
-              window.fbq('track', 'Purchase', {
-                content_ids: cartItems.map(item => item.id),
-                value: total,
-                currency: 'INR',
-                num_items: getCartItemsCount(),
-                contents: cartItems.map(item => ({
-                  id: item.id,
-                  quantity: item.quantity,
-                  item_price: item.price,
-                })),
-              }, {
-                eventID: `purchase_${receipt}`, // Must match server-side event_id for deduplication
-              });
+            if (typeof window !== "undefined" && window.fbq) {
+              window.fbq(
+                "track",
+                "Purchase",
+                {
+                  content_ids: cartItems.map((item) => item.id),
+                  value: total,
+                  currency: "INR",
+                  num_items: getCartItemsCount(),
+                  contents: cartItems.map((item) => ({
+                    id: item.id,
+                    quantity: item.quantity,
+                    item_price: item.price,
+                  })),
+                },
+                {
+                  eventID: `purchase_${receipt}`, // Must match server-side event_id for deduplication
+                },
+              );
             }
 
             // Save new address to profile if user is logged in and using a new address
