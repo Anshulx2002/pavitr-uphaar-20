@@ -30,16 +30,17 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Sending status update email to:", customerEmail);
 
     const statusText = status === "shipped" ? "Shipped" : "Delivered";
-    const statusMessage = status === "shipped" 
-      ? "Your order has been shipped and is on its way to you!" 
-      : "Your order has been delivered successfully!";
+    const statusMessage =
+      status === "shipped"
+        ? "Your order has been shipped and is on its way to you!"
+        : "Your order has been delivered successfully!";
 
     const itemsList = items
       .map(
         (item) =>
           `<li style="margin-bottom: 8px;">
             ${item.name} (Quantity: ${item.quantity})
-          </li>`
+          </li>`,
       )
       .join("");
 
@@ -75,15 +76,19 @@ const handler = async (req: Request): Promise<Response> => {
                 </ul>
               </div>
               
-              ${status === "shipped" ? `
+              ${
+                status === "shipped"
+                  ? `
                 <p style="font-size: 14px; color: #7f8c8d; margin-top: 20px;">
                   You will receive your order soon. Please keep your phone accessible for delivery updates.
                 </p>
-              ` : `
+              `
+                  : `
                 <p style="font-size: 14px; color: #7f8c8d; margin-top: 20px;">
                   Thank you for shopping with Pavitra Uphaar! We hope you love your purchase.
                 </p>
-              `}
+              `
+              }
               
               <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
                 <p style="font-size: 14px; color: #7f8c8d; margin: 5px 0;">
@@ -106,7 +111,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const { data, error } = await resend.emails.send({
-      from: "Pavitra Uphaar <onboarding@resend.dev>",
+      from: "Pavitra Uphaar <support@pavitrauphaar.com>",
       to: [customerEmail],
       subject: `Order ${statusText} - ${orderRef}`,
       html: emailHtml,
