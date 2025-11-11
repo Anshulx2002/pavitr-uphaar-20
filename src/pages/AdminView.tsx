@@ -95,7 +95,10 @@ const AdminView = () => {
               items: items.map((item: any) => ({
                 name: item.name,
                 quantity: item.quantity,
+                price: item.price || 0,
               })),
+              totalAmount: order.amount_paise,
+              shippingAddress: order.shipping_address || "N/A",
             },
           });
           console.log("Status update email sent");
