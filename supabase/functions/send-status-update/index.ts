@@ -45,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
         <tr>
           <td style="padding: 12px; border-bottom: 1px solid #eee;">${item.name}</td>
           <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: center;">${item.quantity}</td>
-          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">₹${item.price}</td>
+          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">₹${(item.price / 100).toFixed(2)}</td>
         </tr>
       `,
       )
@@ -92,7 +92,7 @@ const handler = async (req: Request): Promise<Response> => {
                   ${itemsHtml}
                   <tr style="background: #f5f5f5; font-weight: bold;">
                     <td colspan="2" style="padding: 12px; text-align: right;">Total:</td>
-                    <td style="padding: 12px; text-align: right;">₹${totalAmount}</td>
+                    <td style="padding: 12px; text-align: right;">₹${(totalAmount / 100).toFixed(2)}</td>
                   </tr>
                 </tbody>
               </table>
