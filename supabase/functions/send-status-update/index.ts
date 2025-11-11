@@ -59,9 +59,8 @@ const handler = async (req: Request): Promise<Response> => {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Order Status Update</title>
         </head>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <div style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-            <table width="100%" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+        <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f9f9f9;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9f9f9; padding: 20px 0;">
               <tr>
                 <td style="text-align: center;">
                   <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
@@ -74,11 +73,9 @@ const handler = async (req: Request): Promise<Response> => {
                       </td>
                     </tr>
                   </table>
-                  <p style="color: white; margin: 10px 0 0 0; font-size: 14px;">Sacred Gifts for Every Occasion</p>
                 </td>
               </tr>
             </table>
-          </div>
           
           <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
             <h2 style="color: #FF6B35; margin-top: 0;">${statusTitle}</h2>
