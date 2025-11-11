@@ -45,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
         <tr>
           <td style="padding: 12px; border-bottom: 1px solid #eee;">${item.name}</td>
           <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: center;">${item.quantity}</td>
-          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">₹${(item.price}</td>
+          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">₹${(item.price * 100}</td>
         </tr>
       `,
       )
@@ -108,7 +108,7 @@ const handler = async (req: Request): Promise<Response> => {
                 ? `
               <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107;">
                 <p style="margin: 0;"><strong>Need Help?</strong></p>
-                <p style="margin: 5px 0 0 0;">If you have any questions about your order, please contact us at <a href="mailto:pavitrauphaar@gmail.com" style="color: #FF6B35;">pavitrauphaar@gmail.com</a></p>
+                <p style="margin: 5px 0 0 0;">If you have any questions about your order, please contact us at <a href="mailto:support@pavitrauphaar.com" style="color: #FF6B35;">support@pavitrauphaar.com</a></p>
               </div>
             `
                 : ""
@@ -118,7 +118,7 @@ const handler = async (req: Request): Promise<Response> => {
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px;">
               <p>Pavitra Uphaar - Sacred Gifts for Every Occasion</p>
-              <p>Email: <a href="mailto:pavitrauphaar@gmail.com" style="color: #FF6B35;">pavitrauphaar@gmail.com</a></p>
+              <p>Email: <a href="mailto:support@pavitrauphaar.com" style="color: #FF6B35;">support@pavitrauphaar.com</a></p>
             </div>
           </div>
         </body>
