@@ -16,7 +16,10 @@ interface StatusUpdateRequest {
   items: Array<{
     name: string;
     quantity: number;
+    price: number;
   }>;
+  totalAmount: number;
+  shippingAddress: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -25,114 +28,118 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { customerName, customerEmail, orderRef, status, items }: StatusUpdateRequest = await req.json();
+    const { customerName, customerEmail, orderRef, status, items, totalAmount, shippingAddress }: StatusUpdateRequest =
+      await req.json();
 
-    console.log("Sending status update email to:", customerEmail);
+    console.log("Sending status update email:", { customerEmail, orderRef, status });
 
-    const statusText = status === "shipped" ? "Shipped" : "Delivered";
+    const statusTitle = status === "shipped" ? "Your Order Has Been Shipped! 📦" : "Your Order Has Been Delivered! 🎉";
     const statusMessage =
       status === "shipped"
-        ? "Your order has been shipped and is on its way to you!"
-        : "Your order has been delivered successfully!";
+        ? "Great news! Your order is on its way to you."
+        : "Your order has been successfully delivered. We hope you enjoy your purchase!";
 
-    const itemsList = items
+    const itemsHtml = items
       .map(
-        (item) =>
-          `<li style="margin-bottom: 8px;">
-            ${item.name} (Quantity: ${item.quantity})
-          </li>`,
+        (item) => `
+        <tr>
+          <td style="padding: 12px; border-bottom: 1px solid #eee;">${item.name}</td>
+          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: center;">${item.quantity}</td>
+          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">₹${(item.price / 100).toFixed(2)}</td>
+        </tr>
+      `,
       )
       .join("");
 
-    const emailHtml = `
+    const htmlContent = `
       <!DOCTYPE html>
       <html>
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Order Status Update</title>
         </head>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4;">
-          <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <div style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); padding: 30px; text-align: center;">
-              <h1 style="color: white; margin: 0; font-size: 28px;">Order ${statusText}! 🎉</h1>
-            </div>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+            <h1 style="color: white; margin: 0; font-size: 28px;">Pavitra Uphaar</h1>
+            <p style="color: white; margin: 10px 0 0 0; font-size: 14px;">Sacred Gifts for Every Occasion</p>
+          </div>
+          
+          <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
+            <h2 style="color: #FF6B35; margin-top: 0;">${statusTitle}</h2>
             
-            <div style="padding: 30px;">
-              <p style="font-size: 16px; margin-bottom: 20px;">Dear ${customerName},</p>
-              
-              <p style="font-size: 16px; margin-bottom: 20px; color: #27ae60; font-weight: bold;">
-                ${statusMessage}
-              </p>
-              
-              <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <p style="margin: 0 0 10px 0; font-weight: bold; color: #2c3e50;">Order Reference:</p>
-                <p style="margin: 0; font-size: 18px; color: #3498db; font-weight: bold;">${orderRef}</p>
-              </div>
+            <p>Dear ${customerName},</p>
+            
+            <p>${statusMessage}</p>
+            
+            <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0; color: #333;">Order Details</h3>
+              <p style="margin: 5px 0;"><strong>Order Reference:</strong> ${orderRef}</p>
+              <p style="margin: 5px 0;"><strong>Status:</strong> <span style="color: #28a745; font-weight: bold;">${status.charAt(0).toUpperCase() + status.slice(1)}</span></p>
+            </div>
 
-              <div style="margin: 20px 0;">
-                <h3 style="color: #2c3e50; margin-bottom: 15px;">Order Items:</h3>
-                <ul style="list-style-type: none; padding-left: 0;">
-                  ${itemsList}
-                </ul>
-              </div>
-              
-              ${
-                status === "shipped"
-                  ? `
-                <p style="font-size: 14px; color: #7f8c8d; margin-top: 20px;">
-                  You will receive your order soon. Please keep your phone accessible for delivery updates.
-                </p>
-              `
-                  : `
-                <p style="font-size: 14px; color: #7f8c8d; margin-top: 20px;">
-                  Thank you for shopping with Pavitra Uphaar! We hope you love your purchase.
-                </p>
-              `
-              }
-              
-              <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-                <p style="font-size: 14px; color: #7f8c8d; margin: 5px 0;">
-                  If you have any questions, please contact our customer support.
-                </p>
-                <p style="font-size: 14px; color: #7f8c8d; margin: 5px 0;">
-                  Thank you for choosing Pavitra Uphaar!
-                </p>
-              </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0; color: #333;">Order Items</h3>
+              <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                  <tr style="background: #f5f5f5;">
+                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Item</th>
+                    <th style="padding: 12px; text-align: center; border-bottom: 2px solid #ddd;">Qty</th>
+                    <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd;">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${itemsHtml}
+                  <tr style="background: #f5f5f5; font-weight: bold;">
+                    <td colspan="2" style="padding: 12px; text-align: right;">Total:</td>
+                    <td style="padding: 12px; text-align: right;">₹${(totalAmount / 100).toFixed(2)}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0; color: #333;">Shipping Address</h3>
+              <p style="margin: 0; white-space: pre-line;">${shippingAddress}</p>
+            </div>
+
+            ${
+              status === "delivered"
+                ? `
+              <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107;">
+                <p style="margin: 0;"><strong>Need Help?</strong></p>
+                <p style="margin: 5px 0 0 0;">If you have any questions about your order, please contact us at <a href="mailto:pavitrauphaar@gmail.com" style="color: #FF6B35;">pavitrauphaar@gmail.com</a></p>
+              </div>
+            `
+                : ""
+            }
             
-            <div style="background-color: #2c3e50; padding: 20px; text-align: center;">
-              <p style="color: #ecf0f1; margin: 0; font-size: 14px;">
-                © ${new Date().getFullYear()} Pavitra Uphaar. All rights reserved.
-              </p>
+            <p style="margin-top: 30px;">Thank you for choosing Pavitra Uphaar!</p>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px;">
+              <p>Pavitra Uphaar - Sacred Gifts for Every Occasion</p>
+              <p>Email: <a href="mailto:pavitrauphaar@gmail.com" style="color: #FF6B35;">pavitrauphaar@gmail.com</a></p>
             </div>
           </div>
         </body>
       </html>
     `;
 
-    const { data, error } = await resend.emails.send({
+    const emailResponse = await resend.emails.send({
       from: "Pavitra Uphaar <support@pavitrauphaar.com>",
       to: [customerEmail],
-      subject: `Order ${statusText} - ${orderRef}`,
-      html: emailHtml,
+      subject: `Order ${status.charAt(0).toUpperCase() + status.slice(1)} - ${orderRef}`,
+      html: htmlContent,
     });
 
-    if (error) {
-      console.error("Error sending status update email:", error);
-      throw error;
-    }
+    console.log("Status update email sent successfully:", emailResponse);
 
-    console.log("Status update email sent successfully:", data);
-
-    return new Response(JSON.stringify({ success: true, data }), {
+    return new Response(JSON.stringify({ success: true, emailId: emailResponse.id }), {
       status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        ...corsHeaders,
-      },
+      headers: { "Content-Type": "application/json", ...corsHeaders },
     });
   } catch (error: any) {
-    console.error("Error in send-status-update function:", error);
+    console.error("Error sending status update email:", error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
       headers: { "Content-Type": "application/json", ...corsHeaders },
