@@ -67,7 +67,7 @@ const handler = async (req: Request): Promise<Response> => {
                   <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
                     <tr>
                       <td style="vertical-align: middle; padding-right: 16px;">
-                        <img src="https://bilgoxmvnvhiqzidllvj.supabase.co/storage/v1/object/public/assets/pavitra-uphaar-logo.png" alt="Pavitra Uphaar Logo" style="height: 60px; background: white; padding: 8px; border-radius: 8px; display: block;" />
+                        <img src="https://res.cloudinary.com/dv6yivx37/image/upload/v1755598895/LOGO_PAVITRA_UPHAAR_DARK_BROWN_c8ybts.png" alt="Pavitra Uphaar Logo" style="height: 60px; background: white; padding: 8px; border-radius: 8px; display: block;" />
                       </td>
                       <td style="vertical-align: middle;">
                         <h1 style="margin: 0; color: white; font-size: 28px; font-weight: 700; letter-spacing: 1px;">Pavitra Uphaar</h1>
