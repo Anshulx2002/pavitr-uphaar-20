@@ -42,10 +42,18 @@ const handler = async (req: Request): Promise<Response> => {
     const itemsHtml = items
       .map(
         (item) => `
-        <tr>
-          <td style="padding: 12px; border-bottom: 1px solid #eee;">${item.name}</td>
-          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: center;">${item.quantity}</td>
-          <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">₹${item.price.toFixed(2)}</td>
+        <tr style="border-bottom: 1px solid #f0f0f0;">
+          <td style="padding: 12px; text-align: left;">
+            <div>
+              <h4 style="margin: 0; font-size: 14px; font-weight: 600; color: #333;">${item.name}</h4>
+            </div>
+          </td>
+          <td style="padding: 12px; text-align: center;">
+            <span style="font-size: 14px; color: #666;">${item.quantity}</span>
+          </td>
+          <td style="padding: 12px; text-align: right;">
+            <span style="font-weight: 600; color: #333; font-size: 14px;">₹${(item.price * item.quantity).toFixed(2)}</span>
+          </td>
         </tr>
       `,
       )
@@ -61,78 +69,100 @@ const handler = async (req: Request): Promise<Response> => {
         </head>
         <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f9f9f9;">
           <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9f9f9; padding: 20px 0;">
-              <tr>
-                <td style="text-align: center;">
-                  <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
-                    <tr>
-                      <td style="vertical-align: middle; padding-right: 16px;">
-                        <img src="https://res.cloudinary.com/dv6yivx37/image/upload/v1755598895/LOGO_PAVITRA_UPHAAR_DARK_BROWN_c8ybts.png" alt="Pavitra Uphaar Logo" style="height: 60px; background: white; padding: 8px; border-radius: 8px; display: block;" />
-                      </td>
-                      <td style="vertical-align: middle;">
-                        <h1 style="margin: 0; color: white; font-size: 28px; font-weight: 700; letter-spacing: 1px;">Pavitra Uphaar</h1>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          
-          <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
-            <h2 style="color: #FF6B35; margin-top: 0;">${statusTitle}</h2>
-            
-            <p>Dear ${customerName},</p>
-            
-            <p>${statusMessage}</p>
-            
-            <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #333;">Order Details</h3>
-              <p style="margin: 5px 0;"><strong>Order Reference:</strong> ${orderRef}</p>
-              <p style="margin: 5px 0;"><strong>Status:</strong> <span style="color: #28a745; font-weight: bold;">${status.charAt(0).toUpperCase() + status.slice(1)}</span></p>
-            </div>
-
-            <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #333;">Order Items</h3>
-              <table style="width: 100%; border-collapse: collapse;">
-                <thead>
-                  <tr style="background: #f5f5f5;">
-                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Item</th>
-                    <th style="padding: 12px; text-align: center; border-bottom: 2px solid #ddd;">Qty</th>
-                    <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd;">Price</th>
+            <tr>
+              <td align="center">
+                <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
+                  <!-- Header -->
+                  <tr>
+                    <td style="background-color: #ff6b35; padding: 40px 30px; text-align: center;">
+                      <table width="100%" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                        <tr>
+                          <td style="text-align: center;">
+                            <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                              <tr>
+                                <td style="vertical-align: middle; padding-right: 16px;">
+                                  <img src="https://bilgoxmvnvhiqzidllvj.supabase.co/storage/v1/object/public/assets/pavitra-uphaar-logo.png" alt="Pavitra Uphaar Logo" style="height: 60px; background: white; padding: 8px; border-radius: 8px; display: block;" />
+                                </td>
+                                <td style="vertical-align: middle;">
+                                  <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: 1px; font-family: Arial, sans-serif;">Pavitra Uphaar</h1>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  ${itemsHtml}
-                  <tr style="background: #f5f5f5; font-weight: bold;">
-                    <td colspan="2" style="padding: 12px; text-align: right;">Total:</td>
-                    <td style="padding: 12px; text-align: right;">₹${(totalAmount / 100).toFixed(2)}</td>
+                  
+                  <!-- Content -->
+                  <tr>
+                    <td style="padding: 40px 30px;">
+                      <h2 style="margin: 0 0 16px 0; color: #ff6b35; font-size: 24px; font-weight: 600;">${statusTitle}</h2>
+                      
+                      <p style="margin: 0 0 8px 0; color: #333; font-size: 16px;">Dear ${customerName},</p>
+                      
+                      <p style="margin: 0 0 24px 0; color: #666; font-size: 16px; line-height: 1.5;">${statusMessage}</p>
+                      
+                      <!-- Order Details -->
+                      <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+                        <h3 style="margin: 0 0 12px 0; color: #333; font-size: 18px; font-weight: 600;">Order Details</h3>
+                        <p style="margin: 4px 0 0 0; color: #666; font-size: 14px;"><strong>Order Reference:</strong> ${orderRef}</p>
+                        <p style="margin: 4px 0 0 0; color: #666; font-size: 14px;"><strong>Status:</strong> <span style="color: #28a745; font-weight: 600;">${status.charAt(0).toUpperCase() + status.slice(1)}</span></p>
+                      </div>
+
+                      <!-- Order Items -->
+                      <h3 style="margin: 0 0 16px 0; color: #333; font-size: 18px; font-weight: 600;">Order Items</h3>
+                      <table width="100%" cellpadding="0" cellspacing="0" style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; margin-bottom: 24px;">
+                        <thead>
+                          <tr style="background-color: #f8f9fa;">
+                            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #e0e0e0; color: #333; font-size: 14px; font-weight: 600;">Item</th>
+                            <th style="padding: 12px; text-align: center; border-bottom: 2px solid #e0e0e0; color: #333; font-size: 14px; font-weight: 600;">Qty</th>
+                            <th style="padding: 12px; text-align: right; border-bottom: 2px solid #e0e0e0; color: #333; font-size: 14px; font-weight: 600;">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          ${itemsHtml}
+                          <tr style="background-color: #f8f9fa;">
+                            <td colspan="2" style="padding: 12px; text-align: right; font-weight: 600; color: #333; font-size: 16px;">Total:</td>
+                            <td style="padding: 12px; text-align: right; font-weight: 700; color: #ff6b35; font-size: 16px;">₹${(totalAmount / 100).toFixed(2)}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!-- Shipping Address -->
+                      <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+                        <h3 style="margin: 0 0 12px 0; color: #333; font-size: 18px; font-weight: 600;">Shipping Address</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6; white-space: pre-line;">${shippingAddress}</p>
+                      </div>
+
+                      ${
+                        status === "delivered"
+                          ? `
+                      <!-- Help Section -->
+                      <div style="background-color: #fff3e0; border: 1px solid #ff6b35; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                        <p style="margin: 0; color: #e65100; font-size: 14px; font-weight: 600;">Need Help?</p>
+                        <p style="margin: 8px 0 0 0; color: #e65100; font-size: 14px;">If you have any questions about your order, please contact us at <a href="mailto:support@pavitrauphaar.com" style="color: #ff6b35; text-decoration: none;">support@pavitrauphaar.com</a></p>
+                      </div>
+                      `
+                          : ""
+                      }
+                      
+                      <!-- Support -->
+                      <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                        <p style="margin: 0 0 8px 0; color: #666; font-size: 14px;">
+                          Need help? Contact us at 
+                          <a href="mailto:support@pavitrauphaar.com" style="color: #ff6b35; text-decoration: none;">support@pavitrauphaar.com</a>
+                        </p>
+                        <p style="margin: 0; color: #999; font-size: 12px;">
+                          Thank you for choosing Pavitra Uphaar for your spiritual needs.
+                        </p>
+                      </div>
+                    </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #333;">Shipping Address</h3>
-              <p style="margin: 0; white-space: pre-line;">${shippingAddress}</p>
-            </div>
-
-            ${
-              status === "delivered"
-                ? `
-              <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107;">
-                <p style="margin: 0;"><strong>Need Help?</strong></p>
-                <p style="margin: 5px 0 0 0;">If you have any questions about your order, please contact us at <a href="mailto:support@pavitrauphaar.com" style="color: #FF6B35;">support@pavitrauphaar.com</a></p>
-              </div>
-            `
-                : ""
-            }
-            
-            <p style="margin-top: 30px;">Thank you for choosing Pavitra Uphaar!</p>
-            
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px;">
-              <p>Pavitra Uphaar - Sacred Gifts for Every Occasion</p>
-              <p>Email: <a href="mailto:support@pavitrauphaar.com" style="color: #FF6B35;">support@pavitrauphaar.com</a></p>
-            </div>
-          </div>
+                </table>
+              </td>
+            </tr>
+          </table>
         </body>
       </html>
     `;
