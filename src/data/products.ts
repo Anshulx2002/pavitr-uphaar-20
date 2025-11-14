@@ -29,6 +29,7 @@ import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
 import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
 import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
 import jesusLastSupperBoxImage from "@/assets/jesus-last-supper-box.png";
+import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 
 export interface Product {
   id: number;
@@ -300,6 +301,17 @@ export const allProducts: Product[] = [
     image: jesusLastSupperBoxImage,
     rating: 4.8,
     description: "Exquisite Jesus Last Supper puja box featuring a beautiful depiction of The Last Supper. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Perfect for sacred worship and spiritual offerings.",
+    badge: "19% OFF",
+    category: "accessories"
+  },
+  {
+    id: 51,
+    name: "SiddhiVinayak Puja Box",
+    price: 1299,
+    originalPrice: 1599,
+    image: siddhivinayakPujaBoxImage,
+    rating: 4.9,
+    description: "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
     badge: "19% OFF",
     category: "accessories"
   }
