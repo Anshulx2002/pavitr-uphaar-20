@@ -48,6 +48,7 @@ import balajiGoldPujaBoxSmallImage from "@/assets/balaji-gold-puja-box-small.png
 import laxmiGaneshSmallPujaBoxImage from "@/assets/laxmi-ganesh-small-puja-box.png";
 import balaji3dPujaBoxSmallImage from "@/assets/balaji-3d-puja-box-small.png";
 import ramlallaPujaBoxSmallImage from "@/assets/ramlalla-puja-box-small.png";
+import tridevPujaBoxBigImage from "@/assets/tridev-puja-box-big.png";
 
 export interface Product {
   id: number;
@@ -547,6 +548,18 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact RamLalla puja box featuring Lord Ram (infant form) in ornate golden temple setting with intricate decorative patterns. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium set with elegant white exterior, golden ceremonial items, and sacred compartments for divine worship and offerings.",
     badge: "23% OFF",
+    category: "accessories",
+  },
+  {
+    id: 68,
+    name: "Tridev Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: tridevPujaBoxBigImage,
+    rating: 4.9,
+    description:
+      "Exquisite large Tridev puja box featuring Lord Ganesha, Lord Balaji, and Goddess Lakshmi in stunning golden embossed artwork with intricate patterns. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple golden compartments, sacred plaques, and ornate ceremonial items for elaborate worship ceremonies.",
+    badge: "19% OFF",
     category: "accessories",
   },
 ];
