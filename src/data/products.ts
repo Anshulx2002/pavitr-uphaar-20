@@ -389,7 +389,7 @@ export const allProducts: Product[] = [
     image: ambeeMaaPujaBoxImage,
     rating: 4.9,
     description:
-      "Exquisite Ambee Maa puja box featuring Goddess Durga with 8 sacred forms in vibrant colors. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete deluxe set with golden compartments for sacred offerings and worship ceremonies.",
+      "Exquisite Ambee Maa deluxe puja box featuring Goddess Durga with 8 sacred forms surrounded by divine deities in ornate golden frame. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete deluxe set with traditional compartments, sacred plaques, and golden figurines for elaborate worship ceremonies.",
     badge: "19% OFF",
     category: "accessories",
   },
