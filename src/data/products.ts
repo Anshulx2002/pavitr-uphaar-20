@@ -41,6 +41,7 @@ import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.
 import laxmiGaneshJewelleryBoxImage from "@/assets/laxmi-ganesh-jewellery-box.png";
 import laxmiGaneshSaraswatiJewelleryBoxImage from "@/assets/laxmi-ganesh-saraswati-jewellery-box.png";
 import laxmiGaneshSaraswatiJewelleryBox2Image from "@/assets/laxmi-ganesh-saraswati-jewellery-box-2.png";
+import shatrunjayPujaBoxImage from "@/assets/shatrunjay-siddhachakra-puja-box.png";
 
 export interface Product {
   id: number;
@@ -456,6 +457,18 @@ export const allProducts: Product[] = [
     description:
       "Exquisite large 3D puja jewellery box featuring Goddess Laxmi, Lord Ganesha, and Goddess Saraswati with stunning 3D artwork and golden halos. Premium deluxe set with multiple compartments, sacred plaques, and ornate golden figurines for elaborate worship ceremonies and jewellery storage.",
     badge: "10% OFF",
+    category: "accessories",
+  },
+  {
+    id: 61,
+    name: "Shatrunjay Siddhachakra Deluxe Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: shatrunjayPujaBoxImage,
+    rating: 4.9,
+    description:
+      "Exquisite Shatrunjay Siddhachakra deluxe puja box featuring intricate golden artwork of sacred Jain pilgrimage site. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with sacred compartments and ceremonial items for elaborate Jain worship ceremonies.",
+    badge: "19% OFF",
     category: "accessories",
   },
 ];
