@@ -43,6 +43,7 @@ import laxmiGaneshSaraswatiJewelleryBoxImage from "@/assets/laxmi-ganesh-saraswa
 import laxmiGaneshSaraswatiJewelleryBox2Image from "@/assets/laxmi-ganesh-saraswati-jewellery-box-2.png";
 import shatrunjayPujaBoxImage from "@/assets/shatrunjay-siddhachakra-puja-box.png";
 import jesusPujaBoxBigImage from "@/assets/jesus-puja-box-big.png";
+import ramDarbarPujaBoxSmallImage from "@/assets/ram-darbar-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -482,6 +483,18 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Jesus puja box featuring beautiful depiction of Jesus Christ with intricate golden detailing and sacred compartments. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with Love and Peace plaques for sacred worship and spiritual offerings.",
     badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 63,
+    name: "RamDarbar Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: ramDarbarPujaBoxSmallImage,
+    rating: 4.9,
+    description:
+      "Exquisite compact RamDarbar puja box featuring Lord Rama with Sita, Laxman, and Hanuman in stunning golden artwork. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with sacred compartments and ornate golden detailing.",
+    badge: "23% OFF",
     category: "accessories",
   },
 ];
