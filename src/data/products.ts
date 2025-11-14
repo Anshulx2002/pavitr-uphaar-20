@@ -39,6 +39,7 @@ import gayatriMaaPujaBoxImage from "@/assets/gayatri-maa-puja-box.png";
 import ganeshPujaBoxSmallImage from "@/assets/ganesh-puja-box-small.png";
 import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.png";
 import laxmiGaneshJewelleryBoxImage from "@/assets/laxmi-ganesh-jewellery-box.png";
+import laxmiGaneshSaraswatiJewelleryBoxImage from "@/assets/laxmi-ganesh-saraswati-jewellery-box.png";
 
 export interface Product {
   id: number;
@@ -439,6 +440,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite large puja jewellery box featuring Goddess Laxmi and Lord Ganesha with intricate golden artwork. Dimensions: 21.3 cm x 11.5 cm x 6.1 cm. Premium deluxe set with multiple compartments, sacred plaques, and golden figurines for elaborate worship ceremonies and jewellery storage.",
+    badge: "10% OFF",
+    category: "accessories",
+  },
+  {
+    id: 60,
+    name: "Laxmi Ganesh Saraswati 3D Puja Jewellery Box with Compartment - Big",
+    price: 1799,
+    originalPrice: 1999,
+    image: laxmiGaneshSaraswatiJewelleryBoxImage,
+    rating: 4.9,
+    description:
+      "Exquisite large 3D puja jewellery box featuring Goddess Laxmi, Lord Ganesha, and Goddess Saraswati with stunning 3D artwork and golden halos. Premium deluxe set with multiple compartments, sacred plaques, and ornate golden figurines for elaborate worship ceremonies and jewellery storage.",
     badge: "10% OFF",
     category: "accessories",
   },
