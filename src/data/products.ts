@@ -52,6 +52,7 @@ import tridevPujaBoxBigImage from "@/assets/tridev-puja-box-big.png";
 import jainPujaBoxBigImage from "@/assets/jain-puja-box-big.png";
 import laxmiKuberTortoisePujaBoxBigImage from "@/assets/laxmi-kuber-tortoise-puja-box-big.png";
 import balajiPujaBoxBigImage from "@/assets/balaji-puja-box-big.png";
+import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png";
 
 export interface Product {
   id: number;
@@ -598,6 +599,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite large Balaji puja box featuring Lord Venkateswara (Balaji) in three divine forms within ornate temple architecture with stunning golden embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple golden compartments, sacred plaques, and ornate ceremonial items for elaborate worship ceremonies.",
+    badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 72,
+    name: "Golden Temple Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: goldenTemplePujaBoxBigImage,
+    rating: 4.9,
+    description:
+      "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
     badge: "19% OFF",
     category: "accessories",
   },
