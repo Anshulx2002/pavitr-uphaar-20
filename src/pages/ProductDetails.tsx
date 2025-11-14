@@ -44,7 +44,7 @@ const ProductDetails = () => {
     ? allProducts.find(p => p.id === selectedBottleVariant) || product
     : product;
 
-  const images = [currentBottleProduct.image];
+  const images = currentBottleProduct.images || [currentBottleProduct.image];
 
   const getPackPrice = () => {
     if (isCopperBottle) return currentBottleProduct.price;
