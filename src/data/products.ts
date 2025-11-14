@@ -31,6 +31,7 @@ import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candl
 import jesusLastSupperBoxImage from "@/assets/jesus-last-supper-box.png";
 import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
+import kolhapuriMaaPujaBoxImage from "@/assets/kolhapuri-maa-puja-box.png";
 
 export interface Product {
   id: number;
@@ -348,6 +349,18 @@ export const allProducts: Product[] = [
     description:
       "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
     badge: "23% OFF",
+    category: "accessories",
+  },
+  {
+    id: 53,
+    name: "Kolhapuri Maa Deluxe Puja Box",
+    price: 1299,
+    originalPrice: 1599,
+    image: kolhapuriMaaPujaBoxImage,
+    rating: 4.9,
+    description:
+      "Exquisite Kolhapuri Maa deluxe puja box featuring sacred deity imagery with intricate golden detailing. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "19% OFF",
     category: "accessories",
   },
 ];
