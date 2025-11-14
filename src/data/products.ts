@@ -28,6 +28,7 @@ import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
 import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
 import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
+import jesusLastSupperBoxImage from "@/assets/jesus-last-supper-box.png";
 
 export interface Product {
   id: number;
@@ -290,6 +291,17 @@ export const allProducts: Product[] = [
     description: "Vibrant multicoloured electric LED candles set. Pack of 4, Pack of 8, and Pack of 12 available in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities. Price shown is for Pack of 4.",
     badge: "Festival Special",
     category: "candles"
+  },
+  {
+    id: 48,
+    name: "Jesus Last Supper Puja Box",
+    price: 1299,
+    originalPrice: 1599,
+    image: jesusLastSupperBoxImage,
+    rating: 4.8,
+    description: "Exquisite Jesus Last Supper puja box featuring a beautiful depiction of The Last Supper. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Perfect for sacred worship and spiritual offerings.",
+    badge: "19% OFF",
+    category: "accessories"
   }
 ];
 
