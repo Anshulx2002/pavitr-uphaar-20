@@ -33,6 +33,7 @@ import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
 import kolhapuriMaaPujaBoxImage from "@/assets/kolhapuri-maa-puja-box.png";
 import jainTirthankarPujaBoxImage from "@/assets/jain-tirthankar-puja-box.png";
+import ambeeMaaPujaBoxImage from "@/assets/ambee-maa-puja-box.png";
 
 export interface Product {
   id: number;
@@ -373,6 +374,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite puja box featuring all 24 Jain Tirthankars in stunning golden frames. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with sacred compartments for Jain worship and offerings.",
+    badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 55,
+    name: "Ambee Maa Puja Box",
+    price: 1299,
+    originalPrice: 1599,
+    image: ambeeMaaPujaBoxImage,
+    rating: 4.9,
+    description:
+      "Exquisite Ambee Maa puja box featuring Goddess Durga with 8 sacred forms in vibrant colors. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete deluxe set with golden compartments for sacred offerings and worship ceremonies.",
     badge: "19% OFF",
     category: "accessories",
   },
