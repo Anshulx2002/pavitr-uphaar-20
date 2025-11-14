@@ -37,6 +37,7 @@ import ambeeMaaPujaBoxImage from "@/assets/ambee-maa-puja-box.png";
 import radhakrishnaGoldPujaBoxImage from "@/assets/radhakrishna-gold-puja-box.png";
 import gayatriMaaPujaBoxImage from "@/assets/gayatri-maa-puja-box.png";
 import ganeshPujaBoxSmallImage from "@/assets/ganesh-puja-box-small.png";
+import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -200,14 +201,14 @@ export const allProducts: Product[] = [
   },
   {
     id: 40,
-    name: "Laxmi Ganesh Pooja Box",
+    name: "Laxmi Ganesh Puja Box - Small",
     price: 999,
-    originalPrice: 1499,
-    image: laxmiGaneshPoojaBoxImage,
+    originalPrice: 1299,
+    image: laxmiGaneshPoojaBoxSmallImage,
     rating: 5,
     description:
-      "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
-    badge: "Premium",
+      "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
+    badge: "23% OFF",
     category: "accessories",
   },
   {
