@@ -30,6 +30,7 @@ import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.
 import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
 import jesusLastSupperBoxImage from "@/assets/jesus-last-supper-box.png";
 import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
+import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
 
 export interface Product {
   id: number;
@@ -335,6 +336,18 @@ export const allProducts: Product[] = [
     description:
       "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
     badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 52,
+    name: "Radhakrishna Puja Box",
+    price: 999,
+    originalPrice: 1299,
+    image: radhakrishnaPujaBoxImage,
+    rating: 4.9,
+    description:
+      "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
+    badge: "23% OFF",
     category: "accessories",
   },
 ];
