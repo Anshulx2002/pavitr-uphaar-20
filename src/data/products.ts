@@ -36,6 +36,7 @@ import jainTirthankarPujaBoxImage from "@/assets/jain-tirthankar-puja-box.png";
 import ambeeMaaPujaBoxImage from "@/assets/ambee-maa-puja-box.png";
 import radhakrishnaGoldPujaBoxImage from "@/assets/radhakrishna-gold-puja-box.png";
 import gayatriMaaPujaBoxImage from "@/assets/gayatri-maa-puja-box.png";
+import ganeshPujaBoxSmallImage from "@/assets/ganesh-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -413,6 +414,18 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Gayatri Maa puja box featuring Goddess Gayatri seated on lotus with sacred symbols. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with sacred Om and Swastik plaques for divine worship and offerings.",
     badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 58,
+    name: "Ganesh Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: ganeshPujaBoxSmallImage,
+    rating: 4.9,
+    description:
+      "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura and sacred Last Supper imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
+    badge: "23% OFF",
     category: "accessories",
   },
 ];
