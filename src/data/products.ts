@@ -52,9 +52,10 @@ export const allProducts: Product[] = [
     originalPrice: 399,
     image: agarbattiImage,
     rating: 5,
-    description: "Hand-rolled incense sticks made from pure sandalwood powder. Burns for 45 minutes with divine fragrance.",
+    description:
+      "Hand-rolled incense sticks made from pure sandalwood powder. Burns for 45 minutes with divine fragrance.",
     badge: "Best Seller",
-    category: "incense"
+    category: "incense",
   },
 
   // Sacred Threads (removed sandalwood mala and red thread kalava)
@@ -65,9 +66,10 @@ export const allProducts: Product[] = [
     originalPrice: 3499,
     image: goldPoojaThaliImage,
     rating: 5,
-    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
+    description:
+      "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 35,
@@ -76,9 +78,10 @@ export const allProducts: Product[] = [
     originalPrice: 3499,
     image: silverPoojaThaliImage,
     rating: 5,
-    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
+    description:
+      "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
   },
 
   // Festival Kits
@@ -89,9 +92,10 @@ export const allProducts: Product[] = [
     originalPrice: 3000,
     image: diwaliKitImage,
     rating: 4.8,
-    description: "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
+    description:
+      "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
     badge: "34% OFF",
-    category: "kits"
+    category: "kits",
   },
   {
     id: 46,
@@ -100,9 +104,10 @@ export const allProducts: Product[] = [
     originalPrice: 3000,
     image: dussehraKitImage,
     rating: 4.9,
-    description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
+    description:
+      "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
     badge: "34% OFF",
-    category: "kits"
+    category: "kits",
   },
   {
     id: 20,
@@ -113,7 +118,7 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description: "Everything needed for Ganesh Chaturthi celebrations. Includes modak molds.",
     badge: "Complete Kit",
-    category: "kits"
+    category: "kits",
   },
   {
     id: 21,
@@ -124,7 +129,7 @@ export const allProducts: Product[] = [
     rating: 4.8,
     description: "Nine-day Navratri celebration kit with all essential items.",
     badge: "9-Day Kit",
-    category: "kits"
+    category: "kits",
   },
   {
     id: 22,
@@ -133,9 +138,10 @@ export const allProducts: Product[] = [
     originalPrice: 5000,
     image: karvaKitImage,
     rating: 4.7,
-    description: "Complete essentials for the auspicious Karva Chauth ceremony. Includes Mathi, Decorative Diya, Bindi Packet, Mehendi Cone, Kalash for Water, Pooja Thali, and Mithai Box.",
+    description:
+      "Complete essentials for the auspicious Karva Chauth ceremony. Includes Mathi, Decorative Diya, Bindi Packet, Mehendi Cone, Kalash for Water, Pooja Thali, and Mithai Box.",
     badge: "50% OFF",
-    category: "kits"
+    category: "kits",
   },
   {
     id: 36,
@@ -144,9 +150,10 @@ export const allProducts: Product[] = [
     originalPrice: 2499,
     image: aartiBookImage,
     rating: 5,
-    description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
+    description:
+      "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 37,
@@ -155,9 +162,10 @@ export const allProducts: Product[] = [
     originalPrice: 2499,
     image: akhandBrassDiyaImage,
     rating: 5,
-    description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
+    description:
+      "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
     badge: "Premium",
-    category: "lamps"
+    category: "lamps",
   },
   {
     id: 38,
@@ -166,9 +174,10 @@ export const allProducts: Product[] = [
     originalPrice: 2499,
     image: goldKalashImage,
     rating: 5,
-    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    description:
+      "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 39,
@@ -177,9 +186,10 @@ export const allProducts: Product[] = [
     originalPrice: 2499,
     image: aartiSanghrahImage,
     rating: 5,
-    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    description:
+      "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 40,
@@ -188,9 +198,10 @@ export const allProducts: Product[] = [
     originalPrice: 1499,
     image: laxmiGaneshPoojaBoxImage,
     rating: 5,
-    description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
+    description:
+      "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
     badge: "Premium",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 41,
@@ -199,9 +210,10 @@ export const allProducts: Product[] = [
     originalPrice: 750,
     image: woodenDhoopHolderImage,
     rating: 4.8,
-    description: "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
+    description:
+      "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
     badge: "Handcrafted",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 42,
@@ -210,9 +222,10 @@ export const allProducts: Product[] = [
     originalPrice: 750,
     image: woodenIncenseHolderImage,
     rating: 4.7,
-    description: "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
+    description:
+      "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
     badge: "Elegant",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 43,
@@ -221,9 +234,10 @@ export const allProducts: Product[] = [
     originalPrice: 4000,
     image: lordKrishnaStatueImage,
     rating: 4.9,
-    description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    description:
+      "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
     badge: "Sacred",
-    category: "idols"
+    category: "idols",
   },
   {
     id: 44,
@@ -232,9 +246,10 @@ export const allProducts: Product[] = [
     originalPrice: 5999,
     image: kamdhenusIdolSilverImage,
     rating: 4.9,
-    description: "Exquisite silver-finished Kamdhenu cow idol with calf. Symbol of prosperity and abundance. Perfect for home temple and gifting during auspicious occasions.",
+    description:
+      "Exquisite silver-finished Kamdhenu cow idol with calf. Symbol of prosperity and abundance. Perfect for home temple and gifting during auspicious occasions.",
     badge: "Sacred",
-    category: "idols"
+    category: "idols",
   },
   {
     id: 45,
@@ -243,9 +258,10 @@ export const allProducts: Product[] = [
     originalPrice: 1200,
     image: lotusLedDiyaImage,
     rating: 4.8,
-    description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
+    description:
+      "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
     badge: "Festival Special",
-    category: "lamps"
+    category: "lamps",
   },
   {
     id: 47,
@@ -254,9 +270,10 @@ export const allProducts: Product[] = [
     originalPrice: 2500,
     image: elephantCopperBottleImage,
     rating: 5,
-    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    description:
+      "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
     badge: "Dhanteras Special",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 48,
@@ -265,11 +282,12 @@ export const allProducts: Product[] = [
     originalPrice: 2500,
     image: raniMeherCopperBottleImage,
     rating: 5,
-    description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
+    description:
+      "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
     badge: "Dhanteras Special",
-    category: "accessories"
+    category: "accessories",
   },
-  
+
   // Candles
   {
     id: 49,
@@ -278,9 +296,10 @@ export const allProducts: Product[] = [
     originalPrice: 799,
     image: glitterElectricCandlesImage,
     rating: 4.9,
-    description: "Stunning electric LED candles with luxurious glitter finish. Pack of 4, Pack of 8, and Pack of 12 available with flameless realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards. Price shown is for Pack of 4.",
+    description:
+      "Stunning electric LED candles with luxurious glitter finish. Pack of 4, Pack of 8, and Pack of 12 available with flameless realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards. Price shown is for Pack of 4.",
     badge: "Festival Special",
-    category: "candles"
+    category: "candles",
   },
   {
     id: 50,
@@ -289,20 +308,22 @@ export const allProducts: Product[] = [
     originalPrice: 999,
     image: multicolourElectricCandlesImage,
     rating: 4.9,
-    description: "Vibrant multicoloured electric LED candles set. Pack of 4, Pack of 8, and Pack of 12 available in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities. Price shown is for Pack of 4.",
+    description:
+      "Vibrant multicoloured electric LED candles set. Pack of 4, Pack of 8, and Pack of 12 available in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities. Price shown is for Pack of 4.",
     badge: "Festival Special",
-    category: "candles"
+    category: "candles",
   },
   {
-    id: 48,
+    id: 47,
     name: "Jesus Last Supper Puja Box",
     price: 1299,
     originalPrice: 1599,
     image: jesusLastSupperBoxImage,
     rating: 4.8,
-    description: "Exquisite Jesus Last Supper puja box featuring a beautiful depiction of The Last Supper. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Perfect for sacred worship and spiritual offerings.",
+    description:
+      "Exquisite Jesus Last Supper puja box featuring a beautiful depiction of The Last Supper. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Perfect for sacred worship and spiritual offerings.",
     badge: "19% OFF",
-    category: "accessories"
+    category: "accessories",
   },
   {
     id: 51,
@@ -311,26 +332,34 @@ export const allProducts: Product[] = [
     originalPrice: 1599,
     image: siddhivinayakPujaBoxImage,
     rating: 4.9,
-    description: "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
+    description:
+      "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories"
-  }
+    category: "accessories",
+  },
 ];
 
 export const categories = [
   { id: "all", name: "All Products", count: allProducts.length },
-  { id: "incense", name: "Incense & Agarbatti", count: allProducts.filter(p => p.category === "incense").length },
-  { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter(p => p.category === "lamps").length },
-  { id: "candles", name: "Candles", count: allProducts.filter(p => p.category === "candles").length },
-  { id: "accessories", name: "Pooja Accessories", count: allProducts.filter(p => p.category === "accessories").length },
-  { id: "idols", name: "Idols", count: allProducts.filter(p => p.category === "idols").length },
-  { id: "kits", name: "Festival Kits", count: allProducts.filter(p => p.category === "kits").length },
+  { id: "incense", name: "Incense & Agarbatti", count: allProducts.filter((p) => p.category === "incense").length },
+  { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter((p) => p.category === "lamps").length },
+  { id: "candles", name: "Candles", count: allProducts.filter((p) => p.category === "candles").length },
+  {
+    id: "accessories",
+    name: "Pooja Accessories",
+    count: allProducts.filter((p) => p.category === "accessories").length,
+  },
+  { id: "idols", name: "Idols", count: allProducts.filter((p) => p.category === "idols").length },
+  { id: "kits", name: "Festival Kits", count: allProducts.filter((p) => p.category === "kits").length },
 ];
 
 export const getProductsByCategory = (category: string) => {
-  return allProducts.filter(product => product.category === category);
+  return allProducts.filter((product) => product.category === category);
 };
 
 export const getFeaturedProducts = () => {
-  return allProducts.filter(product => product.badge && ["Best Seller", "Premium", "Sacred", "Handcrafted", "Elegant"].includes(product.badge));
+  return allProducts.filter(
+    (product) =>
+      product.badge && ["Best Seller", "Premium", "Sacred", "Handcrafted", "Elegant"].includes(product.badge),
+  );
 };
