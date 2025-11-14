@@ -38,6 +38,7 @@ import radhakrishnaGoldPujaBoxImage from "@/assets/radhakrishna-gold-puja-box.pn
 import gayatriMaaPujaBoxImage from "@/assets/gayatri-maa-puja-box.png";
 import ganeshPujaBoxSmallImage from "@/assets/ganesh-puja-box-small.png";
 import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.png";
+import laxmiGaneshJewelleryBoxImage from "@/assets/laxmi-ganesh-jewellery-box.png";
 
 export interface Product {
   id: number;
@@ -427,6 +428,18 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura and sacred Last Supper imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
     badge: "23% OFF",
+    category: "accessories",
+  },
+  {
+    id: 59,
+    name: "Laxmi Ganesh Puja Jewellery Box with Compartment - Big",
+    price: 1799,
+    originalPrice: 1999,
+    image: laxmiGaneshJewelleryBoxImage,
+    rating: 4.9,
+    description:
+      "Exquisite large puja jewellery box featuring Goddess Laxmi and Lord Ganesha with intricate golden artwork. Dimensions: 21.3 cm x 11.5 cm x 6.1 cm. Premium deluxe set with multiple compartments, sacred plaques, and golden figurines for elaborate worship ceremonies and jewellery storage.",
+    badge: "10% OFF",
     category: "accessories",
   },
 ];
