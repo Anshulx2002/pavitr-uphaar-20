@@ -46,6 +46,7 @@ import jesusPujaBoxBigImage from "@/assets/jesus-puja-box-big.png";
 import ramDarbarPujaBoxSmallImage from "@/assets/ram-darbar-puja-box-small.png";
 import balajiGoldPujaBoxSmallImage from "@/assets/balaji-gold-puja-box-small.png";
 import laxmiGaneshSmallPujaBoxImage from "@/assets/laxmi-ganesh-small-puja-box.png";
+import balaji3dPujaBoxSmallImage from "@/assets/balaji-3d-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -520,6 +521,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
+    badge: "23% OFF",
+    category: "accessories",
+  },
+  {
+    id: 66,
+    name: "Balaji (3D) Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: balaji3dPujaBoxSmallImage,
+    rating: 4.9,
+    description:
+      "Exquisite compact Balaji 3D puja box featuring Lord Venkateswara in stunning three-dimensional artwork with vibrant orange and golden tones. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium 3D design perfect for personal worship with divine compartments and ornate golden embellishments.",
     badge: "23% OFF",
     category: "accessories",
   },
