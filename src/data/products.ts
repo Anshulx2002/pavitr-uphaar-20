@@ -34,6 +34,7 @@ import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
 import kolhapuriMaaPujaBoxImage from "@/assets/kolhapuri-maa-puja-box.png";
 import jainTirthankarPujaBoxImage from "@/assets/jain-tirthankar-puja-box.png";
 import ambeeMaaPujaBoxImage from "@/assets/ambee-maa-puja-box.png";
+import radhakrishnaGoldPujaBoxImage from "@/assets/radhakrishna-gold-puja-box.png";
 
 export interface Product {
   id: number;
@@ -386,6 +387,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite Ambee Maa puja box featuring Goddess Durga with 8 sacred forms in vibrant colors. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete deluxe set with golden compartments for sacred offerings and worship ceremonies.",
+    badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 56,
+    name: "Radha Krishna Gold Puja Box",
+    price: 1299,
+    originalPrice: 1599,
+    image: radhakrishnaGoldPujaBoxImage,
+    rating: 4.9,
+    description:
+      "Exquisite Radha Krishna gold puja box featuring divine Radha-Krishna in Vrindavan with intricate golden artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with ornate golden compartments for sacred worship and offerings.",
     badge: "19% OFF",
     category: "accessories",
   },
