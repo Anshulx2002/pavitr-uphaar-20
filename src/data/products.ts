@@ -44,6 +44,7 @@ import laxmiGaneshSaraswatiJewelleryBox2Image from "@/assets/laxmi-ganesh-sarasw
 import shatrunjayPujaBoxImage from "@/assets/shatrunjay-siddhachakra-puja-box.png";
 import jesusPujaBoxBigImage from "@/assets/jesus-puja-box-big.png";
 import ramDarbarPujaBoxSmallImage from "@/assets/ram-darbar-puja-box-small.png";
+import balajiGoldPujaBoxSmallImage from "@/assets/balaji-gold-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -494,6 +495,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite compact RamDarbar puja box featuring Lord Rama with Sita, Laxman, and Hanuman in stunning golden artwork. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with sacred compartments and ornate golden detailing.",
+    badge: "23% OFF",
+    category: "accessories",
+  },
+  {
+    id: 64,
+    name: "Balaji Gold Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: balajiGoldPujaBoxSmallImage,
+    rating: 4.9,
+    description:
+      "Exquisite compact Balaji Gold puja box featuring Lord Venkateswara with radiant golden aura and intricate sacred artwork. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments and ornate golden embellishments.",
     badge: "23% OFF",
     category: "accessories",
   },
