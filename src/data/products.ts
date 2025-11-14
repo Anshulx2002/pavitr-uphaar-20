@@ -42,6 +42,7 @@ import laxmiGaneshJewelleryBoxImage from "@/assets/laxmi-ganesh-jewellery-box.pn
 import laxmiGaneshSaraswatiJewelleryBoxImage from "@/assets/laxmi-ganesh-saraswati-jewellery-box.png";
 import laxmiGaneshSaraswatiJewelleryBox2Image from "@/assets/laxmi-ganesh-saraswati-jewellery-box-2.png";
 import shatrunjayPujaBoxImage from "@/assets/shatrunjay-siddhachakra-puja-box.png";
+import jesusPujaBoxBigImage from "@/assets/jesus-puja-box-big.png";
 
 export interface Product {
   id: number;
@@ -468,6 +469,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite Shatrunjay Siddhachakra deluxe puja box featuring intricate golden artwork of sacred Jain pilgrimage site. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with sacred compartments and ceremonial items for elaborate Jain worship ceremonies.",
+    badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 62,
+    name: "Jesus Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: jesusPujaBoxBigImage,
+    rating: 4.9,
+    description:
+      "Exquisite Jesus puja box featuring beautiful depiction of Jesus Christ with intricate golden detailing and sacred compartments. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with Love and Peace plaques for sacred worship and spiritual offerings.",
     badge: "19% OFF",
     category: "accessories",
   },
