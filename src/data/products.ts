@@ -32,6 +32,7 @@ import jesusLastSupperBoxImage from "@/assets/jesus-last-supper-box.png";
 import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
 import kolhapuriMaaPujaBoxImage from "@/assets/kolhapuri-maa-puja-box.png";
+import jainTirthankarPujaBoxImage from "@/assets/jain-tirthankar-puja-box.png";
 
 export interface Product {
   id: number;
@@ -360,6 +361,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite Kolhapuri Maa deluxe puja box featuring sacred deity imagery with intricate golden detailing. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 54,
+    name: "24 Jain Tirthankar Puja Box",
+    price: 1299,
+    originalPrice: 1599,
+    image: jainTirthankarPujaBoxImage,
+    rating: 4.9,
+    description:
+      "Exquisite puja box featuring all 24 Jain Tirthankars in stunning golden frames. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with sacred compartments for Jain worship and offerings.",
     badge: "19% OFF",
     category: "accessories",
   },
