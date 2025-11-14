@@ -47,6 +47,7 @@ import ramDarbarPujaBoxSmallImage from "@/assets/ram-darbar-puja-box-small.png";
 import balajiGoldPujaBoxSmallImage from "@/assets/balaji-gold-puja-box-small.png";
 import laxmiGaneshSmallPujaBoxImage from "@/assets/laxmi-ganesh-small-puja-box.png";
 import balaji3dPujaBoxSmallImage from "@/assets/balaji-3d-puja-box-small.png";
+import ramlallaPujaBoxSmallImage from "@/assets/ramlalla-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -533,6 +534,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite compact Balaji 3D puja box featuring Lord Venkateswara in stunning three-dimensional artwork with vibrant orange and golden tones. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium 3D design perfect for personal worship with divine compartments and ornate golden embellishments.",
+    badge: "23% OFF",
+    category: "accessories",
+  },
+  {
+    id: 67,
+    name: "RamLalla Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: ramlallaPujaBoxSmallImage,
+    rating: 4.9,
+    description:
+      "Exquisite compact RamLalla puja box featuring Lord Ram (infant form) in ornate golden temple setting with intricate decorative patterns. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium set with elegant white exterior, golden ceremonial items, and sacred compartments for divine worship and offerings.",
     badge: "23% OFF",
     category: "accessories",
   },
