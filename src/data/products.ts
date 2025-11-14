@@ -51,6 +51,7 @@ import ramlallaPujaBoxSmallImage from "@/assets/ramlalla-puja-box-small.png";
 import tridevPujaBoxBigImage from "@/assets/tridev-puja-box-big.png";
 import jainPujaBoxBigImage from "@/assets/jain-puja-box-big.png";
 import laxmiKuberTortoisePujaBoxBigImage from "@/assets/laxmi-kuber-tortoise-puja-box-big.png";
+import balajiPujaBoxBigImage from "@/assets/balaji-puja-box-big.png";
 
 export interface Product {
   id: number;
@@ -585,6 +586,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Exquisite large Laxmi Kuber and Tortoise puja box featuring Goddess Lakshmi and Lord Kuber with sacred tortoise symbol in stunning golden embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, ornate golden compartments, and sacred ceremonial items for wealth and prosperity worship ceremonies.",
+    badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 71,
+    name: "Balaji Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: balajiPujaBoxBigImage,
+    rating: 4.9,
+    description:
+      "Exquisite large Balaji puja box featuring Lord Venkateswara (Balaji) in three divine forms within ornate temple architecture with stunning golden embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple golden compartments, sacred plaques, and ornate ceremonial items for elaborate worship ceremonies.",
     badge: "19% OFF",
     category: "accessories",
   },
