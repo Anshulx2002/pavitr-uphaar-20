@@ -53,6 +53,7 @@ import jainPujaBoxBigImage from "@/assets/jain-puja-box-big.png";
 import laxmiKuberTortoisePujaBoxBigImage from "@/assets/laxmi-kuber-tortoise-puja-box-big.png";
 import balajiPujaBoxBigImage from "@/assets/balaji-puja-box-big.png";
 import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png";
+import laxmijiPujaBoxSmallImage from "@/assets/laxmiji-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -612,6 +613,18 @@ export const allProducts: Product[] = [
     description:
       "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
     badge: "19% OFF",
+    category: "accessories",
+  },
+  {
+    id: 73,
+    name: "Laxmiji Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: laxmijiPujaBoxSmallImage,
+    rating: 4.9,
+    description:
+      "Exquisite compact Goddess Laxmi puja box with gold and silver plated embossed artwork featuring the divine goddess seated on lotus with wealth symbols. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium white finish with red velvet interior, perfect for daily worship and blessings.",
+    badge: "23% OFF",
     category: "accessories",
   },
 ];
