@@ -86,7 +86,7 @@ export const allProducts: Product[] = [
 
   // Sacred Threads (removed sandalwood mala and red thread kalava)
   {
-    id: 34,
+    id: 2,
     name: "Gold Pooja Thali",
     price: 2499,
     originalPrice: 3499,
@@ -98,7 +98,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 35,
+    id: 3,
     name: "Silver Pooja Thali",
     price: 2499,
     originalPrice: 3499,
@@ -112,7 +112,7 @@ export const allProducts: Product[] = [
 
   // Festival Kits
   {
-    id: 19,
+    id: 4,
     name: "Signature Pooja Gift Box",
     price: 1999,
     originalPrice: 3000,
@@ -124,7 +124,7 @@ export const allProducts: Product[] = [
     category: "kits",
   },
   {
-    id: 46,
+    id: 5,
     name: "Dussehra Gift Box",
     price: 1999,
     originalPrice: 3000,
@@ -136,7 +136,7 @@ export const allProducts: Product[] = [
     category: "kits",
   },
   {
-    id: 20,
+    id: 6,
     name: "Ganesh Chaturthi Kit",
     price: 2499,
     originalPrice: 5000,
@@ -147,7 +147,7 @@ export const allProducts: Product[] = [
     category: "kits",
   },
   {
-    id: 21,
+    id: 7,
     name: "Navratri Pooja Kit",
     price: 2499,
     originalPrice: 5000,
@@ -158,7 +158,7 @@ export const allProducts: Product[] = [
     category: "kits",
   },
   {
-    id: 22,
+    id: 8,
     name: "Karva Chauth Gift Box",
     price: 2499,
     originalPrice: 5000,
@@ -170,7 +170,7 @@ export const allProducts: Product[] = [
     category: "kits",
   },
   {
-    id: 36,
+    id: 9,
     name: "Hanuman Chalisa Aarti Book",
     price: 1499,
     originalPrice: 2499,
@@ -182,7 +182,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 37,
+    id: 10,
     name: "Akhand Brass Diya",
     price: 1499,
     originalPrice: 2499,
@@ -194,7 +194,7 @@ export const allProducts: Product[] = [
     category: "lamps",
   },
   {
-    id: 38,
+    id: 11,
     name: "Gold Kalash",
     price: 1499,
     originalPrice: 2499,
@@ -206,7 +206,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 39,
+    id: 12,
     name: "Aarti Sangrah",
     price: 1499,
     originalPrice: 2499,
@@ -218,7 +218,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 40,
+    id: 13,
     name: "Laxmi Ganesh Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -230,7 +230,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 41,
+    id: 14,
     name: "Wooden Incense Holder",
     price: 499,
     originalPrice: 750,
@@ -242,7 +242,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 42,
+    id: 15,
     name: "Wooden Dhoop Stick Holder",
     price: 499,
     originalPrice: 750,
@@ -254,7 +254,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 43,
+    id: 16,
     name: "Lord Krishna Statue",
     price: 2499,
     originalPrice: 4000,
@@ -266,7 +266,7 @@ export const allProducts: Product[] = [
     category: "idols",
   },
   {
-    id: 44,
+    id: 17,
     name: "Kamdhenu Idol Silver",
     price: 3999,
     originalPrice: 5999,
@@ -278,7 +278,7 @@ export const allProducts: Product[] = [
     category: "idols",
   },
   {
-    id: 45,
+    id: 18,
     name: "Lotus LED Diya - Pack of 6",
     price: 999,
     originalPrice: 1200,
@@ -290,7 +290,7 @@ export const allProducts: Product[] = [
     category: "lamps",
   },
   {
-    id: 47,
+    id: 19,
     name: "Elephant Motif Copper Bottle",
     price: 1750,
     originalPrice: 2500,
@@ -302,7 +302,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 48,
+    id: 20,
     name: "Rani Meher Copper Bottle",
     price: 1750,
     originalPrice: 2500,
@@ -316,7 +316,7 @@ export const allProducts: Product[] = [
 
   // Candles
   {
-    id: 49,
+    id: 21,
     name: "Dazzling Electric Candles with Glitter",
     price: 599,
     originalPrice: 799,
@@ -328,7 +328,7 @@ export const allProducts: Product[] = [
     category: "candles",
   },
   {
-    id: 50,
+    id: 22,
     name: "Multicoloured Electric Candles",
     price: 799,
     originalPrice: 999,
@@ -340,7 +340,7 @@ export const allProducts: Product[] = [
     category: "candles",
   },
   {
-    id: 47,
+    id: 23,
     name: "Jesus Last Supper Puja Box",
     price: 1299,
     originalPrice: 1599,
@@ -352,7 +352,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 51,
+    id: 24,
     name: "SiddhiVinayak Puja Box",
     price: 1299,
     originalPrice: 1599,
@@ -364,7 +364,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 52,
+    id: 25,
     name: "Radhakrishna Puja Box",
     price: 999,
     originalPrice: 1299,
@@ -376,7 +376,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 53,
+    id: 26,
     name: "Kolhapuri Maa Deluxe Puja Box",
     price: 1299,
     originalPrice: 1599,
@@ -388,7 +388,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 54,
+    id: 27,
     name: "24 Jain Tirthankar Puja Box",
     price: 1299,
     originalPrice: 1599,
@@ -400,7 +400,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 55,
+    id: 28,
     name: "Ambee Maa Puja Box",
     price: 1299,
     originalPrice: 1599,
@@ -412,7 +412,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 56,
+    id: 29,
     name: "Radha Krishna Gold Puja Box",
     price: 1299,
     originalPrice: 1599,
@@ -424,7 +424,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 57,
+    id: 30,
     name: "Gayatri Maa Puja Box",
     price: 1299,
     originalPrice: 1599,
@@ -436,7 +436,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 58,
+    id: 31,
     name: "Ganesh Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -448,7 +448,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 59,
+    id: 32,
     name: "Laxmi Ganesh Puja Jewellery Box with Compartment - Big",
     price: 1799,
     originalPrice: 1999,
@@ -460,7 +460,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 60,
+    id: 33,
     name: "Laxmi Ganesh Saraswati 3D Puja Jewellery Box with Compartment - Big",
     price: 1799,
     originalPrice: 1999,
@@ -473,7 +473,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 61,
+    id: 34,
     name: "Shatrunjay Siddhachakra Deluxe Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
@@ -485,7 +485,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 62,
+    id: 35,
     name: "Jesus Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
@@ -497,7 +497,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 63,
+    id: 36,
     name: "RamDarbar Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -509,7 +509,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 64,
+    id: 37,
     name: "Balaji Gold Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -521,7 +521,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 65,
+    id: 38,
     name: "Laxmi Ganesh Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -533,7 +533,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 66,
+    id: 39,
     name: "Balaji (3D) Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -545,7 +545,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 67,
+    id: 40,
     name: "RamLalla Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -557,7 +557,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 68,
+    id: 41,
     name: "Tridev Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
@@ -569,7 +569,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 69,
+    id: 42,
     name: "Jain Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
@@ -581,7 +581,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 70,
+    id: 43,
     name: "Laxmi Kuber and Tortoise Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
@@ -593,7 +593,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 71,
+    id: 44,
     name: "Balaji Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
@@ -605,7 +605,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 72,
+    id: 45,
     name: "Golden Temple Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
@@ -617,7 +617,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 73,
+    id: 46,
     name: "Laxmiji Puja Box - Small",
     price: 999,
     originalPrice: 1299,
@@ -629,7 +629,7 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
   {
-    id: 74,
+    id: 47,
     name: "Ramparivar Ayodhya Mandir Puja Box - Big",
     price: 1299,
     originalPrice: 1599,
