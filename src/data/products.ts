@@ -54,6 +54,7 @@ import laxmiKuberTortoisePujaBoxBigImage from "@/assets/laxmi-kuber-tortoise-puj
 import balajiPujaBoxBigImage from "@/assets/balaji-puja-box-big.png";
 import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png";
 import laxmijiPujaBoxSmallImage from "@/assets/laxmiji-puja-box-small.png";
+import ramparivarAyodhyaPujaBoxBigImage from "@/assets/ramparivar-ayodhya-puja-box-big.png";
 
 export interface Product {
   id: number;
@@ -625,6 +626,18 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact Goddess Laxmi puja box with gold and silver plated embossed artwork featuring the divine goddess seated on lotus with wealth symbols. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium white finish with red velvet interior, perfect for daily worship and blessings.",
     badge: "23% OFF",
+    category: "accessories",
+  },
+  {
+    id: 74,
+    name: "Ramparivar Ayodhya Mandir Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: ramparivarAyodhyaPujaBoxBigImage,
+    rating: 4.9,
+    description:
+      "Premium commemorative puja box featuring the magnificent Ayodhya Ram Mandir temple and sacred Ram Parivar artwork. Contains gold-plated ceremonial items in luxurious red velvet interior. Dimensions: 21.3 cm x 11.5 cm x 4 cm. A divine keepsake celebrating the historic Ayodhya temple.",
+    badge: "19% OFF",
     category: "accessories",
   },
 ];
