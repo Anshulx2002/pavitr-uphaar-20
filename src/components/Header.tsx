@@ -64,7 +64,6 @@ const Header = () => {
     { name: "Festival Kits", href: "/festival-kits", description: "Complete pooja sets for festivals" },
     { name: "Incense & Agarbatti", href: "/incense-agarbatti", description: "Premium quality incense sticks" },
     { name: "Lamps & Diyas", href: "/lamps-diyas", description: "Traditional brass and clay lamps" },
-    { name: "Candles", href: "/candles", description: "Electric LED candles for celebrations" },
     { name: "Pooja Accessories", href: "/pooja-accessories", description: "Essential items for daily worship" },
     { name: "Idols", href: "/products?category=idols", description: "Sacred idols and statues" },
   ];

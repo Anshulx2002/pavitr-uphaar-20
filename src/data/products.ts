@@ -9,11 +9,8 @@ import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import garlandImage from "@/assets/garland.jpg";
 import sandalwoodImage from "@/assets/sandalwood.jpg";
-import diwaliKitImage from "@/assets/diwali-kit-premium.png";
-import dussehraKitImage from "@/assets/dussehra-kit-1.png";
 import ganeshKitImage from "@/assets/ganesh-kit.jpg";
 import navratriKitImage from "@/assets/navratri-kit.jpg";
-import karvaKitImage from "@/assets/karva-chauth-gift-box.png";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import goldKalashImage from "@/assets/gold-kalash.png";
@@ -23,11 +20,8 @@ import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
 import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
-import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
-import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
-import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
 import jesusLastSupperBoxImage from "@/assets/jesus-last-supper-box.png";
 import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
@@ -112,30 +106,6 @@ export const allProducts: Product[] = [
 
   // Festival Kits
   {
-    id: 4,
-    name: "Signature Pooja Gift Box",
-    price: 1999,
-    originalPrice: 3000,
-    image: diwaliKitImage,
-    rating: 4.8,
-    description:
-      "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
-    badge: "34% OFF",
-    category: "kits",
-  },
-  {
-    id: 5,
-    name: "Dussehra Gift Box",
-    price: 1999,
-    originalPrice: 3000,
-    image: dussehraKitImage,
-    rating: 4.9,
-    description:
-      "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
-    badge: "34% OFF",
-    category: "kits",
-  },
-  {
     id: 6,
     name: "Ganesh Chaturthi Kit",
     price: 2499,
@@ -155,18 +125,6 @@ export const allProducts: Product[] = [
     rating: 4.8,
     description: "Nine-day Navratri celebration kit with all essential items.",
     badge: "9-Day Kit",
-    category: "kits",
-  },
-  {
-    id: 8,
-    name: "Karva Chauth Gift Box",
-    price: 2499,
-    originalPrice: 5000,
-    image: karvaKitImage,
-    rating: 4.7,
-    description:
-      "Complete essentials for the auspicious Karva Chauth ceremony. Includes Mathi, Decorative Diya, Bindi Packet, Mehendi Cone, Kalash for Water, Pooja Thali, and Mithai Box.",
-    badge: "50% OFF",
     category: "kits",
   },
   {
@@ -278,18 +236,6 @@ export const allProducts: Product[] = [
     category: "idols",
   },
   {
-    id: 18,
-    name: "Lotus LED Diya - Pack of 6",
-    price: 999,
-    originalPrice: 1200,
-    image: lotusLedDiyaImage,
-    rating: 4.8,
-    description:
-      "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
-    badge: "Festival Special",
-    category: "lamps",
-  },
-  {
     id: 19,
     name: "Elephant Motif Copper Bottle",
     price: 1750,
@@ -314,31 +260,6 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
 
-  // Candles
-  {
-    id: 21,
-    name: "Dazzling Electric Candles with Glitter",
-    price: 599,
-    originalPrice: 799,
-    image: glitterElectricCandlesImage,
-    rating: 4.9,
-    description:
-      "Stunning electric LED candles with luxurious glitter finish. Pack of 4, Pack of 8, and Pack of 12 available with flameless realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards. Price shown is for Pack of 4.",
-    badge: "Festival Special",
-    category: "candles",
-  },
-  {
-    id: 22,
-    name: "Multicoloured Electric Candles",
-    price: 799,
-    originalPrice: 999,
-    image: multicolourElectricCandlesImage,
-    rating: 4.9,
-    description:
-      "Vibrant multicoloured electric LED candles set. Pack of 4, Pack of 8, and Pack of 12 available in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities. Price shown is for Pack of 4.",
-    badge: "Festival Special",
-    category: "candles",
-  },
   {
     id: 23,
     name: "Jesus Last Supper Puja Box",
@@ -647,7 +568,6 @@ export const categories = [
   { id: "puja-boxes", name: "Puja Box", count: allProducts.filter((p) => p.category === "puja-boxes").length },
   { id: "incense", name: "Incense & Agarbatti", count: allProducts.filter((p) => p.category === "incense").length },
   { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter((p) => p.category === "lamps").length },
-  { id: "candles", name: "Candles", count: allProducts.filter((p) => p.category === "candles").length },
   {
     id: "accessories",
     name: "Pooja Accessories",

@@ -16,9 +16,6 @@ import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
-import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
-import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
-import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
 import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.png";
 import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
@@ -196,46 +193,6 @@ const trendingProducts = [
     rating: 4.9,
     description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
     badge: "Sacred"
-  },
-  {
-    id: 45,
-    name: "Lotus LED Diya - Pack of 6",
-    price: 999,
-    originalPrice: 1200,
-    image: lotusLedDiyaImage,
-    rating: 4.8,
-    description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
-    badge: "Festival Special"
-  },
-  {
-    id: 44,
-    name: "Kamdhenu Idol Silver",
-    price: 3999,
-    originalPrice: 5999,
-    image: kamdhenusIdolSilverImage,
-    rating: 4.9,
-    description: "Exquisite silver-finished Kamdhenu cow idol with calf. Symbol of prosperity and abundance. Perfect for home temple and gifting during auspicious occasions.",
-    badge: "Sacred"
-  },
-  {
-    id: 49,
-    name: "Dazzling Electric Candles with Glitter",
-    price: 1800,
-    originalPrice: 2500,
-    image: glitterElectricCandlesImage,
-    rating: 4.9,
-    description: "Stunning electric LED candles with luxurious glitter finish. Box of 12 flameless candles with realistic flickering effect. Perfect for festivals, weddings, and creating enchanting ambiance without fire hazards.",
-    badge: "Festival Special"
-  },
-  {
-    id: 50,
-    name: "Multicoloured Electric Candles",
-    price: 2400,
-    originalPrice: 2999,
-    image: multicolourElectricCandlesImage,
-    rating: 4.9,
-    description: "Vibrant multicoloured electric LED candles set. Box of 12 flameless candles in assorted bright colors with warm LED flames. Safe and reusable for all celebrations, adding a magical glow to your festivities.",
-    badge: "Festival Special"
   }
 ];
 
