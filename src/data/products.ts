@@ -227,7 +227,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 14,
@@ -349,7 +349,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Jesus Last Supper puja box featuring a beautiful depiction of The Last Supper. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Perfect for sacred worship and spiritual offerings.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 24,
@@ -361,7 +361,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 25,
@@ -373,7 +373,7 @@ export const allProducts: Product[] = [
     description:
       "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 26,
@@ -385,7 +385,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Kolhapuri Maa deluxe puja box featuring sacred deity imagery with intricate golden detailing. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with traditional compartments for sacred ceremonies and worship.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 27,
@@ -397,7 +397,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite puja box featuring all 24 Jain Tirthankars in stunning golden frames. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with sacred compartments for Jain worship and offerings.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 28,
@@ -409,7 +409,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Ambee Maa deluxe puja box featuring Goddess Durga with 8 sacred forms surrounded by divine deities in ornate golden frame. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete deluxe set with traditional compartments, sacred plaques, and golden figurines for elaborate worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 29,
@@ -421,7 +421,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Radha Krishna gold puja box featuring divine Radha-Krishna in Vrindavan with intricate golden artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with ornate golden compartments for sacred worship and offerings.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 30,
@@ -433,7 +433,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Gayatri Maa puja box featuring Goddess Gayatri seated on lotus with sacred symbols. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with sacred Om and Swastik plaques for divine worship and offerings.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 31,
@@ -445,7 +445,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura and sacred Last Supper imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 32,
@@ -457,7 +457,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite large puja jewellery box featuring Goddess Laxmi and Lord Ganesha with intricate golden artwork. Dimensions: 21.3 cm x 11.5 cm x 6.1 cm. Premium deluxe set with multiple compartments, sacred plaques, and golden figurines for elaborate worship ceremonies and jewellery storage.",
     badge: "10% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 33,
@@ -470,7 +470,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite large 3D puja jewellery box featuring Goddess Laxmi, Lord Ganesha, and Goddess Saraswati with stunning 3D artwork and golden halos. Premium deluxe set with multiple compartments, sacred plaques, and ornate golden figurines for elaborate worship ceremonies and jewellery storage.",
     badge: "10% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 34,
@@ -482,7 +482,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Shatrunjay Siddhachakra deluxe puja box featuring intricate golden artwork of sacred Jain pilgrimage site. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with sacred compartments and ceremonial items for elaborate Jain worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 35,
@@ -494,7 +494,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Jesus puja box featuring beautiful depiction of Jesus Christ with intricate golden detailing and sacred compartments. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with Love and Peace plaques for sacred worship and spiritual offerings.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 36,
@@ -506,7 +506,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact RamDarbar puja box featuring Lord Rama with Sita, Laxman, and Hanuman in stunning golden artwork. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with sacred compartments and ornate golden detailing.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 37,
@@ -518,7 +518,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact Balaji Gold puja box featuring Lord Venkateswara with radiant golden aura and intricate sacred artwork. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments and ornate golden embellishments.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 38,
@@ -530,7 +530,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 39,
@@ -542,7 +542,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact Balaji 3D puja box featuring Lord Venkateswara in stunning three-dimensional artwork with vibrant orange and golden tones. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium 3D design perfect for personal worship with divine compartments and ornate golden embellishments.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 40,
@@ -554,7 +554,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact RamLalla puja box featuring Lord Ram (infant form) in ornate golden temple setting with intricate decorative patterns. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium set with elegant white exterior, golden ceremonial items, and sacred compartments for divine worship and offerings.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 41,
@@ -566,7 +566,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite large Tridev puja box featuring Lord Ganesha, Lord Balaji, and Goddess Lakshmi in stunning golden embossed artwork with intricate patterns. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple golden compartments, sacred plaques, and ornate ceremonial items for elaborate worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 42,
@@ -578,7 +578,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite large Jain puja box featuring 24 golden Tirthankar figurines arranged around a sacred scripture holder, with intricate temple artwork depicting sacred Jain pilgrimage sites and shrines. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant white exterior, complete with all 24 Tirthankars and ornate golden temple compartments for elaborate Jain worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 43,
@@ -590,7 +590,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite large Laxmi Kuber and Tortoise puja box featuring Goddess Lakshmi and Lord Kuber with sacred tortoise symbol in stunning golden embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, ornate golden compartments, and sacred ceremonial items for wealth and prosperity worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 44,
@@ -602,7 +602,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite large Balaji puja box featuring Lord Venkateswara (Balaji) in three divine forms within ornate temple architecture with stunning golden embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple golden compartments, sacred plaques, and ornate ceremonial items for elaborate worship ceremonies.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 45,
@@ -614,7 +614,7 @@ export const allProducts: Product[] = [
     description:
       "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 46,
@@ -626,7 +626,7 @@ export const allProducts: Product[] = [
     description:
       "Exquisite compact Goddess Laxmi puja box with gold and silver plated embossed artwork featuring the divine goddess seated on lotus with wealth symbols. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium white finish with red velvet interior, perfect for daily worship and blessings.",
     badge: "23% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
   {
     id: 47,
@@ -638,12 +638,13 @@ export const allProducts: Product[] = [
     description:
       "Premium commemorative puja box featuring the magnificent Ayodhya Ram Mandir temple and sacred Ram Parivar artwork. Contains gold-plated ceremonial items in luxurious red velvet interior. Dimensions: 21.3 cm x 11.5 cm x 4 cm. A divine keepsake celebrating the historic Ayodhya temple.",
     badge: "19% OFF",
-    category: "accessories",
+    category: "puja-boxes",
   },
 ];
 
 export const categories = [
   { id: "all", name: "All Products", count: allProducts.length },
+  { id: "puja-boxes", name: "Puja Box", count: allProducts.filter((p) => p.category === "puja-boxes").length },
   { id: "incense", name: "Incense & Agarbatti", count: allProducts.filter((p) => p.category === "incense").length },
   { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter((p) => p.category === "lamps").length },
   { id: "candles", name: "Candles", count: allProducts.filter((p) => p.category === "candles").length },
