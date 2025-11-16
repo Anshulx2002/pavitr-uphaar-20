@@ -17,11 +17,8 @@ import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
-import lotusLedDiyaImage from "@/assets/lotus-led-diya.png";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
-import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
-import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
 import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.png";
 import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
@@ -143,26 +140,6 @@ const featuredProducts = [
     badge: "Premium"
   },
   {
-    id: 49,
-    name: "Dazzling Electric Candles with Glitter",
-    price: 599,
-    originalPrice: 799,
-    image: glitterElectricCandlesImage,
-    rating: 4.9,
-    description: "Stunning electric LED candles with luxurious glitter finish. Pack of 4, Pack of 8, and Pack of 12 available. Price shown is for Pack of 4.",
-    badge: "Festival Special"
-  },
-  {
-    id: 50,
-    name: "Multicoloured Electric Candles",
-    price: 799,
-    originalPrice: 999,
-    image: multicolourElectricCandlesImage,
-    rating: 4.9,
-    description: "Vibrant multicoloured electric LED candles set. Pack of 4, Pack of 8, and Pack of 12 available in assorted bright colors. Price shown is for Pack of 4.",
-    badge: "Festival Special"
-  },
-  {
     id: 38,
     name: "Gold Kalash",
     price: 1499,
@@ -251,16 +228,6 @@ const featuredProducts = [
     rating: 4.9,
     description: "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
     badge: "Sacred"
-  },
-  {
-    id: 45,
-    name: "Lotus LED Diya - Pack of 6",
-    price: 999,
-    originalPrice: 1200,
-    image: lotusLedDiyaImage,
-    rating: 4.8,
-    description: "Beautiful crystal lotus LED diyas pack of 6. Perfect for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
-    badge: "Festival Special"
   }
 ];
 
