@@ -376,27 +376,27 @@ const ProductDetails = () => {
                     <span>Keep the product away from direct sunlight to prevent discoloration.</span>
                   </p>
                 </>
-              ) : product.category?.toLowerCase().includes('brass') || product.category?.toLowerCase().includes('copper') || product.category?.toLowerCase().includes('thali') || product.category?.toLowerCase().includes('kalash') ? (
+              ) : isCopperBottle ? (
                 <>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Clean with a soft cloth and mild soap solution. Rinse and dry thoroughly.</span>
+                    <span>Clean with lemon juice and salt mixture, then rinse with water.</span>
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>For traditional brass/copper items, natural tarnishing adds character. Polish with lemon and salt or brass cleaner if preferred.</span>
+                    <span>Do not use abrasive cleaners or dishwasher to maintain the finish.</span>
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Store in a dry place to prevent oxidation.</span>
+                    <span>Dry thoroughly after washing to prevent water spots and oxidation.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Fill with water at night and drink in the morning for health benefits.</span>
                   </p>
                 </>
               ) : product.category?.toLowerCase().includes('candle') ? (
                 <>
-                  <p className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Wipe with a soft, dry cloth to remove dust.</span>
-                  </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
                     <span>Keep away from water and moisture to preserve electronic components.</span>
@@ -445,6 +445,55 @@ const ProductDetails = () => {
                 <p className="flex items-start gap-2 text-sm">
                   <span className="text-primary mt-1">•</span>
                   <span>Images may vary from the actual product in form and colour due to screen resolution and device settings.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Customer Reviews Section */}
+        <div className="mt-12 max-w-4xl mx-auto mb-12">
+          <div className="bg-card border border-border rounded-lg p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Customer Reviews</h2>
+            <div className="space-y-6">
+              {/* Review 1 */}
+              <div className="border-b border-border pb-6">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-semibold text-foreground">Priya S.</span>
+                      <div className="flex gap-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                        ))}
+                      </div>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Verified Purchase</span>
+                  </div>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Really happy with this purchase! The quality is much better than what i expected from online photos. Packaging was also nice, came well protected. Only small thing is delivery took 1 day extra than promised but overall very satisfied. Would definitely recommend to friends and family 😊
+                </p>
+              </div>
+
+              {/* Review 2 */}
+              <div className="pb-2">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-semibold text-foreground">Rajesh M.</span>
+                      <div className="flex gap-0.5">
+                        {[...Array(4)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                        ))}
+                        <Star className="w-4 h-4 text-muted-foreground" />
+                      </div>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Verified Purchase</span>
+                  </div>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Good product overall. Looks exactly like the pictures shown. I bought this for puja at home and it serves the purpose well. The finishing could have been slightly better in some areas but nothing major. For the price point its quite decent. Customer service was helpful when i had questions before ordering.
                 </p>
               </div>
             </div>
