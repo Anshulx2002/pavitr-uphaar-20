@@ -13,7 +13,6 @@ import goldKalash from "@/assets/gold-kalash.png";
 import lordKrishnaStatue from "@/assets/lord-krishna-statue.png";
 import siddhivinayakPujaBox from "@/assets/siddhivinayak-puja-box.png";
 import ganeshPujaBox from "@/assets/ganesh-puja-box-small.png";
-import laxmijiPujaBox from "@/assets/laxmiji-puja-box-small.png";
 
 const BlogFamilyGifts = () => {
   const gifts = [
@@ -86,13 +85,6 @@ const BlogFamilyGifts = () => {
       description: "This exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura is perfect for personal worship and sacred offerings. Ideal for families who want to bring divine blessings into their daily lives with elegant, space-saving devotional items.",
       link: "/product/31",
       image: ganeshPujaBox
-    },
-    {
-      id: 46,
-      name: "Laxmiji Puja Box - Small",
-      description: "Gift prosperity and blessings with this exquisite compact Goddess Laxmi puja box featuring gold and silver plated embossed artwork. The divine goddess seated on lotus with wealth symbols makes this a perfect gift for Diwali, housewarmings, or any occasion where you wish to invoke abundance and prosperity for your loved ones.",
-      link: "/product/46",
-      image: laxmijiPujaBox
     }
   ];
 
