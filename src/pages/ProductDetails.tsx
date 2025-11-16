@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Star, ShoppingCart, Share2, CheckCircle, Truck, Shield } from "lucide-react";
+import { Star, ShoppingCart, Share2, CheckCircle, Truck, Shield, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useCart } from "@/contexts/CartContext";
 import { allProducts } from "@/data/products";
 import Header from "@/components/Header";
@@ -42,6 +43,7 @@ const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [packSize, setPackSize] = useState(4);
   const [selectedBottleVariant, setSelectedBottleVariant] = useState<number>(Number(id));
+  const [isZoomOpen, setIsZoomOpen] = useState(false);
   
   const isCandle = product?.category?.toLowerCase().includes('candle');
   const isCopperBottle = product?.id === 47 || product?.id === 48;
@@ -170,7 +172,10 @@ const ProductDetails = () => {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {/* Product Images */}
           <div className="space-y-4">
-            <div className="relative aspect-square rounded-lg overflow-hidden border border-border bg-card">
+            <div 
+              className="relative aspect-square rounded-lg overflow-hidden border border-border bg-card cursor-pointer group"
+              onClick={() => setIsZoomOpen(true)}
+            >
               {currentBottleProduct.badge && (
                 <div className="absolute top-4 left-4 z-10 bg-gradient-saffron text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                   {currentBottleProduct.badge}
@@ -179,8 +184,11 @@ const ProductDetails = () => {
               <img 
                 src={images[selectedImage]} 
                 alt={currentBottleProduct.name}
-                className="w-full h-full object-contain p-8"
+                className="w-full h-full object-contain p-8 transition-transform group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
+                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+              </div>
             </div>
             {images.length > 1 && (
               <div className="grid grid-cols-4 gap-2">
@@ -508,6 +516,20 @@ const ProductDetails = () => {
         </div>
       </main>
       <Footer />
+      
+      {/* Image Zoom Modal */}
+      <Dialog open={isZoomOpen} onOpenChange={setIsZoomOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none">
+          <div className="relative w-full h-[95vh] flex items-center justify-center">
+            <img 
+              src={images[selectedImage]} 
+              alt={currentBottleProduct.name}
+              className="max-w-full max-h-full object-contain touch-pinch-zoom"
+              style={{ touchAction: 'pinch-zoom' }}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
