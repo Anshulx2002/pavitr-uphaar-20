@@ -20,7 +20,6 @@ import Checkout from "./pages/checkout";
 import ThankYou from "./pages/ThankYou";
 import PaymentFailed from "./pages/PaymentFailed";
 import NotFound from "./pages/NotFound";
-import DiwaliKit from "./pages/DiwaliKit";
 import DussehraKit from "./pages/DussehraKit";
 import AartiSangrah from "./pages/AartiSangrah";
 import Auth from "./pages/Auth";
@@ -69,7 +68,6 @@ const App = () => (
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/payment-failed" element={<PaymentFailed />} />
-          <Route path="/diwali-kit" element={<DiwaliKit />} />
           <Route path="/dussehra-kit" element={<DussehraKit />} />
           <Route path="/aarti-sangrah" element={<AartiSangrah />} />
           <Route path="/product/:id" element={<ProductDetails />} />

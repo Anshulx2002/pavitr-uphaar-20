@@ -46,7 +46,7 @@ const ProductDetails = () => {
   const [isZoomOpen, setIsZoomOpen] = useState(false);
   
   const isCandle = product?.category?.toLowerCase().includes('candle');
-  const isCopperBottle = product?.id === 47 || product?.id === 48;
+  const isCopperBottle = product?.id === 19 || product?.id === 20;
 
   // Track ViewContent event
   useEffect(() => {
@@ -232,9 +232,9 @@ const ProductDetails = () => {
                 <label className="text-xs md:text-sm font-medium text-foreground">Choose Variant:</label>
                 <div className="grid grid-cols-2 gap-2">
                   <button
-                    onClick={() => setSelectedBottleVariant(47)}
+                    onClick={() => setSelectedBottleVariant(19)}
                     className={`relative py-2 px-3 rounded-lg border-2 transition-all ${
-                      selectedBottleVariant === 47
+                      selectedBottleVariant === 19
                         ? 'border-primary bg-primary/5'
                         : 'border-border hover:border-primary/50'
                     }`}
@@ -244,9 +244,9 @@ const ProductDetails = () => {
                     </div>
                   </button>
                   <button
-                    onClick={() => setSelectedBottleVariant(48)}
+                    onClick={() => setSelectedBottleVariant(20)}
                     className={`relative py-2 px-3 rounded-lg border-2 transition-all ${
-                      selectedBottleVariant === 48
+                      selectedBottleVariant === 20
                         ? 'border-primary bg-primary/5'
                         : 'border-border hover:border-primary/50'
                     }`}
