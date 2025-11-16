@@ -22,9 +22,86 @@ import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 import raniMeherCopperBottleImage from "@/assets/rani-meher-copper-bottle.png";
 import glitterElectricCandlesImage from "@/assets/glitter-electric-candles-gold.png";
 import multicolourElectricCandlesImage from "@/assets/multicolour-electric-candles.png";
+import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.png";
+import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
+import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
+import ganeshPujaBoxSmallImage from "@/assets/ganesh-puja-box-small.png";
+import laxmiGaneshSmallPujaBoxImage from "@/assets/laxmi-ganesh-small-puja-box.png";
+import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png";
+import laxmijiPujaBoxSmallImage from "@/assets/laxmiji-puja-box-small.png";
 
 // Featured products - carefully selected new premium products
 const featuredProducts = [
+  {
+    id: 13,
+    name: "Laxmi Ganesh Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: laxmiGaneshPoojaBoxSmallImage,
+    rating: 5,
+    description: "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
+    badge: "Premium"
+  },
+  {
+    id: 24,
+    name: "SiddhiVinayak Puja Box",
+    price: 1299,
+    originalPrice: 1599,
+    image: siddhivinayakPujaBoxImage,
+    rating: 4.9,
+    description: "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
+    badge: "Premium"
+  },
+  {
+    id: 25,
+    name: "Radhakrishna Puja Box",
+    price: 999,
+    originalPrice: 1299,
+    image: radhakrishnaPujaBoxImage,
+    rating: 4.9,
+    description: "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
+    badge: "Premium"
+  },
+  {
+    id: 31,
+    name: "Ganesh Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: ganeshPujaBoxSmallImage,
+    rating: 4.9,
+    description: "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura and sacred Last Supper imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
+    badge: "Premium"
+  },
+  {
+    id: 38,
+    name: "Laxmi Ganesh Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: laxmiGaneshSmallPujaBoxImage,
+    rating: 4.9,
+    description: "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
+    badge: "Premium"
+  },
+  {
+    id: 45,
+    name: "Golden Temple Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: goldenTemplePujaBoxBigImage,
+    rating: 4.9,
+    description: "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
+    badge: "Premium"
+  },
+  {
+    id: 46,
+    name: "Laxmiji Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: laxmijiPujaBoxSmallImage,
+    rating: 4.9,
+    description: "Exquisite compact Goddess Laxmi puja box with gold and silver plated embossed artwork featuring the divine goddess seated on lotus with wealth symbols. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium white finish with red velvet interior, perfect for daily worship and blessings.",
+    badge: "Premium"
+  },
   {
     id: 34,
     name: "Gold Pooja Thali",
