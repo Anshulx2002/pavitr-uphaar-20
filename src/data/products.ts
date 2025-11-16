@@ -8,8 +8,6 @@ import goldPoojaThaliImage from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThaliImage from "@/assets/silver-pooja-thali.jpg";
 import garlandImage from "@/assets/garland.jpg";
 import sandalwoodImage from "@/assets/sandalwood.jpg";
-import ganeshKitImage from "@/assets/ganesh-kit.jpg";
-import navratriKitImage from "@/assets/navratri-kit.jpg";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import goldKalashImage from "@/assets/gold-kalash.png";
@@ -89,29 +87,6 @@ export const allProducts: Product[] = [
     category: "accessories",
   },
 
-  // Festival Kits
-  {
-    id: 6,
-    name: "Ganesh Chaturthi Kit",
-    price: 2499,
-    originalPrice: 5000,
-    image: ganeshKitImage,
-    rating: 4.9,
-    description: "Everything needed for Ganesh Chaturthi celebrations. Includes modak molds.",
-    badge: "Complete Kit",
-    category: "kits",
-  },
-  {
-    id: 7,
-    name: "Navratri Pooja Kit",
-    price: 2499,
-    originalPrice: 5000,
-    image: navratriKitImage,
-    rating: 4.8,
-    description: "Nine-day Navratri celebration kit with all essential items.",
-    badge: "9-Day Kit",
-    category: "kits",
-  },
   {
     id: 9,
     name: "Hanuman Chalisa Aarti Book",
@@ -559,7 +534,6 @@ export const categories = [
     count: allProducts.filter((p) => p.category === "accessories").length,
   },
   { id: "idols", name: "Idols", count: allProducts.filter((p) => p.category === "idols").length },
-  { id: "kits", name: "Festival Kits", count: allProducts.filter((p) => p.category === "kits").length },
 ];
 
 export const getProductsByCategory = (category: string) => {
