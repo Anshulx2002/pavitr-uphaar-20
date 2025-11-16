@@ -44,6 +44,7 @@ import balajiPujaBoxBigImage from "@/assets/balaji-puja-box-big.png";
 import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png";
 import laxmijiPujaBoxSmallImage from "@/assets/laxmiji-puja-box-small.png";
 import ramparivarAyodhyaPujaBoxBigImage from "@/assets/ramparivar-ayodhya-puja-box-big.png";
+import saiSamadhiPujaBoxBigImage from "@/assets/sai-samadhi-puja-box-big.png";
 
 export interface Product {
   id: number;
@@ -492,6 +493,18 @@ export const allProducts: Product[] = [
     rating: 4.9,
     description:
       "Premium commemorative puja box featuring the magnificent Ayodhya Ram Mandir temple and sacred Ram Parivar artwork. Contains gold-plated ceremonial items in luxurious red velvet interior. Dimensions: 21.3 cm x 11.5 cm x 4 cm. A divine keepsake celebrating the historic Ayodhya temple.",
+    badge: "19% OFF",
+    category: "puja-boxes",
+  },
+  {
+    id: 48,
+    name: "Sai Samadhi Puja Box - Big",
+    price: 1299,
+    originalPrice: 1599,
+    image: saiSamadhiPujaBoxBigImage,
+    rating: 4.9,
+    description:
+      "Divine Sai Samadhi puja box featuring Shirdi Sai Baba in sacred temple architecture with intricate golden embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, luxurious red velvet interior, and ornate golden compartments for complete worship ceremonies.",
     badge: "19% OFF",
     category: "puja-boxes",
   },
