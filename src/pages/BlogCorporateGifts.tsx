@@ -7,68 +7,100 @@ import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import raniMeherBottle from "@/assets/rani-meher-copper-bottle.png";
 import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThali from "@/assets/silver-pooja-thali.jpg";
-import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
+import laxmiGaneshBox from "@/assets/laxmi-ganesh-puja-box-small.png";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
 import goldKalash from "@/assets/gold-kalash.png";
 import aartiSangrah from "@/assets/aarti-sangrah.png";
+import siddhivinayakPujaBox from "@/assets/siddhivinayak-puja-box.png";
+import radhakrishnaPujaBox from "@/assets/radhakrishna-puja-box.png";
+import goldenTemplePujaBox from "@/assets/golden-temple-puja-box-big.png";
+import ramparivarAyodhyaPujaBox from "@/assets/ramparivar-ayodhya-puja-box-big.png";
 
 const BlogCorporateGifts = () => {
   const gifts = [
     {
-      id: 47,
+      id: 19,
       name: "Elephant Motif Copper Bottle",
       description: "Elevate your corporate gifting with our premium Elephant Motif Copper Bottle with exquisite elephant motif design. This sophisticated gift combines health benefits with elegant design, making it perfect for wellness-focused companies. Your team members will appreciate this thoughtful gift that promotes healthy living while showcasing authentic Indian craftsmanship. Ideal for Dhanteras corporate gifting or employee appreciation events.",
-      link: "/product/47",
+      link: "/products/19",
       image: elephantCopperBottle
     },
     {
-      id: 48,
+      id: 20,
       name: "Rani Meher Copper Bottle",
       description: "The Rani Meher Copper Bottle features stunning traditional Rajasthani Rani Meher artwork, making it a unique corporate gift that stands out. This luxurious copper bottle is perfect for executive gifting or as premium employee appreciation gifts. It represents both wellness and cultural heritage, making a lasting impression on your team members.",
-      link: "/product/48",
+      link: "/products/20",
       image: raniMeherBottle
     },
     {
-      id: 34,
+      id: 2,
       name: "Gold Pooja Thali",
       description: "For corporate gifting during festivals or special celebrations, this exquisite gold-plated pooja thali with intricate designs is an exceptional choice. The complete set with essential compartments represents blessings and prosperity, making it a prestigious gift that conveys respect and good wishes. Perfect for senior management and executive gifting.",
-      link: "/product/34",
+      link: "/products/2",
       image: goldPoojaThali
     },
     {
-      id: 35,
+      id: 3,
       name: "Silver Pooja Thali",
       description: "Gift elegance and tradition with our premium silver-plated pooja thali featuring traditional motifs. This beautifully crafted piece demonstrates your company's respect for cultural values and makes an impressive corporate gift for special occasions, housewarmings, or festival celebrations.",
-      link: "/product/35",
+      link: "/products/3",
       image: silverPoojaThali
     },
     {
-      id: 40,
-      name: "Laxmi Ganesh Pooja Box",
-      description: "Gift prosperity and success to your team with the exquisite wooden Laxmi Ganesh Pooja Box featuring golden Laxmi Ganesh images. This beautifully crafted set with traditional compartments is perfect for corporate Diwali gifting or for celebrating business milestones. It symbolizes wealth and wisdom, making it an auspicious gift that aligns with your company's success and growth aspirations.",
-      link: "/product/40",
+      id: 13,
+      name: "Laxmi Ganesh Puja Box - Small",
+      description: "Gift prosperity and success to your team with the exquisite Laxmi Ganesh Puja Box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. This beautifully crafted set with traditional compartments is perfect for corporate Diwali gifting or for celebrating business milestones. It symbolizes wealth and wisdom, making it an auspicious gift that aligns with your company's success and growth aspirations.",
+      link: "/products/13",
       image: laxmiGaneshBox
     },
     {
-      id: 37,
+      id: 10,
       name: "Akhand Brass Diya",
       description: "The premium Akhand Brass Diya with glass protection cover represents continuous success and eternal light – perfect symbolism for corporate gifting. This traditional brass lamp is an elegant gift for festivals, business inaugurations, or employee recognition programs. Its timeless design and spiritual significance make it a memorable corporate gift.",
-      link: "/product/37",
+      link: "/products/10",
       image: akhandBrassDiya
     },
     {
-      id: 38,
+      id: 11,
       name: "Gold Kalash - Auspicious Vessel",
       description: "The Gold Kalash is an exquisite gold-finished sacred vessel with intricate engravings, symbolizing abundance and prosperity. This makes it an ideal corporate gift for special occasions. Perfect for gifting during office inaugurations, milestone celebrations, or as executive gifts, this sacred vessel adds a touch of grandeur and cultural elegance to any corporate gifting program.",
-      link: "/product/38",
+      link: "/products/11",
       image: goldKalash
     },
     {
-      id: 39,
+      id: 12,
       name: "Aarti Sangrah - Complete Prayer Book",
       description: "For team members who value spirituality and tradition, the premium Aarti Sangrah in an elegant gift box makes a thoughtful corporate gift. This comprehensive collection of traditional aartis helps preserve cultural heritage and supports employees' spiritual practices. It's a unique gift that shows your company's respect for diverse beliefs and cultural traditions.",
-      link: "/product/39",
+      link: "/products/12",
       image: aartiSangrah
+    },
+    {
+      id: 24,
+      name: "SiddhiVinayak Puja Box",
+      description: "The exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms is perfect for corporate gifting during festivals or auspicious occasions. This complete set with compartments for sacred offerings represents new beginnings and success, making it an ideal gift for business inaugurations or celebrating company milestones.",
+      link: "/products/24",
+      image: siddhivinayakPujaBox
+    },
+    {
+      id: 25,
+      name: "Radhakrishna Puja Box",
+      description: "Gift divine blessings with this beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Its compact size and elegant design make it perfect for personal worship spaces in offices or as thoughtful gifts for team members who value spirituality and tradition.",
+      link: "/products/25",
+      image: radhakrishnaPujaBox
+    },
+    {
+      id: 45,
+      name: "Golden Temple Puja Box - Big",
+      description: "Make a grand impression with the magnificent Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine. This premium deluxe set represents peace, prosperity, and spiritual harmony - perfect for high-value corporate gifting or honoring business partnerships.",
+      link: "/products/45",
+      image: goldenTemplePujaBox
+    },
+    {
+      id: 47,
+      name: "Ramparivar Ayodhya Mandir Puja Box - Big",
+      description: "This premium commemorative puja box features the magnificent Ayodhya Ram Mandir temple and sacred Ram Parivar artwork. With gold-plated ceremonial items in luxurious red velvet interior, it's a divine keepsake perfect for celebrating cultural milestones and special corporate occasions.",
+      link: "/products/47",
+      image: ramparivarAyodhyaPujaBox
     }
   ];
 

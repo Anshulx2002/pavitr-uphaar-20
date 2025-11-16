@@ -8,67 +8,91 @@ import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import silverPoojaThali from "@/assets/silver-pooja-thali.jpg";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
 import aartiSangrah from "@/assets/aarti-sangrah.png";
-import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
+import laxmiGaneshBox from "@/assets/laxmi-ganesh-puja-box-small.png";
 import goldKalash from "@/assets/gold-kalash.png";
 import lordKrishnaStatue from "@/assets/lord-krishna-statue.png";
+import siddhivinayakPujaBox from "@/assets/siddhivinayak-puja-box.png";
+import ganeshPujaBox from "@/assets/ganesh-puja-box-small.png";
+import laxmijiPujaBox from "@/assets/laxmiji-puja-box-small.png";
 
 const BlogFamilyGifts = () => {
   const gifts = [
     {
-      id: 47,
+      id: 19,
       name: "Elephant Motif Copper Bottle",
       description: "Give the gift of health and tradition with our exquisite Elephant Motif Copper Bottle. Perfect for health-conscious family members, this premium copper bottle keeps water fresh while providing the health benefits of copper-enriched water. The beautiful elephant design adds a touch of elegance, making it a thoughtful gift for Dhanteras or any special occasion.",
-      link: "/product/47",
+      link: "/products/19",
       image: elephantCopperBottle
     },
     {
-      id: 34,
+      id: 2,
       name: "Gold Pooja Thali",
       description: "An exquisite gold-plated pooja thali with intricate designs is the perfect gift for family members who value daily worship and spiritual practices. This complete set with all essential compartments is ideal for elaborate worship ceremonies. Perfect for parents, grandparents, or newlyweds setting up their sacred space.",
-      link: "/product/34",
+      link: "/products/2",
       image: goldPoojaThali
     },
     {
-      id: 37,
+      id: 10,
       name: "Akhand Brass Diya",
       description: "The Akhand Brass Diya with glass protection cover represents eternal light and prosperity. This premium traditional brass lamp is perfect for continuous lighting during festivals and special occasions. Gift it to family members who appreciate authentic Indian craftsmanship and want to illuminate their homes with divine energy.",
-      link: "/product/37",
+      link: "/products/10",
       image: akhandBrassDiya
     },
     {
-      id: 39,
+      id: 12,
       name: "Aarti Sangrah - Complete Prayer Book",
       description: "For spiritually inclined family members, the Aarti Sangrah is an invaluable gift. This premium prayer book in an elegant gift box contains a complete collection of traditional aartis and bhajans, helping preserve cultural heritage and making daily worship more meaningful. Perfect for grandparents, parents, or anyone who enjoys devotional singing.",
-      link: "/product/39",
+      link: "/products/12",
       image: aartiSangrah
     },
     {
-      id: 40,
-      name: "Laxmi Ganesh Pooja Box",
-      description: "Bring blessings of wealth and wisdom to your family with the exquisite wooden Laxmi Ganesh Pooja Box. This beautifully crafted set with golden Laxmi Ganesh images and traditional compartments is perfect for sacred ceremonies and worship at home. It's an especially thoughtful gift for new homeowners or during Diwali to invoke prosperity and success.",
-      link: "/product/40",
+      id: 13,
+      name: "Laxmi Ganesh Puja Box - Small",
+      description: "Bring blessings of wealth and wisdom to your family with the exquisite Laxmi Ganesh Puja Box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. This beautifully crafted set with traditional compartments is perfect for sacred ceremonies and worship at home. It's an especially thoughtful gift for new homeowners or during Diwali to invoke prosperity and success.",
+      link: "/products/13",
       image: laxmiGaneshBox
     },
     {
-      id: 35,
+      id: 3,
       name: "Silver Pooja Thali",
       description: "Show your love and appreciation with our elegant silver-plated pooja thali featuring traditional motifs. This premium quality craftsmanship piece is perfect for special occasions and daily worship, making it an ideal gift for all auspicious celebrations in your family.",
-      link: "/product/35",
+      link: "/products/3",
       image: silverPoojaThali
     },
     {
-      id: 38,
+      id: 11,
       name: "Gold Kalash - Auspicious Vessel",
       description: "The Gold Kalash is a symbol of abundance and auspicious beginnings. This exquisite gold-finished sacred vessel with intricate engravings is perfect for religious ceremonies, water rituals, and makes an elegant gift for housewarmings, weddings, or any special milestone in your family's life. Its golden finish adds a touch of grandeur to any pooja room.",
-      link: "/product/38",
+      link: "/products/11",
       image: goldKalash
     },
     {
-      id: 43,
+      id: 16,
       name: "Lord Krishna Statue",
       description: "Bring divine blessings into your family's home with this beautiful handcrafted Lord Krishna Statue with golden calf. Featuring intricate detailing and vibrant colors, this exquisite idol adds spiritual energy to any space and makes a perfect centerpiece for your home temple. An ideal gift for Janmashtami or as a blessing for a new home.",
-      link: "/product/43",
+      link: "/products/16",
       image: lordKrishnaStatue
+    },
+    {
+      id: 24,
+      name: "SiddhiVinayak Puja Box",
+      description: "Gift success and new beginnings with the exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Perfect for families celebrating milestones, housewarmings, or starting new ventures. This complete set brings blessings of wisdom and prosperity to your loved ones.",
+      link: "/products/24",
+      image: siddhivinayakPujaBox
+    },
+    {
+      id: 31,
+      name: "Ganesh Puja Box - Small",
+      description: "This exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura is perfect for personal worship and sacred offerings. Ideal for families who want to bring divine blessings into their daily lives with elegant, space-saving devotional items.",
+      link: "/products/31",
+      image: ganeshPujaBox
+    },
+    {
+      id: 46,
+      name: "Laxmiji Puja Box - Small",
+      description: "Gift prosperity and blessings with this exquisite compact Goddess Laxmi puja box featuring gold and silver plated embossed artwork. The divine goddess seated on lotus with wealth symbols makes this a perfect gift for Diwali, housewarmings, or any occasion where you wish to invoke abundance and prosperity for your loved ones.",
+      link: "/products/46",
+      image: laxmijiPujaBox
     }
   ];
 
