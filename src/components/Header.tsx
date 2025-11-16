@@ -61,7 +61,6 @@ const Header = () => {
 
   const productCategories = [
     { name: "Puja Box", href: "/products?category=puja-boxes", description: "Sacred puja boxes with divine compartments" },
-    { name: "Incense & Agarbatti", href: "/incense-agarbatti", description: "Premium quality incense sticks" },
     { name: "Lamps & Diyas", href: "/lamps-diyas", description: "Traditional brass and clay lamps" },
     { name: "Pooja Accessories", href: "/pooja-accessories", description: "Essential items for daily worship" },
     { name: "Idols", href: "/products?category=idols", description: "Sacred idols and statues" },

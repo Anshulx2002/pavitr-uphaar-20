@@ -122,10 +122,10 @@ const BlogDiwaliSignificance = () => {
             <div className="mt-12 p-6 bg-card border border-border rounded-lg">
               <h2 className="text-2xl font-bold text-foreground mb-4">Celebrating with Pavitra Uphaar</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                At Pavitra Uphaar, we believe in preserving and honoring these sacred traditions. Our carefully curated collection of pooja essentials - from authentic brass diyas and elegant pooja thalis to complete festival kits - helps you celebrate Diwali with devotion and grace.
+                At Pavitra Uphaar, we believe in preserving and honoring these sacred traditions. Our carefully curated collection of pooja essentials - from authentic brass diyas and elegant pooja thalis to puja boxes - helps you celebrate Diwali with devotion and grace.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Explore our <Link to="/festival-kits" className="text-primary hover:underline">Diwali collection</Link> to find everything you need for a truly blessed celebration. May this Diwali bring light, prosperity, and joy to your home and heart.
+                Explore our <Link to="/products" className="text-primary hover:underline">product collection</Link> to find everything you need for a truly blessed celebration. May this Diwali bring light, prosperity, and joy to your home and heart.
               </p>
             </div>
           </div>
