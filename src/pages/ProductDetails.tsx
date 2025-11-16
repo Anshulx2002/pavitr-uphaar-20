@@ -9,10 +9,34 @@ import Footer from "@/components/Footer";
 import { toast } from "sonner";
 import NotFound from "./NotFound";
 
+// Array of diverse customer reviews
+const allReviews = [
+  { name: "Priya S.", rating: 5, text: "Really happy with this purchase! The quality is much better than what i expected from online photos. Packaging was also nice, came well protected. Only small thing is delivery took 1 day extra than promised but overall very satisfied. Would definitely recommend to friends and family 😊" },
+  { name: "Rajesh M.", rating: 4, text: "Good product overall. Looks exactly like the pictures shown. I bought this for puja at home and it serves the purpose well. The finishing could have been slightly better in some areas but nothing major. For the price point its quite decent. Customer service was helpful when i had questions before ordering." },
+  { name: "Anjali K.", rating: 5, text: "Absolutely love it!! Got this as a gift for my mom and she was so happy. The craftsmanship is beautiful and attention to detail is impressive. Arrived faster than expected too. Will definitely order more from Pavitra Uphaar in future 💕" },
+  { name: "Vikram P.", rating: 4, text: "Pretty good quality for the price. I was bit skeptical ordering online but turned out well. The color is slightly different from photo but still nice. Took about 5 days to arrive. Overall happy with purchase, just wish the shipping was faster." },
+  { name: "Meera D.", rating: 5, text: "This exceeded my expectations! Used it for Diwali puja and everyone in family loved it. The material feels premium and looks elegant. Already recommended to my neighbors who are also planning to order. Great value for money 👍" },
+  { name: "Amit T.", rating: 5, text: "Excellent product! Been using it for 2 weeks now and very satisfied. The build quality is solid and design is traditional yet modern. Customer support team was also very responsive when i had query about shipping. Highly recommend!" },
+  { name: "Sneha R.", rating: 4, text: "Nice purchase overall. The item is good quality but took little longer to deliver than mentioned. The packaging could be better as box was slightly damaged but product inside was fine. Still worth buying as the product itself is very nice." },
+  { name: "Karan B.", rating: 5, text: "Superb quality and beautiful design! This was exactly what i was looking for. The pictures dont do justice to how good it looks in person. Packaging was excellent with bubble wrap and everything. Will definitely shop again from here 🙏" },
+  { name: "Deepa N.", rating: 4, text: "Good purchase. The product matches description and photos. Only issue was that one small part was loose when it arrived but i fixed it easily. Otherwise everything else is perfect. Pricing is also reasonable compared to other websites." },
+  { name: "Sanjay L.", rating: 5, text: "Very impressed with the quality! Bought this for our new home and its perfect. The detailing work is amazing and you can tell its made with care. Delivery was smooth and tracking was accurate. Definitely buying more items soon." },
+  { name: "Pooja V.", rating: 4, text: "Quite satisfied with this buy. The product is nice but i feel the price is slightly on higher side. Quality is good though and looks premium. Took 4 days to reach which was acceptable. Would have given 5 stars if price was bit lower." },
+  { name: "Rahul J.", rating: 5, text: "Outstanding! This is my third order from Pavitra Uphaar and they never disappoint. Top notch quality and beautiful traditional designs. My entire family uses their products now. Shipping is always safe and customer service is responsive 🌟" },
+];
+
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  
+  // Select 2 unique reviews for this product based on product ID
+  const getProductReviews = (productId: number) => {
+    const startIndex = (productId * 2) % allReviews.length;
+    const review1 = allReviews[startIndex];
+    const review2 = allReviews[(startIndex + 1) % allReviews.length];
+    return [review1, review2];
+  };
   
   const product = allProducts.find(p => p.id === Number(id));
   const [selectedImage, setSelectedImage] = useState(0);
@@ -456,46 +480,29 @@ const ProductDetails = () => {
           <div className="bg-card border border-border rounded-lg p-6 md:p-8">
             <h2 className="text-2xl font-bold text-foreground mb-6">Customer Reviews</h2>
             <div className="space-y-6">
-              {/* Review 1 */}
-              <div className="border-b border-border pb-6">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-semibold text-foreground">Priya S.</span>
-                      <div className="flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                        ))}
+              {getProductReviews(product.id).map((review, index) => (
+                <div key={index} className={index === 0 ? "border-b border-border pb-6" : "pb-2"}>
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-semibold text-foreground">{review.name}</span>
+                        <div className="flex gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star 
+                              key={i} 
+                              className={`w-4 h-4 ${i < review.rating ? 'fill-primary text-primary' : 'text-muted-foreground'}`} 
+                            />
+                          ))}
+                        </div>
                       </div>
+                      <span className="text-sm text-muted-foreground">Verified Purchase</span>
                     </div>
-                    <span className="text-sm text-muted-foreground">Verified Purchase</span>
                   </div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {review.text}
+                  </p>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  Really happy with this purchase! The quality is much better than what i expected from online photos. Packaging was also nice, came well protected. Only small thing is delivery took 1 day extra than promised but overall very satisfied. Would definitely recommend to friends and family 😊
-                </p>
-              </div>
-
-              {/* Review 2 */}
-              <div className="pb-2">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-semibold text-foreground">Rajesh M.</span>
-                      <div className="flex gap-0.5">
-                        {[...Array(4)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                        ))}
-                        <Star className="w-4 h-4 text-muted-foreground" />
-                      </div>
-                    </div>
-                    <span className="text-sm text-muted-foreground">Verified Purchase</span>
-                  </div>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  Good product overall. Looks exactly like the pictures shown. I bought this for puja at home and it serves the purpose well. The finishing could have been slightly better in some areas but nothing major. For the price point its quite decent. Customer service was helpful when i had questions before ordering.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
