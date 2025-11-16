@@ -26,17 +26,6 @@ const FestivalKits = () => {
 
   const festivalKits = [
     {
-      id: 19,
-      name: "Signature Pooja Gift Box",
-      description: "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions.",
-      price: 1999,
-      originalPrice: 3000,
-      images: [diwaliKit, diwaliKit2],
-      items: ["Exquisite Lotus Diyas", "Handcrafted Pearl Toran", "Fragrant Incense Sticks", "Premium Dhoop Sticks", "Quality Potlis with Large Cashews", "Premium Raisins Potli", "Satin Ribbon Presentation"],
-      rating: 4.8,
-      discount: "34% OFF"
-    },
-    {
       id: 46,
       name: "Dussehra Gift Box",
       description: "Celebrate the victory of good over evil with our premium Dussehra collection featuring organic dhoop sticks, carved wooden holders, and lotus diyas for divine blessings.",
@@ -95,9 +84,7 @@ const FestivalKits = () => {
   };
 
   const handleKitClick = (kitId: number) => {
-    if (kitId === 19) {
-      navigate('/diwali-kit');
-    } else if (kitId === 46) {
+    if (kitId === 46) {
       navigate('/dussehra-kit');
     }
   };

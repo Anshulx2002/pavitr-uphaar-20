@@ -142,14 +142,14 @@ const BlogCopperBenefits = () => {
 
             {/* Product Showcase */}
             <div className="grid md:grid-cols-2 gap-6 my-8">
-              <Link to="/product/47" className="group">
+              <Link to="/product/19" className="group">
                 <div className="border border-border rounded-lg p-4 hover:shadow-lg transition-all">
                   <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">Elephant Motif Copper Bottle</h3>
                   <p className="text-sm text-muted-foreground mb-3">Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use.</p>
                   <Button variant="outline" size="sm">View Product</Button>
                 </div>
               </Link>
-              <Link to="/product/48" className="group">
+              <Link to="/product/20" className="group">
                 <div className="border border-border rounded-lg p-4 hover:shadow-lg transition-all">
                   <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">Rani Meher Copper Bottle</h3>
                   <p className="text-sm text-muted-foreground mb-3">Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork.</p>

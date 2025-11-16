@@ -22,6 +22,7 @@ import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
 import ganeshPujaBoxSmallImage from "@/assets/ganesh-puja-box-small.png";
 import laxmiGaneshSmallPujaBoxImage from "@/assets/laxmi-ganesh-small-puja-box.png";
 import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png";
+import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
 
 const trendingProducts = [
   {
@@ -86,13 +87,13 @@ const trendingProducts = [
   },
   {
     id: 19,
-    name: "Signature Pooja Gift Box",
-    price: 1999,
-    originalPrice: 3000,
-    image: diwaliKitImage,
-    rating: 4.8,
-    description: "An exquisite pooja hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
-    badge: "34% OFF"
+    name: "Elephant Motif Copper Bottle",
+    price: 1750,
+    originalPrice: 2500,
+    image: elephantCopperBottleImage,
+    rating: 5,
+    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special"
   },
   {
     id: 39,
