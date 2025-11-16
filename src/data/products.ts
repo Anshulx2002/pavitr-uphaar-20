@@ -1,5 +1,4 @@
 // Import all images
-import agarbattiImage from "@/assets/agarbatti.jpg";
 import diyaImage from "@/assets/diya.jpg";
 import kumkumImage from "@/assets/kumkum.jpg";
 import rudrakshaImage from "@/assets/rudraksha.jpg";
@@ -64,20 +63,6 @@ export interface Product {
 }
 
 export const allProducts: Product[] = [
-  // Incense & Agarbatti
-  {
-    id: 1,
-    name: "Premium Sandalwood Agarbatti",
-    price: 299,
-    originalPrice: 399,
-    image: agarbattiImage,
-    rating: 5,
-    description:
-      "Hand-rolled incense sticks made from pure sandalwood powder. Burns for 45 minutes with divine fragrance.",
-    badge: "Best Seller",
-    category: "incense",
-  },
-
   // Sacred Threads (removed sandalwood mala and red thread kalava)
   {
     id: 2,
