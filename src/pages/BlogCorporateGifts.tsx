@@ -14,7 +14,6 @@ import aartiSangrah from "@/assets/aarti-sangrah.png";
 import siddhivinayakPujaBox from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBox from "@/assets/radhakrishna-puja-box.png";
 import goldenTemplePujaBox from "@/assets/golden-temple-puja-box-big.png";
-import ramparivarAyodhyaPujaBox from "@/assets/ramparivar-ayodhya-puja-box-big.png";
 
 const BlogCorporateGifts = () => {
   const gifts = [
@@ -94,13 +93,6 @@ const BlogCorporateGifts = () => {
       description: "Make a grand impression with the magnificent Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine. This premium deluxe set represents peace, prosperity, and spiritual harmony - perfect for high-value corporate gifting or honoring business partnerships.",
       link: "/product/45",
       image: goldenTemplePujaBox
-    },
-    {
-      id: 47,
-      name: "Ramparivar Ayodhya Mandir Puja Box - Big",
-      description: "This premium commemorative puja box features the magnificent Ayodhya Ram Mandir temple and sacred Ram Parivar artwork. With gold-plated ceremonial items in luxurious red velvet interior, it's a divine keepsake perfect for celebrating cultural milestones and special corporate occasions.",
-      link: "/product/47",
-      image: ramparivarAyodhyaPujaBox
     }
   ];
 
