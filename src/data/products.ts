@@ -13,8 +13,6 @@ import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import goldKalashImage from "@/assets/gold-kalash.png";
 import aartiSanghrahImage from "@/assets/aarti-sangrah.png";
 import laxmiGaneshPoojaBoxImage from "@/assets/laxmi-ganesh-pooja-box.png";
-import woodenDhoopHolderImage from "@/assets/wooden-dhoop-holder.png";
-import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
 import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
@@ -146,30 +144,6 @@ export const allProducts: Product[] = [
       "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
     badge: "23% OFF",
     category: "puja-boxes",
-  },
-  {
-    id: 14,
-    name: "Wooden Incense Holder",
-    price: 499,
-    originalPrice: 750,
-    image: woodenDhoopHolderImage,
-    rating: 4.8,
-    description:
-      "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
-    badge: "Handcrafted",
-    category: "accessories",
-  },
-  {
-    id: 15,
-    name: "Wooden Dhoop Stick Holder",
-    price: 499,
-    originalPrice: 750,
-    image: woodenIncenseHolderImage,
-    rating: 4.7,
-    description:
-      "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
-    badge: "Elegant",
-    category: "accessories",
   },
   {
     id: 16,
