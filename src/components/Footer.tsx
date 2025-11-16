@@ -47,7 +47,6 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Categories</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="/products?category=puja-boxes" className="opacity-75 hover:opacity-100 transition-opacity">Puja Box</a></li>
-              <li><a href="/incense-agarbatti" className="opacity-75 hover:opacity-100 transition-opacity">Incense & Agarbatti</a></li>
               <li><a href="/lamps-diyas" className="opacity-75 hover:opacity-100 transition-opacity">Lamps & Diyas</a></li>
               <li><a href="/pooja-accessories" className="opacity-75 hover:opacity-100 transition-opacity">Pooja Accessories</a></li>
             </ul>

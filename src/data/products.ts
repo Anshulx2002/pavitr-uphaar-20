@@ -526,7 +526,6 @@ export const allProducts: Product[] = [
 export const categories = [
   { id: "all", name: "All Products", count: allProducts.length },
   { id: "puja-boxes", name: "Puja Box", count: allProducts.filter((p) => p.category === "puja-boxes").length },
-  { id: "incense", name: "Incense & Agarbatti", count: allProducts.filter((p) => p.category === "incense").length },
   { id: "lamps", name: "Lamps & Diyas", count: allProducts.filter((p) => p.category === "lamps").length },
   {
     id: "accessories",

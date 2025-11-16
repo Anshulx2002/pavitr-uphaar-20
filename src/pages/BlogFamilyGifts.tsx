@@ -6,13 +6,11 @@ import { Button } from "@/components/ui/button";
 import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import silverPoojaThali from "@/assets/silver-pooja-thali.jpg";
-import signaturePoojaBox from "@/assets/diwali-kit-premium.png";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
 import aartiSangrah from "@/assets/aarti-sangrah.png";
 import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
 import goldKalash from "@/assets/gold-kalash.png";
 import lordKrishnaStatue from "@/assets/lord-krishna-statue.png";
-import lotusLedDiya from "@/assets/lotus-led-diya.png";
 
 const BlogFamilyGifts = () => {
   const gifts = [
@@ -29,13 +27,6 @@ const BlogFamilyGifts = () => {
       description: "An exquisite gold-plated pooja thali with intricate designs is the perfect gift for family members who value daily worship and spiritual practices. This complete set with all essential compartments is ideal for elaborate worship ceremonies. Perfect for parents, grandparents, or newlyweds setting up their sacred space.",
       link: "/product/34",
       image: goldPoojaThali
-    },
-    {
-      id: 19,
-      name: "Signature Pooja Gift Box",
-      description: "Celebrate traditions with our Signature Pooja Gift Box - an exquisite hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions and spiritual celebrations.",
-      link: "/product/19",
-      image: signaturePoojaBox
     },
     {
       id: 37,
@@ -78,13 +69,6 @@ const BlogFamilyGifts = () => {
       description: "Bring divine blessings into your family's home with this beautiful handcrafted Lord Krishna Statue with golden calf. Featuring intricate detailing and vibrant colors, this exquisite idol adds spiritual energy to any space and makes a perfect centerpiece for your home temple. An ideal gift for Janmashtami or as a blessing for a new home.",
       link: "/product/43",
       image: lordKrishnaStatue
-    },
-    {
-      id: 45,
-      name: "Lotus LED Diya - Pack of 6",
-      description: "Combine tradition with modern convenience with our beautiful crystal Lotus LED Diya pack of 6. These eco-friendly, reusable diyas are perfect for families who want the aesthetic beauty of traditional lamps with the safety and convenience of LED lights. Ideal for festivals, home decoration, and creating a serene ambiance during prayers and celebrations.",
-      link: "/product/45",
-      image: lotusLedDiya
     }
   ];
 

@@ -5,13 +5,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import raniMeherBottle from "@/assets/rani-meher-copper-bottle.png";
-import signaturePoojaBox from "@/assets/diwali-kit-premium.png";
 import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 import silverPoojaThali from "@/assets/silver-pooja-thali.jpg";
 import laxmiGaneshBox from "@/assets/laxmi-ganesh-pooja-box.png";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
 import goldKalash from "@/assets/gold-kalash.png";
-import lotusLedDiya from "@/assets/lotus-led-diya.png";
 import aartiSangrah from "@/assets/aarti-sangrah.png";
 
 const BlogCorporateGifts = () => {
@@ -29,13 +27,6 @@ const BlogCorporateGifts = () => {
       description: "The Rani Meher Copper Bottle features stunning traditional Rajasthani Rani Meher artwork, making it a unique corporate gift that stands out. This luxurious copper bottle is perfect for executive gifting or as premium employee appreciation gifts. It represents both wellness and cultural heritage, making a lasting impression on your team members.",
       link: "/product/48",
       image: raniMeherBottle
-    },
-    {
-      id: 19,
-      name: "Signature Pooja Gift Box",
-      description: "Make your corporate celebrations memorable with our Signature Pooja Gift Box - an exquisite hamper with satin ribbons containing handcrafted lotus diyas, traditional toran to welcome divine blessings, fragrant incense and dhoop sticks, and premium quality potlis with large cashews and raisins. Perfect for all auspicious occasions, demonstrating your company's appreciation with cultural elegance.",
-      link: "/product/19",
-      image: signaturePoojaBox
     },
     {
       id: 34,
@@ -71,13 +62,6 @@ const BlogCorporateGifts = () => {
       description: "The Gold Kalash is an exquisite gold-finished sacred vessel with intricate engravings, symbolizing abundance and prosperity. This makes it an ideal corporate gift for special occasions. Perfect for gifting during office inaugurations, milestone celebrations, or as executive gifts, this sacred vessel adds a touch of grandeur and cultural elegance to any corporate gifting program.",
       link: "/product/38",
       image: goldKalash
-    },
-    {
-      id: 45,
-      name: "Lotus LED Diya - Pack of 6",
-      description: "Combine tradition with modern convenience in your corporate gifting with our beautiful crystal Lotus LED Diya pack of 6. These eco-friendly, elegant diyas are perfect for office décor or as festival gifts for team members. The pack of 6 makes it ideal for bulk corporate orders, offering both aesthetic appeal and practical functionality.",
-      link: "/product/45",
-      image: lotusLedDiya
     },
     {
       id: 39,
