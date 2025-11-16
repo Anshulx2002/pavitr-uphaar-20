@@ -1,4 +1,4 @@
-import { Mail, MapPin, Instagram } from "lucide-react";
+import { Mail, MapPin, Instagram, Facebook } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-12">
@@ -21,6 +21,9 @@ const Footer = () => {
             <div className="flex space-x-3">
               <a href="https://instagram.com/pavitra.uphaar" target="_blank" rel="noopener noreferrer">
                 <Instagram className="w-8 h-8 opacity-75 hover:opacity-100 cursor-pointer transition-all hover:scale-110" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61583540272058" target="_blank" rel="noopener noreferrer">
+                <Facebook className="w-8 h-8 opacity-75 hover:opacity-100 cursor-pointer transition-all hover:scale-110" />
               </a>
             </div>
           </div>
