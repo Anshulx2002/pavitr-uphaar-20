@@ -36,8 +36,9 @@ const featuredProducts = [
     originalPrice: 1299,
     image: laxmiGaneshPoojaBoxSmallImage,
     rating: 5,
-    description: "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
+    badge: "Premium",
   },
   {
     id: 24,
@@ -46,8 +47,9 @@ const featuredProducts = [
     originalPrice: 1599,
     image: siddhivinayakPujaBoxImage,
     rating: 4.9,
-    description: "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
+    badge: "Premium",
   },
   {
     id: 25,
@@ -56,8 +58,9 @@ const featuredProducts = [
     originalPrice: 1299,
     image: radhakrishnaPujaBoxImage,
     rating: 4.9,
-    description: "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
-    badge: "Premium"
+    description:
+      "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
+    badge: "Premium",
   },
   {
     id: 31,
@@ -66,8 +69,9 @@ const featuredProducts = [
     originalPrice: 1299,
     image: ganeshPujaBoxSmallImage,
     rating: 4.9,
-    description: "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura and sacred Last Supper imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
-    badge: "Premium"
+    description:
+      "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
+    badge: "Premium",
   },
   {
     id: 38,
@@ -76,8 +80,9 @@ const featuredProducts = [
     originalPrice: 1299,
     image: laxmiGaneshSmallPujaBoxImage,
     rating: 4.9,
-    description: "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
+    badge: "Premium",
   },
   {
     id: 45,
@@ -86,8 +91,9 @@ const featuredProducts = [
     originalPrice: 1599,
     image: goldenTemplePujaBoxBigImage,
     rating: 4.9,
-    description: "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
-    badge: "Premium"
+    description:
+      "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
+    badge: "Premium",
   },
   {
     id: 46,
@@ -96,8 +102,9 @@ const featuredProducts = [
     originalPrice: 1299,
     image: laxmijiPujaBoxSmallImage,
     rating: 4.9,
-    description: "Exquisite compact Goddess Laxmi puja box with gold and silver plated embossed artwork featuring the divine goddess seated on lotus with wealth symbols. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium white finish with red velvet interior, perfect for daily worship and blessings.",
-    badge: "Premium"
+    description:
+      "Exquisite compact Goddess Laxmi puja box with gold and silver plated embossed artwork featuring the divine goddess seated on lotus with wealth symbols. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium white finish with red velvet interior, perfect for daily worship and blessings.",
+    badge: "Premium",
   },
   {
     id: 34,
@@ -106,8 +113,9 @@ const featuredProducts = [
     originalPrice: 3499,
     image: goldPoojaThaliImage,
     rating: 5,
-    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for worship rituals.",
+    badge: "Premium",
   },
   {
     id: 47,
@@ -116,8 +124,9 @@ const featuredProducts = [
     originalPrice: 2500,
     image: elephantCopperBottleImage,
     rating: 5,
-    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
-    badge: "Dhanteras Special"
+    description:
+      "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special",
   },
   {
     id: 48,
@@ -126,8 +135,9 @@ const featuredProducts = [
     originalPrice: 2500,
     image: raniMeherCopperBottleImage,
     rating: 5,
-    description: "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
-    badge: "Dhanteras Special"
+    description:
+      "Exquisite copper bottle featuring traditional Rajasthani Rani Meher artwork. Perfect for Dhanteras celebrations and healthy copper-enriched water storage.",
+    badge: "Dhanteras Special",
   },
   {
     id: 35,
@@ -136,8 +146,9 @@ const featuredProducts = [
     originalPrice: 3499,
     image: silverPoojaThaliImage,
     rating: 5,
-    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
-    badge: "Premium"
+    description:
+      "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
+    badge: "Premium",
   },
   {
     id: 38,
@@ -146,8 +157,9 @@ const featuredProducts = [
     originalPrice: 2499,
     image: goldKalashImage,
     rating: 5,
-    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
-    badge: "Premium"
+    description:
+      "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    badge: "Premium",
   },
   {
     id: 39,
@@ -156,8 +168,9 @@ const featuredProducts = [
     originalPrice: 2499,
     image: aartiSanghrahImage,
     rating: 5,
-    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
-    badge: "Premium"
+    description:
+      "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    badge: "Premium",
   },
   {
     id: 40,
@@ -166,8 +179,9 @@ const featuredProducts = [
     originalPrice: 1499,
     image: laxmiGaneshPoojaBoxImage,
     rating: 5,
-    description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
-    badge: "Premium"
+    description:
+      "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "Premium",
   },
   {
     id: 41,
@@ -176,8 +190,9 @@ const featuredProducts = [
     originalPrice: 750,
     image: woodenDhoopHolderImage,
     rating: 4.8,
-    description: "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
-    badge: "Handcrafted"
+    description:
+      "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
+    badge: "Handcrafted",
   },
   {
     id: 42,
@@ -186,8 +201,9 @@ const featuredProducts = [
     originalPrice: 750,
     image: woodenIncenseHolderImage,
     rating: 4.7,
-    description: "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
-    badge: "Elegant"
+    description:
+      "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
+    badge: "Elegant",
   },
   {
     id: 36,
@@ -196,8 +212,9 @@ const featuredProducts = [
     originalPrice: 2499,
     image: aartiBookImage,
     rating: 5,
-    description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
-    badge: "Premium"
+    description:
+      "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
+    badge: "Premium",
   },
   {
     id: 37,
@@ -206,8 +223,9 @@ const featuredProducts = [
     originalPrice: 2499,
     image: akhandBrassDiyaImage,
     rating: 5,
-    description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
-    badge: "Premium"
+    description:
+      "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
+    badge: "Premium",
   },
   {
     id: 43,
@@ -216,8 +234,9 @@ const featuredProducts = [
     originalPrice: 4000,
     image: lordKrishnaStatueImage,
     rating: 4.9,
-    description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
-    badge: "Sacred"
+    description:
+      "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    badge: "Sacred",
   },
   {
     id: 44,
@@ -226,9 +245,10 @@ const featuredProducts = [
     originalPrice: 3500,
     image: kamdhenusIdolSilverImage,
     rating: 4.9,
-    description: "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
-    badge: "Sacred"
-  }
+    description:
+      "Beautiful silver-finished Kamdhenu idol with calf. Exquisite crystal base with golden accents. Perfect for home temple and bringing prosperity.",
+    badge: "Sacred",
+  },
 ];
 
 const FeaturedProductsSection = () => {
@@ -238,11 +258,11 @@ const FeaturedProductsSection = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
@@ -262,25 +282,27 @@ const FeaturedProductsSection = () => {
               Featured Collection
             </span>
           </h2>
-          
+
           <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4 md:mb-6 px-2">
-            Discover our most cherished pooja essentials, meticulously selected for their 
-            authenticity, quality, and spiritual significance.
+            Discover our most cherished pooja essentials, meticulously selected for their authenticity, quality, and
+            spiritual significance.
           </p>
-          
         </div>
 
         {/* Mobile-Optimized Products Grid */}
-        <div className={`
-          ${isMobile 
-            ? "grid grid-cols-1 gap-6 max-w-sm mx-auto" 
-            : "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8"
+        <div
+          className={`
+          ${
+            isMobile
+              ? "grid grid-cols-1 gap-6 max-w-sm mx-auto"
+              : "grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8"
           } 
           mb-8 md:mb-12
-        `}>
+        `}
+        >
           {featuredProducts.slice(0, isMobile ? 4 : 12).map((product, index) => (
-            <div 
-              key={product.id} 
+            <div
+              key={product.id}
               className="scroll-animate hover-lift group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -301,13 +323,13 @@ const FeaturedProductsSection = () => {
             </div>
           ))}
         </div>
-        
+
         {/* Mobile: Show More Button */}
         {isMobile && (
           <div className="text-center mb-8">
             <Link to="/products">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold px-8 py-4 rounded-full shadow-gold hover:shadow-hover transform transition-all duration-300 hover:scale-105 w-full max-w-xs"
               >
                 View All Products
@@ -328,16 +350,16 @@ const FeaturedProductsSection = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/products">
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold px-8 py-4 rounded-full shadow-gold hover:shadow-hover transform transition-all duration-300 hover:scale-105"
                   >
                     View All Products
                   </Button>
                 </Link>
                 <Link to="/products">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="lg"
                     className="border-2 border-primary/20 hover:border-primary/40 px-8 py-4 rounded-full transition-all duration-300"
                   >
