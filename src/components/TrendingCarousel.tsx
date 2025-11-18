@@ -32,8 +32,9 @@ const trendingProducts = [
     originalPrice: 1299,
     image: laxmiGaneshPoojaBoxSmallImage,
     rating: 5,
-    description: "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
+    badge: "Premium",
   },
   {
     id: 24,
@@ -42,8 +43,9 @@ const trendingProducts = [
     originalPrice: 1599,
     image: siddhivinayakPujaBoxImage,
     rating: 4.9,
-    description: "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
+    badge: "Premium",
   },
   {
     id: 25,
@@ -52,8 +54,9 @@ const trendingProducts = [
     originalPrice: 1299,
     image: radhakrishnaPujaBoxImage,
     rating: 4.9,
-    description: "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
-    badge: "Premium"
+    description:
+      "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
+    badge: "Premium",
   },
   {
     id: 31,
@@ -62,8 +65,9 @@ const trendingProducts = [
     originalPrice: 1299,
     image: ganeshPujaBoxSmallImage,
     rating: 4.9,
-    description: "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura and sacred Last Supper imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
-    badge: "Premium"
+    description:
+      "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
+    badge: "Premium",
   },
   {
     id: 38,
@@ -72,8 +76,9 @@ const trendingProducts = [
     originalPrice: 1299,
     image: laxmiGaneshSmallPujaBoxImage,
     rating: 4.9,
-    description: "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
+    badge: "Premium",
   },
   {
     id: 45,
@@ -82,8 +87,9 @@ const trendingProducts = [
     originalPrice: 1599,
     image: goldenTemplePujaBoxBigImage,
     rating: 4.9,
-    description: "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
-    badge: "Premium"
+    description:
+      "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
+    badge: "Premium",
   },
   {
     id: 19,
@@ -92,8 +98,9 @@ const trendingProducts = [
     originalPrice: 2500,
     image: elephantCopperBottleImage,
     rating: 5,
-    description: "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
-    badge: "Dhanteras Special"
+    description:
+      "Premium copper bottle with exquisite elephant motif design. Perfect for Dhanteras and daily use. Keeps water fresh and provides health benefits of copper-enriched water.",
+    badge: "Dhanteras Special",
   },
   {
     id: 39,
@@ -102,8 +109,9 @@ const trendingProducts = [
     originalPrice: 2499,
     image: aartiSanghrahImage,
     rating: 5,
-    description: "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
-    badge: "Premium"
+    description:
+      "Premium Aarti Sangrah book in elegant gift box. Complete collection of traditional aartis for daily prayers and special occasions.",
+    badge: "Premium",
   },
   {
     id: 34,
@@ -112,8 +120,9 @@ const trendingProducts = [
     originalPrice: 3499,
     image: goldPoojaThaliImage,
     rating: 5,
-    description: "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
-    badge: "Premium"
+    description:
+      "Exquisite gold-plated pooja thali with intricate designs. Complete set with all essential compartments for elaborate worship ceremonies.",
+    badge: "Premium",
   },
   {
     id: 35,
@@ -122,8 +131,9 @@ const trendingProducts = [
     originalPrice: 3499,
     image: silverPoojaThaliImage,
     rating: 5,
-    description: "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
-    badge: "Premium"
+    description:
+      "Elegant silver-plated pooja thali with traditional motifs. Premium quality craftsmanship for special occasions and daily worship.",
+    badge: "Premium",
   },
   {
     id: 38,
@@ -132,8 +142,9 @@ const trendingProducts = [
     originalPrice: 2499,
     image: goldKalashImage,
     rating: 5,
-    description: "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
-    badge: "Premium"
+    description:
+      "Elevate your Aarti experience with our Gold Kalash. Exquisite gold-finished sacred vessel with intricate engravings for water rituals and ceremonies.",
+    badge: "Premium",
   },
   {
     id: 40,
@@ -142,8 +153,9 @@ const trendingProducts = [
     originalPrice: 1499,
     image: laxmiGaneshPoojaBoxImage,
     rating: 5,
-    description: "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
-    badge: "Premium"
+    description:
+      "Exquisite wooden pooja box with golden Laxmi Ganesh images. Complete set with traditional compartments for sacred ceremonies and worship.",
+    badge: "Premium",
   },
   {
     id: 41,
@@ -152,8 +164,9 @@ const trendingProducts = [
     originalPrice: 750,
     image: woodenDhoopHolderImage,
     rating: 4.8,
-    description: "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
-    badge: "Handcrafted"
+    description:
+      "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
+    badge: "Handcrafted",
   },
   {
     id: 42,
@@ -162,8 +175,9 @@ const trendingProducts = [
     originalPrice: 750,
     image: woodenIncenseHolderImage,
     rating: 4.7,
-    description: "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
-    badge: "Elegant"
+    description:
+      "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
+    badge: "Elegant",
   },
   {
     id: 36,
@@ -172,8 +186,9 @@ const trendingProducts = [
     originalPrice: 2499,
     image: aartiBookImage,
     rating: 5,
-    description: "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
-    badge: "Premium"
+    description:
+      "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
+    badge: "Premium",
   },
   {
     id: 37,
@@ -182,8 +197,9 @@ const trendingProducts = [
     originalPrice: 2499,
     image: akhandBrassDiyaImage,
     rating: 5,
-    description: "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
-    badge: "Premium"
+    description:
+      "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
+    badge: "Premium",
   },
   {
     id: 43,
@@ -192,9 +208,10 @@ const trendingProducts = [
     originalPrice: 4000,
     image: lordKrishnaStatueImage,
     rating: 4.9,
-    description: "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
-    badge: "Sacred"
-  }
+    description:
+      "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
+    badge: "Sacred",
+  },
 ];
 
 const TrendingCarousel = () => {
@@ -208,7 +225,7 @@ const TrendingCarousel = () => {
             Popular
           </Badge>
         </div>
-        
+
         <div className="relative">
           <Carousel
             opts={{
@@ -219,7 +236,10 @@ const TrendingCarousel = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {trendingProducts.map((product) => (
-                <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                <CarouselItem
+                  key={product.id}
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                >
                   <div className="transform transition-all duration-300 hover:scale-105">
                     <ProductCard
                       id={product.id}
