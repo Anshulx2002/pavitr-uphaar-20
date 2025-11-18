@@ -299,7 +299,7 @@ export const allProducts: Product[] = [
     image: ganeshPujaBoxSmallImage,
     rating: 4.9,
     description:
-      "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura and sacred Last Supper imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
+      "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
     badge: "23% OFF",
     category: "puja-boxes",
   },
