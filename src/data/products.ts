@@ -45,6 +45,7 @@ import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png
 import laxmijiPujaBoxSmallImage from "@/assets/laxmiji-puja-box-small.png";
 import ramparivarAyodhyaPujaBoxBigImage from "@/assets/ramparivar-ayodhya-puja-box-big.png";
 import saiSamadhiPujaBoxBigImage from "@/assets/sai-samadhi-puja-box-big.png";
+import guruNanakPujaBoxSmallImage from "@/assets/guru-nanak-puja-box-small.png";
 
 export interface Product {
   id: number;
@@ -506,6 +507,18 @@ export const allProducts: Product[] = [
     description:
       "Divine Sai Samadhi puja box featuring Shirdi Sai Baba in sacred temple architecture with intricate golden embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, luxurious red velvet interior, and ornate golden compartments for complete worship ceremonies.",
     badge: "19% OFF",
+    category: "puja-boxes",
+  },
+  {
+    id: 49,
+    name: "Guru Nanak Puja Box - Small",
+    price: 999,
+    originalPrice: 1299,
+    image: guruNanakPujaBoxSmallImage,
+    rating: 4.9,
+    description:
+      "Exquisite compact Guru Nanak puja box featuring Guru Nanak Dev Ji in serene meditation with sacred Golden Temple imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium set with elegant black exterior, luxurious red velvet interior, and ornate golden compartments for divine Sikh worship and offerings.",
+    badge: "23% OFF",
     category: "puja-boxes",
   },
 ];
