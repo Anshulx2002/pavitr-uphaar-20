@@ -343,13 +343,13 @@ export const allProducts: Product[] = [
   },
   {
     id: 35,
-    name: "Jesus Puja Box - Big",
+    name: "Jesus Prayer Box - Big",
     price: 1299,
     originalPrice: 1599,
     image: jesusPujaBoxBigImage,
     rating: 4.9,
     description:
-      "Exquisite Jesus puja box featuring beautiful depiction of Jesus Christ with intricate golden detailing and sacred compartments. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with Love and Peace plaques for sacred worship and spiritual offerings.",
+      "Exquisite Jesus prayer box featuring beautiful depiction of Jesus Christ with intricate golden detailing and sacred compartments. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium set with Love and Peace plaques for sacred worship and spiritual offerings.",
     badge: "19% OFF",
     category: "puja-boxes",
   },
@@ -517,7 +517,7 @@ export const allProducts: Product[] = [
     image: guruNanakPujaBoxSmallImage,
     rating: 4.9,
     description:
-      "Exquisite compact Guru Nanak puja box featuring Guru Nanak Dev Ji in serene meditation with sacred Golden Temple imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium set with elegant black exterior, luxurious red velvet interior, and ornate golden compartments for divine Sikh worship and offerings.",
+      "Exquisite compact Guru Nanak puja box featuring Guru Nanak Dev Ji in serene meditation. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium set with elegant black exterior and luxurious red velvet interior for divine Sikh worship and offerings.",
     badge: "23% OFF",
     category: "puja-boxes",
   },
