@@ -198,13 +198,13 @@ export const allProducts: Product[] = [
 
   {
     id: 23,
-    name: "Jesus Last Supper Puja Box",
+    name: "Jesus Last Supper Prayer Box",
     price: 1299,
     originalPrice: 1599,
     image: jesusLastSupperBoxImage,
     rating: 4.8,
     description:
-      "Exquisite Jesus Last Supper puja box featuring a beautiful depiction of The Last Supper. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Perfect for sacred worship and spiritual offerings.",
+      "Exquisite Jesus Last Supper prayer box featuring a beautiful depiction of The Last Supper. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Perfect for sacred worship and spiritual offerings.",
     badge: "19% OFF",
     category: "puja-boxes",
   },
