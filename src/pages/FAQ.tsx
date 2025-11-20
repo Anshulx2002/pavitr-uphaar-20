@@ -27,7 +27,7 @@ const FAQ = () => {
     },
     {
       question: "Can I return products if they arrive damaged?",
-      answer: "Yes, we have a 7-day return policy for damaged or defective products. Simply contact our customer service team with photos of the damaged items, and we'll arrange for a replacement or full refund."
+      answer: "Yes, we have a 7-day return policy for damaged or defective products. Simply contact our customer service team with photos of the damaged items, and we'll arrange for a replacement or full refund. Refunds will be processed within 7 days of receiving the returned product."
     },
     {
       question: "Do you provide bulk orders for temples and ashrams?",
