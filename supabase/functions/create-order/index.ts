@@ -47,7 +47,7 @@ serve(async (req) => {
       });
     }
 
-    const razorpayKeyId = "rzp_live_R6kRjBKRDQalxT";
+    const razorpayKeyId = "rzp_live_RiG3snfFrKJspU";
     const razorpaySecret = Deno.env.get("RAZORPAY_SECRET");
     // const razorpayKeyId = "rzp_test_N8MLCvpxuLueYZ";
     // const razorpaySecret = "DMDwMX4WAckt7BJ97XFmXAYC";

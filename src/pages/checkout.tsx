@@ -28,7 +28,7 @@ import { toast } from "@/components/ui/use-toast";
 // Razorpay constants
 const CREATE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/create-order";
 const SAVE_ORDER_URL = "https://bilgoxmvnvhiqzidllvj.supabase.co/functions/v1/save-order";
-const RZP_PUBLIC_KEY = "rzp_live_R6kRjBKRDQalxT";
+const RZP_PUBLIC_KEY = "rzp_live_RiG3snfFrKJspU";
 // const RZP_PUBLIC_KEY = "rzp_test_N8MLCvpxuLueYZ";
 
 const checkoutSchema = z.object({
