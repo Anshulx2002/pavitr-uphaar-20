@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
-import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { User } from '@supabase/supabase-js';
+import { AddedToCartDialog } from '@/components/AddedToCartDialog';
 
 declare global {
   interface Window {
@@ -30,6 +30,9 @@ interface CartContextType {
   getCartItemsCount: () => number;
   user: User | null;
   isLoading: boolean;
+  showAddedDialog: boolean;
+  addedProductName: string;
+  setShowAddedDialog: (show: boolean) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -50,6 +53,8 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showAddedDialog, setShowAddedDialog] = useState(false);
+  const [addedProductName, setAddedProductName] = useState('');
 
   // Initialize auth and cart
   useEffect(() => {
@@ -149,10 +154,8 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
           saveCartToLocalStorage(newItems);
         }
 
-        toast({
-          title: "Updated Cart",
-          description: `${product.name} quantity increased`,
-        });
+        setAddedProductName(product.name);
+        setShowAddedDialog(true);
       } else {
         const newItems = [...cartItems, { ...product, quantity: 1 }];
         setCartItems(newItems);
@@ -175,10 +178,8 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
           saveCartToLocalStorage(newItems);
         }
 
-        toast({
-          title: "Added to Cart",
-          description: `${product.name} has been added to your cart`,
-        });
+        setAddedProductName(product.name);
+        setShowAddedDialog(true);
         
         // Track AddToCart event
         if (typeof window !== 'undefined' && window.fbq) {
@@ -192,11 +193,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       }
     } catch (error: any) {
       console.error('Error adding to cart:', error);
-      toast({
-        title: "Error",
-        description: error.message || "Failed to add item to cart",
-        variant: "destructive",
-      });
     }
   };
 
@@ -279,11 +275,19 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     getCartItemsCount,
     user,
     isLoading,
+    showAddedDialog,
+    addedProductName,
+    setShowAddedDialog,
   };
 
   return (
     <CartContext.Provider value={value}>
       {children}
+      <AddedToCartDialog 
+        isOpen={showAddedDialog}
+        onClose={() => setShowAddedDialog(false)}
+        productName={addedProductName}
+      />
     </CartContext.Provider>
   );
 };
