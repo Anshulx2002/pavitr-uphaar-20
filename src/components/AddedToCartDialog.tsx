@@ -7,21 +7,19 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 import { ShoppingCart, ArrowRight } from "lucide-react";
 
 interface AddedToCartDialogProps {
   isOpen: boolean;
   onClose: () => void;
+  onCheckout: () => void;
   productName: string;
 }
 
-export const AddedToCartDialog = ({ isOpen, onClose, productName }: AddedToCartDialogProps) => {
-  const navigate = useNavigate();
-
+export const AddedToCartDialog = ({ isOpen, onClose, onCheckout, productName }: AddedToCartDialogProps) => {
   const handleCheckout = () => {
     onClose();
-    navigate("/checkout");
+    onCheckout();
   };
 
   return (

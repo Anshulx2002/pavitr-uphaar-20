@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { User } from '@supabase/supabase-js';
-import { AddedToCartDialog } from '@/components/AddedToCartDialog';
 
 declare global {
   interface Window {
@@ -283,11 +282,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   return (
     <CartContext.Provider value={value}>
       {children}
-      <AddedToCartDialog 
-        isOpen={showAddedDialog}
-        onClose={() => setShowAddedDialog(false)}
-        productName={addedProductName}
-      />
     </CartContext.Provider>
   );
 };
