@@ -118,13 +118,13 @@ const trendingProducts = [
   {
      id: 53,
      name: "Serpent Krishna Idol",
-    price: 1499,
-    originalPrice: 1999,
+     price: 1799,
+     originalPrice: 2499,
      image: serpentKrishnaIdolImage,
     rating: 4.9,
     description:
        "Modern artistic Krishna idol with flowing purple robes and peacock feather crown. Unique contemporary design.",
-    badge: "25% OFF",
+     badge: "28% OFF",
   },
   {
      id: 54,
