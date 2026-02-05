@@ -15,7 +15,9 @@ import woodenIncenseHolderImage from "@/assets/wooden-incense-holder.png";
 import aartiBookImage from "@/assets/aarti-book.png";
 import akhandBrassDiyaImage from "@/assets/akhand-brass-diya.png";
 import lordKrishnaStatueImage from "@/assets/lord-krishna-statue.png";
-import kamdhenusIdolSilverImage from "@/assets/kamdhenu-idol-silver.jpg";
+ import artisanMonkFigurineSetImage from "@/assets/artisan-monk-figurine-set.png";
+ import asceticGaneshaMeditationIdolImage from "@/assets/ascetic-ganesha-meditation-idol.png";
+ import dancingGaneshaIdolImage from "@/assets/dancing-ganesha-idol.png";
 import laxmiGaneshPoojaBoxSmallImage from "@/assets/laxmi-ganesh-puja-box-small.png";
 import siddhivinayakPujaBoxImage from "@/assets/siddhivinayak-puja-box.png";
 import radhakrishnaPujaBoxImage from "@/assets/radhakrishna-puja-box.png";
@@ -212,6 +214,39 @@ const trendingProducts = [
       "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
     badge: "Sacred",
   },
+   {
+     id: 60,
+     name: "Artisan Monk Figurine Set",
+     price: 1499,
+     originalPrice: 1999,
+     image: artisanMonkFigurineSetImage,
+     rating: 4.9,
+     description:
+       "Charming artisan monk figurine set featuring peaceful, hand-painted poses with jewel-studded traditional robes. A serene decor piece for meditation corners.",
+     badge: "New Arrival",
+   },
+   {
+     id: 61,
+     name: "Ascetic Ganesha Meditation Idol",
+     price: 1299,
+     originalPrice: 1799,
+     image: asceticGaneshaMeditationIdolImage,
+     rating: 4.9,
+     description:
+       "Unique ascetic-style Ganesha idol in a meditative pose on a rocky base, featuring sacred Om detailing and traditional elements.",
+     badge: "New Arrival",
+   },
+   {
+     id: 62,
+     name: "Dancing Ganesha Idol",
+     price: 2499,
+     originalPrice: 3499,
+     image: dancingGaneshaIdolImage,
+     rating: 5,
+     description:
+       "Vibrant dancing Ganesha idol with ornate crown and detailed jewelry, finished with rich colors and a premium golden base.",
+     badge: "New Arrival",
+   },
 ];
 
 const TrendingCarousel = () => {
