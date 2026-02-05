@@ -74,13 +74,13 @@ const trendingProducts = [
   {
      id: 52,
      name: "Buddha Bodhi Tree Idol",
-     price: 2999,
-     originalPrice: 3999,
+    price: 899,
+    originalPrice: 1499,
      image: buddhaBoddhiTreeIdolImage,
      rating: 5,
      description:
        "Serene Buddha statue meditating under the sacred Bodhi tree. Features stunning golden finish with turquoise detailing.",
-     badge: "Premium",
+    badge: "40% OFF",
    },
    {
      id: 60,
