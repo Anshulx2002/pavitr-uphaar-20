@@ -25,74 +25,163 @@ import ganeshPujaBoxSmallImage from "@/assets/ganesh-puja-box-small.png";
 import laxmiGaneshSmallPujaBoxImage from "@/assets/laxmi-ganesh-small-puja-box.png";
 import goldenTemplePujaBoxBigImage from "@/assets/golden-temple-puja-box-big.png";
 import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
+ import royalPeacockKrishnaReclineIdolImage from "@/assets/royal-peacock-krishna-recline-idol.png";
+ import balKrishnaMakhanIdolImage from "@/assets/bal-krishna-makhan-idol.png";
+ import buddhaBoddhiTreeIdolImage from "@/assets/buddha-bodhi-tree-idol.png";
+ import serpentKrishnaIdolImage from "@/assets/serpent-krishna-idol.png";
+ import goldenBalKrishnaIdolImage from "@/assets/golden-bal-krishna-idol.png";
+ import heritageTempleSculptureImage from "@/assets/heritage-temple-sculpture.png";
+ import ganeshaWallHangingImage from "@/assets/ganesha-wall-hanging.png";
+ import ganeshaProsperityPanelImage from "@/assets/ganesha-prosperity-panel.png";
+ import shrineDeityIdolImage from "@/assets/shrine-deity-idol.png";
+ import twinGuardianDeityIdolImage from "@/assets/twin-guardian-deity-idol.png";
 
 const trendingProducts = [
+   // New Idol Products mixed in first
   {
-    id: 13,
-    name: "Laxmi Ganesh Puja Box - Small",
-    price: 999,
-    originalPrice: 1299,
-    image: laxmiGaneshPoojaBoxSmallImage,
+     id: 62,
+     name: "Dancing Ganesha Idol",
+     price: 2499,
+     originalPrice: 3499,
+     image: dancingGaneshaIdolImage,
     rating: 5,
     description:
-      "Exquisite puja box featuring Goddess Laxmi with Lord Ganesha and Goddess Saraswati. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for prosperity, wisdom, and sacred worship ceremonies.",
-    badge: "Premium",
+       "Vibrant dancing Ganesha idol with ornate crown and detailed jewelry, finished with rich colors and a premium golden base.",
+     badge: "New Arrival",
   },
   {
-    id: 24,
-    name: "SiddhiVinayak Puja Box",
-    price: 1299,
-    originalPrice: 1599,
-    image: siddhivinayakPujaBoxImage,
+     id: 50,
+     name: "Royal Peacock Krishna Recline Idol",
+     price: 2499,
+     originalPrice: 3499,
+     image: royalPeacockKrishnaReclineIdolImage,
+     rating: 5,
+     description:
+       "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown.",
+     badge: "Premium",
+   },
+   {
+     id: 61,
+     name: "Ascetic Ganesha Meditation Idol",
+     price: 1299,
+     originalPrice: 1799,
+     image: asceticGaneshaMeditationIdolImage,
     rating: 4.9,
     description:
-      "Exquisite SiddhiVinayak puja box featuring Lord Ganesha with 8 sacred forms. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Complete set with compartments for sacred offerings and worship ceremonies.",
-    badge: "Premium",
+       "Unique ascetic-style Ganesha idol in a meditative pose on a rocky base, featuring sacred Om detailing.",
+     badge: "New Arrival",
   },
   {
-    id: 25,
-    name: "Radhakrishna Puja Box",
-    price: 999,
-    originalPrice: 1299,
-    image: radhakrishnaPujaBoxImage,
+     id: 52,
+     name: "Buddha Bodhi Tree Idol",
+     price: 2999,
+     originalPrice: 3999,
+     image: buddhaBoddhiTreeIdolImage,
+     rating: 5,
+     description:
+       "Serene Buddha statue meditating under the sacred Bodhi tree. Features stunning golden finish with turquoise detailing.",
+     badge: "Premium",
+   },
+   {
+     id: 60,
+     name: "Artisan Monk Figurine Set",
+     price: 1499,
+     originalPrice: 1999,
+     image: artisanMonkFigurineSetImage,
     rating: 4.9,
     description:
-      "Beautiful Radhakrishna puja box featuring divine Radha-Krishna imagery. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Compact size perfect for personal worship and sacred offerings.",
-    badge: "Premium",
+       "Charming artisan monk figurine set featuring peaceful, hand-painted poses with jewel-studded traditional robes.",
+     badge: "New Arrival",
   },
   {
-    id: 31,
-    name: "Ganesh Puja Box - Small",
-    price: 999,
-    originalPrice: 1299,
-    image: ganeshPujaBoxSmallImage,
+     id: 55,
+     name: "Heritage Temple Sculpture",
+     price: 3499,
+     originalPrice: 4999,
+     image: heritageTempleSculptureImage,
+     rating: 5,
+     description:
+       "Magnificent golden replica of the Ayodhya Ram Mandir temple complex. Intricate architectural detailing.",
+     badge: "Premium",
+   },
+   {
+     id: 51,
+     name: "Bal Krishna Makhan Idol",
+     price: 1499,
+     originalPrice: 2099,
+     image: balKrishnaMakhanIdolImage,
     rating: 4.9,
     description:
-      "Exquisite compact Ganesh puja box featuring Lord Ganesha with radiant golden aura. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship and sacred offerings.",
-    badge: "Premium",
+       "Adorable Bal Krishna idol with butter pot. Hand-painted with vibrant colors featuring peacock feather crown.",
+     badge: "29% OFF",
   },
   {
-    id: 38,
-    name: "Laxmi Ganesh Puja Box - Small",
-    price: 999,
-    originalPrice: 1299,
-    image: laxmiGaneshSmallPujaBoxImage,
+     id: 53,
+     name: "Serpent Krishna Idol",
+     price: 1999,
+     originalPrice: 2799,
+     image: serpentKrishnaIdolImage,
     rating: 4.9,
     description:
-      "Exquisite compact Laxmi Ganesh puja box featuring Goddess Laxmi and Lord Ganesha with stunning golden embossed artwork in elegant white frame. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Perfect size for personal worship with divine compartments for sacred offerings and ceremonies.",
-    badge: "Premium",
+       "Modern artistic Krishna idol with flowing purple robes and peacock feather crown. Unique contemporary design.",
+     badge: "29% OFF",
   },
   {
-    id: 45,
-    name: "Golden Temple Puja Box - Big",
-    price: 1299,
-    originalPrice: 1599,
-    image: goldenTemplePujaBoxBigImage,
+     id: 54,
+     name: "Golden Bal Krishna Idol",
+     price: 1799,
+     originalPrice: 2499,
+     image: goldenBalKrishnaIdolImage,
     rating: 4.9,
     description:
-      "Magnificent large Golden Temple (Harmandir Sahib) puja box featuring intricate architectural detailing of the sacred shrine with gold and silver plated embossed artwork. Dimensions: 21.3 cm x 11.5 cm x 4 cm. Premium deluxe set with elegant black exterior, multiple compartments with sacred symbols, and ceremonial items for divine worship.",
-    badge: "Premium",
+       "Exquisite golden Bal Krishna idol with butter pot. Features stunning all-gold finish with delicate details.",
+     badge: "28% OFF",
+   },
+   {
+     id: 56,
+     name: "Ganesha Wall Hanging",
+     price: 999,
+     originalPrice: 1399,
+     image: ganeshaWallHangingImage,
+     rating: 4.8,
+     description:
+       "Beautiful Ganesha wall hanging with traditional rope design and decorative tassels. Perfect for entrance decor.",
+     badge: "29% OFF",
+   },
+   {
+     id: 57,
+     name: "Ganesha Prosperity Panel",
+     price: 1299,
+     originalPrice: 1699,
+     image: ganeshaProsperityPanelImage,
+     rating: 4.8,
+     description:
+       "Colorful Ganesha prosperity panel featuring Lord Ganesha with veena, sacred mantras, and traditional symbols.",
+     badge: "23% OFF",
+   },
+   {
+     id: 58,
+     name: "Shrine Deity Idol",
+     price: 2499,
+     originalPrice: 3299,
+     image: shrineDeityIdolImage,
+     rating: 4.9,
+     description:
+       "Majestic Ram Lalla idol in ornate temple shrine frame with intricate golden detailing.",
+     badge: "Premium",
+   },
+   {
+     id: 59,
+     name: "Twin Guardian Deity Idol",
+     price: 2299,
+     originalPrice: 2999,
+     image: twinGuardianDeityIdolImage,
+     rating: 4.9,
+     description:
+       "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments.",
+     badge: "24% OFF",
   },
+   // Original trending products
   {
     id: 19,
     name: "Elephant Motif Copper Bottle",
@@ -214,39 +303,6 @@ const trendingProducts = [
       "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
     badge: "Sacred",
   },
-   {
-     id: 60,
-     name: "Artisan Monk Figurine Set",
-     price: 1499,
-     originalPrice: 1999,
-     image: artisanMonkFigurineSetImage,
-     rating: 4.9,
-     description:
-       "Charming artisan monk figurine set featuring peaceful, hand-painted poses with jewel-studded traditional robes. A serene decor piece for meditation corners.",
-     badge: "New Arrival",
-   },
-   {
-     id: 61,
-     name: "Ascetic Ganesha Meditation Idol",
-     price: 1299,
-     originalPrice: 1799,
-     image: asceticGaneshaMeditationIdolImage,
-     rating: 4.9,
-     description:
-       "Unique ascetic-style Ganesha idol in a meditative pose on a rocky base, featuring sacred Om detailing and traditional elements.",
-     badge: "New Arrival",
-   },
-   {
-     id: 62,
-     name: "Dancing Ganesha Idol",
-     price: 2499,
-     originalPrice: 3499,
-     image: dancingGaneshaIdolImage,
-     rating: 5,
-     description:
-       "Vibrant dancing Ganesha idol with ornate crown and detailed jewelry, finished with rich colors and a premium golden base.",
-     badge: "New Arrival",
-   },
 ];
 
 const TrendingCarousel = () => {
