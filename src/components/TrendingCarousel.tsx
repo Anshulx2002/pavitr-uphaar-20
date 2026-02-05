@@ -52,13 +52,13 @@ const trendingProducts = [
   {
      id: 50,
      name: "Royal Peacock Krishna Recline Idol",
-     price: 2499,
-     originalPrice: 3499,
+    price: 1499,
+    originalPrice: 1999,
      image: royalPeacockKrishnaReclineIdolImage,
      rating: 5,
      description:
        "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown.",
-     badge: "Premium",
+    badge: "25% OFF",
    },
    {
      id: 61,
