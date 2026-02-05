@@ -47,6 +47,15 @@ import ramparivarAyodhyaPujaBoxBigImage from "@/assets/ramparivar-ayodhya-puja-b
 import saiSamadhiPujaBoxBigImage from "@/assets/sai-samadhi-puja-box-big.png";
 import guruNanakPujaBoxSmallImage from "@/assets/guru-nanak-puja-box-small.png";
 import royalPeacockKrishnaReclineIdolImage from "@/assets/royal-peacock-krishna-recline-idol.png";
+import balKrishnaMakhanIdolImage from "@/assets/bal-krishna-makhan-idol.png";
+import buddhaBoddhiTreeIdolImage from "@/assets/buddha-bodhi-tree-idol.png";
+import serpentKrishnaIdolImage from "@/assets/serpent-krishna-idol.png";
+import goldenBalKrishnaIdolImage from "@/assets/golden-bal-krishna-idol.png";
+import heritageTempleSculptureImage from "@/assets/heritage-temple-sculpture.png";
+import ganeshaWallHangingImage from "@/assets/ganesha-wall-hanging.png";
+import ganeshaProsperityPanelImage from "@/assets/ganesha-prosperity-panel.png";
+import shrineDeityIdolImage from "@/assets/shrine-deity-idol.png";
+import twinGuardianDeityIdolImage from "@/assets/twin-guardian-deity-idol.png";
 
 export interface Product {
   id: number;
@@ -532,6 +541,114 @@ export const allProducts: Product[] = [
     description:
       "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown and crystal-studded flute. Elegant black wooden base with stunning blue and gold detailing. Perfect for home temple and gifting.",
     badge: "Premium",
+    category: "idols",
+  },
+  {
+    id: 51,
+    name: "Bal Krishna with Makhan Idol",
+    price: 1999,
+    originalPrice: 2799,
+    image: balKrishnaMakhanIdolImage,
+    rating: 5,
+    description:
+      "Adorable Bal Krishna (Laddu Gopal) idol with butter pot (makhan). Hand-painted with vibrant colors featuring peacock feather crown and golden jewelry. Perfect for Janmashtami celebrations and home temple.",
+    badge: "29% OFF",
+    category: "idols",
+  },
+  {
+    id: 52,
+    name: "Buddha Under Bodhi Tree Idol",
+    price: 2999,
+    originalPrice: 3999,
+    image: buddhaBoddhiTreeIdolImage,
+    rating: 5,
+    description:
+      "Serene Buddha statue meditating under the sacred Bodhi tree. Features stunning golden finish with turquoise and red mosaic detailing. Elegant brass base. Perfect for meditation spaces and Zen decor.",
+    badge: "Premium",
+    category: "idols",
+  },
+  {
+    id: 53,
+    name: "Contemporary Serpent Krishna Idol",
+    price: 2499,
+    originalPrice: 3499,
+    image: serpentKrishnaIdolImage,
+    rating: 5,
+    description:
+      "Modern artistic Krishna idol with flowing purple robes and peacock feather crown. Features Lord Krishna playing divine flute with intricate detailing. Unique contemporary design perfect for modern homes.",
+    badge: "29% OFF",
+    category: "idols",
+  },
+  {
+    id: 54,
+    name: "Golden Bal Krishna Idol",
+    price: 1799,
+    originalPrice: 2499,
+    image: goldenBalKrishnaIdolImage,
+    rating: 5,
+    description:
+      "Exquisite golden Bal Krishna idol with butter pot. Features stunning all-gold finish with delicate facial details and ornate crown. Perfect for Janmashtami and gifting.",
+    badge: "28% OFF",
+    category: "idols",
+  },
+  {
+    id: 55,
+    name: "Heritage Ayodhya Temple Sculpture",
+    price: 3499,
+    originalPrice: 4999,
+    image: heritageTempleSculptureImage,
+    rating: 5,
+    description:
+      "Magnificent golden replica of the Ayodhya Ram Mandir temple complex. Intricate architectural detailing of the sacred temple with multiple spires and domes. A divine collectible for devotees.",
+    badge: "Premium",
+    category: "idols",
+  },
+  {
+    id: 56,
+    name: "Ornate Ganesha Wall Hanging",
+    price: 1999,
+    originalPrice: 2799,
+    image: ganeshaWallHangingImage,
+    rating: 5,
+    description:
+      "Beautiful Ganesha wall hanging with traditional rope design and decorative tassels. Features hand-painted Lord Ganesha with intricate ethnic patterns. Perfect for entrance decor and auspicious occasions.",
+    badge: "29% OFF",
+    category: "idols",
+  },
+  {
+    id: 57,
+    name: "Ganesha Prosperity Panel",
+    price: 2299,
+    originalPrice: 2999,
+    image: ganeshaProsperityPanelImage,
+    rating: 5,
+    description:
+      "Colorful Ganesha prosperity panel featuring Lord Ganesha with veena, sacred mantras, and traditional symbols. Hand-painted with vibrant colors including Om symbol and tabla. Ideal for home and office.",
+    badge: "23% OFF",
+    category: "idols",
+  },
+  {
+    id: 58,
+    name: "Shrine Style Ram Lalla Idol",
+    price: 2999,
+    originalPrice: 3999,
+    image: shrineDeityIdolImage,
+    rating: 5,
+    description:
+      "Majestic Ram Lalla idol in ornate temple shrine frame with intricate golden detailing. Features Lord Ram with bow and elaborate prabhavali arch. Black wooden base adds elegance. Perfect for home temples.",
+    badge: "Premium",
+    category: "idols",
+  },
+  {
+    id: 59,
+    name: "Classic Ram Lalla Temple Idol",
+    price: 2499,
+    originalPrice: 3299,
+    image: twinGuardianDeityIdolImage,
+    rating: 5,
+    description:
+      "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments and colorful dhoti. Ornate arch with sacred symbols. Decorative black base with intricate carvings.",
+    badge: "24% OFF",
     category: "idols",
   },
 ];
