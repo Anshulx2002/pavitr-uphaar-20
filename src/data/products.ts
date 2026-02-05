@@ -56,6 +56,9 @@ import ganeshaWallHangingImage from "@/assets/ganesha-wall-hanging.png";
 import ganeshaProsperityPanelImage from "@/assets/ganesha-prosperity-panel.png";
 import shrineDeityIdolImage from "@/assets/shrine-deity-idol.png";
 import twinGuardianDeityIdolImage from "@/assets/twin-guardian-deity-idol.png";
+import artisanMonkFigurineSetImage from "@/assets/artisan-monk-figurine-set.png";
+import asceticGaneshaMeditationIdolImage from "@/assets/ascetic-ganesha-meditation-idol.png";
+import dancingGaneshaIdolImage from "@/assets/dancing-ganesha-idol.png";
 
 export interface Product {
   id: number;
@@ -649,6 +652,42 @@ export const allProducts: Product[] = [
     description:
       "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments and colorful dhoti. Ornate arch with sacred symbols. Decorative black base with intricate carvings.",
     badge: "24% OFF",
+    category: "idols",
+  },
+  {
+    id: 60,
+    name: "Artisan Monk Figurine Set",
+    price: 1499,
+    originalPrice: 1999,
+    image: artisanMonkFigurineSetImage,
+    rating: 4.9,
+    description:
+      "Charming artisan monk figurine set featuring peaceful, hand-painted poses with jewel-studded traditional robes. A serene decor piece for meditation corners, gifting, and mindful spaces.",
+    badge: "25% OFF",
+    category: "idols",
+  },
+  {
+    id: 61,
+    name: "Ascetic Ganesha Meditation Idol",
+    price: 1299,
+    originalPrice: 1799,
+    image: asceticGaneshaMeditationIdolImage,
+    rating: 4.9,
+    description:
+      "Unique ascetic-style Ganesha idol in a meditative pose on a rocky base, featuring sacred Om detailing and traditional elements. Perfect for home temples and spiritual decor.",
+    badge: "28% OFF",
+    category: "idols",
+  },
+  {
+    id: 62,
+    name: "Dancing Ganesha Idol",
+    price: 2499,
+    originalPrice: 3499,
+    image: dancingGaneshaIdolImage,
+    rating: 5,
+    description:
+      "Vibrant dancing Ganesha idol with ornate crown and detailed jewelry, finished with rich colors and a premium golden base. Ideal for festive decor and auspicious gifting.",
+    badge: "29% OFF",
     category: "idols",
   },
 ];
