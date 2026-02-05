@@ -46,6 +46,7 @@ import laxmijiPujaBoxSmallImage from "@/assets/laxmiji-puja-box-small.png";
 import ramparivarAyodhyaPujaBoxBigImage from "@/assets/ramparivar-ayodhya-puja-box-big.png";
 import saiSamadhiPujaBoxBigImage from "@/assets/sai-samadhi-puja-box-big.png";
 import guruNanakPujaBoxSmallImage from "@/assets/guru-nanak-puja-box-small.png";
+import royalPeacockKrishnaReclineIdolImage from "@/assets/royal-peacock-krishna-recline-idol.png";
 
 export interface Product {
   id: number;
@@ -520,6 +521,18 @@ export const allProducts: Product[] = [
       "Exquisite compact Guru Nanak puja box featuring Guru Nanak Dev Ji in serene meditation. Dimensions: 11.5 cm x 11.5 cm x 4 cm. Premium set with elegant black exterior and luxurious red velvet interior for divine Sikh worship and offerings.",
     badge: "23% OFF",
     category: "puja-boxes",
+  },
+  {
+    id: 50,
+    name: "Royal Peacock Krishna Recline Idol",
+    price: 2999,
+    originalPrice: 3999,
+    image: royalPeacockKrishnaReclineIdolImage,
+    rating: 5,
+    description:
+      "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown and crystal-studded flute. Elegant black wooden base with stunning blue and gold detailing. Perfect for home temple and gifting.",
+    badge: "Premium",
+    category: "idols",
   },
 ];
 
