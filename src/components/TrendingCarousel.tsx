@@ -41,13 +41,13 @@ const trendingProducts = [
   {
      id: 62,
      name: "Dancing Ganesha Idol",
-     price: 2499,
-     originalPrice: 3499,
+      price: 499,
+      originalPrice: 999,
      image: dancingGaneshaIdolImage,
     rating: 5,
     description:
        "Vibrant dancing Ganesha idol with ornate crown and detailed jewelry, finished with rich colors and a premium golden base.",
-     badge: "New Arrival",
+      badge: "50% OFF",
   },
   {
      id: 50,
@@ -63,13 +63,13 @@ const trendingProducts = [
    {
      id: 61,
      name: "Ascetic Ganesha Meditation Idol",
-     price: 1299,
-     originalPrice: 1799,
+      price: 999,
+      originalPrice: 1499,
      image: asceticGaneshaMeditationIdolImage,
     rating: 4.9,
     description:
        "Unique ascetic-style Ganesha idol in a meditative pose on a rocky base, featuring sacred Om detailing.",
-     badge: "New Arrival",
+      badge: "33% OFF",
   },
   {
      id: 52,
@@ -85,35 +85,35 @@ const trendingProducts = [
    {
      id: 60,
      name: "Artisan Monk Figurine Set",
-     price: 1499,
-     originalPrice: 1999,
+      price: 1599,
+      originalPrice: 2499,
      image: artisanMonkFigurineSetImage,
     rating: 4.9,
     description:
        "Charming artisan monk figurine set featuring peaceful, hand-painted poses with jewel-studded traditional robes.",
-     badge: "New Arrival",
+      badge: "36% OFF",
   },
   {
      id: 55,
      name: "Heritage Temple Sculpture",
-     price: 3499,
-     originalPrice: 4999,
+      price: 499,
+      originalPrice: 999,
      image: heritageTempleSculptureImage,
      rating: 5,
      description:
        "Magnificent golden replica of the Ayodhya Ram Mandir temple complex. Intricate architectural detailing.",
-     badge: "Premium",
+      badge: "50% OFF",
    },
    {
      id: 51,
      name: "Bal Krishna Makhan Idol",
-     price: 1499,
-     originalPrice: 2099,
+      price: 499,
+      originalPrice: 999,
      image: balKrishnaMakhanIdolImage,
     rating: 4.9,
     description:
        "Adorable Bal Krishna idol with butter pot. Hand-painted with vibrant colors featuring peacock feather crown.",
-     badge: "29% OFF",
+      badge: "50% OFF",
   },
   {
      id: 53,
@@ -129,13 +129,13 @@ const trendingProducts = [
   {
      id: 54,
      name: "Golden Bal Krishna Idol",
-     price: 1799,
-     originalPrice: 2499,
+      price: 499,
+      originalPrice: 999,
      image: goldenBalKrishnaIdolImage,
     rating: 4.9,
     description:
        "Exquisite golden Bal Krishna idol with butter pot. Features stunning all-gold finish with delicate details.",
-     badge: "28% OFF",
+      badge: "50% OFF",
    },
    {
      id: 56,
@@ -151,35 +151,35 @@ const trendingProducts = [
    {
      id: 57,
      name: "Ganesha Prosperity Panel",
-     price: 1299,
-     originalPrice: 1699,
+      price: 999,
+      originalPrice: 1499,
      image: ganeshaProsperityPanelImage,
      rating: 4.8,
      description:
        "Colorful Ganesha prosperity panel featuring Lord Ganesha with veena, sacred mantras, and traditional symbols.",
-     badge: "23% OFF",
+      badge: "33% OFF",
    },
    {
      id: 58,
      name: "Shrine Deity Idol",
-     price: 2499,
-     originalPrice: 3299,
+      price: 599,
+      originalPrice: 999,
      image: shrineDeityIdolImage,
      rating: 4.9,
      description:
        "Majestic Ram Lalla idol in ornate temple shrine frame with intricate golden detailing.",
-     badge: "Premium",
+      badge: "40% OFF",
    },
    {
      id: 59,
      name: "Twin Guardian Deity Idol",
-     price: 2299,
-     originalPrice: 2999,
+      price: 999,
+      originalPrice: 1499,
      image: twinGuardianDeityIdolImage,
      rating: 4.9,
      description:
        "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments.",
-     badge: "24% OFF",
+      badge: "33% OFF",
   },
    // Original trending products
   {
