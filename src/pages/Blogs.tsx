@@ -6,9 +6,20 @@ import goldPoojaThali from "@/assets/gold-pooja-thali.jpg";
 import elephantCopperBottle from "@/assets/elephant-copper-bottle.png";
 import akhandBrassDiya from "@/assets/akhand-brass-diya.png";
 import raniMeherCopperBottle from "@/assets/rani-meher-copper-bottle.png";
+import royalPeacockKrishna from "@/assets/royal-peacock-krishna-recline-idol.png";
 
 const Blogs = () => {
   const blogPosts = [
+    {
+      id: 5,
+      title: "14 Sacred Idols to Transform Your Home Temple in 2025",
+      excerpt: "Discover our curated collection of 14 handcrafted sacred idols — from the Royal Peacock Krishna to the Mystical Sage Ganesha. Find the perfect deity for your home mandir.",
+      author: "Pavitra Uphaar Team",
+      date: "February 5, 2025",
+      readTime: "8 min read",
+      image: royalPeacockKrishna,
+      link: "/blog/sacred-idols"
+    },
     {
       id: 1,
       title: "Top 10 Gifts to Give to Your Family",

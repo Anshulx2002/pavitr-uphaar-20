@@ -35,6 +35,7 @@ import BlogFamilyGifts from "./pages/BlogFamilyGifts";
 import BlogCorporateGifts from "./pages/BlogCorporateGifts";
 import BlogDiwaliSignificance from "./pages/BlogDiwaliSignificance";
 import BlogCopperBenefits from "./pages/BlogCopperBenefits";
+import BlogSacredIdols from "./pages/BlogSacredIdols";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/blog/corporate-gifts" element={<BlogCorporateGifts />} />
           <Route path="/blog/diwali-significance" element={<BlogDiwaliSignificance />} />
           <Route path="/blog/copper-benefits" element={<BlogCopperBenefits />} />
+          <Route path="/blog/sacred-idols" element={<BlogSacredIdols />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
