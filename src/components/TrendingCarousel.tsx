@@ -38,7 +38,41 @@ import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
  import mysticalSageGaneshaImage from "@/assets/mystical-sage-ganesha.png";
 
 const trendingProducts = [
-   // New Idol Products mixed in first
+   // Top priority - Krishna & Ram statues
+  {
+     id: 50,
+     name: "Royal Peacock Krishna Recline Idol",
+    price: 1499,
+    originalPrice: 1999,
+     image: royalPeacockKrishnaReclineIdolImage,
+     rating: 5,
+     description:
+       "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown.",
+    badge: "25% OFF",
+  },
+   {
+     id: 58,
+     name: "Shrine Deity Idol",
+      price: 599,
+      originalPrice: 999,
+     image: shrineDeityIdolImage,
+     rating: 4.9,
+     description:
+       "Majestic Ram Lalla idol in ornate temple shrine frame with intricate golden detailing.",
+      badge: "40% OFF",
+   },
+   {
+     id: 59,
+     name: "Twin Guardian Deity Idol",
+      price: 999,
+      originalPrice: 1499,
+     image: twinGuardianDeityIdolImage,
+     rating: 4.9,
+     description:
+       "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments.",
+      badge: "33% OFF",
+  },
+  // Other idol products
   {
      id: 62,
      name: "Dancing Ganesha Idol",
@@ -51,17 +85,6 @@ const trendingProducts = [
       badge: "50% OFF",
   },
   {
-     id: 50,
-     name: "Royal Peacock Krishna Recline Idol",
-    price: 1499,
-    originalPrice: 1999,
-     image: royalPeacockKrishnaReclineIdolImage,
-     rating: 5,
-     description:
-       "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown.",
-    badge: "25% OFF",
-   },
-   {
      id: 61,
      name: "Ascetic Ganesha Meditation Idol",
       price: 999,
@@ -160,27 +183,16 @@ const trendingProducts = [
        "Colorful Ganesha prosperity panel featuring Lord Ganesha with veena, sacred mantras, and traditional symbols.",
       badge: "33% OFF",
    },
-   {
-     id: 58,
-     name: "Shrine Deity Idol",
-      price: 599,
-      originalPrice: 999,
-     image: shrineDeityIdolImage,
-     rating: 4.9,
-     description:
-       "Majestic Ram Lalla idol in ornate temple shrine frame with intricate golden detailing.",
-      badge: "40% OFF",
-   },
-   {
-     id: 59,
-     name: "Twin Guardian Deity Idol",
-      price: 999,
-      originalPrice: 1499,
-     image: twinGuardianDeityIdolImage,
-     rating: 4.9,
-     description:
-       "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments.",
-      badge: "33% OFF",
+  {
+    id: 63,
+    name: "Mystical Sage Ganesha Idol",
+    price: 499,
+    originalPrice: 999,
+    image: mysticalSageGaneshaImage,
+    rating: 5,
+    description:
+      "Charming Mystical Sage Ganesha idol in a scholarly pose with traditional red attire, writing desk, and sacred mouse companion.",
+    badge: "50% OFF",
   },
   {
     id: 63,
