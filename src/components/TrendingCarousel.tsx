@@ -35,6 +35,7 @@ import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
  import ganeshaProsperityPanelImage from "@/assets/ganesha-prosperity-panel.png";
  import shrineDeityIdolImage from "@/assets/shrine-deity-idol.png";
  import twinGuardianDeityIdolImage from "@/assets/twin-guardian-deity-idol.png";
+ import mysticalSageGaneshaImage from "@/assets/mystical-sage-ganesha.png";
 
 const trendingProducts = [
    // New Idol Products mixed in first
@@ -181,7 +182,18 @@ const trendingProducts = [
        "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments.",
       badge: "33% OFF",
   },
-   // Original trending products
+  {
+    id: 63,
+    name: "Mystical Sage Ganesha Idol",
+    price: 499,
+    originalPrice: 999,
+    image: mysticalSageGaneshaImage,
+    rating: 5,
+    description:
+      "Charming Mystical Sage Ganesha idol in a scholarly pose with traditional red attire, writing desk, and sacred mouse companion.",
+    badge: "50% OFF",
+  },
+    // Original trending products
   {
     id: 19,
     name: "Elephant Motif Copper Bottle",
