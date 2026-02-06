@@ -38,7 +38,6 @@ import elephantCopperBottleImage from "@/assets/elephant-copper-bottle.png";
  import mysticalSageGaneshaImage from "@/assets/mystical-sage-ganesha.png";
 
 const trendingProducts = [
-   // Top priority - Krishna & Ram statues
   {
      id: 50,
      name: "Royal Peacock Krishna Recline Idol",
@@ -50,7 +49,29 @@ const trendingProducts = [
        "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown.",
     badge: "25% OFF",
   },
-   {
+  {
+     id: 52,
+     name: "Buddha Bodhi Tree Idol",
+    price: 899,
+    originalPrice: 1499,
+     image: buddhaBoddhiTreeIdolImage,
+     rating: 5,
+     description:
+       "Serene Buddha statue meditating under the sacred Bodhi tree. Features stunning golden finish with turquoise detailing.",
+    badge: "40% OFF",
+  },
+  {
+     id: 56,
+     name: "Ganesha Wall Hanging",
+     price: 999,
+     originalPrice: 1399,
+     image: ganeshaWallHangingImage,
+     rating: 4.8,
+     description:
+       "Beautiful Ganesha wall hanging with traditional rope design and decorative tassels. Perfect for entrance decor.",
+     badge: "29% OFF",
+  },
+  {
      id: 58,
      name: "Shrine Deity Idol",
       price: 599,
@@ -60,8 +81,8 @@ const trendingProducts = [
      description:
        "Majestic Ram Lalla idol in ornate temple shrine frame with intricate golden detailing.",
       badge: "40% OFF",
-   },
-   {
+  },
+  {
      id: 59,
      name: "Twin Guardian Deity Idol",
       price: 999,
@@ -72,7 +93,6 @@ const trendingProducts = [
        "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments.",
       badge: "33% OFF",
   },
-  // Other idol products
   {
      id: 62,
      name: "Dancing Ganesha Idol",
@@ -96,17 +116,6 @@ const trendingProducts = [
       badge: "33% OFF",
   },
   {
-     id: 52,
-     name: "Buddha Bodhi Tree Idol",
-    price: 899,
-    originalPrice: 1499,
-     image: buddhaBoddhiTreeIdolImage,
-     rating: 5,
-     description:
-       "Serene Buddha statue meditating under the sacred Bodhi tree. Features stunning golden finish with turquoise detailing.",
-    badge: "40% OFF",
-   },
-   {
      id: 60,
      name: "Artisan Monk Figurine Set",
       price: 1599,
@@ -127,8 +136,8 @@ const trendingProducts = [
      description:
        "Magnificent golden replica of the Ayodhya Ram Mandir temple complex. Intricate architectural detailing.",
       badge: "50% OFF",
-   },
-   {
+  },
+  {
      id: 51,
      name: "Bal Krishna Makhan Idol",
       price: 499,
@@ -160,19 +169,8 @@ const trendingProducts = [
     description:
        "Exquisite golden Bal Krishna idol with butter pot. Features stunning all-gold finish with delicate details.",
       badge: "50% OFF",
-   },
-   {
-     id: 56,
-     name: "Ganesha Wall Hanging",
-     price: 999,
-     originalPrice: 1399,
-     image: ganeshaWallHangingImage,
-     rating: 4.8,
-     description:
-       "Beautiful Ganesha wall hanging with traditional rope design and decorative tassels. Perfect for entrance decor.",
-     badge: "29% OFF",
-   },
-   {
+  },
+  {
      id: 57,
      name: "Ganesha Prosperity Panel",
       price: 999,
@@ -182,7 +180,7 @@ const trendingProducts = [
      description:
        "Colorful Ganesha prosperity panel featuring Lord Ganesha with veena, sacred mantras, and traditional symbols.",
       badge: "33% OFF",
-   },
+  },
   {
     id: 63,
     name: "Mystical Sage Ganesha Idol",
