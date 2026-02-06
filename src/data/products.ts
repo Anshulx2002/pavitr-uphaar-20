@@ -72,6 +72,7 @@ export interface Product {
   description: string;
   badge?: string;
   category: string;
+  size?: string;
 }
 
 export const allProducts: Product[] = [
@@ -546,6 +547,7 @@ export const allProducts: Product[] = [
       "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown and crystal-studded flute. Elegant black wooden base with stunning blue and gold detailing. Perfect for home temple and gifting.",
     badge: "25% OFF",
     category: "idols",
+    size: "7 × 4 × 8 in",
   },
   {
     id: 51,
@@ -558,6 +560,7 @@ export const allProducts: Product[] = [
       "Adorable Bal Krishna (Laddu Gopal) idol with butter pot (makhan). Hand-painted with vibrant colors featuring peacock feather crown and golden jewelry. Perfect for Janmashtami celebrations and home temple.",
     badge: "50% OFF",
     category: "idols",
+    size: "6 × 4 × 7.5 in",
   },
   {
     id: 52,
@@ -582,6 +585,7 @@ export const allProducts: Product[] = [
       "Modern artistic Krishna idol with flowing purple robes and peacock feather crown. Features Lord Krishna playing divine flute with intricate detailing. Unique contemporary design perfect for modern homes.",
     badge: "28% OFF",
     category: "idols",
+    size: "9 × 7 × 22.5 in",
   },
   {
     id: 54,
@@ -594,6 +598,7 @@ export const allProducts: Product[] = [
       "Exquisite golden Bal Krishna idol with butter pot. Features stunning all-gold finish with delicate facial details and ornate crown. Perfect for Janmashtami and gifting.",
     badge: "50% OFF",
     category: "idols",
+    size: "6 × 4 × 7 in",
   },
   {
     id: 55,
@@ -606,6 +611,7 @@ export const allProducts: Product[] = [
       "Magnificent golden replica of the Ayodhya Ram Mandir temple complex. Intricate architectural detailing of the sacred temple with multiple spires and domes. A divine collectible for devotees.",
     badge: "50% OFF",
     category: "idols",
+    size: "6 × 3.5 × 3.5 in",
   },
   {
     id: 56,
@@ -618,6 +624,7 @@ export const allProducts: Product[] = [
       "Beautiful Ganesha wall hanging with traditional rope design and decorative tassels. Features hand-painted Lord Ganesha with intricate ethnic patterns. Perfect for entrance decor and auspicious occasions.",
     badge: "29% OFF",
     category: "idols",
+    size: "10 × 2.5 × 8.5 in",
   },
   {
     id: 57,
@@ -630,6 +637,7 @@ export const allProducts: Product[] = [
       "Colorful Ganesha prosperity panel featuring Lord Ganesha with veena, sacred mantras, and traditional symbols. Hand-painted with vibrant colors including Om symbol and tabla. Ideal for home and office.",
     badge: "33% OFF",
     category: "idols",
+    size: "14 × 2 × 9.5 in",
   },
   {
     id: 58,
@@ -642,6 +650,7 @@ export const allProducts: Product[] = [
       "Majestic Ram Lalla idol in ornate temple shrine frame with intricate golden detailing. Features Lord Ram with bow and elaborate prabhavali arch. Black wooden base adds elegance. Perfect for home temples.",
     badge: "40% OFF",
     category: "idols",
+    size: "4.5 × 2.5 × 7 in",
   },
   {
     id: 59,
@@ -654,6 +663,7 @@ export const allProducts: Product[] = [
       "Elegant Ram Lalla temple idol featuring Lord Ram in traditional black finish with golden ornaments and colorful dhoti. Ornate arch with sacred symbols. Decorative black base with intricate carvings.",
     badge: "33% OFF",
     category: "idols",
+    size: "4 × 3 × 7.25 in",
   },
   {
     id: 60,
@@ -666,6 +676,7 @@ export const allProducts: Product[] = [
       "Charming artisan monk figurine set featuring peaceful, hand-painted poses with jewel-studded traditional robes. A serene decor piece for meditation corners, gifting, and mindful spaces.",
     badge: "36% OFF",
     category: "idols",
+    size: "19 × 5 × 8 in",
   },
   {
     id: 61,
@@ -678,6 +689,7 @@ export const allProducts: Product[] = [
       "Unique ascetic-style Ganesha idol in a meditative pose on a rocky base, featuring sacred Om detailing and traditional elements. Perfect for home temples and spiritual decor.",
     badge: "33% OFF",
     category: "idols",
+    size: "8 × 3.5 × 3.5 in",
   },
   {
     id: 62,
@@ -690,6 +702,7 @@ export const allProducts: Product[] = [
       "Vibrant dancing Ganesha idol with ornate crown and detailed jewelry, finished with rich colors and a premium golden base. Ideal for festive decor and auspicious gifting.",
     badge: "50% OFF",
     category: "idols",
+    size: "4 × 3.5 × 7.5 in",
   },
   {
     id: 63,
@@ -702,6 +715,7 @@ export const allProducts: Product[] = [
       "Charming Mystical Sage Ganesha idol in a scholarly pose with traditional red attire, writing desk, and sacred mouse companion. Hand-painted with vibrant colors.",
     badge: "50% OFF",
     category: "idols",
+    size: "5 × 4.5 × 5 in",
   },
 ];
 
