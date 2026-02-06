@@ -194,17 +194,6 @@ const trendingProducts = [
       "Charming Mystical Sage Ganesha idol in a scholarly pose with traditional red attire, writing desk, and sacred mouse companion.",
     badge: "50% OFF",
   },
-  {
-    id: 63,
-    name: "Mystical Sage Ganesha Idol",
-    price: 499,
-    originalPrice: 999,
-    image: mysticalSageGaneshaImage,
-    rating: 5,
-    description:
-      "Charming Mystical Sage Ganesha idol in a scholarly pose with traditional red attire, writing desk, and sacred mouse companion.",
-    badge: "50% OFF",
-  },
     // Original trending products
   {
     id: 19,
