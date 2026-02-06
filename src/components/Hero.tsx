@@ -461,7 +461,7 @@ const Hero = () => {
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/40 to-transparent"></div>
                 {isMobile && <Box className="w-6 h-6 text-[#E67E22] mx-auto mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
-                  <AnimatedCounter target="20+" label="Products" />
+                  <AnimatedCounter target="50+" label="Products" />
                 </div>
               </div>
               
@@ -478,7 +478,7 @@ const Hero = () => {
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#DAA520]/40 to-transparent"></div>
                 {isMobile && <Users className="w-6 h-6 text-[#E67E22] mx-auto mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
                 <div className="relative z-10">
-                  <AnimatedCounter target="200+" label="Families Served" />
+                  <AnimatedCounter target="1000+" label="Families Served" />
                 </div>
               </div>
             </div>
