@@ -326,6 +326,14 @@ const ProductDetails = () => {
               {currentBottleProduct.description}
             </p>
 
+            {/* Size Information */}
+            {product.size && (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="font-medium text-foreground">Size:</span>
+                <span>{product.size} (L × W × H)</span>
+              </div>
+            )}
+
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
               <Button 
