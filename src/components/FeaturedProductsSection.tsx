@@ -39,10 +39,22 @@ import laxmijiPujaBoxSmallImage from "@/assets/laxmiji-puja-box-small.png";
  import ganeshaProsperityPanelImage from "@/assets/ganesha-prosperity-panel.png";
  import shrineDeityIdolImage from "@/assets/shrine-deity-idol.png";
  import twinGuardianDeityIdolImage from "@/assets/twin-guardian-deity-idol.png";
+ import mysticalSageGaneshaImage from "@/assets/mystical-sage-ganesha.png";
 
 // Featured products - carefully selected new premium products
 const featuredProducts = [
-   // New Idol Products - Featured First
+    // New Idol Products - Featured First
+  {
+    id: 63,
+    name: "Mystical Sage Ganesha Idol",
+    price: 499,
+    originalPrice: 999,
+    image: mysticalSageGaneshaImage,
+    rating: 5,
+    description:
+      "Charming Mystical Sage Ganesha idol in a scholarly pose with traditional red attire, writing desk, and sacred mouse companion.",
+    badge: "50% OFF",
+  },
   {
      id: 62,
      name: "Dancing Ganesha Idol",

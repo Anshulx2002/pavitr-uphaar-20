@@ -59,6 +59,7 @@ import twinGuardianDeityIdolImage from "@/assets/twin-guardian-deity-idol.png";
 import artisanMonkFigurineSetImage from "@/assets/artisan-monk-figurine-set.png";
 import asceticGaneshaMeditationIdolImage from "@/assets/ascetic-ganesha-meditation-idol.png";
 import dancingGaneshaIdolImage from "@/assets/dancing-ganesha-idol.png";
+import mysticalSageGaneshaImage from "@/assets/mystical-sage-ganesha.png";
 
 export interface Product {
   id: number;
@@ -687,6 +688,18 @@ export const allProducts: Product[] = [
     rating: 5,
     description:
       "Vibrant dancing Ganesha idol with ornate crown and detailed jewelry, finished with rich colors and a premium golden base. Ideal for festive decor and auspicious gifting.",
+    badge: "50% OFF",
+    category: "idols",
+  },
+  {
+    id: 63,
+    name: "Mystical Sage Ganesha Idol",
+    price: 499,
+    originalPrice: 999,
+    image: mysticalSageGaneshaImage,
+    rating: 5,
+    description:
+      "Charming Mystical Sage Ganesha idol in a scholarly pose with traditional red attire, writing desk, and sacred mouse companion. Hand-painted with vibrant colors.",
     badge: "50% OFF",
     category: "idols",
   },
