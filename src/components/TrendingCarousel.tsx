@@ -273,26 +273,26 @@ const trendingProducts = [
     badge: "Premium",
   },
   {
-    id: 41,
-    name: "Wooden Incense Holder",
-    price: 499,
-    originalPrice: 750,
-    image: woodenDhoopHolderImage,
-    rating: 4.8,
-    description:
-      "Handcrafted wooden incense holder with intricate carved designs. Perfect for holding incense sticks during pooja ceremonies.",
-    badge: "Handcrafted",
+     id: 43,
+     name: "Lord Krishna Statue",
+     price: 2499,
+     originalPrice: 4000,
+     image: lordKrishnaStatueImage,
+     rating: 4.9,
+     description:
+       "Beautiful handcrafted Lord Krishna statue with golden calf. Intricate detailing and vibrant colors for your home temple.",
+     badge: "Sacred",
   },
   {
-    id: 42,
-    name: "Wooden Dhoop Stick Holder",
-    price: 499,
-    originalPrice: 750,
-    image: woodenIncenseHolderImage,
-    rating: 4.7,
-    description:
-      "Elegant triangular wooden dhoop stick holder with carved patterns. Features storage compartment for dhoop sticks.",
-    badge: "Elegant",
+     id: 37,
+     name: "Akhand Brass Diya",
+     price: 1499,
+     originalPrice: 2499,
+     image: akhandBrassDiyaImage,
+     rating: 5,
+     description:
+       "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals.",
+     badge: "Premium",
   },
   {
     id: 36,
@@ -304,28 +304,6 @@ const trendingProducts = [
     description:
       "Premium gold-finished Hanuman Chalisa book in elegant gift box. Perfect for daily prayers and gifting.",
     badge: "Premium",
-  },
-  {
-    id: 37,
-    name: "Akhand Brass Diya",
-    price: 1499,
-    originalPrice: 2499,
-    image: akhandBrassDiyaImage,
-    rating: 5,
-    description:
-      "Premium Akhand Brass Diya with glass protection cover. Ideal for continuous lighting during festivals and special occasions.",
-    badge: "Premium",
-  },
-  {
-    id: 43,
-    name: "Lord Krishna Statue",
-    price: 2499,
-    originalPrice: 4000,
-    image: lordKrishnaStatueImage,
-    rating: 4.9,
-    description:
-      "Beautiful handcrafted Lord Krishna statue with golden calf. Features intricate detailing and vibrant colors. Perfect centerpiece for your home temple.",
-    badge: "Sacred",
   },
 ];
 
