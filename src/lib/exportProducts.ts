@@ -1,8 +1,7 @@
 import { allProducts } from "@/data/products";
 
 export const downloadProductsCSV = () => {
-  const baseUrl = window.location.origin;
-  const headers = ["ID", "Name", "Price (₹)", "Original Price (₹)", "Category", "Badge", "Rating", "Size", "Image URL", "Description"];
+  const headers = ["ID", "Name", "Price (₹)", "Original Price (₹)", "Category", "Badge", "Rating", "Size", "Image Path", "Description"];
   
   const rows = allProducts.map(p => [
     p.id,
@@ -13,7 +12,7 @@ export const downloadProductsCSV = () => {
     p.badge ?? "",
     p.rating,
     p.size ?? "",
-    `"${baseUrl}${p.image}"`,
+    `"${p.image}"`,
     `"${p.description.replace(/"/g, '""')}"`,
   ]);
 
