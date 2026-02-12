@@ -2,7 +2,7 @@ import { allProducts } from "@/data/products";
 
 export const downloadProductsCSV = () => {
   const baseUrl = "https://pavitr-uphaar-20.lovable.app";
-  const headers = ["ID", "Name", "Price (₹)", "Original Price (₹)", "Category", "Badge", "Rating", "Size", "Image URL", "Description"];
+  const headers = ["SKU ID", "Name", "Price (₹)", "Original Price (₹)", "Category", "Badge", "Rating", "Size", "Image URL", "Description"];
   
   const rows = allProducts.map(p => [
     p.id,
