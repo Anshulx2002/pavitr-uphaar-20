@@ -61,6 +61,11 @@ import buddhaBoddhiTreeIdol5Image from "@/assets/buddha-bodhi-tree-idol-5.png";
 import buddhaBoddhiTreeIdol6Image from "@/assets/buddha-bodhi-tree-idol-6.png";
 import serpentKrishnaIdolImage from "@/assets/serpent-krishna-idol.png";
 import goldenBalKrishnaIdolImage from "@/assets/golden-bal-krishna-idol.png";
+import goldenBalKrishnaIdol2Image from "@/assets/golden-bal-krishna-idol-2.png";
+import goldenBalKrishnaIdol3Image from "@/assets/golden-bal-krishna-idol-3.png";
+import goldenBalKrishnaIdol4Image from "@/assets/golden-bal-krishna-idol-4.png";
+import goldenBalKrishnaIdol5Image from "@/assets/golden-bal-krishna-idol-5.png";
+import goldenBalKrishnaIdol6Image from "@/assets/golden-bal-krishna-idol-6.png";
 import heritageTempleSculptureImage from "@/assets/heritage-temple-sculpture.png";
 import ganeshaWallHangingImage from "@/assets/ganesha-wall-hanging.png";
 import ganeshaProsperityPanelImage from "@/assets/ganesha-prosperity-panel.png";
@@ -605,6 +610,7 @@ export const allProducts: Product[] = [
     price: 499,
     originalPrice: 999,
     image: goldenBalKrishnaIdolImage,
+    images: [goldenBalKrishnaIdolImage, goldenBalKrishnaIdol2Image, goldenBalKrishnaIdol3Image, goldenBalKrishnaIdol4Image, goldenBalKrishnaIdol5Image, goldenBalKrishnaIdol6Image],
     rating: 5,
     description:
       "Exquisite golden Bal Krishna idol with butter pot. Features stunning all-gold finish with delicate facial details and ornate crown. Perfect for Janmashtami and gifting.",
