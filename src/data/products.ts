@@ -49,6 +49,11 @@ import guruNanakPujaBoxSmallImage from "@/assets/guru-nanak-puja-box-small.png";
 import royalPeacockKrishnaReclineIdolImage from "@/assets/royal-peacock-krishna-recline-idol.png";
 import balKrishnaMakhanIdolImage from "@/assets/bal-krishna-makhan-idol.png";
 import buddhaBoddhiTreeIdolImage from "@/assets/buddha-bodhi-tree-idol.png";
+import buddhaBoddhiTreeIdol2Image from "@/assets/buddha-bodhi-tree-idol-2.png";
+import buddhaBoddhiTreeIdol3Image from "@/assets/buddha-bodhi-tree-idol-3.png";
+import buddhaBoddhiTreeIdol4Image from "@/assets/buddha-bodhi-tree-idol-4.png";
+import buddhaBoddhiTreeIdol5Image from "@/assets/buddha-bodhi-tree-idol-5.png";
+import buddhaBoddhiTreeIdol6Image from "@/assets/buddha-bodhi-tree-idol-6.png";
 import serpentKrishnaIdolImage from "@/assets/serpent-krishna-idol.png";
 import goldenBalKrishnaIdolImage from "@/assets/golden-bal-krishna-idol.png";
 import heritageTempleSculptureImage from "@/assets/heritage-temple-sculpture.png";
@@ -568,6 +573,7 @@ export const allProducts: Product[] = [
     price: 899,
     originalPrice: 1499,
     image: buddhaBoddhiTreeIdolImage,
+    images: [buddhaBoddhiTreeIdolImage, buddhaBoddhiTreeIdol2Image, buddhaBoddhiTreeIdol3Image, buddhaBoddhiTreeIdol4Image, buddhaBoddhiTreeIdol5Image, buddhaBoddhiTreeIdol6Image],
     rating: 5,
     description:
       "Serene Buddha statue meditating under the sacred Bodhi tree. Features stunning golden finish with turquoise and red mosaic detailing. Elegant brass base. Perfect for meditation spaces and Zen decor.",
