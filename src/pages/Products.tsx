@@ -1,9 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AllProductsSection from "@/components/AllProductsSection";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-import { downloadProductsCSV, downloadImageLinksDump } from "@/lib/exportProducts";
 
 const Products = () => {
   return (
@@ -23,24 +20,6 @@ const Products = () => {
                 Discover our complete range of traditional pooja products, carefully selected and 
                 blessed to bring divine energy to your spiritual practices.
               </p>
-              <div className="flex justify-center gap-2 mt-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={downloadProductsCSV}
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Product List (CSV)
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={downloadImageLinksDump}
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Image Links
-                </Button>
-              </div>
             </div>
           </div>
         </section>
