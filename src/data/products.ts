@@ -47,6 +47,11 @@ import ramparivarAyodhyaPujaBoxBigImage from "@/assets/ramparivar-ayodhya-puja-b
 import saiSamadhiPujaBoxBigImage from "@/assets/sai-samadhi-puja-box-big.png";
 import guruNanakPujaBoxSmallImage from "@/assets/guru-nanak-puja-box-small.png";
 import royalPeacockKrishnaReclineIdolImage from "@/assets/royal-peacock-krishna-recline-idol.png";
+import royalPeacockKrishnaReclineIdol2Image from "@/assets/royal-peacock-krishna-recline-idol-2.png";
+import royalPeacockKrishnaReclineIdol3Image from "@/assets/royal-peacock-krishna-recline-idol-3.png";
+import royalPeacockKrishnaReclineIdol4Image from "@/assets/royal-peacock-krishna-recline-idol-4.png";
+import royalPeacockKrishnaReclineIdol5Image from "@/assets/royal-peacock-krishna-recline-idol-5.png";
+import royalPeacockKrishnaReclineIdol6Image from "@/assets/royal-peacock-krishna-recline-idol-6.png";
 import balKrishnaMakhanIdolImage from "@/assets/bal-krishna-makhan-idol.png";
 import buddhaBoddhiTreeIdolImage from "@/assets/buddha-bodhi-tree-idol.png";
 import buddhaBoddhiTreeIdol2Image from "@/assets/buddha-bodhi-tree-idol-2.png";
@@ -547,6 +552,7 @@ export const allProducts: Product[] = [
     price: 1499,
     originalPrice: 1999,
     image: royalPeacockKrishnaReclineIdolImage,
+    images: [royalPeacockKrishnaReclineIdolImage, royalPeacockKrishnaReclineIdol2Image, royalPeacockKrishnaReclineIdol3Image, royalPeacockKrishnaReclineIdol4Image, royalPeacockKrishnaReclineIdol5Image, royalPeacockKrishnaReclineIdol6Image],
     rating: 5,
     description:
       "Exquisite Royal Peacock Krishna Recline Idol featuring Lord Krishna in a beautiful reclining pose with ornate peacock feather crown and crystal-studded flute. Elegant black wooden base with stunning blue and gold detailing. Perfect for home temple and gifting.",
